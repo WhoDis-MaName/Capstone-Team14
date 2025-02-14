@@ -50,6 +50,13 @@ class(1..c).
 % Finally, the third step is to coordinate the classes with the shuttle 
 % schedule such that students shouldn’t need to wait for a shuttle. 
 
+% Also optimize for minimal disruption 
+% Second ASP program that takes the answer set as input and optimizes 
+% over minimal disruption
+
+% weak constraints can have different weights -> some classes can be more important
+% TODO: read up on soft constraints and optimization
+
 % ===================================================================================================================================
 
 % Goal: assign classes a time, room, and professor s.t. there is no or minimal overlap
@@ -61,7 +68,7 @@ class(1..c).
 % It cannot be that there are two classes in the same room at the same time
 :- assignment(C1, T1, R1, P1), assignment(C2, C2, R2, P2), T1 = T2, R1 = R2, C1!=C2.
 
-% It cannot be that there are two classes with the professor at the same time
+% It cannot be that there are two classes with professor at the same time
 :- assignment(C1, T1, R1, P1), assignment(C2, C2, R2, P2), T1 = T2, P1 = P2, C1!=C2.
 
 #show assignment/4.
