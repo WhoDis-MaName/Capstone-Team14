@@ -9,6 +9,8 @@ time(1..t).
 class(1..c).
 
 
+% Look into: https://github.com/potassco/clinguin
+
 % Goal: assign classes a time, room, and professor s.t. there is no or minimal overlap
 
 % For each class, assign 1 time, room and professor
