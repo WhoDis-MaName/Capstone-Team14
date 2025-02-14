@@ -18,12 +18,21 @@ class(1..c).
 % This project seeks to identify overlapping courses that students are likely to have to take 
 % simultaneously and propose a new schedule without conflicts. The first step is to simply identify 
 % time conflicts between classes which students are likely to take in the same semester. 
+
 % The defition of an overlap includes the class being scheduled during the same time slot (same day and time, ie: T/Th) with: 
-    % 1. the same professor
-    % 2. the same room
+    % 1. The same time AND the same day AND either: 
+        % - the same professor or
+        % - the same room
+
+        % - at least one class should not overlap if there are multiple
+
+    % 2. Is it ok to have overlap if there are multiple of the same class available? 
+    %    For example, AI taught by Dr. Lierler and AI taught by Jorge. 
+    %    Are we ensuring that at least 1 AI class does not overlap with the other classes, or that both AI classes do not overlap 
+    %    with the other classes?
 
 % We can identify key classes as: 
-    % 1. core CS classes (ie, CS II, theory of computation, data structures, etc.)
+    % 1. core CS classes (ie, calc 1, CS II, intro to proofs, discrete math), theory of computation, comm networks, software engineering, etc.)
         % - some core classes require prereqs. In this case, it is ok for a class and it's prerequisite 
         %   to be at the same time as most students won't be taking both in the same semester.
     % 2. core concentration classes (ie, NLP, AI, game design, etc.)
@@ -46,12 +55,13 @@ class(1..c).
 % Goal: assign classes a time, room, and professor s.t. there is no or minimal overlap
 
 % For each class, assign 1 time, room and professor
+% This implementation ignores days
 { assignment(C, T, R, P) : time(T), room(R), professor(P)} = 1 :- class(C).
 
 % It cannot be that there are two classes in the same room at the same time
 :- assignment(C1, T1, R1, P1), assignment(C2, C2, R2, P2), T1 = T2, R1 = R2, C1!=C2.
 
-% It cannot be that there are two classes in the same room at the same time
+% It cannot be that there are two classes with the professor at the same time
 :- assignment(C1, T1, R1, P1), assignment(C2, C2, R2, P2), T1 = T2, P1 = P2, C1!=C2.
 
 #show assignment/4.
