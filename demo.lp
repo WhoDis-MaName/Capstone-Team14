@@ -8,6 +8,8 @@ professor(1..p).
 time(1..t).
 class(1..c).
 
+% TODO: load in classes.lp and identify conflicts - right now just do with time, add time slot in  later
+% classes.lp
 
 % Look into: https://github.com/potassco/clinguin
 

@@ -6,11 +6,13 @@ with open("filtered.json", "r") as f:
 
 # Extract course information
 facts = []
+classes = ""
 
 for term, subjects in data.items():
     for subject, courses in subjects.items():
         for course_num, course_info in courses.items():
             course_id = f"{subject}{course_num}"
+            classes += f'"{course_id}", '
             title = course_info.get("title", "")
             # there is a prereq field, but it seems like it is not filled out.
             # instead the prereq is inside of the description.
@@ -31,6 +33,7 @@ for term, subjects in data.items():
                     f'section("{course_id}", "{section_num}", "{class_number}", "{time}", "{days}", "{location}", "{instructor}").'
                 )
 
+facts.append(f"classes({classes[:-2]})")
 # Write ASP facts to a file
 asp_filename = "classes.lp"
 with open(asp_filename, "w") as f:
