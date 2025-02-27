@@ -3,7 +3,7 @@ from datetime import datetime
 
 
 # Convert 12-hour time format to 24-hour format
-# TODO: Update to encode minutes past midnight instead of converting 12:15 AM to 1215, convert to 15.
+# TODO: Update to encode minutes past midnight instead of converting 12:15 AM to 0115, convert to 15.
 def convert24(time):
     t = datetime.strptime(time, "%I:%M%p")  # Parse the time string
     return t.strftime("%H%M")  # Format it into 24-hour format
