@@ -1,53 +1,25 @@
 import json
-import re
 
-# Load JSON file
+# Load the JSON file
 file_path = "filtered.json"
 with open(file_path, "r") as file:
     data = json.load(file)
 
+# Dictionary to store course prerequisites
+course_prerequisites = {}
 
-# Function to clean and format course codes
-def format_course_code(department, course_number):
-    return f"{department.lower()}_{course_number}"
+# Traverse the data structure
+for term, subjects in data.items():
+    for subject, courses in subjects.items():
+        for course_number, course_info in courses.items():
+            title = course_info.get("title", "Unknown Title")
+            prereq_text = course_info.get("desc", "")
 
+            # Extract prerequisites from the description
+            if "Prereq:" in prereq_text:
+                prereq_part = prereq_text.split("Prereq:")[1].strip()
+                course_prerequisites[f"{subject} {course_number} - {title}"] = prereq_part
 
-# Function to parse prerequisites
-def parse_prerequisites(prereq_text):
-    prereqs = []
-
-    # Common prerequisite formats
-    course_pattern = re.findall(r"([A-Z]+)\s?(\d{4})", prereq_text)
-
-    for dept, number in course_pattern:
-        prereqs.append(format_course_code(dept, number))
-
-    # Handle special cases
-    if "permission of the instructor" in prereq_text.lower():
-        prereqs.append("instructor_permission")
-
-    return prereqs
-
-
-# Extract courses and prerequisites
-asp_facts = []
-
-for term in data.values():
-    for department, courses in term.items():
-        for course_number, course in courses.items():
-            course_code = format_course_code(department, course_number)
-            title = course["title"].replace('"', "'")  # Ensure safe formatting
-
-            asp_facts.append(f'course({course_code}, "{title}").')
-
-            prereq_text = course.get("prereq", "").strip()
-            if prereq_text and prereq_text != "-":
-                for prereq in parse_prerequisites(prereq_text):
-                    asp_facts.append(f"prereq({course_code}, {prereq}).")
-
-# Save to a .lp file
-output_file = "courses.lp"
-with open(output_file, "w") as f:
-    f.write("\n".join(asp_facts))
-
-print(f"ASP facts saved to {output_file}")
+# Print prerequisites in a structured format
+for course, prereq in course_prerequisites.items():
+    print(f"{course} -> {prereq}")
