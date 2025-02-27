@@ -1,5 +1,9 @@
 import subprocess
 from django.http import JsonResponse
+from django.shortcuts import render
+
+def home(request):
+    return render(request, "index.html")  # Renders the template
 
 def run_script(request):
     script_name = request.GET.get("script")  # Get user input from URL parameter

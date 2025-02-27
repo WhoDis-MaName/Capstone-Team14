@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from scheduleFunctions.views import run_script  # Import the view for schedulerApp functions
+from scheduleFunctions.views import home
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('run-script/', run_script, name='run_script'),
+    path('', home, name='home'),  # Add homepage route
 ]

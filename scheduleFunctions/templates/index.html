@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Run Scripts</title>
+    <script>
+        function runScript(scriptName) {
+            fetch(`/run-script/?script=${scriptName}`)
+                .then(response => response.json())
+                .then(data => alert(`Output: ${data.output || "No output"}\nError: ${data.error || "No errors"}`))
+                .catch(error => alert("Request failed"));
+        }
+    </script>
+</head>
+<body>
+    <h1>Run Scripts</h1>
+    <button onclick="runScript('converter')">Run Converter</button>
+    <button onclick="runScript('processor')">Run Processor</button>
+    <button onclick="runScript('demo')">Run Demo</button>
+</body>
+</html>
