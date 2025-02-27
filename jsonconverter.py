@@ -6,13 +6,24 @@ with open("filtered.json", "r") as f:
 
 # Extract course information
 facts = []
-classes = ""
+
+
+classes_str = ""
+rooms_str = ""
+professors_str = ""
+times_str = ""
+
+
+# classes_set = set()
+rooms_set = set()
+professors_set = set()
+times_set = set()
 
 for term, subjects in data.items():
     for subject, courses in subjects.items():
         for course_num, course_info in courses.items():
             course_id = f"{subject}{course_num}"
-            classes += f'"{course_id}", '
+            classes_str += f'"{course_id}", '
             title = course_info.get("title", "")
             # there is a prereq field, but it seems like it is not filled out.
             # instead the prereq is inside of the description.
@@ -28,12 +39,31 @@ for term, subjects in data.items():
                 location = section_info.get("Location", "Unknown")
                 instructor = section_info.get("Instructor", "Unknown")
 
+                rooms_set.add(f'"{location}"')
+                professors_set.add(f'"{instructor}"')
+                times_set.add(f'("{time}", "{days}")')
+
                 # Add section fact
                 facts.append(
                     f'section("{course_id}", "{section_num}", "{class_number}", "{time}", "{days}", "{location}", "{instructor}").'
                 )
 
-facts.append(f"classes({classes[:-2]})")
+for room in rooms_set:
+    rooms_str += room + ", "
+
+for professor in professors_set:
+    professors_str += professor + ", "
+
+for time in times_set:
+    times_str += time + ", "
+
+
+# Add list of all items
+facts.append(f"classes({classes_str[:-2]})")
+facts.append(f"rooms({rooms_str[:-2]})")
+facts.append(f"professors({professors_str[:-2]})")
+facts.append(f"times({times_str[:-2]})")
+
 # Write ASP facts to a file
 asp_filename = "classes.lp"
 with open(asp_filename, "w") as f:
