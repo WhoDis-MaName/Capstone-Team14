@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="ChangeListManager">
     <list default="true" id="3117cdea-e3bf-47e5-afd1-514aaa2ad5b6" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,10 +15,13 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2tdXx5Yve6Y430tYF7VxuyxlOgq" />
+=======
+>>>>>>> main
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -47,4 +51,6 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+=======
+>>>>>>> main
 </project>
