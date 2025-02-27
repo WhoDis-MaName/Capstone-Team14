@@ -12,6 +12,18 @@ day(w).
 day(r).
 day(f).
 
+% Direct overlaps
+overlapping_days(mw, m).
+overlapping_days(mw, w).
+overlapping_days(tr, t).
+overlapping_days(tr, r).
+overlapping_days(mtwr, mw).
+overlapping_days(mtwr, tr).
+overlapping_days(mtwr, m).
+overlapping_days(mtwr, t).
+overlapping_days(mtwr, w).
+overlapping_days(mtwr, r).
+
 % 1 ary course
 course(C) :- course(C, _, _).
 
@@ -25,15 +37,7 @@ section(C) :- section(C, _, _, _, _, _, _).
 section(C, S, E, D) :- section(C, _, _, S, E, D, _, _).
 
 % overlapping_days(D1, D2) :- 
-%     day(D1), day(D2), overlapping_days(D1, m), overlapping_days(D2, m).
-% overlapping_days(D1, D2) :- 
-%     day(D1), day(D2), overlapping_days(D1, t), overlapping_days(D2, t).
-% overlapping_days(D1, D2) :- 
-%     day(D1), day(D2), overlapping_days(D1, w), overlapping_days(D2, w).
-% overlapping_days(D1, D2) :- 
-%     day(D1), day(D2), overlapping_days(D1, r), overlapping_days(D2, r).
-% overlapping_days(D1, D2) :- 
-%     day(D1), day(D2), overlapping_days(D1, f), overlapping_days(D2, f).
+%     day(D1), day(D2), day(D3), overlapping_days(D1, D3), overlapping_days(D2, D3).
 overlapping_days(D1, D2) :- 
     day(D1), day(D2), D1 = D2. % Exact match
 
