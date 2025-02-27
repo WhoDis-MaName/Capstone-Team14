@@ -59,10 +59,10 @@ for time in times_set:
 
 
 # Add list of all items
-facts.append(f"classes({classes_str[:-2]})")
-facts.append(f"rooms({rooms_str[:-2]})")
-facts.append(f"professors({professors_str[:-2]})")
-facts.append(f"times({times_str[:-2]})")
+facts.append(f"class({classes_str[:-2]}).")
+facts.append(f"room({rooms_str[:-2]}).")
+facts.append(f"professor({professors_str[:-2]}).")
+facts.append(f"time({times_str[:-2]}).")
 
 # Write ASP facts to a file
 asp_filename = "classes.lp"
