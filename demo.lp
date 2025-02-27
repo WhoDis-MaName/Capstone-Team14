@@ -8,6 +8,8 @@ professor(1..p).
 time(1..t).
 class(1..c).
 
+% TODO: load in classes.lp and identify conflicts - right now just do with time, add time slot in  later
+% classes.lp
 
 % Look into: https://github.com/potassco/clinguin
 
@@ -63,6 +65,7 @@ class(1..c).
 
 % For each class, assign 1 time, room and professor
 % This implementation ignores days
+% TODO: find better implemetntation of time slots
 { assignment(C, T, R, P) : time(T), room(R), professor(P)} = 1 :- class(C).
 
 % It cannot be that there are two classes in the same room at the same time
