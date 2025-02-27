@@ -1,4 +1,4 @@
-% classes.lp
+#include "classes.lp".
 
 % Example course from classes.lp:
 % course("CSCI4830", "INTRODUCTN SOFTWARE ENGINEERNG", "-").
