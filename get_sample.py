@@ -21,8 +21,11 @@ def create_sample(classes:dict, num_semesters:int, num_departments:int, num_clas
         for department in department_subset:
             key_list = list(classes[semester][department].keys())
             class_subset = sample(key_list,min(num_classes,len(key_list)))
-            sample_data[semester][department] = {class_name: classes[semester][department][class_name] for class_name in class_subset}
-        
+            class_list = {class_name: classes[semester][department][class_name] for class_name in class_subset}
+            print(class_list)
+            sample_data[semester][department] = class_list
+            
+    return sample_data
 
 try:
     os.mkdir('samples')
@@ -32,6 +35,8 @@ except:
 classes = get_classes('filtered.json')
 
 for i in range(0,10):
-    sample_data = create_sample(classes, 3, 2, 10)
-    with open(os.path.join('samples',f'sample_{i}.json'), 'w') as f:
+    sample_data = create_sample(classes, 1, 2, 5)
+    print(sample_data)
+
+    with open(os.path.join('samples',f'sample_0{i}.json'), 'w') as f:
         json.dump(sample_data,f, indent=4)

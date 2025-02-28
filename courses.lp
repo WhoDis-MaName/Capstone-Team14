@@ -26,7 +26,7 @@ prereq(csci_3510, csci_2510_and_csci_3320).
 prereq(csci_3550, ).
 prereq(csci_3660, ).
 prereq(csci_3710, ).
-prereq(csci_3830, choice([csci_2830, csci_3320])).
+prereq(csci_3830, choice([csci_3320, csci_2830])).
 prereq(csci_3850, csci_2030_and_csci_2850).
 prereq(csci_4000, ).
 prereq(csci_4220, csci_3320_and_csci_3660).
