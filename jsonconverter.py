@@ -100,6 +100,7 @@ def convert(file):
     facts.extend(times)  # Since times are already formatted as facts
 
     # Write ASP facts to a file
+    # asp_filename = file.replace(".json", ".lp")
     asp_filename = "classes.lp"
     with open(asp_filename, "w") as f:
         f.write("\n".join(facts))
