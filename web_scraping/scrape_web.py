@@ -1,25 +1,35 @@
+import os
+import json
+from pprint import pprint
+
 import requests
 from bs4 import BeautifulSoup as bs
-import os
-from pprint import pprint
+
 
 
 script_path = os.path.dirname(os.path.realpath(__file__))
 data_dir = os.path.join(os.path.split(script_path)[0], 'data') #../data
 
-def get_all_tables(soup):
-    """Extracts and returns all tables in a soup object"""
+def get_all_tables(soup: bs):
+    """Finds all of the tables in the page gathered with BS4
+
+    Args:
+        soup (bs): The soup representation of the web page
+
+    Returns:
+        ResultSet: A set containing all of the instances of `<table></table>` along with all of its contents
+    """
     return soup.find_all("table")
 
-def get_table_headers(table):
-    """Given a table soup, returns all the headers"""
-    headers = []
-    for th in table.find("tr").find_all("th"):
-        headers.append(th.text.strip())
-    return headers
+def get_table_rows(table) -> list:
+    """Given a table, returns all its rows
 
-def get_table_rows(table):
-    """Given a table, returns all its rows"""
+    Args:
+        table : table from web page grabbed using BS4 soup object
+
+    Returns:
+        list: a 2d list that represents all of the rows
+    """
     rows = []
     for tr in table.find_all("tr")[0:]:
         cells = []
@@ -40,7 +50,16 @@ def get_table_rows(table):
 
     
     
-def process_url(url):
+def process_url(url: str):
+    """Take a url and find all of the tables contained in the page and return a ResultSet
+
+    Args:
+        url (str): URL of the page to be searched.
+
+    Returns:
+        ResultSet: Set containing all of the tables in the page
+    """
+    
     tables_list = []
     # print(nfl_url)
     data = requests.get(url)
@@ -59,12 +78,17 @@ def process_url(url):
     pass
 
 def main():
+    """
+        For the page in the computer science four year plan, create a JSON file with the class content organized by year and semester. 
+        This data is then used to discover conflicts that are higher priority.
+    """
     try:
         os.makedirs(data_dir)
     except:
         pass
     
     tables_list = process_url('https://catalog.unomaha.edu/undergraduate/college-information-science-technology/computer-science/computer-science-bs/#fouryearplantext')
+    json_data = []
     for table in tables_list[1:]:
         rows = get_table_rows(table)
         structured_rows = {
@@ -89,8 +113,8 @@ def main():
         year = ''
         semester = ''
         for row in rows:
-            print(row)
-            print(len(row))
+            # print(row)
+            # print(len(row))
             if row[0] in structured_rows.keys():
                 if semester != '':
                     structured_rows[year][semester] = classes_in_semeseter
@@ -106,16 +130,22 @@ def main():
                 semester = row[0].upper()
             else:
                 if row[0] != '' and len(row) == 3:
-                    row.extend(row[0].split(u'\xa0'))
+                    row[0] = row[0].replace(u'\xa0', ' ')
+                    row[0] = row[0].split('or ')
+                    row[1] = row[1].split('or ')
                     classes_in_semeseter.append(row)
         structured_rows[year] = {
             'semseter': semester,
             'classes': classes_in_semeseter
         }
         
-        pprint(structured_rows)
-                
-    print("Finished")
+        # pprint(structured_rows)
+        json_data.append(structured_rows)
+    print("Finished Gathering Data")
+    
+    with open(os.path.join(data_dir,'fourYearPlan.json'), 'w') as f:
+        json.dump(json_data,f, indent=4)
+    
 
 if __name__ == '__main__':
     main()
