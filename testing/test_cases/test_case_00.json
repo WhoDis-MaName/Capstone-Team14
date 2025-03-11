@@ -1,0 +1,394 @@
+{
+    "1218": {
+        "CSCI": {
+            "8520": {
+                "title": "ADV TOPICS IN OR",
+                "desc": "Prereq: MATH 4300 or MATH 8306 or CSCI 4300 or CSCI 8306 or permission of the instructor.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "20953 ?",
+                        "Type": "LEC",
+                        "Enrolled": "0",
+                        "Class Max": "0",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Topic": "NONLINEAR PROGRAMMING",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "To Be Announced",
+                        "Instructor": "Fabio Torres Vitor"
+                    }
+                }
+            },
+            "3850": {
+                "title": "FOUNDATIONS OF WEB SEARCH TECH",
+                "desc": "Prereq: CSCI 2030 and CSCI 2850 with C- or better, or instructor Approval. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "850": {
+                        "Class Number": "15379 ?",
+                        "Type": "LEC",
+                        "Enrolled": "17",
+                        "Class Max": "24",
+                        "Seats Available": "7",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Parvathi Chundi"
+                    }
+                }
+            },
+            "8000": {
+                "title": "ADV CONCEPTS PROGRAMMING LANG",
+                "desc": "Prereq: CSCI 3320; CSCI 3660; CSCI 4220.  Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "15405 ?",
+                        "Type": "LEC",
+                        "Enrolled": "9",
+                        "Class Max": "24",
+                        "Seats Available": "15",
+                        "Credit Hours": "3",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "7:30PM - 8:45PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 269",
+                        "Instructor": "Jorge Fandinno Garcia"
+                    }
+                }
+            },
+            "1204": {
+                "title": "CSCI PRINCIPLES LAB",
+                "desc": "Prereq: CSCI 1200, prior or concurrent.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "15351 ?",
+                        "Type": "LAB",
+                        "Enrolled": "32",
+                        "Class Max": "35",
+                        "Seats Available": "3",
+                        "Credit Hours": "1",
+                        "Course Attribute": "Natural/Physical Sci General Education lab course",
+                        "Note": "Students will attend once a week in-person and the other day(s) will participate remotely synchronously. Your instructor will provide more details.",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "12:00PM - 1:15PM",
+                        "Days": "F",
+                        "Location": "Peter Kiewit Institute 278",
+                        "Instructor": "Ash P Ashokan"
+                    },
+                    "850": {
+                        "Class Number": "15352 ?",
+                        "Type": "LAB",
+                        "Enrolled": "33",
+                        "Class Max": "35",
+                        "Seats Available": "2",
+                        "Credit Hours": "1",
+                        "Course Attribute": "Natural/Physical Sci General Education lab course",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Ash P Ashokan"
+                    },
+                    "851": {
+                        "Class Number": "15353 ?",
+                        "Type": "LAB",
+                        "Enrolled": "26",
+                        "Class Max": "35",
+                        "Seats Available": "9",
+                        "Credit Hours": "1",
+                        "Course Attribute": "Natural/Physical Sci General Education lab course",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Ash P Ashokan"
+                    }
+                }
+            },
+            "2240": {
+                "title": "INTRO TO C PROGRAMMING",
+                "desc": "Prereq: CSCI 1620 with grade of C or better",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "15366 ?",
+                        "Type": "LEC",
+                        "Enrolled": "30",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Note": "Students will attend once a week in-person and the other day(s) will participate remotely synchronously. Your instructor will provide more details.",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "12:00PM - 1:15PM",
+                        "Days": "TR",
+                        "Location": "Scott Technology Center 102B",
+                        "Instructor": "Jose M. Santos"
+                    },
+                    "820": {
+                        "Class Number": "15368 ?",
+                        "Type": "LEC",
+                        "Enrolled": "14",
+                        "Class Max": "30",
+                        "Seats Available": "16",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Remote Learning",
+                        "Note": "This class will be taught remotely via synchronous teaching. Students will need to log in at the specified time but will not physically attend class.",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "12:00PM - 1:15PM",
+                        "Days": "MF",
+                        "Location": "Remote Learning",
+                        "Instructor": "Agatha Sheila Owora"
+                    },
+                    "850": {
+                        "Class Number": "15367 ?",
+                        "Type": "LEC",
+                        "Enrolled": "27",
+                        "Class Max": "30",
+                        "Seats Available": "3",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Wenning Qiu"
+                    }
+                }
+            }
+        },
+        "CIST": {
+            "9980": {
+                "title": "IND STUDY IN IT",
+                "desc": "Prereq: Permission of the instructor.  Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "15344 ?",
+                        "Type": "IND",
+                        "Enrolled": "0",
+                        "Class Max": "5",
+                        "Seats Available": "5",
+                        "Credit Hours": "1-3",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "To Be Announced",
+                        "Instructor": "Brian J Dorn"
+                    }
+                }
+            },
+            "9080": {
+                "title": "RESEARCH DIRECTIONS IN I.T.",
+                "desc": "Prereq: Doctoral standing in Information Technology or permission of course coordinators. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "15343 ?",
+                        "Type": "LEC",
+                        "Enrolled": "8",
+                        "Class Max": "10",
+                        "Seats Available": "2",
+                        "Credit Hours": "3",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "12:00PM - 2:40PM",
+                        "Days": "M",
+                        "Location": "Peter Kiewit Institute 270",
+                        "Instructor": "Brian J Dorn"
+                    }
+                }
+            },
+            "1300": {
+                "title": "INTRO TO WEB DEVELOPMENT",
+                "desc": "Prereq: MATH 1120 or MATH 1130 or MATH 1220  (or equivalent) with C- or better, or permission of the instructor",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "15307 ?",
+                        "Type": "LEC",
+                        "Enrolled": "29",
+                        "Class Max": "30",
+                        "Seats Available": "1",
+                        "Credit Hours": "3",
+                        "Note": "Students will attend once a week in-person and the other day(s) will participate remotely synchronously. Your instructor will provide more details.",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "1:30PM - 2:45PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 276",
+                        "Instructor": "Jeff Blackmore"
+                    },
+                    "002": {
+                        "Class Number": "15306 ?",
+                        "Type": "LEC",
+                        "Enrolled": "31",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Note": "Students will attend once a week in-person and the other day(s) will participate remotely synchronously. Your instructor will provide more details.",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "4:30PM - 5:45PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 276",
+                        "Instructor": "Jeff Blackmore"
+                    },
+                    "820": {
+                        "Class Number": "15308 ?",
+                        "Type": "LEC",
+                        "Enrolled": "32",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Remote Learning",
+                        "Note": "This class will be taught remotely via synchronous teaching. Students will need to log in at the specified time but will not physically attend class.",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "12:00PM - 1:15PM",
+                        "Days": "TR",
+                        "Location": "Remote Learning",
+                        "Instructor": "Pradhip Swaminathan"
+                    },
+                    "850": {
+                        "Class Number": "15309 ?",
+                        "Type": "LEC",
+                        "Enrolled": "35",
+                        "Class Max": "35",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Robert Fulkerson"
+                    }
+                }
+            },
+            "1600": {
+                "title": "PRACTICAL SCRIPTING",
+                "desc": "Prereq: Not intended for students who have completed CIST 1400 and CSCI 1620",
+                "prereq": "-",
+                "sections": {
+                    "850": {
+                        "Class Number": "20992 ?",
+                        "Type": "LLB",
+                        "Enrolled": "34",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Derek Babb"
+                    }
+                }
+            },
+            "3000": {
+                "title": "ADVANCED COMPOSITION FOR IS&T",
+                "desc": "Prereq: ENGL 1160 (or placement in a 3rd year writing course) and junior standing, or permission of the instructor. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "15758 ?",
+                        "Type": "LEC",
+                        "Enrolled": "21",
+                        "Class Max": "20",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "10:30AM - 11:45AM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 153",
+                        "Instructor": "Thom Davis"
+                    },
+                    "850": {
+                        "Class Number": "15339 ?",
+                        "Type": "LEC",
+                        "Enrolled": "20",
+                        "Class Max": "20",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Sheri Lou Hronek"
+                    },
+                    "851": {
+                        "Class Number": "16607 ?",
+                        "Type": "LEC",
+                        "Enrolled": "20",
+                        "Class Max": "20",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Amanda Lynn Gutierrez"
+                    },
+                    "852": {
+                        "Class Number": "16608 ?",
+                        "Type": "LEC",
+                        "Enrolled": "13",
+                        "Class Max": "20",
+                        "Seats Available": "7",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Amanda Lynn Gutierrez"
+                    },
+                    "853": {
+                        "Class Number": "15336 ?",
+                        "Type": "LEC",
+                        "Enrolled": "18",
+                        "Class Max": "20",
+                        "Seats Available": "2",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Thom Davis"
+                    },
+                    "854": {
+                        "Class Number": "15338 ?",
+                        "Type": "LEC",
+                        "Enrolled": "20",
+                        "Class Max": "20",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Thom Davis"
+                    }
+                }
+            }
+        }
+    }
+}
