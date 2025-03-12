@@ -27,13 +27,17 @@ def convert(file):
         for subject, courses in subjects.items():
             for course_num, course_info in courses.items():
                 course_id = (
-                    f"{subject}{course_num}".lower().replace(" ", "_").replace(".", "")
+                    f"{subject}{course_num}".lower()
+                    .replace(" ", "_")
+                    .replace(".", "")
+                    .replace("-", "_")
                 )
                 title = (
                     course_info.get("title", "")
                     .lower()
                     .replace(" ", "_")
                     .replace(".", "")
+                    .replace("-", "_")
                 )
                 prereq = (
                     course_info.get("prereq", "none")
@@ -41,6 +45,7 @@ def convert(file):
                     .replace(" ", "_")
                     .replace("-", "none")
                     .replace(".", "")
+                    .replace("-", "_")
                 )
 
                 # Store course fact
@@ -69,18 +74,21 @@ def convert(file):
                         .strip()
                         .lower()
                         .replace(" ", "_")
+                        .replace("-", "_")
                     )
                     location = (
                         section_info.get("Location", "Unknown")
                         .lower()
                         .replace(" ", "_")
                         .replace(".", "")
+                        .replace("-", "_")
                     )
                     instructor = (
                         section_info.get("Instructor", "Unknown")
                         .lower()
                         .replace(" ", "_")
                         .replace(".", "")
+                        .replace("-", "_")
                     )
 
                     # Store section fact
@@ -107,3 +115,5 @@ def convert(file):
 
     # print(f"ASP facts written to {asp_filename}")
 
+
+convert(".\\testing\\test_cases\\test_case_00.json")

@@ -23,7 +23,7 @@ overlapping_days(mtwr, m).
 overlapping_days(mtwr, t).
 overlapping_days(mtwr, w).
 overlapping_days(mtwr, r).
-% overlapping_days(D1, D2) :- overlapping_days(D2, D1).
+overlapping_days(D1, D2) :- overlapping_days(D2, D1).
 
 % 1 ary course
 course(C) :- course(C, _, _).
@@ -65,8 +65,8 @@ section_count(N) :- N = #count{ S : section(S) }.
 % test(C1, C2) :- conflict(C1, C2). 
 % define some classes that should conflict and see what happens
 
-#show section_count/1.
-#show section/4.
+% #show section_count/1.
+% #show section/4.
 #show conflict/8.
 % #show duplicate/2.
 #show conflict_count/1.
