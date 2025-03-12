@@ -2,11 +2,10 @@ import json
 from datetime import datetime
 
 
-# Convert 12-hour time format to 24-hour format
-# TODO: Update to encode minutes past midnight instead of converting 12:15 AM to 0115, convert to 15.
+# Converting 12 hour time to minutes past midnight, ie: 12:15 AM to 15.
 def convert24(time):
     t = datetime.strptime(time, "%I:%M%p")  # Parse the time string
-    return t.strftime("%H%M")  # Format it into 24-hour format
+    return t.hour * 60 + t.minute  # Convert to total minutes
 
 
 def convert(file):
@@ -114,6 +113,3 @@ def convert(file):
         f.write("\n".join(facts))
 
     # print(f"ASP facts written to {asp_filename}")
-
-
-convert(".\\testing\\test_cases\\test_case_00.json")
