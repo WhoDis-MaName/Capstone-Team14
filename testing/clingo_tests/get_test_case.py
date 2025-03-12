@@ -48,7 +48,7 @@ except:
 
 classes = get_classes('filtered.json')
 
-for i in range(0,1):
+for i in range(1,2):
     sample_data = create_sample(classes, 1, 2, 5)
 
     with open(os.path.join(test_cases_dir,f'test_case_0{i}.json'), 'w') as f:

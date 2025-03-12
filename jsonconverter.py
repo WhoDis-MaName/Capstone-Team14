@@ -106,3 +106,4 @@ def convert(file):
         f.write("\n".join(facts))
 
     # print(f"ASP facts written to {asp_filename}")
+
