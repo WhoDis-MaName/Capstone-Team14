@@ -2,9 +2,10 @@ import subprocess
 import pytest
 
 
-def run_clingo(program_file):
+def run_clingo(program_files):
     """Runs Clingo on the given ASP program file and returns the parsed output."""
-    result = subprocess.run(["clingo", program_file], capture_output=True, text=True)
+    cmd = ["clingo"] + program_files
+    result = subprocess.run(cmd, capture_output=True, text=True)
     return result.stdout  # Adjust parsing as needed
 
 
@@ -19,13 +20,18 @@ def parse_answer_set(output):
 
 
 @pytest.mark.parametrize(
-    "input_file,expected_output",
+    "input_files,expected_output",
     [
-        ("example.lp", {"expected_predicate(1)", "expected_predicate(2)"}),
-        ("another_example.lp", {"another_predicate(3)", "another_predicate(4)"}),
+        (
+            ["classes.lp", "identifyconflict.lp"],
+            {"conflict_count(2377)"},
+        ),
     ],
 )
-def test_clingo_output(input_file, expected_output):
-    output = run_clingo(input_file)
+def test_clingo_output(input_files, expected_output):
+    output = run_clingo(input_files)
     answer_set = set(parse_answer_set(output))
     assert answer_set == expected_output, f"Unexpected output: {answer_set}"
+
+
+# print(run_clingo(["classes.lp", "identifyconflict.lp"]))

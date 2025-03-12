@@ -1,4 +1,4 @@
-#include "classes.lp".
+% #include "classes.lp".
 
 % Example course from classes.lp:
 % course("CSCI4830", "INTRODUCTN SOFTWARE ENGINEERNG", "-").
@@ -64,6 +64,6 @@ conflict_count(N) :- N = #count{ C1, C2 : conflict(C1, C2) }.
 % test(C1, C2) :- conflict(C1, C2). 
 % define some classes that should conflict and see what happens
 
-#show conflict/8.
+% #show conflict/8.
 % #show duplicate/2.
 #show conflict_count/1.
