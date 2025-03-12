@@ -1,263 +1,97 @@
 {
-    "1218": {
+    "1245": {
         "CSCI": {
-            "8520": {
-                "title": "ADV TOPICS IN OR",
-                "desc": "Prereq: MATH 4300 or MATH 8306 or CSCI 4300 or CSCI 8306 or permission of the instructor.",
-                "prereq": "-",
-                "sections": {
-                    "001": {
-                        "Class Number": "20953 ?",
-                        "Type": "LEC",
-                        "Enrolled": "0",
-                        "Class Max": "0",
-                        "Seats Available": "0",
-                        "Credit Hours": "3",
-                        "Topic": "NONLINEAR PROGRAMMING",
-                        "Date": "Aug 23, 2021 - Dec 17, 2021",
-                        "Time": "TBA",
-                        "Days": "TBA ",
-                        "Location": "To Be Announced",
-                        "Instructor": "Fabio Torres Vitor"
-                    }
-                }
-            },
-            "3850": {
-                "title": "FOUNDATIONS OF WEB SEARCH TECH",
-                "desc": "Prereq: CSCI 2030 and CSCI 2850 with C- or better, or instructor Approval. Not open to non-degree graduate students.",
+            "4850": {
+                "title": "DATABASE MANAGEMENT SYSTEMS",
+                "desc": "Prereq: CSCI 3320 or equivalent with C- or better.",
                 "prereq": "-",
                 "sections": {
                     "850": {
-                        "Class Number": "15379 ?",
+                        "Class Number": "6500 ?",
                         "Type": "LEC",
-                        "Enrolled": "17",
-                        "Class Max": "24",
-                        "Seats Available": "7",
-                        "Credit Hours": "3",
-                        "Course Attribute": "Totally Online",
-                        "Date": "Aug 23, 2021 - Dec 17, 2021",
-                        "Time": "TBA",
-                        "Days": "TBA ",
-                        "Location": "Totally Online",
-                        "Instructor": "Parvathi Chundi"
-                    }
-                }
-            },
-            "8000": {
-                "title": "ADV CONCEPTS PROGRAMMING LANG",
-                "desc": "Prereq: CSCI 3320; CSCI 3660; CSCI 4220.  Not open to non-degree graduate students.",
-                "prereq": "-",
-                "sections": {
-                    "001": {
-                        "Class Number": "15405 ?",
-                        "Type": "LEC",
-                        "Enrolled": "9",
-                        "Class Max": "24",
-                        "Seats Available": "15",
-                        "Credit Hours": "3",
-                        "Date": "Aug 23, 2021 - Dec 17, 2021",
-                        "Time": "7:30PM - 8:45PM",
-                        "Days": "MW",
-                        "Location": "Peter Kiewit Institute 269",
-                        "Instructor": "Jorge Fandinno Garcia"
-                    }
-                }
-            },
-            "1204": {
-                "title": "CSCI PRINCIPLES LAB",
-                "desc": "Prereq: CSCI 1200, prior or concurrent.",
-                "prereq": "-",
-                "sections": {
-                    "001": {
-                        "Class Number": "15351 ?",
-                        "Type": "LAB",
-                        "Enrolled": "32",
-                        "Class Max": "35",
-                        "Seats Available": "3",
-                        "Credit Hours": "1",
-                        "Course Attribute": "Natural/Physical Sci General Education lab course",
-                        "Note": "Students will attend once a week in-person and the other day(s) will participate remotely synchronously. Your instructor will provide more details.",
-                        "Date": "Aug 23, 2021 - Dec 17, 2021",
-                        "Time": "12:00PM - 1:15PM",
-                        "Days": "F",
-                        "Location": "Peter Kiewit Institute 278",
-                        "Instructor": "Ash P Ashokan"
-                    },
-                    "850": {
-                        "Class Number": "15352 ?",
-                        "Type": "LAB",
-                        "Enrolled": "33",
-                        "Class Max": "35",
-                        "Seats Available": "2",
-                        "Credit Hours": "1",
-                        "Course Attribute": "Natural/Physical Sci General Education lab course",
-                        "Date": "Aug 23, 2021 - Dec 17, 2021",
-                        "Time": "TBA",
-                        "Days": "TBA ",
-                        "Location": "Totally Online",
-                        "Instructor": "Ash P Ashokan"
-                    },
-                    "851": {
-                        "Class Number": "15353 ?",
-                        "Type": "LAB",
-                        "Enrolled": "26",
-                        "Class Max": "35",
-                        "Seats Available": "9",
-                        "Credit Hours": "1",
-                        "Course Attribute": "Natural/Physical Sci General Education lab course",
-                        "Date": "Aug 23, 2021 - Dec 17, 2021",
-                        "Time": "TBA",
-                        "Days": "TBA ",
-                        "Location": "Totally Online",
-                        "Instructor": "Ash P Ashokan"
-                    }
-                }
-            },
-            "2240": {
-                "title": "INTRO TO C PROGRAMMING",
-                "desc": "Prereq: CSCI 1620 with grade of C or better",
-                "prereq": "-",
-                "sections": {
-                    "001": {
-                        "Class Number": "15366 ?",
-                        "Type": "LEC",
-                        "Enrolled": "30",
-                        "Class Max": "30",
+                        "Enrolled": "15",
+                        "Class Max": "15",
                         "Seats Available": "0",
                         "Credit Hours": "3",
                         "Students on Waitlist": "0",
-                        "Note": "Students will attend once a week in-person and the other day(s) will participate remotely synchronously. Your instructor will provide more details.",
-                        "Date": "Aug 23, 2021 - Dec 17, 2021",
-                        "Time": "12:00PM - 1:15PM",
-                        "Days": "TR",
-                        "Location": "Scott Technology Center 102B",
-                        "Instructor": "Jose M. Santos"
-                    },
-                    "820": {
-                        "Class Number": "15368 ?",
-                        "Type": "LEC",
-                        "Enrolled": "14",
-                        "Class Max": "30",
-                        "Seats Available": "16",
-                        "Credit Hours": "3",
-                        "Course Attribute": "Remote Learning",
-                        "Note": "This class will be taught remotely via synchronous teaching. Students will need to log in at the specified time but will not physically attend class.",
-                        "Date": "Aug 23, 2021 - Dec 17, 2021",
-                        "Time": "12:00PM - 1:15PM",
-                        "Days": "MF",
-                        "Location": "Remote Learning",
-                        "Instructor": "Agatha Sheila Owora"
-                    },
-                    "850": {
-                        "Class Number": "15367 ?",
-                        "Type": "LEC",
-                        "Enrolled": "27",
-                        "Class Max": "30",
-                        "Seats Available": "3",
-                        "Credit Hours": "3",
                         "Course Attribute": "Totally Online",
-                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Date": "Jul 08, 2024 - Aug 16, 2024",
                         "Time": "TBA",
                         "Days": "TBA ",
                         "Location": "Totally Online",
-                        "Instructor": "Wenning Qiu"
-                    }
-                }
-            }
-        },
-        "CIST": {
-            "9980": {
-                "title": "IND STUDY IN IT",
-                "desc": "Prereq: Permission of the instructor.  Not open to non-degree graduate students.",
-                "prereq": "-",
-                "sections": {
-                    "001": {
-                        "Class Number": "15344 ?",
-                        "Type": "IND",
-                        "Enrolled": "0",
-                        "Class Max": "5",
-                        "Seats Available": "5",
-                        "Credit Hours": "1-3",
-                        "Date": "Aug 23, 2021 - Dec 17, 2021",
-                        "Time": "TBA",
-                        "Days": "TBA ",
-                        "Location": "To Be Announced",
-                        "Instructor": "Brian J Dorn"
+                        "Instructor": "Haoyu Wang"
                     }
                 }
             },
-            "9080": {
-                "title": "RESEARCH DIRECTIONS IN I.T.",
-                "desc": "Prereq: Doctoral standing in Information Technology or permission of course coordinators. Not open to non-degree graduate students.",
+            "8856": {
+                "title": "DATABASE MANAGEMENT SYSTEMS",
+                "desc": "-",
                 "prereq": "-",
                 "sections": {
-                    "001": {
-                        "Class Number": "15343 ?",
+                    "850": {
+                        "Class Number": "6501 ?",
                         "Type": "LEC",
+                        "Enrolled": "15",
+                        "Class Max": "15",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Jul 08, 2024 - Aug 16, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Haoyu Wang"
+                    }
+                }
+            },
+            "8950": {
+                "title": "GRADUATE INTERNSHIP COMP SCI",
+                "desc": "Prereq: Permission of the graduate program chairperson and a minimum grade point average of 3.0 (B), with at most one grade below B, but not lower than C+ for all CS graduate classes. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "301": {
+                        "Class Number": "6506 ?",
+                        "Type": "INT",
                         "Enrolled": "8",
-                        "Class Max": "10",
-                        "Seats Available": "2",
-                        "Credit Hours": "3",
-                        "Date": "Aug 23, 2021 - Dec 17, 2021",
-                        "Time": "12:00PM - 2:40PM",
-                        "Days": "M",
-                        "Location": "Peter Kiewit Institute 270",
-                        "Instructor": "Brian J Dorn"
+                        "Class Max": "30",
+                        "Seats Available": "22",
+                        "Credit Hours": "1-3",
+                        "Date": "May 28, 2024 - Aug 16, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "To Be Announced",
+                        "Instructor": "Myoungkyu Song"
                     }
                 }
             },
-            "1300": {
-                "title": "INTRO TO WEB DEVELOPMENT",
-                "desc": "Prereq: MATH 1120 or MATH 1130 or MATH 1220  (or equivalent) with C- or better, or permission of the instructor",
+            "8990": {
+                "title": "THESIS",
+                "desc": "Prereq: Permission of Graduate Adviser. Not open to non-degree graduate students.",
                 "prereq": "-",
                 "sections": {
-                    "001": {
-                        "Class Number": "15307 ?",
-                        "Type": "LEC",
-                        "Enrolled": "29",
+                    "301": {
+                        "Class Number": "6508 ?",
+                        "Type": "MST",
+                        "Enrolled": "0",
                         "Class Max": "30",
-                        "Seats Available": "1",
-                        "Credit Hours": "3",
-                        "Note": "Students will attend once a week in-person and the other day(s) will participate remotely synchronously. Your instructor will provide more details.",
-                        "Date": "Aug 23, 2021 - Dec 17, 2021",
-                        "Time": "1:30PM - 2:45PM",
-                        "Days": "TR",
-                        "Location": "Peter Kiewit Institute 276",
-                        "Instructor": "Jeff Blackmore"
-                    },
-                    "002": {
-                        "Class Number": "15306 ?",
-                        "Type": "LEC",
-                        "Enrolled": "31",
-                        "Class Max": "30",
-                        "Seats Available": "0",
-                        "Credit Hours": "3",
-                        "Students on Waitlist": "0",
-                        "Note": "Students will attend once a week in-person and the other day(s) will participate remotely synchronously. Your instructor will provide more details.",
-                        "Date": "Aug 23, 2021 - Dec 17, 2021",
-                        "Time": "4:30PM - 5:45PM",
-                        "Days": "MW",
-                        "Location": "Peter Kiewit Institute 276",
-                        "Instructor": "Jeff Blackmore"
-                    },
-                    "820": {
-                        "Class Number": "15308 ?",
-                        "Type": "LEC",
-                        "Enrolled": "32",
-                        "Class Max": "30",
-                        "Seats Available": "0",
-                        "Credit Hours": "3",
-                        "Students on Waitlist": "0",
-                        "Course Attribute": "Remote Learning",
-                        "Note": "This class will be taught remotely via synchronous teaching. Students will need to log in at the specified time but will not physically attend class.",
-                        "Date": "Aug 23, 2021 - Dec 17, 2021",
-                        "Time": "12:00PM - 1:15PM",
-                        "Days": "TR",
-                        "Location": "Remote Learning",
-                        "Instructor": "Pradhip Swaminathan"
-                    },
+                        "Seats Available": "30",
+                        "Credit Hours": "1-6",
+                        "Date": "May 28, 2024 - Aug 16, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "To Be Announced",
+                        "Instructor": "Myoungkyu Song"
+                    }
+                }
+            },
+            "2030": {
+                "title": "MATHEMATICAL FOUNDATIONS OF CS",
+                "desc": "Prereq: (CIST 1400 with grade of C or better) AND (MATH 1930 or MATH 1950 with grade of C- or better)",
+                "prereq": "-",
+                "sections": {
                     "850": {
-                        "Class Number": "15309 ?",
+                        "Class Number": "6510 ?",
                         "Type": "LEC",
                         "Enrolled": "35",
                         "Class Max": "35",
@@ -265,7 +99,50 @@
                         "Credit Hours": "3",
                         "Students on Waitlist": "0",
                         "Course Attribute": "Totally Online",
-                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Date": "Jul 08, 2024 - Aug 16, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Qiuming Zhu"
+                    }
+                }
+            }
+        },
+        "CIST": {
+            "9970": {
+                "title": "RESEARCH OTHER THAN THESIS",
+                "desc": "Prereq: Requires instructor permission. Only open to doctoral students in the IT PhD program. Course cannot be taken for credit after candidacy nor count towards core/major field of study requirements in the IT PhD. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "301": {
+                        "Class Number": "6685 ?",
+                        "Type": "RSC",
+                        "Enrolled": "3",
+                        "Class Max": "5",
+                        "Seats Available": "2",
+                        "Credit Hours": "1-3",
+                        "Date": "May 28, 2024 - Aug 16, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "To Be Announced",
+                        "Instructor": "Ann L Fruhling"
+                    }
+                }
+            },
+            "1400": {
+                "title": "INTRO TO CS I",
+                "desc": "Prereq: MATH 1300, MATH 1320, or MATH 1370 (may be taken concurrently) and one of CIST 1300, CSCI 1200, or CSCI 1280 with a grade of C- or better.",
+                "prereq": "-",
+                "sections": {
+                    "850": {
+                        "Class Number": "6494 ?",
+                        "Type": "LEC",
+                        "Enrolled": "48",
+                        "Class Max": "60",
+                        "Seats Available": "12",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "May 28, 2024 - Aug 16, 2024",
                         "Time": "TBA",
                         "Days": "TBA ",
                         "Location": "Totally Online",
@@ -273,119 +150,66 @@
                     }
                 }
             },
-            "1600": {
-                "title": "PRACTICAL SCRIPTING",
-                "desc": "Prereq: Not intended for students who have completed CIST 1400 and CSCI 1620",
+            "3110": {
+                "title": "IT ETHICS",
+                "desc": "Prereq: ENGL 1150 or placement in a second or third-year writing class, and sophomore standing",
                 "prereq": "-",
                 "sections": {
                     "850": {
-                        "Class Number": "20992 ?",
-                        "Type": "LLB",
-                        "Enrolled": "34",
+                        "Class Number": "6496 ?",
+                        "Type": "LEC",
+                        "Enrolled": "30",
                         "Class Max": "30",
                         "Seats Available": "0",
                         "Credit Hours": "3",
                         "Students on Waitlist": "0",
-                        "Course Attribute": "Totally Online",
-                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Course Attribute": "Humanities and Fine Arts General Education course",
+                        "Date": "May 28, 2024 - Jul 05, 2024",
                         "Time": "TBA",
                         "Days": "TBA ",
                         "Location": "Totally Online",
-                        "Instructor": "Derek Babb"
+                        "Instructor": "Cale L. Corbett"
                     }
                 }
             },
-            "3000": {
-                "title": "ADVANCED COMPOSITION FOR IS&T",
-                "desc": "Prereq: ENGL 1160 (or placement in a 3rd year writing course) and junior standing, or permission of the instructor. Not open to non-degree graduate students.",
+            "1300": {
+                "title": "INTRO TO WEB DEVELOPMENT",
+                "desc": "Prereq: High school algebra or equivalent",
                 "prereq": "-",
                 "sections": {
-                    "001": {
-                        "Class Number": "15758 ?",
-                        "Type": "LEC",
-                        "Enrolled": "21",
-                        "Class Max": "20",
-                        "Seats Available": "0",
-                        "Credit Hours": "3",
-                        "Students on Waitlist": "0",
-                        "Date": "Aug 23, 2021 - Dec 17, 2021",
-                        "Time": "10:30AM - 11:45AM",
-                        "Days": "TR",
-                        "Location": "Peter Kiewit Institute 153",
-                        "Instructor": "Thom Davis"
-                    },
                     "850": {
-                        "Class Number": "15339 ?",
-                        "Type": "LEC",
-                        "Enrolled": "20",
-                        "Class Max": "20",
-                        "Seats Available": "0",
-                        "Credit Hours": "3",
-                        "Students on Waitlist": "0",
-                        "Course Attribute": "Totally Online",
-                        "Date": "Aug 23, 2021 - Dec 17, 2021",
-                        "Time": "TBA",
-                        "Days": "TBA ",
-                        "Location": "Totally Online",
-                        "Instructor": "Sheri Lou Hronek"
-                    },
-                    "851": {
-                        "Class Number": "16607 ?",
-                        "Type": "LEC",
-                        "Enrolled": "20",
-                        "Class Max": "20",
-                        "Seats Available": "0",
-                        "Credit Hours": "3",
-                        "Students on Waitlist": "0",
-                        "Course Attribute": "Totally Online",
-                        "Date": "Aug 23, 2021 - Dec 17, 2021",
-                        "Time": "TBA",
-                        "Days": "TBA ",
-                        "Location": "Totally Online",
-                        "Instructor": "Amanda Lynn Gutierrez"
-                    },
-                    "852": {
-                        "Class Number": "16608 ?",
-                        "Type": "LEC",
-                        "Enrolled": "13",
-                        "Class Max": "20",
-                        "Seats Available": "7",
-                        "Credit Hours": "3",
-                        "Course Attribute": "Totally Online",
-                        "Date": "Aug 23, 2021 - Dec 17, 2021",
-                        "Time": "TBA",
-                        "Days": "TBA ",
-                        "Location": "Totally Online",
-                        "Instructor": "Amanda Lynn Gutierrez"
-                    },
-                    "853": {
-                        "Class Number": "15336 ?",
+                        "Class Number": "6488 ?",
                         "Type": "LEC",
                         "Enrolled": "18",
-                        "Class Max": "20",
-                        "Seats Available": "2",
+                        "Class Max": "30",
+                        "Seats Available": "12",
                         "Credit Hours": "3",
                         "Course Attribute": "Totally Online",
-                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Date": "May 28, 2024 - Aug 16, 2024",
                         "Time": "TBA",
                         "Days": "TBA ",
                         "Location": "Totally Online",
-                        "Instructor": "Thom Davis"
-                    },
-                    "854": {
-                        "Class Number": "15338 ?",
-                        "Type": "LEC",
-                        "Enrolled": "20",
-                        "Class Max": "20",
-                        "Seats Available": "0",
-                        "Credit Hours": "3",
-                        "Students on Waitlist": "0",
-                        "Course Attribute": "Totally Online",
-                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Instructor": "Robert Fulkerson"
+                    }
+                }
+            },
+            "9990": {
+                "title": "DISSERTATION",
+                "desc": "Prereq: Admission to the Ph.D. program in Information Technology. Admission to candidacy for the Ph.D. degree. Prior to enrolling for dissertation hours, the students must have permission of the supervisory committee. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "301": {
+                        "Class Number": "6491 ?",
+                        "Type": "DSR",
+                        "Enrolled": "5",
+                        "Class Max": "10",
+                        "Seats Available": "5",
+                        "Credit Hours": "1-12",
+                        "Date": "May 28, 2024 - Aug 16, 2024",
                         "Time": "TBA",
                         "Days": "TBA ",
-                        "Location": "Totally Online",
-                        "Instructor": "Thom Davis"
+                        "Location": "To Be Announced",
+                        "Instructor": "Ann L Fruhling"
                     }
                 }
             }
