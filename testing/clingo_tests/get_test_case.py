@@ -36,7 +36,6 @@ def create_sample(classes:dict, num_semesters:int, num_departments:int, num_clas
                     list(classes[semester][department][sample_class]['sections'].keys())[0]: list(classes[semester][department][sample_class]['sections'].values())[0]
                     }
             class_list = {class_name: classes[semester][department][class_name] for class_name in class_subset}
-            print(class_list)
             sample_data[semester][department] = class_list
             
     return sample_data
