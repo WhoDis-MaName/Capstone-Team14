@@ -4,7 +4,7 @@ def process_prereq(json_file_path: str) -> dict:
     """Take the json file that contains the current course schedule and process in place to read the prerequisites
 
     Args:
-        json_file_path (str): _description_
+        json_file_path (str): file path to the json file containing the class list_
 
     Returns:
         dict: dictionary containing the processed data
@@ -19,9 +19,7 @@ def process_prereq(json_file_path: str) -> dict:
                 if course_definition['prereq'] == '-':
                     course_definition['prereq'] = []
                 print(course_definition['prereq'])
-                break
-                pass
-            
+                ...            
     return data
 
 
