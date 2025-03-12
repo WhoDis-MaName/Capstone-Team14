@@ -5,9 +5,7 @@ import pytest
 def run_clingo(program_files):
     """Runs Clingo on the given ASP program file and returns the parsed output."""
     cmd = ["clingo"] + program_files
-    # print(f"CMD: {cmd}")
     result = subprocess.run(cmd, capture_output=True, text=True)
-    # print(f"RESULT: {result}")
     return result.stdout  # Adjust parsing as needed
 
 
@@ -49,10 +47,7 @@ def parse_answer_set(output):
 )
 def test_clingo_output(input_files, expected_output):
     output = run_clingo(input_files)
-    print(f"OUTPUT: {output}")
     answer_set = set(parse_answer_set(output))
-    print(f"ANSWER_SET: {answer_set}")
-    print(f"EXPECTED OUTPUT: {expected_output}")
     assert answer_set == expected_output, f"Unexpected output: {answer_set}"
 
 
