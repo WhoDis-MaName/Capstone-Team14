@@ -64,6 +64,14 @@
             border-radius: 3px;
         }
     </style>
+    <script>
+        function runScript(scriptName) {
+            fetch(`/run-script/?script=${scriptName}`)
+                .then(response => response.json())
+                .then(data => alert(`Output: ${data.output || "No output"}\nError: ${data.error || "No errors"}`))
+                .catch(error => alert("Request failed"));
+        }
+    </script>
 </head>
 <body>
 
@@ -90,8 +98,8 @@
 
         <div class="quick-actions section">
             <h2>Quick Actions</h2>
-            <a href="#" class="btn">Check Conflicts</a>
-            <a href="#" class="btn">Optimize Schedule</a>
+            <a href="#" class="btn" onclick="runScript('converter')" >Check Conflicts</a>
+            <a href="#" class="btn" onclick="runScript('identifier')">Optimize Schedule</a>
         </div>
     </div>
 
