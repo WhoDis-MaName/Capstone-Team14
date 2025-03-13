@@ -85,15 +85,15 @@ The final step involves aligning the course schedule with the university’s shu
 
 This project provides an optimized class schedule by reducing conflicts, prioritizing key courses, and considering shuttle coordination. The optimization process balances multiple factors to ensure students can take the courses they need without unnecessary scheduling conflicts.
 
-## Release Notes Version 0.9
+## Release Notes Version 1.3
 
 To run the project, simply launch your virtual environment using:
 
-source myenv/bin/activate
+`source myenv/bin/activate`
 
 After entering virtual environment, download Django:
 
-pip install django
+`pip install -r requirements.txt`
 
 Also Following the steps to install Clingo:
 
@@ -101,7 +101,36 @@ Also Following the steps to install Clingo:
 
 To Launch the current iteration of project, use this command:
 
-python manage.py runserver
+`python manage.py runserver`
+
+- This release has mainly included a foundation for each section(front-end, back-end, and ASP). We've created basic python scripts for parsing through the schedule JSON file and a simple pipeline to convert the filtered CSCI class into ASP formatted rules and constraints. From this, we're able to run a basic constraint identifier that returns which classes conflict with one another. Additionally, we were able to set up two basic buttons that execute this "Run Filterer" and "Run Processor".
+
+To launch django tests, use this command:
+
+`python manage.py test`
+
+## Branches for Version 1.3
+
+- origin/josh/test: Josh and Andra worked on some pytest implementations
+- orign/andra-test2: Test the django testing suite
+
+## Release Notes Version 0.9
+
+To run the project, simply launch your virtual environment using:
+
+`source myenv/bin/activate`
+
+After entering virtual environment, download Django:
+
+`pip install django`
+
+Also Following the steps to install Clingo:
+
+<https://github.com/potassco/clingo?tab=readme-ov-file>
+
+To Launch the current iteration of project, use this command:
+
+`python manage.py runserver`
 
 - This release has mainly included a foundation for each section(front-end, back-end, and ASP). We've created basic python scripts for parsing through the schedule JSON file and a simple pipeline to convert the filtered CSCI class into ASP formatted rules and constraints. From this, we're able to run a basic constraint identifier that returns which classes conflict with one another. Additionally, we were able to set up two basic buttons that execute this "Run Filterer" and "Run Processor".
 
@@ -109,7 +138,7 @@ python manage.py runserver
 
 - origin/josh/test:  mostly ASP/clingo related things I have been working on. Currently working on integrating some tests and bug fixes
 - orign/andra-test2: Generate samples for more specific testing for JSON files
-- andra-testing(deleted):  create web scraping script
-- frank_sand: Mainly JSON file development and DJango environment setup. Some ASP play files for figuring stuff out
+- origin/andra-testing(deleted):  create web scraping script
+- origin/frank_sand: Mainly JSON file development and DJango environment setup. Some ASP play files for figuring stuff out
 - oring/dev: When we are working together (in person) or want to make sure we don't break main
 - main: Main branch where working iteration is found and includes front-end development
