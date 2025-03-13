@@ -87,6 +87,8 @@ This project provides an optimized class schedule by reducing conflicts, priorit
 
 ## Release Notes Version 1.3
 
+### Command Line Deployment
+
 To run the project, simply launch your virtual environment using:
 
 `source myenv/bin/activate`
@@ -109,10 +111,21 @@ To launch django tests, use this command:
 
 `python manage.py test`
 
+### Docker Deployment
+
+To build the docker containter image, move to the root directory for the repository and run:
+
+`docker build capstone-14:latest`
+
+Run the container using:
+
+`docker run --name capstone-14 -p 8000:8000 capstone-14`
+
+
 ## Branches for Version 1.3
 
 - origin/josh/test: Josh and Andra worked on some pytest implementations
-- orign/andra-test2: Test the django testing suite
+- orign/andra-test2: Test the django testing suite. Also tested a template Dockerfile
 
 ## Release Notes Version 0.9
 
