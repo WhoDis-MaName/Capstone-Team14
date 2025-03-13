@@ -111,6 +111,10 @@ To launch django tests, use this command:
 
 `python manage.py test`
 
+We also integrated pytest to test the clingo code. To use pytest, navigate to `\testing\clingo_tests` and use this command:
+
+`pytest -v .\clingo_pytest.py`
+
 ### Docker Deployment
 
 To build the docker containter image, move to the root directory for the repository and run:
@@ -121,11 +125,14 @@ Run the container using:
 
 `docker run --name capstone-14 -p 8000:8000 capstone-14`
 
+*Note* the docker deployment will not perform any tests.
 
 ## Branches for Version 1.3
 
 - origin/josh/test: Josh and Andra worked on some pytest implementations
 - orign/andra-test2: Test the django testing suite. Also tested a template Dockerfile
+- orign/andra-test2: Test the django testing suite
+- orign/main: Vlad and Francisco worked to implement front-end styling on the main branch
 
 ## Release Notes Version 0.9
 
