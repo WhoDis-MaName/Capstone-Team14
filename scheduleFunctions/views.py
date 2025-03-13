@@ -31,7 +31,7 @@ def login(request):
 
 def dashboard_view(request):
     if "username" not in request.session:
-        return redirect("login")  # Redirect to login if not authenticated
+        return redirect("home")  # Redirect to login if not authenticated
 
     # Render the dashboard.html template
     return render(request, "dashboard.html", {"username": request.session["username"]})
