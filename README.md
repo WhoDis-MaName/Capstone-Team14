@@ -109,6 +109,10 @@ To launch django tests, use this command:
 
 `python manage.py test`
 
+We also integrated pytest to test the clingo code. To use pytest, navigate to `\testing\clingo_tests` and use this command:
+
+`pytest -v .\clingo_pytest.py`
+
 ## Branches for Version 1.3
 
 - origin/josh/test: Josh and Andra worked on some pytest implementations
