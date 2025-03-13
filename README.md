@@ -113,6 +113,7 @@ To launch django tests, use this command:
 
 - origin/josh/test: Josh and Andra worked on some pytest implementations
 - orign/andra-test2: Test the django testing suite
+- orign/main: Vlad and Francisco worked to implement front-end styling on the main branch
 
 ## Release Notes Version 0.9
 
