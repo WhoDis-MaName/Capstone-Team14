@@ -7,8 +7,17 @@ from bs4 import BeautifulSoup as bs
 
 
 
-script_path = os.path.dirname(os.path.realpath(__file__))
-data_dir = os.path.join(os.path.split(script_path)[0], 'data') #../data
+if os.name == 'nt':
+    current_directory = os.path.dirname(os.path.realpath(__file__)) # Get current directory
+else:
+    current_directory = os.path.dirname(os.path.realpath(__name__)) # Get current directory
+    
+
+path = current_directory.split(os.sep)
+
+root_index = path.index('Capstone-Team14')
+root_dir = os.sep.join(path[:root_index+1])
+data_dir = os.path.join(root_dir, 'data', 'four_year_plan')
 
 def get_all_tables(soup: bs):
     """Finds all of the tables in the page gathered with BS4
@@ -77,7 +86,7 @@ def process_url(url: str):
     return tables_list
     pass
 
-def main():
+def read_four_year():
     """
         For the page in the computer science four year plan, create a JSON file with the class content organized by year and semester. 
         This data is then used to discover conflicts that are higher priority.
@@ -127,18 +136,20 @@ def main():
             elif row[0].upper() in structured_rows[year].keys():
                 if semester != '':
                     structured_rows[year][semester] = classes_in_semeseter
+                    classes_in_semeseter = []
                 semester = row[0].upper()
             else:
                 if row[0] != '' and len(row) == 3:
                     row[0] = row[0].replace(u'\xa0', ' ')
                     row[0] = row[0].split('or ')
                     row[1] = row[1].split('or ')
+                    renamed_courses = []
+                    for course in row[0]:
+                        renamed_courses.append(course.lower().replace(' ', ''))
+                        
+                    row[0] = renamed_courses
                     classes_in_semeseter.append(row)
-        structured_rows[year] = {
-            'semseter': semester,
-            'classes': classes_in_semeseter
-        }
-        
+        structured_rows[year][semester] = classes_in_semeseter
         # pprint(structured_rows)
         json_data.append(structured_rows)
     print("Finished Gathering Data")
@@ -146,6 +157,5 @@ def main():
     with open(os.path.join(data_dir,'fourYearPlan.json'), 'w') as f:
         json.dump(json_data,f, indent=4)
     
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    read_four_year()
