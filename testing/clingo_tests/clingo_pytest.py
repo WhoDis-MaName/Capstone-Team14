@@ -68,7 +68,7 @@ def parse_answer_set(output):
     [
         (
             ["../test_cases/test_case_00.lp", "../../clingo/identifyconflict.lp"],
-            {"conflict_count(3)"},
+            {"true_conflict_count(3)"},
         ),
     ],
 )
