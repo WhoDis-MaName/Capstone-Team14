@@ -2,11 +2,10 @@ import json
 from datetime import datetime
 
 
-# Convert 12-hour time format to 24-hour format
-# TODO: Update to encode minutes past midnight instead of converting 12:15 AM to 0115, convert to 15.
+# Converting 12 hour time to minutes past midnight, ie: 12:15 AM to 15.
 def convert24(time):
     t = datetime.strptime(time, "%I:%M%p")  # Parse the time string
-    return t.strftime("%H%M")  # Format it into 24-hour format
+    return t.hour * 60 + t.minute  # Convert to total minutes
 
 
 def convert(file):
@@ -27,13 +26,17 @@ def convert(file):
         for subject, courses in subjects.items():
             for course_num, course_info in courses.items():
                 course_id = (
-                    f"{subject}{course_num}".lower().replace(" ", "_").replace(".", "")
+                    f"{subject}{course_num}".lower()
+                    .replace(" ", "_")
+                    .replace(".", "")
+                    .replace("-", "_")
                 )
                 title = (
                     course_info.get("title", "")
                     .lower()
                     .replace(" ", "_")
                     .replace(".", "")
+                    .replace("-", "_")
                 )
                 prereq = (
                     course_info.get("prereq", "none")
@@ -41,6 +44,7 @@ def convert(file):
                     .replace(" ", "_")
                     .replace("-", "none")
                     .replace(".", "")
+                    .replace("-", "_")
                 )
 
                 # Store course fact
@@ -69,18 +73,21 @@ def convert(file):
                         .strip()
                         .lower()
                         .replace(" ", "_")
+                        .replace("-", "_")
                     )
                     location = (
                         section_info.get("Location", "Unknown")
                         .lower()
                         .replace(" ", "_")
                         .replace(".", "")
+                        .replace("-", "_")
                     )
                     instructor = (
                         section_info.get("Instructor", "Unknown")
                         .lower()
                         .replace(" ", "_")
                         .replace(".", "")
+                        .replace("-", "_")
                     )
 
                     # Store section fact
@@ -100,7 +107,8 @@ def convert(file):
     facts.extend(times)  # Since times are already formatted as facts
 
     # Write ASP facts to a file
-    asp_filename = "classes.lp"
+    asp_filename = file.replace(".json", ".lp")
+    # asp_filename = "classes.lp"
     with open(asp_filename, "w") as f:
         f.write("\n".join(facts))
 
