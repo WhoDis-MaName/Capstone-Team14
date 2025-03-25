@@ -12,7 +12,7 @@ path = current_directory.split(os.sep)
 
 root_index = path.index('Capstone-Team14')
 root_dir = os.sep.join(path[:root_index+1])
-data_dir = os.path.join(root_dir, 'data', 'four_year_plan')
+data_dir = os.path.join(root_dir, 'data_files', 'four_year_plan')
 
 def get_plan(filename: str) -> list[dict]:
     with open(filename, 'r') as file:
@@ -137,7 +137,13 @@ def convert_asp(constraints, file):
         # Class in Semester
         for semester in constraints[course]['semesters']:
             file.write(f'course_in_semester({semester}, {course}).\n')
-        ...
+            
+    # Predetermined Rules
+    file.write('equivalent_courses(C1, C3) :- equivalent_courses(C1, C2), equivalent_courses(C2, C3).\n')
+    file.write('course_in_semester(S1, C2) :- equivalent_courses(C1, C2), course_in_semester(S1, C1).\n')
+    file.write('same_semester(C1, C3) :- same_semester(C1, C2), same_semester(C2, C3).\n')
+    file.write('same_semester(C1, C3) :- equivalent_courses(C1, C2), same_semester(C2, C3).\n')
+    
     ...
 
 if __name__ == "__main__":
@@ -146,8 +152,8 @@ if __name__ == "__main__":
     json_file = os.path.join(data_dir, 'constraints.json')
     asp_file = os.path.join(data_dir, 'four_year_plan_constraints.lp')
     
-    with open(json_file, 'w') as f:
-        json.dump(constraints,f, indent=4)
+    # with open(json_file, 'w') as f:
+    #     json.dump(constraints,f, indent=4)
     
     with open(asp_file, 'w') as f:
         convert_asp(constraints, f)

@@ -17,7 +17,7 @@ path = current_directory.split(os.sep)
 
 root_index = path.index('Capstone-Team14')
 root_dir = os.sep.join(path[:root_index+1])
-data_dir = os.path.join(root_dir, 'data', 'four_year_plan')
+data_dir = os.path.join(root_dir, 'data_files', 'four_year_plan')
 
 def get_all_tables(soup: bs):
     """Finds all of the tables in the page gathered with BS4
@@ -86,17 +86,14 @@ def process_url(url: str):
     return tables_list
     pass
 
-def read_four_year():
+def read_four_year(url, output_file):
     """
         For the page in the computer science four year plan, create a JSON file with the class content organized by year and semester. 
         This data is then used to discover conflicts that are higher priority.
     """
-    try:
-        os.makedirs(data_dir)
-    except:
-        pass
+
     
-    tables_list = process_url('https://catalog.unomaha.edu/undergraduate/college-information-science-technology/computer-science/computer-science-bs/#fouryearplantext')
+    tables_list = process_url(url)
     json_data = []
     for table in tables_list[1:]:
         rows = get_table_rows(table)
@@ -154,8 +151,14 @@ def read_four_year():
         json_data.append(structured_rows)
     print("Finished Gathering Data")
     
-    with open(os.path.join(data_dir,'fourYearPlan.json'), 'w') as f:
+    with open(output_file, 'w') as f:
         json.dump(json_data,f, indent=4)
     
 if __name__ == "__main__":
-    read_four_year()
+    try:
+        os.makedirs(data_dir)
+    except:
+        pass
+    filename = os.path.join(data_dir,'fourYearPlan.json')
+    url = 'https://catalog.unomaha.edu/undergraduate/college-information-science-technology/computer-science/computer-science-bs/#fouryearplantext'
+    read_four_year(url, filename)

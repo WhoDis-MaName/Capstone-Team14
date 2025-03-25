@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Course Scheduler</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #000;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+            text-align: center;
+            border-bottom: 3px solid #d00000;
+        }
+        .content{
+            display: flex;
+        }
+        .sidebar {
+            align-items: center;
+            max-width: 200px;
+            margin-right: 20px;
+            padding: 20px;
+            background: white;
+            border-right: 5px solid #d00000;
+        }
+
+        .sidebar h3{
+            text-align: center;
+        }
+
+        .sidebar .btn{
+            display: block;
+        }
+          
+        .container {
+            width: 80%;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #fff;
+            border-left: 5px solid #d00000;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            margin: 0;
+            font-size: 20px;
+            color: #000;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #d00000;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #a00000;
+        }
+
+        .course_btn {
+            background-color: #eeeeee;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        .course_btn:hover {
+            background-color: #afafaf;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background: #eee;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 3px;
+        }
+    </style>
+    <script>
+        function runScript(scriptName) {
+            fetch(`/run-script/?script=${scriptName}`)
+                .then(response => response.json())
+                .then(data => alert(`Output: ${data.output || "No output"}\nError: ${data.error || "No errors"}`))
+                .catch(error => alert("Request failed"));
+        }
+    </script>
+</head>
+<body>
+
+    <header>University Course Scheduler - Schedule</header>
+    <div class='content'>
+        <div class="sidebar">
+            <h3>Select Day</h3>
+            <ul>
+                <li>
+                    <a href="/schedule?day=Mon" class="btn" >
+                        Monday
+                    </a>
+                    <a href="/schedule?day=Tue" class="btn" >
+                        Tuesday
+                    </a>
+                    <a href="/schedule?day=Wed" class="btn" >
+                        Wednesday
+                    </a>
+                    <a href="/schedule?day=Thu" class="btn" >
+                        Thursday
+                    </a>
+                    <a href="/schedule?day=Fri" class="btn" >
+                        Friday
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+        
+        <div class="container">
+            <div class="current-schedule section">
+                <h2>Current Schedule</h2>
+                <ul>
+                    {% for section in course_list %}
+                    <li>
+                        <a href="/schedule?course={{section.course_number}}&section={{section.id}}" class="course_btn" >
+                        {{section.course_number}} - {{section.name}} ({{ section.days|join:"/" }} {{section.start}} - {{section.end}})
+                        </a>
+                    </li>
+                    
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="notifications section">
+                <h2>Notifications</h2>
+                <ul>
+                    {% for conflict in conflict_list %}
+                    <li>Conflict detected: {{conflict}} and {{confict.0}} overlap.</li>
+                    {% endfor %}
+                    <li>Deadline: Course registration closes on September 10th.</li>
+                </ul>
+            </div>
+
+            <div class="quick-actions section">
+                <h2>Quick Actions</h2>
+                <a href="#" class="btn" onclick="runScript('converter')" >Check Conflicts</a>
+                <a href="#" class="btn" onclick="runScript('identifier')">Optimize Schedule</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

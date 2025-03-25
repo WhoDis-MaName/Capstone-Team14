@@ -3,12 +3,12 @@
         "equivalent_courses": [],
         "same_semester": [
             "cist1400",
-            "cmst1110",
-            "csci1200",
-            "math1950",
-            "cmst2120",
             "csci1280",
-            "cist1300"
+            "cmst2120",
+            "cist1300",
+            "cmst1110",
+            "math1950",
+            "csci1200"
         ],
         "credits": "3",
         "semesters": [
@@ -20,12 +20,12 @@
             "cmst2120"
         ],
         "same_semester": [
-            "engl1150",
             "cist1400",
-            "csci1200",
-            "math1950",
             "csci1280",
-            "cist1300"
+            "engl1150",
+            "cist1300",
+            "math1950",
+            "csci1200"
         ],
         "credits": "3",
         "semesters": [
@@ -37,12 +37,12 @@
             "cmst1110"
         ],
         "same_semester": [
-            "engl1150",
             "cist1400",
-            "csci1200",
-            "math1950",
             "csci1280",
-            "cist1300"
+            "engl1150",
+            "cist1300",
+            "math1950",
+            "csci1200"
         ],
         "credits": "3",
         "semesters": [
@@ -51,15 +51,15 @@
     },
     "cist1300": {
         "equivalent_courses": [
-            "csci1200",
-            "csci1280"
+            "csci1280",
+            "csci1200"
         ],
         "same_semester": [
-            "engl1150",
             "cist1400",
+            "cmst2120",
+            "engl1150",
             "cmst1110",
-            "math1950",
-            "cmst2120"
+            "math1950"
         ],
         "credits": "3",
         "semesters": [
@@ -72,11 +72,11 @@
             "cist1300"
         ],
         "same_semester": [
-            "engl1150",
             "cist1400",
+            "cmst2120",
+            "engl1150",
             "cmst1110",
-            "math1950",
-            "cmst2120"
+            "math1950"
         ],
         "credits": "3",
         "semesters": [
@@ -89,11 +89,11 @@
             "cist1300"
         ],
         "same_semester": [
-            "engl1150",
             "cist1400",
+            "cmst2120",
+            "engl1150",
             "cmst1110",
-            "math1950",
-            "cmst2120"
+            "math1950"
         ],
         "credits": "3",
         "semesters": [
@@ -103,13 +103,13 @@
     "math1950": {
         "equivalent_courses": [],
         "same_semester": [
-            "engl1150",
             "cist1400",
-            "cmst1110",
-            "csci1200",
-            "cmst2120",
             "csci1280",
-            "cist1300"
+            "cmst2120",
+            "engl1150",
+            "cist1300",
+            "cmst1110",
+            "csci1200"
         ],
         "credits": "5",
         "semesters": [
@@ -119,15 +119,15 @@
     "cist1400": {
         "equivalent_courses": [],
         "same_semester": [
-            "engl1160",
-            "engl1150",
-            "cmst1110",
             "csci1620",
-            "csci1200",
-            "math1950",
-            "cmst2120",
+            "engl1160",
             "csci1280",
-            "cist1300"
+            "cmst2120",
+            "engl1150",
+            "cist1300",
+            "cmst1110",
+            "math1950",
+            "csci1200"
         ],
         "credits": "3",
         "semesters": [
@@ -149,12 +149,12 @@
     "csci1620": {
         "equivalent_courses": [],
         "same_semester": [
-            "engl1160",
-            "csci2030",
-            "cist2100",
             "cist1400",
-            "cist3110",
             "csci2240",
+            "engl1160",
+            "cist2100",
+            "csci2030",
+            "cist3110",
             "csci2040"
         ],
         "credits": "3",
@@ -167,10 +167,10 @@
         "equivalent_courses": [],
         "same_semester": [
             "csci2240",
-            "csci1620",
-            "csci2040",
+            "cist2100",
             "cist3110",
-            "cist2100"
+            "csci1620",
+            "csci2040"
         ],
         "credits": "3",
         "semesters": [
@@ -180,11 +180,11 @@
     "csci2040": {
         "equivalent_courses": [],
         "same_semester": [
-            "csci2030",
             "csci2240",
-            "csci1620",
+            "csci2030",
+            "cist2100",
             "cist3110",
-            "cist2100"
+            "csci1620"
         ],
         "credits": "1",
         "semesters": [
@@ -194,11 +194,11 @@
     "cist2100": {
         "equivalent_courses": [],
         "same_semester": [
-            "csci2030",
             "csci2240",
+            "csci2030",
+            "cist3110",
             "csci1620",
-            "csci2040",
-            "cist3110"
+            "csci2040"
         ],
         "credits": "3",
         "semesters": [
@@ -208,11 +208,11 @@
     "cist3110": {
         "equivalent_courses": [],
         "same_semester": [
-            "csci2030",
             "csci2240",
+            "cist2100",
+            "csci2030",
             "csci1620",
-            "csci2040",
-            "cist2100"
+            "csci2040"
         ],
         "credits": "3",
         "semesters": [
@@ -222,14 +222,14 @@
     "csci2240": {
         "equivalent_courses": [],
         "same_semester": [
-            "csci2030",
-            "csci1620",
-            "csci2040",
-            "cist3110",
+            "cist2100",
             "math2050",
             "csci3320",
-            "cist2100",
-            "cist2500"
+            "cist2500",
+            "csci2030",
+            "cist3110",
+            "csci1620",
+            "csci2040"
         ],
         "credits": "3",
         "semesters": [
@@ -240,8 +240,8 @@
     "cist2500": {
         "equivalent_courses": [],
         "same_semester": [
-            "csci3320",
             "csci2240",
+            "csci3320",
             "math2050"
         ],
         "credits": "3",
@@ -253,8 +253,8 @@
         "equivalent_courses": [],
         "same_semester": [
             "csci2240",
-            "cist2500",
-            "math2050"
+            "math2050",
+            "cist2500"
         ],
         "credits": "3",
         "semesters": [
@@ -264,11 +264,11 @@
     "math2050": {
         "equivalent_courses": [],
         "same_semester": [
-            "csci3710",
-            "csci3320",
             "csci2240",
-            "cist3000",
-            "cist2500"
+            "cist2500",
+            "csci3320",
+            "csci3710",
+            "cist3000"
         ],
         "credits": "3",
         "semesters": [
@@ -279,8 +279,8 @@
     "cist3000": {
         "equivalent_courses": [],
         "same_semester": [
-            "csci3710",
-            "math2050"
+            "math2050",
+            "csci3710"
         ],
         "credits": "3",
         "semesters": [
@@ -290,8 +290,8 @@
     "csci3710": {
         "equivalent_courses": [],
         "same_semester": [
-            "cist3000",
-            "math2050"
+            "math2050",
+            "cist3000"
         ],
         "credits": "3",
         "semesters": [
@@ -301,8 +301,8 @@
     "csci3550": {
         "equivalent_courses": [],
         "same_semester": [
-            "csci4350",
             "csci4100",
+            "csci4350",
             "csci3660"
         ],
         "credits": "3",
@@ -313,9 +313,9 @@
     "csci3660": {
         "equivalent_courses": [],
         "same_semester": [
-            "csci3550",
             "csci4100",
-            "csci4350"
+            "csci4350",
+            "csci3550"
         ],
         "credits": "3",
         "semesters": [
@@ -326,8 +326,8 @@
         "equivalent_courses": [],
         "same_semester": [
             "csci4350",
-            "csci3550",
-            "csci3660"
+            "csci3660",
+            "csci3550"
         ],
         "credits": "3",
         "semesters": [
@@ -337,9 +337,9 @@
     "csci4350": {
         "equivalent_courses": [],
         "same_semester": [
-            "csci3550",
             "csci4100",
-            "csci3660"
+            "csci3660",
+            "csci3550"
         ],
         "credits": "3",
         "semesters": [
@@ -349,8 +349,8 @@
     "csci4220": {
         "equivalent_courses": [],
         "same_semester": [
-            "csci4830",
-            "csci4500"
+            "csci4500",
+            "csci4830"
         ],
         "credits": "3",
         "semesters": [
@@ -360,8 +360,8 @@
     "csci4500": {
         "equivalent_courses": [],
         "same_semester": [
-            "csci4830",
-            "csci4220"
+            "csci4220",
+            "csci4830"
         ],
         "credits": "3",
         "semesters": [
