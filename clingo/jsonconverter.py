@@ -98,12 +98,13 @@ def convert(file):
                     # Add to sets
                     rooms.add(location)
                     professors.add(instructor)
-                    times.add(f'time_slot("{start}", "{end}", {days}).')
+                    if start != "tba" and end != "tba" and days != "tba":
+                        times.add(f'time_slot("{start}", "{end}", {days}).')
 
     # Convert sets to facts
-    facts.append(f"class({', '.join(classes)}).")
-    facts.append(f"room({', '.join(rooms)}).")
-    facts.append(f"professor({', '.join(professors)}).")
+    facts.append(f"class({'; '.join(classes)}).")
+    facts.append(f"room({'; '.join(rooms)}).")
+    facts.append(f"professor({'; '.join(professors)}).")
     facts.extend(times)  # Since times are already formatted as facts
 
     # Write ASP facts to a file
@@ -113,3 +114,8 @@ def convert(file):
         f.write("\n".join(facts))
 
     # print(f"ASP facts written to {asp_filename}")
+
+
+convert(
+    r"C:\Users\cjgry\Documents\Capstone\Capstone-Team14\testing\test_cases\test_case_00.json"
+)

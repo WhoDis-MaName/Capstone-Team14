@@ -18,14 +18,13 @@ course(csci4000, "assessment", none).
 section(csci4000, s001, c16286, "720", "885", m, to_be_announced, harvey_pe_siy).
 course(csci8456, "introduction_artificial_intell", none).
 section(csci8456, s001, c18572, "810", "885", tr, peter_kiewit_institute_153, jorge_fandinno_garcia).
-class(csci1204, csci4000, cist4540, csci8456, cist9970, csci3710, csci8010, cist3110, cist1010, cist1600).
-room(peter_kiewit_institute_276, totally_online, peter_kiewit_institute_361, peter_kiewit_institute_153, peter_kiewit_institute_157, to_be_announced).
-professor(jorge_fandinno_garcia, derek_babb, karen_sue_allen, hassan_abd_al_rahmanan_farhat, ash_p_ashokan, hollie_rosser, alfredo_perez, ann_l_fruhling, judith_monarrez_diaz_kelsey, harvey_pe_siy).
-time_slot("570", "620", t).
+class(csci8456; cist1600; csci4000; csci8010; cist9970; cist3110; csci1204; csci3710; cist4540; cist1010).
+room(peter_kiewit_institute_153; peter_kiewit_institute_157; peter_kiewit_institute_276; to_be_announced; totally_online; peter_kiewit_institute_361).
+professor(alfredo_perez; hollie_rosser; jorge_fandinno_garcia; ash_p_ashokan; harvey_pe_siy; judith_monarrez_diaz_kelsey; ann_l_fruhling; hassan_abd_al_rahmanan_farhat; derek_babb; karen_sue_allen).
 time_slot("810", "885", tr).
+time_slot("570", "620", t).
 time_slot("630", "705", mw).
-time_slot("900", "975", mw).
-time_slot("tba", "tba", tba).
-time_slot("720", "885", m).
 time_slot("720", "795", f).
+time_slot("900", "975", mw).
 time_slot("780", "855", mw).
+time_slot("720", "885", m).
