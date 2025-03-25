@@ -1,5 +1,5 @@
 import sys, clingo, math
-from jsonconverter import convert
+from clingo.jsonconverter import convert
 import argparse
 
 parser = argparse.ArgumentParser(description="Input class json")
