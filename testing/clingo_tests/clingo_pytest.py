@@ -67,7 +67,7 @@ def parse_answer_set(output):
     "input_files,expected_output",
     [
         (
-            ["../test_cases/test_case_00.lp", "../../identifyconflict.lp"],
+            ["../test_cases/test_case_00.lp", "../../clingo/identifyconflict.lp"],
             {"conflict_count(3)"},
         ),
     ],
