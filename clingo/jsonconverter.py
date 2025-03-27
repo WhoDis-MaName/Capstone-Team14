@@ -25,6 +25,7 @@ def convert(file):
     for term, subjects in data.items():
         for subject, courses in subjects.items():
             for course_num, course_info in courses.items():
+
                 course_id = (
                     f"{subject}{course_num}".lower()
                     .replace(" ", "_")
@@ -89,7 +90,8 @@ def convert(file):
                         .replace(".", "")
                         .replace("-", "_")
                     )
-
+                    if location == "totally_online" or location == "to_be_announced":
+                        continue
                     # Store section fact
                     facts.append(
                         f'section({course_id}, {section_num}, {class_number}, "{start}", "{end}", {days}, {location}, {instructor}).'
@@ -116,6 +118,4 @@ def convert(file):
     # print(f"ASP facts written to {asp_filename}")
 
 
-convert(
-    r"C:\Users\cjgry\Documents\Capstone\Capstone-Team14\testing\test_cases\test_case_00.json"
-)
+convert(r"C:\Users\cjgry\Documents\Capstone\Capstone-Team14\data\filtered.json")

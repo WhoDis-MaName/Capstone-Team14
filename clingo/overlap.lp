@@ -10,4 +10,4 @@ section(C) :- section(C, _, _, _, _, _, _, _).
 % 4 ary section with course, start time, end time, and day
 section(C, S, E, D) :- section(C, _, _, S, E, D, _, _).
 
-overlapping_times(S1, E1, S2, E2) :- section(C1, S1, E1, D1), section(C2, S2, E2, D2), S1 <= E2, S2 <= E1.
+overlapping_times(S1, E1, S2, E2) :- time_slot(S1, E1, _), time_slot(S2, E2, _), S1 <= E2, S2 <= E1.
