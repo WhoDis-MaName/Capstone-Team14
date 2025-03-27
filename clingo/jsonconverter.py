@@ -25,6 +25,7 @@ def convert(file):
     for term, subjects in data.items():
         for subject, courses in subjects.items():
             for course_num, course_info in courses.items():
+
                 course_id = (
                     f"{subject}{course_num}".lower()
                     .replace(" ", "_")
@@ -89,21 +90,27 @@ def convert(file):
                         .replace(".", "")
                         .replace("-", "_")
                     )
-
+                    if (
+                        location == "totally_online"
+                        or location == "to_be_announced"
+                        or start == "tba"
+                    ):
+                        continue
                     # Store section fact
                     facts.append(
-                        f'section({course_id}, {section_num}, {class_number}, "{start}", "{end}", {days}, {location}, {instructor}).'
+                        f"section({course_id}, {section_num}, {class_number}, {start}, {end}, {days}, {location}, {instructor})."
                     )
 
                     # Add to sets
                     rooms.add(location)
                     professors.add(instructor)
-                    times.add(f'time_slot("{start}", "{end}", {days}).')
+                    if start != "tba" and end != "tba" and days != "tba":
+                        times.add(f"time_slot({start}, {end}, {days}).")
 
     # Convert sets to facts
-    facts.append(f"class({', '.join(classes)}).")
-    facts.append(f"room({', '.join(rooms)}).")
-    facts.append(f"professor({', '.join(professors)}).")
+    facts.append(f"class({'; '.join(classes)}).")
+    facts.append(f"room({'; '.join(rooms)}).")
+    facts.append(f"professor({'; '.join(professors)}).")
     facts.extend(times)  # Since times are already formatted as facts
 
     # Write ASP facts to a file
@@ -113,3 +120,6 @@ def convert(file):
         f.write("\n".join(facts))
 
     # print(f"ASP facts written to {asp_filename}")
+
+
+convert(r"C:\Users\cjgry\Documents\Capstone\Capstone-Team14\data\filtered.json")
