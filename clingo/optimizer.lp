@@ -21,10 +21,10 @@ scheduled_section(C, S, E, D) :- scheduled_section(C, S, E, D, _, _).
 % new_conflict(C1, C2) :- new_conflict(C1, C2, _, _, _, _, _, _).
 
 % It cannot be that there are two classes in the same room at the same time
-% :- scheduled_section(C1, S1, E1, D1, R1, P1), scheduled_section(C2, S2, E2, D2, R2, P2), new_conflict(C1, C2), R1 = R2. %, C1!=C2.
+:- scheduled_section(C1, S1, E1, D1, R1, P1), scheduled_section(C2, S2, E2, D2, R2, P2), new_conflict(C1, C2), R1 = R2. %, C1!=C2.
 
 % It cannot be that there are two classes with the same professor at the same time
-% :- scheduled_section(C1, S1, E1, D1, R1, P1), scheduled_section(C2, S2, E2, D2, R2, P2), new_conflict(C1, C2), P1 = P2. %, C1!=C2.
+:- scheduled_section(C1, S1, E1, D1, R1, P1), scheduled_section(C2, S2, E2, D2, R2, P2), new_conflict(C1, C2), P1 = P2. %, C1!=C2.
 
 % It cannot be that there are two sections that are not the same class that overlap. - this is already done in our definition of conflict.
 % :- scheduled_section(C1, S1, E1, D1, R1, P1), scheduled_section(C2, S2, E2, D2, R2, P2), new_conflict(C1, C2), S1!=S2. % [1@3]
@@ -44,4 +44,4 @@ conflict_count(N) :- N = #count{ C1, C2 : new_conflict(C1, C2) }.
 % #show conflict_count/1.
 #show new_conflict_count/1.
 % #show scheduled_section/6.
-% #minimize{1, C1, C2 : new_true_conflict(C1, C2)}.
+#minimize{1, C1, C2 : new_true_conflict(C1, C2)}.

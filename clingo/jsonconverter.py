@@ -90,18 +90,22 @@ def convert(file):
                         .replace(".", "")
                         .replace("-", "_")
                     )
-                    if location == "totally_online" or location == "to_be_announced":
+                    if (
+                        location == "totally_online"
+                        or location == "to_be_announced"
+                        or start == "tba"
+                    ):
                         continue
                     # Store section fact
                     facts.append(
-                        f'section({course_id}, {section_num}, {class_number}, "{start}", "{end}", {days}, {location}, {instructor}).'
+                        f"section({course_id}, {section_num}, {class_number}, {start}, {end}, {days}, {location}, {instructor})."
                     )
 
                     # Add to sets
                     rooms.add(location)
                     professors.add(instructor)
                     if start != "tba" and end != "tba" and days != "tba":
-                        times.add(f'time_slot("{start}", "{end}", {days}).')
+                        times.add(f"time_slot({start}, {end}, {days}).")
 
     # Convert sets to facts
     facts.append(f"class({'; '.join(classes)}).")

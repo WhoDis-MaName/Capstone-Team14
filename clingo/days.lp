@@ -6,8 +6,11 @@ day(tr).
 day(w).
 day(r).
 day(f).
+day(mf).
 
 % Direct overlaps
+overlapping_days(mf, m).
+overlapping_days(mf, f).
 overlapping_days(mw, m).
 overlapping_days(mw, w).
 overlapping_days(tr, t).
