@@ -17,10 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from scheduleFunctions.views import run_script  # Import the view for schedulerApp functions
-from scheduleFunctions.views import login, dashboard_view
+from scheduleFunctions.views import login, dashboard_view, upload_json_file, run_converter
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('run-script/', run_script, name='run_script'),
+    path('run-script/', run_converter, name='run_converter'),
     path('', login, name='home'),  # Add homepage route
     path('dashboard/', dashboard_view, name='dashboard'),
+    path('upload/', upload_json_file, name='upload_json_file'),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
