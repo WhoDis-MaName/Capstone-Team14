@@ -94,7 +94,7 @@ This project provides an optimized class schedule by reducing conflicts, priorit
 
    Overall, refactored much of the codebase for better organization along with ensuring user input management rather than static file handling.
    JSON file filtering and conversion has been finalized and Clingo pipeline is working. Current limitations are finding ways to save time on Clingo processing speeds
-   potentially by stream lining they way data is being sent to Clingo files to prevent bottlenecks. 
+   potentially by stream lining they way data is being sent to Clingo files to prevent bottlenecks. Visual aspect of the front-end was not fully implemented, due to needing to finalize how Clingo will present the data and how to make this dynamically generate. However, proper connections that are secure between front-end and back-end have been integrated for our interfae files, and some ui additions(file upload and success message) were successfully added.
 ## Branches for Version 1.4
 
 - origin/josh/test: Josh and Andra worked on some pytest implementations
