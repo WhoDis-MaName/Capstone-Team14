@@ -85,6 +85,24 @@ The final step involves aligning the course schedule with the university’s shu
 
 This project provides an optimized class schedule by reducing conflicts, prioritizing key courses, and considering shuttle coordination. The optimization process balances multiple factors to ensure students can take the courses they need without unnecessary scheduling conflicts.
 
+## Release Notes Version 1.4
+   # Features
+   * Implemented media upload functionality via a streamlined upload button
+   * Enabled secure storage of uploaded media files
+   * Integrated dynamic filter handling within a unified processing file
+   * Automated JSON-to-ASP conversion for seamless logic translation
+
+   Overall, refactored much of the codebase for better organization along with ensuring user input management rather than static file handling.
+   JSON file filtering and conversion has been finalized and Clingo pipeline is working. Current limitations are finding ways to save time on Clingo processing speeds
+   potentially by stream lining they way data is being sent to Clingo files to prevent bottlenecks. 
+## Branches for Version 1.4
+
+- origin/josh/test: Josh and Andra worked on some pytest implementations
+- orign/andra-test2: Added more functionality to extract info from course plan and Docker work
+- orign/main: Main branch to be merged in future once dev branch is fully fleshed out
+- dev: Branch meant for testing out pre-release program runs which include front-end and back-end functionalities before deployment to main. Where nearly everything of
+   milestone 2 should be.
+
 ## Release Notes Version 1.3
 
 ### Command Line Deployment
