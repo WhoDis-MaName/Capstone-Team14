@@ -83,7 +83,11 @@ def process_url(url: str):
     print(f"[+] Found a total of {len(tables_list)} tables.")
     if len(tables_list) == 0:
         print(f'No Data: {url}')
-    return tables_list
+    
+    tables=[]
+    for table in tables_list:
+        tables.append(get_table_rows(table))
+    return tables
     pass
 
 def read_four_year(url, output_file):
@@ -96,7 +100,6 @@ def read_four_year(url, output_file):
     tables_list = process_url(url)
     json_data = []
     for table in tables_list[1:]:
-        rows = get_table_rows(table)
         structured_rows = {
             'First Year': {
                 'FALL': [],
@@ -118,17 +121,15 @@ def read_four_year(url, output_file):
         classes_in_semeseter = []
         year = ''
         semester = ''
-        for row in rows:
+        for row in table:
             # print(row)
             # print(len(row))
             if row[0] in structured_rows.keys():
                 if semester != '':
                     structured_rows[year][semester] = classes_in_semeseter
-                    year = row[0]
                     classes_in_semeseter = []
                     semester = ''
-                elif year == '':
-                    year = row[0]
+                year = row[0]
                     
             elif row[0].upper() in structured_rows[year].keys():
                 if semester != '':
