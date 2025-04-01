@@ -41,7 +41,16 @@ new_true_conflict(C1, C2) :- new_conflict(C1, C2), new_conflict(C2, C1), not new
 new_conflict_count(N) :- N = #count{ C1, C2 : new_true_conflict(C1, C2) }.
 conflict_count(N) :- N = #count{ C1, C2 : new_conflict(C1, C2) }.
 
+% TODO: set english II and various other classes as facts/unchanging facts
+
+% TODO: add new definition for conflict s.t. we have a conflict 
+% between 2 courses if all of their sections are in conflict
+
+% TODO: updated conflict_count(N) s.t. it counts nodes instead of edges
+
 % #show conflict_count/1.
 #show new_conflict_count/1.
 % #show scheduled_section/6.
 #minimize{1, C1, C2 : new_true_conflict(C1, C2)}.
+
+% -> start simple and only allow mw and th
