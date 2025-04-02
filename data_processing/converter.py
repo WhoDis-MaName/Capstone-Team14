@@ -1,8 +1,25 @@
 import json
 import re
+import os
 
+if os.name == 'nt':
+    current_directory = os.path.dirname(os.path.realpath(__file__)) # Get current directory
+else:
+    current_directory = os.path.dirname(os.path.realpath(__name__)) # Get current directory
+    
+
+path = current_directory.split(os.sep)
+
+root_index = path.index('Capstone-Team14')
+root_dir = os.sep.join(path[:root_index+1])
+data_dir = os.path.join(root_dir, 'data_files', 'uploaded_schedule')
+
+try:
+    os.makedirs(data_dir)
+except:
+    pass
 # Load the JSON file
-file_path = "filtered.json"
+file_path = os.path.join(data_dir,"filtered.json")
 with open(file_path, "r") as file:
     data = json.load(file)
 
@@ -46,7 +63,8 @@ for term, subjects in data.items():
                 course_prereqs[course_key] = structured_prereq
 
 # Generate ASP facts
-with open("courses.lp", "w") as f:
+lp_file = os.path.join(root_dir,"courses.lp")
+with open(lp_file, "w") as f:
     for course, prereq in course_prereqs.items():
         f.write(f"prereq({course}, {prereq}).\n")
 
