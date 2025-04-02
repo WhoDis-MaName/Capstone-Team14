@@ -1,0 +1,166 @@
+\doxysection{converter Namespace Reference}
+\hypertarget{namespaceconverter}{}\label{namespaceconverter}\index{converter@{converter}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceconverter_a814ed471ae64d1b1640bd217d461512b}{clean\+\_\+course\+\_\+name}} (course)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{namespaceconverter_a467eb33e56ef909081ca0531a012b9ce}{file\+\_\+path}} = "{}filtered.\+json"{}
+\item 
+\mbox{\hyperlink{namespaceconverter_a1e1cb5282251941da3be7c61d30afc7c}{data}} = json.\+load(file)
+\item 
+dict \mbox{\hyperlink{namespaceconverter_aa2ba91e7e32e1307f84d38f304a2c1c2}{course\+\_\+prereqs}} = \{\}
+\item 
+\mbox{\hyperlink{namespaceconverter_a6436489b70aae83abab96952b28d4d76}{strict\+\_\+prereq\+\_\+pattern}} = re.\+compile(r"{}(\mbox{[}\textbackslash{}w\textbackslash{}s\mbox{]}+) with C\mbox{[}-\/\mbox{]}? or better\texorpdfstring{$\vert$}{|}(\mbox{[}\textbackslash{}w\textbackslash{}s\mbox{]}+) AND\texorpdfstring{$\vert$}{|}(\mbox{[}\textbackslash{}w\textbackslash{}s\mbox{]}+) OR"{})
+\item 
+\mbox{\hyperlink{namespaceconverter_a7f03e5e6717e79930fb4d031eb1b430a}{title}} = course\+\_\+info.\+get("{}title"{}, "{}Unknown Title"{})
+\item 
+\mbox{\hyperlink{namespaceconverter_a011c51ef165c610a450f6a7581181369}{prereq\+\_\+text}} = course\+\_\+info.\+get("{}desc"{}, "{}"{})
+\item 
+\mbox{\hyperlink{namespaceconverter_adc457b046e3e739e47decc226d3d9de9}{prereq\+\_\+part}} = prereq\+\_\+text.\+split("{}Prereq\+:"{})\mbox{[}1\mbox{]}.strip()
+\item 
+\mbox{\hyperlink{namespaceconverter_a7cd336fae1cec5700a3b7018c4995da4}{matches}} = strict\+\_\+prereq\+\_\+pattern.\+findall(\mbox{\hyperlink{namespaceconverter_adc457b046e3e739e47decc226d3d9de9}{prereq\+\_\+part}})
+\item 
+\mbox{\hyperlink{namespaceconverter_a940deb3778e0814b3858f19f3dd72a8b}{all\+\_\+prereqs}} = set()
+\item 
+str \mbox{\hyperlink{namespaceconverter_a7352e1f0850b48b9f1e548a514486a25}{structured\+\_\+prereq}} = f"{}choice(\mbox{[}\{\textquotesingle{}, \textquotesingle{}.join(\mbox{\hyperlink{namespaceconverter_a940deb3778e0814b3858f19f3dd72a8b}{all\+\_\+prereqs}})\}\mbox{]})"{}
+\item 
+str \mbox{\hyperlink{namespaceconverter_abe801b4b3d9e4600db786b4476976e09}{course\+\_\+key}} = f"{}\{\mbox{\hyperlink{namespaceconverter_a814ed471ae64d1b1640bd217d461512b}{clean\+\_\+course\+\_\+name}}(subject)\}\+\_\+\{course\+\_\+number\}"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceconverter_a814ed471ae64d1b1640bd217d461512b}\index{converter@{converter}!clean\_course\_name@{clean\_course\_name}}
+\index{clean\_course\_name@{clean\_course\_name}!converter@{converter}}
+\doxysubsubsection{\texorpdfstring{clean\_course\_name()}{clean\_course\_name()}}
+{\footnotesize\ttfamily \label{namespaceconverter_a814ed471ae64d1b1640bd217d461512b} 
+converter.\+clean\+\_\+course\+\_\+name (\begin{DoxyParamCaption}\item[{}]{course}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00016}{16}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \textcolor{keyword}{def\ }clean\_course\_name(course): }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordflow}{return}\ course.strip().replace(\textcolor{stringliteral}{"{}\ "{}},\ \textcolor{stringliteral}{"{}\_"{}}).lower() }
+\DoxyCodeLine{00018\  }
+\DoxyCodeLine{00019\ \textcolor{comment}{\#\ Traverse\ the\ data\ structure }}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceconverter_a940deb3778e0814b3858f19f3dd72a8b}\index{converter@{converter}!all\_prereqs@{all\_prereqs}}
+\index{all\_prereqs@{all\_prereqs}!converter@{converter}}
+\doxysubsubsection{\texorpdfstring{all\_prereqs}{all\_prereqs}}
+{\footnotesize\ttfamily \label{namespaceconverter_a940deb3778e0814b3858f19f3dd72a8b} 
+converter.\+all\+\_\+prereqs = set()}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00032}{32}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+
+\Hypertarget{namespaceconverter_abe801b4b3d9e4600db786b4476976e09}\index{converter@{converter}!course\_key@{course\_key}}
+\index{course\_key@{course\_key}!converter@{converter}}
+\doxysubsubsection{\texorpdfstring{course\_key}{course\_key}}
+{\footnotesize\ttfamily \label{namespaceconverter_abe801b4b3d9e4600db786b4476976e09} 
+str converter.\+course\+\_\+key = f"{}\{\mbox{\hyperlink{namespaceconverter_a814ed471ae64d1b1640bd217d461512b}{clean\+\_\+course\+\_\+name}}(subject)\}\+\_\+\{course\+\_\+number\}"{}}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00045}{45}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+
+\Hypertarget{namespaceconverter_aa2ba91e7e32e1307f84d38f304a2c1c2}\index{converter@{converter}!course\_prereqs@{course\_prereqs}}
+\index{course\_prereqs@{course\_prereqs}!converter@{converter}}
+\doxysubsubsection{\texorpdfstring{course\_prereqs}{course\_prereqs}}
+{\footnotesize\ttfamily \label{namespaceconverter_aa2ba91e7e32e1307f84d38f304a2c1c2} 
+dict converter.\+course\+\_\+prereqs = \{\}}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00010}{10}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+
+\Hypertarget{namespaceconverter_a1e1cb5282251941da3be7c61d30afc7c}\index{converter@{converter}!data@{data}}
+\index{data@{data}!converter@{converter}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \label{namespaceconverter_a1e1cb5282251941da3be7c61d30afc7c} 
+converter.\+data = json.\+load(file)}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00007}{7}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+
+\Hypertarget{namespaceconverter_a467eb33e56ef909081ca0531a012b9ce}\index{converter@{converter}!file\_path@{file\_path}}
+\index{file\_path@{file\_path}!converter@{converter}}
+\doxysubsubsection{\texorpdfstring{file\_path}{file\_path}}
+{\footnotesize\ttfamily \label{namespaceconverter_a467eb33e56ef909081ca0531a012b9ce} 
+str converter.\+file\+\_\+path = "{}filtered.\+json"{}}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00005}{5}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+
+\Hypertarget{namespaceconverter_a7cd336fae1cec5700a3b7018c4995da4}\index{converter@{converter}!matches@{matches}}
+\index{matches@{matches}!converter@{converter}}
+\doxysubsubsection{\texorpdfstring{matches}{matches}}
+{\footnotesize\ttfamily \label{namespaceconverter_a7cd336fae1cec5700a3b7018c4995da4} 
+converter.\+matches = strict\+\_\+prereq\+\_\+pattern.\+findall(\mbox{\hyperlink{namespaceconverter_adc457b046e3e739e47decc226d3d9de9}{prereq\+\_\+part}})}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00031}{31}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+
+\Hypertarget{namespaceconverter_adc457b046e3e739e47decc226d3d9de9}\index{converter@{converter}!prereq\_part@{prereq\_part}}
+\index{prereq\_part@{prereq\_part}!converter@{converter}}
+\doxysubsubsection{\texorpdfstring{prereq\_part}{prereq\_part}}
+{\footnotesize\ttfamily \label{namespaceconverter_adc457b046e3e739e47decc226d3d9de9} 
+converter.\+prereq\+\_\+part = prereq\+\_\+text.\+split("{}Prereq\+:"{})\mbox{[}1\mbox{]}.strip()}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00028}{28}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+
+\Hypertarget{namespaceconverter_a011c51ef165c610a450f6a7581181369}\index{converter@{converter}!prereq\_text@{prereq\_text}}
+\index{prereq\_text@{prereq\_text}!converter@{converter}}
+\doxysubsubsection{\texorpdfstring{prereq\_text}{prereq\_text}}
+{\footnotesize\ttfamily \label{namespaceconverter_a011c51ef165c610a450f6a7581181369} 
+converter.\+prereq\+\_\+text = course\+\_\+info.\+get("{}desc"{}, "{}"{})}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00024}{24}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+
+\Hypertarget{namespaceconverter_a6436489b70aae83abab96952b28d4d76}\index{converter@{converter}!strict\_prereq\_pattern@{strict\_prereq\_pattern}}
+\index{strict\_prereq\_pattern@{strict\_prereq\_pattern}!converter@{converter}}
+\doxysubsubsection{\texorpdfstring{strict\_prereq\_pattern}{strict\_prereq\_pattern}}
+{\footnotesize\ttfamily \label{namespaceconverter_a6436489b70aae83abab96952b28d4d76} 
+converter.\+strict\+\_\+prereq\+\_\+pattern = re.\+compile(r"{}(\mbox{[}\textbackslash{}w\textbackslash{}s\mbox{]}+) with C\mbox{[}-\/\mbox{]}? or better\texorpdfstring{$\vert$}{|}(\mbox{[}\textbackslash{}w\textbackslash{}s\mbox{]}+) AND\texorpdfstring{$\vert$}{|}(\mbox{[}\textbackslash{}w\textbackslash{}s\mbox{]}+) OR"{})}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00013}{13}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+
+\Hypertarget{namespaceconverter_a7352e1f0850b48b9f1e548a514486a25}\index{converter@{converter}!structured\_prereq@{structured\_prereq}}
+\index{structured\_prereq@{structured\_prereq}!converter@{converter}}
+\doxysubsubsection{\texorpdfstring{structured\_prereq}{structured\_prereq}}
+{\footnotesize\ttfamily \label{namespaceconverter_a7352e1f0850b48b9f1e548a514486a25} 
+str converter.\+structured\+\_\+prereq = f"{}choice(\mbox{[}\{\textquotesingle{}, \textquotesingle{}.join(\mbox{\hyperlink{namespaceconverter_a940deb3778e0814b3858f19f3dd72a8b}{all\+\_\+prereqs}})\}\mbox{]})"{}}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00040}{40}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+
+\Hypertarget{namespaceconverter_a7f03e5e6717e79930fb4d031eb1b430a}\index{converter@{converter}!title@{title}}
+\index{title@{title}!converter@{converter}}
+\doxysubsubsection{\texorpdfstring{title}{title}}
+{\footnotesize\ttfamily \label{namespaceconverter_a7f03e5e6717e79930fb4d031eb1b430a} 
+converter.\+title = course\+\_\+info.\+get("{}title"{}, "{}Unknown Title"{})}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00023}{23}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+

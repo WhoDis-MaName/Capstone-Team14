@@ -1,0 +1,122 @@
+\doxysection{schedule\+Functions.\+models.\+Section Class Reference}
+\hypertarget{classschedule_functions_1_1models_1_1_section}{}\label{classschedule_functions_1_1models_1_1_section}\index{scheduleFunctions.models.Section@{scheduleFunctions.models.Section}}
+Inheritance diagram for schedule\+Functions.\+models.\+Section\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classschedule_functions_1_1models_1_1_section}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classschedule_functions_1_1models_1_1_section_ac1a01a3f3192561ce03cddf1b142b04e}{course}} = models.\+Foreign\+Key(\mbox{\hyperlink{classschedule_functions_1_1models_1_1_course}{Course}}, on\+\_\+delete = models.\+CASCADE)
+\item 
+\mbox{\hyperlink{classschedule_functions_1_1models_1_1_section_a8f877842beec7d17d877b9b7b36a8c6b}{section\+\_\+id}} = models.\+Integer\+Field()
+\item 
+\mbox{\hyperlink{classschedule_functions_1_1models_1_1_section_ab0a4f92b832f67858660d864590c31d5}{professor}} = models.\+Char\+Field(max\+\_\+length=255)
+\item 
+\mbox{\hyperlink{classschedule_functions_1_1models_1_1_section_a6ba2b028316af38728a06626d1ae66bc}{start\+\_\+time}} = models.\+Integer\+Field()
+\item 
+\mbox{\hyperlink{classschedule_functions_1_1models_1_1_section_ab825fe866c6c3d665e246f1b1964b4ec}{end\+\_\+time}} = models.\+Integer\+Field()
+\item 
+\mbox{\hyperlink{classschedule_functions_1_1models_1_1_section_a09e0f096b507492c64b01dcb45a74f21}{days}} = models.\+Many\+To\+Many\+Field(\mbox{\hyperlink{classschedule_functions_1_1models_1_1_day}{Day}})
+\item 
+\mbox{\hyperlink{classschedule_functions_1_1models_1_1_section_ac461ffe542489a4d6e8d220dd534527e}{room}} = models.\+Foreign\+Key(\mbox{\hyperlink{classschedule_functions_1_1models_1_1_room}{Room}}, on\+\_\+delete = models.\+SET\+\_\+\+NULL)
+\item 
+\mbox{\hyperlink{classschedule_functions_1_1models_1_1_section_a6481a344ca27ed84cd54cb0fdfc2f939}{schdule}} = models.\+Foreign\+Key(\mbox{\hyperlink{classschedule_functions_1_1models_1_1_schedule}{Schedule}}, on\+\_\+delete = models.\+CASCADE)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00071}{71}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classschedule_functions_1_1models_1_1_section_ac1a01a3f3192561ce03cddf1b142b04e}\index{scheduleFunctions.models.Section@{scheduleFunctions.models.Section}!course@{course}}
+\index{course@{course}!scheduleFunctions.models.Section@{scheduleFunctions.models.Section}}
+\doxysubsubsection{\texorpdfstring{course}{course}}
+{\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_section_ac1a01a3f3192561ce03cddf1b142b04e} 
+schedule\+Functions.\+models.\+Section.\+course = models.\+Foreign\+Key(\mbox{\hyperlink{classschedule_functions_1_1models_1_1_course}{Course}}, on\+\_\+delete = models.\+CASCADE)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00072}{72}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
+
+\Hypertarget{classschedule_functions_1_1models_1_1_section_a09e0f096b507492c64b01dcb45a74f21}\index{scheduleFunctions.models.Section@{scheduleFunctions.models.Section}!days@{days}}
+\index{days@{days}!scheduleFunctions.models.Section@{scheduleFunctions.models.Section}}
+\doxysubsubsection{\texorpdfstring{days}{days}}
+{\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_section_a09e0f096b507492c64b01dcb45a74f21} 
+schedule\+Functions.\+models.\+Section.\+days = models.\+Many\+To\+Many\+Field(\mbox{\hyperlink{classschedule_functions_1_1models_1_1_day}{Day}})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00077}{77}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
+
+\Hypertarget{classschedule_functions_1_1models_1_1_section_ab825fe866c6c3d665e246f1b1964b4ec}\index{scheduleFunctions.models.Section@{scheduleFunctions.models.Section}!end\_time@{end\_time}}
+\index{end\_time@{end\_time}!scheduleFunctions.models.Section@{scheduleFunctions.models.Section}}
+\doxysubsubsection{\texorpdfstring{end\_time}{end\_time}}
+{\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_section_ab825fe866c6c3d665e246f1b1964b4ec} 
+schedule\+Functions.\+models.\+Section.\+end\+\_\+time = models.\+Integer\+Field()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00076}{76}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
+
+\Hypertarget{classschedule_functions_1_1models_1_1_section_ab0a4f92b832f67858660d864590c31d5}\index{scheduleFunctions.models.Section@{scheduleFunctions.models.Section}!professor@{professor}}
+\index{professor@{professor}!scheduleFunctions.models.Section@{scheduleFunctions.models.Section}}
+\doxysubsubsection{\texorpdfstring{professor}{professor}}
+{\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_section_ab0a4f92b832f67858660d864590c31d5} 
+schedule\+Functions.\+models.\+Section.\+professor = models.\+Char\+Field(max\+\_\+length=255)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00074}{74}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
+
+\Hypertarget{classschedule_functions_1_1models_1_1_section_ac461ffe542489a4d6e8d220dd534527e}\index{scheduleFunctions.models.Section@{scheduleFunctions.models.Section}!room@{room}}
+\index{room@{room}!scheduleFunctions.models.Section@{scheduleFunctions.models.Section}}
+\doxysubsubsection{\texorpdfstring{room}{room}}
+{\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_section_ac461ffe542489a4d6e8d220dd534527e} 
+schedule\+Functions.\+models.\+Section.\+room = models.\+Foreign\+Key(\mbox{\hyperlink{classschedule_functions_1_1models_1_1_room}{Room}}, on\+\_\+delete = models.\+SET\+\_\+\+NULL)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00078}{78}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
+
+\Hypertarget{classschedule_functions_1_1models_1_1_section_a6481a344ca27ed84cd54cb0fdfc2f939}\index{scheduleFunctions.models.Section@{scheduleFunctions.models.Section}!schdule@{schdule}}
+\index{schdule@{schdule}!scheduleFunctions.models.Section@{scheduleFunctions.models.Section}}
+\doxysubsubsection{\texorpdfstring{schdule}{schdule}}
+{\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_section_a6481a344ca27ed84cd54cb0fdfc2f939} 
+schedule\+Functions.\+models.\+Section.\+schdule = models.\+Foreign\+Key(\mbox{\hyperlink{classschedule_functions_1_1models_1_1_schedule}{Schedule}}, on\+\_\+delete = models.\+CASCADE)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00079}{79}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
+
+\Hypertarget{classschedule_functions_1_1models_1_1_section_a8f877842beec7d17d877b9b7b36a8c6b}\index{scheduleFunctions.models.Section@{scheduleFunctions.models.Section}!section\_id@{section\_id}}
+\index{section\_id@{section\_id}!scheduleFunctions.models.Section@{scheduleFunctions.models.Section}}
+\doxysubsubsection{\texorpdfstring{section\_id}{section\_id}}
+{\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_section_a8f877842beec7d17d877b9b7b36a8c6b} 
+schedule\+Functions.\+models.\+Section.\+section\+\_\+id = models.\+Integer\+Field()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00073}{73}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
+
+\Hypertarget{classschedule_functions_1_1models_1_1_section_a6ba2b028316af38728a06626d1ae66bc}\index{scheduleFunctions.models.Section@{scheduleFunctions.models.Section}!start\_time@{start\_time}}
+\index{start\_time@{start\_time}!scheduleFunctions.models.Section@{scheduleFunctions.models.Section}}
+\doxysubsubsection{\texorpdfstring{start\_time}{start\_time}}
+{\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_section_a6ba2b028316af38728a06626d1ae66bc} 
+schedule\+Functions.\+models.\+Section.\+start\+\_\+time = models.\+Integer\+Field()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00075}{75}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+schedule\+Functions/models.\+py\end{DoxyCompactItemize}

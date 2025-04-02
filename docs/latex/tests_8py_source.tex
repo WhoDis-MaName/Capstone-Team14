@@ -1,0 +1,71 @@
+\doxysection{tests.\+py}
+\hypertarget{tests_8py_source}{}\label{tests_8py_source}\index{scheduleFunctions/tests.py@{scheduleFunctions/tests.py}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00001}00001\ \textcolor{keyword}{from}\ django.test\ \textcolor{keyword}{import}\ TestCase}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00002}00002\ \textcolor{keyword}{from}\ django.urls\ \textcolor{keyword}{import}\ reverse}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00004}00004\ login\_name\ =\ \textcolor{stringliteral}{"{}home"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00005}00005\ dashboard\_name\ =\ \textcolor{stringliteral}{"{}dashboard"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00006}00006\ run\_script\_name\ =\ \textcolor{stringliteral}{"{}run\_script"{}}}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00007}\mbox{\hyperlink{classschedule_functions_1_1tests_1_1_login_view_tests}{00007}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classschedule_functions_1_1tests_1_1_login_view_tests}{LoginViewTests}}(TestCase):}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00008}00008\ \ \ \ \ \textcolor{keyword}{def\ }checkLoginExists(self):}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00009}00009\ \ \ \ \ \ \ \ \ response\ =\ self.client.get(reverse(login\_name))}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00010}00010\ \ \ \ \ \ \ \ \ self.assertEqual(response.status\_code,\ 200)}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00011}00011\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{def\ }testLoginSuccess(self):}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00013}00013\ \ \ \ \ \ \ \ \ form\_data\ =\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'username'}:\ \textcolor{stringliteral}{'testUser'},}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'password'}:\ \textcolor{stringliteral}{'complexpassword'},}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ ...\ other\ fields}}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00017}00017\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00018}00018\ \ \ \ \ \ \ \ \ response\ =\ self.client.post(reverse(login\_name),\ form\_data)}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00019}00019\ \ \ \ \ \ \ \ \ self.assertEqual(response.status\_code,\ 302)}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00020}00020\ \ \ \ \ \ \ \ \ self.assertEqual(self.client.session[\textcolor{stringliteral}{'username'}],\ \textcolor{stringliteral}{'testUser'})}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00021}00021\ \ \ \ \ \ \ \ \ ...}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00022}00022\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{def\ }testLoginFail(self):}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00024}00024\ \ \ \ \ \ \ \ \ form\_data\ =\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'username'}:\ \textcolor{stringliteral}{'testUser'},}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'password'}:\ \textcolor{stringliteral}{'badPassword'},}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ ...\ other\ fields}}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00028}00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00029}00029\ \ \ \ \ \ \ \ \ response\ =\ self.client.post(reverse(login\_name),\ form\_data)}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00030}00030\ \ \ \ \ \ \ \ \ self.assertEqual(response.status\_code,\ 401)}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00031}00031\ \ \ \ \ \ \ \ \ ...}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00032}00032\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00033}\mbox{\hyperlink{classschedule_functions_1_1tests_1_1_dashboard_view_tests}{00033}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classschedule_functions_1_1tests_1_1_dashboard_view_tests}{DashboardViewTests}}(TestCase):}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{def\ }testUserlessRedirect(self):}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00035}00035\ \ \ \ \ \ \ \ \ response\ =\ self.client.get(reverse(dashboard\_name))}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00036}00036\ \ \ \ \ \ \ \ \ self.assertEqual(response.status\_code,\ 302)}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00037}00037\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{def\ }testDashboardSession(self):}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00039}00039\ \ \ \ \ \ \ \ \ session\ =\ self.client.session}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00040}00040\ \ \ \ \ \ \ \ \ session[\textcolor{stringliteral}{'username'}]\ =\ \textcolor{stringliteral}{'testUser'}}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00041}00041\ \ \ \ \ \ \ \ \ session.save()}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00042}00042\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00043}00043\ \ \ \ \ \ \ \ \ response\ =\ self.client.get(reverse(dashboard\_name))}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00044}00044\ \ \ \ \ \ \ \ \ self.assertEqual(response.status\_code,\ 200)}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00045}00045\ \ \ \ \ \ \ \ \ self.assertEqual(self.client.session[\textcolor{stringliteral}{'username'}],\ \textcolor{stringliteral}{'testUser'})}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00046}00046\ \ \ \ \ \ \ \ \ ...}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00047}00047\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00048}\mbox{\hyperlink{classschedule_functions_1_1tests_1_1_script_view_tests}{00048}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classschedule_functions_1_1tests_1_1_script_view_tests}{ScriptViewTests}}(TestCase):}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00049}00049\ \ \ \ \ \textcolor{keyword}{def\ }testScriptRun\_converter(self):}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00050}00050\ \ \ \ \ \ \ \ \ form\_data\ =\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'script'}:\ \textcolor{stringliteral}{'converter'},}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ ...\ other\ fields}}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00053}00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00054}00054\ \ \ \ \ \ \ \ \ response\ =\ self.client.get(reverse(run\_script\_name),\ form\_data)}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00055}00055\ \ \ \ \ \ \ \ \ self.assertEqual(response.status\_code,\ 200)}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00056}00056\ \ \ \ \ \ \ \ \ ...}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00057}00057\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00058}00058\ \ \ \ \ \textcolor{keyword}{def\ }testScriptRun\_identifier(self):}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00059}00059\ \ \ \ \ \ \ \ \ form\_data\ =\ \{}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'script'}:\ \textcolor{stringliteral}{'identifier'},}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ ...\ other\ fields}}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00062}00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00063}00063\ \ \ \ \ \ \ \ \ response\ =\ self.client.get(reverse(run\_script\_name),\ form\_data)}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00064}00064\ \ \ \ \ \ \ \ \ self.assertEqual(response.status\_code,\ 200)}
+\DoxyCodeLine{\Hypertarget{tests_8py_source_l00065}00065\ \ \ \ \ \ \ \ \ ...}
+
+\end{DoxyCode}

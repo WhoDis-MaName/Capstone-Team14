@@ -1,4 +1,4 @@
-## @package get_four_uear
+## @package process_constraints
 #  This module contains all of the functionality that is needed to convert the four year plan into usable clingo rules. 
 #
 #  For proof of concept running this package as a script utilizes the Computer Science four year plan.

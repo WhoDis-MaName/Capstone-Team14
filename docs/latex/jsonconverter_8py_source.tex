@@ -1,0 +1,120 @@
+\doxysection{jsonconverter.\+py}
+\hypertarget{jsonconverter_8py_source}{}\label{jsonconverter_8py_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00001}00001\ \textcolor{keyword}{import}\ json}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00002}00002\ \textcolor{keyword}{from}\ datetime\ \textcolor{keyword}{import}\ datetime}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00005}00005\ \textcolor{comment}{\#\ Converting\ 12\ hour\ time\ to\ minutes\ past\ midnight,\ ie:\ 12:15\ AM\ to\ 15.}}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00006}00006\ \textcolor{keyword}{def\ }convert24(time):}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00007}00007\ \ \ \ \ t\ =\ datetime.strptime(time,\ \textcolor{stringliteral}{"{}\%I:\%M\%p"{}})\ \ \textcolor{comment}{\#\ Parse\ the\ time\ string}}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00008}00008\ \ \ \ \ \textcolor{keywordflow}{return}\ t.hour\ *\ 60\ +\ t.minute\ \ \textcolor{comment}{\#\ Convert\ to\ total\ minutes}}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00011}00011\ \textcolor{keyword}{def\ }convert(file):}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00013}00013\ \ \ \ \ \textcolor{comment}{\#\ Load\ the\ JSON\ data}}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{with}\ open(file,\ \textcolor{stringliteral}{"{}r"{}})\ \textcolor{keyword}{as}\ f:}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00015}00015\ \ \ \ \ \ \ \ \ data\ =\ json.load(f)}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00017}00017\ \ \ \ \ \textcolor{comment}{\#\ Extract\ course\ information}}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00018}00018\ \ \ \ \ facts\ =\ []}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00020}00020\ \ \ \ \ classes\ =\ set()}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00021}00021\ \ \ \ \ rooms\ =\ set()}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00022}00022\ \ \ \ \ professors\ =\ set()}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00023}00023\ \ \ \ \ times\ =\ set()}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{for}\ term,\ subjects\ \textcolor{keywordflow}{in}\ data.items():}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ subject,\ courses\ \textcolor{keywordflow}{in}\ subjects.items():}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ course\_num,\ course\_info\ \textcolor{keywordflow}{in}\ courses.items():}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ course\_id\ =\ (}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ f\textcolor{stringliteral}{"{}\{subject\}\{course\_num\}"{}}.lower()}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}\ "{}},\ \textcolor{stringliteral}{"{}\_"{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}."{}},\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}-\/"{}},\ \textcolor{stringliteral}{"{}\_"{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ title\ =\ (}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ course\_info.get(\textcolor{stringliteral}{"{}title"{}},\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .lower()}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}\ "{}},\ \textcolor{stringliteral}{"{}\_"{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}."{}},\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}-\/"{}},\ \textcolor{stringliteral}{"{}\_"{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ prereq\ =\ (}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ course\_info.get(\textcolor{stringliteral}{"{}prereq"{}},\ \textcolor{stringliteral}{"{}none"{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .lower()}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}\ "{}},\ \textcolor{stringliteral}{"{}\_"{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}-\/"{}},\ \textcolor{stringliteral}{"{}none"{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}."{}},\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}-\/"{}},\ \textcolor{stringliteral}{"{}\_"{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Store\ course\ fact}}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ facts.append(f\textcolor{stringliteral}{'course(\{course\_id\},\ "{}\{title\}"{},\ \{prereq\}).'})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ classes.add(course\_id)}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ section\_num,\ section\_info\ \textcolor{keywordflow}{in}\ course\_info.get(}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}sections"{}},\ \{\}}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ).items():}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ section\_num\ =\ \textcolor{stringliteral}{"{}s"{}}\ +\ section\_num.lower()}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ class\_number\ =\ (}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}c"{}}\ +\ section\_info.get(\textcolor{stringliteral}{"{}Class\ Number"{}},\ \textcolor{stringliteral}{"{}"{}}).split()[0].lower()}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Convert\ time\ to\ 24-\/hour\ format}}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ time\ =\ section\_info.get(\textcolor{stringliteral}{"{}Time"{}},\ \textcolor{stringliteral}{"{}TBA"{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ time\ ==\ \textcolor{stringliteral}{"{}TBA"{}}:}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ start,\ end\ =\ \textcolor{stringliteral}{"{}tba"{}},\ \textcolor{stringliteral}{"{}tba"{}}}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ start,\ end\ =\ time.split(\textcolor{stringliteral}{"{}\ -\/\ "{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ start\ =\ convert24(start)}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ end\ =\ convert24(end)}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ days\ =\ (}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ section\_info.get(\textcolor{stringliteral}{"{}Days"{}},\ \textcolor{stringliteral}{"{}TBA"{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .strip()}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .lower()}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}\ "{}},\ \textcolor{stringliteral}{"{}\_"{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}-\/"{}},\ \textcolor{stringliteral}{"{}\_"{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ location\ =\ (}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ section\_info.get(\textcolor{stringliteral}{"{}Location"{}},\ \textcolor{stringliteral}{"{}Unknown"{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .lower()}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}\ "{}},\ \textcolor{stringliteral}{"{}\_"{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}."{}},\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}-\/"{}},\ \textcolor{stringliteral}{"{}\_"{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ instructor\ =\ (}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ section\_info.get(\textcolor{stringliteral}{"{}Instructor"{}},\ \textcolor{stringliteral}{"{}Unknown"{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .lower()}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}\ "{}},\ \textcolor{stringliteral}{"{}\_"{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}."{}},\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}-\/"{}},\ \textcolor{stringliteral}{"{}\_"{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Store\ section\ fact}}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ facts.append(}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ f\textcolor{stringliteral}{'section(\{course\_id\},\ \{section\_num\},\ \{class\_number\},\ "{}\{start\}"{},\ "{}\{end\}"{},\ \{days\},\ \{location\},\ \{instructor\}).'}}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Add\ to\ sets}}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rooms.add(location)}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ professors.add(instructor)}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ times.add(f\textcolor{stringliteral}{'time\_slot("{}\{start\}"{},\ "{}\{end\}"{},\ \{days\}).'})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00103}00103\ \ \ \ \ \textcolor{comment}{\#\ Convert\ sets\ to\ facts}}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00104}00104\ \ \ \ \ facts.append(f\textcolor{stringliteral}{"{}class(\{',\ '.join(classes)\})."{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00105}00105\ \ \ \ \ facts.append(f\textcolor{stringliteral}{"{}room(\{',\ '.join(rooms)\})."{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00106}00106\ \ \ \ \ facts.append(f\textcolor{stringliteral}{"{}professor(\{',\ '.join(professors)\})."{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00107}00107\ \ \ \ \ facts.extend(times)\ \ \textcolor{comment}{\#\ Since\ times\ are\ already\ formatted\ as\ facts}}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00109}00109\ \ \ \ \ \textcolor{comment}{\#\ Write\ ASP\ facts\ to\ a\ file}}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00110}00110\ \ \ \ \ asp\_filename\ =\ file.replace(\textcolor{stringliteral}{"{}.json"{}},\ \textcolor{stringliteral}{"{}.lp"{}})}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00111}00111\ \ \ \ \ \textcolor{comment}{\#\ asp\_filename\ =\ "{}classes.lp"{}}}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00112}00112\ \ \ \ \ \textcolor{keyword}{with}\ open(asp\_filename,\ \textcolor{stringliteral}{"{}w"{}})\ \textcolor{keyword}{as}\ f:}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00113}00113\ \ \ \ \ \ \ \ \ f.write(\textcolor{stringliteral}{"{}\(\backslash\)n"{}}.join(facts))}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00115}00115\ \ \ \ \ \textcolor{comment}{\#\ print(f"{}ASP\ facts\ written\ to\ \{asp\_filename\}"{})}}
+
+\end{DoxyCode}

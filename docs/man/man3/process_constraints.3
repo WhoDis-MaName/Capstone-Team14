@@ -1,0 +1,412 @@
+.TH "process_constraints" 3 "Version 3" "ASP Schedule Optimizer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+process_constraints \- This module contains all of the functionality that is needed to convert the four year plan into usable clingo rules\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "list[dict] \fBget_plan\fP (str filename)"
+.br
+.RI "Read the four year plan from a file and confirm that it is a list\&. "
+.ti -1c
+.RI "list \fBget_semester\fP (list[dict] plan, str|int year, str semester)"
+.br
+.RI "Get the list of classes for a particular semester from the four year plan, assuming that there may be multiple plans given\&. "
+.ti -1c
+.RI "dict \fBset_contsraints\fP (list semester_plan, int semester_id)"
+.br
+.RI "Process the semester such that classes listed as fulfilling the same requirement are soft constraints and all other classes in the semester are hard constraints\&. "
+.ti -1c
+.RI "dict \fBcombine_constraints\fP (list[dict] constraints)"
+.br
+.RI "Combine the constraints so that the keys are based on the course and not based on the semester\&. "
+.ti -1c
+.RI "dict \fBcreate_constraints\fP (str filename)"
+.br
+.RI "Take a four year plan stored in a JSON file and process it so that it can be stored as JSON or as clingo in the desired format\&. "
+.ti -1c
+.RI "None \fBconvert_asp\fP (dict constraints, str file)"
+.br
+.RI "Take formated constraints and convert it into asp rules In addition to the rules defined by the constraints parameter, the rules file is also appended with equivalence rules\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBcurrent_directory\fP = os\&.path\&.dirname(os\&.path\&.realpath(__file__))"
+.br
+.ti -1c
+.RI "\fBpath\fP = current_directory\&.split(os\&.sep)"
+.br
+.ti -1c
+.RI "\fBroot_index\fP = path\&.index('Capstone\-Team14')"
+.br
+.ti -1c
+.RI "\fBroot_dir\fP = os\&.sep\&.join(path[:root_index+1])"
+.br
+.ti -1c
+.RI "\fBdata_dir\fP = os\&.path\&.join(root_dir, 'data_files', 'four_year_plan')"
+.br
+.ti -1c
+.RI "\fBfilename\fP = os\&.path\&.join(data_dir, 'fourYearPlan\&.json')"
+.br
+.ti -1c
+.RI "dict \fBconstraints\fP = \fBcreate_constraints\fP(filename)"
+.br
+.ti -1c
+.RI "\fBjson_file\fP = os\&.path\&.join(data_dir, 'constraints\&.json')"
+.br
+.ti -1c
+.RI "\fBasp_file\fP = os\&.path\&.join(data_dir, 'four_year_plan_constraints\&.lp')"
+.br
+.ti -1c
+.RI "\fBf\fP"
+.br
+.ti -1c
+.RI "\fBindent\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This module contains all of the functionality that is needed to convert the four year plan into usable clingo rules\&. 
+
+For proof of concept running this package as a script utilizes the Computer Science four year plan\&. 
+.SH "Function Documentation"
+.PP 
+.SS " dict process_constraints\&.combine_constraints (list[dict] constraints)"
+
+.PP
+Combine the constraints so that the keys are based on the course and not based on the semester\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIconstraints\fP A list where each item in the list represents the classes in a semester 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A dictionary whose keys are all of the classes described in the four year plan 
+.RE
+.PP
+
+.PP
+Definition at line \fB132\fP of file \fBprocess_constraints\&.py\fP\&.
+.nf
+132 def combine_constraints(constraints: list[dict]) \-> dict:
+133     complete_constraints = {}
+134     
+135     for semsester in constraints:
+136         for key, value in semsester\&.items():
+137             if key in complete_constraints\&.keys():
+138                 complete_constraints[key]['same_semester']\&.update(value['same_semester'])
+139                 complete_constraints[key]['equivalent_courses']\&.update(value['equivalent_courses'])
+140                 complete_constraints[key]['semesters']\&.update(value['semesters'])
+141             else:
+142                 complete_constraints[key] = value
+143                 
+144     return complete_constraints
+145     
+.PP
+.fi
+
+.SS " None process_constraints\&.convert_asp (dict constraints, str file)"
+
+.PP
+Take formated constraints and convert it into asp rules In addition to the rules defined by the constraints parameter, the rules file is also appended with equivalence rules\&. 
+.IP "\(bu" 2
+$a \equiv c \Leftarrow a \equiv b, b \equiv c$
+.IP "\(bu" 2
+$ b \in S \Leftarrow a \in S, a \equiv b $
+.IP "\(bu" 2
+etc\&.
+.PP
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIconstraints\fP 
+.br
+\fIfile\fP A string that contains the file path and filename that the JSON will be written to\&.
+
+.PP
+\fINOTE\fP to maintain the script's OS agnostic nature, it is suggested to utilize os\&.path\&.join() to join strings or os\&.sep\&.join() to join elements of a list 
+.RE
+.PP
+
+.PP
+Definition at line \fB189\fP of file \fBprocess_constraints\&.py\fP\&.
+.nf
+189 def convert_asp(constraints: dict, file: str) \-> None:
+190     for course in constraints\&.keys():
+191         # Equivalent classes
+192         for other in constraints[course]['same_semester']:
+193             file\&.write(f'same_semester({course}, {other})\&.\\n')
+194         
+195         # Same Semester classes
+196         for other in constraints[course]['equivalent_courses']:
+197             file\&.write(f'equivalent_courses({course}, {other})\&.\\n')
+198         
+199         # Class in Semester
+200         for semester in constraints[course]['semesters']:
+201             file\&.write(f'course_in_semester({semester}, {course})\&.\\n')
+202             
+203     # Predetermined Rules
+204     file\&.write('equivalent_courses(C1, C3) :\- equivalent_courses(C1, C2), equivalent_courses(C2, C3)\&.\\n')
+205     file\&.write('course_in_semester(S1, C2) :\- equivalent_courses(C1, C2), course_in_semester(S1, C1)\&.\\n')
+206     file\&.write('same_semester(C1, C3) :\- same_semester(C1, C2), same_semester(C2, C3)\&.\\n')
+207     file\&.write('same_semester(C1, C3) :\- equivalent_courses(C1, C2), same_semester(C2, C3)\&.\\n')
+208 
+.PP
+.fi
+
+.SS " dict process_constraints\&.create_constraints (str filename)"
+
+.PP
+Take a four year plan stored in a JSON file and process it so that it can be stored as JSON or as clingo in the desired format\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfilename\fP A string that contains the file path and filename that the JSON will be written to\&.
+
+.PP
+\fINOTE\fP to maintain the script's OS agnostic nature, it is suggested to utilize os\&.path\&.join() to join strings or os\&.sep\&.join() to join elements of a list 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A dictionary whose keys are all of the courses in the four year plan 
+.RE
+.PP
+
+.PP
+Definition at line \fB156\fP of file \fBprocess_constraints\&.py\fP\&.
+.nf
+156 def create_constraints(filename: str) \-> dict:
+157     
+158     plan = get_plan(filename)
+159     semesters = ['fall', 'spring']
+160     constraint_list = []
+161     for year in range(1,5):
+162        for i in range(0,2):
+163            semester_plan = get_semester(plan, year, semesters[i]) 
+164            constraint_list\&.append(set_contsraints(semester_plan, year*10 + i))
+165     # pprint(constraint_list)
+166     constraints = combine_constraints(constraint_list)
+167     
+168     for key in constraints\&.keys():
+169         constraints[key]['same_semester'] = list(constraints[key]['same_semester'])
+170         constraints[key]['equivalent_courses'] = list(constraints[key]['equivalent_courses'])
+171         constraints[key]['semesters'] = list(constraints[key]['semesters'])
+172         
+173     return constraints
+174 
+.PP
+.fi
+
+.SS " list[dict] process_constraints\&.get_plan (str filename)"
+
+.PP
+Read the four year plan from a file and confirm that it is a list\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfilename\fP A string that contains the file path and filename that the JSON will be written to\&.
+
+.PP
+\fINOTE\fP to maintain the script's OS agnostic nature, it is suggested to utilize os\&.path\&.join() to join strings or os\&.sep\&.join() to join elements of a list 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The list of dictionaries that was read from the file\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB19\fP of file \fBprocess_constraints\&.py\fP\&.
+.nf
+19 def get_plan(filename: str) \-> list[dict]:
+20     with open(filename, 'r') as file:
+21         data = json\&.load(file)
+22     if type(data) != list:
+23         raise SyntaxError("Read file is not in the expected format")
+24     return data
+25     
+.PP
+.fi
+
+.SS " list process_constraints\&.get_semester (list[dict] plan, str|int year, str  semester)"
+
+.PP
+Get the list of classes for a particular semester from the four year plan, assuming that there may be multiple plans given\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIplan\fP A list of dictionaries\&. Each dictionary defines a four year plan such that it has this structure
+
+.PP
+{ 'year':{ 'semsester':[ [ list of class numbers], [ list of class names], number of credits filled by the class(es) in the list ] \&.\&.\&. } \&.\&.\&. 
+.br
+ }
+
+.PP
+.RE
+.PP
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIyear\fP A string or an integer to identify the year in the plan that is to be read from\&. Options: ['First Year', 'Second Year', 'Third Year', 'Fourth Year'] or [1, 2, 3, 4] 
+.RE
+.PP
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIsemester\fP A string that determines if fall semester or spring semester Options: ['FALL', 'SPRING'] or any variation in capitalization 
+.RE
+.PP
+
+.PP
+\fBReturns\fP
+.RS 4
+A list of classes in the same structure as origional semester list combined for all plans in the origional list\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB59\fP of file \fBprocess_constraints\&.py\fP\&.
+.nf
+59 def get_semester(plan: list[dict], year: str|int, semester: str ) \-> list:
+60     years = ['First Year', 'Second Year', 'Third Year', 'Fourth Year']
+61     if type(year) == str:
+62         year = year\&.upper()
+63         if year not in years:
+64             raise ValueError("Provided year not 'First Year', 'Second Year', 'Third Year', or 'Fourth Year'")
+65     elif type(year) == int:
+66         if year > 4 or year < 1:
+67             raise ValueError("Provided year outside range of 1\-4 ")
+68         year = years[year\-1]
+69     else:
+70         raise TypeError(f"Provided year of type {type(year)}, not str or int")
+71         
+72     semester = semester\&.upper()
+73     if semester not in ['FALL', 'SPRING']:
+74         raise ValueError("Provided semester not FALL or SPRING")
+75         
+76     semester_content = []
+77     
+78     for sub_plan in plan:
+79         semester_content\&.extend(sub_plan[year][semester])
+80         
+81         
+82     return semester_content
+83     
+84  
+.PP
+.fi
+
+.SS " dict process_constraints\&.set_contsraints (list semester_plan, int semester_id)"
+
+.PP
+Process the semester such that classes listed as fulfilling the same requirement are soft constraints and all other classes in the semester are hard constraints\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsemester_plan\fP list of classes in the same semester in the same structure as the origional four year plan
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Dictionary containing all of the classes in the semester Structure: <course number like csci2040>: { 'equivalent_courses': set, 'same_semester': set, 'credits': int, 'semsesters': set } \&.\&.\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB101\fP of file \fBprocess_constraints\&.py\fP\&.
+.nf
+101 def set_contsraints(semester_plan: list, semester_id: int) \-> dict:
+102     
+103     semester_dict = {}
+104     classes_in_semester = set([])
+105     for course_group in semester_plan:
+106         # Confirm structure of each course group
+107         if len(course_group) != 3:
+108             raise SyntaxError("Read file is not in the expected format")          
+109             
+110         # Set constraint structure for each course
+111         for course in course_group[0]:
+112             
+113             semester_dict[course] = {
+114                 'equivalent_courses': set([x for x in course_group[0] if x != course]),
+115                 'same_semester': set([]),
+116                 'credits': course_group[2],
+117                 'semesters': {semester_id}
+118             }
+119         classes_in_semester\&.update(course_group[0])
+120 
+121     
+122     # Set hard constraints as every class in semester not in soft constraints
+123     for course in semester_dict\&.keys():
+124         semester_dict[course]['same_semester'] = {x for x in classes_in_semester if x != course and x not in semester_dict[course]['equivalent_courses']}
+125     return semester_dict
+126     
+127 
+.PP
+.fi
+
+.SH "Variable Documentation"
+.PP 
+.SS "process_constraints\&.asp_file = os\&.path\&.join(data_dir, 'four_year_plan_constraints\&.lp')"
+
+.PP
+Definition at line \fB224\fP of file \fBprocess_constraints\&.py\fP\&.
+.SS "process_constraints\&.constraints = \fBcreate_constraints\fP(filename)"
+
+.PP
+Definition at line \fB222\fP of file \fBprocess_constraints\&.py\fP\&.
+.SS "process_constraints\&.current_directory = os\&.path\&.dirname(os\&.path\&.realpath(__file__))"
+
+.PP
+Definition at line \fB211\fP of file \fBprocess_constraints\&.py\fP\&.
+.SS "process_constraints\&.data_dir = os\&.path\&.join(root_dir, 'data_files', 'four_year_plan')"
+
+.PP
+Definition at line \fB220\fP of file \fBprocess_constraints\&.py\fP\&.
+.SS "process_constraints\&.f"
+
+.PP
+Definition at line \fB227\fP of file \fBprocess_constraints\&.py\fP\&.
+.SS "process_constraints\&.filename = os\&.path\&.join(data_dir, 'fourYearPlan\&.json')"
+
+.PP
+Definition at line \fB221\fP of file \fBprocess_constraints\&.py\fP\&.
+.SS "process_constraints\&.indent"
+
+.PP
+Definition at line \fB227\fP of file \fBprocess_constraints\&.py\fP\&.
+.SS "process_constraints\&.json_file = os\&.path\&.join(data_dir, 'constraints\&.json')"
+
+.PP
+Definition at line \fB223\fP of file \fBprocess_constraints\&.py\fP\&.
+.SS "process_constraints\&.path = current_directory\&.split(os\&.sep)"
+
+.PP
+Definition at line \fB216\fP of file \fBprocess_constraints\&.py\fP\&.
+.SS "process_constraints\&.root_dir = os\&.sep\&.join(path[:root_index+1])"
+
+.PP
+Definition at line \fB219\fP of file \fBprocess_constraints\&.py\fP\&.
+.SS "process_constraints\&.root_index = path\&.index('Capstone\-Team14')"
+
+.PP
+Definition at line \fB218\fP of file \fBprocess_constraints\&.py\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ASP Schedule Optimizer from the source code\&.

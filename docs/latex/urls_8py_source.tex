@@ -1,0 +1,34 @@
+\doxysection{urls.\+py}
+\hypertarget{urls_8py_source}{}\label{urls_8py_source}\index{myproject/urls.py@{myproject/urls.py}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{urls_8py_source_l00001}\mbox{\hyperlink{namespacemyproject_1_1urls}{00001}}\ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{urls_8py_source_l00002}00002\ \textcolor{stringliteral}{URL\ configuration\ for\ myproject\ project.}}
+\DoxyCodeLine{\Hypertarget{urls_8py_source_l00003}00003\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{urls_8py_source_l00004}00004\ \textcolor{stringliteral}{The\ \`{}urlpatterns\`{}\ list\ routes\ URLs\ to\ views.\ For\ more\ information\ please\ see:}}
+\DoxyCodeLine{\Hypertarget{urls_8py_source_l00005}00005\ \textcolor{stringliteral}{\ \ \ \ https://docs.djangoproject.com/en/5.1/topics/http/urls/}}
+\DoxyCodeLine{\Hypertarget{urls_8py_source_l00006}00006\ \textcolor{stringliteral}{Examples:}}
+\DoxyCodeLine{\Hypertarget{urls_8py_source_l00007}00007\ \textcolor{stringliteral}{Function\ views}}
+\DoxyCodeLine{\Hypertarget{urls_8py_source_l00008}00008\ \textcolor{stringliteral}{\ \ \ \ 1.\ Add\ an\ import:\ \ from\ my\_app\ import\ views}}
+\DoxyCodeLine{\Hypertarget{urls_8py_source_l00009}00009\ \textcolor{stringliteral}{\ \ \ \ 2.\ Add\ a\ URL\ to\ urlpatterns:\ \ path('',\ views.home,\ name='home')}}
+\DoxyCodeLine{\Hypertarget{urls_8py_source_l00010}00010\ \textcolor{stringliteral}{Class-\/based\ views}}
+\DoxyCodeLine{\Hypertarget{urls_8py_source_l00011}00011\ \textcolor{stringliteral}{\ \ \ \ 1.\ Add\ an\ import:\ \ from\ other\_app.views\ import\ Home}}
+\DoxyCodeLine{\Hypertarget{urls_8py_source_l00012}00012\ \textcolor{stringliteral}{\ \ \ \ 2.\ Add\ a\ URL\ to\ urlpatterns:\ \ path('',\ Home.as\_view(),\ name='home')}}
+\DoxyCodeLine{\Hypertarget{urls_8py_source_l00013}00013\ \textcolor{stringliteral}{Including\ another\ URLconf}}
+\DoxyCodeLine{\Hypertarget{urls_8py_source_l00014}00014\ \textcolor{stringliteral}{\ \ \ \ 1.\ Import\ the\ include()\ function:\ from\ django.urls\ import\ include,\ path}}
+\DoxyCodeLine{\Hypertarget{urls_8py_source_l00015}00015\ \textcolor{stringliteral}{\ \ \ \ 2.\ Add\ a\ URL\ to\ urlpatterns:\ \ path('blog/',\ include('blog.urls'))}}
+\DoxyCodeLine{\Hypertarget{urls_8py_source_l00016}00016\ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{urls_8py_source_l00017}00017\ \textcolor{keyword}{from}\ django.contrib\ \textcolor{keyword}{import}\ admin}
+\DoxyCodeLine{\Hypertarget{urls_8py_source_l00018}00018\ \textcolor{keyword}{from}\ django.urls\ \textcolor{keyword}{import}\ path,\ include}
+\DoxyCodeLine{\Hypertarget{urls_8py_source_l00019}00019\ \textcolor{keyword}{from}\ \mbox{\hyperlink{namespaceschedule_functions_1_1views}{scheduleFunctions.views}}\ \textcolor{keyword}{import}\ run\_script\ \ \textcolor{comment}{\#\ Import\ the\ view\ for\ schedulerApp\ functions}}
+\DoxyCodeLine{\Hypertarget{urls_8py_source_l00020}00020\ \textcolor{keyword}{from}\ \mbox{\hyperlink{namespaceschedule_functions_1_1views}{scheduleFunctions.views}}\ \textcolor{keyword}{import}\ login,\ dashboard\_view,\ schedule\_view}
+\DoxyCodeLine{\Hypertarget{urls_8py_source_l00021}00021\ urlpatterns\ =\ [}
+\DoxyCodeLine{\Hypertarget{urls_8py_source_l00022}00022\ \ \ \ \ path(\textcolor{stringliteral}{'admin/doc/'},\ include(\textcolor{stringliteral}{'django.contrib.admindocs.urls'})),}
+\DoxyCodeLine{\Hypertarget{urls_8py_source_l00023}00023\ \ \ \ \ path(\textcolor{stringliteral}{'admin/'},\ admin.site.urls),}
+\DoxyCodeLine{\Hypertarget{urls_8py_source_l00024}00024\ \ \ \ \ path(\textcolor{stringliteral}{'run-\/script/'},\ run\_script,\ name=\textcolor{stringliteral}{'run\_script'}),}
+\DoxyCodeLine{\Hypertarget{urls_8py_source_l00025}00025\ \ \ \ \ path(\textcolor{stringliteral}{'dashboard/'},\ dashboard\_view,\ name=\textcolor{stringliteral}{'dashboard'}),}
+\DoxyCodeLine{\Hypertarget{urls_8py_source_l00026}00026\ \ \ \ \ path(\textcolor{stringliteral}{'schedule/'},\ schedule\_view,\ name=\textcolor{stringliteral}{'schedule'}),}
+\DoxyCodeLine{\Hypertarget{urls_8py_source_l00027}00027\ \ \ \ \ path(\textcolor{stringliteral}{''},\ login,\ name=\textcolor{stringliteral}{'home'}),\ \ \textcolor{comment}{\#\ Add\ homepage\ route}}
+\DoxyCodeLine{\Hypertarget{urls_8py_source_l00028}00028\ ]}
+
+\end{DoxyCode}

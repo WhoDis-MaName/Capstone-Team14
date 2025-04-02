@@ -1,0 +1,50 @@
+\doxysection{myproject.\+urls Namespace Reference}
+\hypertarget{namespacemyproject_1_1urls}{}\label{namespacemyproject_1_1urls}\index{myproject.urls@{myproject.urls}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+list \mbox{\hyperlink{namespacemyproject_1_1urls_ab40701a5db2a27c7e1f7e55d8375e7dd}{urlpatterns}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}URL configuration for myproject project.
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/5.1/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacemyproject_1_1urls_ab40701a5db2a27c7e1f7e55d8375e7dd}\index{myproject.urls@{myproject.urls}!urlpatterns@{urlpatterns}}
+\index{urlpatterns@{urlpatterns}!myproject.urls@{myproject.urls}}
+\doxysubsubsection{\texorpdfstring{urlpatterns}{urlpatterns}}
+{\footnotesize\ttfamily \label{namespacemyproject_1_1urls_ab40701a5db2a27c7e1f7e55d8375e7dd} 
+list myproject.\+urls.\+urlpatterns}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ [}
+\DoxyCodeLine{00002\ \ \ \ \ path(\textcolor{stringliteral}{'admin/doc/'},\ include(\textcolor{stringliteral}{'django.contrib.admindocs.urls'})),}
+\DoxyCodeLine{00003\ \ \ \ \ path(\textcolor{stringliteral}{'admin/'},\ admin.site.urls),}
+\DoxyCodeLine{00004\ \ \ \ \ path(\textcolor{stringliteral}{'run-\/script/'},\ run\_script,\ name=\textcolor{stringliteral}{'run\_script'}),}
+\DoxyCodeLine{00005\ \ \ \ \ path(\textcolor{stringliteral}{'dashboard/'},\ dashboard\_view,\ name=\textcolor{stringliteral}{'dashboard'}),}
+\DoxyCodeLine{00006\ \ \ \ \ path(\textcolor{stringliteral}{'schedule/'},\ schedule\_view,\ name=\textcolor{stringliteral}{'schedule'}),}
+\DoxyCodeLine{00007\ \ \ \ \ path(\textcolor{stringliteral}{''},\ login,\ name=\textcolor{stringliteral}{'home'}),\ \ \textcolor{comment}{\#\ Add\ homepage\ route}}
+\DoxyCodeLine{00008\ ]}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{urls_8py_source_l00021}{21}} of file \mbox{\hyperlink{urls_8py_source}{urls.\+py}}.
+

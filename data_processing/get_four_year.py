@@ -1,4 +1,4 @@
-## @package get_four_uear
+## @package get_four_year
 #  This module contains all of the functionality that is needed to process the four year plan that is given with some url. 
 #
 #  For proof of concept running this package as a script utilizes the Computer Science four year plan.

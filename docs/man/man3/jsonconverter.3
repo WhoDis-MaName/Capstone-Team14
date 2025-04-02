@@ -1,0 +1,149 @@
+.TH "jsonconverter" 3 "Version 3" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jsonconverter
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBconvert24\fP (time)"
+.br
+.ti -1c
+.RI "\fBconvert\fP (file)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "jsonconverter\&.convert ( file)"
+
+.PP
+Definition at line \fB11\fP of file \fBjsonconverter\&.py\fP\&.
+.nf
+11 def convert(file):
+12 
+13     # Load the JSON data
+14     with open(file, "r") as f:
+15         data = json\&.load(f)
+16 
+17     # Extract course information
+18     facts = []
+19 
+20     classes = set()
+21     rooms = set()
+22     professors = set()
+23     times = set()
+24 
+25     for term, subjects in data\&.items():
+26         for subject, courses in subjects\&.items():
+27             for course_num, course_info in courses\&.items():
+28                 course_id = (
+29                     f"{subject}{course_num}"\&.lower()
+30                     \&.replace(" ", "_")
+31                     \&.replace("\&.", "")
+32                     \&.replace("\-", "_")
+33                 )
+34                 title = (
+35                     course_info\&.get("title", "")
+36                     \&.lower()
+37                     \&.replace(" ", "_")
+38                     \&.replace("\&.", "")
+39                     \&.replace("\-", "_")
+40                 )
+41                 prereq = (
+42                     course_info\&.get("prereq", "none")
+43                     \&.lower()
+44                     \&.replace(" ", "_")
+45                     \&.replace("\-", "none")
+46                     \&.replace("\&.", "")
+47                     \&.replace("\-", "_")
+48                 )
+49 
+50                 # Store course fact
+51                 facts\&.append(f'course({course_id}, "{title}", {prereq})\&.')
+52                 classes\&.add(course_id)
+53 
+54                 for section_num, section_info in course_info\&.get(
+55                     "sections", {}
+56                 )\&.items():
+57                     section_num = "s" + section_num\&.lower()
+58                     class_number = (
+59                         "c" + section_info\&.get("Class Number", "")\&.split()[0]\&.lower()
+60                     )
+61 
+62                     # Convert time to 24\-hour format
+63                     time = section_info\&.get("Time", "TBA")
+64                     if time == "TBA":
+65                         start, end = "tba", "tba"
+66                     else:
+67                         start, end = time\&.split(" \- ")
+68                         start = convert24(start)
+69                         end = convert24(end)
+70 
+71                     days = (
+72                         section_info\&.get("Days", "TBA")
+73                         \&.strip()
+74                         \&.lower()
+75                         \&.replace(" ", "_")
+76                         \&.replace("\-", "_")
+77                     )
+78                     location = (
+79                         section_info\&.get("Location", "Unknown")
+80                         \&.lower()
+81                         \&.replace(" ", "_")
+82                         \&.replace("\&.", "")
+83                         \&.replace("\-", "_")
+84                     )
+85                     instructor = (
+86                         section_info\&.get("Instructor", "Unknown")
+87                         \&.lower()
+88                         \&.replace(" ", "_")
+89                         \&.replace("\&.", "")
+90                         \&.replace("\-", "_")
+91                     )
+92 
+93                     # Store section fact
+94                     facts\&.append(
+95                         f'section({course_id}, {section_num}, {class_number}, "{start}", "{end}", {days}, {location}, {instructor})\&.'
+96                     )
+97 
+98                     # Add to sets
+99                     rooms\&.add(location)
+100                     professors\&.add(instructor)
+101                     times\&.add(f'time_slot("{start}", "{end}", {days})\&.')
+102 
+103     # Convert sets to facts
+104     facts\&.append(f"class({', '\&.join(classes)})\&.")
+105     facts\&.append(f"room({', '\&.join(rooms)})\&.")
+106     facts\&.append(f"professor({', '\&.join(professors)})\&.")
+107     facts\&.extend(times)  # Since times are already formatted as facts
+108 
+109     # Write ASP facts to a file
+110     asp_filename = file\&.replace("\&.json", "\&.lp")
+111     # asp_filename = "classes\&.lp"
+112     with open(asp_filename, "w") as f:
+113         f\&.write("\\n"\&.join(facts))
+114 
+115     # print(f"ASP facts written to {asp_filename}")
+.PP
+.fi
+
+.SS "jsonconverter\&.convert24 ( time)"
+
+.PP
+Definition at line \fB6\fP of file \fBjsonconverter\&.py\fP\&.
+.nf
+6 def convert24(time):
+7     t = datetime\&.strptime(time, "%I:%M%p")  # Parse the time string
+8     return t\&.hour * 60 + t\&.minute  # Convert to total minutes
+9 
+10 
+.PP
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

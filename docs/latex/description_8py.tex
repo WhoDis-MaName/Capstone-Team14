@@ -1,0 +1,22 @@
+\doxysection{description.\+py File Reference}
+\hypertarget{description_8py}{}\label{description_8py}\index{description.py@{description.py}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacedescription}{description}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{namespacedescription_a4a480452d558a32a5b89e00444618f5f}{description.\+file\+\_\+path}} = "{}filtered.\+json"{}
+\item 
+\mbox{\hyperlink{namespacedescription_a0260747a932650cdc1c4c60cdde7e4cd}{description.\+data}} = json.\+load(file)
+\item 
+dict \mbox{\hyperlink{namespacedescription_a98330234a2f317e284737f43ccfabc57}{description.\+course\+\_\+prerequisites}} = \{\}
+\item 
+\mbox{\hyperlink{namespacedescription_aeba5c12e147b95cdbb657d138041c459}{description.\+title}} = course\+\_\+info.\+get("{}title"{}, "{}Unknown Title"{})
+\item 
+\mbox{\hyperlink{namespacedescription_aa9dc2f413a52c0c36409a68a0e88fe8f}{description.\+prereq\+\_\+text}} = course\+\_\+info.\+get("{}desc"{}, "{}"{})
+\item 
+\mbox{\hyperlink{namespacedescription_a244d7e2c561ac548f9c67f66306caaff}{description.\+prereq\+\_\+part}} = prereq\+\_\+text.\+split("{}Prereq\+:"{})\mbox{[}1\mbox{]}.strip()
+\end{DoxyCompactItemize}

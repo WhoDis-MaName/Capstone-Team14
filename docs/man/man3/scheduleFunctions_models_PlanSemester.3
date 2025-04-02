@@ -1,0 +1,62 @@
+.TH "scheduleFunctions.models.PlanSemester" 3 "Version 3" "ASP Schedule Optimizer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scheduleFunctions.models.PlanSemester
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits models\&.Model\&.
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fByear\fP"
+.br
+.ti -1c
+.RI "\fBsemester\fP"
+.br
+.ti -1c
+.RI "\fBcourses\fP = models\&.ManyToManyField(\fBCourse\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB81\fP of file \fBmodels\&.py\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "scheduleFunctions\&.models\&.PlanSemester\&.courses = models\&.ManyToManyField(\fBCourse\fP)\fR [static]\fP"
+
+.PP
+Definition at line \fB92\fP of file \fBmodels\&.py\fP\&.
+.SS "scheduleFunctions\&.models\&.PlanSemester\&.semester\fR [static]\fP"
+\fBInitial value:\fP
+.nf
+=  models\&.CharField(
+        max_length=1,
+        choices=SEMESTER_CHOICES,
+        default=FALL,
+    )
+.PP
+.fi
+
+.PP
+Definition at line \fB87\fP of file \fBmodels\&.py\fP\&.
+.SS "scheduleFunctions\&.models\&.PlanSemester\&.year\fR [static]\fP"
+\fBInitial value:\fP
+.nf
+=  models\&.CharField(
+        max_length=2,
+        choices=YEAR_IN_SCHOOL_CHOICES,
+        default=FRESHMAN,
+    )
+.PP
+.fi
+
+.PP
+Definition at line \fB82\fP of file \fBmodels\&.py\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ASP Schedule Optimizer from the source code\&.

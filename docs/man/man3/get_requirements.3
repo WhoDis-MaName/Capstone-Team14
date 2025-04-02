@@ -1,0 +1,392 @@
+.TH "get_requirements" 3 "Version 3" "ASP Schedule Optimizer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+get_requirements \- This module contains all of the functionality that is needed to process the degree requirements\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBget_all_tables\fP (bs soup)"
+.br
+.RI "Finds all of the tables in the page gathered with BS4\&. "
+.ti -1c
+.RI "list \fBget_table_rows\fP (table)"
+.br
+.RI "Given a table, returns all its rows\&. "
+.ti -1c
+.RI "\fBprocess_url\fP (str url)"
+.br
+.RI "Take a url and find all of the tables contained in the page and return a ResultSet\&. "
+.ti -1c
+.RI "\fBread_requirements\fP (str url)"
+.br
+.RI "Read the requirements from a given url that contains degree requirements and process it into a dictionary\&. "
+.ti -1c
+.RI "dict \fBcompile_requirements\fP (list[dict] requirements)"
+.br
+.RI "Gather multiple requirements sets and complile them so that the group names are unique\&. "
+.ti -1c
+.RI "None \fBprocess_degree_requirements\fP (list[str] urls, str json_file)"
+.br
+.RI "Handle the processing of multiple degree requirements and sending it to a json file\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBcurrent_directory\fP = os\&.path\&.dirname(os\&.path\&.realpath(__file__))"
+.br
+.ti -1c
+.RI "\fBpath\fP = current_directory\&.split(os\&.sep)"
+.br
+.ti -1c
+.RI "\fBroot_index\fP = path\&.index('Capstone\-Team14')"
+.br
+.ti -1c
+.RI "\fBroot_dir\fP = os\&.sep\&.join(path[:root_index+1])"
+.br
+.ti -1c
+.RI "\fBdata_dir\fP = os\&.path\&.join(root_dir, 'data_files', 'four_year_plan')"
+.br
+.ti -1c
+.RI "\fBjson_file\fP = os\&.path\&.join(data_dir,'requirements\&.json')"
+.br
+.ti -1c
+.RI "list \fBurls\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This module contains all of the functionality that is needed to process the degree requirements\&. 
+
+For proof of concept, running this package as a script utilizes the degree requirments from all five Computer Science Concentrations\&. 
+.SH "Function Documentation"
+.PP 
+.SS " dict get_requirements\&.compile_requirements (list[dict] requirements)"
+
+.PP
+Gather multiple requirements sets and complile them so that the group names are unique\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIrequirements\fP A list containing dictionaries that are structured with classes in groups and sub-groups 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A single dictionary that combines all of the requirements into one while handling duplicate group labels by combining the class lists\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB143\fP of file \fBget_requirements\&.py\fP\&.
+.nf
+143 def compile_requirements(requirements: list[dict]) \-> dict:
+144     compiled_req:dict = {}
+145     
+146     for req_dict in requirements:
+147         for major_group in req_dict\&.keys():
+148             if major_group not in compiled_req\&.keys():
+149                 compiled_req[major_group] = {}
+150             for sub_group in req_dict[major_group]\&.keys():
+151                 temp_major = major_group
+152                 if sub_group in ['math_courses', 'science_courses']:
+153                     if major_group not in ['major_requirements',]:
+154                         temp_major = 'major_requirements'
+155                 
+156                 if sub_group not in compiled_req[temp_major]\&.keys():
+157                     compiled_req[temp_major][sub_group] = req_dict[major_group][sub_group]
+158                     continue
+159                 
+160                 compiled_req[temp_major][sub_group]['classes'] = list(set(compiled_req[temp_major][sub_group]['classes'])\&.union(req_dict[major_group][sub_group]['classes']))
+161                 if compiled_req[temp_major][sub_group]['credits'] != req_dict[major_group][sub_group]['credits']:
+162                     print(f'Credit count not the same for {major_group} \- {sub_group}\&. Expecting {compiled_req[temp_major][sub_group]["credits"]}, got {req_dict[major_group][sub_group]["credits"]}')
+163                     max_credits = max(req_dict[major_group][sub_group]['credits'],compiled_req[temp_major][sub_group]['credits'])
+164                     print(f'Selecting {max_credits}')
+165                     compiled_req[temp_major][sub_group]['credits'] = max_credits
+166                 
+167         
+168     return compiled_req
+169 
+.PP
+.fi
+
+.SS "get_requirements\&.get_all_tables (bs soup)"
+
+.PP
+Finds all of the tables in the page gathered with BS4\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsoup\fP The BeautifulSoup4 representation of the web page 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A set containing all of the instances of \fR<table></table>\fP along with all of its contents 
+.RE
+.PP
+
+.PP
+Definition at line \fB17\fP of file \fBget_requirements\&.py\fP\&.
+.nf
+17 def get_all_tables(soup: bs):
+18     return soup\&.find_all("table")
+19 
+.PP
+.fi
+
+.SS " list get_requirements\&.get_table_rows ( table)"
+
+.PP
+Given a table, returns all its rows\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItable\fP A table from web page grabbed using BS4 soup object 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A 2d list that represents all of the rows from the table 
+.RE
+.PP
+
+.PP
+Definition at line \fB24\fP of file \fBget_requirements\&.py\fP\&.
+.nf
+24 def get_table_rows(table) \-> list:
+25     rows = []
+26     for tr in table\&.find_all("tr")[0:]:
+27         cells = []
+28         # grab all td tags in this table row
+29         tds = tr\&.find_all("td")
+30         if len(tds) == 0:
+31             # if no td tags, search for th tags
+32             # can be found especially in wikipedia tables below the table
+33             ths = tr\&.find_all("th")
+34             for th in ths:
+35                 cells\&.append(th\&.text\&.strip())
+36         else:
+37             # use regular td tags
+38             for td in tds:
+39                 cells\&.append(td\&.text\&.strip())
+40         rows\&.append(cells)
+41     return rows
+42 
+43     
+.PP
+.fi
+
+.SS " None get_requirements\&.process_degree_requirements (list[str] urls, str json_file)"
+
+.PP
+Handle the processing of multiple degree requirements and sending it to a json file\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIurls\fP A list of url strings\&. Each url must direct to a page that contains requirements for some sort of degree 
+.br
+\fIjson_file\fP A string that contains the file path and filename that the JSON will be written to\&.
+
+.PP
+\fINOTE\fP to maintain the script's OS agnostic nature, it is suggested to utilize os\&.path\&.join() to join strings or os\&.sep\&.join() to join elements of a list 
+.RE
+.PP
+
+.PP
+Definition at line \fB180\fP of file \fBget_requirements\&.py\fP\&.
+.nf
+180 def process_degree_requirements(urls: list[str], json_file: str) \-> None:
+181     requirements = []
+182     for url in urls:
+183         requirements\&.extend(read_requirements(url))
+184     # pprint(requirements)
+185     new_reqirements:dict = compile_requirements(requirements)
+186     # pprint(new_reqirements)
+187     with open(json_file, 'w') as f:
+188         json\&.dump(new_reqirements,f, indent=4)
+189 
+190     
+.PP
+.fi
+
+.SS "get_requirements\&.process_url (str url)"
+
+.PP
+Take a url and find all of the tables contained in the page and return a ResultSet\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIurl\fP URL of the page to be searched\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+List containing all of the tables in the page\&. Each of table is a 2d array (list) 
+.RE
+.PP
+
+.PP
+Definition at line \fB49\fP of file \fBget_requirements\&.py\fP\&.
+.nf
+49 def process_url(url: str):
+50     
+51     tables_list = []
+52     # print(nfl_url)
+53     data = requests\&.get(url)
+54     if data\&.status_code != 200:
+55         print(data\&.status_code)
+56         print('Request failed at:',url)
+57         return tables_list
+58     response = bs(data\&.content, "html\&.parser")
+59     
+60     # extract all the tables from the web page
+61     tables_list = get_all_tables(response)
+62     print(f"[+] Found a total of {len(tables_list)} tables\&.")
+63     if len(tables_list) == 0:
+64         print(f'No Data: {url}')
+65     
+66     tables=[]
+67     for table in tables_list:
+68         tables\&.append(get_table_rows(table))
+69     return tables
+70     pass
+71 
+72 
+.PP
+.fi
+
+.SS "get_requirements\&.read_requirements (str url)"
+
+.PP
+Read the requirements from a given url that contains degree requirements and process it into a dictionary\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIurl\fP A string that contains the url that is to be read to find the degree requirements 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a dictionary that is structured to associate courses with the major and sub groups of requirements that are fulfilled 
+.RE
+.PP
+
+.PP
+Definition at line \fB77\fP of file \fBget_requirements\&.py\fP\&.
+.nf
+77 def read_requirements(url: str):
+78     
+79     tables_list = process_url(url)
+80     json_data = []
+81     for table in tables_list:
+82         structured_rows = {}
+83         classes_in_group = []
+84         major_group = ''
+85         group_name = ''
+86         group_credits = 0
+87         for row in table[1:]:
+88             if len(row) == 2:
+89                 if row[0]\&.startswith('or'):
+90                     row\&.append('')
+91                     print('Added column to row\&. New row length: ', len(row))
+92                 elif not row[1]\&.isdigit():
+93                     group_desc = row[0]\&.split('\-')
+94                     if group_desc[0] != 'ELECTIVES' and (len(group_desc) != 2 or group_desc[1]\&.endswith('hrs')) :
+95                         
+96                         print(row)
+97                     elif group_desc[0] == 'ELECTIVES' or group_desc[1]\&.strip()[0]\&.isdigit() :                            
+98                         if group_name != '':
+99                             structured_rows[major_group][group_name] = {
+100                                 'credits': group_credits,
+101                                 'classes': classes_in_group
+102                             }
+103                         
+104                         major_group = group_desc[0]\&.strip()\&.replace(' ', '_')\&.lower()
+105                         structured_rows[major_group] = {}
+106                         group_name = ''
+107                         group_credits = 0
+108                         
+109                 else:
+110                     if major_group != '' and major_group not in structured_rows\&.keys():
+111                             structured_rows[major_group] = {}
+112                     if group_name != '':
+113                         structured_rows[major_group][group_name] = {
+114                             'credits': group_credits,
+115                             'classes': classes_in_group
+116                         }
+117                         classes_in_group = []
+118                     
+119                     group_name = row[0]\&.split('\-')[0]\&.strip()\&.replace(' ', '_')\&.lower()
+120                     if group_name == 'all_of_the_following:':
+121                         group_name = '_'\&.join([major_group,'core'])
+122                     elif 'from_the_following' in group_name:
+123                         group_name = 'core_extension'
+124                     group_credits = int(row[1])
+125                     print('Storing group_name and group_credits:', group_name, group_credits)
+126                 
+127             if len(row) == 3:
+128                 # print('Adding row to group')
+129                 classes_in_group\&.append(row[0]\&.replace(u'\\xa0', '')\&.replace(u'or', '')\&.lower())
+130             
+131             if len(row) != 2 and len(row) != 3:
+132                 print(row)
+133             
+134         
+135         # print('Adding result to list')
+136         json_data\&.append(structured_rows)
+137     return json_data
+138 
+.PP
+.fi
+
+.SH "Variable Documentation"
+.PP 
+.SS "get_requirements\&.current_directory = os\&.path\&.dirname(os\&.path\&.realpath(__file__))"
+
+.PP
+Definition at line \fB193\fP of file \fBget_requirements\&.py\fP\&.
+.SS "get_requirements\&.data_dir = os\&.path\&.join(root_dir, 'data_files', 'four_year_plan')"
+
+.PP
+Definition at line \fB202\fP of file \fBget_requirements\&.py\fP\&.
+.SS "get_requirements\&.json_file = os\&.path\&.join(data_dir,'requirements\&.json')"
+
+.PP
+Definition at line \fB207\fP of file \fBget_requirements\&.py\fP\&.
+.SS "get_requirements\&.path = current_directory\&.split(os\&.sep)"
+
+.PP
+Definition at line \fB198\fP of file \fBget_requirements\&.py\fP\&.
+.SS "get_requirements\&.root_dir = os\&.sep\&.join(path[:root_index+1])"
+
+.PP
+Definition at line \fB201\fP of file \fBget_requirements\&.py\fP\&.
+.SS "get_requirements\&.root_index = path\&.index('Capstone\-Team14')"
+
+.PP
+Definition at line \fB200\fP of file \fBget_requirements\&.py\fP\&.
+.SS "list get_requirements\&.urls"
+\fBInitial value:\fP
+.nf
+1 =  [
+2         'https://catalog\&.unomaha\&.edu/undergraduate/college\-information\-science\-technology/computer\-science/computer\-science\-bs/artificialintelligence\-concentraton/',
+3         'https://catalog\&.unomaha\&.edu/undergraduate/college\-information\-science\-technology/computer\-science/computer\-science\-bs/game\-programming\-concentration/',
+4         'https://catalog\&.unomaha\&.edu/undergraduate/college\-information\-science\-technology/computer\-science/computer\-science\-bs/internet\-technologies\-it\-concentration\-computer\-science\-majors/',
+5         'https://catalog\&.unomaha\&.edu/undergraduate/college\-information\-science\-technology/computer\-science/computer\-science\-bs/information\-assurance\-concentration/',
+6         'https://catalog\&.unomaha\&.edu/undergraduate/college\-information\-science\-technology/computer\-science/computer\-science\-bs/software\-engineering\-concentration/'
+7     ]
+.PP
+.fi
+
+.PP
+Definition at line \fB208\fP of file \fBget_requirements\&.py\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ASP Schedule Optimizer from the source code\&.

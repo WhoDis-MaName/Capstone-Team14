@@ -1,0 +1,40 @@
+.TH "description.py" 3 "Version 3" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+description.py
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBdescription\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "str \fBdescription\&.file_path\fP = 'filtered\&.json'"
+.br
+.ti -1c
+.RI "\fBdescription\&.data\fP = json\&.load(file)"
+.br
+.ti -1c
+.RI "dict \fBdescription\&.course_prerequisites\fP = {}"
+.br
+.ti -1c
+.RI "\fBdescription\&.title\fP = course_info\&.get('title', 'Unknown Title')"
+.br
+.ti -1c
+.RI "\fBdescription\&.prereq_text\fP = course_info\&.get('desc', '')"
+.br
+.ti -1c
+.RI "\fBdescription\&.prereq_part\fP = prereq_text\&.split('Prereq:')[1]\&.strip()"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.
