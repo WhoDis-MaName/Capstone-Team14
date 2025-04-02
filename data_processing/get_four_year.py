@@ -1,3 +1,8 @@
+## @package get_four_uear
+#  This module contains all of the functionality that is needed to process the four year plan that is given with some url. 
+#
+#  For proof of concept running this package as a script utilizes the Computer Science four year plan.
+
 import os
 import json
 from pprint import pprint
@@ -5,40 +10,19 @@ from pprint import pprint
 import requests
 from bs4 import BeautifulSoup as bs
 
-
-
-if os.name == 'nt':
-    current_directory = os.path.dirname(os.path.realpath(__file__)) # Get current directory
-else:
-    current_directory = os.path.dirname(os.path.realpath(__name__)) # Get current directory
-    
-
-path = current_directory.split(os.sep)
-
-root_index = path.index('Capstone-Team14')
-root_dir = os.sep.join(path[:root_index+1])
-data_dir = os.path.join(root_dir, 'data_files', 'four_year_plan')
+## Finds all of the tables in the page gathered with BS4
+#
+#  @param[in] soup The BeautifulSoup4 representation of the web page
+#  @return A set containing all of the instances of `<table></table>` along with all of its contents
 
 def get_all_tables(soup: bs):
-    """Finds all of the tables in the page gathered with BS4
-
-    Args:
-        soup (bs): The soup representation of the web page
-
-    Returns:
-        ResultSet: A set containing all of the instances of `<table></table>` along with all of its contents
-    """
     return soup.find_all("table")
 
+## Given a table, returns all its rows
+#
+# @param[in] table A table from web page grabbed using BS4 soup object
+# @return A 2d list that represents all of the rows from the table
 def get_table_rows(table) -> list:
-    """Given a table, returns all its rows
-
-    Args:
-        table : table from web page grabbed using BS4 soup object
-
-    Returns:
-        list: a 2d list that represents all of the rows
-    """
     rows = []
     for tr in table.find_all("tr")[0:]:
         cells = []
@@ -58,16 +42,12 @@ def get_table_rows(table) -> list:
     return rows
 
     
-    
+##  Take a url and find all of the tables contained in the page and return a ResultSet
+# 
+# @param url URL of the page to be searched.
+# @return List containing all of the tables in the page. Each of table is a 2d array (list)
+
 def process_url(url: str):
-    """Take a url and find all of the tables contained in the page and return a ResultSet
-
-    Args:
-        url (str): URL of the page to be searched.
-
-    Returns:
-        ResultSet: Set containing all of the tables in the page
-    """
     
     tables_list = []
     # print(nfl_url)
@@ -90,12 +70,21 @@ def process_url(url: str):
     return tables
     pass
 
+## From a url that contains a four year plan process it and produce a JSON file in a structure that we can utilize to then convert into a clingo file.
+#
+# For the page in the computer science four year plan, create a JSON file with the class content organized by year and semester. 
+# This data is then used to discover conflicts that are higher priority.
+#
+#
+# @params url A string containing the url for the page with the four year plan
+# @params output_file 
+# \parblock
+# A string that contains the file path and filename that the JSON will be written to. 
+# 
+# *NOTE* to maintain the script's OS agnostic nature, 
+# it is suggested to utilize os.path.join() to join strings or os.sep.join() to join elements of a list
+# \endparblock
 def read_four_year(url, output_file):
-    """
-        For the page in the computer science four year plan, create a JSON file with the class content organized by year and semester. 
-        This data is then used to discover conflicts that are higher priority.
-    """
-
     
     tables_list = process_url(url)
     json_data = []
@@ -156,6 +145,18 @@ def read_four_year(url, output_file):
         json.dump(json_data,f, indent=4)
     
 if __name__ == "__main__":
+    if os.name == 'nt':
+        current_directory = os.path.dirname(os.path.realpath(__file__)) # Get current directory
+    else:
+        current_directory = os.path.dirname(os.path.realpath(__name__)) # Get current directory
+        
+
+    path = current_directory.split(os.sep)
+
+    root_index = path.index('Capstone-Team14')
+    root_dir = os.sep.join(path[:root_index+1])
+    data_dir = os.path.join(root_dir, 'data_files', 'four_year_plan')
+    
     try:
         os.makedirs(data_dir)
     except:
