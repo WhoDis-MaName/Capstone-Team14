@@ -27,16 +27,35 @@ def create_sample(classes:dict, num_semesters:int, num_departments:int, num_clas
             
     return sample_data
 
+import os
+
+if os.name == 'nt':
+    current_directory = os.path.dirname(os.path.realpath(__file__)) # Get current directory
+else:
+    current_directory = os.path.dirname(os.path.realpath(__name__)) # Get current directory
+    
+
+path = current_directory.split(os.sep)
+
+root_index = path.index('Capstone-Team14')
+root_dir = os.sep.join(path[:root_index+1])
+read_dir = os.path.join(root_dir, 'data_files', 'uploaded_schedule')
+sample_dir = os.path.join(root_dir, 'data_files', 'samples')
 try:
-    os.mkdir('samples')
+    os.makedirs(read_dir)
 except:
     pass
 
-classes = get_classes('filtered.json')
+try:
+    os.makedirs(sample_dir)
+except:
+    pass
+
+classes = get_classes(os.path.join(read_dir,'filtered.json'))
 
 for i in range(0,10):
     sample_data = create_sample(classes, 1, 2, 5)
     print(sample_data)
 
-    with open(os.path.join('samples',f'sample_0{i}.json'), 'w') as f:
+    with open(os.path.join(sample_dir,f'sample_0{i}.json'), 'w') as f:
         json.dump(sample_data,f, indent=4)

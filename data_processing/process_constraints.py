@@ -174,8 +174,8 @@ def create_constraints(filename: str) -> dict:
 
 ## Take formated constraints and convert it into asp rules
 # In addition to the rules defined by the constraints parameter, the rules file is also appended with equivalence rules.
-# * \f(a \equiv c \Leftarrow a \equiv b, b \equiv c\f)
-# * \f(b \in S \Leftarrow a \in S, a \equiv b \f)
+# \f$ a \equiv c \Leftarrow a \equiv b, b \equiv c \f$
+# \f$ b \in S \Leftarrow a \in S, a \equiv b \f$
 # * etc.
 #
 # @param constraints 
