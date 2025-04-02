@@ -1,0 +1,253 @@
+.TH "docs Directory Reference" 3 "Version 3" "ASP Schedule Optimizer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docs Directory Reference
+.SH SYNOPSIS
+.br
+.PP
+.SH "Detailed Description"
+.PP 
+
+.SH "Project Overview"
+.PP
+This project aims to identify overlapping courses that students are likely to take simultaneously and propose a new schedule without conflicts\&. The main objectives include:
+
+.PP
+.IP "1." 4
+\fBIdentifying time conflicts\fP between classes commonly taken in the same semester\&.
+.IP "2." 4
+\fBOptimizing the schedule\fP to minimize conflicts and prioritize key courses\&.
+.IP "3." 4
+\fBCoordinating the schedule with shuttle timings\fP to reduce student wait times\&.
+.PP
+
+.PP
+.PP
+.SH "Identifying Course Overlaps"
+.PP
+A course overlap is defined as a scheduling conflict where two classes occur during the same time slot (same day and time, e\&.g\&., Tuesday/Thursday) under the following conditions:
+
+.PP
+.IP "1." 4
+\fBStrict Overlap\fP
+.IP "  \(bu" 4
+The same time \fBand\fP the same day \fBand\fP either:
+.IP "    \(bu" 6
+The same professor, or
+.IP "    \(bu" 6
+The same room\&.
+.PP
+
+.IP "  \(bu" 4
+At least one class should remain conflict-free if multiple sections exist\&.
+.PP
+
+.IP "2." 4
+\fBHandling Multiple Sections\fP
+.IP "  \(bu" 4
+If multiple sections of a class are available (e\&.g\&., "AI" taught by different professors), should we ensure at least one section remains conflict-free, or that all sections avoid conflicts with other courses?
+.PP
+
+.PP
+
+.PP
+.PP
+.SH "Key Classes to Prioritize"
+.PP
+Certain courses should be given priority when resolving conflicts:
+
+.PP
+.IP "1." 4
+\fBCore CS Courses\fP
+.IP "  \(bu" 4
+Examples: Calculus I, CS II, Intro to Proofs, Discrete Math, Theory of Computation, Computer Networks, Software Engineering\&.
+.IP "  \(bu" 4
+Classes with prerequisites can overlap with their prerequisite courses since students typically won't take both in the same semester\&.
+.PP
+
+.IP "2." 4
+\fBCore Concentration Classes\fP
+.IP "  \(bu" 4
+Examples: NLP, AI, Game Design\&.
+.PP
+
+.IP "3." 4
+\fB4000-Level Courses\fP (Priority for seniors)
+.IP "  \(bu" 4
+Ensuring upper-level students can take required courses without conflicts\&.
+.PP
+
+.PP
+
+.PP
+\fBExample Case:\fP A senior pursuing a Computer Science or AI degree may need both \fIIntro to AI\fP and \fIMachine Learning & Data Mining\fP\&. These courses should not be scheduled at the same time\&.
+
+.PP
+.PP
+.SH "Optimization Approach"
+.PP
+After identifying conflicts, the next step is to suggest a reorganized schedule with minimal conflicts\&. The optimization criteria include:
+
+.PP
+.IP "\(bu" 2
+\fBMinimizing the number of overlapping classes\&.\fP
+.IP "\(bu" 2
+\fBPrioritizing senior-level courses\fP to ensure timely graduation\&.
+.IP "\(bu" 2
+\fBConsidering different optimization strategies:\fP
+.IP "  \(bu" 4
+Reducing overall conflicts\&.
+.IP "  \(bu" 4
+Assigning weights to courses to prioritize essential ones\&.
+.PP
+
+.PP
+
+.PP
+.PP
+.SH "Coordinating with Shuttle Schedule"
+.PP
+The final step involves aligning the course schedule with the university’s shuttle service to minimize student wait times\&.
+
+.PP
+.PP
+.SH "Additional Optimization Considerations"
+.PP
+.IP "\(bu" 2
+A secondary \fBAnswer Set Programming (ASP) model\fP will take the optimized schedule and refine it further with minimal disruption\&.
+.IP "\(bu" 2
+Weak constraints can have different weights to reflect course importance\&.
+.IP "\(bu" 2
+\fBTODO:\fP Read more on soft constraints and optimization techniques\&.
+.PP
+
+.PP
+.PP
+.SH "Future Improvements"
+.PP
+.IP "\(bu" 2
+Fine-tune soft constraints and optimization approaches\&.
+.IP "\(bu" 2
+Gather feedback from students and faculty to refine scheduling priorities\&.
+.IP "\(bu" 2
+Explore additional factors such as professor availability and classroom constraints\&.
+.PP
+
+.PP
+.PP
+.SH "Conclusion"
+.PP
+This project provides an optimized class schedule by reducing conflicts, prioritizing key courses, and considering shuttle coordination\&. The optimization process balances multiple factors to ensure students can take the courses they need without unnecessary scheduling conflicts\&.
+.SH "Release Notes Version 1\&.3"
+.PP
+.SS "Command Line Deployment"
+To run the project, simply launch your virtual environment using:
+
+.PP
+\fRsource myenv/bin/activate\fP
+
+.PP
+After entering virtual environment, download Django:
+
+.PP
+\fRpip install -r requirements\&.txt\fP
+
+.PP
+Also Following the steps to install Clingo:
+
+.PP
+https://github.com/potassco/clingo?tab=readme-ov-file
+
+.PP
+To Launch the current iteration of project, use this command:
+
+.PP
+\fRpython \fBmanage\&.py\fP runserver\fP
+
+.PP
+.IP "\(bu" 2
+This release has mainly included a foundation for each section(front-end, back-end, and ASP)\&. We've created basic python scripts for parsing through the schedule JSON file and a simple pipeline to convert the filtered CSCI class into ASP formatted rules and constraints\&. From this, we're able to run a basic constraint identifier that returns which classes conflict with one another\&. Additionally, we were able to set up two basic buttons that execute this "Run Filterer" and "Run Processor"\&.
+.PP
+
+.PP
+To launch django tests, use this command:
+
+.PP
+\fRpython \fBmanage\&.py\fP test\fP
+
+.PP
+We also integrated pytest to test the clingo code\&. To use pytest, navigate to \fR\\testing\\clingo_tests\fP and use this command:
+
+.PP
+\fRpytest -v \&.\\\fBclingo_pytest\&.py\fP\fP
+.SS "Docker Deployment"
+To build the docker containter image, move to the root directory for the repository and run:
+
+.PP
+\fRdocker build capstone-14:latest\fP
+
+.PP
+Run the container using:
+
+.PP
+\fRdocker run --name capstone-14 -p 8000:8000 capstone-14\fP
+
+.PP
+\fINote\fP the docker deployment will not perform any tests\&.
+.SH "Branches for Version 1\&.3"
+.PP
+.IP "\(bu" 2
+origin/josh/test: Josh and Andra worked on some pytest implementations
+.IP "\(bu" 2
+orign/andra-test2: Test the django testing suite\&. Also tested a template Dockerfile
+.IP "\(bu" 2
+orign/andra-test2: Test the django testing suite
+.IP "\(bu" 2
+orign/main: Vlad and Francisco worked to implement front-end styling on the main branch
+.PP
+.SH "Release Notes Version 0\&.9"
+.PP
+To run the project, simply launch your virtual environment using:
+
+.PP
+\fRsource myenv/bin/activate\fP
+
+.PP
+After entering virtual environment, download Django:
+
+.PP
+\fRpip install django\fP
+
+.PP
+Also Following the steps to install Clingo:
+
+.PP
+https://github.com/potassco/clingo?tab=readme-ov-file
+
+.PP
+To Launch the current iteration of project, use this command:
+
+.PP
+\fRpython \fBmanage\&.py\fP runserver\fP
+
+.PP
+.IP "\(bu" 2
+This release has mainly included a foundation for each section(front-end, back-end, and ASP)\&. We've created basic python scripts for parsing through the schedule JSON file and a simple pipeline to convert the filtered CSCI class into ASP formatted rules and constraints\&. From this, we're able to run a basic constraint identifier that returns which classes conflict with one another\&. Additionally, we were able to set up two basic buttons that execute this "Run Filterer" and "Run Processor"\&.
+.PP
+.SH "Branches for Version 0\&.9"
+.PP
+.IP "\(bu" 2
+origin/josh/test: mostly ASP/clingo related things I have been working on\&. Currently working on integrating some tests and bug fixes
+.IP "\(bu" 2
+orign/andra-test2: Generate samples for more specific testing for JSON files
+.IP "\(bu" 2
+origin/andra-testing(deleted): create web scraping script
+.IP "\(bu" 2
+origin/frank_sand: Mainly JSON file development and DJango environment setup\&. Some ASP play files for figuring stuff out
+.IP "\(bu" 2
+oring/dev: When we are working together (in person) or want to make sure we don't break main
+.IP "\(bu" 2
+main: Main branch where working iteration is found and includes front-end development 
+.PP
+

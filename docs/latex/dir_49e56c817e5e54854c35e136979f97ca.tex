@@ -1,0 +1,173 @@
+\doxysection{docs Directory Reference}
+\hypertarget{dir_49e56c817e5e54854c35e136979f97ca}{}\label{dir_49e56c817e5e54854c35e136979f97ca}\index{docs Directory Reference@{docs Directory Reference}}
+
+
+\doxysubsection{Detailed Description}
+\hypertarget{README.md_autotoc_md9}{}\doxysubsection{\texorpdfstring{Project Overview}{Project Overview}}\label{README.md_autotoc_md9}
+This project aims to identify overlapping courses that students are likely to take simultaneously and propose a new schedule without conflicts. The main objectives include\+:
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Identifying time conflicts}} between classes commonly taken in the same semester.
+\item {\bfseries{Optimizing the schedule}} to minimize conflicts and prioritize key courses.
+\item {\bfseries{Coordinating the schedule with shuttle timings}} to reduce student wait times.
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{README.md_autotoc_md11}{}\doxysubsection{\texorpdfstring{Identifying Course Overlaps}{Identifying Course Overlaps}}\label{README.md_autotoc_md11}
+A course overlap is defined as a scheduling conflict where two classes occur during the same time slot (same day and time, e.\+g., Tuesday/\+Thursday) under the following conditions\+:
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Strict Overlap}}
+\begin{DoxyItemize}
+\item The same time {\bfseries{and}} the same day {\bfseries{and}} either\+:
+\begin{DoxyItemize}
+\item The same professor, or
+\item The same room.
+\end{DoxyItemize}
+\item At least one class should remain conflict-\/free if multiple sections exist.
+\end{DoxyItemize}
+\item {\bfseries{Handling Multiple Sections}}
+\begin{DoxyItemize}
+\item If multiple sections of a class are available (e.\+g., "{}\+AI"{} taught by different professors), should we ensure at least one section remains conflict-\/free, or that all sections avoid conflicts with other courses?
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{README.md_autotoc_md13}{}\doxysubsection{\texorpdfstring{Key Classes to Prioritize}{Key Classes to Prioritize}}\label{README.md_autotoc_md13}
+Certain courses should be given priority when resolving conflicts\+:
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Core CS Courses}}
+\begin{DoxyItemize}
+\item Examples\+: Calculus I, CS II, Intro to Proofs, Discrete Math, Theory of Computation, Computer Networks, Software Engineering.
+\item Classes with prerequisites can overlap with their prerequisite courses since students typically won\textquotesingle{}t take both in the same semester.
+\end{DoxyItemize}
+\item {\bfseries{Core Concentration Classes}}
+\begin{DoxyItemize}
+\item Examples\+: NLP, AI, Game Design.
+\end{DoxyItemize}
+\item {\bfseries{4000-\/Level Courses}} (Priority for seniors)
+\begin{DoxyItemize}
+\item Ensuring upper-\/level students can take required courses without conflicts.
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+{\bfseries{Example Case\+:}} A senior pursuing a Computer Science or AI degree may need both {\itshape Intro to AI} and {\itshape Machine Learning \& Data Mining}. These courses should not be scheduled at the same time.
+
+\DoxyHorRuler{0}
+\hypertarget{README.md_autotoc_md15}{}\doxysubsection{\texorpdfstring{Optimization Approach}{Optimization Approach}}\label{README.md_autotoc_md15}
+After identifying conflicts, the next step is to suggest a reorganized schedule with minimal conflicts. The optimization criteria include\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Minimizing the number of overlapping classes.}}
+\item {\bfseries{Prioritizing senior-\/level courses}} to ensure timely graduation.
+\item {\bfseries{Considering different optimization strategies\+:}}
+\begin{DoxyItemize}
+\item Reducing overall conflicts.
+\item Assigning weights to courses to prioritize essential ones.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{README.md_autotoc_md17}{}\doxysubsection{\texorpdfstring{Coordinating with Shuttle Schedule}{Coordinating with Shuttle Schedule}}\label{README.md_autotoc_md17}
+The final step involves aligning the course schedule with the university’s shuttle service to minimize student wait times.
+
+\DoxyHorRuler{0}
+\hypertarget{README.md_autotoc_md19}{}\doxysubsection{\texorpdfstring{Additional Optimization Considerations}{Additional Optimization Considerations}}\label{README.md_autotoc_md19}
+
+\begin{DoxyItemize}
+\item A secondary {\bfseries{Answer Set Programming (ASP) model}} will take the optimized schedule and refine it further with minimal disruption.
+\item Weak constraints can have different weights to reflect course importance.
+\item {\bfseries{TODO\+:}} Read more on soft constraints and optimization techniques.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{README.md_autotoc_md21}{}\doxysubsection{\texorpdfstring{Future Improvements}{Future Improvements}}\label{README.md_autotoc_md21}
+
+\begin{DoxyItemize}
+\item Fine-\/tune soft constraints and optimization approaches.
+\item Gather feedback from students and faculty to refine scheduling priorities.
+\item Explore additional factors such as professor availability and classroom constraints.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{README.md_autotoc_md23}{}\doxysubsection{\texorpdfstring{Conclusion}{Conclusion}}\label{README.md_autotoc_md23}
+This project provides an optimized class schedule by reducing conflicts, prioritizing key courses, and considering shuttle coordination. The optimization process balances multiple factors to ensure students can take the courses they need without unnecessary scheduling conflicts.\hypertarget{README.md_autotoc_md24}{}\doxysubsection{\texorpdfstring{Release Notes Version 1.\+3}{Release Notes Version 1.\+3}}\label{README.md_autotoc_md24}
+\hypertarget{README.md_autotoc_md25}{}\doxysubsubsection{\texorpdfstring{Command Line Deployment}{Command Line Deployment}}\label{README.md_autotoc_md25}
+To run the project, simply launch your virtual environment using\+:
+
+{\ttfamily source myenv/bin/activate}
+
+After entering virtual environment, download Django\+:
+
+{\ttfamily pip install -\/r requirements.\+txt}
+
+Also Following the steps to install Clingo\+:
+
+\href{https://github.com/potassco/clingo?tab=readme-ov-file}{\texttt{ https\+://github.\+com/potassco/clingo?tab=readme-\/ov-\/file}}
+
+To Launch the current iteration of project, use this command\+:
+
+{\ttfamily python \doxylink{manage_8py}{manage.\+py} runserver}
+
+
+\begin{DoxyItemize}
+\item This release has mainly included a foundation for each section(front-\/end, back-\/end, and ASP). We\textquotesingle{}ve created basic python scripts for parsing through the schedule JSON file and a simple pipeline to convert the filtered CSCI class into ASP formatted rules and constraints. From this, we\textquotesingle{}re able to run a basic constraint identifier that returns which classes conflict with one another. Additionally, we were able to set up two basic buttons that execute this "{}\+Run Filterer"{} and "{}\+Run Processor"{}.
+\end{DoxyItemize}
+
+To launch django tests, use this command\+:
+
+{\ttfamily python \doxylink{manage_8py}{manage.\+py} test}
+
+We also integrated pytest to test the clingo code. To use pytest, navigate to {\ttfamily \textbackslash{}testing\textbackslash{}clingo\+\_\+tests} and use this command\+:
+
+{\ttfamily pytest -\/v .\textbackslash{}\doxylink{clingo__pytest_8py}{clingo\+\_\+pytest.\+py}}\hypertarget{README.md_autotoc_md26}{}\doxysubsubsection{\texorpdfstring{Docker Deployment}{Docker Deployment}}\label{README.md_autotoc_md26}
+To build the docker containter image, move to the root directory for the repository and run\+:
+
+{\ttfamily docker build capstone-\/14\+:latest}
+
+Run the container using\+:
+
+{\ttfamily docker run -\/-\/name capstone-\/14 -\/p 8000\+:8000 capstone-\/14}
+
+{\itshape Note} the docker deployment will not perform any tests.\hypertarget{README.md_autotoc_md27}{}\doxysubsection{\texorpdfstring{Branches for Version 1.\+3}{Branches for Version 1.\+3}}\label{README.md_autotoc_md27}
+
+\begin{DoxyItemize}
+\item origin/josh/test\+: Josh and Andra worked on some pytest implementations
+\item orign/andra-\/test2\+: Test the django testing suite. Also tested a template Dockerfile
+\item orign/andra-\/test2\+: Test the django testing suite
+\item orign/main\+: Vlad and Francisco worked to implement front-\/end styling on the main branch
+\end{DoxyItemize}\hypertarget{README.md_autotoc_md28}{}\doxysubsection{\texorpdfstring{Release Notes Version 0.\+9}{Release Notes Version 0.\+9}}\label{README.md_autotoc_md28}
+To run the project, simply launch your virtual environment using\+:
+
+{\ttfamily source myenv/bin/activate}
+
+After entering virtual environment, download Django\+:
+
+{\ttfamily pip install django}
+
+Also Following the steps to install Clingo\+:
+
+\href{https://github.com/potassco/clingo?tab=readme-ov-file}{\texttt{ https\+://github.\+com/potassco/clingo?tab=readme-\/ov-\/file}}
+
+To Launch the current iteration of project, use this command\+:
+
+{\ttfamily python \doxylink{manage_8py}{manage.\+py} runserver}
+
+
+\begin{DoxyItemize}
+\item This release has mainly included a foundation for each section(front-\/end, back-\/end, and ASP). We\textquotesingle{}ve created basic python scripts for parsing through the schedule JSON file and a simple pipeline to convert the filtered CSCI class into ASP formatted rules and constraints. From this, we\textquotesingle{}re able to run a basic constraint identifier that returns which classes conflict with one another. Additionally, we were able to set up two basic buttons that execute this "{}\+Run Filterer"{} and "{}\+Run Processor"{}.
+\end{DoxyItemize}\hypertarget{README.md_autotoc_md29}{}\doxysubsection{\texorpdfstring{Branches for Version 0.\+9}{Branches for Version 0.\+9}}\label{README.md_autotoc_md29}
+
+\begin{DoxyItemize}
+\item origin/josh/test\+: mostly ASP/clingo related things I have been working on. Currently working on integrating some tests and bug fixes
+\item orign/andra-\/test2\+: Generate samples for more specific testing for JSON files
+\item origin/andra-\/testing(deleted)\+: create web scraping script
+\item origin/frank\+\_\+sand\+: Mainly JSON file development and DJango environment setup. Some ASP play files for figuring stuff out
+\item oring/dev\+: When we are working together (in person) or want to make sure we don\textquotesingle{}t break main
+\item main\+: Main branch where working iteration is found and includes front-\/end development 
+\end{DoxyItemize}

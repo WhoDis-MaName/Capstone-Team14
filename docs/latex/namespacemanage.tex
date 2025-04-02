@@ -1,0 +1,43 @@
+\doxysection{manage Namespace Reference}
+\hypertarget{namespacemanage}{}\label{namespacemanage}\index{manage@{manage}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacemanage_a0ac64ea81648f42d6a49d76da894eaf4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Django's command-line utility for administrative tasks.\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacemanage_a0ac64ea81648f42d6a49d76da894eaf4}\index{manage@{manage}!main@{main}}
+\index{main@{main}!manage@{manage}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{namespacemanage_a0ac64ea81648f42d6a49d76da894eaf4} 
+manage.\+main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Run administrative tasks.\end{DoxyVerb}
+ 
+
+Definition at line \mbox{\hyperlink{manage_8py_source_l00007}{7}} of file \mbox{\hyperlink{manage_8py_source}{manage.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00007\ \textcolor{keyword}{def\ }main(): }
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}Run\ administrative\ tasks."{}"{}"{}} }
+\DoxyCodeLine{00009\ \ \ \ \ os.environ.setdefault(\textcolor{stringliteral}{'DJANGO\_SETTINGS\_MODULE'},\ \textcolor{stringliteral}{'myproject.settings'}) }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordflow}{try}: }
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keyword}{from}\ django.core.management\ \textcolor{keyword}{import}\ execute\_from\_command\_line }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordflow}{except}\ ImportError\ \textcolor{keyword}{as}\ exc: }
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{raise}\ ImportError( }
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Couldn't\ import\ Django.\ Are\ you\ sure\ it's\ installed\ and\ "{}} }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}available\ on\ your\ PYTHONPATH\ environment\ variable?\ Did\ you\ "{}} }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}forget\ to\ activate\ a\ virtual\ environment?"{}} }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ )\ \textcolor{keyword}{from}\ exc }
+\DoxyCodeLine{00018\ \ \ \ \ execute\_from\_command\_line(sys.argv) }
+\DoxyCodeLine{00019\  }
+\DoxyCodeLine{00020\  }
+
+\end{DoxyCode}

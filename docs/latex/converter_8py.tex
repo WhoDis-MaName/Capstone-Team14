@@ -1,0 +1,37 @@
+\doxysection{converter.\+py File Reference}
+\hypertarget{converter_8py}{}\label{converter_8py}\index{converter.py@{converter.py}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceconverter}{converter}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceconverter_a814ed471ae64d1b1640bd217d461512b}{converter.\+clean\+\_\+course\+\_\+name}} (course)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{namespaceconverter_a467eb33e56ef909081ca0531a012b9ce}{converter.\+file\+\_\+path}} = "{}filtered.\+json"{}
+\item 
+\mbox{\hyperlink{namespaceconverter_a1e1cb5282251941da3be7c61d30afc7c}{converter.\+data}} = json.\+load(file)
+\item 
+dict \mbox{\hyperlink{namespaceconverter_aa2ba91e7e32e1307f84d38f304a2c1c2}{converter.\+course\+\_\+prereqs}} = \{\}
+\item 
+\mbox{\hyperlink{namespaceconverter_a6436489b70aae83abab96952b28d4d76}{converter.\+strict\+\_\+prereq\+\_\+pattern}} = re.\+compile(r"{}(\mbox{[}\textbackslash{}w\textbackslash{}s\mbox{]}+) with C\mbox{[}-\/\mbox{]}? or better\texorpdfstring{$\vert$}{|}(\mbox{[}\textbackslash{}w\textbackslash{}s\mbox{]}+) AND\texorpdfstring{$\vert$}{|}(\mbox{[}\textbackslash{}w\textbackslash{}s\mbox{]}+) OR"{})
+\item 
+\mbox{\hyperlink{namespaceconverter_a7f03e5e6717e79930fb4d031eb1b430a}{converter.\+title}} = course\+\_\+info.\+get("{}title"{}, "{}Unknown Title"{})
+\item 
+\mbox{\hyperlink{namespaceconverter_a011c51ef165c610a450f6a7581181369}{converter.\+prereq\+\_\+text}} = course\+\_\+info.\+get("{}desc"{}, "{}"{})
+\item 
+\mbox{\hyperlink{namespaceconverter_adc457b046e3e739e47decc226d3d9de9}{converter.\+prereq\+\_\+part}} = prereq\+\_\+text.\+split("{}Prereq\+:"{})\mbox{[}1\mbox{]}.strip()
+\item 
+\mbox{\hyperlink{namespaceconverter_a7cd336fae1cec5700a3b7018c4995da4}{converter.\+matches}} = strict\+\_\+prereq\+\_\+pattern.\+findall(\mbox{\hyperlink{namespaceconverter_adc457b046e3e739e47decc226d3d9de9}{prereq\+\_\+part}})
+\item 
+\mbox{\hyperlink{namespaceconverter_a940deb3778e0814b3858f19f3dd72a8b}{converter.\+all\+\_\+prereqs}} = set()
+\item 
+str \mbox{\hyperlink{namespaceconverter_a7352e1f0850b48b9f1e548a514486a25}{converter.\+structured\+\_\+prereq}} = f"{}choice(\mbox{[}\{\textquotesingle{}, \textquotesingle{}.join(\mbox{\hyperlink{namespaceconverter_a940deb3778e0814b3858f19f3dd72a8b}{all\+\_\+prereqs}})\}\mbox{]})"{}
+\item 
+str \mbox{\hyperlink{namespaceconverter_abe801b4b3d9e4600db786b4476976e09}{converter.\+course\+\_\+key}} = f"{}\{\mbox{\hyperlink{namespaceconverter_a814ed471ae64d1b1640bd217d461512b}{clean\+\_\+course\+\_\+name}}(subject)\}\+\_\+\{course\+\_\+number\}"{}
+\end{DoxyCompactItemize}

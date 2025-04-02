@@ -1,0 +1,100 @@
+.TH "clingo_pytest" 3 "Version 3" "ASP Schedule Optimizer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+clingo_pytest
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBrun_clingo\fP (program_files)"
+.br
+.ti -1c
+.RI "\fBparse_answer_set\fP (output)"
+.br
+.ti -1c
+.RI "\fBtest_clingo_output\fP (input_files, expected_output)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "clingo_pytest\&.parse_answer_set ( output)"
+
+.PP
+Definition at line \fB37\fP of file \fBclingo_pytest\&.py\fP\&.
+.nf
+37 def parse_answer_set(output):
+38     # Parses Clingo output to extract the answer set\&.
+39     lines = output\&.splitlines()
+40     answer_sets = [
+41         line for line in lines if not line\&.startswith(("clingo", "Solving", "Answer"))
+42     ]
+43 
+44     # Filters Clingo's answer set to extract only the relevant response\&.
+45     return {
+46         line
+47         for line in answer_sets
+48         if line
+49         and not any(
+50             keyword in line
+51             for keyword in [
+52                 "Models",
+53                 "Reading",
+54                 "Calls",
+55                 "CPU Time",
+56                 "SATISFIABLE",
+57                 "Time",
+58             ]
+59         )
+60     }
+61 
+62 
+63 # TODO: we have a bug where it isn't counting all the sections for some reason\&.
+64 # For example, in this test case it is only counting 8 sections \- it is missing csci 1010 and another one
+65 # Add test cases here
+66 @pytest\&.mark\&.parametrize(
+67     "input_files,expected_output",
+68     [
+69         (
+70             ["\&.\&./test_cases/test_case_00\&.lp", "\&.\&./\&.\&./identifyconflict\&.lp"],
+71             {"conflict_count(3)"},
+72         ),
+73     ],
+74 )
+.PP
+.fi
+
+.SS "clingo_pytest\&.run_clingo ( program_files)"
+
+.PP
+Definition at line \fB30\fP of file \fBclingo_pytest\&.py\fP\&.
+.nf
+30 def run_clingo(program_files):
+31     # Runs Clingo on the given ASP program file and returns the parsed output\&.
+32     cmd = ["clingo"] + program_files
+33     result = subprocess\&.run(cmd, capture_output=True, text=True)
+34     return result\&.stdout  # Adjust parsing as needed
+35 
+36 
+.PP
+.fi
+
+.SS "clingo_pytest\&.test_clingo_output ( input_files,  expected_output)"
+
+.PP
+Definition at line \fB75\fP of file \fBclingo_pytest\&.py\fP\&.
+.nf
+75 def test_clingo_output(input_files, expected_output):
+76     output = run_clingo(input_files)
+77     answer_set = set(parse_answer_set(output))
+78     print(output)
+79     assert answer_set == expected_output, f"Unexpected output: {answer_set}"
+.PP
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ASP Schedule Optimizer from the source code\&.

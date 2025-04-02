@@ -1,0 +1,57 @@
+.TH "manage" 3 "Version 3" "ASP Schedule Optimizer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+manage
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBmain\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Django's command-line utility for administrative tasks\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "manage\&.main ()"
+
+.PP
+.nf
+Run administrative tasks\&.
+.fi
+.PP
+ 
+.PP
+Definition at line \fB7\fP of file \fBmanage\&.py\fP\&.
+.nf
+7 def main():
+8     """Run administrative tasks\&."""
+9     os\&.environ\&.setdefault('DJANGO_SETTINGS_MODULE', 'myproject\&.settings')
+10     try:
+11         from django\&.core\&.management import execute_from_command_line
+12     except ImportError as exc:
+13         raise ImportError(
+14             "Couldn't import Django\&. Are you sure it's installed and "
+15             "available on your PYTHONPATH environment variable? Did you "
+16             "forget to activate a virtual environment?"
+17         ) from exc
+18     execute_from_command_line(sys\&.argv)
+19 
+20 
+.PP
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ASP Schedule Optimizer from the source code\&.

@@ -1,0 +1,85 @@
+\doxysection{clingo\+\_\+pytest.\+py}
+\hypertarget{clingo__pytest_8py_source}{}\label{clingo__pytest_8py_source}\index{testing/clingo\_tests/clingo\_pytest.py@{testing/clingo\_tests/clingo\_pytest.py}}
+\mbox{\hyperlink{clingo__pytest_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00001}\mbox{\hyperlink{namespaceclingo__pytest}{00001}}\ \textcolor{keyword}{import}\ subprocess}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00002}00002\ \textcolor{keyword}{import}\ pytest}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00005}00005\ \textcolor{comment}{\#\ TODO:\ make\ this\ work:}}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00007}00007\ \textcolor{comment}{\#\ def\ run\_clingo(input\_files):}}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00008}00008\ \textcolor{comment}{\#\ \ \ \ \ \#\ Runs\ Clingo\ with\ multiple\ input\ files\ using\ the\ Clingo\ Python\ API.}}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00009}00009\ \textcolor{comment}{\#\ \ \ \ \ ctl\ =\ clingo.Control()}}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00011}00011\ \textcolor{comment}{\#\ \ \ \ \ \#\ Load\ each\ file\ into\ the\ Clingo\ control\ object}}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00012}00012\ \textcolor{comment}{\#\ \ \ \ \ for\ file\ in\ input\_files:}}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00013}00013\ \textcolor{comment}{\#\ \ \ \ \ \ \ \ \ ctl.load(file)}}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00015}00015\ \textcolor{comment}{\#\ \ \ \ \ \#\ Ground\ the\ program}}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00016}00016\ \textcolor{comment}{\#\ \ \ \ \ ctl.ground([("{}base"{},\ [])])}}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00018}00018\ \textcolor{comment}{\#\ \ \ \ \ \#\ Store\ answer\ sets}}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00019}00019\ \textcolor{comment}{\#\ \ \ \ \ answer\_sets\ =\ []}}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00021}00021\ \textcolor{comment}{\#\ \ \ \ \ \#\ Solve\ and\ collect\ models}}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00022}00022\ \textcolor{comment}{\#\ \ \ \ \ def\ on\_model(model):}}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00023}00023\ \textcolor{comment}{\#\ \ \ \ \ \ \ \ \ answer\_sets.append(model.symbols(atoms=True))}}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00025}00025\ \textcolor{comment}{\#\ \ \ \ \ ctl.solve(on\_model=on\_model)}}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00027}00027\ \textcolor{comment}{\#\ \ \ \ \ return\ answer\_sets\ \ \#\ Returns\ a\ list\ of\ answer\ sets\ as\ clingo.Symbol\ objects}}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00030}\mbox{\hyperlink{namespaceclingo__pytest_a26e226006bd78f2f3dc0b41115d3d992}{00030}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceclingo__pytest_a26e226006bd78f2f3dc0b41115d3d992}{run\_clingo}}(program\_files):}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00031}00031\ \ \ \ \ \textcolor{comment}{\#\ Runs\ Clingo\ on\ the\ given\ ASP\ program\ file\ and\ returns\ the\ parsed\ output.}}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00032}00032\ \ \ \ \ cmd\ =\ [\textcolor{stringliteral}{"{}clingo"{}}]\ +\ program\_files}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00033}00033\ \ \ \ \ result\ =\ subprocess.run(cmd,\ capture\_output=\textcolor{keyword}{True},\ text=\textcolor{keyword}{True})}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{return}\ result.stdout\ \ \textcolor{comment}{\#\ Adjust\ parsing\ as\ needed}}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00037}\mbox{\hyperlink{namespaceclingo__pytest_a1565245f223fae7d79b63e34cf44f40b}{00037}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceclingo__pytest_a1565245f223fae7d79b63e34cf44f40b}{parse\_answer\_set}}(output):}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00038}00038\ \ \ \ \ \textcolor{comment}{\#\ Parses\ Clingo\ output\ to\ extract\ the\ answer\ set.}}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00039}00039\ \ \ \ \ lines\ =\ output.splitlines()}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00040}00040\ \ \ \ \ answer\_sets\ =\ [}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00041}00041\ \ \ \ \ \ \ \ \ line\ \textcolor{keywordflow}{for}\ line\ \textcolor{keywordflow}{in}\ lines\ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ line.startswith((\textcolor{stringliteral}{"{}clingo"{}},\ \textcolor{stringliteral}{"{}Solving"{}},\ \textcolor{stringliteral}{"{}Answer"{}}))}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00042}00042\ \ \ \ \ ]}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00044}00044\ \ \ \ \ \textcolor{comment}{\#\ Filters\ Clingo's\ answer\ set\ to\ extract\ only\ the\ relevant\ response.}}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{return}\ \{}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00046}00046\ \ \ \ \ \ \ \ \ line}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ line\ \textcolor{keywordflow}{in}\ answer\_sets}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ line}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{and}\ \textcolor{keywordflow}{not}\ any(}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ keyword\ \textcolor{keywordflow}{in}\ line}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ keyword\ \textcolor{keywordflow}{in}\ [}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Models"{}},}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Reading"{}},}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Calls"{}},}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}CPU\ Time"{}},}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}SATISFIABLE"{}},}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Time"{}},}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ ]}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00059}00059\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00063}00063\ \textcolor{comment}{\#\ TODO:\ we\ have\ a\ bug\ where\ it\ isn't\ counting\ all\ the\ sections\ for\ some\ reason.}}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00064}00064\ \textcolor{comment}{\#\ For\ example,\ in\ this\ test\ case\ it\ is\ only\ counting\ 8\ sections\ -\/\ it\ is\ missing\ csci\ 1010\ and\ another\ one}}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00065}00065\ \textcolor{comment}{\#\ Add\ test\ cases\ here}}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00066}00066\ \textcolor{preprocessor}{@pytest.mark.parametrize}(}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00067}00067\ \ \ \ \ \textcolor{stringliteral}{"{}input\_files,expected\_output"{}},}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00068}00068\ \ \ \ \ [}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00069}00069\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}../test\_cases/test\_case\_00.lp"{}},\ \textcolor{stringliteral}{"{}../../identifyconflict.lp"{}}],}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}conflict\_count(3)"{}}\},}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00072}00072\ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00073}00073\ \ \ \ \ ],}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00074}00074\ )}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00075}\mbox{\hyperlink{namespaceclingo__pytest_a3b4673160d447860a87b96a39513ec26}{00075}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceclingo__pytest_a3b4673160d447860a87b96a39513ec26}{test\_clingo\_output}}(input\_files,\ expected\_output):}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00076}00076\ \ \ \ \ output\ =\ \mbox{\hyperlink{namespaceclingo__pytest_a26e226006bd78f2f3dc0b41115d3d992}{run\_clingo}}(input\_files)}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00077}00077\ \ \ \ \ answer\_set\ =\ set(\mbox{\hyperlink{namespaceclingo__pytest_a1565245f223fae7d79b63e34cf44f40b}{parse\_answer\_set}}(output))}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00078}00078\ \ \ \ \ print(output)}
+\DoxyCodeLine{\Hypertarget{clingo__pytest_8py_source_l00079}00079\ \ \ \ \ \textcolor{keyword}{assert}\ answer\_set\ ==\ expected\_output,\ f\textcolor{stringliteral}{"{}Unexpected\ output:\ \{answer\_set\}"{}}}
+
+\end{DoxyCode}

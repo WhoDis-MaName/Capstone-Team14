@@ -1,0 +1,53 @@
+.TH "testing/clingo_tests/get_test_case.py" 3 "Version 3" "ASP Schedule Optimizer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+testing/clingo_tests/get_test_case.py
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBget_test_case\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "dict \fBget_test_case\&.get_classes\fP (str filename)"
+.br
+.ti -1c
+.RI "dict \fBget_test_case\&.create_sample\fP (dict \fBclasses\fP, int num_semesters, int num_departments, int num_classes)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBget_test_case\&.current_directory\fP = os\&.path\&.dirname(os\&.path\&.realpath(__file__))"
+.br
+.ti -1c
+.RI "\fBget_test_case\&.test_folder_dir\fP = os\&.path\&.split(\fBcurrent_directory\fP)[0]"
+.br
+.ti -1c
+.RI "\fBget_test_case\&.test_cases_dir\fP = os\&.path\&.join(\fBtest_folder_dir\fP,'test_cases')"
+.br
+.ti -1c
+.RI "dict \fBget_test_case\&.classes\fP = \fBget_classes\fP('filtered\&.json')"
+.br
+.ti -1c
+.RI "dict \fBget_test_case\&.sample_data\fP = \fBcreate_sample\fP(\fBclasses\fP, 1, 2, 5)"
+.br
+.ti -1c
+.RI "\fBget_test_case\&.f\fP"
+.br
+.ti -1c
+.RI "\fBget_test_case\&.indent\fP"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ASP Schedule Optimizer from the source code\&.

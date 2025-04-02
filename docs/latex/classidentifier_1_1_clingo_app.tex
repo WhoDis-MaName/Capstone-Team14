@@ -1,0 +1,56 @@
+\doxysection{identifier.\+Clingo\+App Class Reference}
+\hypertarget{classidentifier_1_1_clingo_app}{}\label{classidentifier_1_1_clingo_app}\index{identifier.ClingoApp@{identifier.ClingoApp}}
+Inheritance diagram for identifier.\+Clingo\+App\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classidentifier_1_1_clingo_app}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classidentifier_1_1_clingo_app_a297bc53a59a555c428e4c4e3e1cdb474}{main}} (self, ctl, files)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{identifier_8py_source_l00013}{13}} of file \mbox{\hyperlink{identifier_8py_source}{identifier.\+py}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classidentifier_1_1_clingo_app_a297bc53a59a555c428e4c4e3e1cdb474}\index{identifier.ClingoApp@{identifier.ClingoApp}!main@{main}}
+\index{main@{main}!identifier.ClingoApp@{identifier.ClingoApp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{classidentifier_1_1_clingo_app_a297bc53a59a555c428e4c4e3e1cdb474} 
+identifier.\+Clingo\+App.\+main (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{ctl}{, }\item[{}]{files}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{identifier_8py_source_l00014}{14}} of file \mbox{\hyperlink{identifier_8py_source}{identifier.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{def\ }main(self,\ ctl,\ files): }
+\DoxyCodeLine{00015\  }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ args\ =\ parser.parse\_args() }
+\DoxyCodeLine{00017\  }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Access\ the\ arguments }}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ file\ =\ args.file }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ print(file) }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ TODO:\ Update\ to\ work\ with\ input\ file\ not\ just\ hard\ coded\ file }}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ convert(file) }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ ctl.load(\textcolor{stringliteral}{"{}identifyconflict.lp"{}}) }
+\DoxyCodeLine{00024\  }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ ctl.ground() }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ ctl.solve() }
+\DoxyCodeLine{00027\  }
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{identifier_8py}{identifier.\+py}}\end{DoxyCompactItemize}

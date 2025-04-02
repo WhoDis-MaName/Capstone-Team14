@@ -1,0 +1,29 @@
+.TH "md_docs_2_django__tutorial__instructions" 3 "Version 3" "ASP Schedule Optimizer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md_docs_2_django__tutorial__instructions \- Django Tutorial instructions 
+.PP
+
+.SH "Setup Environment"
+.PP
+.SS "Create venv"
+\fRpython -m venv {environment name}\fP
+.SS "Start venv"
+\fR{environment name}/Scripts/activate\fP
+
+.PP
+\fBNote\fP must enable script running via powershell command \fRSet-ExecutionPolicy -ExecutionPolicy AllSigned -Scope CurrentUser\fP
+.SS "Install Django"
+\fRpip install Django\fP
+.SS "Start Django project"
+\fRdjango-admin startproject {project name}\fP
+.SS "Create Django app"
+.PP
+.nf
+cd {django project name}
+python3 manage\&.py startapp {app name}
+.fi
+.PP
+.SS "Run Django Project"
+\fRpython \fBmanage\&.py\fP runserver\fP 
