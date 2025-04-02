@@ -164,29 +164,6 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="get__test__case_8py_source.html#l00022">22</a> of file <a class="el" href="get__test__case_8py_source.html">get_test_case.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   22</span><span class="keyword">def </span>create_sample(classes:dict, num_semesters:int, num_departments:int, num_classes:int) -&gt; dict:</div>
-<div class="line"><span class="lineno">   23</span>    sample_data = {}</div>
-<div class="line"><span class="lineno">   24</span>    key_list = list(classes.keys())</div>
-<div class="line"><span class="lineno">   25</span>    semester_subset = sample(key_list,min(num_semesters,len(key_list)))</div>
-<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">for</span> semester <span class="keywordflow">in</span> semester_subset:</div>
-<div class="line"><span class="lineno">   27</span>        sample_data[semester] = {}</div>
-<div class="line"><span class="lineno">   28</span>        key_list = list(classes[semester].keys())</div>
-<div class="line"><span class="lineno">   29</span>        department_subset = sample(key_list,min(num_departments,len(key_list)))</div>
-<div class="line"><span class="lineno">   30</span>        <span class="keywordflow">for</span> department <span class="keywordflow">in</span> department_subset:</div>
-<div class="line"><span class="lineno">   31</span>            key_list = list(classes[semester][department].keys())</div>
-<div class="line"><span class="lineno">   32</span>            class_subset = sample(key_list,min(num_classes,len(key_list)))</div>
-<div class="line"><span class="lineno">   33</span>            <span class="keywordflow">for</span> sample_class <span class="keywordflow">in</span> class_subset:</div>
-<div class="line"><span class="lineno">   34</span> </div>
-<div class="line"><span class="lineno">   35</span>                classes[semester][department][sample_class][<span class="stringliteral">&#39;sections&#39;</span>] = {</div>
-<div class="line"><span class="lineno">   36</span>                    list(classes[semester][department][sample_class][<span class="stringliteral">&#39;sections&#39;</span>].keys())[0]: list(classes[semester][department][sample_class][<span class="stringliteral">&#39;sections&#39;</span>].values())[0]</div>
-<div class="line"><span class="lineno">   37</span>                    }</div>
-<div class="line"><span class="lineno">   38</span>            class_list = {class_name: classes[semester][department][class_name] <span class="keywordflow">for</span> class_name <span class="keywordflow">in</span> class_subset}</div>
-<div class="line"><span class="lineno">   39</span>            sample_data[semester][department] = class_list</div>
-<div class="line"><span class="lineno">   40</span>            </div>
-<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">return</span> sample_data</div>
-<div class="line"><span class="lineno">   42</span> </div>
-</div><!-- fragment -->
 </div>
 </div>
 <a id="a194b023572366c46e653f5edc5b3eeb1" name="a194b023572366c46e653f5edc5b3eeb1"></a>
@@ -204,16 +181,6 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="get__test__case_8py_source.html#l00014">14</a> of file <a class="el" href="get__test__case_8py_source.html">get_test_case.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   14</span><span class="keyword">def </span>get_classes(filename: str) -&gt; dict:</div>
-<div class="line"><span class="lineno">   15</span>    classes = {}</div>
-<div class="line"><span class="lineno">   16</span> </div>
-<div class="line"><span class="lineno">   17</span>    <span class="keyword">with</span> open(filename, <span class="stringliteral">&#39;r&#39;</span>) <span class="keyword">as</span> f:</div>
-<div class="line"><span class="lineno">   18</span>        classes = json.load(f)</div>
-<div class="line"><span class="lineno">   19</span>        </div>
-<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">return</span> classes</div>
-<div class="line"><span class="lineno">   21</span> </div>
-</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -229,8 +196,6 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="get__test__case_8py_source.html#l00049">49</a> of file <a class="el" href="get__test__case_8py_source.html">get_test_case.py</a>.</p>
-
 </div>
 </div>
 <a id="a0f474206fa7d03349f618629bb7012f0" name="a0f474206fa7d03349f618629bb7012f0"></a>
@@ -244,8 +209,6 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="get__test__case_8py_source.html#l00006">6</a> of file <a class="el" href="get__test__case_8py_source.html">get_test_case.py</a>.</p>
 
 </div>
 </div>
@@ -261,8 +224,6 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="get__test__case_8py_source.html#l00055">55</a> of file <a class="el" href="get__test__case_8py_source.html">get_test_case.py</a>.</p>
-
 </div>
 </div>
 <a id="ac5588123f1ee463a7ac9b1840f4dcc69" name="ac5588123f1ee463a7ac9b1840f4dcc69"></a>
@@ -276,8 +237,6 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="get__test__case_8py_source.html#l00055">55</a> of file <a class="el" href="get__test__case_8py_source.html">get_test_case.py</a>.</p>
 
 </div>
 </div>
@@ -293,8 +252,6 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="get__test__case_8py_source.html#l00052">52</a> of file <a class="el" href="get__test__case_8py_source.html">get_test_case.py</a>.</p>
-
 </div>
 </div>
 <a id="a3fd90325eeb942eaedb62d24ed2be27f" name="a3fd90325eeb942eaedb62d24ed2be27f"></a>
@@ -309,8 +266,6 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="get__test__case_8py_source.html#l00043">43</a> of file <a class="el" href="get__test__case_8py_source.html">get_test_case.py</a>.</p>
-
 </div>
 </div>
 <a id="a1e478c12ef56c8154bfe394b4438c621" name="a1e478c12ef56c8154bfe394b4438c621"></a>
@@ -324,8 +279,6 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="get__test__case_8py_source.html#l00012">12</a> of file <a class="el" href="get__test__case_8py_source.html">get_test_case.py</a>.</p>
 
 </div>
 </div>

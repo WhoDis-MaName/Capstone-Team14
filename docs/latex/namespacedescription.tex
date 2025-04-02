@@ -3,7 +3,17 @@
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-str \mbox{\hyperlink{namespacedescription_a4a480452d558a32a5b89e00444618f5f}{file\+\_\+path}} = "{}filtered.\+json"{}
+\mbox{\hyperlink{namespacedescription_a1c2a08c492b1bb0fabe8a548df401d67}{current\+\_\+directory}} = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))
+\item 
+\mbox{\hyperlink{namespacedescription_a65fe575f2e28fc57859becd80fd7c2ff}{path}} = current\+\_\+directory.\+split(os.\+sep)
+\item 
+\mbox{\hyperlink{namespacedescription_ad123eeba2202dcfec4b31e03be84c84a}{root\+\_\+index}} = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacedescription_a09fb5359143bbe7bf51da05dfa10491a}{root\+\_\+dir}} = os.\+sep.\+join(\mbox{\hyperlink{namespacedescription_a65fe575f2e28fc57859becd80fd7c2ff}{path}}\mbox{[}\+:\mbox{\hyperlink{namespacedescription_ad123eeba2202dcfec4b31e03be84c84a}{root\+\_\+index}}+1\mbox{]})
+\item 
+\mbox{\hyperlink{namespacedescription_adee66afc7b280c8b0611150e9eb58079}{data\+\_\+dir}} = os.\+path.\+join(\mbox{\hyperlink{namespacedescription_a09fb5359143bbe7bf51da05dfa10491a}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}uploaded\+\_\+schedule\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacedescription_abd9e42828d419f95d5e87be0fd6fa826}{file\+\_\+path}} = os.\+path.\+join(\mbox{\hyperlink{namespacedescription_adee66afc7b280c8b0611150e9eb58079}{data\+\_\+dir}}, "{}filtered.\+json"{})
 \item 
 \mbox{\hyperlink{namespacedescription_a0260747a932650cdc1c4c60cdde7e4cd}{data}} = json.\+load(file)
 \item 
@@ -24,9 +34,11 @@ dict \mbox{\hyperlink{namespacedescription_a98330234a2f317e284737f43ccfabc57}{co
 {\footnotesize\ttfamily \label{namespacedescription_a98330234a2f317e284737f43ccfabc57} 
 dict description.\+course\+\_\+prerequisites = \{\}}
 
-
-
-Definition at line \mbox{\hyperlink{description_8py_source_l00009}{9}} of file \mbox{\hyperlink{description_8py_source}{description.\+py}}.
+\Hypertarget{namespacedescription_a1c2a08c492b1bb0fabe8a548df401d67}\index{description@{description}!current\_directory@{current\_directory}}
+\index{current\_directory@{current\_directory}!description@{description}}
+\doxysubsubsection{\texorpdfstring{current\_directory}{current\_directory}}
+{\footnotesize\ttfamily \label{namespacedescription_a1c2a08c492b1bb0fabe8a548df401d67} 
+description.\+current\+\_\+directory = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))}
 
 \Hypertarget{namespacedescription_a0260747a932650cdc1c4c60cdde7e4cd}\index{description@{description}!data@{data}}
 \index{data@{data}!description@{description}}
@@ -34,19 +46,23 @@ Definition at line \mbox{\hyperlink{description_8py_source_l00009}{9}} of file \
 {\footnotesize\ttfamily \label{namespacedescription_a0260747a932650cdc1c4c60cdde7e4cd} 
 description.\+data = json.\+load(file)}
 
+\Hypertarget{namespacedescription_adee66afc7b280c8b0611150e9eb58079}\index{description@{description}!data\_dir@{data\_dir}}
+\index{data\_dir@{data\_dir}!description@{description}}
+\doxysubsubsection{\texorpdfstring{data\_dir}{data\_dir}}
+{\footnotesize\ttfamily \label{namespacedescription_adee66afc7b280c8b0611150e9eb58079} 
+description.\+data\+\_\+dir = os.\+path.\+join(\mbox{\hyperlink{namespacedescription_a09fb5359143bbe7bf51da05dfa10491a}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}uploaded\+\_\+schedule\textquotesingle{})}
 
-
-Definition at line \mbox{\hyperlink{description_8py_source_l00006}{6}} of file \mbox{\hyperlink{description_8py_source}{description.\+py}}.
-
-\Hypertarget{namespacedescription_a4a480452d558a32a5b89e00444618f5f}\index{description@{description}!file\_path@{file\_path}}
+\Hypertarget{namespacedescription_abd9e42828d419f95d5e87be0fd6fa826}\index{description@{description}!file\_path@{file\_path}}
 \index{file\_path@{file\_path}!description@{description}}
 \doxysubsubsection{\texorpdfstring{file\_path}{file\_path}}
-{\footnotesize\ttfamily \label{namespacedescription_a4a480452d558a32a5b89e00444618f5f} 
-str description.\+file\+\_\+path = "{}filtered.\+json"{}}
+{\footnotesize\ttfamily \label{namespacedescription_abd9e42828d419f95d5e87be0fd6fa826} 
+description.\+file\+\_\+path = os.\+path.\+join(\mbox{\hyperlink{namespacedescription_adee66afc7b280c8b0611150e9eb58079}{data\+\_\+dir}}, "{}filtered.\+json"{})}
 
-
-
-Definition at line \mbox{\hyperlink{description_8py_source_l00004}{4}} of file \mbox{\hyperlink{description_8py_source}{description.\+py}}.
+\Hypertarget{namespacedescription_a65fe575f2e28fc57859becd80fd7c2ff}\index{description@{description}!path@{path}}
+\index{path@{path}!description@{description}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily \label{namespacedescription_a65fe575f2e28fc57859becd80fd7c2ff} 
+description.\+path = current\+\_\+directory.\+split(os.\+sep)}
 
 \Hypertarget{namespacedescription_a244d7e2c561ac548f9c67f66306caaff}\index{description@{description}!prereq\_part@{prereq\_part}}
 \index{prereq\_part@{prereq\_part}!description@{description}}
@@ -54,27 +70,27 @@ Definition at line \mbox{\hyperlink{description_8py_source_l00004}{4}} of file \
 {\footnotesize\ttfamily \label{namespacedescription_a244d7e2c561ac548f9c67f66306caaff} 
 description.\+prereq\+\_\+part = prereq\+\_\+text.\+split("{}Prereq\+:"{})\mbox{[}1\mbox{]}.strip()}
 
-
-
-Definition at line \mbox{\hyperlink{description_8py_source_l00020}{20}} of file \mbox{\hyperlink{description_8py_source}{description.\+py}}.
-
 \Hypertarget{namespacedescription_aa9dc2f413a52c0c36409a68a0e88fe8f}\index{description@{description}!prereq\_text@{prereq\_text}}
 \index{prereq\_text@{prereq\_text}!description@{description}}
 \doxysubsubsection{\texorpdfstring{prereq\_text}{prereq\_text}}
 {\footnotesize\ttfamily \label{namespacedescription_aa9dc2f413a52c0c36409a68a0e88fe8f} 
 description.\+prereq\+\_\+text = course\+\_\+info.\+get("{}desc"{}, "{}"{})}
 
+\Hypertarget{namespacedescription_a09fb5359143bbe7bf51da05dfa10491a}\index{description@{description}!root\_dir@{root\_dir}}
+\index{root\_dir@{root\_dir}!description@{description}}
+\doxysubsubsection{\texorpdfstring{root\_dir}{root\_dir}}
+{\footnotesize\ttfamily \label{namespacedescription_a09fb5359143bbe7bf51da05dfa10491a} 
+description.\+root\+\_\+dir = os.\+sep.\+join(\mbox{\hyperlink{namespacedescription_a65fe575f2e28fc57859becd80fd7c2ff}{path}}\mbox{[}\+:\mbox{\hyperlink{namespacedescription_ad123eeba2202dcfec4b31e03be84c84a}{root\+\_\+index}}+1\mbox{]})}
 
-
-Definition at line \mbox{\hyperlink{description_8py_source_l00016}{16}} of file \mbox{\hyperlink{description_8py_source}{description.\+py}}.
+\Hypertarget{namespacedescription_ad123eeba2202dcfec4b31e03be84c84a}\index{description@{description}!root\_index@{root\_index}}
+\index{root\_index@{root\_index}!description@{description}}
+\doxysubsubsection{\texorpdfstring{root\_index}{root\_index}}
+{\footnotesize\ttfamily \label{namespacedescription_ad123eeba2202dcfec4b31e03be84c84a} 
+description.\+root\+\_\+index = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})}
 
 \Hypertarget{namespacedescription_aeba5c12e147b95cdbb657d138041c459}\index{description@{description}!title@{title}}
 \index{title@{title}!description@{description}}
 \doxysubsubsection{\texorpdfstring{title}{title}}
 {\footnotesize\ttfamily \label{namespacedescription_aeba5c12e147b95cdbb657d138041c459} 
 description.\+title = course\+\_\+info.\+get("{}title"{}, "{}Unknown Title"{})}
-
-
-
-Definition at line \mbox{\hyperlink{description_8py_source_l00015}{15}} of file \mbox{\hyperlink{description_8py_source}{description.\+py}}.
 

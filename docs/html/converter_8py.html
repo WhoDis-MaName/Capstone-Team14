@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ASP Schedule Optimizer: converter.py File Reference</title>
+<title>ASP Schedule Optimizer: data_processing/converter.py File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -110,8 +110,6 @@ $(function(){initNavTree('converter_8py.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">converter.py File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p><a href="converter_8py_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -125,8 +123,18 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a467eb33e56ef909081ca0531a012b9ce" id="r_a467eb33e56ef909081ca0531a012b9ce"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconverter.html#a467eb33e56ef909081ca0531a012b9ce">converter.file_path</a> = &quot;filtered.json&quot;</td></tr>
-<tr class="separator:a467eb33e56ef909081ca0531a012b9ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd3dbc1f876ff6580fe7b24ebc9a28da" id="r_abd3dbc1f876ff6580fe7b24ebc9a28da"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconverter.html#abd3dbc1f876ff6580fe7b24ebc9a28da">converter.current_directory</a> = os.path.dirname(os.path.realpath(__file__))</td></tr>
+<tr class="separator:abd3dbc1f876ff6580fe7b24ebc9a28da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addc46beda3790907fe06e49af0afd74f" id="r_addc46beda3790907fe06e49af0afd74f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconverter.html#addc46beda3790907fe06e49af0afd74f">converter.path</a> = current_directory.split(os.sep)</td></tr>
+<tr class="separator:addc46beda3790907fe06e49af0afd74f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d27b2c0247ec6cb3e6aabbf2680d2f3" id="r_a4d27b2c0247ec6cb3e6aabbf2680d2f3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconverter.html#a4d27b2c0247ec6cb3e6aabbf2680d2f3">converter.root_index</a> = path.index('Capstone-Team14')</td></tr>
+<tr class="separator:a4d27b2c0247ec6cb3e6aabbf2680d2f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acadda4255b4329700df907258a4adbc0" id="r_acadda4255b4329700df907258a4adbc0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconverter.html#acadda4255b4329700df907258a4adbc0">converter.root_dir</a> = os.sep.join(<a class="el" href="namespaceconverter.html#addc46beda3790907fe06e49af0afd74f">path</a>[:<a class="el" href="namespaceconverter.html#a4d27b2c0247ec6cb3e6aabbf2680d2f3">root_index</a>+1])</td></tr>
+<tr class="separator:acadda4255b4329700df907258a4adbc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1691122b017611f550b9ae5507d35c2b" id="r_a1691122b017611f550b9ae5507d35c2b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconverter.html#a1691122b017611f550b9ae5507d35c2b">converter.data_dir</a> = os.path.join(<a class="el" href="namespaceconverter.html#acadda4255b4329700df907258a4adbc0">root_dir</a>, 'data_files', 'uploaded_schedule')</td></tr>
+<tr class="separator:a1691122b017611f550b9ae5507d35c2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02ebe5babfc4c0f1d0647d72cbc4732d" id="r_a02ebe5babfc4c0f1d0647d72cbc4732d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconverter.html#a02ebe5babfc4c0f1d0647d72cbc4732d">converter.file_path</a> = os.path.join(<a class="el" href="namespaceconverter.html#a1691122b017611f550b9ae5507d35c2b">data_dir</a>,&quot;filtered.json&quot;)</td></tr>
+<tr class="separator:a02ebe5babfc4c0f1d0647d72cbc4732d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e1cb5282251941da3be7c61d30afc7c" id="r_a1e1cb5282251941da3be7c61d30afc7c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconverter.html#a1e1cb5282251941da3be7c61d30afc7c">converter.data</a> = json.load(file)</td></tr>
 <tr class="separator:a1e1cb5282251941da3be7c61d30afc7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2ba91e7e32e1307f84d38f304a2c1c2" id="r_aa2ba91e7e32e1307f84d38f304a2c1c2"><td class="memItemLeft" align="right" valign="top">dict&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconverter.html#aa2ba91e7e32e1307f84d38f304a2c1c2">converter.course_prereqs</a> = {}</td></tr>
@@ -147,13 +155,15 @@ Variables</h2></td></tr>
 <tr class="separator:a7352e1f0850b48b9f1e548a514486a25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe801b4b3d9e4600db786b4476976e09" id="r_abe801b4b3d9e4600db786b4476976e09"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconverter.html#abe801b4b3d9e4600db786b4476976e09">converter.course_key</a> = f&quot;{<a class="el" href="namespaceconverter.html#a814ed471ae64d1b1640bd217d461512b">clean_course_name</a>(subject)}_{course_number}&quot;</td></tr>
 <tr class="separator:abe801b4b3d9e4600db786b4476976e09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a769d7b7ffed5cb26840d56df8a9b4ae9" id="r_a769d7b7ffed5cb26840d56df8a9b4ae9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconverter.html#a769d7b7ffed5cb26840d56df8a9b4ae9">converter.lp_file</a> = os.path.join(<a class="el" href="namespaceconverter.html#acadda4255b4329700df907258a4adbc0">root_dir</a>,&quot;courses.lp&quot;)</td></tr>
+<tr class="separator:a769d7b7ffed5cb26840d56df8a9b4ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="converter_8py.html">converter.py</a></li>
+    <li class="navelem"><a class="el" href="dir_809598ced06ac0feee4613cceffbc2ed.html">data_processing</a></li><li class="navelem"><a class="el" href="converter_8py.html">converter.py</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

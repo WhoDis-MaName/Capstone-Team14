@@ -173,11 +173,8 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A set containing all of the instances of <code>&lt;table&gt;&lt;/table&gt;</code> along with all of its contents </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="get__four__year_8py_source.html#l00018">18</a> of file <a class="el" href="get__four__year_8py_source.html">get_four_year.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   18</span><span class="keyword">def </span>get_all_tables(soup: bs):</div>
-<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">return</span> soup.find_all(<span class="stringliteral">&quot;table&quot;</span>)</div>
-<div class="line"><span class="lineno">   20</span> </div>
-</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="#a9a38e6a7b809ed9ee9f81033eee37630">process_url()</a>.</p>
+
 </div>
 </div>
 <a id="a23d1dd238e0cb1c1a979aa1fb0aa7120" name="a23d1dd238e0cb1c1a979aa1fb0aa7120"></a>
@@ -204,28 +201,8 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A 2d list that represents all of the rows from the table </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="get__four__year_8py_source.html#l00025">25</a> of file <a class="el" href="get__four__year_8py_source.html">get_four_year.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   25</span><span class="keyword">def </span>get_table_rows(table) -&gt; list:</div>
-<div class="line"><span class="lineno">   26</span>    rows = []</div>
-<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">for</span> tr <span class="keywordflow">in</span> table.find_all(<span class="stringliteral">&quot;tr&quot;</span>)[0:]:</div>
-<div class="line"><span class="lineno">   28</span>        cells = []</div>
-<div class="line"><span class="lineno">   29</span>        <span class="comment"># grab all td tags in this table row</span></div>
-<div class="line"><span class="lineno">   30</span>        tds = tr.find_all(<span class="stringliteral">&quot;td&quot;</span>)</div>
-<div class="line"><span class="lineno">   31</span>        <span class="keywordflow">if</span> len(tds) == 0:</div>
-<div class="line"><span class="lineno">   32</span>            <span class="comment"># if no td tags, search for th tags</span></div>
-<div class="line"><span class="lineno">   33</span>            <span class="comment"># can be found especially in wikipedia tables below the table</span></div>
-<div class="line"><span class="lineno">   34</span>            ths = tr.find_all(<span class="stringliteral">&quot;th&quot;</span>)</div>
-<div class="line"><span class="lineno">   35</span>            <span class="keywordflow">for</span> th <span class="keywordflow">in</span> ths:</div>
-<div class="line"><span class="lineno">   36</span>                cells.append(th.text.strip())</div>
-<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">   38</span>            <span class="comment"># use regular td tags</span></div>
-<div class="line"><span class="lineno">   39</span>            <span class="keywordflow">for</span> td <span class="keywordflow">in</span> tds:</div>
-<div class="line"><span class="lineno">   40</span>                cells.append(td.text.strip())</div>
-<div class="line"><span class="lineno">   41</span>        rows.append(cells)</div>
-<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">return</span> rows</div>
-<div class="line"><span class="lineno">   43</span> </div>
-<div class="line"><span class="lineno">   44</span>    </div>
-</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="#a9a38e6a7b809ed9ee9f81033eee37630">process_url()</a>.</p>
+
 </div>
 </div>
 <a id="a9a38e6a7b809ed9ee9f81033eee37630" name="a9a38e6a7b809ed9ee9f81033eee37630"></a>
@@ -252,31 +229,10 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>List containing all of the tables in the page. Each of table is a 2d array (list) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="get__four__year_8py_source.html#l00050">50</a> of file <a class="el" href="get__four__year_8py_source.html">get_four_year.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   50</span><span class="keyword">def </span>process_url(url: str):</div>
-<div class="line"><span class="lineno">   51</span>    </div>
-<div class="line"><span class="lineno">   52</span>    tables_list = []</div>
-<div class="line"><span class="lineno">   53</span>    <span class="comment"># print(nfl_url)</span></div>
-<div class="line"><span class="lineno">   54</span>    data = requests.get(url)</div>
-<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">if</span> data.status_code != 200:</div>
-<div class="line"><span class="lineno">   56</span>        print(data.status_code)</div>
-<div class="line"><span class="lineno">   57</span>        print(<span class="stringliteral">&#39;Request failed at:&#39;</span>,url)</div>
-<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">return</span> tables_list</div>
-<div class="line"><span class="lineno">   59</span>    response = bs(data.content, <span class="stringliteral">&quot;html.parser&quot;</span>)</div>
-<div class="line"><span class="lineno">   60</span>    </div>
-<div class="line"><span class="lineno">   61</span>    <span class="comment"># extract all the tables from the web page</span></div>
-<div class="line"><span class="lineno">   62</span>    tables_list = get_all_tables(response)</div>
-<div class="line"><span class="lineno">   63</span>    print(f<span class="stringliteral">&quot;[+] Found a total of {len(tables_list)} tables.&quot;</span>)</div>
-<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">if</span> len(tables_list) == 0:</div>
-<div class="line"><span class="lineno">   65</span>        print(f<span class="stringliteral">&#39;No Data: {url}&#39;</span>)</div>
-<div class="line"><span class="lineno">   66</span>    </div>
-<div class="line"><span class="lineno">   67</span>    tables=[]</div>
-<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">for</span> table <span class="keywordflow">in</span> tables_list:</div>
-<div class="line"><span class="lineno">   69</span>        tables.append(get_table_rows(table))</div>
-<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">return</span> tables</div>
-<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">pass</span></div>
-<div class="line"><span class="lineno">   72</span> </div>
-</div><!-- fragment -->
+<p class="reference">References <a class="el" href="#ae005eaa00280dd8626d06bcfdd8c5142">get_all_tables()</a>, and <a class="el" href="#a23d1dd238e0cb1c1a979aa1fb0aa7120">get_table_rows()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="#a6a9b4322230edb5b0a78d12021d6c39a">read_four_year()</a>.</p>
+
 </div>
 </div>
 <a id="a6a9b4322230edb5b0a78d12021d6c39a" name="a6a9b4322230edb5b0a78d12021d6c39a"></a>
@@ -303,68 +259,8 @@ Variables</h2></td></tr>
 <p>@params url A string containing the url for the page with the four year plan @params output_file <p>A string that contains the file path and filename that the JSON will be written to.</p>
 <p><em>NOTE</em> to maintain the script's OS agnostic nature, it is suggested to utilize os.path.join() to join strings or os.sep.join() to join elements of a list </p>
 
-<p class="definition">Definition at line <a class="el" href="get__four__year_8py_source.html#l00087">87</a> of file <a class="el" href="get__four__year_8py_source.html">get_four_year.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   87</span><span class="keyword">def </span>read_four_year(url, output_file):</div>
-<div class="line"><span class="lineno">   88</span>    </div>
-<div class="line"><span class="lineno">   89</span>    tables_list = process_url(url)</div>
-<div class="line"><span class="lineno">   90</span>    json_data = []</div>
-<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">for</span> table <span class="keywordflow">in</span> tables_list[1:]:</div>
-<div class="line"><span class="lineno">   92</span>        structured_rows = {</div>
-<div class="line"><span class="lineno">   93</span>            <span class="stringliteral">&#39;First Year&#39;</span>: {</div>
-<div class="line"><span class="lineno">   94</span>                <span class="stringliteral">&#39;FALL&#39;</span>: [],</div>
-<div class="line"><span class="lineno">   95</span>                <span class="stringliteral">&#39;SPRING&#39;</span>: []</div>
-<div class="line"><span class="lineno">   96</span>            },</div>
-<div class="line"><span class="lineno">   97</span>            <span class="stringliteral">&#39;Second Year&#39;</span>: {</div>
-<div class="line"><span class="lineno">   98</span>                <span class="stringliteral">&#39;FALL&#39;</span>: [],</div>
-<div class="line"><span class="lineno">   99</span>                <span class="stringliteral">&#39;SPRING&#39;</span>: []</div>
-<div class="line"><span class="lineno">  100</span>            },</div>
-<div class="line"><span class="lineno">  101</span>            <span class="stringliteral">&#39;Third Year&#39;</span>: {</div>
-<div class="line"><span class="lineno">  102</span>                <span class="stringliteral">&#39;FALL&#39;</span>: [],</div>
-<div class="line"><span class="lineno">  103</span>                <span class="stringliteral">&#39;SPRING&#39;</span>: []</div>
-<div class="line"><span class="lineno">  104</span>            },</div>
-<div class="line"><span class="lineno">  105</span>            <span class="stringliteral">&#39;Fourth Year&#39;</span>: {</div>
-<div class="line"><span class="lineno">  106</span>                <span class="stringliteral">&#39;FALL&#39;</span>: [],</div>
-<div class="line"><span class="lineno">  107</span>                <span class="stringliteral">&#39;SPRING&#39;</span>: []</div>
-<div class="line"><span class="lineno">  108</span>            }</div>
-<div class="line"><span class="lineno">  109</span>        }</div>
-<div class="line"><span class="lineno">  110</span>        classes_in_semeseter = []</div>
-<div class="line"><span class="lineno">  111</span>        year = <span class="stringliteral">&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  112</span>        semester = <span class="stringliteral">&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  113</span>        <span class="keywordflow">for</span> row <span class="keywordflow">in</span> table:</div>
-<div class="line"><span class="lineno">  114</span>            <span class="comment"># print(row)</span></div>
-<div class="line"><span class="lineno">  115</span>            <span class="comment"># print(len(row))</span></div>
-<div class="line"><span class="lineno">  116</span>            <span class="keywordflow">if</span> row[0] <span class="keywordflow">in</span> structured_rows.keys():</div>
-<div class="line"><span class="lineno">  117</span>                <span class="keywordflow">if</span> semester != <span class="stringliteral">&#39;&#39;</span>:</div>
-<div class="line"><span class="lineno">  118</span>                    structured_rows[year][semester] = classes_in_semeseter</div>
-<div class="line"><span class="lineno">  119</span>                    classes_in_semeseter = []</div>
-<div class="line"><span class="lineno">  120</span>                    semester = <span class="stringliteral">&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  121</span>                year = row[0]</div>
-<div class="line"><span class="lineno">  122</span>                    </div>
-<div class="line"><span class="lineno">  123</span>            <span class="keywordflow">elif</span> row[0].upper() <span class="keywordflow">in</span> structured_rows[year].keys():</div>
-<div class="line"><span class="lineno">  124</span>                <span class="keywordflow">if</span> semester != <span class="stringliteral">&#39;&#39;</span>:</div>
-<div class="line"><span class="lineno">  125</span>                    structured_rows[year][semester] = classes_in_semeseter</div>
-<div class="line"><span class="lineno">  126</span>                    classes_in_semeseter = []</div>
-<div class="line"><span class="lineno">  127</span>                semester = row[0].upper()</div>
-<div class="line"><span class="lineno">  128</span>            <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">  129</span>                <span class="keywordflow">if</span> row[0] != <span class="stringliteral">&#39;&#39;</span> <span class="keywordflow">and</span> len(row) == 3:</div>
-<div class="line"><span class="lineno">  130</span>                    row[0] = row[0].replace(<span class="stringliteral">u&#39;\xa0&#39;</span>, <span class="stringliteral">&#39; &#39;</span>)</div>
-<div class="line"><span class="lineno">  131</span>                    row[0] = row[0].split(<span class="stringliteral">&#39;or &#39;</span>)</div>
-<div class="line"><span class="lineno">  132</span>                    row[1] = row[1].split(<span class="stringliteral">&#39;or &#39;</span>)</div>
-<div class="line"><span class="lineno">  133</span>                    renamed_courses = []</div>
-<div class="line"><span class="lineno">  134</span>                    <span class="keywordflow">for</span> course <span class="keywordflow">in</span> row[0]:</div>
-<div class="line"><span class="lineno">  135</span>                        renamed_courses.append(course.lower().replace(<span class="stringliteral">&#39; &#39;</span>, <span class="stringliteral">&#39;&#39;</span>))</div>
-<div class="line"><span class="lineno">  136</span>                        </div>
-<div class="line"><span class="lineno">  137</span>                    row[0] = renamed_courses</div>
-<div class="line"><span class="lineno">  138</span>                    classes_in_semeseter.append(row)</div>
-<div class="line"><span class="lineno">  139</span>        structured_rows[year][semester] = classes_in_semeseter</div>
-<div class="line"><span class="lineno">  140</span>        <span class="comment"># pprint(structured_rows)</span></div>
-<div class="line"><span class="lineno">  141</span>        json_data.append(structured_rows)</div>
-<div class="line"><span class="lineno">  142</span>    print(<span class="stringliteral">&quot;Finished Gathering Data&quot;</span>)</div>
-<div class="line"><span class="lineno">  143</span>    </div>
-<div class="line"><span class="lineno">  144</span>    <span class="keyword">with</span> open(output_file, <span class="stringliteral">&#39;w&#39;</span>) <span class="keyword">as</span> f:</div>
-<div class="line"><span class="lineno">  145</span>        json.dump(json_data,f, indent=4)</div>
-<div class="line"><span class="lineno">  146</span>    </div>
-</div><!-- fragment -->
+<p class="reference">References <a class="el" href="#a9a38e6a7b809ed9ee9f81033eee37630">process_url()</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -380,8 +276,6 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="get__four__year_8py_source.html#l00149">149</a> of file <a class="el" href="get__four__year_8py_source.html">get_four_year.py</a>.</p>
-
 </div>
 </div>
 <a id="a18c6ce56f785c23a4819396e5bca9e00" name="a18c6ce56f785c23a4819396e5bca9e00"></a>
@@ -395,8 +289,6 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="get__four__year_8py_source.html#l00158">158</a> of file <a class="el" href="get__four__year_8py_source.html">get_four_year.py</a>.</p>
 
 </div>
 </div>
@@ -412,8 +304,6 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="get__four__year_8py_source.html#l00164">164</a> of file <a class="el" href="get__four__year_8py_source.html">get_four_year.py</a>.</p>
-
 </div>
 </div>
 <a id="a2a694ea8a2824f347b660bb50fe29889" name="a2a694ea8a2824f347b660bb50fe29889"></a>
@@ -427,8 +317,6 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="get__four__year_8py_source.html#l00154">154</a> of file <a class="el" href="get__four__year_8py_source.html">get_four_year.py</a>.</p>
 
 </div>
 </div>
@@ -444,8 +332,6 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="get__four__year_8py_source.html#l00157">157</a> of file <a class="el" href="get__four__year_8py_source.html">get_four_year.py</a>.</p>
-
 </div>
 </div>
 <a id="a76b0c7529ac7fb854f5292955f320c5b" name="a76b0c7529ac7fb854f5292955f320c5b"></a>
@@ -460,8 +346,6 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="get__four__year_8py_source.html#l00156">156</a> of file <a class="el" href="get__four__year_8py_source.html">get_four_year.py</a>.</p>
-
 </div>
 </div>
 <a id="a0967f39c9f3c7d92c0df35c8b6a866fa" name="a0967f39c9f3c7d92c0df35c8b6a866fa"></a>
@@ -475,8 +359,6 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="get__four__year_8py_source.html#l00165">165</a> of file <a class="el" href="get__four__year_8py_source.html">get_four_year.py</a>.</p>
 
 </div>
 </div>

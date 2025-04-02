@@ -8,9 +8,19 @@
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-str \mbox{\hyperlink{namespaceprocessor_a032e9f0a7410a0ecdf1e5716ea3249c8}{json\+\_\+file}} = "{}fa21-\/fa24.\+json"{}
+\mbox{\hyperlink{namespaceprocessor_aef7b4b40203cda379823f28290ace883}{current\+\_\+directory}} = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))
 \item 
-\mbox{\hyperlink{namespaceprocessor_ab0cba5883ec193921bc0f529a684dd08}{result}} = \mbox{\hyperlink{namespaceprocessor_a56b11f4d0c8b6ab8ea0bd66ef32507d1}{get\+\_\+cist\+\_\+csci\+\_\+courses}}(\mbox{\hyperlink{namespaceprocessor_a032e9f0a7410a0ecdf1e5716ea3249c8}{json\+\_\+file}})
+\mbox{\hyperlink{namespaceprocessor_ae17c03db2dd63a8c63c666505a69bde3}{path}} = current\+\_\+directory.\+split(os.\+sep)
+\item 
+\mbox{\hyperlink{namespaceprocessor_a908bbd829fa2bf5354ddf9618fa0d31f}{root\+\_\+index}} = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceprocessor_a32153912b4eb8da2fc5a9b29cf2a6a3f}{root\+\_\+dir}} = os.\+sep.\+join(\mbox{\hyperlink{namespaceprocessor_ae17c03db2dd63a8c63c666505a69bde3}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceprocessor_a908bbd829fa2bf5354ddf9618fa0d31f}{root\+\_\+index}}+1\mbox{]})
+\item 
+\mbox{\hyperlink{namespaceprocessor_ad1f5881666625204d7d5892d8c169a4e}{data\+\_\+dir}} = os.\+path.\+join(\mbox{\hyperlink{namespaceprocessor_a32153912b4eb8da2fc5a9b29cf2a6a3f}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}uploaded\+\_\+schedule\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceprocessor_a27f36f3c5347b3a4e2cf37dbcda84659}{json\+\_\+file}} = os.\+path.\+join(\mbox{\hyperlink{namespaceprocessor_ad1f5881666625204d7d5892d8c169a4e}{data\+\_\+dir}}, "{}fa21-\/fa24.\+json"{})
+\item 
+\mbox{\hyperlink{namespaceprocessor_ab0cba5883ec193921bc0f529a684dd08}{result}} = \mbox{\hyperlink{namespaceprocessor_a56b11f4d0c8b6ab8ea0bd66ef32507d1}{get\+\_\+cist\+\_\+csci\+\_\+courses}}(\mbox{\hyperlink{namespaceprocessor_a27f36f3c5347b3a4e2cf37dbcda84659}{json\+\_\+file}})
 \item 
 \mbox{\hyperlink{namespaceprocessor_a1769e2f2c3d9bc94efd91ec2f8d8486c}{encoding}}
 \item 
@@ -29,39 +39,24 @@ processor.\+get\+\_\+cist\+\_\+csci\+\_\+courses (\begin{DoxyParamCaption}\item[
 
 
 
-Definition at line \mbox{\hyperlink{processor_8py_source_l00003}{3}} of file \mbox{\hyperlink{processor_8py_source}{processor.\+py}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00003\ \textcolor{keyword}{def\ }get\_cist\_csci\_courses(json\_file\_path): }
-\DoxyCodeLine{00004\ \ \ \ \ \textcolor{keyword}{with}\ open(json\_file\_path,\ \textcolor{stringliteral}{'r'},\ encoding=\textcolor{stringliteral}{'utf-\/8'})\ \textcolor{keyword}{as}\ f: }
-\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ data\ =\ json.load(f) }
-\DoxyCodeLine{00006\  }
-\DoxyCodeLine{00007\ \ \ \ \ subjects\_of\_interest\ =\ \{\textcolor{stringliteral}{"{}CIST"{}},\ \textcolor{stringliteral}{"{}CSCI"{}}\} }
-\DoxyCodeLine{00008\ \ \ \ \ filtered\_courses\ =\ \{\} }
-\DoxyCodeLine{00009\  }
-\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordflow}{for}\ term,\ subjects\_dict\ \textcolor{keywordflow}{in}\ data.items(): }
-\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ subject\_code,\ courses\_dict\ \textcolor{keywordflow}{in}\ subjects\_dict.items(): }
-\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ subject\_code\ \textcolor{keywordflow}{in}\ subjects\_of\_interest: }
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ term\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ filtered\_courses: }
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ filtered\_courses[term]\ =\ \{\} }
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ filtered\_courses[term][subject\_code]\ =\ courses\_dict }
-\DoxyCodeLine{00016\  }
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordflow}{return}\ filtered\_courses }
-
-\end{DoxyCode}
-
-
 \doxysubsection{Variable Documentation}
+\Hypertarget{namespaceprocessor_aef7b4b40203cda379823f28290ace883}\index{processor@{processor}!current\_directory@{current\_directory}}
+\index{current\_directory@{current\_directory}!processor@{processor}}
+\doxysubsubsection{\texorpdfstring{current\_directory}{current\_directory}}
+{\footnotesize\ttfamily \label{namespaceprocessor_aef7b4b40203cda379823f28290ace883} 
+processor.\+current\+\_\+directory = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))}
+
+\Hypertarget{namespaceprocessor_ad1f5881666625204d7d5892d8c169a4e}\index{processor@{processor}!data\_dir@{data\_dir}}
+\index{data\_dir@{data\_dir}!processor@{processor}}
+\doxysubsubsection{\texorpdfstring{data\_dir}{data\_dir}}
+{\footnotesize\ttfamily \label{namespaceprocessor_ad1f5881666625204d7d5892d8c169a4e} 
+processor.\+data\+\_\+dir = os.\+path.\+join(\mbox{\hyperlink{namespaceprocessor_a32153912b4eb8da2fc5a9b29cf2a6a3f}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}uploaded\+\_\+schedule\textquotesingle{})}
+
 \Hypertarget{namespaceprocessor_a1769e2f2c3d9bc94efd91ec2f8d8486c}\index{processor@{processor}!encoding@{encoding}}
 \index{encoding@{encoding}!processor@{processor}}
 \doxysubsubsection{\texorpdfstring{encoding}{encoding}}
 {\footnotesize\ttfamily \label{namespaceprocessor_a1769e2f2c3d9bc94efd91ec2f8d8486c} 
 processor.\+encoding}
-
-
-
-Definition at line \mbox{\hyperlink{processor_8py_source_l00021}{21}} of file \mbox{\hyperlink{processor_8py_source}{processor.\+py}}.
 
 \Hypertarget{namespaceprocessor_a255e69a1d89eef7e4059cd1311b02973}\index{processor@{processor}!indent@{indent}}
 \index{indent@{indent}!processor@{processor}}
@@ -69,19 +64,11 @@ Definition at line \mbox{\hyperlink{processor_8py_source_l00021}{21}} of file \m
 {\footnotesize\ttfamily \label{namespaceprocessor_a255e69a1d89eef7e4059cd1311b02973} 
 processor.\+indent}
 
-
-
-Definition at line \mbox{\hyperlink{processor_8py_source_l00022}{22}} of file \mbox{\hyperlink{processor_8py_source}{processor.\+py}}.
-
-\Hypertarget{namespaceprocessor_a032e9f0a7410a0ecdf1e5716ea3249c8}\index{processor@{processor}!json\_file@{json\_file}}
+\Hypertarget{namespaceprocessor_a27f36f3c5347b3a4e2cf37dbcda84659}\index{processor@{processor}!json\_file@{json\_file}}
 \index{json\_file@{json\_file}!processor@{processor}}
 \doxysubsubsection{\texorpdfstring{json\_file}{json\_file}}
-{\footnotesize\ttfamily \label{namespaceprocessor_a032e9f0a7410a0ecdf1e5716ea3249c8} 
-str processor.\+json\+\_\+file = "{}fa21-\/fa24.\+json"{}}
-
-
-
-Definition at line \mbox{\hyperlink{processor_8py_source_l00019}{19}} of file \mbox{\hyperlink{processor_8py_source}{processor.\+py}}.
+{\footnotesize\ttfamily \label{namespaceprocessor_a27f36f3c5347b3a4e2cf37dbcda84659} 
+processor.\+json\+\_\+file = os.\+path.\+join(\mbox{\hyperlink{namespaceprocessor_ad1f5881666625204d7d5892d8c169a4e}{data\+\_\+dir}}, "{}fa21-\/fa24.\+json"{})}
 
 \Hypertarget{namespaceprocessor_a6913d6fba54c50da16894c821a4c9f53}\index{processor@{processor}!out@{out}}
 \index{out@{out}!processor@{processor}}
@@ -89,17 +76,27 @@ Definition at line \mbox{\hyperlink{processor_8py_source_l00019}{19}} of file \m
 {\footnotesize\ttfamily \label{namespaceprocessor_a6913d6fba54c50da16894c821a4c9f53} 
 processor.\+out}
 
-
-
-Definition at line \mbox{\hyperlink{processor_8py_source_l00022}{22}} of file \mbox{\hyperlink{processor_8py_source}{processor.\+py}}.
+\Hypertarget{namespaceprocessor_ae17c03db2dd63a8c63c666505a69bde3}\index{processor@{processor}!path@{path}}
+\index{path@{path}!processor@{processor}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily \label{namespaceprocessor_ae17c03db2dd63a8c63c666505a69bde3} 
+processor.\+path = current\+\_\+directory.\+split(os.\+sep)}
 
 \Hypertarget{namespaceprocessor_ab0cba5883ec193921bc0f529a684dd08}\index{processor@{processor}!result@{result}}
 \index{result@{result}!processor@{processor}}
 \doxysubsubsection{\texorpdfstring{result}{result}}
 {\footnotesize\ttfamily \label{namespaceprocessor_ab0cba5883ec193921bc0f529a684dd08} 
-processor.\+result = \mbox{\hyperlink{namespaceprocessor_a56b11f4d0c8b6ab8ea0bd66ef32507d1}{get\+\_\+cist\+\_\+csci\+\_\+courses}}(\mbox{\hyperlink{namespaceprocessor_a032e9f0a7410a0ecdf1e5716ea3249c8}{json\+\_\+file}})}
+processor.\+result = \mbox{\hyperlink{namespaceprocessor_a56b11f4d0c8b6ab8ea0bd66ef32507d1}{get\+\_\+cist\+\_\+csci\+\_\+courses}}(\mbox{\hyperlink{namespaceprocessor_a27f36f3c5347b3a4e2cf37dbcda84659}{json\+\_\+file}})}
 
+\Hypertarget{namespaceprocessor_a32153912b4eb8da2fc5a9b29cf2a6a3f}\index{processor@{processor}!root\_dir@{root\_dir}}
+\index{root\_dir@{root\_dir}!processor@{processor}}
+\doxysubsubsection{\texorpdfstring{root\_dir}{root\_dir}}
+{\footnotesize\ttfamily \label{namespaceprocessor_a32153912b4eb8da2fc5a9b29cf2a6a3f} 
+processor.\+root\+\_\+dir = os.\+sep.\+join(\mbox{\hyperlink{namespaceprocessor_ae17c03db2dd63a8c63c666505a69bde3}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceprocessor_a908bbd829fa2bf5354ddf9618fa0d31f}{root\+\_\+index}}+1\mbox{]})}
 
-
-Definition at line \mbox{\hyperlink{processor_8py_source_l00020}{20}} of file \mbox{\hyperlink{processor_8py_source}{processor.\+py}}.
+\Hypertarget{namespaceprocessor_a908bbd829fa2bf5354ddf9618fa0d31f}\index{processor@{processor}!root\_index@{root\_index}}
+\index{root\_index@{root\_index}!processor@{processor}}
+\doxysubsubsection{\texorpdfstring{root\_index}{root\_index}}
+{\footnotesize\ttfamily \label{namespaceprocessor_a908bbd829fa2bf5354ddf9618fa0d31f} 
+processor.\+root\+\_\+index = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})}
 

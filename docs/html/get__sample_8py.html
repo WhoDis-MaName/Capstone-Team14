@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ASP Schedule Optimizer: get_sample.py File Reference</title>
+<title>ASP Schedule Optimizer: data_processing/get_sample.py File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -110,8 +110,6 @@ $(function(){initNavTree('get__sample_8py.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">get_sample.py File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p><a href="get__sample_8py_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -127,7 +125,19 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a3e787f281ff2bd81f8b4913e75e833b3" id="r_a3e787f281ff2bd81f8b4913e75e833b3"><td class="memItemLeft" align="right" valign="top">dict&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceget__sample.html#a3e787f281ff2bd81f8b4913e75e833b3">get_sample.classes</a> = <a class="el" href="namespaceget__sample.html#aca0b8e51050ae82391d35f1cb211367b">get_classes</a>('filtered.json')</td></tr>
+<tr class="memitem:a1865e1017ca00f986a4d2ab1b3c79c30" id="r_a1865e1017ca00f986a4d2ab1b3c79c30"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceget__sample.html#a1865e1017ca00f986a4d2ab1b3c79c30">get_sample.current_directory</a> = os.path.dirname(os.path.realpath(__file__))</td></tr>
+<tr class="separator:a1865e1017ca00f986a4d2ab1b3c79c30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adba29bead1f0468cc37abb5ad890454b" id="r_adba29bead1f0468cc37abb5ad890454b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceget__sample.html#adba29bead1f0468cc37abb5ad890454b">get_sample.path</a> = current_directory.split(os.sep)</td></tr>
+<tr class="separator:adba29bead1f0468cc37abb5ad890454b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3eff618ed657135d301177d3025e50d2" id="r_a3eff618ed657135d301177d3025e50d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceget__sample.html#a3eff618ed657135d301177d3025e50d2">get_sample.root_index</a> = path.index('Capstone-Team14')</td></tr>
+<tr class="separator:a3eff618ed657135d301177d3025e50d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f19b1a2fbcbf32ecfc66498c2503177" id="r_a0f19b1a2fbcbf32ecfc66498c2503177"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceget__sample.html#a0f19b1a2fbcbf32ecfc66498c2503177">get_sample.root_dir</a> = os.sep.join(<a class="el" href="namespaceget__sample.html#adba29bead1f0468cc37abb5ad890454b">path</a>[:<a class="el" href="namespaceget__sample.html#a3eff618ed657135d301177d3025e50d2">root_index</a>+1])</td></tr>
+<tr class="separator:a0f19b1a2fbcbf32ecfc66498c2503177"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2879c49d5b88aff8c29ef9bd1e35b907" id="r_a2879c49d5b88aff8c29ef9bd1e35b907"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceget__sample.html#a2879c49d5b88aff8c29ef9bd1e35b907">get_sample.read_dir</a> = os.path.join(<a class="el" href="namespaceget__sample.html#a0f19b1a2fbcbf32ecfc66498c2503177">root_dir</a>, 'data_files', 'uploaded_schedule')</td></tr>
+<tr class="separator:a2879c49d5b88aff8c29ef9bd1e35b907"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23660f3d5908eb825346ac2c1e939697" id="r_a23660f3d5908eb825346ac2c1e939697"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceget__sample.html#a23660f3d5908eb825346ac2c1e939697">get_sample.sample_dir</a> = os.path.join(<a class="el" href="namespaceget__sample.html#a0f19b1a2fbcbf32ecfc66498c2503177">root_dir</a>, 'data_files', 'samples')</td></tr>
+<tr class="separator:a23660f3d5908eb825346ac2c1e939697"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e787f281ff2bd81f8b4913e75e833b3" id="r_a3e787f281ff2bd81f8b4913e75e833b3"><td class="memItemLeft" align="right" valign="top">dict&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceget__sample.html#a3e787f281ff2bd81f8b4913e75e833b3">get_sample.classes</a> = <a class="el" href="namespaceget__sample.html#aca0b8e51050ae82391d35f1cb211367b">get_classes</a>(os.path.join(<a class="el" href="namespaceget__sample.html#a2879c49d5b88aff8c29ef9bd1e35b907">read_dir</a>,'filtered.json'))</td></tr>
 <tr class="separator:a3e787f281ff2bd81f8b4913e75e833b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b553ddd16f749e8338556198aaa0ac8" id="r_a6b553ddd16f749e8338556198aaa0ac8"><td class="memItemLeft" align="right" valign="top">dict&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceget__sample.html#a6b553ddd16f749e8338556198aaa0ac8">get_sample.sample_data</a> = <a class="el" href="namespaceget__sample.html#a7f94603f3e561a99d4b7d8b2eb12e33f">create_sample</a>(<a class="el" href="namespaceget__sample.html#a3e787f281ff2bd81f8b4913e75e833b3">classes</a>, 1, 2, 5)</td></tr>
 <tr class="separator:a6b553ddd16f749e8338556198aaa0ac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -141,7 +151,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="get__sample_8py.html">get_sample.py</a></li>
+    <li class="navelem"><a class="el" href="dir_809598ced06ac0feee4613cceffbc2ed.html">data_processing</a></li><li class="navelem"><a class="el" href="get__sample_8py.html">get_sample.py</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

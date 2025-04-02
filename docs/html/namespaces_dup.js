@@ -10,21 +10,32 @@ var namespaces_dup =
       [ "all_prereqs", "namespaceconverter.html#a940deb3778e0814b3858f19f3dd72a8b", null ],
       [ "course_key", "namespaceconverter.html#abe801b4b3d9e4600db786b4476976e09", null ],
       [ "course_prereqs", "namespaceconverter.html#aa2ba91e7e32e1307f84d38f304a2c1c2", null ],
+      [ "current_directory", "namespaceconverter.html#abd3dbc1f876ff6580fe7b24ebc9a28da", null ],
       [ "data", "namespaceconverter.html#a1e1cb5282251941da3be7c61d30afc7c", null ],
-      [ "file_path", "namespaceconverter.html#a467eb33e56ef909081ca0531a012b9ce", null ],
+      [ "data_dir", "namespaceconverter.html#a1691122b017611f550b9ae5507d35c2b", null ],
+      [ "file_path", "namespaceconverter.html#a02ebe5babfc4c0f1d0647d72cbc4732d", null ],
+      [ "lp_file", "namespaceconverter.html#a769d7b7ffed5cb26840d56df8a9b4ae9", null ],
       [ "matches", "namespaceconverter.html#a7cd336fae1cec5700a3b7018c4995da4", null ],
+      [ "path", "namespaceconverter.html#addc46beda3790907fe06e49af0afd74f", null ],
       [ "prereq_part", "namespaceconverter.html#adc457b046e3e739e47decc226d3d9de9", null ],
       [ "prereq_text", "namespaceconverter.html#a011c51ef165c610a450f6a7581181369", null ],
+      [ "root_dir", "namespaceconverter.html#acadda4255b4329700df907258a4adbc0", null ],
+      [ "root_index", "namespaceconverter.html#a4d27b2c0247ec6cb3e6aabbf2680d2f3", null ],
       [ "strict_prereq_pattern", "namespaceconverter.html#a6436489b70aae83abab96952b28d4d76", null ],
       [ "structured_prereq", "namespaceconverter.html#a7352e1f0850b48b9f1e548a514486a25", null ],
       [ "title", "namespaceconverter.html#a7f03e5e6717e79930fb4d031eb1b430a", null ]
     ] ],
     [ "description", "namespacedescription.html", [
       [ "course_prerequisites", "namespacedescription.html#a98330234a2f317e284737f43ccfabc57", null ],
+      [ "current_directory", "namespacedescription.html#a1c2a08c492b1bb0fabe8a548df401d67", null ],
       [ "data", "namespacedescription.html#a0260747a932650cdc1c4c60cdde7e4cd", null ],
-      [ "file_path", "namespacedescription.html#a4a480452d558a32a5b89e00444618f5f", null ],
+      [ "data_dir", "namespacedescription.html#adee66afc7b280c8b0611150e9eb58079", null ],
+      [ "file_path", "namespacedescription.html#abd9e42828d419f95d5e87be0fd6fa826", null ],
+      [ "path", "namespacedescription.html#a65fe575f2e28fc57859becd80fd7c2ff", null ],
       [ "prereq_part", "namespacedescription.html#a244d7e2c561ac548f9c67f66306caaff", null ],
       [ "prereq_text", "namespacedescription.html#aa9dc2f413a52c0c36409a68a0e88fe8f", null ],
+      [ "root_dir", "namespacedescription.html#a09fb5359143bbe7bf51da05dfa10491a", null ],
+      [ "root_index", "namespacedescription.html#ad123eeba2202dcfec4b31e03be84c84a", null ],
       [ "title", "namespacedescription.html#aeba5c12e147b95cdbb657d138041c459", null ]
     ] ],
     [ "get_four_year", "namespaceget__four__year.html", [
@@ -59,9 +70,15 @@ var namespaces_dup =
       [ "create_sample", "namespaceget__sample.html#a7f94603f3e561a99d4b7d8b2eb12e33f", null ],
       [ "get_classes", "namespaceget__sample.html#aca0b8e51050ae82391d35f1cb211367b", null ],
       [ "classes", "namespaceget__sample.html#a3e787f281ff2bd81f8b4913e75e833b3", null ],
+      [ "current_directory", "namespaceget__sample.html#a1865e1017ca00f986a4d2ab1b3c79c30", null ],
       [ "f", "namespaceget__sample.html#a7fa77134c313da91255bc124b0c40810", null ],
       [ "indent", "namespaceget__sample.html#a18d88d479a9b24b206d5171c9645a4bc", null ],
-      [ "sample_data", "namespaceget__sample.html#a6b553ddd16f749e8338556198aaa0ac8", null ]
+      [ "path", "namespaceget__sample.html#adba29bead1f0468cc37abb5ad890454b", null ],
+      [ "read_dir", "namespaceget__sample.html#a2879c49d5b88aff8c29ef9bd1e35b907", null ],
+      [ "root_dir", "namespaceget__sample.html#a0f19b1a2fbcbf32ecfc66498c2503177", null ],
+      [ "root_index", "namespaceget__sample.html#a3eff618ed657135d301177d3025e50d2", null ],
+      [ "sample_data", "namespaceget__sample.html#a6b553ddd16f749e8338556198aaa0ac8", null ],
+      [ "sample_dir", "namespaceget__sample.html#a23660f3d5908eb825346ac2c1e939697", null ]
     ] ],
     [ "get_test_case", "namespaceget__test__case.html", [
       [ "create_sample", "namespaceget__test__case.html#a1a1a4405381a58651499a351a4fb4dcb", null ],
@@ -104,11 +121,16 @@ var namespaces_dup =
     ] ],
     [ "processor", "namespaceprocessor.html", [
       [ "get_cist_csci_courses", "namespaceprocessor.html#a56b11f4d0c8b6ab8ea0bd66ef32507d1", null ],
+      [ "current_directory", "namespaceprocessor.html#aef7b4b40203cda379823f28290ace883", null ],
+      [ "data_dir", "namespaceprocessor.html#ad1f5881666625204d7d5892d8c169a4e", null ],
       [ "encoding", "namespaceprocessor.html#a1769e2f2c3d9bc94efd91ec2f8d8486c", null ],
       [ "indent", "namespaceprocessor.html#a255e69a1d89eef7e4059cd1311b02973", null ],
-      [ "json_file", "namespaceprocessor.html#a032e9f0a7410a0ecdf1e5716ea3249c8", null ],
+      [ "json_file", "namespaceprocessor.html#a27f36f3c5347b3a4e2cf37dbcda84659", null ],
       [ "out", "namespaceprocessor.html#a6913d6fba54c50da16894c821a4c9f53", null ],
-      [ "result", "namespaceprocessor.html#ab0cba5883ec193921bc0f529a684dd08", null ]
+      [ "path", "namespaceprocessor.html#ae17c03db2dd63a8c63c666505a69bde3", null ],
+      [ "result", "namespaceprocessor.html#ab0cba5883ec193921bc0f529a684dd08", null ],
+      [ "root_dir", "namespaceprocessor.html#a32153912b4eb8da2fc5a9b29cf2a6a3f", null ],
+      [ "root_index", "namespaceprocessor.html#a908bbd829fa2bf5354ddf9618fa0d31f", null ]
     ] ],
     [ "scheduleFunctions", "namespaceschedule_functions.html", "namespaceschedule_functions" ]
 ];

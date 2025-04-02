@@ -29,27 +29,6 @@ list \mbox{\hyperlink{namespaceschedule_functions_1_1views_ad8fa3e75e365246679d5
 {\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_adcfb91d67951bf02743f2639543f069d} 
 schedule\+Functions.\+views.\+dashboard\+\_\+view (\begin{DoxyParamCaption}\item[{}]{request}{}\end{DoxyParamCaption})}
 
-
-
-Definition at line \mbox{\hyperlink{views_8py_source_l00033}{33}} of file \mbox{\hyperlink{views_8py_source}{views.\+py}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00033\ \textcolor{keyword}{def\ }dashboard\_view(request): }
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{stringliteral}{"{}username"{}}\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ request.session: }
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ redirect(\textcolor{stringliteral}{"{}home"{}})\ \ \textcolor{comment}{\#\ Redirect\ to\ login\ if\ not\ authenticated }}
-\DoxyCodeLine{00036\  }
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{\#\ Render\ the\ dashboard.html\ template }}
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{return}\ render(request,\ \textcolor{stringliteral}{"{}dashboard.html"{}},\ \{\textcolor{stringliteral}{"{}username"{}}:\ request.session[\textcolor{stringliteral}{"{}username"{}}]\}) }
-\DoxyCodeLine{00039\  }
-\DoxyCodeLine{00040\ \textcolor{stringliteral}{"{}"{}"{} }}
-\DoxyCodeLine{00041\ \textcolor{stringliteral}{<li>CSCI\ 1620\ -\/\ Introduction\ to\ CS\ (Mon/Wed\ 10:00AM\ -\/\ 11:30AM)</li> }}
-\DoxyCodeLine{00042\ \textcolor{stringliteral}{<li>MATH\ 1950\ -\/\ Calculus\ I\ (Tue/Thu\ 1:00PM\ -\/\ 2:30PM)</li> }}
-\DoxyCodeLine{00043\ \textcolor{stringliteral}{<li>MATH\ 2040\ -\/\ Discrete\ Math\ (Mon/Wed\ 3:00PM\ -\/\ 4:15PM)</li> }}
-\DoxyCodeLine{00044\ \textcolor{stringliteral}{<li>GEOG\ 1010\ -\/\ Geology\ (Mon/Wed\ 3:00PM\ -\/\ 4:15PM)</li> }}
-\DoxyCodeLine{00045\ \textcolor{stringliteral}{"{}"{}"{}} }
-
-\end{DoxyCode}
 \Hypertarget{namespaceschedule_functions_1_1views_ad7faf09810096992b817042c3d1fc657}\index{scheduleFunctions.views@{scheduleFunctions.views}!get\_section\_details@{get\_section\_details}}
 \index{get\_section\_details@{get\_section\_details}!scheduleFunctions.views@{scheduleFunctions.views}}
 \doxysubsubsection{\texorpdfstring{get\_section\_details()}{get\_section\_details()}}
@@ -84,105 +63,20 @@ Returns:
 \end{DoxyVerb}
  
 
-Definition at line \mbox{\hyperlink{views_8py_source_l00107}{107}} of file \mbox{\hyperlink{views_8py_source}{views.\+py}}.
+Referenced by \mbox{\hyperlink{namespaceschedule_functions_1_1views_af0105af3b32ca53bb79e12afbcfc7474}{schedule\+\_\+view()}}.
 
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00107\ \textcolor{keyword}{def\ }get\_section\_details(course:\ str,\ section:\ int)\ -\/>\ dict: }
-\DoxyCodeLine{00108\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}Returns\ a\ dictionary\ detailing\ all\ the\ relevant\ information\ for\ the\ section\ that\ is\ requested. }}
-\DoxyCodeLine{00109\ \textcolor{stringliteral}{ }}
-\DoxyCodeLine{00110\ \textcolor{stringliteral}{\ \ \ \ Args: }}
-\DoxyCodeLine{00111\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ course\ (str):\ identifier\ for\ the\ course\ that\ the\ section\ is\ part\ of.\ i.e.\ csci2500 }}
-\DoxyCodeLine{00112\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ section\ (int):\ number\ for\ the\ section }}
-\DoxyCodeLine{00113\ \textcolor{stringliteral}{ }}
-\DoxyCodeLine{00114\ \textcolor{stringliteral}{\ \ \ \ Returns: }}
-\DoxyCodeLine{00115\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ dict:\ All\ of\ the\ information\ relevant\ to\ the\ section. }}
-\DoxyCodeLine{00116\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ 'course':\ str }}
-\DoxyCodeLine{00117\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ 'section':\ int }}
-\DoxyCodeLine{00118\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ 'start':\ int }}
-\DoxyCodeLine{00119\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ 'end':\ int }}
-\DoxyCodeLine{00120\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ 'days':\ list[str] }}
-\DoxyCodeLine{00121\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ 'course\_name':\ str }}
-\DoxyCodeLine{00122\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ 'desc':\ str }}
-\DoxyCodeLine{00123\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ 'professor':\ str }}
-\DoxyCodeLine{00124\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ 'location':\ str }}
-\DoxyCodeLine{00125\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ 'prerequisites':\ list[str] }}
-\DoxyCodeLine{00126\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ 'cocurrent\_classes':\ list[dict] }}
-\DoxyCodeLine{00127\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 'course':\ str }}
-\DoxyCodeLine{00128\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 'section':\ str }}
-\DoxyCodeLine{00129\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 'course\_name':\ str }}
-\DoxyCodeLine{00130\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 'start':\ int }}
-\DoxyCodeLine{00131\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 'end':\ int }}
-\DoxyCodeLine{00132\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 'days':\ list[str] }}
-\DoxyCodeLine{00133\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \  }}
-\DoxyCodeLine{00134\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}} }
-\DoxyCodeLine{00135\ \ \ \ \ ...}
-
-\end{DoxyCode}
 \Hypertarget{namespaceschedule_functions_1_1views_aef22d9ac19337b024ff2028a3615fe4e}\index{scheduleFunctions.views@{scheduleFunctions.views}!login@{login}}
 \index{login@{login}!scheduleFunctions.views@{scheduleFunctions.views}}
 \doxysubsubsection{\texorpdfstring{login()}{login()}}
 {\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_aef22d9ac19337b024ff2028a3615fe4e} 
 schedule\+Functions.\+views.\+login (\begin{DoxyParamCaption}\item[{}]{request}{}\end{DoxyParamCaption})}
 
-
-
-Definition at line \mbox{\hyperlink{views_8py_source_l00008}{8}} of file \mbox{\hyperlink{views_8py_source}{views.\+py}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00008\ \textcolor{keyword}{def\ }login(request): }
-\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordflow}{if}\ request.method\ ==\ \textcolor{stringliteral}{"{}POST"{}}: }
-\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ username\ =\ request.POST.get(\textcolor{stringliteral}{"{}username"{}}) }
-\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ password\ =\ request.POST.get(\textcolor{stringliteral}{"{}password"{}}) }
-\DoxyCodeLine{00012\  }
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Get\ the\ absolute\ path\ to\ users.txt }}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ current\_dir\ =\ os.path.dirname(os.path.abspath(\_\_file\_\_)) }
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ users\_file\_path\ =\ os.path.join(current\_dir,\ \textcolor{stringliteral}{"{}users.txt"{}}) }
-\DoxyCodeLine{00016\  }
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}: }
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Read\ users.txt }}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{with}\ open(users\_file\_path,\ \textcolor{stringliteral}{"{}r"{}})\ \textcolor{keyword}{as}\ file: }
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ users\ =\ [line.strip().split(\textcolor{stringliteral}{"{},"{}})\ \textcolor{keywordflow}{for}\ line\ \textcolor{keywordflow}{in}\ file.readlines()] }
-\DoxyCodeLine{00021\  }
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Authenticate\ user }}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ [username,\ password]\ \textcolor{keywordflow}{in}\ users: }
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ request.session[\textcolor{stringliteral}{"{}username"{}}]\ =\ username\ \ \textcolor{comment}{\#\ Store\ session }}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ redirect(\textcolor{stringliteral}{"{}dashboard"{}})\ \ \textcolor{comment}{\#\ Redirect\ to\ dashboard }}
-\DoxyCodeLine{00026\  }
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ HttpResponse(\textcolor{stringliteral}{"{}Invalid\ credentials"{}},\ status=401) }
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{except}\ FileNotFoundError: }
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ HttpResponse(\textcolor{stringliteral}{"{}Error:\ users.txt\ file\ not\ found."{}},\ status=500) }
-\DoxyCodeLine{00030\  }
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{return}\ render(request,\ \textcolor{stringliteral}{"{}login.html"{}})\ \ \textcolor{comment}{\#\ Render\ login\ form\ (login.html\ template) }}
-\DoxyCodeLine{00032\  }
-
-\end{DoxyCode}
 \Hypertarget{namespaceschedule_functions_1_1views_a6c9bae8f4dde6bf381411c24471f1145}\index{scheduleFunctions.views@{scheduleFunctions.views}!run\_script@{run\_script}}
 \index{run\_script@{run\_script}!scheduleFunctions.views@{scheduleFunctions.views}}
 \doxysubsubsection{\texorpdfstring{run\_script()}{run\_script()}}
 {\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_a6c9bae8f4dde6bf381411c24471f1145} 
 schedule\+Functions.\+views.\+run\+\_\+script (\begin{DoxyParamCaption}\item[{}]{request}{}\end{DoxyParamCaption})}
 
-
-
-Definition at line \mbox{\hyperlink{views_8py_source_l00096}{96}} of file \mbox{\hyperlink{views_8py_source}{views.\+py}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00096\ \textcolor{keyword}{def\ }run\_script(request): }
-\DoxyCodeLine{00097\ \ \ \ \ script\_name\ =\ request.GET.get(\textcolor{stringliteral}{"{}script"{}}) }
-\DoxyCodeLine{00098\ \ \ \ \ script\_path\ =\ os.path.join(settings.BASE\_DIR,\ f\textcolor{stringliteral}{"{}\{script\_name\}.py"{}})\ \ \textcolor{comment}{\#\ Locate\ scripts\ in\ the\ root\ directory }}
-\DoxyCodeLine{00099\  }
-\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordflow}{if}\ os.path.exists(script\_path): }
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ result\ =\ subprocess.run([\textcolor{stringliteral}{"{}python"{}},\ script\_path],\ capture\_output=\textcolor{keyword}{True},\ text=\textcolor{keyword}{True}) }
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ JsonResponse(\{\textcolor{stringliteral}{"{}output"{}}:\ result.stdout,\ \textcolor{stringliteral}{"{}error"{}}:\ result.stderr\}) }
-\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordflow}{else}: }
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ JsonResponse(\{\textcolor{stringliteral}{"{}error"{}}:\ \textcolor{stringliteral}{"{}Invalid\ script\ name"{}}\},\ status=400) }
-\DoxyCodeLine{00105\  }
-\DoxyCodeLine{00106\  }
-
-\end{DoxyCode}
 \Hypertarget{namespaceschedule_functions_1_1views_af0105af3b32ca53bb79e12afbcfc7474}\index{scheduleFunctions.views@{scheduleFunctions.views}!schedule\_view@{schedule\_view}}
 \index{schedule\_view@{schedule\_view}!scheduleFunctions.views@{scheduleFunctions.views}}
 \doxysubsubsection{\texorpdfstring{schedule\_view()}{schedule\_view()}}
@@ -191,23 +85,8 @@ schedule\+Functions.\+views.\+schedule\+\_\+view (\begin{DoxyParamCaption}\item[
 
 
 
-Definition at line \mbox{\hyperlink{views_8py_source_l00085}{85}} of file \mbox{\hyperlink{views_8py_source}{views.\+py}}.
+References \mbox{\hyperlink{namespaceschedule_functions_1_1views_ad7faf09810096992b817042c3d1fc657}{get\+\_\+section\+\_\+details()}}.
 
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00085\ \textcolor{keyword}{def\ }schedule\_view(request): }
-\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{\#\ if\ "{}username"{}\ not\ in\ request.session: }}
-\DoxyCodeLine{00087\ \ \ \ \ \textcolor{comment}{\#\ \ \ \ \ return\ redirect("{}home"{})\ \ \#\ Redirect\ to\ login\ if\ not\ authenticated }}
-\DoxyCodeLine{00088\  }
-\DoxyCodeLine{00089\ \ \ \ \ selected\_course\ =\ request.GET.get(\textcolor{stringliteral}{'course'},\ \textcolor{keywordtype}{None})\  }
-\DoxyCodeLine{00090\ \ \ \ \ selected\_section\ =request.GET.get(\textcolor{stringliteral}{'section'},\ \textcolor{keywordtype}{None})\  }
-\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordflow}{if}\ selected\_course\ \textcolor{keywordflow}{and}\ selected\_section: }
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ render(request,\ \textcolor{stringliteral}{"{}section\_details.html"{}},\ \{\textcolor{stringliteral}{"{}username"{}}:\ request.session[\textcolor{stringliteral}{"{}username"{}}],\ \textcolor{stringliteral}{"{}details"{}}:\ get\_section\_details(selected\_course,\ selected\_section)\}) }
-\DoxyCodeLine{00093\ \ \ \ \ \textcolor{comment}{\#\ Render\ the\ dashboard.html\ template }}
-\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordflow}{return}\ render(request,\ \textcolor{stringliteral}{"{}schedule.html"{}},\ \{\textcolor{stringliteral}{"{}username"{}}:\ request.session[\textcolor{stringliteral}{"{}username"{}}],\ \textcolor{stringliteral}{"{}course\_list"{}}:\ example\_course\_list,\ \textcolor{stringliteral}{"{}conflict\_list"{}}:\ example\_conflict\_list\}) }
-\DoxyCodeLine{00095\  }
-
-\end{DoxyCode}
 
 
 \doxysubsection{Variable Documentation}
@@ -224,17 +103,9 @@ list schedule\+Functions.\+views.\+example\+\_\+conflict\+\_\+list}
 \DoxyCodeLine{00003\ ]}
 
 \end{DoxyCode}
-
-
-Definition at line \mbox{\hyperlink{views_8py_source_l00081}{81}} of file \mbox{\hyperlink{views_8py_source}{views.\+py}}.
-
 \Hypertarget{namespaceschedule_functions_1_1views_af7edf771fc0ed92eb0233b2b0730cd44}\index{scheduleFunctions.views@{scheduleFunctions.views}!example\_course\_list@{example\_course\_list}}
 \index{example\_course\_list@{example\_course\_list}!scheduleFunctions.views@{scheduleFunctions.views}}
 \doxysubsubsection{\texorpdfstring{example\_course\_list}{example\_course\_list}}
 {\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_af7edf771fc0ed92eb0233b2b0730cd44} 
 list schedule\+Functions.\+views.\+example\+\_\+course\+\_\+list}
-
-
-
-Definition at line \mbox{\hyperlink{views_8py_source_l00046}{46}} of file \mbox{\hyperlink{views_8py_source}{views.\+py}}.
 

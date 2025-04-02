@@ -187,22 +187,8 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A dictionary whose keys are all of the classes described in the four year plan </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="process__constraints_8py_source.html#l00132">132</a> of file <a class="el" href="process__constraints_8py_source.html">process_constraints.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  132</span><span class="keyword">def </span>combine_constraints(constraints: list[dict]) -&gt; dict:</div>
-<div class="line"><span class="lineno">  133</span>    complete_constraints = {}</div>
-<div class="line"><span class="lineno">  134</span>    </div>
-<div class="line"><span class="lineno">  135</span>    <span class="keywordflow">for</span> semsester <span class="keywordflow">in</span> constraints:</div>
-<div class="line"><span class="lineno">  136</span>        <span class="keywordflow">for</span> key, value <span class="keywordflow">in</span> semsester.items():</div>
-<div class="line"><span class="lineno">  137</span>            <span class="keywordflow">if</span> key <span class="keywordflow">in</span> complete_constraints.keys():</div>
-<div class="line"><span class="lineno">  138</span>                complete_constraints[key][<span class="stringliteral">&#39;same_semester&#39;</span>].update(value[<span class="stringliteral">&#39;same_semester&#39;</span>])</div>
-<div class="line"><span class="lineno">  139</span>                complete_constraints[key][<span class="stringliteral">&#39;equivalent_courses&#39;</span>].update(value[<span class="stringliteral">&#39;equivalent_courses&#39;</span>])</div>
-<div class="line"><span class="lineno">  140</span>                complete_constraints[key][<span class="stringliteral">&#39;semesters&#39;</span>].update(value[<span class="stringliteral">&#39;semesters&#39;</span>])</div>
-<div class="line"><span class="lineno">  141</span>            <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">  142</span>                complete_constraints[key] = value</div>
-<div class="line"><span class="lineno">  143</span>                </div>
-<div class="line"><span class="lineno">  144</span>    <span class="keywordflow">return</span> complete_constraints</div>
-<div class="line"><span class="lineno">  145</span>    </div>
-</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="#afc974924dfdc5fa5c58357af26abaceb">create_constraints()</a>.</p>
+
 </div>
 </div>
 <a id="a0ede1cd446057a59557da9411b0cc5c5" name="a0ede1cd446057a59557da9411b0cc5c5"></a>
@@ -238,28 +224,6 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="process__constraints_8py_source.html#l00189">189</a> of file <a class="el" href="process__constraints_8py_source.html">process_constraints.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  189</span><span class="keyword">def </span>convert_asp(constraints: dict, file: str) -&gt; <span class="keywordtype">None</span>:</div>
-<div class="line"><span class="lineno">  190</span>    <span class="keywordflow">for</span> course <span class="keywordflow">in</span> constraints.keys():</div>
-<div class="line"><span class="lineno">  191</span>        <span class="comment"># Equivalent classes</span></div>
-<div class="line"><span class="lineno">  192</span>        <span class="keywordflow">for</span> other <span class="keywordflow">in</span> constraints[course][<span class="stringliteral">&#39;same_semester&#39;</span>]:</div>
-<div class="line"><span class="lineno">  193</span>            file.write(f<span class="stringliteral">&#39;same_semester({course}, {other}).\n&#39;</span>)</div>
-<div class="line"><span class="lineno">  194</span>        </div>
-<div class="line"><span class="lineno">  195</span>        <span class="comment"># Same Semester classes</span></div>
-<div class="line"><span class="lineno">  196</span>        <span class="keywordflow">for</span> other <span class="keywordflow">in</span> constraints[course][<span class="stringliteral">&#39;equivalent_courses&#39;</span>]:</div>
-<div class="line"><span class="lineno">  197</span>            file.write(f<span class="stringliteral">&#39;equivalent_courses({course}, {other}).\n&#39;</span>)</div>
-<div class="line"><span class="lineno">  198</span>        </div>
-<div class="line"><span class="lineno">  199</span>        <span class="comment"># Class in Semester</span></div>
-<div class="line"><span class="lineno">  200</span>        <span class="keywordflow">for</span> semester <span class="keywordflow">in</span> constraints[course][<span class="stringliteral">&#39;semesters&#39;</span>]:</div>
-<div class="line"><span class="lineno">  201</span>            file.write(f<span class="stringliteral">&#39;course_in_semester({semester}, {course}).\n&#39;</span>)</div>
-<div class="line"><span class="lineno">  202</span>            </div>
-<div class="line"><span class="lineno">  203</span>    <span class="comment"># Predetermined Rules</span></div>
-<div class="line"><span class="lineno">  204</span>    file.write(<span class="stringliteral">&#39;equivalent_courses(C1, C3) :- equivalent_courses(C1, C2), equivalent_courses(C2, C3).\n&#39;</span>)</div>
-<div class="line"><span class="lineno">  205</span>    file.write(<span class="stringliteral">&#39;course_in_semester(S1, C2) :- equivalent_courses(C1, C2), course_in_semester(S1, C1).\n&#39;</span>)</div>
-<div class="line"><span class="lineno">  206</span>    file.write(<span class="stringliteral">&#39;same_semester(C1, C3) :- same_semester(C1, C2), same_semester(C2, C3).\n&#39;</span>)</div>
-<div class="line"><span class="lineno">  207</span>    file.write(<span class="stringliteral">&#39;same_semester(C1, C3) :- equivalent_courses(C1, C2), same_semester(C2, C3).\n&#39;</span>)</div>
-<div class="line"><span class="lineno">  208</span> </div>
-</div><!-- fragment -->
 </div>
 </div>
 <a id="afc974924dfdc5fa5c58357af26abaceb" name="afc974924dfdc5fa5c58357af26abaceb"></a>
@@ -288,27 +252,8 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A dictionary whose keys are all of the courses in the four year plan </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="process__constraints_8py_source.html#l00156">156</a> of file <a class="el" href="process__constraints_8py_source.html">process_constraints.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  156</span><span class="keyword">def </span>create_constraints(filename: str) -&gt; dict:</div>
-<div class="line"><span class="lineno">  157</span>    </div>
-<div class="line"><span class="lineno">  158</span>    plan = get_plan(filename)</div>
-<div class="line"><span class="lineno">  159</span>    semesters = [<span class="stringliteral">&#39;fall&#39;</span>, <span class="stringliteral">&#39;spring&#39;</span>]</div>
-<div class="line"><span class="lineno">  160</span>    constraint_list = []</div>
-<div class="line"><span class="lineno">  161</span>    <span class="keywordflow">for</span> year <span class="keywordflow">in</span> range(1,5):</div>
-<div class="line"><span class="lineno">  162</span>       <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(0,2):</div>
-<div class="line"><span class="lineno">  163</span>           semester_plan = get_semester(plan, year, semesters[i]) </div>
-<div class="line"><span class="lineno">  164</span>           constraint_list.append(set_contsraints(semester_plan, year*10 + i))</div>
-<div class="line"><span class="lineno">  165</span>    <span class="comment"># pprint(constraint_list)</span></div>
-<div class="line"><span class="lineno">  166</span>    constraints = combine_constraints(constraint_list)</div>
-<div class="line"><span class="lineno">  167</span>    </div>
-<div class="line"><span class="lineno">  168</span>    <span class="keywordflow">for</span> key <span class="keywordflow">in</span> constraints.keys():</div>
-<div class="line"><span class="lineno">  169</span>        constraints[key][<span class="stringliteral">&#39;same_semester&#39;</span>] = list(constraints[key][<span class="stringliteral">&#39;same_semester&#39;</span>])</div>
-<div class="line"><span class="lineno">  170</span>        constraints[key][<span class="stringliteral">&#39;equivalent_courses&#39;</span>] = list(constraints[key][<span class="stringliteral">&#39;equivalent_courses&#39;</span>])</div>
-<div class="line"><span class="lineno">  171</span>        constraints[key][<span class="stringliteral">&#39;semesters&#39;</span>] = list(constraints[key][<span class="stringliteral">&#39;semesters&#39;</span>])</div>
-<div class="line"><span class="lineno">  172</span>        </div>
-<div class="line"><span class="lineno">  173</span>    <span class="keywordflow">return</span> constraints</div>
-<div class="line"><span class="lineno">  174</span> </div>
-</div><!-- fragment -->
+<p class="reference">References <a class="el" href="#a895b25f79200491a70e12333326be8d7">combine_constraints()</a>, <a class="el" href="#ab86be89cfce31b95a41218ddcf01e6cd">get_plan()</a>, <a class="el" href="#aa7a714480b0d6e840bc1e84a1258221f">get_semester()</a>, and <a class="el" href="#ac2660d1d70a182f0f79ff63cfc546e59">set_contsraints()</a>.</p>
+
 </div>
 </div>
 <a id="ab86be89cfce31b95a41218ddcf01e6cd" name="ab86be89cfce31b95a41218ddcf01e6cd"></a>
@@ -337,15 +282,8 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The list of dictionaries that was read from the file. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="process__constraints_8py_source.html#l00019">19</a> of file <a class="el" href="process__constraints_8py_source.html">process_constraints.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   19</span><span class="keyword">def </span>get_plan(filename: str) -&gt; list[dict]:</div>
-<div class="line"><span class="lineno">   20</span>    <span class="keyword">with</span> open(filename, <span class="stringliteral">&#39;r&#39;</span>) <span class="keyword">as</span> file:</div>
-<div class="line"><span class="lineno">   21</span>        data = json.load(file)</div>
-<div class="line"><span class="lineno">   22</span>    <span class="keywordflow">if</span> type(data) != list:</div>
-<div class="line"><span class="lineno">   23</span>        <span class="keywordflow">raise</span> SyntaxError(<span class="stringliteral">&quot;Read file is not in the expected format&quot;</span>)</div>
-<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">return</span> data</div>
-<div class="line"><span class="lineno">   25</span>    </div>
-</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="#afc974924dfdc5fa5c58357af26abaceb">create_constraints()</a>.</p>
+
 </div>
 </div>
 <a id="aa7a714480b0d6e840bc1e84a1258221f" name="aa7a714480b0d6e840bc1e84a1258221f"></a>
@@ -397,34 +335,8 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A list of classes in the same structure as origional semester list combined for all plans in the origional list. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="process__constraints_8py_source.html#l00059">59</a> of file <a class="el" href="process__constraints_8py_source.html">process_constraints.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   59</span><span class="keyword">def </span>get_semester(plan: list[dict], year: str|int, semester: str ) -&gt; list:</div>
-<div class="line"><span class="lineno">   60</span>    years = [<span class="stringliteral">&#39;First Year&#39;</span>, <span class="stringliteral">&#39;Second Year&#39;</span>, <span class="stringliteral">&#39;Third Year&#39;</span>, <span class="stringliteral">&#39;Fourth Year&#39;</span>]</div>
-<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">if</span> type(year) == str:</div>
-<div class="line"><span class="lineno">   62</span>        year = year.upper()</div>
-<div class="line"><span class="lineno">   63</span>        <span class="keywordflow">if</span> year <span class="keywordflow">not</span> <span class="keywordflow">in</span> years:</div>
-<div class="line"><span class="lineno">   64</span>            <span class="keywordflow">raise</span> ValueError(<span class="stringliteral">&quot;Provided year not &#39;First Year&#39;, &#39;Second Year&#39;, &#39;Third Year&#39;, or &#39;Fourth Year&#39;&quot;</span>)</div>
-<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">elif</span> type(year) == int:</div>
-<div class="line"><span class="lineno">   66</span>        <span class="keywordflow">if</span> year &gt; 4 <span class="keywordflow">or</span> year &lt; 1:</div>
-<div class="line"><span class="lineno">   67</span>            <span class="keywordflow">raise</span> ValueError(<span class="stringliteral">&quot;Provided year outside range of 1-4 &quot;</span>)</div>
-<div class="line"><span class="lineno">   68</span>        year = years[year-1]</div>
-<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">   70</span>        <span class="keywordflow">raise</span> TypeError(f<span class="stringliteral">&quot;Provided year of type {type(year)}, not str or int&quot;</span>)</div>
-<div class="line"><span class="lineno">   71</span>        </div>
-<div class="line"><span class="lineno">   72</span>    semester = semester.upper()</div>
-<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">if</span> semester <span class="keywordflow">not</span> <span class="keywordflow">in</span> [<span class="stringliteral">&#39;FALL&#39;</span>, <span class="stringliteral">&#39;SPRING&#39;</span>]:</div>
-<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">raise</span> ValueError(<span class="stringliteral">&quot;Provided semester not FALL or SPRING&quot;</span>)</div>
-<div class="line"><span class="lineno">   75</span>        </div>
-<div class="line"><span class="lineno">   76</span>    semester_content = []</div>
-<div class="line"><span class="lineno">   77</span>    </div>
-<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">for</span> sub_plan <span class="keywordflow">in</span> plan:</div>
-<div class="line"><span class="lineno">   79</span>        semester_content.extend(sub_plan[year][semester])</div>
-<div class="line"><span class="lineno">   80</span>        </div>
-<div class="line"><span class="lineno">   81</span>        </div>
-<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">return</span> semester_content</div>
-<div class="line"><span class="lineno">   83</span>    </div>
-<div class="line"><span class="lineno">   84</span> </div>
-</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="#afc974924dfdc5fa5c58357af26abaceb">create_constraints()</a>.</p>
+
 </div>
 </div>
 <a id="ac2660d1d70a182f0f79ff63cfc546e59" name="ac2660d1d70a182f0f79ff63cfc546e59"></a>
@@ -455,35 +367,8 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Dictionary containing all of the classes in the semester Structure: &lt;course number like csci2040&gt;: { 'equivalent_courses': set, 'same_semester': set, 'credits': int, 'semsesters': set } ... </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="process__constraints_8py_source.html#l00101">101</a> of file <a class="el" href="process__constraints_8py_source.html">process_constraints.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  101</span><span class="keyword">def </span>set_contsraints(semester_plan: list, semester_id: int) -&gt; dict:</div>
-<div class="line"><span class="lineno">  102</span>    </div>
-<div class="line"><span class="lineno">  103</span>    semester_dict = {}</div>
-<div class="line"><span class="lineno">  104</span>    classes_in_semester = set([])</div>
-<div class="line"><span class="lineno">  105</span>    <span class="keywordflow">for</span> course_group <span class="keywordflow">in</span> semester_plan:</div>
-<div class="line"><span class="lineno">  106</span>        <span class="comment"># Confirm structure of each course group</span></div>
-<div class="line"><span class="lineno">  107</span>        <span class="keywordflow">if</span> len(course_group) != 3:</div>
-<div class="line"><span class="lineno">  108</span>            <span class="keywordflow">raise</span> SyntaxError(<span class="stringliteral">&quot;Read file is not in the expected format&quot;</span>)          </div>
-<div class="line"><span class="lineno">  109</span>            </div>
-<div class="line"><span class="lineno">  110</span>        <span class="comment"># Set constraint structure for each course</span></div>
-<div class="line"><span class="lineno">  111</span>        <span class="keywordflow">for</span> course <span class="keywordflow">in</span> course_group[0]:</div>
-<div class="line"><span class="lineno">  112</span>            </div>
-<div class="line"><span class="lineno">  113</span>            semester_dict[course] = {</div>
-<div class="line"><span class="lineno">  114</span>                <span class="stringliteral">&#39;equivalent_courses&#39;</span>: set([x <span class="keywordflow">for</span> x <span class="keywordflow">in</span> course_group[0] <span class="keywordflow">if</span> x != course]),</div>
-<div class="line"><span class="lineno">  115</span>                <span class="stringliteral">&#39;same_semester&#39;</span>: set([]),</div>
-<div class="line"><span class="lineno">  116</span>                <span class="stringliteral">&#39;credits&#39;</span>: course_group[2],</div>
-<div class="line"><span class="lineno">  117</span>                <span class="stringliteral">&#39;semesters&#39;</span>: {semester_id}</div>
-<div class="line"><span class="lineno">  118</span>            }</div>
-<div class="line"><span class="lineno">  119</span>        classes_in_semester.update(course_group[0])</div>
-<div class="line"><span class="lineno">  120</span> </div>
-<div class="line"><span class="lineno">  121</span>    </div>
-<div class="line"><span class="lineno">  122</span>    <span class="comment"># Set hard constraints as every class in semester not in soft constraints</span></div>
-<div class="line"><span class="lineno">  123</span>    <span class="keywordflow">for</span> course <span class="keywordflow">in</span> semester_dict.keys():</div>
-<div class="line"><span class="lineno">  124</span>        semester_dict[course][<span class="stringliteral">&#39;same_semester&#39;</span>] = {x <span class="keywordflow">for</span> x <span class="keywordflow">in</span> classes_in_semester <span class="keywordflow">if</span> x != course <span class="keywordflow">and</span> x <span class="keywordflow">not</span> <span class="keywordflow">in</span> semester_dict[course][<span class="stringliteral">&#39;equivalent_courses&#39;</span>]}</div>
-<div class="line"><span class="lineno">  125</span>    <span class="keywordflow">return</span> semester_dict</div>
-<div class="line"><span class="lineno">  126</span>    </div>
-<div class="line"><span class="lineno">  127</span> </div>
-</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="#afc974924dfdc5fa5c58357af26abaceb">create_constraints()</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -499,8 +384,6 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="process__constraints_8py_source.html#l00224">224</a> of file <a class="el" href="process__constraints_8py_source.html">process_constraints.py</a>.</p>
-
 </div>
 </div>
 <a id="a8cd9136db771fd3167a4a6f70de56667" name="a8cd9136db771fd3167a4a6f70de56667"></a>
@@ -514,8 +397,6 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="process__constraints_8py_source.html#l00222">222</a> of file <a class="el" href="process__constraints_8py_source.html">process_constraints.py</a>.</p>
 
 </div>
 </div>
@@ -531,8 +412,6 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="process__constraints_8py_source.html#l00211">211</a> of file <a class="el" href="process__constraints_8py_source.html">process_constraints.py</a>.</p>
-
 </div>
 </div>
 <a id="a8fc7aab4b3b5aa8c30c61ff427c477d1" name="a8fc7aab4b3b5aa8c30c61ff427c477d1"></a>
@@ -546,8 +425,6 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="process__constraints_8py_source.html#l00220">220</a> of file <a class="el" href="process__constraints_8py_source.html">process_constraints.py</a>.</p>
 
 </div>
 </div>
@@ -563,8 +440,6 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="process__constraints_8py_source.html#l00227">227</a> of file <a class="el" href="process__constraints_8py_source.html">process_constraints.py</a>.</p>
-
 </div>
 </div>
 <a id="a7a0d13fa060bc49b7c1a1122c6a05990" name="a7a0d13fa060bc49b7c1a1122c6a05990"></a>
@@ -578,8 +453,6 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="process__constraints_8py_source.html#l00221">221</a> of file <a class="el" href="process__constraints_8py_source.html">process_constraints.py</a>.</p>
 
 </div>
 </div>
@@ -595,8 +468,6 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="process__constraints_8py_source.html#l00227">227</a> of file <a class="el" href="process__constraints_8py_source.html">process_constraints.py</a>.</p>
-
 </div>
 </div>
 <a id="a8d76bf238db21ed88785b9d5371380cb" name="a8d76bf238db21ed88785b9d5371380cb"></a>
@@ -610,8 +481,6 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="process__constraints_8py_source.html#l00223">223</a> of file <a class="el" href="process__constraints_8py_source.html">process_constraints.py</a>.</p>
 
 </div>
 </div>
@@ -627,8 +496,6 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="process__constraints_8py_source.html#l00216">216</a> of file <a class="el" href="process__constraints_8py_source.html">process_constraints.py</a>.</p>
-
 </div>
 </div>
 <a id="aa2fac437ece11e4e4cba1e3fee972e0a" name="aa2fac437ece11e4e4cba1e3fee972e0a"></a>
@@ -643,8 +510,6 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="process__constraints_8py_source.html#l00219">219</a> of file <a class="el" href="process__constraints_8py_source.html">process_constraints.py</a>.</p>
-
 </div>
 </div>
 <a id="a4cdc6d6b517a548fcf792ee100d112c0" name="a4cdc6d6b517a548fcf792ee100d112c0"></a>
@@ -658,8 +523,6 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="process__constraints_8py_source.html#l00218">218</a> of file <a class="el" href="process__constraints_8py_source.html">process_constraints.py</a>.</p>
 
 </div>
 </div>

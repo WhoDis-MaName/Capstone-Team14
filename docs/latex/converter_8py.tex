@@ -1,5 +1,5 @@
-\doxysection{converter.\+py File Reference}
-\hypertarget{converter_8py}{}\label{converter_8py}\index{converter.py@{converter.py}}
+\doxysection{data\+\_\+processing/converter.py File Reference}
+\hypertarget{converter_8py}{}\label{converter_8py}\index{data\_processing/converter.py@{data\_processing/converter.py}}
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -13,7 +13,17 @@ namespace \mbox{\hyperlink{namespaceconverter}{converter}}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-str \mbox{\hyperlink{namespaceconverter_a467eb33e56ef909081ca0531a012b9ce}{converter.\+file\+\_\+path}} = "{}filtered.\+json"{}
+\mbox{\hyperlink{namespaceconverter_abd3dbc1f876ff6580fe7b24ebc9a28da}{converter.\+current\+\_\+directory}} = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))
+\item 
+\mbox{\hyperlink{namespaceconverter_addc46beda3790907fe06e49af0afd74f}{converter.\+path}} = current\+\_\+directory.\+split(os.\+sep)
+\item 
+\mbox{\hyperlink{namespaceconverter_a4d27b2c0247ec6cb3e6aabbf2680d2f3}{converter.\+root\+\_\+index}} = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceconverter_acadda4255b4329700df907258a4adbc0}{converter.\+root\+\_\+dir}} = os.\+sep.\+join(\mbox{\hyperlink{namespaceconverter_addc46beda3790907fe06e49af0afd74f}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceconverter_a4d27b2c0247ec6cb3e6aabbf2680d2f3}{root\+\_\+index}}+1\mbox{]})
+\item 
+\mbox{\hyperlink{namespaceconverter_a1691122b017611f550b9ae5507d35c2b}{converter.\+data\+\_\+dir}} = os.\+path.\+join(\mbox{\hyperlink{namespaceconverter_acadda4255b4329700df907258a4adbc0}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}uploaded\+\_\+schedule\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceconverter_a02ebe5babfc4c0f1d0647d72cbc4732d}{converter.\+file\+\_\+path}} = os.\+path.\+join(\mbox{\hyperlink{namespaceconverter_a1691122b017611f550b9ae5507d35c2b}{data\+\_\+dir}},"{}filtered.\+json"{})
 \item 
 \mbox{\hyperlink{namespaceconverter_a1e1cb5282251941da3be7c61d30afc7c}{converter.\+data}} = json.\+load(file)
 \item 
@@ -34,4 +44,6 @@ dict \mbox{\hyperlink{namespaceconverter_aa2ba91e7e32e1307f84d38f304a2c1c2}{conv
 str \mbox{\hyperlink{namespaceconverter_a7352e1f0850b48b9f1e548a514486a25}{converter.\+structured\+\_\+prereq}} = f"{}choice(\mbox{[}\{\textquotesingle{}, \textquotesingle{}.join(\mbox{\hyperlink{namespaceconverter_a940deb3778e0814b3858f19f3dd72a8b}{all\+\_\+prereqs}})\}\mbox{]})"{}
 \item 
 str \mbox{\hyperlink{namespaceconverter_abe801b4b3d9e4600db786b4476976e09}{converter.\+course\+\_\+key}} = f"{}\{\mbox{\hyperlink{namespaceconverter_a814ed471ae64d1b1640bd217d461512b}{clean\+\_\+course\+\_\+name}}(subject)\}\+\_\+\{course\+\_\+number\}"{}
+\item 
+\mbox{\hyperlink{namespaceconverter_a769d7b7ffed5cb26840d56df8a9b4ae9}{converter.\+lp\+\_\+file}} = os.\+path.\+join(\mbox{\hyperlink{namespaceconverter_acadda4255b4329700df907258a4adbc0}{root\+\_\+dir}},"{}courses.\+lp"{})
 \end{DoxyCompactItemize}
