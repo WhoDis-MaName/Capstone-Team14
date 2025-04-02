@@ -1,0 +1,20 @@
+\chapter{Django Tutorial instructions}
+\hypertarget{md__django__tutorial__instructions}{}\label{md__django__tutorial__instructions}\index{Django Tutorial instructions@{Django Tutorial instructions}}
+\label{md__django__tutorial__instructions_autotoc_md0}%
+\Hypertarget{md__django__tutorial__instructions_autotoc_md0}%
+\hypertarget{md__django__tutorial__instructions_autotoc_md1}{}\doxysection{\texorpdfstring{Setup Environment}{Setup Environment}}\label{md__django__tutorial__instructions_autotoc_md1}
+\hypertarget{md__django__tutorial__instructions_autotoc_md2}{}\doxysubsection{\texorpdfstring{Create venv}{Create venv}}\label{md__django__tutorial__instructions_autotoc_md2}
+{\ttfamily python -\/m venv \{environment name\}}\hypertarget{md__django__tutorial__instructions_autotoc_md3}{}\doxysubsection{\texorpdfstring{Start venv}{Start venv}}\label{md__django__tutorial__instructions_autotoc_md3}
+{\ttfamily \{environment name\}/\+Scripts/activate}
+
+{\bfseries{Note}} must enable script running via powershell command {\ttfamily Set-\/\+Execution\+Policy -\/Execution\+Policy All\+Signed -\/Scope Current\+User}\hypertarget{md__django__tutorial__instructions_autotoc_md4}{}\doxysubsection{\texorpdfstring{Install Django}{Install Django}}\label{md__django__tutorial__instructions_autotoc_md4}
+{\ttfamily pip install Django}\hypertarget{md__django__tutorial__instructions_autotoc_md5}{}\doxysubsection{\texorpdfstring{Start Django project}{Start Django project}}\label{md__django__tutorial__instructions_autotoc_md5}
+{\ttfamily django-\/admin startproject \{project name\}}\hypertarget{md__django__tutorial__instructions_autotoc_md6}{}\doxysubsection{\texorpdfstring{Create Django app}{Create Django app}}\label{md__django__tutorial__instructions_autotoc_md6}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd\ \{django\ project\ name\}}
+\DoxyCodeLine{python3\ manage.py\ startapp\ \{app\ name\}}
+
+\end{DoxyCode}
+\hypertarget{md__django__tutorial__instructions_autotoc_md7}{}\doxysubsection{\texorpdfstring{Run Django Project}{Run Django Project}}\label{md__django__tutorial__instructions_autotoc_md7}
+{\ttfamily python \doxylink{manage_8py}{manage.\+py} runserver} 

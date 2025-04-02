@@ -179,35 +179,8 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A single dictionary that combines all of the requirements into one while handling duplicate group labels by combining the class lists. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="get__requirements_8py_source.html#l00143">143</a> of file <a class="el" href="get__requirements_8py_source.html">get_requirements.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  143</span><span class="keyword">def </span>compile_requirements(requirements: list[dict]) -&gt; dict:</div>
-<div class="line"><span class="lineno">  144</span>    compiled_req:dict = {}</div>
-<div class="line"><span class="lineno">  145</span>    </div>
-<div class="line"><span class="lineno">  146</span>    <span class="keywordflow">for</span> req_dict <span class="keywordflow">in</span> requirements:</div>
-<div class="line"><span class="lineno">  147</span>        <span class="keywordflow">for</span> major_group <span class="keywordflow">in</span> req_dict.keys():</div>
-<div class="line"><span class="lineno">  148</span>            <span class="keywordflow">if</span> major_group <span class="keywordflow">not</span> <span class="keywordflow">in</span> compiled_req.keys():</div>
-<div class="line"><span class="lineno">  149</span>                compiled_req[major_group] = {}</div>
-<div class="line"><span class="lineno">  150</span>            <span class="keywordflow">for</span> sub_group <span class="keywordflow">in</span> req_dict[major_group].keys():</div>
-<div class="line"><span class="lineno">  151</span>                temp_major = major_group</div>
-<div class="line"><span class="lineno">  152</span>                <span class="keywordflow">if</span> sub_group <span class="keywordflow">in</span> [<span class="stringliteral">&#39;math_courses&#39;</span>, <span class="stringliteral">&#39;science_courses&#39;</span>]:</div>
-<div class="line"><span class="lineno">  153</span>                    <span class="keywordflow">if</span> major_group <span class="keywordflow">not</span> <span class="keywordflow">in</span> [<span class="stringliteral">&#39;major_requirements&#39;</span>,]:</div>
-<div class="line"><span class="lineno">  154</span>                        temp_major = <span class="stringliteral">&#39;major_requirements&#39;</span></div>
-<div class="line"><span class="lineno">  155</span>                </div>
-<div class="line"><span class="lineno">  156</span>                <span class="keywordflow">if</span> sub_group <span class="keywordflow">not</span> <span class="keywordflow">in</span> compiled_req[temp_major].keys():</div>
-<div class="line"><span class="lineno">  157</span>                    compiled_req[temp_major][sub_group] = req_dict[major_group][sub_group]</div>
-<div class="line"><span class="lineno">  158</span>                    <span class="keywordflow">continue</span></div>
-<div class="line"><span class="lineno">  159</span>                </div>
-<div class="line"><span class="lineno">  160</span>                compiled_req[temp_major][sub_group][<span class="stringliteral">&#39;classes&#39;</span>] = list(set(compiled_req[temp_major][sub_group][<span class="stringliteral">&#39;classes&#39;</span>]).union(req_dict[major_group][sub_group][<span class="stringliteral">&#39;classes&#39;</span>]))</div>
-<div class="line"><span class="lineno">  161</span>                <span class="keywordflow">if</span> compiled_req[temp_major][sub_group][<span class="stringliteral">&#39;credits&#39;</span>] != req_dict[major_group][sub_group][<span class="stringliteral">&#39;credits&#39;</span>]:</div>
-<div class="line"><span class="lineno">  162</span>                    print(f<span class="stringliteral">&#39;Credit count not the same for {major_group} - {sub_group}. Expecting {compiled_req[temp_major][sub_group][&quot;credits&quot;]}, got {req_dict[major_group][sub_group][&quot;credits&quot;]}&#39;</span>)</div>
-<div class="line"><span class="lineno">  163</span>                    max_credits = max(req_dict[major_group][sub_group][<span class="stringliteral">&#39;credits&#39;</span>],compiled_req[temp_major][sub_group][<span class="stringliteral">&#39;credits&#39;</span>])</div>
-<div class="line"><span class="lineno">  164</span>                    print(f<span class="stringliteral">&#39;Selecting {max_credits}&#39;</span>)</div>
-<div class="line"><span class="lineno">  165</span>                    compiled_req[temp_major][sub_group][<span class="stringliteral">&#39;credits&#39;</span>] = max_credits</div>
-<div class="line"><span class="lineno">  166</span>                </div>
-<div class="line"><span class="lineno">  167</span>        </div>
-<div class="line"><span class="lineno">  168</span>    <span class="keywordflow">return</span> compiled_req</div>
-<div class="line"><span class="lineno">  169</span> </div>
-</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="#a36fd0363f0100bda9882ac3a37d2f890">process_degree_requirements()</a>.</p>
+
 </div>
 </div>
 <a id="ae979cbed5cffd733fe46ad137f471bf4" name="ae979cbed5cffd733fe46ad137f471bf4"></a>
@@ -234,11 +207,8 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A set containing all of the instances of <code>&lt;table&gt;&lt;/table&gt;</code> along with all of its contents </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="get__requirements_8py_source.html#l00017">17</a> of file <a class="el" href="get__requirements_8py_source.html">get_requirements.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   17</span><span class="keyword">def </span>get_all_tables(soup: bs):</div>
-<div class="line"><span class="lineno">   18</span>    <span class="keywordflow">return</span> soup.find_all(<span class="stringliteral">&quot;table&quot;</span>)</div>
-<div class="line"><span class="lineno">   19</span> </div>
-</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="#af0ce58c352b1ae79624203e0b6d17bd7">process_url()</a>.</p>
+
 </div>
 </div>
 <a id="a6f343edc6f9fa1c88ee213d997ca57b7" name="a6f343edc6f9fa1c88ee213d997ca57b7"></a>
@@ -265,28 +235,8 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A 2d list that represents all of the rows from the table </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="get__requirements_8py_source.html#l00024">24</a> of file <a class="el" href="get__requirements_8py_source.html">get_requirements.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   24</span><span class="keyword">def </span>get_table_rows(table) -&gt; list:</div>
-<div class="line"><span class="lineno">   25</span>    rows = []</div>
-<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">for</span> tr <span class="keywordflow">in</span> table.find_all(<span class="stringliteral">&quot;tr&quot;</span>)[0:]:</div>
-<div class="line"><span class="lineno">   27</span>        cells = []</div>
-<div class="line"><span class="lineno">   28</span>        <span class="comment"># grab all td tags in this table row</span></div>
-<div class="line"><span class="lineno">   29</span>        tds = tr.find_all(<span class="stringliteral">&quot;td&quot;</span>)</div>
-<div class="line"><span class="lineno">   30</span>        <span class="keywordflow">if</span> len(tds) == 0:</div>
-<div class="line"><span class="lineno">   31</span>            <span class="comment"># if no td tags, search for th tags</span></div>
-<div class="line"><span class="lineno">   32</span>            <span class="comment"># can be found especially in wikipedia tables below the table</span></div>
-<div class="line"><span class="lineno">   33</span>            ths = tr.find_all(<span class="stringliteral">&quot;th&quot;</span>)</div>
-<div class="line"><span class="lineno">   34</span>            <span class="keywordflow">for</span> th <span class="keywordflow">in</span> ths:</div>
-<div class="line"><span class="lineno">   35</span>                cells.append(th.text.strip())</div>
-<div class="line"><span class="lineno">   36</span>        <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">   37</span>            <span class="comment"># use regular td tags</span></div>
-<div class="line"><span class="lineno">   38</span>            <span class="keywordflow">for</span> td <span class="keywordflow">in</span> tds:</div>
-<div class="line"><span class="lineno">   39</span>                cells.append(td.text.strip())</div>
-<div class="line"><span class="lineno">   40</span>        rows.append(cells)</div>
-<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">return</span> rows</div>
-<div class="line"><span class="lineno">   42</span> </div>
-<div class="line"><span class="lineno">   43</span>    </div>
-</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="#af0ce58c352b1ae79624203e0b6d17bd7">process_url()</a>.</p>
+
 </div>
 </div>
 <a id="a36fd0363f0100bda9882ac3a37d2f890" name="a36fd0363f0100bda9882ac3a37d2f890"></a>
@@ -319,19 +269,8 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="get__requirements_8py_source.html#l00180">180</a> of file <a class="el" href="get__requirements_8py_source.html">get_requirements.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  180</span><span class="keyword">def </span>process_degree_requirements(urls: list[str], json_file: str) -&gt; <span class="keywordtype">None</span>:</div>
-<div class="line"><span class="lineno">  181</span>    requirements = []</div>
-<div class="line"><span class="lineno">  182</span>    <span class="keywordflow">for</span> url <span class="keywordflow">in</span> urls:</div>
-<div class="line"><span class="lineno">  183</span>        requirements.extend(read_requirements(url))</div>
-<div class="line"><span class="lineno">  184</span>    <span class="comment"># pprint(requirements)</span></div>
-<div class="line"><span class="lineno">  185</span>    new_reqirements:dict = compile_requirements(requirements)</div>
-<div class="line"><span class="lineno">  186</span>    <span class="comment"># pprint(new_reqirements)</span></div>
-<div class="line"><span class="lineno">  187</span>    <span class="keyword">with</span> open(json_file, <span class="stringliteral">&#39;w&#39;</span>) <span class="keyword">as</span> f:</div>
-<div class="line"><span class="lineno">  188</span>        json.dump(new_reqirements,f, indent=4)</div>
-<div class="line"><span class="lineno">  189</span> </div>
-<div class="line"><span class="lineno">  190</span>    </div>
-</div><!-- fragment -->
+<p class="reference">References <a class="el" href="#a9ede2264ace89cd7acd4e00374dc976f">compile_requirements()</a>, and <a class="el" href="#a1d98bb10ba818f32c79abedfa5822add">read_requirements()</a>.</p>
+
 </div>
 </div>
 <a id="af0ce58c352b1ae79624203e0b6d17bd7" name="af0ce58c352b1ae79624203e0b6d17bd7"></a>
@@ -358,32 +297,10 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>List containing all of the tables in the page. Each of table is a 2d array (list) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="get__requirements_8py_source.html#l00049">49</a> of file <a class="el" href="get__requirements_8py_source.html">get_requirements.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   49</span><span class="keyword">def </span>process_url(url: str):</div>
-<div class="line"><span class="lineno">   50</span>    </div>
-<div class="line"><span class="lineno">   51</span>    tables_list = []</div>
-<div class="line"><span class="lineno">   52</span>    <span class="comment"># print(nfl_url)</span></div>
-<div class="line"><span class="lineno">   53</span>    data = requests.get(url)</div>
-<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">if</span> data.status_code != 200:</div>
-<div class="line"><span class="lineno">   55</span>        print(data.status_code)</div>
-<div class="line"><span class="lineno">   56</span>        print(<span class="stringliteral">&#39;Request failed at:&#39;</span>,url)</div>
-<div class="line"><span class="lineno">   57</span>        <span class="keywordflow">return</span> tables_list</div>
-<div class="line"><span class="lineno">   58</span>    response = bs(data.content, <span class="stringliteral">&quot;html.parser&quot;</span>)</div>
-<div class="line"><span class="lineno">   59</span>    </div>
-<div class="line"><span class="lineno">   60</span>    <span class="comment"># extract all the tables from the web page</span></div>
-<div class="line"><span class="lineno">   61</span>    tables_list = get_all_tables(response)</div>
-<div class="line"><span class="lineno">   62</span>    print(f<span class="stringliteral">&quot;[+] Found a total of {len(tables_list)} tables.&quot;</span>)</div>
-<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">if</span> len(tables_list) == 0:</div>
-<div class="line"><span class="lineno">   64</span>        print(f<span class="stringliteral">&#39;No Data: {url}&#39;</span>)</div>
-<div class="line"><span class="lineno">   65</span>    </div>
-<div class="line"><span class="lineno">   66</span>    tables=[]</div>
-<div class="line"><span class="lineno">   67</span>    <span class="keywordflow">for</span> table <span class="keywordflow">in</span> tables_list:</div>
-<div class="line"><span class="lineno">   68</span>        tables.append(get_table_rows(table))</div>
-<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">return</span> tables</div>
-<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">pass</span></div>
-<div class="line"><span class="lineno">   71</span> </div>
-<div class="line"><span class="lineno">   72</span> </div>
-</div><!-- fragment -->
+<p class="reference">References <a class="el" href="#ae979cbed5cffd733fe46ad137f471bf4">get_all_tables()</a>, and <a class="el" href="#a6f343edc6f9fa1c88ee213d997ca57b7">get_table_rows()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="#a1d98bb10ba818f32c79abedfa5822add">read_requirements()</a>.</p>
+
 </div>
 </div>
 <a id="a1d98bb10ba818f32c79abedfa5822add" name="a1d98bb10ba818f32c79abedfa5822add"></a>
@@ -410,70 +327,10 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a dictionary that is structured to associate courses with the major and sub groups of requirements that are fulfilled </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="get__requirements_8py_source.html#l00077">77</a> of file <a class="el" href="get__requirements_8py_source.html">get_requirements.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   77</span><span class="keyword">def </span>read_requirements(url: str):</div>
-<div class="line"><span class="lineno">   78</span>    </div>
-<div class="line"><span class="lineno">   79</span>    tables_list = process_url(url)</div>
-<div class="line"><span class="lineno">   80</span>    json_data = []</div>
-<div class="line"><span class="lineno">   81</span>    <span class="keywordflow">for</span> table <span class="keywordflow">in</span> tables_list:</div>
-<div class="line"><span class="lineno">   82</span>        structured_rows = {}</div>
-<div class="line"><span class="lineno">   83</span>        classes_in_group = []</div>
-<div class="line"><span class="lineno">   84</span>        major_group = <span class="stringliteral">&#39;&#39;</span></div>
-<div class="line"><span class="lineno">   85</span>        group_name = <span class="stringliteral">&#39;&#39;</span></div>
-<div class="line"><span class="lineno">   86</span>        group_credits = 0</div>
-<div class="line"><span class="lineno">   87</span>        <span class="keywordflow">for</span> row <span class="keywordflow">in</span> table[1:]:</div>
-<div class="line"><span class="lineno">   88</span>            <span class="keywordflow">if</span> len(row) == 2:</div>
-<div class="line"><span class="lineno">   89</span>                <span class="keywordflow">if</span> row[0].startswith(<span class="stringliteral">&#39;or&#39;</span>):</div>
-<div class="line"><span class="lineno">   90</span>                    row.append(<span class="stringliteral">&#39;&#39;</span>)</div>
-<div class="line"><span class="lineno">   91</span>                    print(<span class="stringliteral">&#39;Added column to row. New row length: &#39;</span>, len(row))</div>
-<div class="line"><span class="lineno">   92</span>                <span class="keywordflow">elif</span> <span class="keywordflow">not</span> row[1].isdigit():</div>
-<div class="line"><span class="lineno">   93</span>                    group_desc = row[0].split(<span class="stringliteral">&#39;-&#39;</span>)</div>
-<div class="line"><span class="lineno">   94</span>                    <span class="keywordflow">if</span> group_desc[0] != <span class="stringliteral">&#39;ELECTIVES&#39;</span> <span class="keywordflow">and</span> (len(group_desc) != 2 <span class="keywordflow">or</span> group_desc[1].endswith(<span class="stringliteral">&#39;hrs&#39;</span>)) :</div>
-<div class="line"><span class="lineno">   95</span>                        </div>
-<div class="line"><span class="lineno">   96</span>                        print(row)</div>
-<div class="line"><span class="lineno">   97</span>                    <span class="keywordflow">elif</span> group_desc[0] == <span class="stringliteral">&#39;ELECTIVES&#39;</span> <span class="keywordflow">or</span> group_desc[1].strip()[0].isdigit() :                            </div>
-<div class="line"><span class="lineno">   98</span>                        <span class="keywordflow">if</span> group_name != <span class="stringliteral">&#39;&#39;</span>:</div>
-<div class="line"><span class="lineno">   99</span>                            structured_rows[major_group][group_name] = {</div>
-<div class="line"><span class="lineno">  100</span>                                <span class="stringliteral">&#39;credits&#39;</span>: group_credits,</div>
-<div class="line"><span class="lineno">  101</span>                                <span class="stringliteral">&#39;classes&#39;</span>: classes_in_group</div>
-<div class="line"><span class="lineno">  102</span>                            }</div>
-<div class="line"><span class="lineno">  103</span>                        </div>
-<div class="line"><span class="lineno">  104</span>                        major_group = group_desc[0].strip().replace(<span class="stringliteral">&#39; &#39;</span>, <span class="stringliteral">&#39;_&#39;</span>).lower()</div>
-<div class="line"><span class="lineno">  105</span>                        structured_rows[major_group] = {}</div>
-<div class="line"><span class="lineno">  106</span>                        group_name = <span class="stringliteral">&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  107</span>                        group_credits = 0</div>
-<div class="line"><span class="lineno">  108</span>                        </div>
-<div class="line"><span class="lineno">  109</span>                <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">  110</span>                    <span class="keywordflow">if</span> major_group != <span class="stringliteral">&#39;&#39;</span> <span class="keywordflow">and</span> major_group <span class="keywordflow">not</span> <span class="keywordflow">in</span> structured_rows.keys():</div>
-<div class="line"><span class="lineno">  111</span>                            structured_rows[major_group] = {}</div>
-<div class="line"><span class="lineno">  112</span>                    <span class="keywordflow">if</span> group_name != <span class="stringliteral">&#39;&#39;</span>:</div>
-<div class="line"><span class="lineno">  113</span>                        structured_rows[major_group][group_name] = {</div>
-<div class="line"><span class="lineno">  114</span>                            <span class="stringliteral">&#39;credits&#39;</span>: group_credits,</div>
-<div class="line"><span class="lineno">  115</span>                            <span class="stringliteral">&#39;classes&#39;</span>: classes_in_group</div>
-<div class="line"><span class="lineno">  116</span>                        }</div>
-<div class="line"><span class="lineno">  117</span>                        classes_in_group = []</div>
-<div class="line"><span class="lineno">  118</span>                    </div>
-<div class="line"><span class="lineno">  119</span>                    group_name = row[0].split(<span class="stringliteral">&#39;-&#39;</span>)[0].strip().replace(<span class="stringliteral">&#39; &#39;</span>, <span class="stringliteral">&#39;_&#39;</span>).lower()</div>
-<div class="line"><span class="lineno">  120</span>                    <span class="keywordflow">if</span> group_name == <span class="stringliteral">&#39;all_of_the_following:&#39;</span>:</div>
-<div class="line"><span class="lineno">  121</span>                        group_name = <span class="stringliteral">&#39;_&#39;</span>.join([major_group,<span class="stringliteral">&#39;core&#39;</span>])</div>
-<div class="line"><span class="lineno">  122</span>                    <span class="keywordflow">elif</span> <span class="stringliteral">&#39;from_the_following&#39;</span> <span class="keywordflow">in</span> group_name:</div>
-<div class="line"><span class="lineno">  123</span>                        group_name = <span class="stringliteral">&#39;core_extension&#39;</span></div>
-<div class="line"><span class="lineno">  124</span>                    group_credits = int(row[1])</div>
-<div class="line"><span class="lineno">  125</span>                    print(<span class="stringliteral">&#39;Storing group_name and group_credits:&#39;</span>, group_name, group_credits)</div>
-<div class="line"><span class="lineno">  126</span>                </div>
-<div class="line"><span class="lineno">  127</span>            <span class="keywordflow">if</span> len(row) == 3:</div>
-<div class="line"><span class="lineno">  128</span>                <span class="comment"># print(&#39;Adding row to group&#39;)</span></div>
-<div class="line"><span class="lineno">  129</span>                classes_in_group.append(row[0].replace(<span class="stringliteral">u&#39;\xa0&#39;</span>, <span class="stringliteral">&#39;&#39;</span>).replace(<span class="stringliteral">u&#39;or&#39;</span>, <span class="stringliteral">&#39;&#39;</span>).lower())</div>
-<div class="line"><span class="lineno">  130</span>            </div>
-<div class="line"><span class="lineno">  131</span>            <span class="keywordflow">if</span> len(row) != 2 <span class="keywordflow">and</span> len(row) != 3:</div>
-<div class="line"><span class="lineno">  132</span>                print(row)</div>
-<div class="line"><span class="lineno">  133</span>            </div>
-<div class="line"><span class="lineno">  134</span>        </div>
-<div class="line"><span class="lineno">  135</span>        <span class="comment"># print(&#39;Adding result to list&#39;)</span></div>
-<div class="line"><span class="lineno">  136</span>        json_data.append(structured_rows)</div>
-<div class="line"><span class="lineno">  137</span>    <span class="keywordflow">return</span> json_data</div>
-<div class="line"><span class="lineno">  138</span> </div>
-</div><!-- fragment -->
+<p class="reference">References <a class="el" href="#af0ce58c352b1ae79624203e0b6d17bd7">process_url()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="#a36fd0363f0100bda9882ac3a37d2f890">process_degree_requirements()</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -489,8 +346,6 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="get__requirements_8py_source.html#l00193">193</a> of file <a class="el" href="get__requirements_8py_source.html">get_requirements.py</a>.</p>
-
 </div>
 </div>
 <a id="a638da6da80b7877d37f0de0659efa4ab" name="a638da6da80b7877d37f0de0659efa4ab"></a>
@@ -504,8 +359,6 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="get__requirements_8py_source.html#l00202">202</a> of file <a class="el" href="get__requirements_8py_source.html">get_requirements.py</a>.</p>
 
 </div>
 </div>
@@ -521,8 +374,6 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="get__requirements_8py_source.html#l00207">207</a> of file <a class="el" href="get__requirements_8py_source.html">get_requirements.py</a>.</p>
-
 </div>
 </div>
 <a id="a9efd72a4ce9b3bd6a240740a94b0a2cd" name="a9efd72a4ce9b3bd6a240740a94b0a2cd"></a>
@@ -536,8 +387,6 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="get__requirements_8py_source.html#l00198">198</a> of file <a class="el" href="get__requirements_8py_source.html">get_requirements.py</a>.</p>
 
 </div>
 </div>
@@ -553,8 +402,6 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="get__requirements_8py_source.html#l00201">201</a> of file <a class="el" href="get__requirements_8py_source.html">get_requirements.py</a>.</p>
-
 </div>
 </div>
 <a id="aa8fe1bda770b33c433ad66ea3f14ffb4" name="aa8fe1bda770b33c433ad66ea3f14ffb4"></a>
@@ -568,8 +415,6 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="get__requirements_8py_source.html#l00200">200</a> of file <a class="el" href="get__requirements_8py_source.html">get_requirements.py</a>.</p>
 
 </div>
 </div>
@@ -592,8 +437,6 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">    6</span>        <span class="stringliteral">&#39;https://catalog.unomaha.edu/undergraduate/college-information-science-technology/computer-science/computer-science-bs/software-engineering-concentration/&#39;</span></div>
 <div class="line"><span class="lineno">    7</span>    ]</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="get__requirements_8py_source.html#l00208">208</a> of file <a class="el" href="get__requirements_8py_source.html">get_requirements.py</a>.</p>
-
 </div>
 </div>
 </div><!-- contents -->

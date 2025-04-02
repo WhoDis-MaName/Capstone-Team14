@@ -20,50 +20,8 @@ clingo\+\_\+pytest.\+parse\+\_\+answer\+\_\+set (\begin{DoxyParamCaption}\item[{
 
 
 
-Definition at line \mbox{\hyperlink{clingo__pytest_8py_source_l00037}{37}} of file \mbox{\hyperlink{clingo__pytest_8py_source}{clingo\+\_\+pytest.\+py}}.
+Referenced by \mbox{\hyperlink{namespaceclingo__pytest_a3b4673160d447860a87b96a39513ec26}{test\+\_\+clingo\+\_\+output()}}.
 
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00037\ \textcolor{keyword}{def\ }parse\_answer\_set(output): }
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{\#\ Parses\ Clingo\ output\ to\ extract\ the\ answer\ set. }}
-\DoxyCodeLine{00039\ \ \ \ \ lines\ =\ output.splitlines() }
-\DoxyCodeLine{00040\ \ \ \ \ answer\_sets\ =\ [ }
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ line\ \textcolor{keywordflow}{for}\ line\ \textcolor{keywordflow}{in}\ lines\ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ line.startswith((\textcolor{stringliteral}{"{}clingo"{}},\ \textcolor{stringliteral}{"{}Solving"{}},\ \textcolor{stringliteral}{"{}Answer"{}})) }
-\DoxyCodeLine{00042\ \ \ \ \ ] }
-\DoxyCodeLine{00043\  }
-\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{\#\ Filters\ Clingo's\ answer\ set\ to\ extract\ only\ the\ relevant\ response. }}
-\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{return}\ \{ }
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ line }
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ line\ \textcolor{keywordflow}{in}\ answer\_sets }
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ line }
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{and}\ \textcolor{keywordflow}{not}\ any( }
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ keyword\ \textcolor{keywordflow}{in}\ line }
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ keyword\ \textcolor{keywordflow}{in}\ [ }
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Models"{}}, }
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Reading"{}}, }
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Calls"{}}, }
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}CPU\ Time"{}}, }
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}SATISFIABLE"{}}, }
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Time"{}}, }
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ ] }
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ ) }
-\DoxyCodeLine{00060\ \ \ \ \ \} }
-\DoxyCodeLine{00061\  }
-\DoxyCodeLine{00062\  }
-\DoxyCodeLine{00063\ \textcolor{comment}{\#\ TODO:\ we\ have\ a\ bug\ where\ it\ isn't\ counting\ all\ the\ sections\ for\ some\ reason. }}
-\DoxyCodeLine{00064\ \textcolor{comment}{\#\ For\ example,\ in\ this\ test\ case\ it\ is\ only\ counting\ 8\ sections\ -\/\ it\ is\ missing\ csci\ 1010\ and\ another\ one }}
-\DoxyCodeLine{00065\ \textcolor{comment}{\#\ Add\ test\ cases\ here }}
-\DoxyCodeLine{00066\ \textcolor{preprocessor}{@pytest.mark.parametrize}( }
-\DoxyCodeLine{00067\ \ \ \ \ \textcolor{stringliteral}{"{}input\_files,expected\_output"{}}, }
-\DoxyCodeLine{00068\ \ \ \ \ [ }
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ ( }
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}../test\_cases/test\_case\_00.lp"{}},\ \textcolor{stringliteral}{"{}../../identifyconflict.lp"{}}], }
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}conflict\_count(3)"{}}\}, }
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ ), }
-\DoxyCodeLine{00073\ \ \ \ \ ], }
-\DoxyCodeLine{00074\ ) }
-
-\end{DoxyCode}
 \Hypertarget{namespaceclingo__pytest_a26e226006bd78f2f3dc0b41115d3d992}\index{clingo\_pytest@{clingo\_pytest}!run\_clingo@{run\_clingo}}
 \index{run\_clingo@{run\_clingo}!clingo\_pytest@{clingo\_pytest}}
 \doxysubsubsection{\texorpdfstring{run\_clingo()}{run\_clingo()}}
@@ -72,19 +30,8 @@ clingo\+\_\+pytest.\+run\+\_\+clingo (\begin{DoxyParamCaption}\item[{}]{program\
 
 
 
-Definition at line \mbox{\hyperlink{clingo__pytest_8py_source_l00030}{30}} of file \mbox{\hyperlink{clingo__pytest_8py_source}{clingo\+\_\+pytest.\+py}}.
+Referenced by \mbox{\hyperlink{namespaceclingo__pytest_a3b4673160d447860a87b96a39513ec26}{test\+\_\+clingo\+\_\+output()}}.
 
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00030\ \textcolor{keyword}{def\ }run\_clingo(program\_files): }
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{\#\ Runs\ Clingo\ on\ the\ given\ ASP\ program\ file\ and\ returns\ the\ parsed\ output. }}
-\DoxyCodeLine{00032\ \ \ \ \ cmd\ =\ [\textcolor{stringliteral}{"{}clingo"{}}]\ +\ program\_files }
-\DoxyCodeLine{00033\ \ \ \ \ result\ =\ subprocess.run(cmd,\ capture\_output=\textcolor{keyword}{True},\ text=\textcolor{keyword}{True}) }
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{return}\ result.stdout\ \ \textcolor{comment}{\#\ Adjust\ parsing\ as\ needed }}
-\DoxyCodeLine{00035\  }
-\DoxyCodeLine{00036\  }
-
-\end{DoxyCode}
 \Hypertarget{namespaceclingo__pytest_a3b4673160d447860a87b96a39513ec26}\index{clingo\_pytest@{clingo\_pytest}!test\_clingo\_output@{test\_clingo\_output}}
 \index{test\_clingo\_output@{test\_clingo\_output}!clingo\_pytest@{clingo\_pytest}}
 \doxysubsubsection{\texorpdfstring{test\_clingo\_output()}{test\_clingo\_output()}}
@@ -93,14 +40,5 @@ clingo\+\_\+pytest.\+test\+\_\+clingo\+\_\+output (\begin{DoxyParamCaption}\item
 
 
 
-Definition at line \mbox{\hyperlink{clingo__pytest_8py_source_l00075}{75}} of file \mbox{\hyperlink{clingo__pytest_8py_source}{clingo\+\_\+pytest.\+py}}.
+References \mbox{\hyperlink{namespaceclingo__pytest_a1565245f223fae7d79b63e34cf44f40b}{parse\+\_\+answer\+\_\+set()}}, and \mbox{\hyperlink{namespaceclingo__pytest_a26e226006bd78f2f3dc0b41115d3d992}{run\+\_\+clingo()}}.
 
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00075\ \textcolor{keyword}{def\ }test\_clingo\_output(input\_files,\ expected\_output): }
-\DoxyCodeLine{00076\ \ \ \ \ output\ =\ run\_clingo(input\_files) }
-\DoxyCodeLine{00077\ \ \ \ \ answer\_set\ =\ set(parse\_answer\_set(output)) }
-\DoxyCodeLine{00078\ \ \ \ \ print(output) }
-\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{assert}\ answer\_set\ ==\ expected\_output,\ f\textcolor{stringliteral}{"{}Unexpected\ output:\ \{answer\_set\}"{}} }
-
-\end{DoxyCode}

@@ -33,57 +33,12 @@ dict \mbox{\hyperlink{namespaceget__test__case_af14dc6f6495ea2915e5861e920e41c86
 {\footnotesize\ttfamily \label{namespaceget__test__case_a1a1a4405381a58651499a351a4fb4dcb} 
  dict get\+\_\+test\+\_\+case.\+create\+\_\+sample (\begin{DoxyParamCaption}\item[{dict}]{classes}{, }\item[{int}]{num\+\_\+semesters}{, }\item[{int}]{num\+\_\+departments}{, }\item[{int}]{num\+\_\+classes}{}\end{DoxyParamCaption})}
 
-
-
-Definition at line \mbox{\hyperlink{get__test__case_8py_source_l00022}{22}} of file \mbox{\hyperlink{get__test__case_8py_source}{get\+\_\+test\+\_\+case.\+py}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00022\ \textcolor{keyword}{def\ }create\_sample(classes:dict,\ num\_semesters:int,\ num\_departments:int,\ num\_classes:int)\ -\/>\ dict: }
-\DoxyCodeLine{00023\ \ \ \ \ sample\_data\ =\ \{\} }
-\DoxyCodeLine{00024\ \ \ \ \ key\_list\ =\ list(classes.keys()) }
-\DoxyCodeLine{00025\ \ \ \ \ semester\_subset\ =\ sample(key\_list,min(num\_semesters,len(key\_list))) }
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{for}\ semester\ \textcolor{keywordflow}{in}\ semester\_subset: }
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ sample\_data[semester]\ =\ \{\} }
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ key\_list\ =\ list(classes[semester].keys()) }
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ department\_subset\ =\ sample(key\_list,min(num\_departments,len(key\_list))) }
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ department\ \textcolor{keywordflow}{in}\ department\_subset: }
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ key\_list\ =\ list(classes[semester][department].keys()) }
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ class\_subset\ =\ sample(key\_list,min(num\_classes,len(key\_list))) }
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ sample\_class\ \textcolor{keywordflow}{in}\ class\_subset: }
-\DoxyCodeLine{00034\  }
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ classes[semester][department][sample\_class][\textcolor{stringliteral}{'sections'}]\ =\ \{ }
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ list(classes[semester][department][sample\_class][\textcolor{stringliteral}{'sections'}].keys())[0]:\ list(classes[semester][department][sample\_class][\textcolor{stringliteral}{'sections'}].values())[0] }
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \} }
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ class\_list\ =\ \{class\_name:\ classes[semester][department][class\_name]\ \textcolor{keywordflow}{for}\ class\_name\ \textcolor{keywordflow}{in}\ class\_subset\} }
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ sample\_data[semester][department]\ =\ class\_list }
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \  }
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{return}\ sample\_data }
-\DoxyCodeLine{00042\  }
-
-\end{DoxyCode}
 \Hypertarget{namespaceget__test__case_a194b023572366c46e653f5edc5b3eeb1}\index{get\_test\_case@{get\_test\_case}!get\_classes@{get\_classes}}
 \index{get\_classes@{get\_classes}!get\_test\_case@{get\_test\_case}}
 \doxysubsubsection{\texorpdfstring{get\_classes()}{get\_classes()}}
 {\footnotesize\ttfamily \label{namespaceget__test__case_a194b023572366c46e653f5edc5b3eeb1} 
  dict get\+\_\+test\+\_\+case.\+get\+\_\+classes (\begin{DoxyParamCaption}\item[{str}]{filename}{}\end{DoxyParamCaption})}
 
-
-
-Definition at line \mbox{\hyperlink{get__test__case_8py_source_l00014}{14}} of file \mbox{\hyperlink{get__test__case_8py_source}{get\+\_\+test\+\_\+case.\+py}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00014\ \textcolor{keyword}{def\ }get\_classes(filename:\ str)\ -\/>\ dict: }
-\DoxyCodeLine{00015\ \ \ \ \ classes\ =\ \{\} }
-\DoxyCodeLine{00016\  }
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{with}\ open(filename,\ \textcolor{stringliteral}{'r'})\ \textcolor{keyword}{as}\ f: }
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ classes\ =\ json.load(f) }
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \  }
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{return}\ classes }
-\DoxyCodeLine{00021\  }
-
-\end{DoxyCode}
 
 
 \doxysubsection{Variable Documentation}
@@ -93,19 +48,11 @@ Definition at line \mbox{\hyperlink{get__test__case_8py_source_l00014}{14}} of f
 {\footnotesize\ttfamily \label{namespaceget__test__case_ad593bf770fc4ab9a46f59eed05c91b9c} 
 dict get\+\_\+test\+\_\+case.\+classes = \mbox{\hyperlink{namespaceget__test__case_a194b023572366c46e653f5edc5b3eeb1}{get\+\_\+classes}}(\textquotesingle{}filtered.\+json\textquotesingle{})}
 
-
-
-Definition at line \mbox{\hyperlink{get__test__case_8py_source_l00049}{49}} of file \mbox{\hyperlink{get__test__case_8py_source}{get\+\_\+test\+\_\+case.\+py}}.
-
 \Hypertarget{namespaceget__test__case_a0f474206fa7d03349f618629bb7012f0}\index{get\_test\_case@{get\_test\_case}!current\_directory@{current\_directory}}
 \index{current\_directory@{current\_directory}!get\_test\_case@{get\_test\_case}}
 \doxysubsubsection{\texorpdfstring{current\_directory}{current\_directory}}
 {\footnotesize\ttfamily \label{namespaceget__test__case_a0f474206fa7d03349f618629bb7012f0} 
 get\+\_\+test\+\_\+case.\+current\+\_\+directory = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))}
-
-
-
-Definition at line \mbox{\hyperlink{get__test__case_8py_source_l00006}{6}} of file \mbox{\hyperlink{get__test__case_8py_source}{get\+\_\+test\+\_\+case.\+py}}.
 
 \Hypertarget{namespaceget__test__case_a62e466ea8cde86ad38f7c7cf0ee3b4ca}\index{get\_test\_case@{get\_test\_case}!f@{f}}
 \index{f@{f}!get\_test\_case@{get\_test\_case}}
@@ -113,19 +60,11 @@ Definition at line \mbox{\hyperlink{get__test__case_8py_source_l00006}{6}} of fi
 {\footnotesize\ttfamily \label{namespaceget__test__case_a62e466ea8cde86ad38f7c7cf0ee3b4ca} 
 get\+\_\+test\+\_\+case.\+f}
 
-
-
-Definition at line \mbox{\hyperlink{get__test__case_8py_source_l00055}{55}} of file \mbox{\hyperlink{get__test__case_8py_source}{get\+\_\+test\+\_\+case.\+py}}.
-
 \Hypertarget{namespaceget__test__case_ac5588123f1ee463a7ac9b1840f4dcc69}\index{get\_test\_case@{get\_test\_case}!indent@{indent}}
 \index{indent@{indent}!get\_test\_case@{get\_test\_case}}
 \doxysubsubsection{\texorpdfstring{indent}{indent}}
 {\footnotesize\ttfamily \label{namespaceget__test__case_ac5588123f1ee463a7ac9b1840f4dcc69} 
 get\+\_\+test\+\_\+case.\+indent}
-
-
-
-Definition at line \mbox{\hyperlink{get__test__case_8py_source_l00055}{55}} of file \mbox{\hyperlink{get__test__case_8py_source}{get\+\_\+test\+\_\+case.\+py}}.
 
 \Hypertarget{namespaceget__test__case_af14dc6f6495ea2915e5861e920e41c86}\index{get\_test\_case@{get\_test\_case}!sample\_data@{sample\_data}}
 \index{sample\_data@{sample\_data}!get\_test\_case@{get\_test\_case}}
@@ -133,27 +72,15 @@ Definition at line \mbox{\hyperlink{get__test__case_8py_source_l00055}{55}} of f
 {\footnotesize\ttfamily \label{namespaceget__test__case_af14dc6f6495ea2915e5861e920e41c86} 
 get\+\_\+test\+\_\+case.\+sample\+\_\+data = \mbox{\hyperlink{namespaceget__test__case_a1a1a4405381a58651499a351a4fb4dcb}{create\+\_\+sample}}(\mbox{\hyperlink{namespaceget__test__case_ad593bf770fc4ab9a46f59eed05c91b9c}{classes}}, 1, 2, 5)}
 
-
-
-Definition at line \mbox{\hyperlink{get__test__case_8py_source_l00052}{52}} of file \mbox{\hyperlink{get__test__case_8py_source}{get\+\_\+test\+\_\+case.\+py}}.
-
 \Hypertarget{namespaceget__test__case_a3fd90325eeb942eaedb62d24ed2be27f}\index{get\_test\_case@{get\_test\_case}!test\_cases\_dir@{test\_cases\_dir}}
 \index{test\_cases\_dir@{test\_cases\_dir}!get\_test\_case@{get\_test\_case}}
 \doxysubsubsection{\texorpdfstring{test\_cases\_dir}{test\_cases\_dir}}
 {\footnotesize\ttfamily \label{namespaceget__test__case_a3fd90325eeb942eaedb62d24ed2be27f} 
 get\+\_\+test\+\_\+case.\+test\+\_\+cases\+\_\+dir = os.\+path.\+join(\mbox{\hyperlink{namespaceget__test__case_a1e478c12ef56c8154bfe394b4438c621}{test\+\_\+folder\+\_\+dir}},\textquotesingle{}test\+\_\+cases\textquotesingle{})}
 
-
-
-Definition at line \mbox{\hyperlink{get__test__case_8py_source_l00043}{43}} of file \mbox{\hyperlink{get__test__case_8py_source}{get\+\_\+test\+\_\+case.\+py}}.
-
 \Hypertarget{namespaceget__test__case_a1e478c12ef56c8154bfe394b4438c621}\index{get\_test\_case@{get\_test\_case}!test\_folder\_dir@{test\_folder\_dir}}
 \index{test\_folder\_dir@{test\_folder\_dir}!get\_test\_case@{get\_test\_case}}
 \doxysubsubsection{\texorpdfstring{test\_folder\_dir}{test\_folder\_dir}}
 {\footnotesize\ttfamily \label{namespaceget__test__case_a1e478c12ef56c8154bfe394b4438c621} 
 get\+\_\+test\+\_\+case.\+test\+\_\+folder\+\_\+dir = os.\+path.\+split(\mbox{\hyperlink{namespaceget__test__case_a0f474206fa7d03349f618629bb7012f0}{current\+\_\+directory}})\mbox{[}0\mbox{]}}
-
-
-
-Definition at line \mbox{\hyperlink{get__test__case_8py_source_l00012}{12}} of file \mbox{\hyperlink{get__test__case_8py_source}{get\+\_\+test\+\_\+case.\+py}}.
 

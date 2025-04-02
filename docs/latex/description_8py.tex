@@ -1,5 +1,5 @@
-\doxysection{description.\+py File Reference}
-\hypertarget{description_8py}{}\label{description_8py}\index{description.py@{description.py}}
+\doxysection{data\+\_\+processing/description.py File Reference}
+\hypertarget{description_8py}{}\label{description_8py}\index{data\_processing/description.py@{data\_processing/description.py}}
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -8,7 +8,17 @@ namespace \mbox{\hyperlink{namespacedescription}{description}}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-str \mbox{\hyperlink{namespacedescription_a4a480452d558a32a5b89e00444618f5f}{description.\+file\+\_\+path}} = "{}filtered.\+json"{}
+\mbox{\hyperlink{namespacedescription_a1c2a08c492b1bb0fabe8a548df401d67}{description.\+current\+\_\+directory}} = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))
+\item 
+\mbox{\hyperlink{namespacedescription_a65fe575f2e28fc57859becd80fd7c2ff}{description.\+path}} = current\+\_\+directory.\+split(os.\+sep)
+\item 
+\mbox{\hyperlink{namespacedescription_ad123eeba2202dcfec4b31e03be84c84a}{description.\+root\+\_\+index}} = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacedescription_a09fb5359143bbe7bf51da05dfa10491a}{description.\+root\+\_\+dir}} = os.\+sep.\+join(\mbox{\hyperlink{namespacedescription_a65fe575f2e28fc57859becd80fd7c2ff}{path}}\mbox{[}\+:\mbox{\hyperlink{namespacedescription_ad123eeba2202dcfec4b31e03be84c84a}{root\+\_\+index}}+1\mbox{]})
+\item 
+\mbox{\hyperlink{namespacedescription_adee66afc7b280c8b0611150e9eb58079}{description.\+data\+\_\+dir}} = os.\+path.\+join(\mbox{\hyperlink{namespacedescription_a09fb5359143bbe7bf51da05dfa10491a}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}uploaded\+\_\+schedule\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacedescription_abd9e42828d419f95d5e87be0fd6fa826}{description.\+file\+\_\+path}} = os.\+path.\+join(\mbox{\hyperlink{namespacedescription_adee66afc7b280c8b0611150e9eb58079}{data\+\_\+dir}}, "{}filtered.\+json"{})
 \item 
 \mbox{\hyperlink{namespacedescription_a0260747a932650cdc1c4c60cdde7e4cd}{description.\+data}} = json.\+load(file)
 \item 

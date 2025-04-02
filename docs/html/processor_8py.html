@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ASP Schedule Optimizer: processor.py File Reference</title>
+<title>ASP Schedule Optimizer: data_processing/processor.py File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -110,8 +110,6 @@ $(function(){initNavTree('processor_8py.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">processor.py File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p><a href="processor_8py_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -125,9 +123,19 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a032e9f0a7410a0ecdf1e5716ea3249c8" id="r_a032e9f0a7410a0ecdf1e5716ea3249c8"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprocessor.html#a032e9f0a7410a0ecdf1e5716ea3249c8">processor.json_file</a> = &quot;fa21-fa24.json&quot;</td></tr>
-<tr class="separator:a032e9f0a7410a0ecdf1e5716ea3249c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0cba5883ec193921bc0f529a684dd08" id="r_ab0cba5883ec193921bc0f529a684dd08"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprocessor.html#ab0cba5883ec193921bc0f529a684dd08">processor.result</a> = <a class="el" href="namespaceprocessor.html#a56b11f4d0c8b6ab8ea0bd66ef32507d1">get_cist_csci_courses</a>(<a class="el" href="namespaceprocessor.html#a032e9f0a7410a0ecdf1e5716ea3249c8">json_file</a>)</td></tr>
+<tr class="memitem:aef7b4b40203cda379823f28290ace883" id="r_aef7b4b40203cda379823f28290ace883"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprocessor.html#aef7b4b40203cda379823f28290ace883">processor.current_directory</a> = os.path.dirname(os.path.realpath(__file__))</td></tr>
+<tr class="separator:aef7b4b40203cda379823f28290ace883"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae17c03db2dd63a8c63c666505a69bde3" id="r_ae17c03db2dd63a8c63c666505a69bde3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprocessor.html#ae17c03db2dd63a8c63c666505a69bde3">processor.path</a> = current_directory.split(os.sep)</td></tr>
+<tr class="separator:ae17c03db2dd63a8c63c666505a69bde3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a908bbd829fa2bf5354ddf9618fa0d31f" id="r_a908bbd829fa2bf5354ddf9618fa0d31f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprocessor.html#a908bbd829fa2bf5354ddf9618fa0d31f">processor.root_index</a> = path.index('Capstone-Team14')</td></tr>
+<tr class="separator:a908bbd829fa2bf5354ddf9618fa0d31f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32153912b4eb8da2fc5a9b29cf2a6a3f" id="r_a32153912b4eb8da2fc5a9b29cf2a6a3f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprocessor.html#a32153912b4eb8da2fc5a9b29cf2a6a3f">processor.root_dir</a> = os.sep.join(<a class="el" href="namespaceprocessor.html#ae17c03db2dd63a8c63c666505a69bde3">path</a>[:<a class="el" href="namespaceprocessor.html#a908bbd829fa2bf5354ddf9618fa0d31f">root_index</a>+1])</td></tr>
+<tr class="separator:a32153912b4eb8da2fc5a9b29cf2a6a3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1f5881666625204d7d5892d8c169a4e" id="r_ad1f5881666625204d7d5892d8c169a4e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprocessor.html#ad1f5881666625204d7d5892d8c169a4e">processor.data_dir</a> = os.path.join(<a class="el" href="namespaceprocessor.html#a32153912b4eb8da2fc5a9b29cf2a6a3f">root_dir</a>, 'data_files', 'uploaded_schedule')</td></tr>
+<tr class="separator:ad1f5881666625204d7d5892d8c169a4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27f36f3c5347b3a4e2cf37dbcda84659" id="r_a27f36f3c5347b3a4e2cf37dbcda84659"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprocessor.html#a27f36f3c5347b3a4e2cf37dbcda84659">processor.json_file</a> = os.path.join(<a class="el" href="namespaceprocessor.html#ad1f5881666625204d7d5892d8c169a4e">data_dir</a>, &quot;fa21-fa24.json&quot;)</td></tr>
+<tr class="separator:a27f36f3c5347b3a4e2cf37dbcda84659"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0cba5883ec193921bc0f529a684dd08" id="r_ab0cba5883ec193921bc0f529a684dd08"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprocessor.html#ab0cba5883ec193921bc0f529a684dd08">processor.result</a> = <a class="el" href="namespaceprocessor.html#a56b11f4d0c8b6ab8ea0bd66ef32507d1">get_cist_csci_courses</a>(<a class="el" href="namespaceprocessor.html#a27f36f3c5347b3a4e2cf37dbcda84659">json_file</a>)</td></tr>
 <tr class="separator:ab0cba5883ec193921bc0f529a684dd08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1769e2f2c3d9bc94efd91ec2f8d8486c" id="r_a1769e2f2c3d9bc94efd91ec2f8d8486c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprocessor.html#a1769e2f2c3d9bc94efd91ec2f8d8486c">processor.encoding</a></td></tr>
 <tr class="separator:a1769e2f2c3d9bc94efd91ec2f8d8486c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -141,7 +149,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="processor_8py.html">processor.py</a></li>
+    <li class="navelem"><a class="el" href="dir_809598ced06ac0feee4613cceffbc2ed.html">data_processing</a></li><li class="navelem"><a class="el" href="processor_8py.html">processor.py</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

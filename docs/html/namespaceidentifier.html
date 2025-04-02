@@ -117,6 +117,16 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a42c3c8581a1d36faa9a43ef075339289" id="r_a42c3c8581a1d36faa9a43ef075339289"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42c3c8581a1d36faa9a43ef075339289">current_directory</a> = os.path.dirname(os.path.realpath(__file__))</td></tr>
+<tr class="separator:a42c3c8581a1d36faa9a43ef075339289"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a446a7582ca279d7690d6f07663a9893d" id="r_a446a7582ca279d7690d6f07663a9893d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a446a7582ca279d7690d6f07663a9893d">path</a> = current_directory.split(os.sep)</td></tr>
+<tr class="separator:a446a7582ca279d7690d6f07663a9893d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71a30334a39cf0e5aeaf400c2d0b9881" id="r_a71a30334a39cf0e5aeaf400c2d0b9881"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71a30334a39cf0e5aeaf400c2d0b9881">root_index</a> = path.index('Capstone-Team14')</td></tr>
+<tr class="separator:a71a30334a39cf0e5aeaf400c2d0b9881"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a063b54070e2182ca05dc9d979bd1d88e" id="r_a063b54070e2182ca05dc9d979bd1d88e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a063b54070e2182ca05dc9d979bd1d88e">root_dir</a> = os.sep.join(<a class="el" href="#a446a7582ca279d7690d6f07663a9893d">path</a>[:<a class="el" href="#a71a30334a39cf0e5aeaf400c2d0b9881">root_index</a>+1])</td></tr>
+<tr class="separator:a063b54070e2182ca05dc9d979bd1d88e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6193d645bdf51d04b498eaadd7c987fa" id="r_a6193d645bdf51d04b498eaadd7c987fa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6193d645bdf51d04b498eaadd7c987fa">read_dir</a> = os.path.join(<a class="el" href="#a063b54070e2182ca05dc9d979bd1d88e">root_dir</a>, 'data_files', 'uploaded_schedule')</td></tr>
+<tr class="separator:a6193d645bdf51d04b498eaadd7c987fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a337e1780e0ec9f118fa3420ae427a363" id="r_a337e1780e0ec9f118fa3420ae427a363"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a337e1780e0ec9f118fa3420ae427a363">parser</a> = argparse.ArgumentParser(description=&quot;Input class json&quot;)</td></tr>
 <tr class="separator:a337e1780e0ec9f118fa3420ae427a363"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9db37e881aa38ba136f00728be4fba2" id="r_ad9db37e881aa38ba136f00728be4fba2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9db37e881aa38ba136f00728be4fba2">type</a></td></tr>
@@ -129,6 +139,20 @@ Variables</h2></td></tr>
 <tr class="separator:a24a6b4ae58a4e82cbb7404fcf9407349"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="a42c3c8581a1d36faa9a43ef075339289" name="a42c3c8581a1d36faa9a43ef075339289"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42c3c8581a1d36faa9a43ef075339289">&#9670;&#160;</a></span>current_directory</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">identifier.current_directory = os.path.dirname(os.path.realpath(__file__))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a1f16555666294a888b6f9cb4e1392490" name="a1f16555666294a888b6f9cb4e1392490"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1f16555666294a888b6f9cb4e1392490">&#9670;&#160;</a></span>default</h2>
 
@@ -140,8 +164,6 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="identifier_8py_source.html#l00009">9</a> of file <a class="el" href="identifier_8py_source.html">identifier.py</a>.</p>
 
 </div>
 </div>
@@ -157,8 +179,6 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="identifier_8py_source.html#l00009">9</a> of file <a class="el" href="identifier_8py_source.html">identifier.py</a>.</p>
-
 </div>
 </div>
 <a id="a337e1780e0ec9f118fa3420ae427a363" name="a337e1780e0ec9f118fa3420ae427a363"></a>
@@ -173,7 +193,61 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="identifier_8py_source.html#l00005">5</a> of file <a class="el" href="identifier_8py_source.html">identifier.py</a>.</p>
+</div>
+</div>
+<a id="a446a7582ca279d7690d6f07663a9893d" name="a446a7582ca279d7690d6f07663a9893d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a446a7582ca279d7690d6f07663a9893d">&#9670;&#160;</a></span>path</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">identifier.path = current_directory.split(os.sep)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6193d645bdf51d04b498eaadd7c987fa" name="a6193d645bdf51d04b498eaadd7c987fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6193d645bdf51d04b498eaadd7c987fa">&#9670;&#160;</a></span>read_dir</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">identifier.read_dir = os.path.join(<a class="el" href="#a063b54070e2182ca05dc9d979bd1d88e">root_dir</a>, 'data_files', 'uploaded_schedule')</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a063b54070e2182ca05dc9d979bd1d88e" name="a063b54070e2182ca05dc9d979bd1d88e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a063b54070e2182ca05dc9d979bd1d88e">&#9670;&#160;</a></span>root_dir</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">identifier.root_dir = os.sep.join(<a class="el" href="#a446a7582ca279d7690d6f07663a9893d">path</a>[:<a class="el" href="#a71a30334a39cf0e5aeaf400c2d0b9881">root_index</a>+1])</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a71a30334a39cf0e5aeaf400c2d0b9881" name="a71a30334a39cf0e5aeaf400c2d0b9881"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71a30334a39cf0e5aeaf400c2d0b9881">&#9670;&#160;</a></span>root_index</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">identifier.root_index = path.index('Capstone-Team14')</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -189,8 +263,6 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="identifier_8py_source.html#l00009">9</a> of file <a class="el" href="identifier_8py_source.html">identifier.py</a>.</p>
-
 </div>
 </div>
 <a id="ad9db37e881aa38ba136f00728be4fba2" name="ad9db37e881aa38ba136f00728be4fba2"></a>
@@ -204,8 +276,6 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="identifier_8py_source.html#l00009">9</a> of file <a class="el" href="identifier_8py_source.html">identifier.py</a>.</p>
 
 </div>
 </div>

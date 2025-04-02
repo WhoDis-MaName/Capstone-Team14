@@ -25,15 +25,32 @@
 var NAVTREE =
 [
   [ "ASP Schedule Optimizer", "index.html", [
-    [ "Django Tutorial instructions", "md_docs_2_django__tutorial__instructions.html", [
-      [ "Setup Environment", "md_docs_2_django__tutorial__instructions.html#autotoc_md1", [
-        [ "Create venv", "md_docs_2_django__tutorial__instructions.html#autotoc_md2", null ],
-        [ "Start venv", "md_docs_2_django__tutorial__instructions.html#autotoc_md3", null ],
-        [ "Install Django", "md_docs_2_django__tutorial__instructions.html#autotoc_md4", null ],
-        [ "Start Django project", "md_docs_2_django__tutorial__instructions.html#autotoc_md5", null ],
-        [ "Create Django app", "md_docs_2_django__tutorial__instructions.html#autotoc_md6", null ],
-        [ "Run Django Project", "md_docs_2_django__tutorial__instructions.html#autotoc_md7", null ]
+    [ "Django Tutorial instructions", "md__django__tutorial__instructions.html", [
+      [ "Setup Environment", "md__django__tutorial__instructions.html#autotoc_md1", [
+        [ "Create venv", "md__django__tutorial__instructions.html#autotoc_md2", null ],
+        [ "Start venv", "md__django__tutorial__instructions.html#autotoc_md3", null ],
+        [ "Install Django", "md__django__tutorial__instructions.html#autotoc_md4", null ],
+        [ "Start Django project", "md__django__tutorial__instructions.html#autotoc_md5", null ],
+        [ "Create Django app", "md__django__tutorial__instructions.html#autotoc_md6", null ],
+        [ "Run Django Project", "md__django__tutorial__instructions.html#autotoc_md7", null ]
       ] ]
+    ] ],
+    [ "Course Schedule Optimization", "md__r_e_a_d_m_e.html", [
+      [ "Project Overview", "md__r_e_a_d_m_e.html#autotoc_md9", null ],
+      [ "Identifying Course Overlaps", "md__r_e_a_d_m_e.html#autotoc_md11", null ],
+      [ "Key Classes to Prioritize", "md__r_e_a_d_m_e.html#autotoc_md13", null ],
+      [ "Optimization Approach", "md__r_e_a_d_m_e.html#autotoc_md15", null ],
+      [ "Coordinating with Shuttle Schedule", "md__r_e_a_d_m_e.html#autotoc_md17", null ],
+      [ "Additional Optimization Considerations", "md__r_e_a_d_m_e.html#autotoc_md19", null ],
+      [ "Future Improvements", "md__r_e_a_d_m_e.html#autotoc_md21", null ],
+      [ "Conclusion", "md__r_e_a_d_m_e.html#autotoc_md23", null ],
+      [ "Release Notes Version 1.3", "md__r_e_a_d_m_e.html#autotoc_md24", [
+        [ "Command Line Deployment", "md__r_e_a_d_m_e.html#autotoc_md25", null ],
+        [ "Docker Deployment", "md__r_e_a_d_m_e.html#autotoc_md26", null ]
+      ] ],
+      [ "Branches for Version 1.3", "md__r_e_a_d_m_e.html#autotoc_md27", null ],
+      [ "Release Notes Version 0.9", "md__r_e_a_d_m_e.html#autotoc_md28", null ],
+      [ "Branches for Version 0.9", "md__r_e_a_d_m_e.html#autotoc_md29", null ]
     ] ],
     [ "Packages", "namespaces.html", [
       [ "Package List", "namespaces.html", "namespaces_dup" ],
@@ -62,7 +79,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "admin_8py.html",
-"namespaceschedule_functions_1_1views.html#aef22d9ac19337b024ff2028a3615fe4e"
+"namespaceprocessor.html#ae17c03db2dd63a8c63c666505a69bde3"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

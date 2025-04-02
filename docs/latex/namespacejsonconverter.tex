@@ -18,117 +18,8 @@ jsonconverter.\+convert (\begin{DoxyParamCaption}\item[{}]{file}{}\end{DoxyParam
 
 
 
-Definition at line \mbox{\hyperlink{jsonconverter_8py_source_l00011}{11}} of file \mbox{\hyperlink{jsonconverter_8py_source}{jsonconverter.\+py}}.
+References \mbox{\hyperlink{namespacejsonconverter_aced567076b198d4dd780aaff8e73e0fa}{convert24()}}.
 
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00011\ \textcolor{keyword}{def\ }convert(file): }
-\DoxyCodeLine{00012\  }
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{\#\ Load\ the\ JSON\ data }}
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{with}\ open(file,\ \textcolor{stringliteral}{"{}r"{}})\ \textcolor{keyword}{as}\ f: }
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ data\ =\ json.load(f) }
-\DoxyCodeLine{00016\  }
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{\#\ Extract\ course\ information }}
-\DoxyCodeLine{00018\ \ \ \ \ facts\ =\ [] }
-\DoxyCodeLine{00019\  }
-\DoxyCodeLine{00020\ \ \ \ \ classes\ =\ set() }
-\DoxyCodeLine{00021\ \ \ \ \ rooms\ =\ set() }
-\DoxyCodeLine{00022\ \ \ \ \ professors\ =\ set() }
-\DoxyCodeLine{00023\ \ \ \ \ times\ =\ set() }
-\DoxyCodeLine{00024\  }
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{for}\ term,\ subjects\ \textcolor{keywordflow}{in}\ data.items(): }
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ subject,\ courses\ \textcolor{keywordflow}{in}\ subjects.items(): }
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ course\_num,\ course\_info\ \textcolor{keywordflow}{in}\ courses.items(): }
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ course\_id\ =\ ( }
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ f\textcolor{stringliteral}{"{}\{subject\}\{course\_num\}"{}}.lower() }
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}\ "{}},\ \textcolor{stringliteral}{"{}\_"{}}) }
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}."{}},\ \textcolor{stringliteral}{"{}"{}}) }
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}-\/"{}},\ \textcolor{stringliteral}{"{}\_"{}}) }
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ) }
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ title\ =\ ( }
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ course\_info.get(\textcolor{stringliteral}{"{}title"{}},\ \textcolor{stringliteral}{"{}"{}}) }
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .lower() }
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}\ "{}},\ \textcolor{stringliteral}{"{}\_"{}}) }
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}."{}},\ \textcolor{stringliteral}{"{}"{}}) }
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}-\/"{}},\ \textcolor{stringliteral}{"{}\_"{}}) }
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ) }
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ prereq\ =\ ( }
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ course\_info.get(\textcolor{stringliteral}{"{}prereq"{}},\ \textcolor{stringliteral}{"{}none"{}}) }
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .lower() }
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}\ "{}},\ \textcolor{stringliteral}{"{}\_"{}}) }
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}-\/"{}},\ \textcolor{stringliteral}{"{}none"{}}) }
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}."{}},\ \textcolor{stringliteral}{"{}"{}}) }
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}-\/"{}},\ \textcolor{stringliteral}{"{}\_"{}}) }
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ) }
-\DoxyCodeLine{00049\  }
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Store\ course\ fact }}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ facts.append(f\textcolor{stringliteral}{'course(\{course\_id\},\ "{}\{title\}"{},\ \{prereq\}).'}) }
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ classes.add(course\_id) }
-\DoxyCodeLine{00053\  }
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ section\_num,\ section\_info\ \textcolor{keywordflow}{in}\ course\_info.get( }
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}sections"{}},\ \{\} }
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ).items(): }
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ section\_num\ =\ \textcolor{stringliteral}{"{}s"{}}\ +\ section\_num.lower() }
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ class\_number\ =\ ( }
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}c"{}}\ +\ section\_info.get(\textcolor{stringliteral}{"{}Class\ Number"{}},\ \textcolor{stringliteral}{"{}"{}}).split()[0].lower() }
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ) }
-\DoxyCodeLine{00061\  }
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Convert\ time\ to\ 24-\/hour\ format }}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ time\ =\ section\_info.get(\textcolor{stringliteral}{"{}Time"{}},\ \textcolor{stringliteral}{"{}TBA"{}}) }
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ time\ ==\ \textcolor{stringliteral}{"{}TBA"{}}: }
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ start,\ end\ =\ \textcolor{stringliteral}{"{}tba"{}},\ \textcolor{stringliteral}{"{}tba"{}} }
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}: }
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ start,\ end\ =\ time.split(\textcolor{stringliteral}{"{}\ -\/\ "{}}) }
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ start\ =\ convert24(start) }
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ end\ =\ convert24(end) }
-\DoxyCodeLine{00070\  }
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ days\ =\ ( }
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ section\_info.get(\textcolor{stringliteral}{"{}Days"{}},\ \textcolor{stringliteral}{"{}TBA"{}}) }
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .strip() }
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .lower() }
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}\ "{}},\ \textcolor{stringliteral}{"{}\_"{}}) }
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}-\/"{}},\ \textcolor{stringliteral}{"{}\_"{}}) }
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ) }
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ location\ =\ ( }
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ section\_info.get(\textcolor{stringliteral}{"{}Location"{}},\ \textcolor{stringliteral}{"{}Unknown"{}}) }
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .lower() }
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}\ "{}},\ \textcolor{stringliteral}{"{}\_"{}}) }
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}."{}},\ \textcolor{stringliteral}{"{}"{}}) }
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}-\/"{}},\ \textcolor{stringliteral}{"{}\_"{}}) }
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ) }
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ instructor\ =\ ( }
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ section\_info.get(\textcolor{stringliteral}{"{}Instructor"{}},\ \textcolor{stringliteral}{"{}Unknown"{}}) }
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .lower() }
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}\ "{}},\ \textcolor{stringliteral}{"{}\_"{}}) }
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}."{}},\ \textcolor{stringliteral}{"{}"{}}) }
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .replace(\textcolor{stringliteral}{"{}-\/"{}},\ \textcolor{stringliteral}{"{}\_"{}}) }
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ) }
-\DoxyCodeLine{00092\  }
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Store\ section\ fact }}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ facts.append( }
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ f\textcolor{stringliteral}{'section(\{course\_id\},\ \{section\_num\},\ \{class\_number\},\ "{}\{start\}"{},\ "{}\{end\}"{},\ \{days\},\ \{location\},\ \{instructor\}).'} }
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ) }
-\DoxyCodeLine{00097\  }
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Add\ to\ sets }}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rooms.add(location) }
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ professors.add(instructor) }
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ times.add(f\textcolor{stringliteral}{'time\_slot("{}\{start\}"{},\ "{}\{end\}"{},\ \{days\}).'}) }
-\DoxyCodeLine{00102\  }
-\DoxyCodeLine{00103\ \ \ \ \ \textcolor{comment}{\#\ Convert\ sets\ to\ facts }}
-\DoxyCodeLine{00104\ \ \ \ \ facts.append(f\textcolor{stringliteral}{"{}class(\{',\ '.join(classes)\})."{}}) }
-\DoxyCodeLine{00105\ \ \ \ \ facts.append(f\textcolor{stringliteral}{"{}room(\{',\ '.join(rooms)\})."{}}) }
-\DoxyCodeLine{00106\ \ \ \ \ facts.append(f\textcolor{stringliteral}{"{}professor(\{',\ '.join(professors)\})."{}}) }
-\DoxyCodeLine{00107\ \ \ \ \ facts.extend(times)\ \ \textcolor{comment}{\#\ Since\ times\ are\ already\ formatted\ as\ facts }}
-\DoxyCodeLine{00108\  }
-\DoxyCodeLine{00109\ \ \ \ \ \textcolor{comment}{\#\ Write\ ASP\ facts\ to\ a\ file }}
-\DoxyCodeLine{00110\ \ \ \ \ asp\_filename\ =\ file.replace(\textcolor{stringliteral}{"{}.json"{}},\ \textcolor{stringliteral}{"{}.lp"{}}) }
-\DoxyCodeLine{00111\ \ \ \ \ \textcolor{comment}{\#\ asp\_filename\ =\ "{}classes.lp"{} }}
-\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{with}\ open(asp\_filename,\ \textcolor{stringliteral}{"{}w"{}})\ \textcolor{keyword}{as}\ f: }
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ f.write(\textcolor{stringliteral}{"{}\(\backslash\)n"{}}.join(facts)) }
-\DoxyCodeLine{00114\  }
-\DoxyCodeLine{00115\ \ \ \ \ \textcolor{comment}{\#\ print(f"{}ASP\ facts\ written\ to\ \{asp\_filename\}"{}) }}
-
-\end{DoxyCode}
 \Hypertarget{namespacejsonconverter_aced567076b198d4dd780aaff8e73e0fa}\index{jsonconverter@{jsonconverter}!convert24@{convert24}}
 \index{convert24@{convert24}!jsonconverter@{jsonconverter}}
 \doxysubsubsection{\texorpdfstring{convert24()}{convert24()}}
@@ -137,14 +28,5 @@ jsonconverter.\+convert24 (\begin{DoxyParamCaption}\item[{}]{time}{}\end{DoxyPar
 
 
 
-Definition at line \mbox{\hyperlink{jsonconverter_8py_source_l00006}{6}} of file \mbox{\hyperlink{jsonconverter_8py_source}{jsonconverter.\+py}}.
+Referenced by \mbox{\hyperlink{namespacejsonconverter_a1f7f8a4099cfdc7cdbfb6ef86ca3972a}{convert()}}.
 
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00006\ \textcolor{keyword}{def\ }convert24(time): }
-\DoxyCodeLine{00007\ \ \ \ \ t\ =\ datetime.strptime(time,\ \textcolor{stringliteral}{"{}\%I:\%M\%p"{}})\ \ \textcolor{comment}{\#\ Parse\ the\ time\ string }}
-\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordflow}{return}\ t.hour\ *\ 60\ +\ t.minute\ \ \textcolor{comment}{\#\ Convert\ to\ total\ minutes }}
-\DoxyCodeLine{00009\  }
-\DoxyCodeLine{00010\  }
-
-\end{DoxyCode}

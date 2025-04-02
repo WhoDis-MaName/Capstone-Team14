@@ -134,46 +134,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="clingo__pytest_8py_source.html#l00037">37</a> of file <a class="el" href="clingo__pytest_8py_source.html">clingo_pytest.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   37</span><span class="keyword">def </span>parse_answer_set(output):</div>
-<div class="line"><span class="lineno">   38</span>    <span class="comment"># Parses Clingo output to extract the answer set.</span></div>
-<div class="line"><span class="lineno">   39</span>    lines = output.splitlines()</div>
-<div class="line"><span class="lineno">   40</span>    answer_sets = [</div>
-<div class="line"><span class="lineno">   41</span>        line <span class="keywordflow">for</span> line <span class="keywordflow">in</span> lines <span class="keywordflow">if</span> <span class="keywordflow">not</span> line.startswith((<span class="stringliteral">&quot;clingo&quot;</span>, <span class="stringliteral">&quot;Solving&quot;</span>, <span class="stringliteral">&quot;Answer&quot;</span>))</div>
-<div class="line"><span class="lineno">   42</span>    ]</div>
-<div class="line"><span class="lineno">   43</span> </div>
-<div class="line"><span class="lineno">   44</span>    <span class="comment"># Filters Clingo&#39;s answer set to extract only the relevant response.</span></div>
-<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">return</span> {</div>
-<div class="line"><span class="lineno">   46</span>        line</div>
-<div class="line"><span class="lineno">   47</span>        <span class="keywordflow">for</span> line <span class="keywordflow">in</span> answer_sets</div>
-<div class="line"><span class="lineno">   48</span>        <span class="keywordflow">if</span> line</div>
-<div class="line"><span class="lineno">   49</span>        <span class="keywordflow">and</span> <span class="keywordflow">not</span> any(</div>
-<div class="line"><span class="lineno">   50</span>            keyword <span class="keywordflow">in</span> line</div>
-<div class="line"><span class="lineno">   51</span>            <span class="keywordflow">for</span> keyword <span class="keywordflow">in</span> [</div>
-<div class="line"><span class="lineno">   52</span>                <span class="stringliteral">&quot;Models&quot;</span>,</div>
-<div class="line"><span class="lineno">   53</span>                <span class="stringliteral">&quot;Reading&quot;</span>,</div>
-<div class="line"><span class="lineno">   54</span>                <span class="stringliteral">&quot;Calls&quot;</span>,</div>
-<div class="line"><span class="lineno">   55</span>                <span class="stringliteral">&quot;CPU Time&quot;</span>,</div>
-<div class="line"><span class="lineno">   56</span>                <span class="stringliteral">&quot;SATISFIABLE&quot;</span>,</div>
-<div class="line"><span class="lineno">   57</span>                <span class="stringliteral">&quot;Time&quot;</span>,</div>
-<div class="line"><span class="lineno">   58</span>            ]</div>
-<div class="line"><span class="lineno">   59</span>        )</div>
-<div class="line"><span class="lineno">   60</span>    }</div>
-<div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span> </div>
-<div class="line"><span class="lineno">   63</span><span class="comment"># TODO: we have a bug where it isn&#39;t counting all the sections for some reason.</span></div>
-<div class="line"><span class="lineno">   64</span><span class="comment"># For example, in this test case it is only counting 8 sections - it is missing csci 1010 and another one</span></div>
-<div class="line"><span class="lineno">   65</span><span class="comment"># Add test cases here</span></div>
-<div class="line"><span class="lineno">   66</span><span class="preprocessor">@pytest.mark.parametrize</span>(</div>
-<div class="line"><span class="lineno">   67</span>    <span class="stringliteral">&quot;input_files,expected_output&quot;</span>,</div>
-<div class="line"><span class="lineno">   68</span>    [</div>
-<div class="line"><span class="lineno">   69</span>        (</div>
-<div class="line"><span class="lineno">   70</span>            [<span class="stringliteral">&quot;../test_cases/test_case_00.lp&quot;</span>, <span class="stringliteral">&quot;../../identifyconflict.lp&quot;</span>],</div>
-<div class="line"><span class="lineno">   71</span>            {<span class="stringliteral">&quot;conflict_count(3)&quot;</span>},</div>
-<div class="line"><span class="lineno">   72</span>        ),</div>
-<div class="line"><span class="lineno">   73</span>    ],</div>
-<div class="line"><span class="lineno">   74</span>)</div>
-</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="#a3b4673160d447860a87b96a39513ec26">test_clingo_output()</a>.</p>
+
 </div>
 </div>
 <a id="a26e226006bd78f2f3dc0b41115d3d992" name="a26e226006bd78f2f3dc0b41115d3d992"></a>
@@ -191,15 +153,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="clingo__pytest_8py_source.html#l00030">30</a> of file <a class="el" href="clingo__pytest_8py_source.html">clingo_pytest.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   30</span><span class="keyword">def </span>run_clingo(program_files):</div>
-<div class="line"><span class="lineno">   31</span>    <span class="comment"># Runs Clingo on the given ASP program file and returns the parsed output.</span></div>
-<div class="line"><span class="lineno">   32</span>    cmd = [<span class="stringliteral">&quot;clingo&quot;</span>] + program_files</div>
-<div class="line"><span class="lineno">   33</span>    result = subprocess.run(cmd, capture_output=<span class="keyword">True</span>, text=<span class="keyword">True</span>)</div>
-<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">return</span> result.stdout  <span class="comment"># Adjust parsing as needed</span></div>
-<div class="line"><span class="lineno">   35</span> </div>
-<div class="line"><span class="lineno">   36</span> </div>
-</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="#a3b4673160d447860a87b96a39513ec26">test_clingo_output()</a>.</p>
+
 </div>
 </div>
 <a id="a3b4673160d447860a87b96a39513ec26" name="a3b4673160d447860a87b96a39513ec26"></a>
@@ -221,13 +176,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="clingo__pytest_8py_source.html#l00075">75</a> of file <a class="el" href="clingo__pytest_8py_source.html">clingo_pytest.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   75</span><span class="keyword">def </span>test_clingo_output(input_files, expected_output):</div>
-<div class="line"><span class="lineno">   76</span>    output = run_clingo(input_files)</div>
-<div class="line"><span class="lineno">   77</span>    answer_set = set(parse_answer_set(output))</div>
-<div class="line"><span class="lineno">   78</span>    print(output)</div>
-<div class="line"><span class="lineno">   79</span>    <span class="keyword">assert</span> answer_set == expected_output, f<span class="stringliteral">&quot;Unexpected output: {answer_set}&quot;</span></div>
-</div><!-- fragment -->
+<p class="reference">References <a class="el" href="#a1565245f223fae7d79b63e34cf44f40b">parse_answer_set()</a>, and <a class="el" href="#a26e226006bd78f2f3dc0b41115d3d992">run_clingo()</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->

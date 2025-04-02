@@ -14,8 +14,8 @@ var searchData=
   ['thu_11',['THU',['../classschedule_functions_1_1models_1_1_day.html#ad91cf26a8d9a61cca001beb2aefeebdb',1,'scheduleFunctions::models::Day']]],
   ['time_5fzone_12',['TIME_ZONE',['../namespacemyproject_1_1settings.html#a3865e7184483bb267004da9027f0217a',1,'myproject::settings']]],
   ['title_13',['title',['../namespaceconverter.html#a7f03e5e6717e79930fb4d031eb1b430a',1,'converter.title'],['../namespacedescription.html#aeba5c12e147b95cdbb657d138041c459',1,'description.title']]],
-  ['to_20prioritize_14',['Key Classes to Prioritize',['../C:/Users/andra/Documents/Capstone-Team14/docs/README.md#autotoc_md13',1,'']]],
+  ['to_20prioritize_14',['Key Classes to Prioritize',['../md__r_e_a_d_m_e.html#autotoc_md13',1,'']]],
   ['tue_15',['TUE',['../classschedule_functions_1_1models_1_1_day.html#ac9853412b98097ad50a973bb35b69c74',1,'scheduleFunctions::models::Day']]],
-  ['tutorial_20instructions_16',['Django Tutorial instructions',['../md_docs_2_django__tutorial__instructions.html',1,'']]],
+  ['tutorial_20instructions_16',['Django Tutorial instructions',['../md__django__tutorial__instructions.html',1,'']]],
   ['type_17',['type',['../namespaceidentifier.html#ad9db37e881aa38ba136f00728be4fba2',1,'identifier']]]
 ];

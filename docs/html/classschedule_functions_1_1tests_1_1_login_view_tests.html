@@ -125,10 +125,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac35d19f5881160b040d900edc4561a7b" id="r_ac35d19f5881160b040d900edc4561a7b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac35d19f5881160b040d900edc4561a7b">testLoginFail</a> (self)</td></tr>
 <tr class="separator:ac35d19f5881160b040d900edc4561a7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="tests_8py_source.html#l00007">7</a> of file <a class="el" href="tests_8py_source.html">tests.py</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a333001162e68b93ab718b2dd83dbc572" name="a333001162e68b93ab718b2dd83dbc572"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a333001162e68b93ab718b2dd83dbc572">&#9670;&#160;</a></span>checkLoginExists()</h2>
 
@@ -144,12 +141,6 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tests_8py_source.html#l00008">8</a> of file <a class="el" href="tests_8py_source.html">tests.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    8</span>    <span class="keyword">def </span>checkLoginExists(self):</div>
-<div class="line"><span class="lineno">    9</span>        response = self.client.get(reverse(login_name))</div>
-<div class="line"><span class="lineno">   10</span>        self.assertEqual(response.status_code, 200)</div>
-<div class="line"><span class="lineno">   11</span>        </div>
-</div><!-- fragment -->
 </div>
 </div>
 <a id="ac35d19f5881160b040d900edc4561a7b" name="ac35d19f5881160b040d900edc4561a7b"></a>
@@ -167,18 +158,6 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tests_8py_source.html#l00023">23</a> of file <a class="el" href="tests_8py_source.html">tests.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   23</span>    <span class="keyword">def </span>testLoginFail(self):</div>
-<div class="line"><span class="lineno">   24</span>        form_data = {</div>
-<div class="line"><span class="lineno">   25</span>            <span class="stringliteral">&#39;username&#39;</span>: <span class="stringliteral">&#39;testUser&#39;</span>,</div>
-<div class="line"><span class="lineno">   26</span>            <span class="stringliteral">&#39;password&#39;</span>: <span class="stringliteral">&#39;badPassword&#39;</span>,</div>
-<div class="line"><span class="lineno">   27</span>            <span class="comment"># ... other fields</span></div>
-<div class="line"><span class="lineno">   28</span>        }</div>
-<div class="line"><span class="lineno">   29</span>        response = self.client.post(reverse(login_name), form_data)</div>
-<div class="line"><span class="lineno">   30</span>        self.assertEqual(response.status_code, 401)</div>
-<div class="line"><span class="lineno">   31</span>        ...</div>
-<div class="line"><span class="lineno">   32</span>        </div>
-</div><!-- fragment -->
 </div>
 </div>
 <a id="a3d011fedeecaeac636c2bc57b5b4cd87" name="a3d011fedeecaeac636c2bc57b5b4cd87"></a>
@@ -196,23 +175,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tests_8py_source.html#l00012">12</a> of file <a class="el" href="tests_8py_source.html">tests.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   12</span>    <span class="keyword">def </span>testLoginSuccess(self):</div>
-<div class="line"><span class="lineno">   13</span>        form_data = {</div>
-<div class="line"><span class="lineno">   14</span>            <span class="stringliteral">&#39;username&#39;</span>: <span class="stringliteral">&#39;testUser&#39;</span>,</div>
-<div class="line"><span class="lineno">   15</span>            <span class="stringliteral">&#39;password&#39;</span>: <span class="stringliteral">&#39;complexpassword&#39;</span>,</div>
-<div class="line"><span class="lineno">   16</span>            <span class="comment"># ... other fields</span></div>
-<div class="line"><span class="lineno">   17</span>        }</div>
-<div class="line"><span class="lineno">   18</span>        response = self.client.post(reverse(login_name), form_data)</div>
-<div class="line"><span class="lineno">   19</span>        self.assertEqual(response.status_code, 302)</div>
-<div class="line"><span class="lineno">   20</span>        self.assertEqual(self.client.session[<span class="stringliteral">&#39;username&#39;</span>], <span class="stringliteral">&#39;testUser&#39;</span>)</div>
-<div class="line"><span class="lineno">   21</span>        ...</div>
-<div class="line"><span class="lineno">   22</span>        </div>
-</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>scheduleFunctions/<a class="el" href="tests_8py_source.html">tests.py</a></li>
+<li>scheduleFunctions/<a class="el" href="tests_8py.html">tests.py</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
