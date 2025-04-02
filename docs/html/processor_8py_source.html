@@ -106,9 +106,10 @@ $(function(){initNavTree('processor_8py_source.html',''); initResizable(true); }
   <div class="headertitle"><div class="title">processor.py</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">import</span> json</div>
+<a href="processor_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="namespaceprocessor.html">    1</a></span><span class="keyword">import</span> json</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">def </span>get_cist_csci_courses(json_file_path):</div>
+<div class="foldopen" id="foldopen00003" data-start="" data-end="">
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="namespaceprocessor.html#a56b11f4d0c8b6ab8ea0bd66ef32507d1">    3</a></span><span class="keyword">def </span><a class="code hl_function" href="namespaceprocessor.html#a56b11f4d0c8b6ab8ea0bd66ef32507d1">get_cist_csci_courses</a>(json_file_path):</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    <span class="keyword">with</span> open(json_file_path, <span class="stringliteral">&#39;r&#39;</span>, encoding=<span class="stringliteral">&#39;utf-8&#39;</span>) <span class="keyword">as</span> f:</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>        data = json.load(f)</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
@@ -123,19 +124,21 @@ $(function(){initNavTree('processor_8py_source.html',''); initResizable(true); }
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>                filtered_courses[term][subject_code] = courses_dict</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">return</span> filtered_courses</div>
+</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keywordflow">if</span> __name__ == <span class="stringliteral">&quot;__main__&quot;</span>:</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    json_file = <span class="stringliteral">&quot;fa21-fa24.json&quot;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    result = get_cist_csci_courses(json_file)</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">with</span> open(<span class="stringliteral">&quot;filtered.json&quot;</span>, <span class="stringliteral">&quot;w&quot;</span>, encoding=<span class="stringliteral">&#39;utf-8&#39;</span>) <span class="keyword">as</span> out:</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        json.dump(result, out, indent=2)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespaceprocessor.html#a032e9f0a7410a0ecdf1e5716ea3249c8">   19</a></span>    json_file = <span class="stringliteral">&quot;fa21-fa24.json&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="namespaceprocessor.html#ab0cba5883ec193921bc0f529a684dd08">   20</a></span>    result = <a class="code hl_function" href="namespaceprocessor.html#a56b11f4d0c8b6ab8ea0bd66ef32507d1">get_cist_csci_courses</a>(json_file)</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="namespaceprocessor.html#a1769e2f2c3d9bc94efd91ec2f8d8486c">   21</a></span>    <span class="keyword">with</span> open(<span class="stringliteral">&quot;filtered.json&quot;</span>, <span class="stringliteral">&quot;w&quot;</span>, encoding=<span class="stringliteral">&#39;utf-8&#39;</span>) <span class="keyword">as</span> out:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="namespaceprocessor.html#a255e69a1d89eef7e4059cd1311b02973">   22</a></span>        json.dump(result, out, indent=2)</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    print(<span class="stringliteral">&quot;Filtered results have been written to filtered.json.&quot;</span>)</div>
+<div class="ttc" id="anamespaceprocessor_html_a56b11f4d0c8b6ab8ea0bd66ef32507d1"><div class="ttname"><a href="namespaceprocessor.html#a56b11f4d0c8b6ab8ea0bd66ef32507d1">processor.get_cist_csci_courses</a></div><div class="ttdeci">get_cist_csci_courses(json_file_path)</div><div class="ttdef"><b>Definition</b> <a href="#l00003">processor.py:3</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>processor.py</b></li>
+    <li class="navelem"><a class="el" href="processor_8py.html">processor.py</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

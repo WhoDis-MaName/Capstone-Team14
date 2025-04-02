@@ -1,17 +1,17 @@
 \doxysection{jsonconverter.\+py}
-\hypertarget{jsonconverter_8py_source}{}\label{jsonconverter_8py_source}
+\hypertarget{jsonconverter_8py_source}{}\label{jsonconverter_8py_source}\mbox{\hyperlink{jsonconverter_8py}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00001}00001\ \textcolor{keyword}{import}\ json}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00001}\mbox{\hyperlink{namespacejsonconverter}{00001}}\ \textcolor{keyword}{import}\ json}
 \DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00002}00002\ \textcolor{keyword}{from}\ datetime\ \textcolor{keyword}{import}\ datetime}
 \DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00003}00003\ }
 \DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00004}00004\ }
 \DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00005}00005\ \textcolor{comment}{\#\ Converting\ 12\ hour\ time\ to\ minutes\ past\ midnight,\ ie:\ 12:15\ AM\ to\ 15.}}
-\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00006}00006\ \textcolor{keyword}{def\ }convert24(time):}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00006}\mbox{\hyperlink{namespacejsonconverter_aced567076b198d4dd780aaff8e73e0fa}{00006}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespacejsonconverter_aced567076b198d4dd780aaff8e73e0fa}{convert24}}(time):}
 \DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00007}00007\ \ \ \ \ t\ =\ datetime.strptime(time,\ \textcolor{stringliteral}{"{}\%I:\%M\%p"{}})\ \ \textcolor{comment}{\#\ Parse\ the\ time\ string}}
 \DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00008}00008\ \ \ \ \ \textcolor{keywordflow}{return}\ t.hour\ *\ 60\ +\ t.minute\ \ \textcolor{comment}{\#\ Convert\ to\ total\ minutes}}
 \DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00009}00009\ }
 \DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00010}00010\ }
-\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00011}00011\ \textcolor{keyword}{def\ }convert(file):}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00011}\mbox{\hyperlink{namespacejsonconverter_a1f7f8a4099cfdc7cdbfb6ef86ca3972a}{00011}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespacejsonconverter_a1f7f8a4099cfdc7cdbfb6ef86ca3972a}{convert}}(file):}
 \DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00012}00012\ }
 \DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00013}00013\ \ \ \ \ \textcolor{comment}{\#\ Load\ the\ JSON\ data}}
 \DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{with}\ open(file,\ \textcolor{stringliteral}{"{}r"{}})\ \textcolor{keyword}{as}\ f:}
@@ -68,8 +68,8 @@
 \DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ start,\ end\ =\ \textcolor{stringliteral}{"{}tba"{}},\ \textcolor{stringliteral}{"{}tba"{}}}
 \DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}:}
 \DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ start,\ end\ =\ time.split(\textcolor{stringliteral}{"{}\ -\/\ "{}})}
-\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ start\ =\ convert24(start)}
-\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ end\ =\ convert24(end)}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ start\ =\ \mbox{\hyperlink{namespacejsonconverter_aced567076b198d4dd780aaff8e73e0fa}{convert24}}(start)}
+\DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ end\ =\ \mbox{\hyperlink{namespacejsonconverter_aced567076b198d4dd780aaff8e73e0fa}{convert24}}(end)}
 \DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00070}00070\ }
 \DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ days\ =\ (}
 \DoxyCodeLine{\Hypertarget{jsonconverter_8py_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ section\_info.get(\textcolor{stringliteral}{"{}Days"{}},\ \textcolor{stringliteral}{"{}TBA"{}})}

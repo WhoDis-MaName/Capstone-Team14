@@ -106,7 +106,7 @@ $(function(){initNavTree('get__four__year_8py_source.html',''); initResizable(tr
   <div class="headertitle"><div class="title">get_four_year.py</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="namespaceget__four__year.html">    1</a></span></div>
+<a href="get__four__year_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="namespaceget__four__year.html">    1</a></span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">import</span> os</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">import</span> json</div>
@@ -237,23 +237,23 @@ $(function(){initNavTree('get__four__year_8py_source.html',''); initResizable(tr
 </div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="keywordflow">if</span> __name__ == <span class="stringliteral">&quot;__main__&quot;</span>:</div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keywordflow">if</span> os.name == <span class="stringliteral">&#39;nt&#39;</span>:</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        current_directory = os.path.dirname(os.path.realpath(__file__)) <span class="comment"># Get current directory</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="namespaceget__four__year.html#a031a65c56eb333fe1305f560f4ec8258">  149</a></span>        current_directory = os.path.dirname(os.path.realpath(__file__)) <span class="comment"># Get current directory</span></div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordflow">else</span>:</div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        current_directory = os.path.dirname(os.path.realpath(__name__)) <span class="comment"># Get current directory</span></div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        </div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    path = current_directory.split(os.sep)</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="namespaceget__four__year.html#a2a694ea8a2824f347b660bb50fe29889">  154</a></span>    path = current_directory.split(os.sep)</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    root_index = path.index(<span class="stringliteral">&#39;Capstone-Team14&#39;</span>)</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    root_dir = os.sep.join(path[:root_index+1])</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    data_dir = os.path.join(root_dir, <span class="stringliteral">&#39;data_files&#39;</span>, <span class="stringliteral">&#39;four_year_plan&#39;</span>)</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="namespaceget__four__year.html#a76b0c7529ac7fb854f5292955f320c5b">  156</a></span>    root_index = path.index(<span class="stringliteral">&#39;Capstone-Team14&#39;</span>)</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="namespaceget__four__year.html#a4810d3a2ebc4765c85838fbc50d7b57e">  157</a></span>    root_dir = os.sep.join(path[:root_index+1])</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="namespaceget__four__year.html#a18c6ce56f785c23a4819396e5bca9e00">  158</a></span>    data_dir = os.path.join(root_dir, <span class="stringliteral">&#39;data_files&#39;</span>, <span class="stringliteral">&#39;four_year_plan&#39;</span>)</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    </div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordflow">try</span>:</div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        os.makedirs(data_dir)</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keywordflow">except</span>:</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        <span class="keywordflow">pass</span></div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    filename = os.path.join(data_dir,<span class="stringliteral">&#39;fourYearPlan.json&#39;</span>)</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    url = <span class="stringliteral">&#39;https://catalog.unomaha.edu/undergraduate/college-information-science-technology/computer-science/computer-science-bs/#fouryearplantext&#39;</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="namespaceget__four__year.html#ab88771e8a298b0118ec1ac3b3adcad41">  164</a></span>    filename = os.path.join(data_dir,<span class="stringliteral">&#39;fourYearPlan.json&#39;</span>)</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="namespaceget__four__year.html#a0967f39c9f3c7d92c0df35c8b6a866fa">  165</a></span>    url = <span class="stringliteral">&#39;https://catalog.unomaha.edu/undergraduate/college-information-science-technology/computer-science/computer-science-bs/#fouryearplantext&#39;</span></div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <a class="code hl_function" href="namespaceget__four__year.html#a6a9b4322230edb5b0a78d12021d6c39a">read_four_year</a>(url, filename)</div>
 <div class="ttc" id="anamespaceget__four__year_html_a23d1dd238e0cb1c1a979aa1fb0aa7120"><div class="ttname"><a href="namespaceget__four__year.html#a23d1dd238e0cb1c1a979aa1fb0aa7120">get_four_year.get_table_rows</a></div><div class="ttdeci">list get_table_rows(table)</div><div class="ttdoc">Given a table, returns all its rows.</div><div class="ttdef"><b>Definition</b> <a href="#l00025">get_four_year.py:25</a></div></div>
 <div class="ttc" id="anamespaceget__four__year_html_a6a9b4322230edb5b0a78d12021d6c39a"><div class="ttname"><a href="namespaceget__four__year.html#a6a9b4322230edb5b0a78d12021d6c39a">get_four_year.read_four_year</a></div><div class="ttdeci">read_four_year(url, output_file)</div><div class="ttdoc">From a url that contains a four year plan process it and produce a JSON file in a structure that we c...</div><div class="ttdef"><b>Definition</b> <a href="#l00087">get_four_year.py:87</a></div></div>
@@ -264,7 +264,7 @@ $(function(){initNavTree('get__four__year_8py_source.html',''); initResizable(tr
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_809598ced06ac0feee4613cceffbc2ed.html">data_processing</a></li><li class="navelem"><b>get_four_year.py</b></li>
+    <li class="navelem"><a class="el" href="dir_809598ced06ac0feee4613cceffbc2ed.html">data_processing</a></li><li class="navelem"><a class="el" href="get__four__year_8py.html">get_four_year.py</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

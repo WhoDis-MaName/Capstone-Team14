@@ -19,11 +19,11 @@ get_four_year \- This module contains all of the functionality that is needed to
 .br
 .RI "Given a table, returns all its rows\&. "
 .ti -1c
-.RI "\fBprocess_url\fP (str url)"
+.RI "\fBprocess_url\fP (str \fBurl\fP)"
 .br
 .RI "Take a url and find all of the tables contained in the page and return a ResultSet\&. "
 .ti -1c
-.RI "\fBread_four_year\fP (url, output_file)"
+.RI "\fBread_four_year\fP (\fBurl\fP, output_file)"
 .br
 .RI "From a url that contains a four year plan process it and produce a JSON file in a structure that we can utilize to then convert into a clingo file\&. "
 .in -1c
@@ -40,13 +40,13 @@ get_four_year \- This module contains all of the functionality that is needed to
 .RI "\fBroot_index\fP = path\&.index('Capstone\-Team14')"
 .br
 .ti -1c
-.RI "\fBroot_dir\fP = os\&.sep\&.join(path[:root_index+1])"
+.RI "\fBroot_dir\fP = os\&.sep\&.join(\fBpath\fP[:\fBroot_index\fP+1])"
 .br
 .ti -1c
-.RI "\fBdata_dir\fP = os\&.path\&.join(root_dir, 'data_files', 'four_year_plan')"
+.RI "\fBdata_dir\fP = os\&.path\&.join(\fBroot_dir\fP, 'data_files', 'four_year_plan')"
 .br
 .ti -1c
-.RI "\fBfilename\fP = os\&.path\&.join(data_dir,'fourYearPlan\&.json')"
+.RI "\fBfilename\fP = os\&.path\&.join(\fBdata_dir\fP,'fourYearPlan\&.json')"
 .br
 .ti -1c
 .RI "str \fBurl\fP = 'https://catalog\&.unomaha\&.edu/undergraduate/college\-information\-science\-technology/computer\-science/computer\-science\-bs/#fouryearplantext'"
@@ -253,11 +253,11 @@ Definition at line \fB87\fP of file \fBget_four_year\&.py\fP\&.
 
 .PP
 Definition at line \fB149\fP of file \fBget_four_year\&.py\fP\&.
-.SS "get_four_year\&.data_dir = os\&.path\&.join(root_dir, 'data_files', 'four_year_plan')"
+.SS "get_four_year\&.data_dir = os\&.path\&.join(\fBroot_dir\fP, 'data_files', 'four_year_plan')"
 
 .PP
 Definition at line \fB158\fP of file \fBget_four_year\&.py\fP\&.
-.SS "get_four_year\&.filename = os\&.path\&.join(data_dir,'fourYearPlan\&.json')"
+.SS "get_four_year\&.filename = os\&.path\&.join(\fBdata_dir\fP,'fourYearPlan\&.json')"
 
 .PP
 Definition at line \fB164\fP of file \fBget_four_year\&.py\fP\&.
@@ -265,7 +265,7 @@ Definition at line \fB164\fP of file \fBget_four_year\&.py\fP\&.
 
 .PP
 Definition at line \fB154\fP of file \fBget_four_year\&.py\fP\&.
-.SS "get_four_year\&.root_dir = os\&.sep\&.join(path[:root_index+1])"
+.SS "get_four_year\&.root_dir = os\&.sep\&.join(\fBpath\fP[:\fBroot_index\fP+1])"
 
 .PP
 Definition at line \fB157\fP of file \fBget_four_year\&.py\fP\&.

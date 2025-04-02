@@ -106,11 +106,12 @@ $(function(){initNavTree('get__sample_8py_source.html',''); initResizable(true);
   <div class="headertitle"><div class="title">get_sample.py</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">import</span> os</div>
+<a href="get__sample_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="namespaceget__sample.html">    1</a></span><span class="keyword">import</span> os</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">import</span> json</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">from</span> random <span class="keyword">import</span> sample</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">def </span>get_classes(filename: str) -&gt; dict:</div>
+<div class="foldopen" id="foldopen00005" data-start="" data-end="">
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="namespaceget__sample.html#aca0b8e51050ae82391d35f1cb211367b">    5</a></span><span class="keyword">def </span><a class="code hl_function" href="namespaceget__sample.html#aca0b8e51050ae82391d35f1cb211367b">get_classes</a>(filename: str) -&gt; dict:</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    classes = {}</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">with</span> open(filename, <span class="stringliteral">&#39;r&#39;</span>) <span class="keyword">as</span> f:</div>
@@ -118,7 +119,9 @@ $(function(){initNavTree('get__sample_8py_source.html',''); initResizable(true);
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordflow">return</span> classes</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">def </span>create_sample(classes:dict, num_semesters:int, num_departments:int, num_classes:int) -&gt; dict:</div>
+</div>
+<div class="foldopen" id="foldopen00013" data-start="" data-end="">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="namespaceget__sample.html#a7f94603f3e561a99d4b7d8b2eb12e33f">   13</a></span><span class="keyword">def </span><a class="code hl_function" href="namespaceget__sample.html#a7f94603f3e561a99d4b7d8b2eb12e33f">create_sample</a>(classes:dict, num_semesters:int, num_departments:int, num_classes:int) -&gt; dict:</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    sample_data = {}</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    key_list = list(classes.keys())</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    semester_subset = sample(key_list,min(num_semesters,len(key_list)))</div>
@@ -135,25 +138,28 @@ $(function(){initNavTree('get__sample_8py_source.html',''); initResizable(true);
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">return</span> sample_data</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keywordflow">try</span>:</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    os.mkdir(<span class="stringliteral">&#39;samples&#39;</span>)</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keywordflow">except</span>:</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">pass</span></div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>classes = get_classes(<span class="stringliteral">&#39;filtered.json&#39;</span>)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="namespaceget__sample.html#a3e787f281ff2bd81f8b4913e75e833b3">   35</a></span>classes = <a class="code hl_function" href="namespaceget__sample.html#aca0b8e51050ae82391d35f1cb211367b">get_classes</a>(<span class="stringliteral">&#39;filtered.json&#39;</span>)</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(0,10):</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    sample_data = create_sample(classes, 1, 2, 5)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="namespaceget__sample.html#a6b553ddd16f749e8338556198aaa0ac8">   38</a></span>    sample_data = <a class="code hl_function" href="namespaceget__sample.html#a7f94603f3e561a99d4b7d8b2eb12e33f">create_sample</a>(classes, 1, 2, 5)</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    print(sample_data)</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">with</span> open(os.path.join(<span class="stringliteral">&#39;samples&#39;</span>,f<span class="stringliteral">&#39;sample_0{i}.json&#39;</span>), <span class="stringliteral">&#39;w&#39;</span>) <span class="keyword">as</span> f:</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        json.dump(sample_data,f, indent=4)</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="namespaceget__sample.html#a7fa77134c313da91255bc124b0c40810">   42</a></span>        json.dump(sample_data,f, indent=4)</div>
+<div class="ttc" id="anamespaceget__sample_html_a7f94603f3e561a99d4b7d8b2eb12e33f"><div class="ttname"><a href="namespaceget__sample.html#a7f94603f3e561a99d4b7d8b2eb12e33f">get_sample.create_sample</a></div><div class="ttdeci">dict create_sample(dict classes, int num_semesters, int num_departments, int num_classes)</div><div class="ttdef"><b>Definition</b> <a href="#l00013">get_sample.py:13</a></div></div>
+<div class="ttc" id="anamespaceget__sample_html_aca0b8e51050ae82391d35f1cb211367b"><div class="ttname"><a href="namespaceget__sample.html#aca0b8e51050ae82391d35f1cb211367b">get_sample.get_classes</a></div><div class="ttdeci">dict get_classes(str filename)</div><div class="ttdef"><b>Definition</b> <a href="#l00005">get_sample.py:5</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>get_sample.py</b></li>
+    <li class="navelem"><a class="el" href="get__sample_8py.html">get_sample.py</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

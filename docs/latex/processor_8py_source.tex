@@ -1,9 +1,9 @@
 \doxysection{processor.\+py}
-\hypertarget{processor_8py_source}{}\label{processor_8py_source}
+\hypertarget{processor_8py_source}{}\label{processor_8py_source}\mbox{\hyperlink{processor_8py}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{processor_8py_source_l00001}00001\ \textcolor{keyword}{import}\ json}
+\DoxyCodeLine{\Hypertarget{processor_8py_source_l00001}\mbox{\hyperlink{namespaceprocessor}{00001}}\ \textcolor{keyword}{import}\ json}
 \DoxyCodeLine{\Hypertarget{processor_8py_source_l00002}00002\ }
-\DoxyCodeLine{\Hypertarget{processor_8py_source_l00003}00003\ \textcolor{keyword}{def\ }get\_cist\_csci\_courses(json\_file\_path):}
+\DoxyCodeLine{\Hypertarget{processor_8py_source_l00003}\mbox{\hyperlink{namespaceprocessor_a56b11f4d0c8b6ab8ea0bd66ef32507d1}{00003}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceprocessor_a56b11f4d0c8b6ab8ea0bd66ef32507d1}{get\_cist\_csci\_courses}}(json\_file\_path):}
 \DoxyCodeLine{\Hypertarget{processor_8py_source_l00004}00004\ \ \ \ \ \textcolor{keyword}{with}\ open(json\_file\_path,\ \textcolor{stringliteral}{'r'},\ encoding=\textcolor{stringliteral}{'utf-\/8'})\ \textcolor{keyword}{as}\ f:}
 \DoxyCodeLine{\Hypertarget{processor_8py_source_l00005}00005\ \ \ \ \ \ \ \ \ data\ =\ json.load(f)}
 \DoxyCodeLine{\Hypertarget{processor_8py_source_l00006}00006\ }
@@ -19,10 +19,10 @@
 \DoxyCodeLine{\Hypertarget{processor_8py_source_l00016}00016\ }
 \DoxyCodeLine{\Hypertarget{processor_8py_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{return}\ filtered\_courses}
 \DoxyCodeLine{\Hypertarget{processor_8py_source_l00018}00018\ \textcolor{keywordflow}{if}\ \_\_name\_\_\ ==\ \textcolor{stringliteral}{"{}\_\_main\_\_"{}}:}
-\DoxyCodeLine{\Hypertarget{processor_8py_source_l00019}00019\ \ \ \ \ json\_file\ =\ \textcolor{stringliteral}{"{}fa21-\/fa24.json"{}}}
-\DoxyCodeLine{\Hypertarget{processor_8py_source_l00020}00020\ \ \ \ \ result\ =\ get\_cist\_csci\_courses(json\_file)}
-\DoxyCodeLine{\Hypertarget{processor_8py_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{with}\ open(\textcolor{stringliteral}{"{}filtered.json"{}},\ \textcolor{stringliteral}{"{}w"{}},\ encoding=\textcolor{stringliteral}{'utf-\/8'})\ \textcolor{keyword}{as}\ out:}
-\DoxyCodeLine{\Hypertarget{processor_8py_source_l00022}00022\ \ \ \ \ \ \ \ \ json.dump(result,\ out,\ indent=2)}
+\DoxyCodeLine{\Hypertarget{processor_8py_source_l00019}\mbox{\hyperlink{namespaceprocessor_a032e9f0a7410a0ecdf1e5716ea3249c8}{00019}}\ \ \ \ \ json\_file\ =\ \textcolor{stringliteral}{"{}fa21-\/fa24.json"{}}}
+\DoxyCodeLine{\Hypertarget{processor_8py_source_l00020}\mbox{\hyperlink{namespaceprocessor_ab0cba5883ec193921bc0f529a684dd08}{00020}}\ \ \ \ \ result\ =\ \mbox{\hyperlink{namespaceprocessor_a56b11f4d0c8b6ab8ea0bd66ef32507d1}{get\_cist\_csci\_courses}}(json\_file)}
+\DoxyCodeLine{\Hypertarget{processor_8py_source_l00021}\mbox{\hyperlink{namespaceprocessor_a1769e2f2c3d9bc94efd91ec2f8d8486c}{00021}}\ \ \ \ \ \textcolor{keyword}{with}\ open(\textcolor{stringliteral}{"{}filtered.json"{}},\ \textcolor{stringliteral}{"{}w"{}},\ encoding=\textcolor{stringliteral}{'utf-\/8'})\ \textcolor{keyword}{as}\ out:}
+\DoxyCodeLine{\Hypertarget{processor_8py_source_l00022}\mbox{\hyperlink{namespaceprocessor_a255e69a1d89eef7e4059cd1311b02973}{00022}}\ \ \ \ \ \ \ \ \ json.dump(result,\ out,\ indent=2)}
 \DoxyCodeLine{\Hypertarget{processor_8py_source_l00023}00023\ }
 \DoxyCodeLine{\Hypertarget{processor_8py_source_l00024}00024\ \ \ \ \ print(\textcolor{stringliteral}{"{}Filtered\ results\ have\ been\ written\ to\ filtered.json."{}})}
 

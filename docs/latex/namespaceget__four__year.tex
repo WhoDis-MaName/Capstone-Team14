@@ -12,9 +12,9 @@ This module contains all of the functionality that is needed to process the four
 \begin{DoxyCompactList}\small\item\em Finds all of the tables in the page gathered with BS4. \end{DoxyCompactList}\item 
 list \mbox{\hyperlink{namespaceget__four__year_a23d1dd238e0cb1c1a979aa1fb0aa7120}{get\+\_\+table\+\_\+rows}} (table)
 \begin{DoxyCompactList}\small\item\em Given a table, returns all its rows. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespaceget__four__year_a9a38e6a7b809ed9ee9f81033eee37630}{process\+\_\+url}} (str url)
+\mbox{\hyperlink{namespaceget__four__year_a9a38e6a7b809ed9ee9f81033eee37630}{process\+\_\+url}} (str \mbox{\hyperlink{namespaceget__four__year_a0967f39c9f3c7d92c0df35c8b6a866fa}{url}})
 \begin{DoxyCompactList}\small\item\em Take a url and find all of the tables contained in the page and return a Result\+Set. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespaceget__four__year_a6a9b4322230edb5b0a78d12021d6c39a}{read\+\_\+four\+\_\+year}} (url, output\+\_\+file)
+\mbox{\hyperlink{namespaceget__four__year_a6a9b4322230edb5b0a78d12021d6c39a}{read\+\_\+four\+\_\+year}} (\mbox{\hyperlink{namespaceget__four__year_a0967f39c9f3c7d92c0df35c8b6a866fa}{url}}, output\+\_\+file)
 \begin{DoxyCompactList}\small\item\em From a url that contains a four year plan process it and produce a JSON file in a structure that we can utilize to then convert into a clingo file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -25,11 +25,11 @@ list \mbox{\hyperlink{namespaceget__four__year_a23d1dd238e0cb1c1a979aa1fb0aa7120
 \item 
 \mbox{\hyperlink{namespaceget__four__year_a76b0c7529ac7fb854f5292955f320c5b}{root\+\_\+index}} = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})
 \item 
-\mbox{\hyperlink{namespaceget__four__year_a4810d3a2ebc4765c85838fbc50d7b57e}{root\+\_\+dir}} = os.\+sep.\+join(path\mbox{[}\+:root\+\_\+index+1\mbox{]})
+\mbox{\hyperlink{namespaceget__four__year_a4810d3a2ebc4765c85838fbc50d7b57e}{root\+\_\+dir}} = os.\+sep.\+join(\mbox{\hyperlink{namespaceget__four__year_a2a694ea8a2824f347b660bb50fe29889}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceget__four__year_a76b0c7529ac7fb854f5292955f320c5b}{root\+\_\+index}}+1\mbox{]})
 \item 
-\mbox{\hyperlink{namespaceget__four__year_a18c6ce56f785c23a4819396e5bca9e00}{data\+\_\+dir}} = os.\+path.\+join(root\+\_\+dir, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}four\+\_\+year\+\_\+plan\textquotesingle{})
+\mbox{\hyperlink{namespaceget__four__year_a18c6ce56f785c23a4819396e5bca9e00}{data\+\_\+dir}} = os.\+path.\+join(\mbox{\hyperlink{namespaceget__four__year_a4810d3a2ebc4765c85838fbc50d7b57e}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}four\+\_\+year\+\_\+plan\textquotesingle{})
 \item 
-\mbox{\hyperlink{namespaceget__four__year_ab88771e8a298b0118ec1ac3b3adcad41}{filename}} = os.\+path.\+join(data\+\_\+dir,\textquotesingle{}four\+Year\+Plan.\+json\textquotesingle{})
+\mbox{\hyperlink{namespaceget__four__year_ab88771e8a298b0118ec1ac3b3adcad41}{filename}} = os.\+path.\+join(\mbox{\hyperlink{namespaceget__four__year_a18c6ce56f785c23a4819396e5bca9e00}{data\+\_\+dir}},\textquotesingle{}four\+Year\+Plan.\+json\textquotesingle{})
 \item 
 str \mbox{\hyperlink{namespaceget__four__year_a0967f39c9f3c7d92c0df35c8b6a866fa}{url}} = \textquotesingle{}https\+://catalog.\+unomaha.\+edu/undergraduate/college-\/information-\/science-\/technology/computer-\/science/computer-\/science-\/bs/\#fouryearplantext\textquotesingle{}
 \end{DoxyCompactItemize}
@@ -264,7 +264,7 @@ Definition at line \mbox{\hyperlink{get__four__year_8py_source_l00149}{149}} of 
 \index{data\_dir@{data\_dir}!get\_four\_year@{get\_four\_year}}
 \doxysubsubsection{\texorpdfstring{data\_dir}{data\_dir}}
 {\footnotesize\ttfamily \label{namespaceget__four__year_a18c6ce56f785c23a4819396e5bca9e00} 
-get\+\_\+four\+\_\+year.\+data\+\_\+dir = os.\+path.\+join(root\+\_\+dir, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}four\+\_\+year\+\_\+plan\textquotesingle{})}
+get\+\_\+four\+\_\+year.\+data\+\_\+dir = os.\+path.\+join(\mbox{\hyperlink{namespaceget__four__year_a4810d3a2ebc4765c85838fbc50d7b57e}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}four\+\_\+year\+\_\+plan\textquotesingle{})}
 
 
 
@@ -274,7 +274,7 @@ Definition at line \mbox{\hyperlink{get__four__year_8py_source_l00158}{158}} of 
 \index{filename@{filename}!get\_four\_year@{get\_four\_year}}
 \doxysubsubsection{\texorpdfstring{filename}{filename}}
 {\footnotesize\ttfamily \label{namespaceget__four__year_ab88771e8a298b0118ec1ac3b3adcad41} 
-get\+\_\+four\+\_\+year.\+filename = os.\+path.\+join(data\+\_\+dir,\textquotesingle{}four\+Year\+Plan.\+json\textquotesingle{})}
+get\+\_\+four\+\_\+year.\+filename = os.\+path.\+join(\mbox{\hyperlink{namespaceget__four__year_a18c6ce56f785c23a4819396e5bca9e00}{data\+\_\+dir}},\textquotesingle{}four\+Year\+Plan.\+json\textquotesingle{})}
 
 
 
@@ -294,7 +294,7 @@ Definition at line \mbox{\hyperlink{get__four__year_8py_source_l00154}{154}} of 
 \index{root\_dir@{root\_dir}!get\_four\_year@{get\_four\_year}}
 \doxysubsubsection{\texorpdfstring{root\_dir}{root\_dir}}
 {\footnotesize\ttfamily \label{namespaceget__four__year_a4810d3a2ebc4765c85838fbc50d7b57e} 
-get\+\_\+four\+\_\+year.\+root\+\_\+dir = os.\+sep.\+join(path\mbox{[}\+:root\+\_\+index+1\mbox{]})}
+get\+\_\+four\+\_\+year.\+root\+\_\+dir = os.\+sep.\+join(\mbox{\hyperlink{namespaceget__four__year_a2a694ea8a2824f347b660bb50fe29889}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceget__four__year_a76b0c7529ac7fb854f5292955f320c5b}{root\+\_\+index}}+1\mbox{]})}
 
 
 

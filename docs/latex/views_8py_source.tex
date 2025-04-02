@@ -1,15 +1,15 @@
 \doxysection{views.\+py}
 \hypertarget{views_8py_source}{}\label{views_8py_source}\index{scheduleFunctions/views.py@{scheduleFunctions/views.py}}
-
+\mbox{\hyperlink{views_8py}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{views_8py_source_l00001}00001\ \textcolor{keyword}{import}\ os}
+\DoxyCodeLine{\Hypertarget{views_8py_source_l00001}\mbox{\hyperlink{namespaceschedule_functions_1_1views}{00001}}\ \textcolor{keyword}{import}\ os}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00002}00002\ \textcolor{keyword}{import}\ subprocess}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00003}00003\ \textcolor{keyword}{from}\ django.http\ \textcolor{keyword}{import}\ JsonResponse,\ HttpResponse}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00004}00004\ \textcolor{keyword}{from}\ django.shortcuts\ \textcolor{keyword}{import}\ render,\ redirect}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00005}00005\ \textcolor{keyword}{from}\ django.conf\ \textcolor{keyword}{import}\ settings}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00006}00006\ }
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00007}00007\ }
-\DoxyCodeLine{\Hypertarget{views_8py_source_l00008}00008\ \textcolor{keyword}{def\ }login(request):}
+\DoxyCodeLine{\Hypertarget{views_8py_source_l00008}\mbox{\hyperlink{namespaceschedule_functions_1_1views_aef22d9ac19337b024ff2028a3615fe4e}{00008}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceschedule_functions_1_1views_aef22d9ac19337b024ff2028a3615fe4e}{login}}(request):}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00009}00009\ \ \ \ \ \textcolor{keywordflow}{if}\ request.method\ ==\ \textcolor{stringliteral}{"{}POST"{}}:}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00010}00010\ \ \ \ \ \ \ \ \ username\ =\ request.POST.get(\textcolor{stringliteral}{"{}username"{}})}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00011}00011\ \ \ \ \ \ \ \ \ password\ =\ request.POST.get(\textcolor{stringliteral}{"{}password"{}})}
@@ -34,7 +34,7 @@
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00030}00030\ }
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{return}\ render(request,\ \textcolor{stringliteral}{"{}login.html"{}})\ \ \textcolor{comment}{\#\ Render\ login\ form\ (login.html\ template)}}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00032}00032\ }
-\DoxyCodeLine{\Hypertarget{views_8py_source_l00033}00033\ \textcolor{keyword}{def\ }dashboard\_view(request):}
+\DoxyCodeLine{\Hypertarget{views_8py_source_l00033}\mbox{\hyperlink{namespaceschedule_functions_1_1views_adcfb91d67951bf02743f2639543f069d}{00033}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceschedule_functions_1_1views_adcfb91d67951bf02743f2639543f069d}{dashboard\_view}}(request):}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{stringliteral}{"{}username"{}}\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ request.session:}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ redirect(\textcolor{stringliteral}{"{}home"{}})\ \ \textcolor{comment}{\#\ Redirect\ to\ login\ if\ not\ authenticated}}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00036}00036\ }
@@ -47,7 +47,7 @@
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00043}00043\ \textcolor{stringliteral}{<li>MATH\ 2040\ -\/\ Discrete\ Math\ (Mon/Wed\ 3:00PM\ -\/\ 4:15PM)</li>}}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00044}00044\ \textcolor{stringliteral}{<li>GEOG\ 1010\ -\/\ Geology\ (Mon/Wed\ 3:00PM\ -\/\ 4:15PM)</li>}}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00045}00045\ \textcolor{stringliteral}{"{}"{}"{}}}
-\DoxyCodeLine{\Hypertarget{views_8py_source_l00046}00046\ example\_course\_list\ =\ [}
+\DoxyCodeLine{\Hypertarget{views_8py_source_l00046}\mbox{\hyperlink{namespaceschedule_functions_1_1views_af7edf771fc0ed92eb0233b2b0730cd44}{00046}}\ example\_course\_list\ =\ [}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00047}00047\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'course\_number'}:\ \textcolor{stringliteral}{"{}CSCI\ 1620"{}},}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'id'}:\ 1,}
@@ -82,22 +82,22 @@
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00078}00078\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00079}00079\ ]}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00080}00080\ }
-\DoxyCodeLine{\Hypertarget{views_8py_source_l00081}00081\ example\_conflict\_list\ =\ [}
+\DoxyCodeLine{\Hypertarget{views_8py_source_l00081}\mbox{\hyperlink{namespaceschedule_functions_1_1views_ad8fa3e75e365246679d5ae96e1aa706e}{00081}}\ example\_conflict\_list\ =\ [}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00082}00082\ \ \ \ \ [\textcolor{stringliteral}{"{}MATH\ 2040"{}},\ \textcolor{stringliteral}{"{}GEOG\ 101"{}}],}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00083}00083\ ]}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00084}00084\ }
-\DoxyCodeLine{\Hypertarget{views_8py_source_l00085}00085\ \textcolor{keyword}{def\ }schedule\_view(request):}
+\DoxyCodeLine{\Hypertarget{views_8py_source_l00085}\mbox{\hyperlink{namespaceschedule_functions_1_1views_af0105af3b32ca53bb79e12afbcfc7474}{00085}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceschedule_functions_1_1views_af0105af3b32ca53bb79e12afbcfc7474}{schedule\_view}}(request):}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00086}00086\ \ \ \ \ \textcolor{comment}{\#\ if\ "{}username"{}\ not\ in\ request.session:}}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00087}00087\ \ \ \ \ \textcolor{comment}{\#\ \ \ \ \ return\ redirect("{}home"{})\ \ \#\ Redirect\ to\ login\ if\ not\ authenticated}}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00088}00088\ }
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00089}00089\ \ \ \ \ selected\_course\ =\ request.GET.get(\textcolor{stringliteral}{'course'},\ \textcolor{keywordtype}{None})\ }
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00090}00090\ \ \ \ \ selected\_section\ =request.GET.get(\textcolor{stringliteral}{'section'},\ \textcolor{keywordtype}{None})\ }
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00091}00091\ \ \ \ \ \textcolor{keywordflow}{if}\ selected\_course\ \textcolor{keywordflow}{and}\ selected\_section:}
-\DoxyCodeLine{\Hypertarget{views_8py_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ render(request,\ \textcolor{stringliteral}{"{}section\_details.html"{}},\ \{\textcolor{stringliteral}{"{}username"{}}:\ request.session[\textcolor{stringliteral}{"{}username"{}}],\ \textcolor{stringliteral}{"{}details"{}}:\ get\_section\_details(selected\_course,\ selected\_section)\})}
+\DoxyCodeLine{\Hypertarget{views_8py_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ render(request,\ \textcolor{stringliteral}{"{}section\_details.html"{}},\ \{\textcolor{stringliteral}{"{}username"{}}:\ request.session[\textcolor{stringliteral}{"{}username"{}}],\ \textcolor{stringliteral}{"{}details"{}}:\ \mbox{\hyperlink{namespaceschedule_functions_1_1views_ad7faf09810096992b817042c3d1fc657}{get\_section\_details}}(selected\_course,\ selected\_section)\})}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00093}00093\ \ \ \ \ \textcolor{comment}{\#\ Render\ the\ dashboard.html\ template}}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00094}00094\ \ \ \ \ \textcolor{keywordflow}{return}\ render(request,\ \textcolor{stringliteral}{"{}schedule.html"{}},\ \{\textcolor{stringliteral}{"{}username"{}}:\ request.session[\textcolor{stringliteral}{"{}username"{}}],\ \textcolor{stringliteral}{"{}course\_list"{}}:\ example\_course\_list,\ \textcolor{stringliteral}{"{}conflict\_list"{}}:\ example\_conflict\_list\})}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00095}00095\ }
-\DoxyCodeLine{\Hypertarget{views_8py_source_l00096}00096\ \textcolor{keyword}{def\ }run\_script(request):}
+\DoxyCodeLine{\Hypertarget{views_8py_source_l00096}\mbox{\hyperlink{namespaceschedule_functions_1_1views_a6c9bae8f4dde6bf381411c24471f1145}{00096}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceschedule_functions_1_1views_a6c9bae8f4dde6bf381411c24471f1145}{run\_script}}(request):}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00097}00097\ \ \ \ \ script\_name\ =\ request.GET.get(\textcolor{stringliteral}{"{}script"{}})}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00098}00098\ \ \ \ \ script\_path\ =\ os.path.join(settings.BASE\_DIR,\ f\textcolor{stringliteral}{"{}\{script\_name\}.py"{}})\ \ \textcolor{comment}{\#\ Locate\ scripts\ in\ the\ root\ directory}}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00099}00099\ }
@@ -108,7 +108,7 @@
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ JsonResponse(\{\textcolor{stringliteral}{"{}error"{}}:\ \textcolor{stringliteral}{"{}Invalid\ script\ name"{}}\},\ status=400)}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00105}00105\ }
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00106}00106\ }
-\DoxyCodeLine{\Hypertarget{views_8py_source_l00107}00107\ \textcolor{keyword}{def\ }get\_section\_details(course:\ str,\ section:\ int)\ -\/>\ dict:}
+\DoxyCodeLine{\Hypertarget{views_8py_source_l00107}\mbox{\hyperlink{namespaceschedule_functions_1_1views_ad7faf09810096992b817042c3d1fc657}{00107}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceschedule_functions_1_1views_ad7faf09810096992b817042c3d1fc657}{get\_section\_details}}(course:\ str,\ section:\ int)\ -\/>\ dict:}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00108}00108\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}Returns\ a\ dictionary\ detailing\ all\ the\ relevant\ information\ for\ the\ section\ that\ is\ requested.}}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00109}00109\ \textcolor{stringliteral}{}}
 \DoxyCodeLine{\Hypertarget{views_8py_source_l00110}00110\ \textcolor{stringliteral}{\ \ \ \ Args:}}

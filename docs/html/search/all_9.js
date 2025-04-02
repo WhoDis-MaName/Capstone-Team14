@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['for_20version_200_209_0',['Branches for Version 0.9',['../C:/Users/andra/Documents/Capstone-Team14/docs/README.md#autotoc_md29',1,'']]],
-  ['for_20version_201_203_1',['Branches for Version 1.3',['../C:/Users/andra/Documents/Capstone-Team14/docs/README.md#autotoc_md27',1,'']]],
-  ['future_20improvements_2',['Future Improvements',['../C:/Users/andra/Documents/Capstone-Team14/docs/README.md#autotoc_md21',1,'']]]
+  ['encoding_0',['encoding',['../namespaceprocessor.html#a1769e2f2c3d9bc94efd91ec2f8d8486c',1,'processor']]],
+  ['end_5ftime_1',['end_time',['../classschedule_functions_1_1models_1_1_section.html#ab825fe866c6c3d665e246f1b1964b4ec',1,'scheduleFunctions::models::Section']]],
+  ['environment_2',['Setup Environment',['../md_docs_2_django__tutorial__instructions.html#autotoc_md1',1,'']]],
+  ['equivalent_5fcourses_3',['equivalent_courses',['../classschedule_functions_1_1models_1_1_course.html#aa3dc4dbe7e485fbdd6ca97a860858427',1,'scheduleFunctions::models::Course']]],
+  ['example_5fconflict_5flist_4',['example_conflict_list',['../namespaceschedule_functions_1_1views.html#ad8fa3e75e365246679d5ae96e1aa706e',1,'scheduleFunctions::views']]],
+  ['example_5fcourse_5flist_5',['example_course_list',['../namespaceschedule_functions_1_1views.html#af7edf771fc0ed92eb0233b2b0730cd44',1,'scheduleFunctions::views']]]
 ];

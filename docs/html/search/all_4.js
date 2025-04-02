@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['additional_20optimization_20considerations_0',['Additional Optimization Considerations',['../C:/Users/andra/Documents/Capstone-Team14/docs/README.md#autotoc_md19',1,'']]],
-  ['app_1',['Create Django app',['../md_docs_2_django__tutorial__instructions.html#autotoc_md6',1,'']]],
-  ['approach_2',['Optimization Approach',['../C:/Users/andra/Documents/Capstone-Team14/docs/README.md#autotoc_md15',1,'']]]
+  ['_5f_5finit_5f_5f_2epy_0',['__init__.py',['../myproject_2____init_____8py.html',1,'(Global Namespace)'],['../schedule_functions_2____init_____8py.html',1,'(Global Namespace)'],['../schedule_functions_2migrations_2____init_____8py.html',1,'(Global Namespace)']]]
 ];

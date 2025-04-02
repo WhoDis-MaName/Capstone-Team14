@@ -106,14 +106,15 @@ $(function(){initNavTree('views_8py_source.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">views.py</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">import</span> os</div>
+<a href="views_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="namespaceschedule_functions_1_1views.html">    1</a></span><span class="keyword">import</span> os</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">import</span> subprocess</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">from</span> django.http <span class="keyword">import</span> JsonResponse, HttpResponse</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render, redirect</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">from</span> django.conf <span class="keyword">import</span> settings</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">def </span>login(request):</div>
+<div class="foldopen" id="foldopen00008" data-start="" data-end="">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="namespaceschedule_functions_1_1views.html#aef22d9ac19337b024ff2028a3615fe4e">    8</a></span><span class="keyword">def </span><a class="code hl_function" href="namespaceschedule_functions_1_1views.html#aef22d9ac19337b024ff2028a3615fe4e">login</a>(request):</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordflow">if</span> request.method == <span class="stringliteral">&quot;POST&quot;</span>:</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        username = request.POST.get(<span class="stringliteral">&quot;username&quot;</span>)</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        password = request.POST.get(<span class="stringliteral">&quot;password&quot;</span>)</div>
@@ -138,7 +139,9 @@ $(function(){initNavTree('views_8py_source.html',''); initResizable(true); });
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">return</span> render(request, <span class="stringliteral">&quot;login.html&quot;</span>)  <span class="comment"># Render login form (login.html template)</span></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">def </span>dashboard_view(request):</div>
+</div>
+<div class="foldopen" id="foldopen00033" data-start="" data-end="">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="namespaceschedule_functions_1_1views.html#adcfb91d67951bf02743f2639543f069d">   33</a></span><span class="keyword">def </span><a class="code hl_function" href="namespaceschedule_functions_1_1views.html#adcfb91d67951bf02743f2639543f069d">dashboard_view</a>(request):</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordflow">if</span> <span class="stringliteral">&quot;username&quot;</span> <span class="keywordflow">not</span> <span class="keywordflow">in</span> request.session:</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordflow">return</span> redirect(<span class="stringliteral">&quot;home&quot;</span>)  <span class="comment"># Redirect to login if not authenticated</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
@@ -151,7 +154,8 @@ $(function(){initNavTree('views_8py_source.html',''); initResizable(true); });
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="stringliteral">&lt;li&gt;MATH 2040 - Discrete Math (Mon/Wed 3:00PM - 4:15PM)&lt;/li&gt;</span></div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="stringliteral">&lt;li&gt;GEOG 1010 - Geology (Mon/Wed 3:00PM - 4:15PM)&lt;/li&gt;</span></div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>example_course_list = [</div>
+</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="namespaceschedule_functions_1_1views.html#af7edf771fc0ed92eb0233b2b0730cd44">   46</a></span>example_course_list = [</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    {</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="stringliteral">&#39;course_number&#39;</span>: <span class="stringliteral">&quot;CSCI 1620&quot;</span>,</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="stringliteral">&#39;id&#39;</span>: 1,</div>
@@ -186,22 +190,25 @@ $(function(){initNavTree('views_8py_source.html',''); initResizable(true); });
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    }</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>]</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>example_conflict_list = [</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="namespaceschedule_functions_1_1views.html#ad8fa3e75e365246679d5ae96e1aa706e">   81</a></span>example_conflict_list = [</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    [<span class="stringliteral">&quot;MATH 2040&quot;</span>, <span class="stringliteral">&quot;GEOG 101&quot;</span>],</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>]</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="keyword">def </span>schedule_view(request):</div>
+<div class="foldopen" id="foldopen00085" data-start="" data-end="">
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="namespaceschedule_functions_1_1views.html#af0105af3b32ca53bb79e12afbcfc7474">   85</a></span><span class="keyword">def </span><a class="code hl_function" href="namespaceschedule_functions_1_1views.html#af0105af3b32ca53bb79e12afbcfc7474">schedule_view</a>(request):</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="comment"># if &quot;username&quot; not in request.session:</span></div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="comment">#     return redirect(&quot;home&quot;)  # Redirect to login if not authenticated</span></div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    selected_course = request.GET.get(<span class="stringliteral">&#39;course&#39;</span>, <span class="keywordtype">None</span>) </div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    selected_section =request.GET.get(<span class="stringliteral">&#39;section&#39;</span>, <span class="keywordtype">None</span>) </div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordflow">if</span> selected_course <span class="keywordflow">and</span> selected_section:</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordflow">return</span> render(request, <span class="stringliteral">&quot;section_details.html&quot;</span>, {<span class="stringliteral">&quot;username&quot;</span>: request.session[<span class="stringliteral">&quot;username&quot;</span>], <span class="stringliteral">&quot;details&quot;</span>: get_section_details(selected_course, selected_section)})</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordflow">return</span> render(request, <span class="stringliteral">&quot;section_details.html&quot;</span>, {<span class="stringliteral">&quot;username&quot;</span>: request.session[<span class="stringliteral">&quot;username&quot;</span>], <span class="stringliteral">&quot;details&quot;</span>: <a class="code hl_function" href="namespaceschedule_functions_1_1views.html#ad7faf09810096992b817042c3d1fc657">get_section_details</a>(selected_course, selected_section)})</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="comment"># Render the dashboard.html template</span></div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">return</span> render(request, <span class="stringliteral">&quot;schedule.html&quot;</span>, {<span class="stringliteral">&quot;username&quot;</span>: request.session[<span class="stringliteral">&quot;username&quot;</span>], <span class="stringliteral">&quot;course_list&quot;</span>: example_course_list, <span class="stringliteral">&quot;conflict_list&quot;</span>: example_conflict_list})</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="keyword">def </span>run_script(request):</div>
+</div>
+<div class="foldopen" id="foldopen00096" data-start="" data-end="">
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="namespaceschedule_functions_1_1views.html#a6c9bae8f4dde6bf381411c24471f1145">   96</a></span><span class="keyword">def </span><a class="code hl_function" href="namespaceschedule_functions_1_1views.html#a6c9bae8f4dde6bf381411c24471f1145">run_script</a>(request):</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    script_name = request.GET.get(<span class="stringliteral">&quot;script&quot;</span>)</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    script_path = os.path.join(settings.BASE_DIR, f<span class="stringliteral">&quot;{script_name}.py&quot;</span>)  <span class="comment"># Locate scripts in the root directory</span></div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
@@ -212,7 +219,9 @@ $(function(){initNavTree('views_8py_source.html',''); initResizable(true); });
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keywordflow">return</span> JsonResponse({<span class="stringliteral">&quot;error&quot;</span>: <span class="stringliteral">&quot;Invalid script name&quot;</span>}, status=400)</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="keyword">def </span>get_section_details(course: str, section: int) -&gt; dict:</div>
+</div>
+<div class="foldopen" id="foldopen00107" data-start="" data-end="">
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="namespaceschedule_functions_1_1views.html#ad7faf09810096992b817042c3d1fc657">  107</a></span><span class="keyword">def </span><a class="code hl_function" href="namespaceschedule_functions_1_1views.html#ad7faf09810096992b817042c3d1fc657">get_section_details</a>(course: str, section: int) -&gt; dict:</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="stringliteral">&quot;&quot;&quot;Returns a dictionary detailing all the relevant information for the section that is requested.</span></div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="stringliteral"></span> </div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="stringliteral">    Args:</span></div>
@@ -241,12 +250,18 @@ $(function(){initNavTree('views_8py_source.html',''); initResizable(true); });
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="stringliteral">            </span></div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="stringliteral">    &quot;&quot;&quot;</span></div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    ...</div>
+</div>
+<div class="ttc" id="anamespaceschedule_functions_1_1views_html_a6c9bae8f4dde6bf381411c24471f1145"><div class="ttname"><a href="namespaceschedule_functions_1_1views.html#a6c9bae8f4dde6bf381411c24471f1145">scheduleFunctions.views.run_script</a></div><div class="ttdeci">run_script(request)</div><div class="ttdef"><b>Definition</b> <a href="#l00096">views.py:96</a></div></div>
+<div class="ttc" id="anamespaceschedule_functions_1_1views_html_ad7faf09810096992b817042c3d1fc657"><div class="ttname"><a href="namespaceschedule_functions_1_1views.html#ad7faf09810096992b817042c3d1fc657">scheduleFunctions.views.get_section_details</a></div><div class="ttdeci">dict get_section_details(str course, int section)</div><div class="ttdef"><b>Definition</b> <a href="#l00107">views.py:107</a></div></div>
+<div class="ttc" id="anamespaceschedule_functions_1_1views_html_adcfb91d67951bf02743f2639543f069d"><div class="ttname"><a href="namespaceschedule_functions_1_1views.html#adcfb91d67951bf02743f2639543f069d">scheduleFunctions.views.dashboard_view</a></div><div class="ttdeci">dashboard_view(request)</div><div class="ttdef"><b>Definition</b> <a href="#l00033">views.py:33</a></div></div>
+<div class="ttc" id="anamespaceschedule_functions_1_1views_html_aef22d9ac19337b024ff2028a3615fe4e"><div class="ttname"><a href="namespaceschedule_functions_1_1views.html#aef22d9ac19337b024ff2028a3615fe4e">scheduleFunctions.views.login</a></div><div class="ttdeci">login(request)</div><div class="ttdef"><b>Definition</b> <a href="#l00008">views.py:8</a></div></div>
+<div class="ttc" id="anamespaceschedule_functions_1_1views_html_af0105af3b32ca53bb79e12afbcfc7474"><div class="ttname"><a href="namespaceschedule_functions_1_1views.html#af0105af3b32ca53bb79e12afbcfc7474">scheduleFunctions.views.schedule_view</a></div><div class="ttdeci">schedule_view(request)</div><div class="ttdef"><b>Definition</b> <a href="#l00085">views.py:85</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_5a4de9862777dcc75ace43977010f70c.html">scheduleFunctions</a></li><li class="navelem"><b>views.py</b></li>
+    <li class="navelem"><a class="el" href="dir_5a4de9862777dcc75ace43977010f70c.html">scheduleFunctions</a></li><li class="navelem"><a class="el" href="views_8py.html">views.py</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

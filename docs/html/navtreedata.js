@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "My Project", "index.html", [
+  [ "ASP Schedule Optimizer", "index.html", [
     [ "Django Tutorial instructions", "md_docs_2_django__tutorial__instructions.html", [
       [ "Setup Environment", "md_docs_2_django__tutorial__instructions.html#autotoc_md1", [
         [ "Create venv", "md_docs_2_django__tutorial__instructions.html#autotoc_md2", null ],

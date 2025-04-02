@@ -106,7 +106,7 @@ $(function(){initNavTree('get__requirements_8py_source.html',''); initResizable(
   <div class="headertitle"><div class="title">get_requirements.py</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="namespaceget__requirements.html">    1</a></span></div>
+<a href="get__requirements_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="namespaceget__requirements.html">    1</a></span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">import</span> os</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">import</span> json</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</div>
@@ -283,22 +283,22 @@ $(function(){initNavTree('get__requirements_8py_source.html',''); initResizable(
 </div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="keywordflow">if</span> __name__ == <span class="stringliteral">&quot;__main__&quot;</span>:</div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="keywordflow">if</span> os.name == <span class="stringliteral">&#39;nt&#39;</span>:</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        current_directory = os.path.dirname(os.path.realpath(__file__)) <span class="comment"># Get current directory</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="namespaceget__requirements.html#a90e8114b4957cf21514832a06905ebc6">  193</a></span>        current_directory = os.path.dirname(os.path.realpath(__file__)) <span class="comment"># Get current directory</span></div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keywordflow">else</span>:</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        current_directory = os.path.dirname(os.path.realpath(__name__)) <span class="comment"># Get current directory</span></div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        </div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    path = current_directory.split(os.sep)</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno"><a class="line" href="namespaceget__requirements.html#a9efd72a4ce9b3bd6a240740a94b0a2cd">  198</a></span>    path = current_directory.split(os.sep)</div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    root_index = path.index(<span class="stringliteral">&#39;Capstone-Team14&#39;</span>)</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    root_dir = os.sep.join(path[:root_index+1])</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    data_dir = os.path.join(root_dir, <span class="stringliteral">&#39;data_files&#39;</span>, <span class="stringliteral">&#39;four_year_plan&#39;</span>)</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="namespaceget__requirements.html#aa8fe1bda770b33c433ad66ea3f14ffb4">  200</a></span>    root_index = path.index(<span class="stringliteral">&#39;Capstone-Team14&#39;</span>)</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="namespaceget__requirements.html#a5e756d24d049ed272971b4b1784227f8">  201</a></span>    root_dir = os.sep.join(path[:root_index+1])</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno"><a class="line" href="namespaceget__requirements.html#a638da6da80b7877d37f0de0659efa4ab">  202</a></span>    data_dir = os.path.join(root_dir, <span class="stringliteral">&#39;data_files&#39;</span>, <span class="stringliteral">&#39;four_year_plan&#39;</span>)</div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <span class="keywordflow">try</span>:</div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        os.makedirs(data_dir)</div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <span class="keywordflow">except</span>:</div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        <span class="keywordflow">pass</span></div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    json_file = os.path.join(data_dir,<span class="stringliteral">&#39;requirements.json&#39;</span>)</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    urls = [</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno"><a class="line" href="namespaceget__requirements.html#a6465c50fadf808ead405ece15c380485">  207</a></span>    json_file = os.path.join(data_dir,<span class="stringliteral">&#39;requirements.json&#39;</span>)</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno"><a class="line" href="namespaceget__requirements.html#a1e7b30d2116feb5322bcbdd55cc0fb2a">  208</a></span>    urls = [</div>
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        <span class="stringliteral">&#39;https://catalog.unomaha.edu/undergraduate/college-information-science-technology/computer-science/computer-science-bs/artificialintelligence-concentraton/&#39;</span>,</div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        <span class="stringliteral">&#39;https://catalog.unomaha.edu/undergraduate/college-information-science-technology/computer-science/computer-science-bs/game-programming-concentration/&#39;</span>,</div>
 <div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        <span class="stringliteral">&#39;https://catalog.unomaha.edu/undergraduate/college-information-science-technology/computer-science/computer-science-bs/internet-technologies-it-concentration-computer-science-majors/&#39;</span>,</div>
@@ -319,7 +319,7 @@ $(function(){initNavTree('get__requirements_8py_source.html',''); initResizable(
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_809598ced06ac0feee4613cceffbc2ed.html">data_processing</a></li><li class="navelem"><b>get_requirements.py</b></li>
+    <li class="navelem"><a class="el" href="dir_809598ced06ac0feee4613cceffbc2ed.html">data_processing</a></li><li class="navelem"><a class="el" href="get__requirements_8py.html">get_requirements.py</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

@@ -121,10 +121,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a23d1dd238e0cb1c1a979aa1fb0aa7120" id="r_a23d1dd238e0cb1c1a979aa1fb0aa7120"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23d1dd238e0cb1c1a979aa1fb0aa7120">get_table_rows</a> (table)</td></tr>
 <tr class="memdesc:a23d1dd238e0cb1c1a979aa1fb0aa7120"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a table, returns all its rows.  <br /></td></tr>
 <tr class="separator:a23d1dd238e0cb1c1a979aa1fb0aa7120"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a38e6a7b809ed9ee9f81033eee37630" id="r_a9a38e6a7b809ed9ee9f81033eee37630"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a38e6a7b809ed9ee9f81033eee37630">process_url</a> (str url)</td></tr>
+<tr class="memitem:a9a38e6a7b809ed9ee9f81033eee37630" id="r_a9a38e6a7b809ed9ee9f81033eee37630"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a38e6a7b809ed9ee9f81033eee37630">process_url</a> (str <a class="el" href="#a0967f39c9f3c7d92c0df35c8b6a866fa">url</a>)</td></tr>
 <tr class="memdesc:a9a38e6a7b809ed9ee9f81033eee37630"><td class="mdescLeft">&#160;</td><td class="mdescRight">Take a url and find all of the tables contained in the page and return a ResultSet.  <br /></td></tr>
 <tr class="separator:a9a38e6a7b809ed9ee9f81033eee37630"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a9b4322230edb5b0a78d12021d6c39a" id="r_a6a9b4322230edb5b0a78d12021d6c39a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a9b4322230edb5b0a78d12021d6c39a">read_four_year</a> (url, output_file)</td></tr>
+<tr class="memitem:a6a9b4322230edb5b0a78d12021d6c39a" id="r_a6a9b4322230edb5b0a78d12021d6c39a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a9b4322230edb5b0a78d12021d6c39a">read_four_year</a> (<a class="el" href="#a0967f39c9f3c7d92c0df35c8b6a866fa">url</a>, output_file)</td></tr>
 <tr class="memdesc:a6a9b4322230edb5b0a78d12021d6c39a"><td class="mdescLeft">&#160;</td><td class="mdescRight">From a url that contains a four year plan process it and produce a JSON file in a structure that we can utilize to then convert into a clingo file.  <br /></td></tr>
 <tr class="separator:a6a9b4322230edb5b0a78d12021d6c39a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -136,11 +136,11 @@ Variables</h2></td></tr>
 <tr class="separator:a2a694ea8a2824f347b660bb50fe29889"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76b0c7529ac7fb854f5292955f320c5b" id="r_a76b0c7529ac7fb854f5292955f320c5b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76b0c7529ac7fb854f5292955f320c5b">root_index</a> = path.index('Capstone-Team14')</td></tr>
 <tr class="separator:a76b0c7529ac7fb854f5292955f320c5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4810d3a2ebc4765c85838fbc50d7b57e" id="r_a4810d3a2ebc4765c85838fbc50d7b57e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4810d3a2ebc4765c85838fbc50d7b57e">root_dir</a> = os.sep.join(path[:root_index+1])</td></tr>
+<tr class="memitem:a4810d3a2ebc4765c85838fbc50d7b57e" id="r_a4810d3a2ebc4765c85838fbc50d7b57e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4810d3a2ebc4765c85838fbc50d7b57e">root_dir</a> = os.sep.join(<a class="el" href="#a2a694ea8a2824f347b660bb50fe29889">path</a>[:<a class="el" href="#a76b0c7529ac7fb854f5292955f320c5b">root_index</a>+1])</td></tr>
 <tr class="separator:a4810d3a2ebc4765c85838fbc50d7b57e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18c6ce56f785c23a4819396e5bca9e00" id="r_a18c6ce56f785c23a4819396e5bca9e00"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18c6ce56f785c23a4819396e5bca9e00">data_dir</a> = os.path.join(root_dir, 'data_files', 'four_year_plan')</td></tr>
+<tr class="memitem:a18c6ce56f785c23a4819396e5bca9e00" id="r_a18c6ce56f785c23a4819396e5bca9e00"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18c6ce56f785c23a4819396e5bca9e00">data_dir</a> = os.path.join(<a class="el" href="#a4810d3a2ebc4765c85838fbc50d7b57e">root_dir</a>, 'data_files', 'four_year_plan')</td></tr>
 <tr class="separator:a18c6ce56f785c23a4819396e5bca9e00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab88771e8a298b0118ec1ac3b3adcad41" id="r_ab88771e8a298b0118ec1ac3b3adcad41"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab88771e8a298b0118ec1ac3b3adcad41">filename</a> = os.path.join(data_dir,'fourYearPlan.json')</td></tr>
+<tr class="memitem:ab88771e8a298b0118ec1ac3b3adcad41" id="r_ab88771e8a298b0118ec1ac3b3adcad41"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab88771e8a298b0118ec1ac3b3adcad41">filename</a> = os.path.join(<a class="el" href="#a18c6ce56f785c23a4819396e5bca9e00">data_dir</a>,'fourYearPlan.json')</td></tr>
 <tr class="separator:ab88771e8a298b0118ec1ac3b3adcad41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0967f39c9f3c7d92c0df35c8b6a866fa" id="r_a0967f39c9f3c7d92c0df35c8b6a866fa"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0967f39c9f3c7d92c0df35c8b6a866fa">url</a> = 'https://catalog.unomaha.edu/undergraduate/college-information-science-technology/computer-science/computer-science-bs/#fouryearplantext'</td></tr>
 <tr class="separator:a0967f39c9f3c7d92c0df35c8b6a866fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -391,7 +391,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">get_four_year.data_dir = os.path.join(root_dir, 'data_files', 'four_year_plan')</td>
+          <td class="memname">get_four_year.data_dir = os.path.join(<a class="el" href="#a4810d3a2ebc4765c85838fbc50d7b57e">root_dir</a>, 'data_files', 'four_year_plan')</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -407,7 +407,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">get_four_year.filename = os.path.join(data_dir,'fourYearPlan.json')</td>
+          <td class="memname">get_four_year.filename = os.path.join(<a class="el" href="#a18c6ce56f785c23a4819396e5bca9e00">data_dir</a>,'fourYearPlan.json')</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -439,7 +439,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">get_four_year.root_dir = os.sep.join(path[:root_index+1])</td>
+          <td class="memname">get_four_year.root_dir = os.sep.join(<a class="el" href="#a2a694ea8a2824f347b660bb50fe29889">path</a>[:<a class="el" href="#a76b0c7529ac7fb854f5292955f320c5b">root_index</a>+1])</td>
         </tr>
       </table>
 </div><div class="memdoc">

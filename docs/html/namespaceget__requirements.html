@@ -130,7 +130,7 @@ Functions</h2></td></tr>
 <tr class="memitem:a9ede2264ace89cd7acd4e00374dc976f" id="r_a9ede2264ace89cd7acd4e00374dc976f"><td class="memItemLeft" align="right" valign="top">dict&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ede2264ace89cd7acd4e00374dc976f">compile_requirements</a> (list[dict] requirements)</td></tr>
 <tr class="memdesc:a9ede2264ace89cd7acd4e00374dc976f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gather multiple requirements sets and complile them so that the group names are unique.  <br /></td></tr>
 <tr class="separator:a9ede2264ace89cd7acd4e00374dc976f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36fd0363f0100bda9882ac3a37d2f890" id="r_a36fd0363f0100bda9882ac3a37d2f890"><td class="memItemLeft" align="right" valign="top">None&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36fd0363f0100bda9882ac3a37d2f890">process_degree_requirements</a> (list[str] urls, str json_file)</td></tr>
+<tr class="memitem:a36fd0363f0100bda9882ac3a37d2f890" id="r_a36fd0363f0100bda9882ac3a37d2f890"><td class="memItemLeft" align="right" valign="top">None&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36fd0363f0100bda9882ac3a37d2f890">process_degree_requirements</a> (list[str] <a class="el" href="#a1e7b30d2116feb5322bcbdd55cc0fb2a">urls</a>, str <a class="el" href="#a6465c50fadf808ead405ece15c380485">json_file</a>)</td></tr>
 <tr class="memdesc:a36fd0363f0100bda9882ac3a37d2f890"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle the processing of multiple degree requirements and sending it to a json file.  <br /></td></tr>
 <tr class="separator:a36fd0363f0100bda9882ac3a37d2f890"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -142,11 +142,11 @@ Variables</h2></td></tr>
 <tr class="separator:a9efd72a4ce9b3bd6a240740a94b0a2cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8fe1bda770b33c433ad66ea3f14ffb4" id="r_aa8fe1bda770b33c433ad66ea3f14ffb4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8fe1bda770b33c433ad66ea3f14ffb4">root_index</a> = path.index('Capstone-Team14')</td></tr>
 <tr class="separator:aa8fe1bda770b33c433ad66ea3f14ffb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e756d24d049ed272971b4b1784227f8" id="r_a5e756d24d049ed272971b4b1784227f8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e756d24d049ed272971b4b1784227f8">root_dir</a> = os.sep.join(path[:root_index+1])</td></tr>
+<tr class="memitem:a5e756d24d049ed272971b4b1784227f8" id="r_a5e756d24d049ed272971b4b1784227f8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e756d24d049ed272971b4b1784227f8">root_dir</a> = os.sep.join(<a class="el" href="#a9efd72a4ce9b3bd6a240740a94b0a2cd">path</a>[:<a class="el" href="#aa8fe1bda770b33c433ad66ea3f14ffb4">root_index</a>+1])</td></tr>
 <tr class="separator:a5e756d24d049ed272971b4b1784227f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a638da6da80b7877d37f0de0659efa4ab" id="r_a638da6da80b7877d37f0de0659efa4ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a638da6da80b7877d37f0de0659efa4ab">data_dir</a> = os.path.join(root_dir, 'data_files', 'four_year_plan')</td></tr>
+<tr class="memitem:a638da6da80b7877d37f0de0659efa4ab" id="r_a638da6da80b7877d37f0de0659efa4ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a638da6da80b7877d37f0de0659efa4ab">data_dir</a> = os.path.join(<a class="el" href="#a5e756d24d049ed272971b4b1784227f8">root_dir</a>, 'data_files', 'four_year_plan')</td></tr>
 <tr class="separator:a638da6da80b7877d37f0de0659efa4ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6465c50fadf808ead405ece15c380485" id="r_a6465c50fadf808ead405ece15c380485"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6465c50fadf808ead405ece15c380485">json_file</a> = os.path.join(data_dir,'requirements.json')</td></tr>
+<tr class="memitem:a6465c50fadf808ead405ece15c380485" id="r_a6465c50fadf808ead405ece15c380485"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6465c50fadf808ead405ece15c380485">json_file</a> = os.path.join(<a class="el" href="#a638da6da80b7877d37f0de0659efa4ab">data_dir</a>,'requirements.json')</td></tr>
 <tr class="separator:a6465c50fadf808ead405ece15c380485"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e7b30d2116feb5322bcbdd55cc0fb2a" id="r_a1e7b30d2116feb5322bcbdd55cc0fb2a"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e7b30d2116feb5322bcbdd55cc0fb2a">urls</a></td></tr>
 <tr class="separator:a1e7b30d2116feb5322bcbdd55cc0fb2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -500,7 +500,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">get_requirements.data_dir = os.path.join(root_dir, 'data_files', 'four_year_plan')</td>
+          <td class="memname">get_requirements.data_dir = os.path.join(<a class="el" href="#a5e756d24d049ed272971b4b1784227f8">root_dir</a>, 'data_files', 'four_year_plan')</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -516,7 +516,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">get_requirements.json_file = os.path.join(data_dir,'requirements.json')</td>
+          <td class="memname">get_requirements.json_file = os.path.join(<a class="el" href="#a638da6da80b7877d37f0de0659efa4ab">data_dir</a>,'requirements.json')</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -548,7 +548,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">get_requirements.root_dir = os.sep.join(path[:root_index+1])</td>
+          <td class="memname">get_requirements.root_dir = os.sep.join(<a class="el" href="#a9efd72a4ce9b3bd6a240740a94b0a2cd">path</a>[:<a class="el" href="#aa8fe1bda770b33c433ad66ea3f14ffb4">root_index</a>+1])</td>
         </tr>
       </table>
 </div><div class="memdoc">

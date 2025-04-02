@@ -8,17 +8,17 @@ This module contains all of the functionality that is needed to convert the four
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-list\mbox{[}dict\mbox{]} \mbox{\hyperlink{namespaceprocess__constraints_ab86be89cfce31b95a41218ddcf01e6cd}{get\+\_\+plan}} (str filename)
+list\mbox{[}dict\mbox{]} \mbox{\hyperlink{namespaceprocess__constraints_ab86be89cfce31b95a41218ddcf01e6cd}{get\+\_\+plan}} (str \mbox{\hyperlink{namespaceprocess__constraints_a7a0d13fa060bc49b7c1a1122c6a05990}{filename}})
 \begin{DoxyCompactList}\small\item\em Read the four year plan from a file and confirm that it is a list. \end{DoxyCompactList}\item 
 list \mbox{\hyperlink{namespaceprocess__constraints_aa7a714480b0d6e840bc1e84a1258221f}{get\+\_\+semester}} (list\mbox{[}dict\mbox{]} plan, str\texorpdfstring{$\vert$}{|}int year, str semester)
 \begin{DoxyCompactList}\small\item\em Get the list of classes for a particular semester from the four year plan, assuming that there may be multiple plans given. \end{DoxyCompactList}\item 
 dict \mbox{\hyperlink{namespaceprocess__constraints_ac2660d1d70a182f0f79ff63cfc546e59}{set\+\_\+contsraints}} (list semester\+\_\+plan, int semester\+\_\+id)
 \begin{DoxyCompactList}\small\item\em Process the semester such that classes listed as fulfilling the same requirement are soft constraints and all other classes in the semester are hard constraints. \end{DoxyCompactList}\item 
-dict \mbox{\hyperlink{namespaceprocess__constraints_a895b25f79200491a70e12333326be8d7}{combine\+\_\+constraints}} (list\mbox{[}dict\mbox{]} constraints)
+dict \mbox{\hyperlink{namespaceprocess__constraints_a895b25f79200491a70e12333326be8d7}{combine\+\_\+constraints}} (list\mbox{[}dict\mbox{]} \mbox{\hyperlink{namespaceprocess__constraints_a8cd9136db771fd3167a4a6f70de56667}{constraints}})
 \begin{DoxyCompactList}\small\item\em Combine the constraints so that the keys are based on the course and not based on the semester. \end{DoxyCompactList}\item 
-dict \mbox{\hyperlink{namespaceprocess__constraints_afc974924dfdc5fa5c58357af26abaceb}{create\+\_\+constraints}} (str filename)
+dict \mbox{\hyperlink{namespaceprocess__constraints_afc974924dfdc5fa5c58357af26abaceb}{create\+\_\+constraints}} (str \mbox{\hyperlink{namespaceprocess__constraints_a7a0d13fa060bc49b7c1a1122c6a05990}{filename}})
 \begin{DoxyCompactList}\small\item\em Take a four year plan stored in a JSON file and process it so that it can be stored as JSON or as clingo in the desired format. \end{DoxyCompactList}\item 
-None \mbox{\hyperlink{namespaceprocess__constraints_a0ede1cd446057a59557da9411b0cc5c5}{convert\+\_\+asp}} (dict constraints, str file)
+None \mbox{\hyperlink{namespaceprocess__constraints_a0ede1cd446057a59557da9411b0cc5c5}{convert\+\_\+asp}} (dict \mbox{\hyperlink{namespaceprocess__constraints_a8cd9136db771fd3167a4a6f70de56667}{constraints}}, str file)
 \begin{DoxyCompactList}\small\item\em Take formated constraints and convert it into asp rules In addition to the rules defined by the constraints parameter, the rules file is also appended with equivalence rules. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -29,17 +29,17 @@ None \mbox{\hyperlink{namespaceprocess__constraints_a0ede1cd446057a59557da9411b0
 \item 
 \mbox{\hyperlink{namespaceprocess__constraints_a4cdc6d6b517a548fcf792ee100d112c0}{root\+\_\+index}} = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})
 \item 
-\mbox{\hyperlink{namespaceprocess__constraints_aa2fac437ece11e4e4cba1e3fee972e0a}{root\+\_\+dir}} = os.\+sep.\+join(path\mbox{[}\+:root\+\_\+index+1\mbox{]})
+\mbox{\hyperlink{namespaceprocess__constraints_aa2fac437ece11e4e4cba1e3fee972e0a}{root\+\_\+dir}} = os.\+sep.\+join(\mbox{\hyperlink{namespaceprocess__constraints_a3a218613999ea2efd15d4d0ddd17b3c7}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceprocess__constraints_a4cdc6d6b517a548fcf792ee100d112c0}{root\+\_\+index}}+1\mbox{]})
 \item 
-\mbox{\hyperlink{namespaceprocess__constraints_a8fc7aab4b3b5aa8c30c61ff427c477d1}{data\+\_\+dir}} = os.\+path.\+join(root\+\_\+dir, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}four\+\_\+year\+\_\+plan\textquotesingle{})
+\mbox{\hyperlink{namespaceprocess__constraints_a8fc7aab4b3b5aa8c30c61ff427c477d1}{data\+\_\+dir}} = os.\+path.\+join(\mbox{\hyperlink{namespaceprocess__constraints_aa2fac437ece11e4e4cba1e3fee972e0a}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}four\+\_\+year\+\_\+plan\textquotesingle{})
 \item 
-\mbox{\hyperlink{namespaceprocess__constraints_a7a0d13fa060bc49b7c1a1122c6a05990}{filename}} = os.\+path.\+join(data\+\_\+dir, \textquotesingle{}four\+Year\+Plan.\+json\textquotesingle{})
+\mbox{\hyperlink{namespaceprocess__constraints_a7a0d13fa060bc49b7c1a1122c6a05990}{filename}} = os.\+path.\+join(\mbox{\hyperlink{namespaceprocess__constraints_a8fc7aab4b3b5aa8c30c61ff427c477d1}{data\+\_\+dir}}, \textquotesingle{}four\+Year\+Plan.\+json\textquotesingle{})
 \item 
-dict \mbox{\hyperlink{namespaceprocess__constraints_a8cd9136db771fd3167a4a6f70de56667}{constraints}} = \mbox{\hyperlink{namespaceprocess__constraints_afc974924dfdc5fa5c58357af26abaceb}{create\+\_\+constraints}}(filename)
+dict \mbox{\hyperlink{namespaceprocess__constraints_a8cd9136db771fd3167a4a6f70de56667}{constraints}} = \mbox{\hyperlink{namespaceprocess__constraints_afc974924dfdc5fa5c58357af26abaceb}{create\+\_\+constraints}}(\mbox{\hyperlink{namespaceprocess__constraints_a7a0d13fa060bc49b7c1a1122c6a05990}{filename}})
 \item 
-\mbox{\hyperlink{namespaceprocess__constraints_a8d76bf238db21ed88785b9d5371380cb}{json\+\_\+file}} = os.\+path.\+join(data\+\_\+dir, \textquotesingle{}constraints.\+json\textquotesingle{})
+\mbox{\hyperlink{namespaceprocess__constraints_a8d76bf238db21ed88785b9d5371380cb}{json\+\_\+file}} = os.\+path.\+join(\mbox{\hyperlink{namespaceprocess__constraints_a8fc7aab4b3b5aa8c30c61ff427c477d1}{data\+\_\+dir}}, \textquotesingle{}constraints.\+json\textquotesingle{})
 \item 
-\mbox{\hyperlink{namespaceprocess__constraints_a5d5df58245b4890e486accf39c77b7ec}{asp\+\_\+file}} = os.\+path.\+join(data\+\_\+dir, \textquotesingle{}four\+\_\+year\+\_\+plan\+\_\+constraints.\+lp\textquotesingle{})
+\mbox{\hyperlink{namespaceprocess__constraints_a5d5df58245b4890e486accf39c77b7ec}{asp\+\_\+file}} = os.\+path.\+join(\mbox{\hyperlink{namespaceprocess__constraints_a8fc7aab4b3b5aa8c30c61ff427c477d1}{data\+\_\+dir}}, \textquotesingle{}four\+\_\+year\+\_\+plan\+\_\+constraints.\+lp\textquotesingle{})
 \item 
 \mbox{\hyperlink{namespaceprocess__constraints_ad8dd817fd747564e36418ac79b72ce33}{f}}
 \item 
@@ -105,8 +105,8 @@ Take formated constraints and convert it into asp rules In addition to the rules
 
 
 \begin{DoxyItemize}
-\item $a \equiv c \Leftarrow a \equiv b, b \equiv c$
-\item $ b \in S \Leftarrow a \in S, a \equiv b $
+\item a \equiv c \Leftarrow a \equiv b, b \equiv c
+\item b \in S \Leftarrow a \in S, a \equiv b
 \item etc.
 \end{DoxyItemize}
 
@@ -362,7 +362,7 @@ Definition at line \mbox{\hyperlink{process__constraints_8py_source_l00101}{101}
 \index{asp\_file@{asp\_file}!process\_constraints@{process\_constraints}}
 \doxysubsubsection{\texorpdfstring{asp\_file}{asp\_file}}
 {\footnotesize\ttfamily \label{namespaceprocess__constraints_a5d5df58245b4890e486accf39c77b7ec} 
-process\+\_\+constraints.\+asp\+\_\+file = os.\+path.\+join(data\+\_\+dir, \textquotesingle{}four\+\_\+year\+\_\+plan\+\_\+constraints.\+lp\textquotesingle{})}
+process\+\_\+constraints.\+asp\+\_\+file = os.\+path.\+join(\mbox{\hyperlink{namespaceprocess__constraints_a8fc7aab4b3b5aa8c30c61ff427c477d1}{data\+\_\+dir}}, \textquotesingle{}four\+\_\+year\+\_\+plan\+\_\+constraints.\+lp\textquotesingle{})}
 
 
 
@@ -372,7 +372,7 @@ Definition at line \mbox{\hyperlink{process__constraints_8py_source_l00224}{224}
 \index{constraints@{constraints}!process\_constraints@{process\_constraints}}
 \doxysubsubsection{\texorpdfstring{constraints}{constraints}}
 {\footnotesize\ttfamily \label{namespaceprocess__constraints_a8cd9136db771fd3167a4a6f70de56667} 
-process\+\_\+constraints.\+constraints = \mbox{\hyperlink{namespaceprocess__constraints_afc974924dfdc5fa5c58357af26abaceb}{create\+\_\+constraints}}(filename)}
+process\+\_\+constraints.\+constraints = \mbox{\hyperlink{namespaceprocess__constraints_afc974924dfdc5fa5c58357af26abaceb}{create\+\_\+constraints}}(\mbox{\hyperlink{namespaceprocess__constraints_a7a0d13fa060bc49b7c1a1122c6a05990}{filename}})}
 
 
 
@@ -392,7 +392,7 @@ Definition at line \mbox{\hyperlink{process__constraints_8py_source_l00211}{211}
 \index{data\_dir@{data\_dir}!process\_constraints@{process\_constraints}}
 \doxysubsubsection{\texorpdfstring{data\_dir}{data\_dir}}
 {\footnotesize\ttfamily \label{namespaceprocess__constraints_a8fc7aab4b3b5aa8c30c61ff427c477d1} 
-process\+\_\+constraints.\+data\+\_\+dir = os.\+path.\+join(root\+\_\+dir, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}four\+\_\+year\+\_\+plan\textquotesingle{})}
+process\+\_\+constraints.\+data\+\_\+dir = os.\+path.\+join(\mbox{\hyperlink{namespaceprocess__constraints_aa2fac437ece11e4e4cba1e3fee972e0a}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}four\+\_\+year\+\_\+plan\textquotesingle{})}
 
 
 
@@ -412,7 +412,7 @@ Definition at line \mbox{\hyperlink{process__constraints_8py_source_l00227}{227}
 \index{filename@{filename}!process\_constraints@{process\_constraints}}
 \doxysubsubsection{\texorpdfstring{filename}{filename}}
 {\footnotesize\ttfamily \label{namespaceprocess__constraints_a7a0d13fa060bc49b7c1a1122c6a05990} 
-process\+\_\+constraints.\+filename = os.\+path.\+join(data\+\_\+dir, \textquotesingle{}four\+Year\+Plan.\+json\textquotesingle{})}
+process\+\_\+constraints.\+filename = os.\+path.\+join(\mbox{\hyperlink{namespaceprocess__constraints_a8fc7aab4b3b5aa8c30c61ff427c477d1}{data\+\_\+dir}}, \textquotesingle{}four\+Year\+Plan.\+json\textquotesingle{})}
 
 
 
@@ -432,7 +432,7 @@ Definition at line \mbox{\hyperlink{process__constraints_8py_source_l00227}{227}
 \index{json\_file@{json\_file}!process\_constraints@{process\_constraints}}
 \doxysubsubsection{\texorpdfstring{json\_file}{json\_file}}
 {\footnotesize\ttfamily \label{namespaceprocess__constraints_a8d76bf238db21ed88785b9d5371380cb} 
-process\+\_\+constraints.\+json\+\_\+file = os.\+path.\+join(data\+\_\+dir, \textquotesingle{}constraints.\+json\textquotesingle{})}
+process\+\_\+constraints.\+json\+\_\+file = os.\+path.\+join(\mbox{\hyperlink{namespaceprocess__constraints_a8fc7aab4b3b5aa8c30c61ff427c477d1}{data\+\_\+dir}}, \textquotesingle{}constraints.\+json\textquotesingle{})}
 
 
 
@@ -452,7 +452,7 @@ Definition at line \mbox{\hyperlink{process__constraints_8py_source_l00216}{216}
 \index{root\_dir@{root\_dir}!process\_constraints@{process\_constraints}}
 \doxysubsubsection{\texorpdfstring{root\_dir}{root\_dir}}
 {\footnotesize\ttfamily \label{namespaceprocess__constraints_aa2fac437ece11e4e4cba1e3fee972e0a} 
-process\+\_\+constraints.\+root\+\_\+dir = os.\+sep.\+join(path\mbox{[}\+:root\+\_\+index+1\mbox{]})}
+process\+\_\+constraints.\+root\+\_\+dir = os.\+sep.\+join(\mbox{\hyperlink{namespaceprocess__constraints_a3a218613999ea2efd15d4d0ddd17b3c7}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceprocess__constraints_a4cdc6d6b517a548fcf792ee100d112c0}{root\+\_\+index}}+1\mbox{]})}
 
 
 

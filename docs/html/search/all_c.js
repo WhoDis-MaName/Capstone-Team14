@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['key_20classes_20to_20prioritize_0',['Key Classes to Prioritize',['../C:/Users/andra/Documents/Capstone-Team14/docs/README.md#autotoc_md13',1,'']]]
+  ['help_0',['help',['../namespaceidentifier.html#a24a6b4ae58a4e82cbb7404fcf9407349',1,'identifier']]]
 ];

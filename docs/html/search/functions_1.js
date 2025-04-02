@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['get_5fall_5ftables_0',['get_all_tables',['../namespaceget__four__year.html#ae005eaa00280dd8626d06bcfdd8c5142',1,'get_four_year.get_all_tables()'],['../namespaceget__requirements.html#ae979cbed5cffd733fe46ad137f471bf4',1,'get_requirements.get_all_tables()']]],
-  ['get_5fplan_1',['get_plan',['../namespaceprocess__constraints.html#ab86be89cfce31b95a41218ddcf01e6cd',1,'process_constraints']]],
-  ['get_5fsemester_2',['get_semester',['../namespaceprocess__constraints.html#aa7a714480b0d6e840bc1e84a1258221f',1,'process_constraints']]],
-  ['get_5ftable_5frows_3',['get_table_rows',['../namespaceget__four__year.html#a23d1dd238e0cb1c1a979aa1fb0aa7120',1,'get_four_year.get_table_rows()'],['../namespaceget__requirements.html#a6f343edc6f9fa1c88ee213d997ca57b7',1,'get_requirements.get_table_rows()']]]
+  ['dashboard_5fview_0',['dashboard_view',['../namespaceschedule_functions_1_1views.html#adcfb91d67951bf02743f2639543f069d',1,'scheduleFunctions::views']]]
 ];

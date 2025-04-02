@@ -1,6 +1,6 @@
 \doxysection{get\+\_\+requirements.\+py}
 \hypertarget{get__requirements_8py_source}{}\label{get__requirements_8py_source}\index{data\_processing/get\_requirements.py@{data\_processing/get\_requirements.py}}
-
+\mbox{\hyperlink{get__requirements_8py}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00001}\mbox{\hyperlink{namespaceget__requirements}{00001}}\ }
 \DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00005}00005\ \textcolor{keyword}{import}\ os}
@@ -167,22 +167,22 @@
 \DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00190}00190\ \ \ \ \ }
 \DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00191}00191\ \textcolor{keywordflow}{if}\ \_\_name\_\_\ ==\ \textcolor{stringliteral}{"{}\_\_main\_\_"{}}:}
 \DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00192}00192\ \ \ \ \ \textcolor{keywordflow}{if}\ os.name\ ==\ \textcolor{stringliteral}{'nt'}:}
-\DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00193}00193\ \ \ \ \ \ \ \ \ current\_directory\ =\ os.path.dirname(os.path.realpath(\_\_file\_\_))\ \textcolor{comment}{\#\ Get\ current\ directory}}
+\DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00193}\mbox{\hyperlink{namespaceget__requirements_a90e8114b4957cf21514832a06905ebc6}{00193}}\ \ \ \ \ \ \ \ \ current\_directory\ =\ os.path.dirname(os.path.realpath(\_\_file\_\_))\ \textcolor{comment}{\#\ Get\ current\ directory}}
 \DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00194}00194\ \ \ \ \ \textcolor{keywordflow}{else}:}
 \DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00195}00195\ \ \ \ \ \ \ \ \ current\_directory\ =\ os.path.dirname(os.path.realpath(\_\_name\_\_))\ \textcolor{comment}{\#\ Get\ current\ directory}}
 \DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00196}00196\ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00197}00197\ }
-\DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00198}00198\ \ \ \ \ path\ =\ current\_directory.split(os.sep)}
+\DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00198}\mbox{\hyperlink{namespaceget__requirements_a9efd72a4ce9b3bd6a240740a94b0a2cd}{00198}}\ \ \ \ \ path\ =\ current\_directory.split(os.sep)}
 \DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00199}00199\ }
-\DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00200}00200\ \ \ \ \ root\_index\ =\ path.index(\textcolor{stringliteral}{'Capstone-\/Team14'})}
-\DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00201}00201\ \ \ \ \ root\_dir\ =\ os.sep.join(path[:root\_index+1])}
-\DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00202}00202\ \ \ \ \ data\_dir\ =\ os.path.join(root\_dir,\ \textcolor{stringliteral}{'data\_files'},\ \textcolor{stringliteral}{'four\_year\_plan'})}
+\DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00200}\mbox{\hyperlink{namespaceget__requirements_aa8fe1bda770b33c433ad66ea3f14ffb4}{00200}}\ \ \ \ \ root\_index\ =\ path.index(\textcolor{stringliteral}{'Capstone-\/Team14'})}
+\DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00201}\mbox{\hyperlink{namespaceget__requirements_a5e756d24d049ed272971b4b1784227f8}{00201}}\ \ \ \ \ root\_dir\ =\ os.sep.join(path[:root\_index+1])}
+\DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00202}\mbox{\hyperlink{namespaceget__requirements_a638da6da80b7877d37f0de0659efa4ab}{00202}}\ \ \ \ \ data\_dir\ =\ os.path.join(root\_dir,\ \textcolor{stringliteral}{'data\_files'},\ \textcolor{stringliteral}{'four\_year\_plan'})}
 \DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00203}00203\ \ \ \ \ \textcolor{keywordflow}{try}:}
 \DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00204}00204\ \ \ \ \ \ \ \ \ os.makedirs(data\_dir)}
 \DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00205}00205\ \ \ \ \ \textcolor{keywordflow}{except}:}
 \DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00206}00206\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{pass}}
-\DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00207}00207\ \ \ \ \ json\_file\ =\ os.path.join(data\_dir,\textcolor{stringliteral}{'requirements.json'})}
-\DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00208}00208\ \ \ \ \ urls\ =\ [}
+\DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00207}\mbox{\hyperlink{namespaceget__requirements_a6465c50fadf808ead405ece15c380485}{00207}}\ \ \ \ \ json\_file\ =\ os.path.join(data\_dir,\textcolor{stringliteral}{'requirements.json'})}
+\DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00208}\mbox{\hyperlink{namespaceget__requirements_a1e7b30d2116feb5322bcbdd55cc0fb2a}{00208}}\ \ \ \ \ urls\ =\ [}
 \DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00209}00209\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'https://catalog.unomaha.edu/undergraduate/college-\/information-\/science-\/technology/computer-\/science/computer-\/science-\/bs/artificialintelligence-\/concentraton/'},}
 \DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00210}00210\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'https://catalog.unomaha.edu/undergraduate/college-\/information-\/science-\/technology/computer-\/science/computer-\/science-\/bs/game-\/programming-\/concentration/'},}
 \DoxyCodeLine{\Hypertarget{get__requirements_8py_source_l00211}00211\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'https://catalog.unomaha.edu/undergraduate/college-\/information-\/science-\/technology/computer-\/science/computer-\/science-\/bs/internet-\/technologies-\/it-\/concentration-\/computer-\/science-\/majors/'},}

@@ -18,7 +18,7 @@ list \mbox{\hyperlink{namespaceget__requirements_a6f343edc6f9fa1c88ee213d997ca57
 \begin{DoxyCompactList}\small\item\em Read the requirements from a given url that contains degree requirements and process it into a dictionary. \end{DoxyCompactList}\item 
 dict \mbox{\hyperlink{namespaceget__requirements_a9ede2264ace89cd7acd4e00374dc976f}{compile\+\_\+requirements}} (list\mbox{[}dict\mbox{]} requirements)
 \begin{DoxyCompactList}\small\item\em Gather multiple requirements sets and complile them so that the group names are unique. \end{DoxyCompactList}\item 
-None \mbox{\hyperlink{namespaceget__requirements_a36fd0363f0100bda9882ac3a37d2f890}{process\+\_\+degree\+\_\+requirements}} (list\mbox{[}str\mbox{]} urls, str json\+\_\+file)
+None \mbox{\hyperlink{namespaceget__requirements_a36fd0363f0100bda9882ac3a37d2f890}{process\+\_\+degree\+\_\+requirements}} (list\mbox{[}str\mbox{]} \mbox{\hyperlink{namespaceget__requirements_a1e7b30d2116feb5322bcbdd55cc0fb2a}{urls}}, str \mbox{\hyperlink{namespaceget__requirements_a6465c50fadf808ead405ece15c380485}{json\+\_\+file}})
 \begin{DoxyCompactList}\small\item\em Handle the processing of multiple degree requirements and sending it to a json file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -29,11 +29,11 @@ None \mbox{\hyperlink{namespaceget__requirements_a36fd0363f0100bda9882ac3a37d2f8
 \item 
 \mbox{\hyperlink{namespaceget__requirements_aa8fe1bda770b33c433ad66ea3f14ffb4}{root\+\_\+index}} = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})
 \item 
-\mbox{\hyperlink{namespaceget__requirements_a5e756d24d049ed272971b4b1784227f8}{root\+\_\+dir}} = os.\+sep.\+join(path\mbox{[}\+:root\+\_\+index+1\mbox{]})
+\mbox{\hyperlink{namespaceget__requirements_a5e756d24d049ed272971b4b1784227f8}{root\+\_\+dir}} = os.\+sep.\+join(\mbox{\hyperlink{namespaceget__requirements_a9efd72a4ce9b3bd6a240740a94b0a2cd}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceget__requirements_aa8fe1bda770b33c433ad66ea3f14ffb4}{root\+\_\+index}}+1\mbox{]})
 \item 
-\mbox{\hyperlink{namespaceget__requirements_a638da6da80b7877d37f0de0659efa4ab}{data\+\_\+dir}} = os.\+path.\+join(root\+\_\+dir, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}four\+\_\+year\+\_\+plan\textquotesingle{})
+\mbox{\hyperlink{namespaceget__requirements_a638da6da80b7877d37f0de0659efa4ab}{data\+\_\+dir}} = os.\+path.\+join(\mbox{\hyperlink{namespaceget__requirements_a5e756d24d049ed272971b4b1784227f8}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}four\+\_\+year\+\_\+plan\textquotesingle{})
 \item 
-\mbox{\hyperlink{namespaceget__requirements_a6465c50fadf808ead405ece15c380485}{json\+\_\+file}} = os.\+path.\+join(data\+\_\+dir,\textquotesingle{}requirements.\+json\textquotesingle{})
+\mbox{\hyperlink{namespaceget__requirements_a6465c50fadf808ead405ece15c380485}{json\+\_\+file}} = os.\+path.\+join(\mbox{\hyperlink{namespaceget__requirements_a638da6da80b7877d37f0de0659efa4ab}{data\+\_\+dir}},\textquotesingle{}requirements.\+json\textquotesingle{})
 \item 
 list \mbox{\hyperlink{namespaceget__requirements_a1e7b30d2116feb5322bcbdd55cc0fb2a}{urls}}
 \end{DoxyCompactItemize}
@@ -366,7 +366,7 @@ Definition at line \mbox{\hyperlink{get__requirements_8py_source_l00193}{193}} o
 \index{data\_dir@{data\_dir}!get\_requirements@{get\_requirements}}
 \doxysubsubsection{\texorpdfstring{data\_dir}{data\_dir}}
 {\footnotesize\ttfamily \label{namespaceget__requirements_a638da6da80b7877d37f0de0659efa4ab} 
-get\+\_\+requirements.\+data\+\_\+dir = os.\+path.\+join(root\+\_\+dir, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}four\+\_\+year\+\_\+plan\textquotesingle{})}
+get\+\_\+requirements.\+data\+\_\+dir = os.\+path.\+join(\mbox{\hyperlink{namespaceget__requirements_a5e756d24d049ed272971b4b1784227f8}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}four\+\_\+year\+\_\+plan\textquotesingle{})}
 
 
 
@@ -376,7 +376,7 @@ Definition at line \mbox{\hyperlink{get__requirements_8py_source_l00202}{202}} o
 \index{json\_file@{json\_file}!get\_requirements@{get\_requirements}}
 \doxysubsubsection{\texorpdfstring{json\_file}{json\_file}}
 {\footnotesize\ttfamily \label{namespaceget__requirements_a6465c50fadf808ead405ece15c380485} 
-get\+\_\+requirements.\+json\+\_\+file = os.\+path.\+join(data\+\_\+dir,\textquotesingle{}requirements.\+json\textquotesingle{})}
+get\+\_\+requirements.\+json\+\_\+file = os.\+path.\+join(\mbox{\hyperlink{namespaceget__requirements_a638da6da80b7877d37f0de0659efa4ab}{data\+\_\+dir}},\textquotesingle{}requirements.\+json\textquotesingle{})}
 
 
 
@@ -396,7 +396,7 @@ Definition at line \mbox{\hyperlink{get__requirements_8py_source_l00198}{198}} o
 \index{root\_dir@{root\_dir}!get\_requirements@{get\_requirements}}
 \doxysubsubsection{\texorpdfstring{root\_dir}{root\_dir}}
 {\footnotesize\ttfamily \label{namespaceget__requirements_a5e756d24d049ed272971b4b1784227f8} 
-get\+\_\+requirements.\+root\+\_\+dir = os.\+sep.\+join(path\mbox{[}\+:root\+\_\+index+1\mbox{]})}
+get\+\_\+requirements.\+root\+\_\+dir = os.\+sep.\+join(\mbox{\hyperlink{namespaceget__requirements_a9efd72a4ce9b3bd6a240740a94b0a2cd}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceget__requirements_aa8fe1bda770b33c433ad66ea3f14ffb4}{root\+\_\+index}}+1\mbox{]})}
 
 
 

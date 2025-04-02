@@ -1,9 +1,12 @@
 var searchData=
 [
-  ['get_5fall_5ftables_0',['get_all_tables',['../namespaceget__four__year.html#ae005eaa00280dd8626d06bcfdd8c5142',1,'get_four_year.get_all_tables()'],['../namespaceget__requirements.html#ae979cbed5cffd733fe46ad137f471bf4',1,'get_requirements.get_all_tables()']]],
-  ['get_5ffour_5fyear_1',['get_four_year',['../namespaceget__four__year.html',1,'']]],
-  ['get_5fplan_2',['get_plan',['../namespaceprocess__constraints.html#ab86be89cfce31b95a41218ddcf01e6cd',1,'process_constraints']]],
-  ['get_5frequirements_3',['get_requirements',['../namespaceget__requirements.html',1,'']]],
-  ['get_5fsemester_4',['get_semester',['../namespaceprocess__constraints.html#aa7a714480b0d6e840bc1e84a1258221f',1,'process_constraints']]],
-  ['get_5ftable_5frows_5',['get_table_rows',['../namespaceget__four__year.html#a23d1dd238e0cb1c1a979aa1fb0aa7120',1,'get_four_year.get_table_rows()'],['../namespaceget__requirements.html#a6f343edc6f9fa1c88ee213d997ca57b7',1,'get_requirements.get_table_rows()']]]
+  ['f_0',['f',['../namespaceprocess__constraints.html#ad8dd817fd747564e36418ac79b72ce33',1,'process_constraints.f'],['../namespaceget__sample.html#a7fa77134c313da91255bc124b0c40810',1,'get_sample.f'],['../namespaceget__test__case.html#a62e466ea8cde86ad38f7c7cf0ee3b4ca',1,'get_test_case.f']]],
+  ['fall_1',['FALL',['../namespaceschedule_functions_1_1models.html#ae064cc8a2f8ec871e2b3bf680aacd84b',1,'scheduleFunctions::models']]],
+  ['file_5fpath_2',['file_path',['../namespaceconverter.html#a467eb33e56ef909081ca0531a012b9ce',1,'converter.file_path'],['../namespacedescription.html#a4a480452d558a32a5b89e00444618f5f',1,'description.file_path']]],
+  ['filename_3',['filename',['../namespaceget__four__year.html#ab88771e8a298b0118ec1ac3b3adcad41',1,'get_four_year.filename'],['../namespaceprocess__constraints.html#a7a0d13fa060bc49b7c1a1122c6a05990',1,'process_constraints.filename']]],
+  ['for_20version_200_209_4',['Branches for Version 0.9',['../C:/Users/andra/Documents/Capstone-Team14/docs/README.md#autotoc_md29',1,'']]],
+  ['for_20version_201_203_5',['Branches for Version 1.3',['../C:/Users/andra/Documents/Capstone-Team14/docs/README.md#autotoc_md27',1,'']]],
+  ['freshman_6',['FRESHMAN',['../namespaceschedule_functions_1_1models.html#acd09f2ea7550a126d2cf80de0a51236f',1,'scheduleFunctions::models']]],
+  ['fri_7',['FRI',['../classschedule_functions_1_1models_1_1_day.html#aa4f139282a4b33949f6344b8c05a8603',1,'scheduleFunctions::models::Day']]],
+  ['future_20improvements_8',['Future Improvements',['../C:/Users/andra/Documents/Capstone-Team14/docs/README.md#autotoc_md21',1,'']]]
 ];

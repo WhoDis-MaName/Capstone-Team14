@@ -106,26 +106,26 @@ $(function(){initNavTree('description_8py_source.html',''); initResizable(true);
   <div class="headertitle"><div class="title">description.py</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">import</span> json</div>
+<a href="description_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="namespacedescription.html">    1</a></span><span class="keyword">import</span> json</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"># Load the JSON file</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>file_path = <span class="stringliteral">&quot;filtered.json&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="namespacedescription.html#a4a480452d558a32a5b89e00444618f5f">    4</a></span>file_path = <span class="stringliteral">&quot;filtered.json&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">with</span> open(file_path, <span class="stringliteral">&quot;r&quot;</span>) <span class="keyword">as</span> file:</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    data = json.load(file)</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="namespacedescription.html#a0260747a932650cdc1c4c60cdde7e4cd">    6</a></span>    data = json.load(file)</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"># Dictionary to store course prerequisites</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>course_prerequisites = {}</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="namespacedescription.html#a98330234a2f317e284737f43ccfabc57">    9</a></span>course_prerequisites = {}</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"># Traverse the data structure</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keywordflow">for</span> term, subjects <span class="keywordflow">in</span> data.items():</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordflow">for</span> subject, courses <span class="keywordflow">in</span> subjects.items():</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordflow">for</span> course_number, course_info <span class="keywordflow">in</span> courses.items():</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            title = course_info.get(<span class="stringliteral">&quot;title&quot;</span>, <span class="stringliteral">&quot;Unknown Title&quot;</span>)</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            prereq_text = course_info.get(<span class="stringliteral">&quot;desc&quot;</span>, <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="namespacedescription.html#aeba5c12e147b95cdbb657d138041c459">   15</a></span>            title = course_info.get(<span class="stringliteral">&quot;title&quot;</span>, <span class="stringliteral">&quot;Unknown Title&quot;</span>)</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="namespacedescription.html#aa9dc2f413a52c0c36409a68a0e88fe8f">   16</a></span>            prereq_text = course_info.get(<span class="stringliteral">&quot;desc&quot;</span>, <span class="stringliteral">&quot;&quot;</span>)</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            <span class="comment"># Extract prerequisites from the description</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            <span class="keywordflow">if</span> <span class="stringliteral">&quot;Prereq:&quot;</span> <span class="keywordflow">in</span> prereq_text:</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>                prereq_part = prereq_text.split(<span class="stringliteral">&quot;Prereq:&quot;</span>)[1].strip()</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="namespacedescription.html#a244d7e2c561ac548f9c67f66306caaff">   20</a></span>                prereq_part = prereq_text.split(<span class="stringliteral">&quot;Prereq:&quot;</span>)[1].strip()</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                course_prerequisites[f<span class="stringliteral">&quot;{subject} {course_number} - {title}&quot;</span>] = prereq_part</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"># Print prerequisites in a structured format</span></div>
@@ -136,7 +136,7 @@ $(function(){initNavTree('description_8py_source.html',''); initResizable(true);
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>description.py</b></li>
+    <li class="navelem"><a class="el" href="description_8py.html">description.py</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

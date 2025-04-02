@@ -11,7 +11,7 @@ process_constraints \- This module contains all of the functionality that is nee
 
 .in +1c
 .ti -1c
-.RI "list[dict] \fBget_plan\fP (str filename)"
+.RI "list[dict] \fBget_plan\fP (str \fBfilename\fP)"
 .br
 .RI "Read the four year plan from a file and confirm that it is a list\&. "
 .ti -1c
@@ -23,15 +23,15 @@ process_constraints \- This module contains all of the functionality that is nee
 .br
 .RI "Process the semester such that classes listed as fulfilling the same requirement are soft constraints and all other classes in the semester are hard constraints\&. "
 .ti -1c
-.RI "dict \fBcombine_constraints\fP (list[dict] constraints)"
+.RI "dict \fBcombine_constraints\fP (list[dict] \fBconstraints\fP)"
 .br
 .RI "Combine the constraints so that the keys are based on the course and not based on the semester\&. "
 .ti -1c
-.RI "dict \fBcreate_constraints\fP (str filename)"
+.RI "dict \fBcreate_constraints\fP (str \fBfilename\fP)"
 .br
 .RI "Take a four year plan stored in a JSON file and process it so that it can be stored as JSON or as clingo in the desired format\&. "
 .ti -1c
-.RI "None \fBconvert_asp\fP (dict constraints, str file)"
+.RI "None \fBconvert_asp\fP (dict \fBconstraints\fP, str file)"
 .br
 .RI "Take formated constraints and convert it into asp rules In addition to the rules defined by the constraints parameter, the rules file is also appended with equivalence rules\&. "
 .in -1c
@@ -48,22 +48,22 @@ process_constraints \- This module contains all of the functionality that is nee
 .RI "\fBroot_index\fP = path\&.index('Capstone\-Team14')"
 .br
 .ti -1c
-.RI "\fBroot_dir\fP = os\&.sep\&.join(path[:root_index+1])"
+.RI "\fBroot_dir\fP = os\&.sep\&.join(\fBpath\fP[:\fBroot_index\fP+1])"
 .br
 .ti -1c
-.RI "\fBdata_dir\fP = os\&.path\&.join(root_dir, 'data_files', 'four_year_plan')"
+.RI "\fBdata_dir\fP = os\&.path\&.join(\fBroot_dir\fP, 'data_files', 'four_year_plan')"
 .br
 .ti -1c
-.RI "\fBfilename\fP = os\&.path\&.join(data_dir, 'fourYearPlan\&.json')"
+.RI "\fBfilename\fP = os\&.path\&.join(\fBdata_dir\fP, 'fourYearPlan\&.json')"
 .br
 .ti -1c
-.RI "dict \fBconstraints\fP = \fBcreate_constraints\fP(filename)"
+.RI "dict \fBconstraints\fP = \fBcreate_constraints\fP(\fBfilename\fP)"
 .br
 .ti -1c
-.RI "\fBjson_file\fP = os\&.path\&.join(data_dir, 'constraints\&.json')"
+.RI "\fBjson_file\fP = os\&.path\&.join(\fBdata_dir\fP, 'constraints\&.json')"
 .br
 .ti -1c
-.RI "\fBasp_file\fP = os\&.path\&.join(data_dir, 'four_year_plan_constraints\&.lp')"
+.RI "\fBasp_file\fP = os\&.path\&.join(\fBdata_dir\fP, 'four_year_plan_constraints\&.lp')"
 .br
 .ti -1c
 .RI "\fBf\fP"
@@ -120,9 +120,9 @@ Definition at line \fB132\fP of file \fBprocess_constraints\&.py\fP\&.
 .PP
 Take formated constraints and convert it into asp rules In addition to the rules defined by the constraints parameter, the rules file is also appended with equivalence rules\&. 
 .IP "\(bu" 2
-$a \equiv c \Leftarrow a \equiv b, b \equiv c$
+a \equiv c \Leftarrow a \equiv b, b \equiv c
 .IP "\(bu" 2
-$ b \in S \Leftarrow a \in S, a \equiv b $
+b \in S \Leftarrow a \in S, a \equiv b
 .IP "\(bu" 2
 etc\&.
 .PP
@@ -363,11 +363,11 @@ Definition at line \fB101\fP of file \fBprocess_constraints\&.py\fP\&.
 
 .SH "Variable Documentation"
 .PP 
-.SS "process_constraints\&.asp_file = os\&.path\&.join(data_dir, 'four_year_plan_constraints\&.lp')"
+.SS "process_constraints\&.asp_file = os\&.path\&.join(\fBdata_dir\fP, 'four_year_plan_constraints\&.lp')"
 
 .PP
 Definition at line \fB224\fP of file \fBprocess_constraints\&.py\fP\&.
-.SS "process_constraints\&.constraints = \fBcreate_constraints\fP(filename)"
+.SS "process_constraints\&.constraints = \fBcreate_constraints\fP(\fBfilename\fP)"
 
 .PP
 Definition at line \fB222\fP of file \fBprocess_constraints\&.py\fP\&.
@@ -375,7 +375,7 @@ Definition at line \fB222\fP of file \fBprocess_constraints\&.py\fP\&.
 
 .PP
 Definition at line \fB211\fP of file \fBprocess_constraints\&.py\fP\&.
-.SS "process_constraints\&.data_dir = os\&.path\&.join(root_dir, 'data_files', 'four_year_plan')"
+.SS "process_constraints\&.data_dir = os\&.path\&.join(\fBroot_dir\fP, 'data_files', 'four_year_plan')"
 
 .PP
 Definition at line \fB220\fP of file \fBprocess_constraints\&.py\fP\&.
@@ -383,7 +383,7 @@ Definition at line \fB220\fP of file \fBprocess_constraints\&.py\fP\&.
 
 .PP
 Definition at line \fB227\fP of file \fBprocess_constraints\&.py\fP\&.
-.SS "process_constraints\&.filename = os\&.path\&.join(data_dir, 'fourYearPlan\&.json')"
+.SS "process_constraints\&.filename = os\&.path\&.join(\fBdata_dir\fP, 'fourYearPlan\&.json')"
 
 .PP
 Definition at line \fB221\fP of file \fBprocess_constraints\&.py\fP\&.
@@ -391,7 +391,7 @@ Definition at line \fB221\fP of file \fBprocess_constraints\&.py\fP\&.
 
 .PP
 Definition at line \fB227\fP of file \fBprocess_constraints\&.py\fP\&.
-.SS "process_constraints\&.json_file = os\&.path\&.join(data_dir, 'constraints\&.json')"
+.SS "process_constraints\&.json_file = os\&.path\&.join(\fBdata_dir\fP, 'constraints\&.json')"
 
 .PP
 Definition at line \fB223\fP of file \fBprocess_constraints\&.py\fP\&.
@@ -399,7 +399,7 @@ Definition at line \fB223\fP of file \fBprocess_constraints\&.py\fP\&.
 
 .PP
 Definition at line \fB216\fP of file \fBprocess_constraints\&.py\fP\&.
-.SS "process_constraints\&.root_dir = os\&.sep\&.join(path[:root_index+1])"
+.SS "process_constraints\&.root_dir = os\&.sep\&.join(\fBpath\fP[:\fBroot_index\fP+1])"
 
 .PP
 Definition at line \fB219\fP of file \fBprocess_constraints\&.py\fP\&.

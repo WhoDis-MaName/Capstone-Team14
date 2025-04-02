@@ -31,7 +31,7 @@ get_requirements \- This module contains all of the functionality that is needed
 .br
 .RI "Gather multiple requirements sets and complile them so that the group names are unique\&. "
 .ti -1c
-.RI "None \fBprocess_degree_requirements\fP (list[str] urls, str json_file)"
+.RI "None \fBprocess_degree_requirements\fP (list[str] \fBurls\fP, str \fBjson_file\fP)"
 .br
 .RI "Handle the processing of multiple degree requirements and sending it to a json file\&. "
 .in -1c
@@ -48,13 +48,13 @@ get_requirements \- This module contains all of the functionality that is needed
 .RI "\fBroot_index\fP = path\&.index('Capstone\-Team14')"
 .br
 .ti -1c
-.RI "\fBroot_dir\fP = os\&.sep\&.join(path[:root_index+1])"
+.RI "\fBroot_dir\fP = os\&.sep\&.join(\fBpath\fP[:\fBroot_index\fP+1])"
 .br
 .ti -1c
-.RI "\fBdata_dir\fP = os\&.path\&.join(root_dir, 'data_files', 'four_year_plan')"
+.RI "\fBdata_dir\fP = os\&.path\&.join(\fBroot_dir\fP, 'data_files', 'four_year_plan')"
 .br
 .ti -1c
-.RI "\fBjson_file\fP = os\&.path\&.join(data_dir,'requirements\&.json')"
+.RI "\fBjson_file\fP = os\&.path\&.join(\fBdata_dir\fP,'requirements\&.json')"
 .br
 .ti -1c
 .RI "list \fBurls\fP"
@@ -352,11 +352,11 @@ Definition at line \fB77\fP of file \fBget_requirements\&.py\fP\&.
 
 .PP
 Definition at line \fB193\fP of file \fBget_requirements\&.py\fP\&.
-.SS "get_requirements\&.data_dir = os\&.path\&.join(root_dir, 'data_files', 'four_year_plan')"
+.SS "get_requirements\&.data_dir = os\&.path\&.join(\fBroot_dir\fP, 'data_files', 'four_year_plan')"
 
 .PP
 Definition at line \fB202\fP of file \fBget_requirements\&.py\fP\&.
-.SS "get_requirements\&.json_file = os\&.path\&.join(data_dir,'requirements\&.json')"
+.SS "get_requirements\&.json_file = os\&.path\&.join(\fBdata_dir\fP,'requirements\&.json')"
 
 .PP
 Definition at line \fB207\fP of file \fBget_requirements\&.py\fP\&.
@@ -364,7 +364,7 @@ Definition at line \fB207\fP of file \fBget_requirements\&.py\fP\&.
 
 .PP
 Definition at line \fB198\fP of file \fBget_requirements\&.py\fP\&.
-.SS "get_requirements\&.root_dir = os\&.sep\&.join(path[:root_index+1])"
+.SS "get_requirements\&.root_dir = os\&.sep\&.join(\fBpath\fP[:\fBroot_index\fP+1])"
 
 .PP
 Definition at line \fB201\fP of file \fBget_requirements\&.py\fP\&.

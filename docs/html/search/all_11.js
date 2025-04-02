@@ -1,11 +1,15 @@
 var searchData=
 [
-  ['plansemester_0',['PlanSemester',['../classschedule_functions_1_1models_1_1_plan_semester.html',1,'scheduleFunctions::models']]],
-  ['prioritize_1',['Key Classes to Prioritize',['../C:/Users/andra/Documents/Capstone-Team14/docs/README.md#autotoc_md13',1,'']]],
-  ['process_5fconstraints_2',['process_constraints',['../namespaceprocess__constraints.html',1,'']]],
-  ['process_5fdegree_5frequirements_3',['process_degree_requirements',['../namespaceget__requirements.html#a36fd0363f0100bda9882ac3a37d2f890',1,'get_requirements']]],
-  ['process_5furl_4',['process_url',['../namespaceget__four__year.html#a9a38e6a7b809ed9ee9f81033eee37630',1,'get_four_year.process_url()'],['../namespaceget__requirements.html#af0ce58c352b1ae79624203e0b6d17bd7',1,'get_requirements.process_url()']]],
-  ['project_5',['Run Django Project',['../md_docs_2_django__tutorial__instructions.html#autotoc_md7',1,'']]],
-  ['project_6',['Start Django project',['../md_docs_2_django__tutorial__instructions.html#autotoc_md5',1,'']]],
-  ['project_20overview_7',['Project Overview',['../C:/Users/andra/Documents/Capstone-Team14/docs/README.md#autotoc_md9',1,'']]]
+  ['main_0',['main',['../classidentifier_1_1_clingo_app.html#a297bc53a59a555c428e4c4e3e1cdb474',1,'identifier.ClingoApp.main()'],['../namespacemanage.html#a0ac64ea81648f42d6a49d76da894eaf4',1,'manage.main()']]],
+  ['manage_1',['manage',['../namespacemanage.html',1,'']]],
+  ['manage_2epy_2',['manage.py',['../manage_8py.html',1,'']]],
+  ['matches_3',['matches',['../namespaceconverter.html#a7cd336fae1cec5700a3b7018c4995da4',1,'converter']]],
+  ['middleware_4',['MIDDLEWARE',['../namespacemyproject_1_1settings.html#aee848af6e4010d9f5a3cf150d8e6db68',1,'myproject::settings']]],
+  ['models_2epy_5',['models.py',['../models_8py.html',1,'']]],
+  ['mon_6',['MON',['../classschedule_functions_1_1models_1_1_day.html#a4ca703600a56798e8378609b27b4f79a',1,'scheduleFunctions::models::Day']]],
+  ['myproject_7',['myproject',['../namespacemyproject.html',1,'']]],
+  ['myproject_3a_3aasgi_8',['asgi',['../namespacemyproject_1_1asgi.html',1,'myproject']]],
+  ['myproject_3a_3asettings_9',['settings',['../namespacemyproject_1_1settings.html',1,'myproject']]],
+  ['myproject_3a_3aurls_10',['urls',['../namespacemyproject_1_1urls.html',1,'myproject']]],
+  ['myproject_3a_3awsgi_11',['wsgi',['../namespacemyproject_1_1wsgi.html',1,'myproject']]]
 ];

@@ -106,17 +106,20 @@ $(function(){initNavTree('jsonconverter_8py_source.html',''); initResizable(true
   <div class="headertitle"><div class="title">jsonconverter.py</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">import</span> json</div>
+<a href="jsonconverter_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="namespacejsonconverter.html">    1</a></span><span class="keyword">import</span> json</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"># Converting 12 hour time to minutes past midnight, ie: 12:15 AM to 15.</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">def </span>convert24(time):</div>
+<div class="foldopen" id="foldopen00006" data-start="" data-end="">
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="namespacejsonconverter.html#aced567076b198d4dd780aaff8e73e0fa">    6</a></span><span class="keyword">def </span><a class="code hl_function" href="namespacejsonconverter.html#aced567076b198d4dd780aaff8e73e0fa">convert24</a>(time):</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    t = datetime.strptime(time, <span class="stringliteral">&quot;%I:%M%p&quot;</span>)  <span class="comment"># Parse the time string</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordflow">return</span> t.hour * 60 + t.minute  <span class="comment"># Convert to total minutes</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">def </span>convert(file):</div>
+</div>
+<div class="foldopen" id="foldopen00011" data-start="" data-end="">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="namespacejsonconverter.html#a1f7f8a4099cfdc7cdbfb6ef86ca3972a">   11</a></span><span class="keyword">def </span><a class="code hl_function" href="namespacejsonconverter.html#a1f7f8a4099cfdc7cdbfb6ef86ca3972a">convert</a>(file):</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="comment"># Load the JSON data</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">with</span> open(file, <span class="stringliteral">&quot;r&quot;</span>) <span class="keyword">as</span> f:</div>
@@ -173,8 +176,8 @@ $(function(){initNavTree('jsonconverter_8py_source.html',''); initResizable(true
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                        start, end = <span class="stringliteral">&quot;tba&quot;</span>, <span class="stringliteral">&quot;tba&quot;</span></div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                    <span class="keywordflow">else</span>:</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                        start, end = time.split(<span class="stringliteral">&quot; - &quot;</span>)</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                        start = convert24(start)</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                        end = convert24(end)</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                        start = <a class="code hl_function" href="namespacejsonconverter.html#aced567076b198d4dd780aaff8e73e0fa">convert24</a>(start)</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                        end = <a class="code hl_function" href="namespacejsonconverter.html#aced567076b198d4dd780aaff8e73e0fa">convert24</a>(end)</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                    days = (</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                        section_info.get(<span class="stringliteral">&quot;Days&quot;</span>, <span class="stringliteral">&quot;TBA&quot;</span>)</div>
@@ -221,12 +224,15 @@ $(function(){initNavTree('jsonconverter_8py_source.html',''); initResizable(true
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        f.write(<span class="stringliteral">&quot;\n&quot;</span>.join(facts))</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="comment"># print(f&quot;ASP facts written to {asp_filename}&quot;)</span></div>
+</div>
+<div class="ttc" id="anamespacejsonconverter_html_a1f7f8a4099cfdc7cdbfb6ef86ca3972a"><div class="ttname"><a href="namespacejsonconverter.html#a1f7f8a4099cfdc7cdbfb6ef86ca3972a">jsonconverter.convert</a></div><div class="ttdeci">convert(file)</div><div class="ttdef"><b>Definition</b> <a href="#l00011">jsonconverter.py:11</a></div></div>
+<div class="ttc" id="anamespacejsonconverter_html_aced567076b198d4dd780aaff8e73e0fa"><div class="ttname"><a href="namespacejsonconverter.html#aced567076b198d4dd780aaff8e73e0fa">jsonconverter.convert24</a></div><div class="ttdeci">convert24(time)</div><div class="ttdef"><b>Definition</b> <a href="#l00006">jsonconverter.py:6</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>jsonconverter.py</b></li>
+    <li class="navelem"><a class="el" href="jsonconverter_8py.html">jsonconverter.py</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

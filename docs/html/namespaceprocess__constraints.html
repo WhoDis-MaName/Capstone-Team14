@@ -115,7 +115,7 @@ $(function(){initNavTree('namespaceprocess__constraints.html',''); initResizable
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab86be89cfce31b95a41218ddcf01e6cd" id="r_ab86be89cfce31b95a41218ddcf01e6cd"><td class="memItemLeft" align="right" valign="top">list[dict]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab86be89cfce31b95a41218ddcf01e6cd">get_plan</a> (str filename)</td></tr>
+<tr class="memitem:ab86be89cfce31b95a41218ddcf01e6cd" id="r_ab86be89cfce31b95a41218ddcf01e6cd"><td class="memItemLeft" align="right" valign="top">list[dict]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab86be89cfce31b95a41218ddcf01e6cd">get_plan</a> (str <a class="el" href="#a7a0d13fa060bc49b7c1a1122c6a05990">filename</a>)</td></tr>
 <tr class="memdesc:ab86be89cfce31b95a41218ddcf01e6cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the four year plan from a file and confirm that it is a list.  <br /></td></tr>
 <tr class="separator:ab86be89cfce31b95a41218ddcf01e6cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7a714480b0d6e840bc1e84a1258221f" id="r_aa7a714480b0d6e840bc1e84a1258221f"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7a714480b0d6e840bc1e84a1258221f">get_semester</a> (list[dict] plan, str|int year, str semester)</td></tr>
@@ -124,13 +124,13 @@ Functions</h2></td></tr>
 <tr class="memitem:ac2660d1d70a182f0f79ff63cfc546e59" id="r_ac2660d1d70a182f0f79ff63cfc546e59"><td class="memItemLeft" align="right" valign="top">dict&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2660d1d70a182f0f79ff63cfc546e59">set_contsraints</a> (list semester_plan, int semester_id)</td></tr>
 <tr class="memdesc:ac2660d1d70a182f0f79ff63cfc546e59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process the semester such that classes listed as fulfilling the same requirement are soft constraints and all other classes in the semester are hard constraints.  <br /></td></tr>
 <tr class="separator:ac2660d1d70a182f0f79ff63cfc546e59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a895b25f79200491a70e12333326be8d7" id="r_a895b25f79200491a70e12333326be8d7"><td class="memItemLeft" align="right" valign="top">dict&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a895b25f79200491a70e12333326be8d7">combine_constraints</a> (list[dict] constraints)</td></tr>
+<tr class="memitem:a895b25f79200491a70e12333326be8d7" id="r_a895b25f79200491a70e12333326be8d7"><td class="memItemLeft" align="right" valign="top">dict&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a895b25f79200491a70e12333326be8d7">combine_constraints</a> (list[dict] <a class="el" href="#a8cd9136db771fd3167a4a6f70de56667">constraints</a>)</td></tr>
 <tr class="memdesc:a895b25f79200491a70e12333326be8d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combine the constraints so that the keys are based on the course and not based on the semester.  <br /></td></tr>
 <tr class="separator:a895b25f79200491a70e12333326be8d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc974924dfdc5fa5c58357af26abaceb" id="r_afc974924dfdc5fa5c58357af26abaceb"><td class="memItemLeft" align="right" valign="top">dict&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc974924dfdc5fa5c58357af26abaceb">create_constraints</a> (str filename)</td></tr>
+<tr class="memitem:afc974924dfdc5fa5c58357af26abaceb" id="r_afc974924dfdc5fa5c58357af26abaceb"><td class="memItemLeft" align="right" valign="top">dict&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc974924dfdc5fa5c58357af26abaceb">create_constraints</a> (str <a class="el" href="#a7a0d13fa060bc49b7c1a1122c6a05990">filename</a>)</td></tr>
 <tr class="memdesc:afc974924dfdc5fa5c58357af26abaceb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Take a four year plan stored in a JSON file and process it so that it can be stored as JSON or as clingo in the desired format.  <br /></td></tr>
 <tr class="separator:afc974924dfdc5fa5c58357af26abaceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ede1cd446057a59557da9411b0cc5c5" id="r_a0ede1cd446057a59557da9411b0cc5c5"><td class="memItemLeft" align="right" valign="top">None&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ede1cd446057a59557da9411b0cc5c5">convert_asp</a> (dict constraints, str file)</td></tr>
+<tr class="memitem:a0ede1cd446057a59557da9411b0cc5c5" id="r_a0ede1cd446057a59557da9411b0cc5c5"><td class="memItemLeft" align="right" valign="top">None&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ede1cd446057a59557da9411b0cc5c5">convert_asp</a> (dict <a class="el" href="#a8cd9136db771fd3167a4a6f70de56667">constraints</a>, str file)</td></tr>
 <tr class="memdesc:a0ede1cd446057a59557da9411b0cc5c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Take formated constraints and convert it into asp rules In addition to the rules defined by the constraints parameter, the rules file is also appended with equivalence rules.  <br /></td></tr>
 <tr class="separator:a0ede1cd446057a59557da9411b0cc5c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -142,17 +142,17 @@ Variables</h2></td></tr>
 <tr class="separator:a3a218613999ea2efd15d4d0ddd17b3c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4cdc6d6b517a548fcf792ee100d112c0" id="r_a4cdc6d6b517a548fcf792ee100d112c0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4cdc6d6b517a548fcf792ee100d112c0">root_index</a> = path.index('Capstone-Team14')</td></tr>
 <tr class="separator:a4cdc6d6b517a548fcf792ee100d112c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2fac437ece11e4e4cba1e3fee972e0a" id="r_aa2fac437ece11e4e4cba1e3fee972e0a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2fac437ece11e4e4cba1e3fee972e0a">root_dir</a> = os.sep.join(path[:root_index+1])</td></tr>
+<tr class="memitem:aa2fac437ece11e4e4cba1e3fee972e0a" id="r_aa2fac437ece11e4e4cba1e3fee972e0a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2fac437ece11e4e4cba1e3fee972e0a">root_dir</a> = os.sep.join(<a class="el" href="#a3a218613999ea2efd15d4d0ddd17b3c7">path</a>[:<a class="el" href="#a4cdc6d6b517a548fcf792ee100d112c0">root_index</a>+1])</td></tr>
 <tr class="separator:aa2fac437ece11e4e4cba1e3fee972e0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fc7aab4b3b5aa8c30c61ff427c477d1" id="r_a8fc7aab4b3b5aa8c30c61ff427c477d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8fc7aab4b3b5aa8c30c61ff427c477d1">data_dir</a> = os.path.join(root_dir, 'data_files', 'four_year_plan')</td></tr>
+<tr class="memitem:a8fc7aab4b3b5aa8c30c61ff427c477d1" id="r_a8fc7aab4b3b5aa8c30c61ff427c477d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8fc7aab4b3b5aa8c30c61ff427c477d1">data_dir</a> = os.path.join(<a class="el" href="#aa2fac437ece11e4e4cba1e3fee972e0a">root_dir</a>, 'data_files', 'four_year_plan')</td></tr>
 <tr class="separator:a8fc7aab4b3b5aa8c30c61ff427c477d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a0d13fa060bc49b7c1a1122c6a05990" id="r_a7a0d13fa060bc49b7c1a1122c6a05990"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a0d13fa060bc49b7c1a1122c6a05990">filename</a> = os.path.join(data_dir, 'fourYearPlan.json')</td></tr>
+<tr class="memitem:a7a0d13fa060bc49b7c1a1122c6a05990" id="r_a7a0d13fa060bc49b7c1a1122c6a05990"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a0d13fa060bc49b7c1a1122c6a05990">filename</a> = os.path.join(<a class="el" href="#a8fc7aab4b3b5aa8c30c61ff427c477d1">data_dir</a>, 'fourYearPlan.json')</td></tr>
 <tr class="separator:a7a0d13fa060bc49b7c1a1122c6a05990"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8cd9136db771fd3167a4a6f70de56667" id="r_a8cd9136db771fd3167a4a6f70de56667"><td class="memItemLeft" align="right" valign="top">dict&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8cd9136db771fd3167a4a6f70de56667">constraints</a> = <a class="el" href="#afc974924dfdc5fa5c58357af26abaceb">create_constraints</a>(filename)</td></tr>
+<tr class="memitem:a8cd9136db771fd3167a4a6f70de56667" id="r_a8cd9136db771fd3167a4a6f70de56667"><td class="memItemLeft" align="right" valign="top">dict&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8cd9136db771fd3167a4a6f70de56667">constraints</a> = <a class="el" href="#afc974924dfdc5fa5c58357af26abaceb">create_constraints</a>(<a class="el" href="#a7a0d13fa060bc49b7c1a1122c6a05990">filename</a>)</td></tr>
 <tr class="separator:a8cd9136db771fd3167a4a6f70de56667"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d76bf238db21ed88785b9d5371380cb" id="r_a8d76bf238db21ed88785b9d5371380cb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d76bf238db21ed88785b9d5371380cb">json_file</a> = os.path.join(data_dir, 'constraints.json')</td></tr>
+<tr class="memitem:a8d76bf238db21ed88785b9d5371380cb" id="r_a8d76bf238db21ed88785b9d5371380cb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d76bf238db21ed88785b9d5371380cb">json_file</a> = os.path.join(<a class="el" href="#a8fc7aab4b3b5aa8c30c61ff427c477d1">data_dir</a>, 'constraints.json')</td></tr>
 <tr class="separator:a8d76bf238db21ed88785b9d5371380cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d5df58245b4890e486accf39c77b7ec" id="r_a5d5df58245b4890e486accf39c77b7ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d5df58245b4890e486accf39c77b7ec">asp_file</a> = os.path.join(data_dir, 'four_year_plan_constraints.lp')</td></tr>
+<tr class="memitem:a5d5df58245b4890e486accf39c77b7ec" id="r_a5d5df58245b4890e486accf39c77b7ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d5df58245b4890e486accf39c77b7ec">asp_file</a> = os.path.join(<a class="el" href="#a8fc7aab4b3b5aa8c30c61ff427c477d1">data_dir</a>, 'four_year_plan_constraints.lp')</td></tr>
 <tr class="separator:a5d5df58245b4890e486accf39c77b7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8dd817fd747564e36418ac79b72ce33" id="r_ad8dd817fd747564e36418ac79b72ce33"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8dd817fd747564e36418ac79b72ce33">f</a></td></tr>
 <tr class="separator:ad8dd817fd747564e36418ac79b72ce33"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -226,8 +226,8 @@ Variables</h2></td></tr>
 
 <p>Take formated constraints and convert it into asp rules In addition to the rules defined by the constraints parameter, the rules file is also appended with equivalence rules. </p>
 <ul>
-<li><picture><source srcset="form_0_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$a \equiv c \Leftarrow a \equiv b, b \equiv c$" src="form_0.png"/></picture></li>
-<li><picture><source srcset="form_1_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ b \in S \Leftarrow a \in S, a \equiv b $" src="form_1.png"/></picture></li>
+<li><picture><source srcset="form_0_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="a \equiv c \Leftarrow a \equiv b, b \equiv c" src="form_0.png"/></picture></li>
+<li><picture><source srcset="form_1_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="b \in S \Leftarrow a \in S, a \equiv b" src="form_1.png"/></picture></li>
 <li>etc.</li>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -496,7 +496,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">process_constraints.asp_file = os.path.join(data_dir, 'four_year_plan_constraints.lp')</td>
+          <td class="memname">process_constraints.asp_file = os.path.join(<a class="el" href="#a8fc7aab4b3b5aa8c30c61ff427c477d1">data_dir</a>, 'four_year_plan_constraints.lp')</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -512,7 +512,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">process_constraints.constraints = <a class="el" href="#afc974924dfdc5fa5c58357af26abaceb">create_constraints</a>(filename)</td>
+          <td class="memname">process_constraints.constraints = <a class="el" href="#afc974924dfdc5fa5c58357af26abaceb">create_constraints</a>(<a class="el" href="#a7a0d13fa060bc49b7c1a1122c6a05990">filename</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -544,7 +544,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">process_constraints.data_dir = os.path.join(root_dir, 'data_files', 'four_year_plan')</td>
+          <td class="memname">process_constraints.data_dir = os.path.join(<a class="el" href="#aa2fac437ece11e4e4cba1e3fee972e0a">root_dir</a>, 'data_files', 'four_year_plan')</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -576,7 +576,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">process_constraints.filename = os.path.join(data_dir, 'fourYearPlan.json')</td>
+          <td class="memname">process_constraints.filename = os.path.join(<a class="el" href="#a8fc7aab4b3b5aa8c30c61ff427c477d1">data_dir</a>, 'fourYearPlan.json')</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -608,7 +608,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">process_constraints.json_file = os.path.join(data_dir, 'constraints.json')</td>
+          <td class="memname">process_constraints.json_file = os.path.join(<a class="el" href="#a8fc7aab4b3b5aa8c30c61ff427c477d1">data_dir</a>, 'constraints.json')</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -640,7 +640,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">process_constraints.root_dir = os.sep.join(path[:root_index+1])</td>
+          <td class="memname">process_constraints.root_dir = os.sep.join(<a class="el" href="#a3a218613999ea2efd15d4d0ddd17b3c7">path</a>[:<a class="el" href="#a4cdc6d6b517a548fcf792ee100d112c0">root_index</a>+1])</td>
         </tr>
       </table>
 </div><div class="memdoc">
