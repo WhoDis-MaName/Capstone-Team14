@@ -1,0 +1,362 @@
+{
+    "general_education_requirements": {
+        "fundamental_academic_skills": {
+            "credits": 15,
+            "classes": [
+                "math1130",
+                "math1100",
+                "math1120",
+                "stat1100",
+                "engl1160",
+                "math1300",
+                "cmst2120",
+                "math1140",
+                "cmst1110",
+                "stat1530",
+                "engl1150"
+            ]
+        },
+        "distribution_requirements": {
+            "credits": 31,
+            "classes": [
+                "csci3550",
+                "cist3110",
+                "csci2510",
+                "csci4100",
+                "csci2850",
+                "cybr3600",
+                "csci3510",
+                "csci4000",
+                "csci2240",
+                "csci4450",
+                "cist2100",
+                "csci3450",
+                "cybr4360",
+                "csci4380",
+                "csci4830",
+                "csci4970",
+                "csci4650",
+                "csci1620",
+                "cist1400",
+                "csci4620",
+                "csci3710",
+                "csci3830",
+                "csci4250",
+                "csci3660",
+                "csci4220",
+                "csci4500",
+                "csci3320",
+                "csci3470",
+                "csci4350",
+                "cist3000"
+            ]
+        }
+    },
+    "major_requirements": {
+        "major_requirements_core": {
+            "credits": 48,
+            "classes": [
+                "csci3550",
+                "cist3110",
+                "csci2510",
+                "csci4100",
+                "csci2850",
+                "cybr3600",
+                "csci3510",
+                "csci4000",
+                "csci2240",
+                "csci4450",
+                "cist2100",
+                "csci3450",
+                "cybr4360",
+                "csci4380",
+                "csci4830",
+                "csci4970",
+                "csci4650",
+                "csci1620",
+                "cist1400",
+                "csci4620",
+                "csci3710",
+                "csci3830",
+                "csci4250",
+                "csci3660",
+                "csci4220",
+                "csci4500",
+                "csci3320",
+                "csci3470",
+                "csci4350",
+                "cist3000"
+            ]
+        },
+        "math_courses": {
+            "credits": 15,
+            "classes": [
+                "csci2040",
+                "cist2500",
+                "math2050",
+                "csci2030",
+                "math1950"
+            ]
+        },
+        "science_courses": {
+            "credits": 7,
+            "classes": [
+                "chem1010",
+                "chem1170",
+                "chem1180",
+                "chem1144",
+                "geog1050",
+                "phys1110",
+                "phys1054",
+                "chem1014",
+                "bmch2400",
+                "geol1170",
+                "phys1154",
+                "phys1050",
+                "geog3514",
+                "geog1030",
+                "geog1090",
+                "geol1100",
+                "biol1450",
+                "chem1184",
+                "geog3510",
+                "geol1104",
+                "chem1140",
+                "phys2110"
+            ]
+        }
+    },
+    "artificial_intelligence_concentration": {
+        "artificial_intelligence_concentration_core": {
+            "credits": 6,
+            "classes": [
+                "cist1400",
+                "csci1620",
+                "cist2100",
+                "csci2240",
+                "cist3000",
+                "cist3110",
+                "csci3320",
+                "csci3550",
+                "csci3660",
+                "csci3710",
+                "csci4100",
+                "csci4220",
+                "csci4350",
+                "csci4500",
+                "csci4830",
+                "csci4970",
+                "csci4000",
+                "csci3450",
+                "csci3470",
+                "csci4450"
+            ]
+        },
+        "core_extension": {
+            "credits": 12,
+            "classes": [
+                "phil2010",
+                "csci2410",
+                "csci2510",
+                "csci2880",
+                "csci3470",
+                "csci3450",
+                "csci3510",
+                "csci3850",
+                "csci4150",
+                "csci4250",
+                "csci4470",
+                "csci4480",
+                "csci4850",
+                "csci4890",
+                "isqa4010",
+                "math4450"
+            ]
+        },
+        "extension_courses": {
+            "credits": 3,
+            "classes": []
+        }
+    },
+    "electives": {},
+    "game_programming_concentration": {
+        "game_programming_concentration_core": {
+            "credits": 9,
+            "classes": [
+                "cist1400",
+                "csci1620",
+                "cist2100",
+                "csci2240",
+                "cist3000",
+                "cist3110",
+                "csci3320",
+                "csci3550",
+                "csci3660",
+                "csci3710",
+                "csci4100",
+                "csci4220",
+                "csci4350",
+                "csci4500",
+                "csci4830",
+                "csci4970",
+                "csci4000",
+                "csci2510",
+                "csci3510",
+                "csci4620"
+            ]
+        },
+        "core_extension": {
+            "credits": 9,
+            "classes": [
+                "csci1280",
+                "csci2620",
+                "csci4250",
+                "csci4260",
+                "csci4450",
+                "csci4480",
+                "csci/math 4660",
+                "csci4850",
+                "art3140",
+                "art3160"
+            ]
+        },
+        "extension_courses": {
+            "credits": 3,
+            "classes": []
+        }
+    },
+    "internet_technologies_(it)_concentration": {
+        "internet_technologies_(it)_concentration_core": {
+            "credits": 6,
+            "classes": [
+                "cist1400",
+                "csci1620",
+                "cist2100",
+                "csci2240",
+                "cist3000",
+                "cist3110",
+                "csci3320",
+                "csci3550",
+                "csci3660",
+                "csci3710",
+                "csci4100",
+                "csci4220",
+                "csci4350",
+                "csci4500",
+                "csci4830",
+                "csci4970",
+                "csci4000",
+                "csci2850",
+                "csci4650"
+            ]
+        },
+        "core_extension": {
+            "credits": 12,
+            "classes": [
+                "csci2830",
+                "csci3450",
+                "csci3830",
+                "csci3850",
+                "csci4150",
+                "csci4250",
+                "csci4470",
+                "csci4850",
+                "csci4890",
+                "csci4900",
+                "cybr4460"
+            ]
+        },
+        "extension_courses": {
+            "credits": 3,
+            "classes": []
+        }
+    },
+    "information_assurance_concentration": {
+        "information_assurance_concentration_core": {
+            "credits": 9,
+            "classes": [
+                "cist1400",
+                "csci1620",
+                "cist2100",
+                "csci2240",
+                "cist3000",
+                "cist3110",
+                "csci3320",
+                "csci3550",
+                "csci3660",
+                "csci3710",
+                "csci4100",
+                "csci4220",
+                "csci4350",
+                "csci4500",
+                "csci4830",
+                "csci4970",
+                "csci4000",
+                "cybr3600",
+                "cybr4360",
+                "csci4380"
+            ]
+        },
+        "core_extension": {
+            "credits": 9,
+            "classes": [
+                "cybr2600",
+                "csci3450",
+                "cybr4390",
+                "cybr/csci 4430",
+                "cybr4440",
+                "cybr4450",
+                "cybr4460",
+                "cybr4540",
+                "csci/math 4560",
+                "cybr3570"
+            ]
+        },
+        "extension_courses": {
+            "credits": 3,
+            "classes": []
+        }
+    },
+    "software_engineering_concentration": {
+        "software_engineering_concentration_core": {
+            "credits": 6,
+            "classes": [
+                "cist1400",
+                "csci1620",
+                "cist2100",
+                "csci2240",
+                "cist3000",
+                "cist3110",
+                "csci3320",
+                "csci3550",
+                "csci3660",
+                "csci3710",
+                "csci4100",
+                "csci4220",
+                "csci4350",
+                "csci4500",
+                "csci4830",
+                "csci4970",
+                "csci4000",
+                "csci3830",
+                "csci4250"
+            ]
+        },
+        "core_extension": {
+            "credits": 12,
+            "classes": [
+                "csci2830",
+                "csci4260",
+                "csci4650",
+                "csci4850",
+                "csci4900",
+                "cist4910",
+                "csci4950"
+            ]
+        },
+        "extension_courses": {
+            "credits": 3,
+            "classes": []
+        }
+    }
+}

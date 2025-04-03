@@ -1,0 +1,61 @@
+\doxysection{schedule\+Functions.\+models.\+Plan\+Semester Class Reference}
+\hypertarget{classschedule_functions_1_1models_1_1_plan_semester}{}\label{classschedule_functions_1_1models_1_1_plan_semester}\index{scheduleFunctions.models.PlanSemester@{scheduleFunctions.models.PlanSemester}}
+Inheritance diagram for schedule\+Functions.\+models.\+Plan\+Semester\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classschedule_functions_1_1models_1_1_plan_semester}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classschedule_functions_1_1models_1_1_plan_semester_a95fd6a155e96c053348d56251af50344}{year}}
+\item 
+\mbox{\hyperlink{classschedule_functions_1_1models_1_1_plan_semester_ab81be8c6e079c760be94fc2e810aa146}{semester}}
+\item 
+\mbox{\hyperlink{classschedule_functions_1_1models_1_1_plan_semester_a1bbd0df5fb84bcb355e79dd4bd26f2b2}{courses}} = models.\+Many\+To\+Many\+Field(\mbox{\hyperlink{classschedule_functions_1_1models_1_1_course}{Course}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classschedule_functions_1_1models_1_1_plan_semester_a1bbd0df5fb84bcb355e79dd4bd26f2b2}\index{scheduleFunctions.models.PlanSemester@{scheduleFunctions.models.PlanSemester}!courses@{courses}}
+\index{courses@{courses}!scheduleFunctions.models.PlanSemester@{scheduleFunctions.models.PlanSemester}}
+\doxysubsubsection{\texorpdfstring{courses}{courses}}
+{\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_plan_semester_a1bbd0df5fb84bcb355e79dd4bd26f2b2} 
+schedule\+Functions.\+models.\+Plan\+Semester.\+courses = models.\+Many\+To\+Many\+Field(\mbox{\hyperlink{classschedule_functions_1_1models_1_1_course}{Course}})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classschedule_functions_1_1models_1_1_plan_semester_ab81be8c6e079c760be94fc2e810aa146}\index{scheduleFunctions.models.PlanSemester@{scheduleFunctions.models.PlanSemester}!semester@{semester}}
+\index{semester@{semester}!scheduleFunctions.models.PlanSemester@{scheduleFunctions.models.PlanSemester}}
+\doxysubsubsection{\texorpdfstring{semester}{semester}}
+{\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_plan_semester_ab81be8c6e079c760be94fc2e810aa146} 
+schedule\+Functions.\+models.\+Plan\+Semester.\+semester\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ models.CharField(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ max\_length=1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ choices=SEMESTER\_CHOICES,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ default=FALL,}
+\DoxyCodeLine{\ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{classschedule_functions_1_1models_1_1_plan_semester_a95fd6a155e96c053348d56251af50344}\index{scheduleFunctions.models.PlanSemester@{scheduleFunctions.models.PlanSemester}!year@{year}}
+\index{year@{year}!scheduleFunctions.models.PlanSemester@{scheduleFunctions.models.PlanSemester}}
+\doxysubsubsection{\texorpdfstring{year}{year}}
+{\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_plan_semester_a95fd6a155e96c053348d56251af50344} 
+schedule\+Functions.\+models.\+Plan\+Semester.\+year\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ models.CharField(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ max\_length=2,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ choices=YEAR\_IN\_SCHOOL\_CHOICES,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ default=FRESHMAN,}
+\DoxyCodeLine{\ \ \ \ )}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+schedule\+Functions/\mbox{\hyperlink{models_8py}{models.\+py}}\end{DoxyCompactItemize}

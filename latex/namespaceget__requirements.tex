@@ -1,0 +1,244 @@
+\doxysection{get\+\_\+requirements Namespace Reference}
+\hypertarget{namespaceget__requirements}{}\label{namespaceget__requirements}\index{get\_requirements@{get\_requirements}}
+
+
+This module contains all of the functionality that is needed to process the degree requirements.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceget__requirements_ae979cbed5cffd733fe46ad137f471bf4}{get\+\_\+all\+\_\+tables}} (bs soup)
+\begin{DoxyCompactList}\small\item\em Finds all of the tables in the page gathered with BS4. \end{DoxyCompactList}\item 
+list \mbox{\hyperlink{namespaceget__requirements_a6f343edc6f9fa1c88ee213d997ca57b7}{get\+\_\+table\+\_\+rows}} (table)
+\begin{DoxyCompactList}\small\item\em Given a table, returns all its rows. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceget__requirements_af0ce58c352b1ae79624203e0b6d17bd7}{process\+\_\+url}} (str url)
+\begin{DoxyCompactList}\small\item\em Take a url and find all of the tables contained in the page and return a Result\+Set. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceget__requirements_a1d98bb10ba818f32c79abedfa5822add}{read\+\_\+requirements}} (str url)
+\begin{DoxyCompactList}\small\item\em Read the requirements from a given url that contains degree requirements and process it into a dictionary. \end{DoxyCompactList}\item 
+dict \mbox{\hyperlink{namespaceget__requirements_a9ede2264ace89cd7acd4e00374dc976f}{compile\+\_\+requirements}} (list\mbox{[}dict\mbox{]} requirements)
+\begin{DoxyCompactList}\small\item\em Gather multiple requirements sets and complile them so that the group names are unique. \end{DoxyCompactList}\item 
+None \mbox{\hyperlink{namespaceget__requirements_a36fd0363f0100bda9882ac3a37d2f890}{process\+\_\+degree\+\_\+requirements}} (list\mbox{[}str\mbox{]} \mbox{\hyperlink{namespaceget__requirements_a1e7b30d2116feb5322bcbdd55cc0fb2a}{urls}}, str \mbox{\hyperlink{namespaceget__requirements_a6465c50fadf808ead405ece15c380485}{json\+\_\+file}})
+\begin{DoxyCompactList}\small\item\em Handle the processing of multiple degree requirements and sending it to a json file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceget__requirements_a90e8114b4957cf21514832a06905ebc6}{current\+\_\+directory}} = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))
+\item 
+\mbox{\hyperlink{namespaceget__requirements_a9efd72a4ce9b3bd6a240740a94b0a2cd}{path}} = current\+\_\+directory.\+split(os.\+sep)
+\item 
+\mbox{\hyperlink{namespaceget__requirements_aa8fe1bda770b33c433ad66ea3f14ffb4}{root\+\_\+index}} = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceget__requirements_a5e756d24d049ed272971b4b1784227f8}{root\+\_\+dir}} = os.\+sep.\+join(\mbox{\hyperlink{namespaceget__requirements_a9efd72a4ce9b3bd6a240740a94b0a2cd}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceget__requirements_aa8fe1bda770b33c433ad66ea3f14ffb4}{root\+\_\+index}}+1\mbox{]})
+\item 
+\mbox{\hyperlink{namespaceget__requirements_a638da6da80b7877d37f0de0659efa4ab}{data\+\_\+dir}} = os.\+path.\+join(\mbox{\hyperlink{namespaceget__requirements_a5e756d24d049ed272971b4b1784227f8}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}four\+\_\+year\+\_\+plan\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceget__requirements_a6465c50fadf808ead405ece15c380485}{json\+\_\+file}} = os.\+path.\+join(\mbox{\hyperlink{namespaceget__requirements_a638da6da80b7877d37f0de0659efa4ab}{data\+\_\+dir}},\textquotesingle{}requirements.\+json\textquotesingle{})
+\item 
+list \mbox{\hyperlink{namespaceget__requirements_a1e7b30d2116feb5322bcbdd55cc0fb2a}{urls}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This module contains all of the functionality that is needed to process the degree requirements. 
+
+For proof of concept, running this package as a script utilizes the degree requirments from all five Computer Science Concentrations. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceget__requirements_a9ede2264ace89cd7acd4e00374dc976f}\index{get\_requirements@{get\_requirements}!compile\_requirements@{compile\_requirements}}
+\index{compile\_requirements@{compile\_requirements}!get\_requirements@{get\_requirements}}
+\doxysubsubsection{\texorpdfstring{compile\_requirements()}{compile\_requirements()}}
+{\footnotesize\ttfamily \label{namespaceget__requirements_a9ede2264ace89cd7acd4e00374dc976f} 
+ dict get\+\_\+requirements.\+compile\+\_\+requirements (\begin{DoxyParamCaption}\item[{list\mbox{[}dict\mbox{]}}]{requirements}{}\end{DoxyParamCaption})}
+
+
+
+Gather multiple requirements sets and complile them so that the group names are unique. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em requirements} & A list containing dictionaries that are structured with classes in groups and sub-\/groups \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A single dictionary that combines all of the requirements into one while handling duplicate group labels by combining the class lists. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{namespaceget__requirements_a36fd0363f0100bda9882ac3a37d2f890}{process\+\_\+degree\+\_\+requirements()}}.
+
+\Hypertarget{namespaceget__requirements_ae979cbed5cffd733fe46ad137f471bf4}\index{get\_requirements@{get\_requirements}!get\_all\_tables@{get\_all\_tables}}
+\index{get\_all\_tables@{get\_all\_tables}!get\_requirements@{get\_requirements}}
+\doxysubsubsection{\texorpdfstring{get\_all\_tables()}{get\_all\_tables()}}
+{\footnotesize\ttfamily \label{namespaceget__requirements_ae979cbed5cffd733fe46ad137f471bf4} 
+get\+\_\+requirements.\+get\+\_\+all\+\_\+tables (\begin{DoxyParamCaption}\item[{bs}]{soup}{}\end{DoxyParamCaption})}
+
+
+
+Finds all of the tables in the page gathered with BS4. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em soup} & The Beautiful\+Soup4 representation of the web page \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A set containing all of the instances of {\ttfamily \texorpdfstring{$<$}{<}table\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}/table\texorpdfstring{$>$}{>}} along with all of its contents 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{namespaceget__requirements_af0ce58c352b1ae79624203e0b6d17bd7}{process\+\_\+url()}}.
+
+\Hypertarget{namespaceget__requirements_a6f343edc6f9fa1c88ee213d997ca57b7}\index{get\_requirements@{get\_requirements}!get\_table\_rows@{get\_table\_rows}}
+\index{get\_table\_rows@{get\_table\_rows}!get\_requirements@{get\_requirements}}
+\doxysubsubsection{\texorpdfstring{get\_table\_rows()}{get\_table\_rows()}}
+{\footnotesize\ttfamily \label{namespaceget__requirements_a6f343edc6f9fa1c88ee213d997ca57b7} 
+ list get\+\_\+requirements.\+get\+\_\+table\+\_\+rows (\begin{DoxyParamCaption}\item[{}]{table}{}\end{DoxyParamCaption})}
+
+
+
+Given a table, returns all its rows. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em table} & A table from web page grabbed using BS4 soup object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A 2d list that represents all of the rows from the table 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{namespaceget__requirements_af0ce58c352b1ae79624203e0b6d17bd7}{process\+\_\+url()}}.
+
+\Hypertarget{namespaceget__requirements_a36fd0363f0100bda9882ac3a37d2f890}\index{get\_requirements@{get\_requirements}!process\_degree\_requirements@{process\_degree\_requirements}}
+\index{process\_degree\_requirements@{process\_degree\_requirements}!get\_requirements@{get\_requirements}}
+\doxysubsubsection{\texorpdfstring{process\_degree\_requirements()}{process\_degree\_requirements()}}
+{\footnotesize\ttfamily \label{namespaceget__requirements_a36fd0363f0100bda9882ac3a37d2f890} 
+ None get\+\_\+requirements.\+process\+\_\+degree\+\_\+requirements (\begin{DoxyParamCaption}\item[{list\mbox{[}str\mbox{]}}]{urls}{, }\item[{str}]{json\+\_\+file}{}\end{DoxyParamCaption})}
+
+
+
+Handle the processing of multiple degree requirements and sending it to a json file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em urls} & A list of url strings. Each url must direct to a page that contains requirements for some sort of degree \\
+\hline
+{\em json\+\_\+file} & A string that contains the file path and filename that the JSON will be written to.
+
+{\itshape NOTE} to maintain the script\textquotesingle{}s OS agnostic nature, it is suggested to utilize os.\+path.\+join() to join strings or os.\+sep.\+join() to join elements of a list \\
+\hline
+\end{DoxyParams}
+
+
+References \mbox{\hyperlink{namespaceget__requirements_a9ede2264ace89cd7acd4e00374dc976f}{compile\+\_\+requirements()}}, and \mbox{\hyperlink{namespaceget__requirements_a1d98bb10ba818f32c79abedfa5822add}{read\+\_\+requirements()}}.
+
+\Hypertarget{namespaceget__requirements_af0ce58c352b1ae79624203e0b6d17bd7}\index{get\_requirements@{get\_requirements}!process\_url@{process\_url}}
+\index{process\_url@{process\_url}!get\_requirements@{get\_requirements}}
+\doxysubsubsection{\texorpdfstring{process\_url()}{process\_url()}}
+{\footnotesize\ttfamily \label{namespaceget__requirements_af0ce58c352b1ae79624203e0b6d17bd7} 
+get\+\_\+requirements.\+process\+\_\+url (\begin{DoxyParamCaption}\item[{str}]{url}{}\end{DoxyParamCaption})}
+
+
+
+Take a url and find all of the tables contained in the page and return a Result\+Set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & URL of the page to be searched. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List containing all of the tables in the page. Each of table is a 2d array (list) 
+\end{DoxyReturn}
+
+
+References \mbox{\hyperlink{namespaceget__requirements_ae979cbed5cffd733fe46ad137f471bf4}{get\+\_\+all\+\_\+tables()}}, and \mbox{\hyperlink{namespaceget__requirements_a6f343edc6f9fa1c88ee213d997ca57b7}{get\+\_\+table\+\_\+rows()}}.
+
+
+
+Referenced by \mbox{\hyperlink{namespaceget__requirements_a1d98bb10ba818f32c79abedfa5822add}{read\+\_\+requirements()}}.
+
+\Hypertarget{namespaceget__requirements_a1d98bb10ba818f32c79abedfa5822add}\index{get\_requirements@{get\_requirements}!read\_requirements@{read\_requirements}}
+\index{read\_requirements@{read\_requirements}!get\_requirements@{get\_requirements}}
+\doxysubsubsection{\texorpdfstring{read\_requirements()}{read\_requirements()}}
+{\footnotesize\ttfamily \label{namespaceget__requirements_a1d98bb10ba818f32c79abedfa5822add} 
+get\+\_\+requirements.\+read\+\_\+requirements (\begin{DoxyParamCaption}\item[{str}]{url}{}\end{DoxyParamCaption})}
+
+
+
+Read the requirements from a given url that contains degree requirements and process it into a dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & A string that contains the url that is to be read to find the degree requirements \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a dictionary that is structured to associate courses with the major and sub groups of requirements that are fulfilled 
+\end{DoxyReturn}
+
+
+References \mbox{\hyperlink{namespaceget__requirements_af0ce58c352b1ae79624203e0b6d17bd7}{process\+\_\+url()}}.
+
+
+
+Referenced by \mbox{\hyperlink{namespaceget__requirements_a36fd0363f0100bda9882ac3a37d2f890}{process\+\_\+degree\+\_\+requirements()}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceget__requirements_a90e8114b4957cf21514832a06905ebc6}\index{get\_requirements@{get\_requirements}!current\_directory@{current\_directory}}
+\index{current\_directory@{current\_directory}!get\_requirements@{get\_requirements}}
+\doxysubsubsection{\texorpdfstring{current\_directory}{current\_directory}}
+{\footnotesize\ttfamily \label{namespaceget__requirements_a90e8114b4957cf21514832a06905ebc6} 
+get\+\_\+requirements.\+current\+\_\+directory = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))}
+
+\Hypertarget{namespaceget__requirements_a638da6da80b7877d37f0de0659efa4ab}\index{get\_requirements@{get\_requirements}!data\_dir@{data\_dir}}
+\index{data\_dir@{data\_dir}!get\_requirements@{get\_requirements}}
+\doxysubsubsection{\texorpdfstring{data\_dir}{data\_dir}}
+{\footnotesize\ttfamily \label{namespaceget__requirements_a638da6da80b7877d37f0de0659efa4ab} 
+get\+\_\+requirements.\+data\+\_\+dir = os.\+path.\+join(\mbox{\hyperlink{namespaceget__requirements_a5e756d24d049ed272971b4b1784227f8}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}four\+\_\+year\+\_\+plan\textquotesingle{})}
+
+\Hypertarget{namespaceget__requirements_a6465c50fadf808ead405ece15c380485}\index{get\_requirements@{get\_requirements}!json\_file@{json\_file}}
+\index{json\_file@{json\_file}!get\_requirements@{get\_requirements}}
+\doxysubsubsection{\texorpdfstring{json\_file}{json\_file}}
+{\footnotesize\ttfamily \label{namespaceget__requirements_a6465c50fadf808ead405ece15c380485} 
+get\+\_\+requirements.\+json\+\_\+file = os.\+path.\+join(\mbox{\hyperlink{namespaceget__requirements_a638da6da80b7877d37f0de0659efa4ab}{data\+\_\+dir}},\textquotesingle{}requirements.\+json\textquotesingle{})}
+
+\Hypertarget{namespaceget__requirements_a9efd72a4ce9b3bd6a240740a94b0a2cd}\index{get\_requirements@{get\_requirements}!path@{path}}
+\index{path@{path}!get\_requirements@{get\_requirements}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily \label{namespaceget__requirements_a9efd72a4ce9b3bd6a240740a94b0a2cd} 
+get\+\_\+requirements.\+path = current\+\_\+directory.\+split(os.\+sep)}
+
+\Hypertarget{namespaceget__requirements_a5e756d24d049ed272971b4b1784227f8}\index{get\_requirements@{get\_requirements}!root\_dir@{root\_dir}}
+\index{root\_dir@{root\_dir}!get\_requirements@{get\_requirements}}
+\doxysubsubsection{\texorpdfstring{root\_dir}{root\_dir}}
+{\footnotesize\ttfamily \label{namespaceget__requirements_a5e756d24d049ed272971b4b1784227f8} 
+get\+\_\+requirements.\+root\+\_\+dir = os.\+sep.\+join(\mbox{\hyperlink{namespaceget__requirements_a9efd72a4ce9b3bd6a240740a94b0a2cd}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceget__requirements_aa8fe1bda770b33c433ad66ea3f14ffb4}{root\+\_\+index}}+1\mbox{]})}
+
+\Hypertarget{namespaceget__requirements_aa8fe1bda770b33c433ad66ea3f14ffb4}\index{get\_requirements@{get\_requirements}!root\_index@{root\_index}}
+\index{root\_index@{root\_index}!get\_requirements@{get\_requirements}}
+\doxysubsubsection{\texorpdfstring{root\_index}{root\_index}}
+{\footnotesize\ttfamily \label{namespaceget__requirements_aa8fe1bda770b33c433ad66ea3f14ffb4} 
+get\+\_\+requirements.\+root\+\_\+index = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})}
+
+\Hypertarget{namespaceget__requirements_a1e7b30d2116feb5322bcbdd55cc0fb2a}\index{get\_requirements@{get\_requirements}!urls@{urls}}
+\index{urls@{urls}!get\_requirements@{get\_requirements}}
+\doxysubsubsection{\texorpdfstring{urls}{urls}}
+{\footnotesize\ttfamily \label{namespaceget__requirements_a1e7b30d2116feb5322bcbdd55cc0fb2a} 
+list get\+\_\+requirements.\+urls}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ [}
+\DoxyCodeLine{00002\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'https://catalog.unomaha.edu/undergraduate/college-\/information-\/science-\/technology/computer-\/science/computer-\/science-\/bs/artificialintelligence-\/concentraton/'},}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'https://catalog.unomaha.edu/undergraduate/college-\/information-\/science-\/technology/computer-\/science/computer-\/science-\/bs/game-\/programming-\/concentration/'},}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'https://catalog.unomaha.edu/undergraduate/college-\/information-\/science-\/technology/computer-\/science/computer-\/science-\/bs/internet-\/technologies-\/it-\/concentration-\/computer-\/science-\/majors/'},}
+\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'https://catalog.unomaha.edu/undergraduate/college-\/information-\/science-\/technology/computer-\/science/computer-\/science-\/bs/information-\/assurance-\/concentration/'},}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'https://catalog.unomaha.edu/undergraduate/college-\/information-\/science-\/technology/computer-\/science/computer-\/science-\/bs/software-\/engineering-\/concentration/'}}
+\DoxyCodeLine{00007\ \ \ \ \ ]}
+
+\end{DoxyCode}

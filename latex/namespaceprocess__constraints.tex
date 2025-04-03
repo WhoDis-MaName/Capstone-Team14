@@ -1,0 +1,283 @@
+\doxysection{process\+\_\+constraints Namespace Reference}
+\hypertarget{namespaceprocess__constraints}{}\label{namespaceprocess__constraints}\index{process\_constraints@{process\_constraints}}
+
+
+This module contains all of the functionality that is needed to convert the four year plan into usable clingo rules.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+list\mbox{[}dict\mbox{]} \mbox{\hyperlink{namespaceprocess__constraints_ab86be89cfce31b95a41218ddcf01e6cd}{get\+\_\+plan}} (str \mbox{\hyperlink{namespaceprocess__constraints_a7a0d13fa060bc49b7c1a1122c6a05990}{filename}})
+\begin{DoxyCompactList}\small\item\em Read the four year plan from a file and confirm that it is a list. \end{DoxyCompactList}\item 
+list \mbox{\hyperlink{namespaceprocess__constraints_aa7a714480b0d6e840bc1e84a1258221f}{get\+\_\+semester}} (list\mbox{[}dict\mbox{]} plan, str\texorpdfstring{$\vert$}{|}int year, str semester)
+\begin{DoxyCompactList}\small\item\em Get the list of classes for a particular semester from the four year plan, assuming that there may be multiple plans given. \end{DoxyCompactList}\item 
+dict \mbox{\hyperlink{namespaceprocess__constraints_ac2660d1d70a182f0f79ff63cfc546e59}{set\+\_\+contsraints}} (list semester\+\_\+plan, int semester\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Process the semester such that classes listed as fulfilling the same requirement are soft constraints and all other classes in the semester are hard constraints. \end{DoxyCompactList}\item 
+dict \mbox{\hyperlink{namespaceprocess__constraints_a895b25f79200491a70e12333326be8d7}{combine\+\_\+constraints}} (list\mbox{[}dict\mbox{]} \mbox{\hyperlink{namespaceprocess__constraints_a8cd9136db771fd3167a4a6f70de56667}{constraints}})
+\begin{DoxyCompactList}\small\item\em Combine the constraints so that the keys are based on the course and not based on the semester. \end{DoxyCompactList}\item 
+dict \mbox{\hyperlink{namespaceprocess__constraints_afc974924dfdc5fa5c58357af26abaceb}{create\+\_\+constraints}} (str \mbox{\hyperlink{namespaceprocess__constraints_a7a0d13fa060bc49b7c1a1122c6a05990}{filename}})
+\begin{DoxyCompactList}\small\item\em Take a four year plan stored in a JSON file and process it so that it can be stored as JSON or as clingo in the desired format. \end{DoxyCompactList}\item 
+None \mbox{\hyperlink{namespaceprocess__constraints_a0ede1cd446057a59557da9411b0cc5c5}{convert\+\_\+asp}} (dict \mbox{\hyperlink{namespaceprocess__constraints_a8cd9136db771fd3167a4a6f70de56667}{constraints}}, str file)
+\begin{DoxyCompactList}\small\item\em Take formated constraints and convert it into asp rules In addition to the rules defined by the constraints parameter, the rules file is also appended with equivalence rules. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceprocess__constraints_acc21f3056418ad9b2bb14469e9523a7b}{current\+\_\+directory}} = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))
+\item 
+\mbox{\hyperlink{namespaceprocess__constraints_a3a218613999ea2efd15d4d0ddd17b3c7}{path}} = current\+\_\+directory.\+split(os.\+sep)
+\item 
+\mbox{\hyperlink{namespaceprocess__constraints_a4cdc6d6b517a548fcf792ee100d112c0}{root\+\_\+index}} = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceprocess__constraints_aa2fac437ece11e4e4cba1e3fee972e0a}{root\+\_\+dir}} = os.\+sep.\+join(\mbox{\hyperlink{namespaceprocess__constraints_a3a218613999ea2efd15d4d0ddd17b3c7}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceprocess__constraints_a4cdc6d6b517a548fcf792ee100d112c0}{root\+\_\+index}}+1\mbox{]})
+\item 
+\mbox{\hyperlink{namespaceprocess__constraints_a8fc7aab4b3b5aa8c30c61ff427c477d1}{data\+\_\+dir}} = os.\+path.\+join(\mbox{\hyperlink{namespaceprocess__constraints_aa2fac437ece11e4e4cba1e3fee972e0a}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}four\+\_\+year\+\_\+plan\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceprocess__constraints_a7a0d13fa060bc49b7c1a1122c6a05990}{filename}} = os.\+path.\+join(\mbox{\hyperlink{namespaceprocess__constraints_a8fc7aab4b3b5aa8c30c61ff427c477d1}{data\+\_\+dir}}, \textquotesingle{}four\+Year\+Plan.\+json\textquotesingle{})
+\item 
+dict \mbox{\hyperlink{namespaceprocess__constraints_a8cd9136db771fd3167a4a6f70de56667}{constraints}} = \mbox{\hyperlink{namespaceprocess__constraints_afc974924dfdc5fa5c58357af26abaceb}{create\+\_\+constraints}}(\mbox{\hyperlink{namespaceprocess__constraints_a7a0d13fa060bc49b7c1a1122c6a05990}{filename}})
+\item 
+\mbox{\hyperlink{namespaceprocess__constraints_a8d76bf238db21ed88785b9d5371380cb}{json\+\_\+file}} = os.\+path.\+join(\mbox{\hyperlink{namespaceprocess__constraints_a8fc7aab4b3b5aa8c30c61ff427c477d1}{data\+\_\+dir}}, \textquotesingle{}constraints.\+json\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceprocess__constraints_a5d5df58245b4890e486accf39c77b7ec}{asp\+\_\+file}} = os.\+path.\+join(\mbox{\hyperlink{namespaceprocess__constraints_a8fc7aab4b3b5aa8c30c61ff427c477d1}{data\+\_\+dir}}, \textquotesingle{}four\+\_\+year\+\_\+plan\+\_\+constraints.\+lp\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceprocess__constraints_ad8dd817fd747564e36418ac79b72ce33}{f}}
+\item 
+\mbox{\hyperlink{namespaceprocess__constraints_a5c8975a4e6a0ec6cbfade781d57bd20d}{indent}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This module contains all of the functionality that is needed to convert the four year plan into usable clingo rules. 
+
+For proof of concept running this package as a script utilizes the Computer Science four year plan. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceprocess__constraints_a895b25f79200491a70e12333326be8d7}\index{process\_constraints@{process\_constraints}!combine\_constraints@{combine\_constraints}}
+\index{combine\_constraints@{combine\_constraints}!process\_constraints@{process\_constraints}}
+\doxysubsubsection{\texorpdfstring{combine\_constraints()}{combine\_constraints()}}
+{\footnotesize\ttfamily \label{namespaceprocess__constraints_a895b25f79200491a70e12333326be8d7} 
+ dict process\+\_\+constraints.\+combine\+\_\+constraints (\begin{DoxyParamCaption}\item[{list\mbox{[}dict\mbox{]}}]{constraints}{}\end{DoxyParamCaption})}
+
+
+
+Combine the constraints so that the keys are based on the course and not based on the semester. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em constraints} & A list where each item in the list represents the classes in a semester \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A dictionary whose keys are all of the classes described in the four year plan 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{namespaceprocess__constraints_afc974924dfdc5fa5c58357af26abaceb}{create\+\_\+constraints()}}.
+
+\Hypertarget{namespaceprocess__constraints_a0ede1cd446057a59557da9411b0cc5c5}\index{process\_constraints@{process\_constraints}!convert\_asp@{convert\_asp}}
+\index{convert\_asp@{convert\_asp}!process\_constraints@{process\_constraints}}
+\doxysubsubsection{\texorpdfstring{convert\_asp()}{convert\_asp()}}
+{\footnotesize\ttfamily \label{namespaceprocess__constraints_a0ede1cd446057a59557da9411b0cc5c5} 
+ None process\+\_\+constraints.\+convert\+\_\+asp (\begin{DoxyParamCaption}\item[{dict}]{constraints}{, }\item[{str}]{file}{}\end{DoxyParamCaption})}
+
+
+
+Take formated constraints and convert it into asp rules In addition to the rules defined by the constraints parameter, the rules file is also appended with equivalence rules. 
+
+$ a \equiv c \Leftarrow a \equiv b, b \equiv c $ $ b \in S \Leftarrow a \in S, a \equiv b $
+\begin{DoxyItemize}
+\item etc.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em constraints} & \\
+\hline
+{\em file} & A string that contains the file path and filename that the JSON will be written to.
+
+{\itshape NOTE} to maintain the script\textquotesingle{}s OS agnostic nature, it is suggested to utilize os.\+path.\+join() to join strings or os.\+sep.\+join() to join elements of a list \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceprocess__constraints_afc974924dfdc5fa5c58357af26abaceb}\index{process\_constraints@{process\_constraints}!create\_constraints@{create\_constraints}}
+\index{create\_constraints@{create\_constraints}!process\_constraints@{process\_constraints}}
+\doxysubsubsection{\texorpdfstring{create\_constraints()}{create\_constraints()}}
+{\footnotesize\ttfamily \label{namespaceprocess__constraints_afc974924dfdc5fa5c58357af26abaceb} 
+ dict process\+\_\+constraints.\+create\+\_\+constraints (\begin{DoxyParamCaption}\item[{str}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Take a four year plan stored in a JSON file and process it so that it can be stored as JSON or as clingo in the desired format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & A string that contains the file path and filename that the JSON will be written to.
+
+{\itshape NOTE} to maintain the script\textquotesingle{}s OS agnostic nature, it is suggested to utilize os.\+path.\+join() to join strings or os.\+sep.\+join() to join elements of a list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A dictionary whose keys are all of the courses in the four year plan 
+\end{DoxyReturn}
+
+
+References \mbox{\hyperlink{namespaceprocess__constraints_a895b25f79200491a70e12333326be8d7}{combine\+\_\+constraints()}}, \mbox{\hyperlink{namespaceprocess__constraints_ab86be89cfce31b95a41218ddcf01e6cd}{get\+\_\+plan()}}, \mbox{\hyperlink{namespaceprocess__constraints_aa7a714480b0d6e840bc1e84a1258221f}{get\+\_\+semester()}}, and \mbox{\hyperlink{namespaceprocess__constraints_ac2660d1d70a182f0f79ff63cfc546e59}{set\+\_\+contsraints()}}.
+
+\Hypertarget{namespaceprocess__constraints_ab86be89cfce31b95a41218ddcf01e6cd}\index{process\_constraints@{process\_constraints}!get\_plan@{get\_plan}}
+\index{get\_plan@{get\_plan}!process\_constraints@{process\_constraints}}
+\doxysubsubsection{\texorpdfstring{get\_plan()}{get\_plan()}}
+{\footnotesize\ttfamily \label{namespaceprocess__constraints_ab86be89cfce31b95a41218ddcf01e6cd} 
+ list\mbox{[}dict\mbox{]} process\+\_\+constraints.\+get\+\_\+plan (\begin{DoxyParamCaption}\item[{str}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Read the four year plan from a file and confirm that it is a list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & A string that contains the file path and filename that the JSON will be written to.
+
+{\itshape NOTE} to maintain the script\textquotesingle{}s OS agnostic nature, it is suggested to utilize os.\+path.\+join() to join strings or os.\+sep.\+join() to join elements of a list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The list of dictionaries that was read from the file. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{namespaceprocess__constraints_afc974924dfdc5fa5c58357af26abaceb}{create\+\_\+constraints()}}.
+
+\Hypertarget{namespaceprocess__constraints_aa7a714480b0d6e840bc1e84a1258221f}\index{process\_constraints@{process\_constraints}!get\_semester@{get\_semester}}
+\index{get\_semester@{get\_semester}!process\_constraints@{process\_constraints}}
+\doxysubsubsection{\texorpdfstring{get\_semester()}{get\_semester()}}
+{\footnotesize\ttfamily \label{namespaceprocess__constraints_aa7a714480b0d6e840bc1e84a1258221f} 
+ list process\+\_\+constraints.\+get\+\_\+semester (\begin{DoxyParamCaption}\item[{list\mbox{[}dict\mbox{]}}]{plan}{, }\item[{str\texorpdfstring{$\vert$}{|}int}]{year}{, }\item[{str }]{semester}{}\end{DoxyParamCaption})}
+
+
+
+Get the list of classes for a particular semester from the four year plan, assuming that there may be multiple plans given. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plan} & A list of dictionaries. Each dictionary defines a four year plan such that it has this structure
+
+\{ \textquotesingle{}year\textquotesingle{}\+:\{ \textquotesingle{}semsester\textquotesingle{}\+:\mbox{[} \mbox{[} list of class numbers\mbox{]}, \mbox{[} list of class names\mbox{]}, number of credits filled by the class(es) in the list \mbox{]} ... \} ... ~\newline
+ \}
+
+\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em year} & A string or an integer to identify the year in the plan that is to be read from. Options\+: \mbox{[}\textquotesingle{}First Year\textquotesingle{}, \textquotesingle{}Second Year\textquotesingle{}, \textquotesingle{}Third Year\textquotesingle{}, \textquotesingle{}Fourth Year\textquotesingle{}\mbox{]} or \mbox{[}1, 2, 3, 4\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em semester} & A string that determines if fall semester or spring semester Options\+: \mbox{[}\textquotesingle{}FALL\textquotesingle{}, \textquotesingle{}SPRING\textquotesingle{}\mbox{]} or any variation in capitalization \\
+\hline
+\end{DoxyParams}
+
+
+\begin{DoxyReturn}{Returns}
+A list of classes in the same structure as origional semester list combined for all plans in the origional list. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{namespaceprocess__constraints_afc974924dfdc5fa5c58357af26abaceb}{create\+\_\+constraints()}}.
+
+\Hypertarget{namespaceprocess__constraints_ac2660d1d70a182f0f79ff63cfc546e59}\index{process\_constraints@{process\_constraints}!set\_contsraints@{set\_contsraints}}
+\index{set\_contsraints@{set\_contsraints}!process\_constraints@{process\_constraints}}
+\doxysubsubsection{\texorpdfstring{set\_contsraints()}{set\_contsraints()}}
+{\footnotesize\ttfamily \label{namespaceprocess__constraints_ac2660d1d70a182f0f79ff63cfc546e59} 
+ dict process\+\_\+constraints.\+set\+\_\+contsraints (\begin{DoxyParamCaption}\item[{list}]{semester\+\_\+plan}{, }\item[{int}]{semester\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Process the semester such that classes listed as fulfilling the same requirement are soft constraints and all other classes in the semester are hard constraints. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em semester\+\_\+plan} & list of classes in the same semester in the same structure as the origional four year plan\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Dictionary containing all of the classes in the semester Structure\+: $<$course number like csci2040$>$\+: \{ \textquotesingle{}equivalent\+\_\+courses\textquotesingle{}\+: set, \textquotesingle{}same\+\_\+semester\textquotesingle{}\+: set, \textquotesingle{}credits\textquotesingle{}\+: int, \textquotesingle{}semsesters\textquotesingle{}\+: set \} ... 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{namespaceprocess__constraints_afc974924dfdc5fa5c58357af26abaceb}{create\+\_\+constraints()}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceprocess__constraints_a5d5df58245b4890e486accf39c77b7ec}\index{process\_constraints@{process\_constraints}!asp\_file@{asp\_file}}
+\index{asp\_file@{asp\_file}!process\_constraints@{process\_constraints}}
+\doxysubsubsection{\texorpdfstring{asp\_file}{asp\_file}}
+{\footnotesize\ttfamily \label{namespaceprocess__constraints_a5d5df58245b4890e486accf39c77b7ec} 
+process\+\_\+constraints.\+asp\+\_\+file = os.\+path.\+join(\mbox{\hyperlink{namespaceprocess__constraints_a8fc7aab4b3b5aa8c30c61ff427c477d1}{data\+\_\+dir}}, \textquotesingle{}four\+\_\+year\+\_\+plan\+\_\+constraints.\+lp\textquotesingle{})}
+
+\Hypertarget{namespaceprocess__constraints_a8cd9136db771fd3167a4a6f70de56667}\index{process\_constraints@{process\_constraints}!constraints@{constraints}}
+\index{constraints@{constraints}!process\_constraints@{process\_constraints}}
+\doxysubsubsection{\texorpdfstring{constraints}{constraints}}
+{\footnotesize\ttfamily \label{namespaceprocess__constraints_a8cd9136db771fd3167a4a6f70de56667} 
+process\+\_\+constraints.\+constraints = \mbox{\hyperlink{namespaceprocess__constraints_afc974924dfdc5fa5c58357af26abaceb}{create\+\_\+constraints}}(\mbox{\hyperlink{namespaceprocess__constraints_a7a0d13fa060bc49b7c1a1122c6a05990}{filename}})}
+
+\Hypertarget{namespaceprocess__constraints_acc21f3056418ad9b2bb14469e9523a7b}\index{process\_constraints@{process\_constraints}!current\_directory@{current\_directory}}
+\index{current\_directory@{current\_directory}!process\_constraints@{process\_constraints}}
+\doxysubsubsection{\texorpdfstring{current\_directory}{current\_directory}}
+{\footnotesize\ttfamily \label{namespaceprocess__constraints_acc21f3056418ad9b2bb14469e9523a7b} 
+process\+\_\+constraints.\+current\+\_\+directory = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))}
+
+\Hypertarget{namespaceprocess__constraints_a8fc7aab4b3b5aa8c30c61ff427c477d1}\index{process\_constraints@{process\_constraints}!data\_dir@{data\_dir}}
+\index{data\_dir@{data\_dir}!process\_constraints@{process\_constraints}}
+\doxysubsubsection{\texorpdfstring{data\_dir}{data\_dir}}
+{\footnotesize\ttfamily \label{namespaceprocess__constraints_a8fc7aab4b3b5aa8c30c61ff427c477d1} 
+process\+\_\+constraints.\+data\+\_\+dir = os.\+path.\+join(\mbox{\hyperlink{namespaceprocess__constraints_aa2fac437ece11e4e4cba1e3fee972e0a}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}four\+\_\+year\+\_\+plan\textquotesingle{})}
+
+\Hypertarget{namespaceprocess__constraints_ad8dd817fd747564e36418ac79b72ce33}\index{process\_constraints@{process\_constraints}!f@{f}}
+\index{f@{f}!process\_constraints@{process\_constraints}}
+\doxysubsubsection{\texorpdfstring{f}{f}}
+{\footnotesize\ttfamily \label{namespaceprocess__constraints_ad8dd817fd747564e36418ac79b72ce33} 
+process\+\_\+constraints.\+f}
+
+\Hypertarget{namespaceprocess__constraints_a7a0d13fa060bc49b7c1a1122c6a05990}\index{process\_constraints@{process\_constraints}!filename@{filename}}
+\index{filename@{filename}!process\_constraints@{process\_constraints}}
+\doxysubsubsection{\texorpdfstring{filename}{filename}}
+{\footnotesize\ttfamily \label{namespaceprocess__constraints_a7a0d13fa060bc49b7c1a1122c6a05990} 
+process\+\_\+constraints.\+filename = os.\+path.\+join(\mbox{\hyperlink{namespaceprocess__constraints_a8fc7aab4b3b5aa8c30c61ff427c477d1}{data\+\_\+dir}}, \textquotesingle{}four\+Year\+Plan.\+json\textquotesingle{})}
+
+\Hypertarget{namespaceprocess__constraints_a5c8975a4e6a0ec6cbfade781d57bd20d}\index{process\_constraints@{process\_constraints}!indent@{indent}}
+\index{indent@{indent}!process\_constraints@{process\_constraints}}
+\doxysubsubsection{\texorpdfstring{indent}{indent}}
+{\footnotesize\ttfamily \label{namespaceprocess__constraints_a5c8975a4e6a0ec6cbfade781d57bd20d} 
+process\+\_\+constraints.\+indent}
+
+\Hypertarget{namespaceprocess__constraints_a8d76bf238db21ed88785b9d5371380cb}\index{process\_constraints@{process\_constraints}!json\_file@{json\_file}}
+\index{json\_file@{json\_file}!process\_constraints@{process\_constraints}}
+\doxysubsubsection{\texorpdfstring{json\_file}{json\_file}}
+{\footnotesize\ttfamily \label{namespaceprocess__constraints_a8d76bf238db21ed88785b9d5371380cb} 
+process\+\_\+constraints.\+json\+\_\+file = os.\+path.\+join(\mbox{\hyperlink{namespaceprocess__constraints_a8fc7aab4b3b5aa8c30c61ff427c477d1}{data\+\_\+dir}}, \textquotesingle{}constraints.\+json\textquotesingle{})}
+
+\Hypertarget{namespaceprocess__constraints_a3a218613999ea2efd15d4d0ddd17b3c7}\index{process\_constraints@{process\_constraints}!path@{path}}
+\index{path@{path}!process\_constraints@{process\_constraints}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily \label{namespaceprocess__constraints_a3a218613999ea2efd15d4d0ddd17b3c7} 
+process\+\_\+constraints.\+path = current\+\_\+directory.\+split(os.\+sep)}
+
+\Hypertarget{namespaceprocess__constraints_aa2fac437ece11e4e4cba1e3fee972e0a}\index{process\_constraints@{process\_constraints}!root\_dir@{root\_dir}}
+\index{root\_dir@{root\_dir}!process\_constraints@{process\_constraints}}
+\doxysubsubsection{\texorpdfstring{root\_dir}{root\_dir}}
+{\footnotesize\ttfamily \label{namespaceprocess__constraints_aa2fac437ece11e4e4cba1e3fee972e0a} 
+process\+\_\+constraints.\+root\+\_\+dir = os.\+sep.\+join(\mbox{\hyperlink{namespaceprocess__constraints_a3a218613999ea2efd15d4d0ddd17b3c7}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceprocess__constraints_a4cdc6d6b517a548fcf792ee100d112c0}{root\+\_\+index}}+1\mbox{]})}
+
+\Hypertarget{namespaceprocess__constraints_a4cdc6d6b517a548fcf792ee100d112c0}\index{process\_constraints@{process\_constraints}!root\_index@{root\_index}}
+\index{root\_index@{root\_index}!process\_constraints@{process\_constraints}}
+\doxysubsubsection{\texorpdfstring{root\_index}{root\_index}}
+{\footnotesize\ttfamily \label{namespaceprocess__constraints_a4cdc6d6b517a548fcf792ee100d112c0} 
+process\+\_\+constraints.\+root\+\_\+index = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})}
+

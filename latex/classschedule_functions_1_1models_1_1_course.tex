@@ -1,0 +1,75 @@
+\doxysection{schedule\+Functions.\+models.\+Course Class Reference}
+\hypertarget{classschedule_functions_1_1models_1_1_course}{}\label{classschedule_functions_1_1models_1_1_course}\index{scheduleFunctions.models.Course@{scheduleFunctions.models.Course}}
+Inheritance diagram for schedule\+Functions.\+models.\+Course\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classschedule_functions_1_1models_1_1_course}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classschedule_functions_1_1models_1_1_course_a10d4661ad46a0c0bc1c38fcf8930fb8e}{subject}} = models.\+Char\+Field(max\+\_\+length=5)
+\item 
+\mbox{\hyperlink{classschedule_functions_1_1models_1_1_course_a6d10ed67164bcaf35b497e509721c574}{class\+Number}} = models.\+Integer\+Field()
+\item 
+\mbox{\hyperlink{classschedule_functions_1_1models_1_1_course_acdddedeafd4f8e5d086bac73177e0860}{prerequisites}} = models.\+Many\+To\+Many\+Field(\textquotesingle{}self\textquotesingle{})
+\item 
+\mbox{\hyperlink{classschedule_functions_1_1models_1_1_course_aa3dc4dbe7e485fbdd6ca97a860858427}{equivalent\+\_\+courses}} = models.\+Many\+To\+Many\+Field(\textquotesingle{}self\textquotesingle{})
+\item 
+\mbox{\hyperlink{classschedule_functions_1_1models_1_1_course_a9b0ea0432ee16a78c1d3fe065cd52cca}{same\+\_\+semester\+\_\+courses}} = models.\+Many\+To\+Many\+Field(\textquotesingle{}self\textquotesingle{})
+\item 
+\mbox{\hyperlink{classschedule_functions_1_1models_1_1_course_a613adba1f0aa67654ea0126ce9e4086f}{credits}} = models.\+Integer\+Field()
+\item 
+\mbox{\hyperlink{classschedule_functions_1_1models_1_1_course_a99826dabb84ed0f375557aa60c5b8204}{weight}} = models.\+Integer\+Field()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classschedule_functions_1_1models_1_1_course_a6d10ed67164bcaf35b497e509721c574}\index{scheduleFunctions.models.Course@{scheduleFunctions.models.Course}!classNumber@{classNumber}}
+\index{classNumber@{classNumber}!scheduleFunctions.models.Course@{scheduleFunctions.models.Course}}
+\doxysubsubsection{\texorpdfstring{classNumber}{classNumber}}
+{\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_course_a6d10ed67164bcaf35b497e509721c574} 
+schedule\+Functions.\+models.\+Course.\+class\+Number = models.\+Integer\+Field()\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classschedule_functions_1_1models_1_1_course_a613adba1f0aa67654ea0126ce9e4086f}\index{scheduleFunctions.models.Course@{scheduleFunctions.models.Course}!credits@{credits}}
+\index{credits@{credits}!scheduleFunctions.models.Course@{scheduleFunctions.models.Course}}
+\doxysubsubsection{\texorpdfstring{credits}{credits}}
+{\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_course_a613adba1f0aa67654ea0126ce9e4086f} 
+schedule\+Functions.\+models.\+Course.\+credits = models.\+Integer\+Field()\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classschedule_functions_1_1models_1_1_course_aa3dc4dbe7e485fbdd6ca97a860858427}\index{scheduleFunctions.models.Course@{scheduleFunctions.models.Course}!equivalent\_courses@{equivalent\_courses}}
+\index{equivalent\_courses@{equivalent\_courses}!scheduleFunctions.models.Course@{scheduleFunctions.models.Course}}
+\doxysubsubsection{\texorpdfstring{equivalent\_courses}{equivalent\_courses}}
+{\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_course_aa3dc4dbe7e485fbdd6ca97a860858427} 
+schedule\+Functions.\+models.\+Course.\+equivalent\+\_\+courses = models.\+Many\+To\+Many\+Field(\textquotesingle{}self\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classschedule_functions_1_1models_1_1_course_acdddedeafd4f8e5d086bac73177e0860}\index{scheduleFunctions.models.Course@{scheduleFunctions.models.Course}!prerequisites@{prerequisites}}
+\index{prerequisites@{prerequisites}!scheduleFunctions.models.Course@{scheduleFunctions.models.Course}}
+\doxysubsubsection{\texorpdfstring{prerequisites}{prerequisites}}
+{\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_course_acdddedeafd4f8e5d086bac73177e0860} 
+schedule\+Functions.\+models.\+Course.\+prerequisites = models.\+Many\+To\+Many\+Field(\textquotesingle{}self\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classschedule_functions_1_1models_1_1_course_a9b0ea0432ee16a78c1d3fe065cd52cca}\index{scheduleFunctions.models.Course@{scheduleFunctions.models.Course}!same\_semester\_courses@{same\_semester\_courses}}
+\index{same\_semester\_courses@{same\_semester\_courses}!scheduleFunctions.models.Course@{scheduleFunctions.models.Course}}
+\doxysubsubsection{\texorpdfstring{same\_semester\_courses}{same\_semester\_courses}}
+{\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_course_a9b0ea0432ee16a78c1d3fe065cd52cca} 
+schedule\+Functions.\+models.\+Course.\+same\+\_\+semester\+\_\+courses = models.\+Many\+To\+Many\+Field(\textquotesingle{}self\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classschedule_functions_1_1models_1_1_course_a10d4661ad46a0c0bc1c38fcf8930fb8e}\index{scheduleFunctions.models.Course@{scheduleFunctions.models.Course}!subject@{subject}}
+\index{subject@{subject}!scheduleFunctions.models.Course@{scheduleFunctions.models.Course}}
+\doxysubsubsection{\texorpdfstring{subject}{subject}}
+{\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_course_a10d4661ad46a0c0bc1c38fcf8930fb8e} 
+schedule\+Functions.\+models.\+Course.\+subject = models.\+Char\+Field(max\+\_\+length=5)\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classschedule_functions_1_1models_1_1_course_a99826dabb84ed0f375557aa60c5b8204}\index{scheduleFunctions.models.Course@{scheduleFunctions.models.Course}!weight@{weight}}
+\index{weight@{weight}!scheduleFunctions.models.Course@{scheduleFunctions.models.Course}}
+\doxysubsubsection{\texorpdfstring{weight}{weight}}
+{\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_course_a99826dabb84ed0f375557aa60c5b8204} 
+schedule\+Functions.\+models.\+Course.\+weight = models.\+Integer\+Field()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+schedule\+Functions/\mbox{\hyperlink{models_8py}{models.\+py}}\end{DoxyCompactItemize}

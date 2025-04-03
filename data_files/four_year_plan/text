@@ -1,0 +1,28 @@
+"cist1300": {
+        "equivalent_courses": [
+            "csci1280",
+            "csci1200"
+        ],
+        "same_semester": [
+            "cmst1110",
+            "engl1150",
+            "math1950",
+            "cmst2120",
+            "cist1400"
+        ],
+        "credits": "3",
+        "semesters": [
+            10
+        ]
+    }
+
+Becomes:
+
+same_semester(cist1300, cmst1110).
+same_semester(cist1300, cist1400).
+same_semester(cist1300, cmst2120).
+same_semester(cist1300, math1950).
+same_semester(cist1300, engl1150).
+equivalent_courses(cist1300, csci1280).
+equivalent_courses(cist1300, csci1200).
+course_in_semester(10, cist1300).

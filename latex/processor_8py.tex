@@ -1,0 +1,35 @@
+\doxysection{data\+\_\+processing/processor.py File Reference}
+\hypertarget{processor_8py}{}\label{processor_8py}\index{data\_processing/processor.py@{data\_processing/processor.py}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceprocessor}{processor}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceprocessor_a56b11f4d0c8b6ab8ea0bd66ef32507d1}{processor.\+get\+\_\+cist\+\_\+csci\+\_\+courses}} (json\+\_\+file\+\_\+path)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceprocessor_aef7b4b40203cda379823f28290ace883}{processor.\+current\+\_\+directory}} = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))
+\item 
+\mbox{\hyperlink{namespaceprocessor_ae17c03db2dd63a8c63c666505a69bde3}{processor.\+path}} = current\+\_\+directory.\+split(os.\+sep)
+\item 
+\mbox{\hyperlink{namespaceprocessor_a908bbd829fa2bf5354ddf9618fa0d31f}{processor.\+root\+\_\+index}} = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceprocessor_a32153912b4eb8da2fc5a9b29cf2a6a3f}{processor.\+root\+\_\+dir}} = os.\+sep.\+join(\mbox{\hyperlink{namespaceprocessor_ae17c03db2dd63a8c63c666505a69bde3}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceprocessor_a908bbd829fa2bf5354ddf9618fa0d31f}{root\+\_\+index}}+1\mbox{]})
+\item 
+\mbox{\hyperlink{namespaceprocessor_ad1f5881666625204d7d5892d8c169a4e}{processor.\+data\+\_\+dir}} = os.\+path.\+join(\mbox{\hyperlink{namespaceprocessor_a32153912b4eb8da2fc5a9b29cf2a6a3f}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}uploaded\+\_\+schedule\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceprocessor_a27f36f3c5347b3a4e2cf37dbcda84659}{processor.\+json\+\_\+file}} = os.\+path.\+join(\mbox{\hyperlink{namespaceprocessor_ad1f5881666625204d7d5892d8c169a4e}{data\+\_\+dir}}, "{}fa21-\/fa24.\+json"{})
+\item 
+\mbox{\hyperlink{namespaceprocessor_ab0cba5883ec193921bc0f529a684dd08}{processor.\+result}} = \mbox{\hyperlink{namespaceprocessor_a56b11f4d0c8b6ab8ea0bd66ef32507d1}{get\+\_\+cist\+\_\+csci\+\_\+courses}}(\mbox{\hyperlink{namespaceprocessor_a27f36f3c5347b3a4e2cf37dbcda84659}{json\+\_\+file}})
+\item 
+\mbox{\hyperlink{namespaceprocessor_a1769e2f2c3d9bc94efd91ec2f8d8486c}{processor.\+encoding}}
+\item 
+\mbox{\hyperlink{namespaceprocessor_a6913d6fba54c50da16894c821a4c9f53}{processor.\+out}}
+\item 
+\mbox{\hyperlink{namespaceprocessor_a255e69a1d89eef7e4059cd1311b02973}{processor.\+indent}}
+\end{DoxyCompactItemize}
