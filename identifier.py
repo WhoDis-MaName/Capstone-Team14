@@ -28,6 +28,7 @@ parser.add_argument(
 )
 
 
+# TODO: add in doxygen comments for clingo application.
 class ClingoApp(clingo.application.Application):
     def main(self, ctl, files):
 
