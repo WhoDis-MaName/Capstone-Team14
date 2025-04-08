@@ -46,7 +46,8 @@ class Day(models.Model):
     )
     
 class Course(models.Model):
-    subject = models.CharField(max_length=10)
+    course_number = models.CharField(max_length=10, unique=True)
+    course_name = models.CharField(max_length=255)
     prerequisites = models.ManyToManyField('self')
     equivalent_courses = models.ManyToManyField('self')
     same_semester_courses = models.ManyToManyField('self')
