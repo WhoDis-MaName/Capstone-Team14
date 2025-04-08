@@ -98,6 +98,15 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('sections', models.ManyToManyField(to='scheduleFunctions.section')),
+            ]
+        ),
+        migrations.CreateModel(
+            name='FilteredUpload',
+            fields=[
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('uploaded_at', models.DateTimeField(auto_now_add=True)),
+                ('filename', models.CharField(max_length=255)),
+                ('filtered_data', models.JSONField()),
             ],
         ),
     ]

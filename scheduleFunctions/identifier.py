@@ -1,5 +1,5 @@
 import sys, clingo, math
-from data_processing.jsonconverter import convert
+from clingo.jsonconverter import convert
 import argparse
 import os
 
