@@ -6,6 +6,14 @@ from django.conf import settings
 
 
 def login(request):
+    """Give login page using :template:/templates/login.html and process login requests. Once successfully logged in, redirect to :view:scheduleFunctions.dashboard_view
+
+    Args:
+        request (_type_): result received from HTTP request POST or GET method
+
+    Returns:
+        HttpResponse | HttpResponseRedirect | HttpResponsePermanentRedirect: provides results from the HTTP request, either login page, error, or redirect to :view:scheduleFunctions.dashboard_view
+    """
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")

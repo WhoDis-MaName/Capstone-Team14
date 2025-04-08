@@ -22,7 +22,7 @@ YEAR_IN_SCHOOL_CHOICES = {
 }
 
 class Room(models.Model):
-    building = models.CharField(max_length=5)
+    building = models.CharField(max_length=255)
     room_number = models.IntegerField()
     capacity = models.IntegerField()
 
@@ -40,21 +40,25 @@ class Day(models.Model):
         FRI: "Friday",
     }
     day_of_week = models.CharField(
-        max_length=3,
+        max_length=4,
         choices=DAY_OF_WEEK_CHOICES,
         default=MON,
     )
     
 class Course(models.Model):
-    subject = models.CharField(max_length=5)
-    classNumber = models.IntegerField()
+    subject = models.CharField(max_length=10)
     prerequisites = models.ManyToManyField('self')
     equivalent_courses = models.ManyToManyField('self')
     same_semester_courses = models.ManyToManyField('self')
     credits = models.IntegerField()
     weight = models.IntegerField()
     
-   
+class Requirements_Group(models.Model):
+    major_group_label = models.CharField(max_length=255)
+    group_label = models.CharField(max_length=255)
+    courses = models.ManyToManyField(Course)
+    credits = models.IntegerField()
+    
 class Schedule(models.Model):
     year = models.CharField(
         max_length=2,
@@ -75,8 +79,8 @@ class Section(models.Model):
     start_time = models.IntegerField()
     end_time = models.IntegerField()
     days = models.ManyToManyField(Day)
-    room = models.ForeignKey(Room, on_delete = models.SET_NULL)
-    schdule = models.ForeignKey(Schedule, on_delete = models.CASCADE)
+    room = models.ForeignKey(Room, null=True, on_delete = models.SET_NULL)
+    schedule = models.ForeignKey(Schedule, on_delete = models.CASCADE)
     
 class PlanSemester(models.Model):
     year = models.CharField(
@@ -97,11 +101,10 @@ class Change(models.Model):
     new_start_time = models.IntegerField()
     new_end_time = models.IntegerField()
     new_days = models.ManyToManyField(Day)
-    new_room = models.ForeignKey(Room, on_delete = models.SET_NULL)
+    new_room = models.ForeignKey(Room, on_delete = models.CASCADE)
     ...
     
 class Conflict(models.Model):
-    sectionA = models.ForeignKey(Section, on_delete = models.CASCADE)
-    sectionB = models.ForeignKey(Section, on_delete = models.CASCADE)
+    sections = models.ManyToManyField(Section)
     ...
     

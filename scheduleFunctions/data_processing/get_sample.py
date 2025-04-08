@@ -37,7 +37,7 @@ else:
 
 path = current_directory.split(os.sep)
 
-root_index = path.index('Capstone-Team14')
+root_index = path.index('scheduleFunctions')
 root_dir = os.sep.join(path[:root_index+1])
 read_dir = os.path.join(root_dir, 'data_files', 'uploaded_schedule')
 sample_dir = os.path.join(root_dir, 'data_files', 'samples')
