@@ -152,12 +152,6 @@ def upload_json_file(request):
     )
     return JsonResponse(filtered_courses, safe=False)
 
-
-import json
-from django.http import JsonResponse
-from .models import FilteredUpload
-from datetime import datetime
-
 def convert24(time):
     t = datetime.strptime(time, "%I:%M%p")
     return t.hour * 60 + t.minute
