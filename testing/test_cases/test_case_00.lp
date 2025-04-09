@@ -18,7 +18,7 @@ course(csci4000, assessment, none).
 section(csci4000, s001, c16286, 720, 885, m, to_be_announced, harvey_pe_siy).
 course(csci8456, introduction_artificial_intell, none).
 section(csci8456, s001, c18572, 810, 885, tr, peter_kiewit_institute_153, jorge_fandinno_garcia).
-class(csci8456; cist1600; csci4000; csci8010; cist9970; cist3110; csci1204; csci3710; cist4540; cist1010).
+class(csci8456; cist1600; csci4000; csci8010; cist9970; cist3110; csci1204; cist4540; cist1010; csci3710). 
 room(peter_kiewit_institute_153; peter_kiewit_institute_157; peter_kiewit_institute_276; to_be_announced; totally_online; peter_kiewit_institute_361).
 professor(alfredo_perez; hollie_rosser; jorge_fandinno_garcia; ash_p_ashokan; harvey_pe_siy; judith_monarrez_diaz_kelsey; ann_l_fruhling; hassan_abd_al_rahmanan_farhat; derek_babb; karen_sue_allen).
 time_slot(810, 885, tr).
