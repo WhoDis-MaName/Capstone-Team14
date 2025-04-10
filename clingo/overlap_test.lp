@@ -1,5 +1,5 @@
-% #include "filtered.lp".
-#include "testing\\test_cases\\test_case_01.lp".
+#include "filtered.lp".
+% #include "testing\\test_cases\\test_case_01.lp".
 % #include "fourYearPlanTest.lp".
 #include "days.lp".
 #include "overlap.lp".
@@ -34,3 +34,4 @@ conflict_count(N) :- N = #count{ C1 : conflict(C1, C2) }.
 
 #show overlap_count/1.
 #show conflict_count/1.
+#show overlap/2.

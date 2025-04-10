@@ -21,7 +21,7 @@ section(csci1204, s001, c14597, 720, 795, f, peter_kiewit_institute_276, ash_p_a
 section(csci1204, s002, c14597, 720, 795, w, peter_kiewit_institute_276, ash_p_ashokan).
 course(csci3710, intro_to_digital_design, none).
 section(csci3710, s850, c14619, 780, 855, mw, totally_online, hassan_abd_al_rahmanan_farhat).
-section(csci3710, s851, c14619, 780, 855, tr, totally_online, hassan_abd_al_rahmanan_farhat).
+% section(csci3710, s851, c14619, 780, 855, tr, totally_online, hassan_abd_al_rahmanan_farhat).
 course(csci4000, assessment, none).
 section(csci4000, s001, c16286, 720, 885, m, to_be_announced, harvey_pe_siy).
 section(csci4000, s002, c16286, 720, 885, w, to_be_announced, harvey_pe_siy).

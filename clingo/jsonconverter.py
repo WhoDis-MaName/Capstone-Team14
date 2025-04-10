@@ -25,7 +25,6 @@ def convert(file):
     for term, subjects in data.items():
         for subject, courses in subjects.items():
             for course_num, course_info in courses.items():
-
                 course_id = (
                     f"{subject}{course_num}".lower()
                     .replace(" ", "_")
@@ -47,14 +46,12 @@ def convert(file):
                     .replace(".", "")
                     .replace("-", "_")
                 )
-
-                # Store course fact
-                facts.append(f'course({course_id}, "{title}", {prereq}).')
-                classes.add(course_id)
-
+                section_count = 0
+                totally_online_count = 0
                 for section_num, section_info in course_info.get(
                     "sections", {}
                 ).items():
+                    section_count += 1
                     section_num = "s" + section_num.lower()
                     class_number = (
                         "c" + section_info.get("Class Number", "").split()[0].lower()
@@ -95,6 +92,7 @@ def convert(file):
                         or location == "to_be_announced"
                         or start == "tba"
                     ):
+                        totally_online_count += 1
                         continue
                     # Store section fact
                     facts.append(
@@ -106,6 +104,11 @@ def convert(file):
                     professors.add(instructor)
                     if start != "tba" and end != "tba" and days != "tba":
                         times.add(f"time_slot({start}, {end}, {days}).")
+                if totally_online_count == section_count:
+                    continue
+                # Store course fact
+                facts.append(f'course({course_id}, "{title}", {prereq}).')
+                classes.add(course_id)
 
     # Convert sets to facts
     facts.append(f"class({'; '.join(classes)}).")
@@ -122,4 +125,6 @@ def convert(file):
     # print(f"ASP facts written to {asp_filename}")
 
 
-convert(r"C:\Users\cjgry\Documents\Capstone\Capstone-Team14\data\filtered.json")
+convert(
+    r"C:\Users\cjgry\Documents\Capstone\Capstone-Team14\data_files\four_year_plan\filtered.json"
+)
