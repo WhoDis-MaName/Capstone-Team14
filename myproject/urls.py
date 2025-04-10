@@ -21,7 +21,6 @@ from scheduleFunctions.views import login, dashboard_view, schedule_view, upload
 from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
-    path('admin/doc/', include('django.contrib.admindocs.urls')),
     path('admin/', admin.site.urls),
     path('run-script/', run_converter, name='run_converter'),
     path('', login, name='home'),  # Add homepage route

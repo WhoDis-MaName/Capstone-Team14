@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+  {% load static %}
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>University Course Scheduler</title>
-  <link rel="stylesheet" href="styles/login_page.css" />
+  <link rel="stylesheet" href="{% static 'styles/login_page.css' %}" />
 </head>
 <body>
   <header>
@@ -27,7 +28,7 @@
   </main>
   <footer>
     <div class="footer-content">
-      <img src="assets/images/uno-lock-up-white.png" alt="University Logo" /> <!-- PATH CHANGE -->
+      <img src="{% static 'assets/images/uno-lock-up-white.png' %}" alt="University Logo" /> <!-- PATH CHANGE -->
       <div>
         <p>&copy; University Course Scheduler. All rights reserved.</p>
         <p>Developed by Team 14 lol</p>
