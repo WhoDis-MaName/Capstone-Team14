@@ -8,8 +8,8 @@
         "001": {
           "Class Number": "15084",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "1:30PM - 2:45PM",
-          "Days": "TR",
+          "Time": "12:00PM - 1:15PM",
+          "Days": "F",
           "Location": "To Be Announced",
           "Instructor": "Ann L Fruhling"
         }
@@ -23,8 +23,8 @@
         "001": {
           "Class Number": "16466",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "1:30PM - 2:45PM",
-          "Days": "TR",
+          "Time": "9:30AM - 10:20AM",
+          "Days": "T",
           "Location": "Peter Kiewit Institute 157",
           "Instructor": "Judith Monarrez Diaz Kelsey"
         }
@@ -38,8 +38,8 @@
         "851": {
           "Class Number": "17270",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "9:30AM - 10:20AM",
-          "Days": "T",
+          "Time": "1:30PM - 2:45PM",
+          "Days": "TR",
           "Location": "Totally Online",
           "Instructor": "Karen Sue Allen"
         }
@@ -53,7 +53,7 @@
         "001": {
           "Class Number": "15462",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "10:30AM - 11:45AM",
+          "Time": "3:00PM - 4:15PM",
           "Days": "MW",
           "Location": "Peter Kiewit Institute 153",
           "Instructor": "Hollie Rosser"
@@ -68,8 +68,8 @@
         "001": {
           "Class Number": "16496",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "1:30PM - 2:45PM",
-          "Days": "TR",
+          "Time": "10:30AM - 11:45AM",
+          "Days": "MW",
           "Location": "Peter Kiewit Institute 361",
           "Instructor": "Derek Babb"
         }
@@ -85,8 +85,8 @@
         "850": {
           "Class Number": "20542",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "3:00PM - 4:15PM",
-          "Days": "MW",
+          "Time": "12:00PM - 1:15PM",
+          "Days": "F",
           "Location": "Totally Online",
           "Instructor": "Alfredo Perez"
         }
@@ -115,8 +115,8 @@
         "850": {
           "Class Number": "14619",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "12:00PM - 1:15PM",
-          "Days": "F",
+          "Time": "1:00PM - 2:15PM",
+          "Days": "MW",
           "Location": "Totally Online",
           "Instructor": "Hassan Abd Al Rahmanan Farhat"
         }
@@ -130,8 +130,8 @@
         "001": {
           "Class Number": "16286",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "12:00PM - 1:15PM",
-          "Days": "F",
+          "Time": "10:30AM - 11:45AM",
+          "Days": "MW",
           "Location": "To Be Announced",
           "Instructor": "Harvey Pe Siy"
         }
@@ -145,8 +145,8 @@
         "001": {
           "Class Number": "18572",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "1:30PM - 2:45PM",
-          "Days": "TR",
+          "Time": "9:30AM - 10:20AM",
+          "Days": "T",
           "Location": "Peter Kiewit Institute 153",
           "Instructor": "Jorge Fandinno Garcia"
         }

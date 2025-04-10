@@ -75,9 +75,9 @@ weighted_scheduled_overlap(N) :- N = #sum{ W, C1, C2 : weighted_overlap(C1, C2, 
 % #show scheduled_overlap_count/1.
 % #show weighted_scheduled_conflict/1.
 % #show weighted_scheduled_overlap/1.
-% #show scheduled_section/6.
+#show scheduled_section/6.
 
-% #minimize{W, C1, C2 : weighted_overlap(C1, C2, W)}.
+#minimize{W, C1, C2 : weighted_overlap(C1, C2, W)}.
 % Prioritized minimize functions, try to minimize overlaps, then minimize individual conflicts. 
 % TODO: look into how long this takes
 % #minimize{W@2, C1, C2 : weighted_overlap(C1, C2, W)}.

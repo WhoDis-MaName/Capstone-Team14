@@ -30,6 +30,7 @@ class ClingoApp(clingo.application.Application):
     # TODO: update print model to print out the scheduled sections and parse into a json like filtered.json and upload back to the website to be displayed
     def print_model(self, model, printer) -> None:
         symbols = [str(s) for s in list(model.symbols(shown=True))]
+        print(symbols)
 
         convert_to_json(symbols, "media\output.json")
 
