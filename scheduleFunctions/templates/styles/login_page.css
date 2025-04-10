@@ -1,127 +1,146 @@
 html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-  }
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
 
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #e0e0e0;
-  }
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e0e0e0;
+}
 
-  main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 30px 0;
-  }
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 30px 0;
+}
 
-  header {
-    background-color: #000;
-    color: #fff;
-    padding: 15px;
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 3px solid #d00000;
-    background-image: url("assets/images/uno-icon-color.png");
-    background-size: 50px auto;
-    background-position: 10px center;
-    background-repeat: no-repeat;
-  }
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2em;
+  font-weight: 600;
+  letter-spacing: -.01em;
+  color: #fff;
+}
 
-  .banner {
-    width: 100%;
-    height: 200px;
-    background: url('assets/images/banner.jpg') no-repeat center center; /* PATH CHANGE */
-    background-size: cover;
-  }
+header.banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centers the content horizontally */
+  background-color: #000;
+  color: #fff;
+  border-bottom: 3px solid #d00000;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center; /* Ensures text alignment */
+}
 
-  .login-container {
-    width: 80%;
-    max-width: 400px;
-    background: #fff;
-    padding: 30px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-  }
+header.banner-content img.uno-image {
+  margin-right: 10px; /* Adds spacing between the image and the text */
+  width: 50px; /* Adjust the size of the image if needed */
+}
 
-  .login-container h2 {
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 22px;
-    color: #000;
-    text-align: center;
-  }
+.banner-content .logo-container {
+  margin-right: auto;
+}
 
-  .login-container form input,
-  .login-container form button {
-    width: 100%;
-    padding: 12px;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
+.banner-content h1 {
+  margin: 0; 
+  flex: 1;
+  text-align: center;
+  font-size: 24px;
+}
 
-  .login-container form button {
-    background-color: #d00000;
-    color: #fff;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-  }
+.banner-content .uno-image {
+  width: 50px;
+  margin-left: 20px;
+}
 
-  .login-container form button:hover {
-    background-color: #a00000;
-  }
+.login-container {
+  max-width: 500px;
+  max-height: 600px;
+  background: #fff;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
 
-  .forgot-password {
-    display: block;
-    margin-top: 10px;
-    text-align: right;
-    color: #d00000;
-    text-decoration: none;
-    font-size: 14px;
-  }
+.login-container h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 22px;
+  color: #000;
+  text-align: center;
+}
 
-  .forgot-password:hover {
-    text-decoration: underline;
-  }
+.login-container form input,
+.login-container form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
 
-  .logout-info {
-    margin-top: 15px;
-    font-size: 14px;
-    color: #333;
-    text-align: center;
-  }
+.login-container form button {
+  background-color: #d00000;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
 
-  footer {
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: auto;
-  }
+.login-container form button:hover {
+  background-color: #a00000;
+}
 
-  footer .footer-content {
-    max-width: 400px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.forgot-password {
+  display: block;
+  margin-top: 10px;
+  text-align: right;
+  color: #d00000;
+  text-decoration: none;
+  font-size: 14px;
+}
 
-  footer .footer-content img {
-    width: 150px;
-    margin-right: 10px;
-  }
+.forgot-password:hover {
+  text-decoration: underline;
+}
 
-  footer .footer-content p {
-    margin: 0;
-    font-size: 14px;
-  }
+.logout-info {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+}
+
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: auto;
+}
+
+footer .footer-content {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .footer-content img {
+  width: 150px;
+  margin-right: 10px;
+}
+
+footer .footer-content p {
+  margin: 0;
+  font-size: 14px;
+}

@@ -1,0 +1,115 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  font-size: 24px;
+  text-align: center;
+  border-bottom: 3px solid #d00000;
+  justify-content: center;
+}
+
+header .header-logo {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.dashboard-layout {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  height: 100vh;
+  background-color: #fff;
+  border-right: 2px solid #ddd;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #000000;
+  text-align: center;
+}
+
+.day-button {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #d00000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+
+.day-button:hover {
+  background-color: #a00000;
+}
+
+.container {
+  flex: 1;
+  padding: 20px;
+  max-width: 900px;
+  margin: 20px auto;
+  background: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.section {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #fff;
+  border-left: 5px solid #d00000;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #000;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #d00000;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-size: 16px;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #a00000;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  background: #eee;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 3px;
+}
