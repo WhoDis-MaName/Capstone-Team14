@@ -1,5 +1,6 @@
 #include "filtered.lp".
 % #include "..\\testing\\test_cases\\test_case_00.lp".
+#include "fourYearPlanTest.lp".
 #include "days.lp".
 #include "overlap.lp".
 #include "groups.lp".
@@ -46,16 +47,21 @@ scheduled_path(C1, C2) :- scheduled_section(C1, S1, E1, D1), scheduled_section(C
 % There are no scheduled_paths between C1 and C2 -> total overlap.
 scheduled_overlap(C1, C2) :- class(C1), class(C2), not scheduled_path(C1, C2), C1!=C2.
 
-overlap_weight(C1, C2, W) :- planned_course(C1, M1, _), planned_course(C2, M2, _), weight(M1, W1), weight(M2, W2), W = W1 + W2.
+overlap_weight(C1, C2, W) :- planned_course(C1, _, Y1), planned_course(C2, _, Y2), weight(Y1, W1), weight(Y2, W2), W = W1 + W2.
+weighted_overlap(C1, C2, W) :- scheduled_overlap(C1, C2), planned_course(C1, _, Y1), planned_course(C2, _, Y2), weight(Y1, W1), weight(Y2, W2), W = W1 + W2.
+
+#show weighted_overlap/3.
 
 % #show scheduled_path/2.
 % #show overlap/2.
 
-scheduled_overlap_count(N) :- N = #count{ C1 : scheduled_overlap(C1, C2) }.
-scheduled_conflict_count(N) :- N = #count{ C1 : scheduled_conflict(C1, C2) }.
+scheduled_overlap_count(N) :- N = #count{ C1, C2 : scheduled_overlap(C1, C2) }.
+scheduled_conflict_count(N) :- N = #count{ C1, C2 : scheduled_conflict(C1, C2) }.
 
-weighted_scheduled_overlap(N) :- N = #sum{ W, C1 : scheduled_overlap(C1, C2), overlap_weight(C1, C2, W) }.
-weighted_scheduled_conflict(N) :- N = #sum{ W, C1 : scheduled_conflict(C1, C2), overlap_weight(C1, C2, W) }.
+weighted_scheduled_overlap(N) :- N = #sum{ W, C1, C2 : weighted_overlap(C1, C2, W) }.
+
+% course_count(N) :- N = #count{ C1, C2 : planned_course(C, M, Y) }.
+% weighted_scheduled_conflict(N) :- N = #sum{ W, C1 : scheduled_conflict(C1, C2), overlap_weight(C1, C2, W) }.
 
 % scheduled_conflict_count(N) :- N = #count{ C1, C2 : scheduled_true_conflict(C1, C2) }.
 % scheduled_conflict_count(N) :- N = #count{ C1, C2 : scheduled_conflict(C1, C2) }.
@@ -63,8 +69,8 @@ weighted_scheduled_conflict(N) :- N = #sum{ W, C1 : scheduled_conflict(C1, C2), 
 % #show conflict_count/1.
 #show scheduled_conflict_count/1.
 #show scheduled_overlap_count/1.
-#show weighted_scheduled_conflict/1.
+% #show weighted_scheduled_conflict/1.
 #show weighted_scheduled_overlap/1.
 % #show scheduled_section/6.
-#minimize{W, C1 : scheduled_overlap(C1, C2), overlap_weight(C1, C2, W)}.
+#minimize{W, C1, C2 : weighted_overlap(C1, C2, W)}.
 % #minimize{weighted_scheduled_overlap}.

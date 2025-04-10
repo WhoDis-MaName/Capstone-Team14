@@ -6,7 +6,7 @@
 % assign weights to groups.
 
 weight(0, 1).
-weight(m2, g1).
-weight(m3, g2).
-weight(m4, g3).
-weight(m5, g4).
+weight(1, g1).
+weight(2, g2).
+weight(3, g3).
+weight(4, g4).
