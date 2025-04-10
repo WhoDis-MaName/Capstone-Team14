@@ -14,7 +14,9 @@ planned_course(C, 0, 0) :- class(C), not planned_classes(C).
 % For each section with a room and professor already assigned, choose one timeslot.
 % TODO: Add constraint so that only certain time slots are allowed based on number of credits. 
 % For example, a 5 credit class must have mtwr
-{scheduled_section(C, S, E, D, R, P) : time_slot(S, E, D) } = 1 :- section(C, _, _, _, _, _, R, P). 
+{scheduled_section(C, I, N, S, E, D, R, P) : time_slot(S, E, D) } = 1 :- section(C, I, N, _, _, _, R, P). 
+
+scheduled_section(C, S, E, D, R, P) :- scheduled_section(C, I, N, S, E, D, R, P).
 
 % TODO: Add in weights to classes - default to 1 if nothing input from the user
 % Once the classes have weights, we can assign weights to the conflicts s.t. 
