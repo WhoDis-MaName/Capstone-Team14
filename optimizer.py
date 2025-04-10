@@ -39,11 +39,12 @@ class ClingoApp(clingo.application.Application):
         print(file)
         # TODO: Update to work with input file not just hard coded file
         convert(file)
-        ctl.load("identifyconflict.lp")
+        ctl.load("overlap_minimizer.lp")
 
         ctl.ground()
         ctl.solve()
 
+    # TODO: update print model to print out the scheduled sections and parse into a json like filtered.json and upload back to the website to be displayed
     # def print_model(self, model, printer) -> None:
     #     board = Sudoku({}).from_model(model)
     #     print(board)

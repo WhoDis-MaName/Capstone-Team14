@@ -60,15 +60,12 @@ def parse_answer_set(output):
     }
 
 
-# TODO: we have a bug where it isn't counting all the sections for some reason.
-# For example, in this test case it is only counting 8 sections - it is missing csci 1010 and another one
-# Add test cases here
 @pytest.mark.parametrize(
     "input_files,expected_output",
     [
         (
-            ["../test_cases/test_case_00.lp", "../../identifyconflict.lp"],
-            {"conflict_count(3)"},
+            ["../test_cases/test_case_00.lp", "../../clingo/identifyconflict.lp"],
+            {"true_conflict_count(3)"},
         ),
     ],
 )
