@@ -29,16 +29,9 @@ class ClingoApp(clingo.application.Application):
 
     # TODO: update print model to print out the scheduled sections and parse into a json like filtered.json and upload back to the website to be displayed
     def print_model(self, model, printer) -> None:
-        # print(model.symbols)
-        # symbols = list(model.symbols(shown=True))
         symbols = [str(s) for s in list(model.symbols(shown=True))]
 
-        with open("output.txt", "w") as f:
-            f.write("\n".join(symbols))
-
-        convert_to_json("output.txt", "output.json")
-        # board = Sudoku({}).from_model(model)
-        # print(board)
+        convert_to_json(symbols, "media\output.json")
 
 
 def parse_line(line):
@@ -83,28 +76,27 @@ def parse_line(line):
     return subject, course_number, section, section_data
 
 
-def convert_to_json(input_file, output_file):
+def convert_to_json(symbols, output_file):
     data = {}
 
-    with open(input_file, "r") as f:
-        for line in f:
-            parsed = parse_line(line)
-            if not parsed:
-                continue
-            subject, course_number, section, section_data = parsed
+    for line in symbols:
+        parsed = parse_line(line)
+        if not parsed:
+            continue
+        subject, course_number, section, section_data = parsed
 
-            if subject not in data:
-                data[subject] = {}
+        if subject not in data:
+            data[subject] = {}
 
-            if course_number not in data[subject]:
-                data[subject][course_number] = {
-                    "title": "TBD",
-                    "desc": "TBD",
-                    "prereq": "-",
-                    "sections": {},
-                }
+        if course_number not in data[subject]:
+            data[subject][course_number] = {
+                "title": "TBD",
+                "desc": "TBD",
+                "prereq": "-",
+                "sections": {},
+            }
 
-            data[subject][course_number]["sections"][section] = section_data
+        data[subject][course_number]["sections"][section] = section_data
 
     with open(output_file, "w") as f:
         json.dump(data, f, indent=2)
