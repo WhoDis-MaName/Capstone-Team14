@@ -1,8 +1,12 @@
 #include "filtered.lp".
 % #include "testing\\test_cases\\test_case_01.lp".
-% #include "fourYearPlanTest.lp".
+#include "fourYearPlanTest.lp".
 #include "days.lp".
 #include "overlap.lp".
+#include "groups.lp".
+
+module(0, 0).
+planned_course(C, 0, 0) :- class(C), not planned_classes(C).
 
 % Example course from classes.lp:
 % course("CSCI4830", "INTRODUCTN SOFTWARE ENGINEERNG", "-").
@@ -24,14 +28,18 @@ path(C1, C2) :- section(C1, S1, E1, D1), section(C2, S2, E2, D2), not conflict(C
 % There are no paths between C1 and C2 -> total overlap.
 overlap(C1, C2) :- class(C1), class(C2), not path(C1, C2), C1!=C2.
 
+weighted_overlap(C1, C2, W) :- overlap(C1, C2), planned_course(C1, _, Y1), planned_course(C2, _, Y2), weight(Y1, W1), weight(Y2, W2), W = W1 + W2.
+original_weighted_overlap_sum(N) :- N = #sum{ W, C1, C2 : weighted_overlap(C1, C2, W) }.
+
 % #show path/2.
 % #show overlap/2.
+#show original_weighted_overlap_sum/1.
 
-overlap_count(N) :- N = #count{ C1 : overlap(C1, C2) }.
-conflict_count(N) :- N = #count{ C1 : conflict(C1, C2) }.
+% overlap_count(N) :- N = #count{ C1 : overlap(C1, C2) }.
+% conflict_count(N) :- N = #count{ C1 : conflict(C1, C2) }.
 % overlap_count(N) :- N = #count{ C1, C2 : overlap(C1, C2) }.
 % conflict_count(N) :- N = #count{ C1, C2 : conflict(C1, C2) }.
 
-#show overlap_count/1.
-#show conflict_count/1.
-#show overlap/2.
+% #show overlap_count/1.
+% #show conflict_count/1.
+% #show overlap/2.
