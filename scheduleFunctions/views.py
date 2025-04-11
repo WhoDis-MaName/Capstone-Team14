@@ -96,7 +96,7 @@ from datetime import datetime
 def convert24(time):
     t = datetime.strptime(time, "%I:%M%p")
     return t.hour * 60 + t.minute
-
+# mayve tghsiu will help or something
 def run_converter(request):
     try:
         latest = FilteredUpload.objects.latest("uploaded_at")
