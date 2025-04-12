@@ -40,7 +40,7 @@ class Day(models.Model):
         FRI: "Friday",
     }
     day_of_week = models.CharField(
-        max_length=3,
+        max_length=4,
         choices=DAY_OF_WEEK_CHOICES,
         default=MON,
     )
@@ -75,7 +75,7 @@ class Section(models.Model):
     start_time = models.IntegerField()
     end_time = models.IntegerField()
     days = models.ManyToManyField(Day)
-    room = models.ForeignKey(Room, on_delete = models.SET_NULL)
+    room = models.ForeignKey(Room, on_delete=models.SET_NULL, null=True, blank=True)
     schdule = models.ForeignKey(Schedule, on_delete = models.CASCADE)
     
 class PlanSemester(models.Model):
@@ -97,12 +97,12 @@ class Change(models.Model):
     new_start_time = models.IntegerField()
     new_end_time = models.IntegerField()
     new_days = models.ManyToManyField(Day)
-    new_room = models.ForeignKey(Room, on_delete = models.SET_NULL)
+    new_room = models.ForeignKey(Room, on_delete=models.SET_NULL, null=True, blank=True)
     ...
     
 class Conflict(models.Model):
-    sectionA = models.ForeignKey(Section, on_delete = models.CASCADE)
-    sectionB = models.ForeignKey(Section, on_delete = models.CASCADE)
+    sectionA = models.ForeignKey(Section, on_delete=models.CASCADE, related_name='conflicts_as_A')
+    sectionB = models.ForeignKey(Section, on_delete=models.CASCADE, related_name='conflicts_as_B')
     ...
     
 from django.db import models
