@@ -10,6 +10,11 @@ import json
 from django.http import JsonResponse
 from django.core.files.base import ContentFile  # <-- Add this line
 from .models import FilteredUpload
+from django.core.files.storage import default_storage
+from django.utils.timezone import now
+from django.core.files.base import ContentFile
+
+
 def login(request):
     if request.method == "POST":
         username = request.POST.get("username")
@@ -65,7 +70,10 @@ def upload_json_file(request):
         return JsonResponse({"error": "Only .json files are allowed"}, status=400)
 
     try:
-        data = json.load(uploaded_file)
+        # Copy uploaded file's contents and reset pointer after read
+        file_contents = uploaded_file.read()
+        data = json.loads(file_contents)
+        uploaded_file.seek(0)
     except json.JSONDecodeError:
         return JsonResponse({"error": "Uploaded file is not a valid JSON file"}, status=400)
 
@@ -84,24 +92,31 @@ def upload_json_file(request):
         else:
             non_filtered_courses[latest_block][subject_code] = courses_dict
 
+    # === NEW NAMING LOGIC ===
+    upload_number = FilteredUpload.objects.count() + 1
+
+    raw_filename = f"uploads/raw_input{upload_number}.json"
+    filtered_filename = f"uploads/filtered_output{upload_number}.json"
+    non_filtered_filename = f"uploads/remaining_output{upload_number}.json"
+
+    # Save files to media/uploads/
+    default_storage.save(raw_filename, ContentFile(file_contents))
+    default_storage.save(filtered_filename, ContentFile(json.dumps(filtered_courses, indent=2)))
+    default_storage.save(non_filtered_filename, ContentFile(json.dumps(non_filtered_courses, indent=2)))
+
+    # Save to DB
     FilteredUpload.objects.create(
-        filename=uploaded_file.name,
+        filename=f"raw_input{upload_number}.json",
         filtered_data=filtered_courses,
         non_filtered_data=non_filtered_courses,
-        uploaded_file=uploaded_file
+        uploaded_file=uploaded_file  # Will use original name
     )
-    from django.core.files.storage import default_storage
-    from django.utils.timezone import now
 
-    # Define file names using current timestamp to avoid collisions
-    timestamp = now().strftime("%Y%m%d%H%M%S")
-    filtered_file_name = f"uploads/filtered_{timestamp}.json"
-    non_filtered_file_name = f"uploads/non_filtered_{timestamp}.json"
-
-    # Save filtered JSON to media/uploads
-    default_storage.save(filtered_file_name, ContentFile(json.dumps(filtered_courses, indent=2)))
-    default_storage.save(non_filtered_file_name, ContentFile(json.dumps(non_filtered_courses, indent=2)))
     return JsonResponse({
+        "message": f"Upload #{upload_number} complete.",
+        "raw_file": raw_filename,
+        "filtered_file": filtered_filename,
+        "non_filtered_file": non_filtered_filename,
         "filtered_courses": filtered_courses,
         "non_filtered_courses": non_filtered_courses
     }, safe=False)
