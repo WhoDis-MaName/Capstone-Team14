@@ -1,20 +1,22 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>University Course Scheduler</title>
-  <link rel="stylesheet" href="styles/login_page.css" />
+  <link rel="stylesheet" href="{% static 'styles/login_page.css' %}" />
 </head>
 <body>
   <header class="banner-content">
-    <img class="uno-image" src="assets/images/uno-icon-color.png" alt="University Logo" />
-      <h1>UNIVERSITY COURSE SCHEDULER</h1>
+    <img class="uno-image" src="{% static 'assets/images/uno-icon-color.png' %}" alt="University Logo" />
+    <h1>UNIVERSITY COURSE SCHEDULER</h1>
   </header>
   <main>
     <div class="login-container">
       <h2>Sign In</h2>
       <form method="POST">
+        {% csrf_token %}
         <input type="text" name="username" placeholder="Username" required />
         <input type="password" name="password" placeholder="Password" required />
         <a href="#" class="forgot-password">Forgot Your Password?</a>
@@ -27,7 +29,7 @@
   </main>
   <footer>
     <div class="footer-content">
-      <img src="assets/images/uno-lock-up-white.png" alt="University Logo" /> <!-- PATH CHANGE -->
+      <img src="{% static 'assets/images/uno-lock-up-white.png' %}" alt="University Logo" />
       <div>
         <p>&copy; University Course Scheduler. All rights reserved.</p>
         <p>Developed by Team 14 lol</p>
