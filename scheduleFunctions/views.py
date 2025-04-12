@@ -6,7 +6,10 @@ from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 import json
 from .models import FilteredUpload
-
+import json
+from django.http import JsonResponse
+from django.core.files.base import ContentFile  # <-- Add this line
+from .models import FilteredUpload
 def login(request):
     if request.method == "POST":
         username = request.POST.get("username")
@@ -69,24 +72,39 @@ def upload_json_file(request):
     if not data:
         return JsonResponse({"error": "The JSON file is empty"}, status=400)
 
-    # Get the latest semester key
     latest_block = max(data.keys())
     subjects_of_interest = {"CIST", "CSCI"}
-    filtered_courses = {}
+    filtered_courses = {latest_block: {}}
+    non_filtered_courses = {latest_block: {}}
 
     latest_subjects = data[latest_block]
     for subject_code, courses_dict in latest_subjects.items():
         if subject_code in subjects_of_interest:
-            if latest_block not in filtered_courses:
-                filtered_courses[latest_block] = {}
             filtered_courses[latest_block][subject_code] = courses_dict
+        else:
+            non_filtered_courses[latest_block][subject_code] = courses_dict
+
     FilteredUpload.objects.create(
         filename=uploaded_file.name,
         filtered_data=filtered_courses,
-        uploaded_file=uploaded_file  # Stores the raw file
+        non_filtered_data=non_filtered_courses,
+        uploaded_file=uploaded_file
     )
-    return JsonResponse(filtered_courses, safe=False)
+    from django.core.files.storage import default_storage
+    from django.utils.timezone import now
 
+    # Define file names using current timestamp to avoid collisions
+    timestamp = now().strftime("%Y%m%d%H%M%S")
+    filtered_file_name = f"uploads/filtered_{timestamp}.json"
+    non_filtered_file_name = f"uploads/non_filtered_{timestamp}.json"
+
+    # Save filtered JSON to media/uploads
+    default_storage.save(filtered_file_name, ContentFile(json.dumps(filtered_courses, indent=2)))
+    default_storage.save(non_filtered_file_name, ContentFile(json.dumps(non_filtered_courses, indent=2)))
+    return JsonResponse({
+        "filtered_courses": filtered_courses,
+        "non_filtered_courses": non_filtered_courses
+    }, safe=False)
 
 import json
 from django.http import JsonResponse

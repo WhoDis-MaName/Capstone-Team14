@@ -4,6 +4,7 @@ class FilteredUpload(models.Model):
     uploaded_at = models.DateTimeField(auto_now_add=True)
     filename = models.CharField(max_length=255)
     filtered_data = models.JSONField()
+    non_filtered_data = models.JSONField()  # 👈 Add this line
     uploaded_file = models.FileField(upload_to='uploads/')
 
     def __str__(self):
