@@ -8,8 +8,12 @@ import json
 from .models import FilteredUpload
 import json
 from django.http import JsonResponse
+from django.core.files.base import ContentFile  # <-- Add this line
 from .models import FilteredUpload
-from datetime import datetime
+from django.core.files.storage import default_storage
+from django.utils.timezone import now
+from django.core.files.base import ContentFile
+
 
 def login(request):
     if request.method == "POST":
@@ -66,31 +70,56 @@ def upload_json_file(request):
         return JsonResponse({"error": "Only .json files are allowed"}, status=400)
 
     try:
-        data = json.load(uploaded_file)
+        # Copy uploaded file's contents and reset pointer after read
+        file_contents = uploaded_file.read()
+        data = json.loads(file_contents)
+        uploaded_file.seek(0)
     except json.JSONDecodeError:
         return JsonResponse({"error": "Uploaded file is not a valid JSON file"}, status=400)
 
     if not data:
         return JsonResponse({"error": "The JSON file is empty"}, status=400)
 
-    # Get the latest semester key
     latest_block = max(data.keys())
     subjects_of_interest = {"CIST", "CSCI"}
-    filtered_courses = {}
+    filtered_courses = {latest_block: {}}
+    non_filtered_courses = {latest_block: {}}
 
     latest_subjects = data[latest_block]
     for subject_code, courses_dict in latest_subjects.items():
         if subject_code in subjects_of_interest:
-            if latest_block not in filtered_courses:
-                filtered_courses[latest_block] = {}
             filtered_courses[latest_block][subject_code] = courses_dict
-    FilteredUpload.objects.create(
-        filename=uploaded_file.name,
-        filtered_data=filtered_courses,
-        uploaded_file=uploaded_file  # Stores the raw file
-    )
-    return JsonResponse(filtered_courses, safe=False)
+        else:
+            non_filtered_courses[latest_block][subject_code] = courses_dict
 
+    # === NEW NAMING LOGIC ===
+    upload_number = FilteredUpload.objects.count() + 1
+
+    raw_filename = f"uploads/raw_input{upload_number}.json"
+    filtered_filename = f"uploads/filtered_output{upload_number}.json"
+    non_filtered_filename = f"uploads/remaining_output{upload_number}.json"
+
+    # Save files to media/uploads/
+    default_storage.save(raw_filename, ContentFile(file_contents))
+    default_storage.save(filtered_filename, ContentFile(json.dumps(filtered_courses, indent=2)))
+    default_storage.save(non_filtered_filename, ContentFile(json.dumps(non_filtered_courses, indent=2)))
+
+    # Save to DB
+    FilteredUpload.objects.create(
+        filename=f"raw_input{upload_number}.json",
+        filtered_data=filtered_courses,
+        non_filtered_data=non_filtered_courses,
+        uploaded_file=uploaded_file  # Will use original name
+    )
+
+    return JsonResponse({
+        "message": f"Upload #{upload_number} complete.",
+        "raw_file": raw_filename,
+        "filtered_file": filtered_filename,
+        "non_filtered_file": non_filtered_filename,
+        "filtered_courses": filtered_courses,
+        "non_filtered_courses": non_filtered_courses
+    }, safe=False)
 
 
 def convert24(time):
