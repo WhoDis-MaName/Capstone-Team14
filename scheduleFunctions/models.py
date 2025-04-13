@@ -117,3 +117,12 @@ class FilteredUpload(models.Model):
 
     def __str__(self):
         return f"{self.filename} ({self.uploaded_at.strftime('%Y-%m-%d %H:%M')})"
+    
+class FileExport(models.Model):
+    generated_at = models.DateTimeField(auto_now_add=True)
+    filename = models.CharField(max_length=255)
+    generated_data = models.JSONField()
+    exported_file = models.FileField(upload_to='exports/')
+
+    def __str__(self):
+        return f"{self.filename} ({self.generated_at.strftime('%Y-%m-%d %H:%M')})"
