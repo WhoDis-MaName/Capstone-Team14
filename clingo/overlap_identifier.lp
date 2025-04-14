@@ -1,5 +1,6 @@
 % #include "filtered.lp".
-#include "example_output.lp".
+#include "filtered_test.lp".
+% #include "example_output.lp".
 % #include "..\\testing\\test_cases\\test_case_mini_overlap.lp".
 % #include "..\\testing\\test_cases\\test_case_01.lp".
 #include "fourYearPlanTest.lp".
@@ -33,14 +34,14 @@ overlap(C1, C2) :- class(C1), class(C2), not path(C1, C2), C1!=C2.
 weighted_overlap(C1, C2, W1 + W2) :- overlap(C1, C2), planned_course(C1, W1, Y1), planned_course(C2, W2, Y2).
 original_weighted_overlap_sum(N) :- N = #sum{ W, C1, C2 : weighted_overlap(C1, C2, W) }.
 
-#show overlap/2.
+% #show overlap/2.
 #show original_weighted_overlap_sum/1.
 
 % overlap_count(N) :- N = #count{ C1 : overlap(C1, C2) }.
 % conflict_count(N) :- N = #count{ C1 : conflict(C1, C2) }.
-% overlap_count(N) :- N = #count{ C1, C2 : overlap(C1, C2) }.
-% conflict_count(N) :- N = #count{ C1, C2 : conflict(C1, C2) }.
+overlap_count(N) :- N = #count{ C1, C2 : overlap(C1, C2) }.
+conflict_count(N) :- N = #count{ C1, C2 : conflict(C1, C2) }.
 
-% #show overlap_count/1.
-% #show conflict_count/1.
+#show overlap_count/1.
+#show conflict_count/1.
 % #show overlap/2.

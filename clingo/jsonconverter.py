@@ -123,8 +123,3 @@ def convert(file):
         f.write("\n".join(facts))
 
     # print(f"ASP facts written to {asp_filename}")
-
-
-convert(
-    r"C:\Users\cjgry\Documents\Capstone\Capstone-Team14\data_files\four_year_plan\filtered.json"
-)
