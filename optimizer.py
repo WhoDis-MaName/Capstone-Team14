@@ -20,6 +20,7 @@ read_dir = os.path.join(root_dir, "data_files", "uploaded_schedule")
 
 
 # TODO: add in doxygen comments for clingo application.
+# better to directly use the model without clingo app
 class ClingoApp(clingo.application.Application):
     def main(self, ctl, files):
         ctl.load(root_dir + "\clingo\overlap_minimizer.lp")
