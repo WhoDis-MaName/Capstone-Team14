@@ -15,7 +15,8 @@ path = current_directory.split(os.sep)
 
 root_index = path.index("Capstone-Team14")
 root_dir = os.sep.join(path[: root_index + 1])
-read_dir = os.path.join(root_dir, "data_files", "uploaded_schedule")
+read_dir = os.path.join(root_dir, "media", "uploads")
+clingo_dir = os.path.join(root_dir, "clingo")
 
 parser = argparse.ArgumentParser(description="Input class json")
 
@@ -39,7 +40,8 @@ class ClingoApp(clingo.application.Application):
         print(file)
         # TODO: Update to work with input file not just hard coded file
         convert(file)
-        ctl.load("identifyconflict.lp")
+        ctl.load(read_dir + "\\filtered.lp")
+        ctl.load(clingo_dir + "\\overlap_identifier.lp")
 
         ctl.ground()
         ctl.solve()
