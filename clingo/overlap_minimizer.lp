@@ -68,5 +68,6 @@ schedule_change(I) :- scheduled_section(C, I, N, S1, E1, D1, R, P), section(C, I
 % Prioritized minimize functions, try to minimize overlaps, then minimize individual conflicts. 
 % TODO: look into how long this takes
 #minimize{W@2, C1, C2 : scheduled_weighted_overlap_sum(C1, C2, W)}.
+% TODO: should we minimize this based on weight or count them all the same?
 #minimize{W@1, I : schedule_change(I), input_section(C, I, _, _, _), planned_course(C, W, _)}.
 % #minimize{scheduled_weighted_overlap_sum}.
