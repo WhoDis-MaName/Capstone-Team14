@@ -1,17 +1,17 @@
-% original_weighted_overlap_sum(6). 
-section(cist3110,s001,c15462,810,885,mw,
+% original_weighted_overlap_sum(6) 
+scheduled_section(cist3110,s001,c15462,900,975,mw,
                   peter_kiewit_institute_153,hollie_rosser). 
-section(cist3110,s002,c15462,810,885,mw,
+scheduled_section(cist3110,s002,c15462,900,975,tr,
                   peter_kiewit_institute_153,hollie_rosser). 
-section(cist1600,s001,c16496,700,775,mw,
+scheduled_section(cist1600,s001,c16496,630,705,mw,
                   peter_kiewit_institute_361,derek_babb). 
-section(csci1200,s002,c14597,900,975,mw,
+scheduled_section(csci1200,s002,c14597,900,975,tr,
                   peter_kiewit_institute_276,ash_p_ashokan). 
-section(csci8456,s001,c18572,900,975,mw,
+scheduled_section(csci8456,s001,c18572,810,885,tr,
                   peter_kiewit_institute_153,jorge_fandinno_garcia). 
-section(csci8456,s002,c18572,900,975,tr,
+scheduled_section(csci8456,s002,c18572,810,885,mw,
                   peter_kiewit_institute_153,jorge_fandinno_garcia).
-% Optimization: 0
+% Optimization: 0 1
 % OPTIMUM FOUND
 
 class(cist3110; cist1600; csci1200; csci8456).

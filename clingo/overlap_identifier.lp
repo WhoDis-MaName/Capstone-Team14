@@ -42,6 +42,6 @@ original_weighted_overlap_sum(N) :- N = #sum{ W, C1, C2 : weighted_overlap(C1, C
 overlap_count(N) :- N = #count{ C1, C2 : overlap(C1, C2) }.
 conflict_count(N) :- N = #count{ C1, C2 : conflict(C1, C2) }.
 
-#show overlap_count/1.
-#show conflict_count/1.
+% #show overlap_count/1.
+% #show conflict_count/1.
 % #show overlap/2.
