@@ -59,10 +59,14 @@ scheduled_conflict(C1, C2) :- scheduled_conflict(C1, C2, _, _, _, _, _, _).
 % :- original_weighted_overlap_sum(N1), scheduled_weighted_overlap_sum(N2), N2>=N1.
 :- original_weighted_overlap_sum(N1), N1 <= #sum{ W, C1, C2 : scheduled_weighted_overlap_sum(C1, C2, W) }.
 
-#minimize{W, C1, C2 : scheduled_weighted_overlap_sum(C1, C2, W)}.
+% There is a shedule change between two section IDs if they are at different times or different days.
+schedule_change(I) :- scheduled_section(C, I, N, S1, E1, D1, R, P), section(C, I, N, S2, E2, D2, R, P), S1 != S2, E1 != E2. 
+schedule_change(I) :- scheduled_section(C, I, N, S1, E1, D1, R, P), section(C, I, N, S2, E2, D2, R, P), D1 != D2. 
+
+% #minimize{W, C1, C2 : scheduled_weighted_overlap_sum(C1, C2, W)}.
 
 % Prioritized minimize functions, try to minimize overlaps, then minimize individual conflicts. 
 % TODO: look into how long this takes
-% #minimize{W@2, C1, C2 : scheduled_weighted_overlap_sum(C1, C2, W)}.
-% #minimize{1@1, C1, C2 : scheduled_conflict(C1, C2)}.
+#minimize{W@2, C1, C2 : scheduled_weighted_overlap_sum(C1, C2, W)}.
+#minimize{W@1, I : schedule_change(I), input_section(C, I, _, _, _), planned_course(C, W, _)}.
 % #minimize{scheduled_weighted_overlap_sum}.
