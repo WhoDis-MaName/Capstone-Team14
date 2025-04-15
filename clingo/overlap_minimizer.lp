@@ -41,28 +41,25 @@ scheduled_overlap(C1, C2) :- class(C1), class(C2), not scheduled_path(C1, C2), C
 scheduled_weighted_overlap_sum(C1, C2, W1 + W2) :- scheduled_overlap(C1, C2), planned_course(C1, W1, Y1), planned_course(C2, W2, Y2).
 
 scheduled_conflict(C1, C2) :- scheduled_conflict(C1, C2, _, _, _, _, _, _).
+scheduled_weighted_conflict(C1, C2, W1 + W2) :- scheduled_conflict(C1, C2), planned_course(C1, W1, Y1), planned_course(C2, W2, Y2).
 % scheduled_overlap_count(N) :- N = #count{ C1, C2 : scheduled_overlap(C1, C2) }.
 % scheduled_conflict_count(N) :- N = #count{ C1, C2 : scheduled_conflict(C1, C2) }.
 
-
-% #show conflict_count/1.
-% #show scheduled_conflict_count/1.
-% #show scheduled_overlap_count/1.
-% #show weighted_scheduled_conflict/1.
-% #show scheduled_weighted_overlap_sum/1.
-% #show scheduled_section/6.
 #show scheduled_section/8.
-
-% scheduled_weighted_overlap_sum(N) :- N = #sum{ W, C1, C2 : scheduled_weighted_overlap_sum(C1, C2, W) }.
 
 % It cannot be that we generate a new schedule that has more overlap than the original schedule.
 % :- original_weighted_overlap_sum(N1), scheduled_weighted_overlap_sum(N2), N2>=N1.
 :- original_weighted_overlap_sum(N1), N1 <= #sum{ W, C1, C2 : scheduled_weighted_overlap_sum(C1, C2, W) }.
 
-#minimize{W, C1, C2 : scheduled_weighted_overlap_sum(C1, C2, W)}.
+% There is a shedule change between two section IDs if they are at different times or different days.
+schedule_change(C, I) :- scheduled_section(C, I, N, S1, E1, D1, R, P), section(C, I, N, S2, E2, D2, R, P), S1 != S2, E1 != E2. 
+schedule_change(C, I) :- scheduled_section(C, I, N, S1, E1, D1, R, P), section(C, I, N, S2, E2, D2, R, P), D1 != D2. 
+
+% #minimize{W, C1, C2 : scheduled_weighted_overlap_sum(C1, C2, W)}.
 
 % Prioritized minimize functions, try to minimize overlaps, then minimize individual conflicts. 
 % TODO: look into how long this takes
-% #minimize{W@2, C1, C2 : scheduled_weighted_overlap_sum(C1, C2, W)}.
-% #minimize{1@1, C1, C2 : scheduled_conflict(C1, C2)}.
+#minimize{W@3, C1, C2 : scheduled_weighted_overlap_sum(C1, C2, W)}.
+% TODO: should we minimize this based on weight or count them all the same?
+#minimize{1@2, C, I : schedule_change(C, I)}.
 % #minimize{scheduled_weighted_overlap_sum}.
