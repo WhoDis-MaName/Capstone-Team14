@@ -40,6 +40,20 @@
                         "Days": "T",
                         "Location": "Peter Kiewit Institute 157",
                         "Instructor": "Judith Monarrez Diaz-Kelsey"
+                    },
+                    "002": {
+                        "Class Number": "16466 ?",
+                        "Type": "SEM",
+                        "Enrolled": "19",
+                        "Class Max": "20",
+                        "Seats Available": "1",
+                        "Credit Hours": "1",
+                        "Course Attribute": "Open Nebraska (No Cost Materials)",
+                        "Date": "Aug 21, 2023 - Dec 15, 2023",
+                        "Time": "9:30AM - 10:20AM",
+                        "Days": "M",
+                        "Location": "Peter Kiewit Institute 157",
+                        "Instructor": "Judith Monarrez Diaz-Kelsey"
                     }
                 }
             },
@@ -55,11 +69,11 @@
                         "Class Max": "10",
                         "Seats Available": "8",
                         "Credit Hours": "3",
-                        "Course Attribute": "Totally Online",
+                        "Course Attribute": "Attribute",
                         "Date": "Aug 21, 2023 - Dec 15, 2023",
                         "Time": "1:30PM - 2:45PM",
                         "Days": "TR",
-                        "Location": "Totally Online",
+                        "Location": "Room 123",
                         "Instructor": "Karen Sue Allen"
                     }
                 }
@@ -81,6 +95,21 @@
                         "Date": "Aug 21, 2023 - Dec 15, 2023",
                         "Time": "3:00PM - 4:15PM",
                         "Days": "MW",
+                        "Location": "Peter Kiewit Institute 153",
+                        "Instructor": "Hollie Rosser"
+                    },
+                    "002": {
+                        "Class Number": "15462 ?",
+                        "Type": "LEC",
+                        "Enrolled": "31",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Humanities and Fine Arts General Education course",
+                        "Date": "Aug 21, 2023 - Dec 15, 2023",
+                        "Time": "3:00PM - 4:15PM",
+                        "Days": "TR",
                         "Location": "Peter Kiewit Institute 153",
                         "Instructor": "Hollie Rosser"
                     }
@@ -122,11 +151,11 @@
                         "Class Max": "15",
                         "Seats Available": "9",
                         "Credit Hours": "3",
-                        "Course Attribute": "Totally Online",
+                        "Course Attribute": "Attribute",
                         "Date": "Aug 21, 2023 - Dec 15, 2023",
                         "Time": "9:30AM - 10:20AM",
                         "Days": "T",
-                        "Location": "Totally Online",
+                        "Location": "Room 456",
                         "Instructor": "Alfredo Perez"
                     }
                 }
@@ -165,12 +194,12 @@
                         "Seats Available": "0",
                         "Credit Hours": "3",
                         "Students on Waitlist": "0",
-                        "Course Attribute": "Totally Online",
+                        "Course Attribute": "Attribute",
                         "Note": "Exam days and times are Wednesdays at 3:00 PM, duration 75 minutes.  Dates will be announced on Canvas.",
                         "Date": "Aug 21, 2023 - Dec 15, 2023",
                         "Time": "1:00PM - 2:15PM",
                         "Days": "MW",
-                        "Location": "Totally Online",
+                        "Location": "Room 789",
                         "Instructor": "Hassan Abd Al-Rahmanan Farhat"
                     }
                 }

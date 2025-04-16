@@ -26,6 +26,9 @@ input_section(C, I, N, R, P) :- section(C, I, N, _, _, _, R, P).
 % It cannot be that there are two classes with the same professor at the same time
 :- scheduled_section(C1, _, _, S1, E1, D1, R1, P), scheduled_section(C2, _, _, S2, E2, D2, R2, P), scheduled_conflict(C1, C2). %, C1!=C2.
 
+% TODO: Ensure that new timeslots align with credit hours
+% mtwr - have to stay mtwr
+% what about 1 credit hour labs?
 
 scheduled_conflict(C1, C2, S1, E1, S2, E2, D1, D2) :- scheduled_section(C1, _, _, S1, E1, D1, _, _), scheduled_section(C2, _, _, S2, E2, D2, _, _), C1!=C2, overlapping_days(D1, D2), overlapping_times(S1, E1, S2, E2). 
 

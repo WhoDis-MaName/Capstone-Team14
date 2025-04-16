@@ -1,9 +1,10 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dashboard - Course Scheduler</title>
 
   <!-- CSS -->
@@ -39,18 +40,18 @@
             },
             body: formData
           })
-          .then(response => response.json())
-          .then(data => {
-            const statusDiv = document.getElementById('uploadStatus');
-            if (data.error) {
-              statusDiv.innerHTML = `<span style="color: red;">${data.error}</span>`;
-            } else {
-              statusDiv.innerHTML = `<span style="color: green;">Upload successful! Filtered courses processed.</span>`;
-            }
-          })
-          .catch(() => {
-            document.getElementById('uploadStatus').innerHTML = `<span style="color: red;">Something went wrong.</span>`;
-          });
+            .then(response => response.json())
+            .then(data => {
+              const statusDiv = document.getElementById('uploadStatus');
+              if (data.error) {
+                statusDiv.innerHTML = `<span style="color: red;">${data.error}</span>`;
+              } else {
+                statusDiv.innerHTML = `<span style="color: green;">Upload successful! Filtered courses processed.</span>`;
+              }
+            })
+            .catch(() => {
+              document.getElementById('uploadStatus').innerHTML = `<span style="color: red;">Something went wrong.</span>`;
+            });
         });
       }
     });
@@ -60,18 +61,18 @@
         .then(data => {
           if (data.status === "success") {
             alert("✅ Optimization complete!\nSaved file: " + data.optimized_file);
-  
+
             // Optional: create a download link dynamically
             const link = document.createElement("a");
             link.href = `/download/${data.optimized_file.split('/').pop()}`;
             link.textContent = "⬇️ Download Optimized Schedule";
             link.className = "btn";
             link.style.marginTop = "10px";
-  
+
             // Append download link below the buttons
             const container = document.querySelector(".quick-actions");
             container.appendChild(link);
-  
+
           } else {
             alert("❌ Optimization failed: " + (data.message || "Unknown error"));
           }
@@ -84,6 +85,7 @@
 
   </script>
 </head>
+
 <body>
 
   <header>
@@ -124,14 +126,16 @@
 
       <div class="quick-actions section">
         <h2>Quick Actions</h2>
-        <a href="#" class="btn" onclick="fetch('/run-solver/').then(r => r.json()).then(data => alert(data.message));">Check Conflicts</a>
+        <a href="#" class="btn"
+          onclick="fetch('/run-solver/').then(r => r.json()).then(data => alert(data.message));">Parse Upload</a>
         <button class="btn" onclick="optimizeSchedule()">Optimize Schedule</button>
         <button class="btn">Manage Schedule</button>
 
         <!-- Upload Form -->
         <form id="uploadForm" enctype="multipart/form-data" style="margin-top: 20px;">
           {% csrf_token %}
-          <label for="jsonFile" style="display: block; margin-bottom: 10px; font-weight: bold;">Upload Course JSON:</label>
+          <label for="jsonFile" style="display: block; margin-bottom: 10px; font-weight: bold;">Upload Course
+            JSON:</label>
           <input type="file" name="file" id="jsonFile" accept=".json" required style="margin-bottom: 10px;">
           <button type="submit" class="btn">Upload File</button>
         </form>
@@ -141,4 +145,5 @@
   </div>
 
 </body>
+
 </html>
