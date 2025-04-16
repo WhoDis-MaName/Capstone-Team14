@@ -182,4 +182,4 @@ Current weights are set to 2 if in Group 1-4, 1 if in group 0. Can be adjusted a
 
 Weighted overlap = W1 + W2, where W1 is the weight of class 1, W2 is the weight of class 2. 
 
-Minimize based on weighted overlap. 
+Minimize based on weighted overlap. Additionally, minimize number of changes to the input schedule (lower priority). 
