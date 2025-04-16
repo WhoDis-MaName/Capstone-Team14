@@ -267,39 +267,79 @@ non_cs_section(math2050, s001, c15192, 690, 765, mw, durham_science_center_110, 
 non_cs_section(math2050, s002, c12690, 780, 855, mw, durham_science_center_165, valentin_matache).
 non_cs_section(math2050, s003, c12691, 960, 1035, tr, durham_science_center_110, nicholas_kass).
 non_cs_course(math2050, "applied_linear_algebra", "_").
-class(csci3550; csci8000; csci4970; csci8105; csci1204; csci8620; csci4300; csci3320; csci4350; csci8350; cist2500; csci2620; csci1620; cist9080; csci4500; csci4100; csci4380; csci8110; cist3110; csci8366; cist1010; cist1300; csci8156; cist2010; csci8456; cist1600; csci8700; csci4220; csci2240; csci8306; csci4830; cist3000; csci2040; csci1200; csci3100; cist2100; csci4150; csci8500; cist1400; csci4450; csci2030; csci3660).
-non_cs_class(math2050; cmst2120; math1950; engl1160; engl1150; cmst1110).
-room(peter_kiewit_institute_164; peter_kiewit_institute_361; peter_kiewit_institute_160; peter_kiewit_institute_269; peter_kiewit_institute_161; peter_kiewit_institute_276; mammel_hall_113; durham_science_center_211a; peter_kiewit_institute_261; peter_kiewit_institute_157; peter_kiewit_institute_155; remote_learning; mammel_hall_319; durham_science_center_254; peter_kiewit_institute_260; peter_kiewit_institute_153; peter_kiewit_institute_263; peter_kiewit_institute_274; durham_science_center_104; peter_kiewit_institute_278; peter_kiewit_institute_259; peter_kiewit_institute_252; peter_kiewit_institute_256).
-professor(paul_j_van_vliet; kyle_reestman; farhad_mohammad_afzali; martha_a_garcia_murillo; mahboub_baccouch; sean_o'malley; jorge_fandinno_garcia; anshuman_das_mohapatra; christian_haas; jose_m_santos; robert_fulkerson; kwangsung_oh; mahadevan_subramaniam; jong_hoon_youn; george_grispos; hollie_rosser; brian_c_ricks; pei_chi_huang; prashanti_manda; mark_e_mordeson; harvey_pe_siy; alfredo_perez; grace_karen_tantillo; eric_lundy; sayonnha_mandal; thom_davis; joel_elson; kerry_wayne_ward; karen_sue_allen; cathy_stout; derek_babb; dora_velcsov; jeff_a_solheim; steve_saunders; emily_c_wiemers; bill_l_sousan; praval_sharma; xin_xing; sasan_azizian; ann_l_fruhling; alexis_sherman; fabio_torres_vitor; andrea_k_grover; javier_torres; hesham_hassan_ali; xin_zhong; anita_l_lee; ash_p_ashokan; agatha_sheila_owora; farida_majid).
-time_slot(1080, 1240, w).
+class(csci4970; csci8700; csci8366; csci8500; csci2620; csci4380; csci3100; csci2030; csci1620; csci3660; cist1600; csci8110; csci4300; cist9080; csci2240; csci8306; csci8456; csci4220; csci1204; cist1400; csci3550; cist1300; csci8156; cist3000; csci1200; cist2100; cist3110; csci8000; csci4150; csci4100; csci4350; cist1010; cist2010; csci4830; csci8350; csci2040; csci8105; csci8620; csci3320; csci4450; cist2500; csci4500).
+non_cs_class(cmst2120; engl1150; math2050; math1950; cmst1110; engl1160).
+room(peter_kiewit_institute_256; peter_kiewit_institute_259; durham_science_center_104; durham_science_center_254; peter_kiewit_institute_157; peter_kiewit_institute_274; peter_kiewit_institute_269; peter_kiewit_institute_164; peter_kiewit_institute_278; peter_kiewit_institute_260; mammel_hall_113; peter_kiewit_institute_153; peter_kiewit_institute_160; peter_kiewit_institute_155; peter_kiewit_institute_361; durham_science_center_211a; mammel_hall_319; peter_kiewit_institute_276; peter_kiewit_institute_261; peter_kiewit_institute_263; peter_kiewit_institute_252; peter_kiewit_institute_161; remote_learning).
+professor(alexis_sherman; karen_sue_allen; farida_majid; sean_o'malley; mark_e_mordeson; pei_chi_huang; thom_davis; sayonnha_mandal; paul_j_van_vliet; agatha_sheila_owora; george_grispos; ann_l_fruhling; jong_hoon_youn; kwangsung_oh; anshuman_das_mohapatra; jeff_a_solheim; jorge_fandinno_garcia; javier_torres; bill_l_sousan; joel_elson; ash_p_ashokan; hesham_hassan_ali; grace_karen_tantillo; martha_a_garcia_murillo; jose_m_santos; mahboub_baccouch; anita_l_lee; alfredo_perez; kerry_wayne_ward; steve_saunders; brian_c_ricks; cathy_stout; harvey_pe_siy; mahadevan_subramaniam; sasan_azizian; farhad_mohammad_afzali; hollie_rosser; kyle_reestman; praval_sharma; robert_fulkerson; fabio_torres_vitor; derek_babb; xin_xing; dora_velcsov; christian_haas; prashanti_manda; eric_lundy; emily_c_wiemers; andrea_k_grover; xin_zhong).
+time_slot(960, 1035, mw).
+time_slot(1050, 1125, tr).
 time_slot(1080, 1240, m).
 time_slot(720, 795, f).
-time_slot(810, 860, t).
-time_slot(900, 975, mw).
-time_slot(990, 1065, tr).
-time_slot(1080, 1155, tr).
-time_slot(570, 620, t).
-time_slot(1080, 1240, t).
-time_slot(630, 680, w).
-time_slot(540, 615, tr).
-time_slot(930, 980, r).
-time_slot(990, 1150, w).
-time_slot(810, 885, tr).
-time_slot(990, 1040, t).
-time_slot(630, 705, tr).
-time_slot(720, 795, mf).
-time_slot(990, 1090, t).
-time_slot(810, 885, mw).
-time_slot(570, 620, w).
-time_slot(720, 795, tr).
-time_slot(510, 560, r).
-time_slot(900, 975, tr).
-time_slot(630, 705, mw).
-time_slot(720, 795, mw).
-time_slot(1050, 1125, tr).
-time_slot(1170, 1245, tr).
-time_slot(960, 1035, mw).
-time_slot(810, 860, w).
-time_slot(540, 615, mw).
 time_slot(990, 1065, mw).
+time_slot(810, 860, w).
 time_slot(930, 980, t).
+time_slot(900, 975, tr).
+time_slot(630, 705, tr).
+time_slot(1080, 1155, tr).
+time_slot(720, 795, mf).
+time_slot(810, 860, t).
+time_slot(570, 620, w).
+time_slot(930, 980, r).
+time_slot(570, 620, t).
+time_slot(990, 1150, w).
+time_slot(510, 560, r).
+time_slot(990, 1040, t).
+time_slot(900, 975, mw).
+time_slot(810, 885, mw).
+time_slot(720, 795, tr).
+time_slot(630, 705, mw).
+time_slot(810, 885, tr).
+time_slot(1080, 1240, t).
+time_slot(1170, 1245, tr).
+time_slot(990, 1065, tr).
+time_slot(1080, 1240, w).
+time_slot(720, 795, mw).
+time_slot(540, 615, tr).
+time_slot(990, 1090, t).
+time_slot(630, 680, w).
+time_slot(540, 615, mw).
+non_cs_time_slot(630, 705, mw).
+non_cs_time_slot(690, 765, mw).
+non_cs_time_slot(510, 585, f).
+non_cs_time_slot(600, 675, f).
+non_cs_time_slot(555, 620, mtwr).
+non_cs_time_slot(690, 765, f).
+non_cs_time_slot(630, 695, mtwr).
+non_cs_time_slot(780, 845, mtwr).
+non_cs_time_slot(960, 1035, mw).
+non_cs_time_slot(1080, 1215, mr).
+non_cs_time_slot(690, 765, tr).
+non_cs_time_slot(960, 1080, m).
+non_cs_time_slot(540, 700, f).
+non_cs_time_slot(480, 545, mtwr).
+non_cs_time_slot(480, 530, mwf).
+non_cs_time_slot(870, 945, mw).
+non_cs_time_slot(660, 710, mwf).
+non_cs_time_slot(600, 675, t).
+non_cs_time_slot(1035, 1110, tr).
+non_cs_time_slot(780, 855, t).
+non_cs_time_slot(540, 590, mwf).
+non_cs_time_slot(600, 675, r).
+non_cs_time_slot(600, 650, mwf).
+non_cs_time_slot(510, 585, tr).
+non_cs_time_slot(690, 765, r).
+non_cs_time_slot(600, 675, tr).
+non_cs_time_slot(780, 855, tr).
+non_cs_time_slot(660, 735, mw).
+non_cs_time_slot(600, 675, mw).
+non_cs_time_slot(780, 855, mw).
+non_cs_time_slot(705, 770, mtwr).
+non_cs_time_slot(1080, 1240, m).
+non_cs_time_slot(510, 585, mw).
+non_cs_time_slot(720, 770, mwf).
+non_cs_time_slot(555, 620, tr).
+non_cs_time_slot(540, 615, mw).
+non_cs_time_slot(960, 1035, tr).
+non_cs_time_slot(1080, 1240, r).
+non_cs_time_slot(870, 945, tr).
+non_cs_time_slot(900, 1050, f).

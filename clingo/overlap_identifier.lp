@@ -1,7 +1,8 @@
-#include "total_filtered.lp".
+% #include "total_filtered.lp".
 % #include "filtered_test.lp".
 % #include "example_output.lp".
 % #include "..\\testing\\test_cases\\test_case_mini_overlap.lp".
+% #include "..\\testing\\test_cases\\test_case_english.lp".
 % #include "..\\testing\\test_cases\\test_case_01.lp".
 % #include "..\\testing\\test_cases\\test_case_00.lp".
 % #include "output.lp".
@@ -40,6 +41,13 @@ path(C1, C2) :- section(C1, S1, E1, D1), non_cs_section(C2, S2, E2, D2), not con
 
 % There are no paths between C1 and C2 -> total overlap.
 overlap(C1, C2) :- class(C1), class(C2), not path(C1, C2), C1!=C2.
+overlap(C1, C2) :- class(C1), non_cs_class(C2), not path(C1, C2), C1!=C2.
+% Overlap between cs and non-cs classes are not bidirectional,
+% while overlap between two cs classes is bidirectional
+% enforcing bidirectionality keeps weights the same
+% TODO: look into whether or not it is better to enforce
+% non-directed overlap
+overlap(C1, C2) :- overlap(C2, C1).
 
 weighted_overlap(C1, C2, W1 + W2) :- overlap(C1, C2), planned_course(C1, W1, Y1), planned_course(C2, W2, Y2).
 original_weighted_overlap_sum(N) :- N = #sum{ W, C1, C2 : weighted_overlap(C1, C2, W) }.
@@ -55,3 +63,6 @@ original_weighted_overlap_sum(N) :- N = #sum{ W, C1, C2 : weighted_overlap(C1, C
 % #show overlap_count/1.
 % #show conflict_count/1.
 % #show overlap/2.
+% #show planned_course/3.
+% #show conflict/2.
+% #show path/2.

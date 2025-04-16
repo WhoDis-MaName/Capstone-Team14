@@ -152,7 +152,8 @@ def upload_json_file(request):
         return t.hour * 60 + t.minute
 
     facts = []
-    non_cs_classes, classes, rooms, professors, times = (
+    non_cs_classes, classes, rooms, professors, non_cs_times, times = (
+        set(),
         set(),
         set(),
         set(),
@@ -253,6 +254,8 @@ def upload_json_file(request):
                         facts.append(
                             f"non_cs_section({course_id}, {section_num}, {class_number}, {start}, {end}, {days}, {location}, {instructor})."
                         )
+                        if start != "tba" and end != "tba" and days != "tba":
+                            non_cs_times.add(f"non_cs_time_slot({start}, {end}, {days}).")
 
                 # ignore courses that are entirely comprised of totally online sections
                 if totally_online_count == section_count:
@@ -272,6 +275,7 @@ def upload_json_file(request):
     facts.append(f"room({'; '.join(rooms)}).")
     facts.append(f"professor({'; '.join(professors)}).")
     facts.extend(times)
+    facts.extend(non_cs_times)
 
     asp_filename = raw_filename.replace(".json", ".lp")
     default_storage.save(asp_filename, ContentFile("\n".join(facts)))

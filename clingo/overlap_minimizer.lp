@@ -42,6 +42,14 @@ scheduled_path(C1, C2) :- scheduled_section(C1, _, _, S1, E1, D1, _, _), non_cs_
 % There are no scheduled_paths between C1 and C2 -> total overlap.
 % Overlap if all sections are in conflict
 scheduled_overlap(C1, C2) :- class(C1), class(C2), not scheduled_path(C1, C2), C1!=C2.
+scheduled_overlap(C1, C2) :- class(C1), non_cs_class(C2), not scheduled_path(C1, C2), C1!=C2.
+% Overlap between cs and non-cs classes are not bidirectional,
+% while overlap between two cs classes is bidirectional
+% enforcing bidirectionality keeps weights the same
+% TODO: look into whether or not it is better to enforce
+% non-directed overlap
+scheduled_overlap(C1, C2) :- scheduled_overlap(C2, C1).
+
 
 % calculate the weight for each overlap
 scheduled_weighted_overlap_sum(C1, C2, W1 + W2) :- scheduled_overlap(C1, C2), planned_course(C1, W1, Y1), planned_course(C2, W2, Y2).
