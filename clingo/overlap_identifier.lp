@@ -1,11 +1,12 @@
-% #include "filtered.lp".
+#include "total_filtered.lp".
 % #include "filtered_test.lp".
 % #include "example_output.lp".
 % #include "..\\testing\\test_cases\\test_case_mini_overlap.lp".
 % #include "..\\testing\\test_cases\\test_case_01.lp".
 % #include "..\\testing\\test_cases\\test_case_00.lp".
 % #include "output.lp".
-#include "fourYearPlanTest.lp".
+% #include "fourYearPlanTest.lp".
+#include "fourYearPlan.lp".
 #include "days.lp".
 #include "overlap.lp".
 % #include "groups.lp".
@@ -24,11 +25,18 @@ planned_course(C, 1, 0) :- class(C), not planned_classes(C).
 % There is conflict if: 
 % - there does not exist at least one section from each module from a group that does not have conflict
 conflict(C1, C2, S1, E1, S2, E2, D1, D2) :- section(C1, S1, E1, D1), section(C2, S2, E2, D2), C1!=C2, overlapping_days(D1, D2), overlapping_times(S1, E1, S2, E2).
+
+% Additionally, there is conflict between CS sections and non-CS sections. 
+conflict(C1, C2, S1, E1, S2, E2, D1, D2) :- section(C1, S1, E1, D1), non_cs_section(C2, S2, E2, D2), C1!=C2, overlapping_days(D1, D2), overlapping_times(S1, E1, S2, E2).
+
 conflict(C1, C2) :- conflict(C1, C2, _, _, _, _, _, _).
 
 % There exists at least some path between C1 and C2.
 % non-conflicting classes
 path(C1, C2) :- section(C1, S1, E1, D1), section(C2, S2, E2, D2), not conflict(C1, C2, S1, E1, S2, E2, D1, D2), C1!=C2.
+
+% There is also a path between non_cs sections and cs_sections
+path(C1, C2) :- section(C1, S1, E1, D1), non_cs_section(C2, S2, E2, D2), not conflict(C1, C2, S1, E1, S2, E2, D1, D2), C1!=C2.
 
 % There are no paths between C1 and C2 -> total overlap.
 overlap(C1, C2) :- class(C1), class(C2), not path(C1, C2), C1!=C2.

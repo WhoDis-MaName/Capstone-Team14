@@ -30,11 +30,14 @@ input_section(C, I, N, R, P) :- section(C, I, N, _, _, _, R, P).
 % mtwr - have to stay mtwr
 % what about 1 credit hour labs?
 
-scheduled_conflict(C1, C2, S1, E1, S2, E2, D1, D2) :- scheduled_section(C1, _, _, S1, E1, D1, _, _), scheduled_section(C2, _, _, S2, E2, D2, _, _), C1!=C2, overlapping_days(D1, D2), overlapping_times(S1, E1, S2, E2). 
+scheduled_conflict(C1, C2, S1, E1, S2, E2, D1, D2) :- scheduled_section(C1, _, _, S1, E1, D1, _, _), scheduled_section(C2, _, _, S2, E2, D2, _, _), C1!=C2, overlapping_days(D1, D2), overlapping_times(S1, E1, S2, E2).
+% Additionally, there is conflict between CS sections and non-CS sections. 
+scheduled_conflict(C1, C2, S1, E1, S2, E2, D1, D2) :- scheduled_section(C1, _, _, S1, E1, D1, _, _), non_cs_section(C2, S2, E2, D2), C1!=C2, overlapping_days(D1, D2), overlapping_times(S1, E1, S2, E2). 
 
 % There exists at least some scheduled_path between C1 and C2.
 % Non-conflicting classes, C1 and C2
 scheduled_path(C1, C2) :- scheduled_section(C1, _, _, S1, E1, D1, _, _), scheduled_section(C2, _, _, S2, E2, D2, _, _), not scheduled_conflict(C1, C2, S1, E1, S2, E2, D1, D2), C1!=C2.
+scheduled_path(C1, C2) :- scheduled_section(C1, _, _, S1, E1, D1, _, _), non_cs_section(C2, S2, E2, D2), not scheduled_conflict(C1, C2, S1, E1, S2, E2, D1, D2), C1!=C2.
 
 % There are no scheduled_paths between C1 and C2 -> total overlap.
 % Overlap if all sections are in conflict
