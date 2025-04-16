@@ -63,6 +63,7 @@
             alert("✅ Optimization complete!\nSaved file: " + data.optimized_file);
 
             // Optional: create a download link dynamically
+            // TODO: fix bug that makes multiple download buttons. 
             const link = document.createElement("a");
             link.href = `/download/${data.optimized_file.split('/').pop()}`;
             link.textContent = "⬇️ Download Optimized Schedule";
