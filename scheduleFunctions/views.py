@@ -63,7 +63,6 @@ def run_script(request):
         return JsonResponse({"error": "Invalid script name"}, status=400)
 
 
-
 @csrf_exempt
 def upload_json_file(request):
     if request.method != "POST":
@@ -89,12 +88,39 @@ def upload_json_file(request):
     # === Filtering ===
     latest_block = max(data.keys())
     subjects_of_interest = {"CIST", "CSCI"}
+    non_cs_subjects_of_interest = {"ENGL", "MATH", "CMST"}
+    english_courses_of_interest = {"1150", "1160"}
+    math_courses_of_interest = {"1950", "2050"}
+    cmst_courses_of_interest = {"1110", "2120"}
+    non_cs_courses_of_interest = {
+        "engl1150",
+        "cmst1110",
+        "cmst2120",
+        "math1950",
+        "engl1160",
+        "math2050",
+    }
     filtered_courses = {latest_block: {}}
     non_filtered_courses = {latest_block: {}}
 
     for subject, courses in data[latest_block].items():
-        if subject in subjects_of_interest:
+        if subject in subjects_of_interest or subject in non_cs_subjects_of_interest:
             filtered_courses[latest_block][subject] = courses
+        # elif subject == "ENGL":
+        #     english_courses = {
+        #         course for course in courses if course in english_courses_of_interest
+        #     }
+        #     filtered_courses[latest_block][subject] = english_courses
+        # elif subject == "MATH":
+        #     math_courses = {
+        #         course for course in courses if course in math_courses_of_interest
+        #     }
+        #     filtered_courses[latest_block][subject] = math_courses
+        # elif subject == "CMST":
+        #     cmst_courses = {
+        #         course for course in courses if course in cmst_courses_of_interest
+        #     }
+        #     filtered_courses[latest_block][subject] = cmst_courses
         else:
             non_filtered_courses[latest_block][subject] = courses
 
@@ -126,7 +152,13 @@ def upload_json_file(request):
         return t.hour * 60 + t.minute
 
     facts = []
-    classes, rooms, professors, times = set(), set(), set(), set()
+    non_cs_classes, classes, rooms, professors, times = (
+        set(),
+        set(),
+        set(),
+        set(),
+        set(),
+    )
 
     for term, subjects in filtered_courses.items():
         for subject, courses in subjects.items():
@@ -137,6 +169,11 @@ def upload_json_file(request):
                     .replace(".", "")
                     .replace("-", "_")
                 )
+                if (
+                    subject in non_cs_subjects_of_interest
+                    and course_id not in non_cs_courses_of_interest
+                ):
+                    continue
                 title = (
                     course_info.get("title", "")
                     .lower()
@@ -152,10 +189,14 @@ def upload_json_file(request):
                     .replace(".", "")
                 )
 
-                facts.append(f'course({course_id}, "{title}", "{prereq}").')
-                classes.add(course_id)
-
-                for section_num, section_info in course_info.get("sections", {}).items():
+                # keep track of  how many sections are totally online
+                # if they are all totally online, skip the course
+                section_count = 0
+                totally_online_count = 0
+                for section_num, section_info in course_info.get(
+                    "sections", {}
+                ).items():
+                    section_count += 1
                     section_num = "s" + section_num.lower()
                     class_number = (
                         "c" + section_info.get("Class Number", "").split()[0].lower()
@@ -169,22 +210,65 @@ def upload_json_file(request):
                         start = convert24(start)
                         end = convert24(end)
 
-                    days = section_info.get("Days", "TBA").strip().lower().replace(" ", "_").replace("-", "_")
-                    location = section_info.get("Location", "Unknown").lower().replace(" ", "_").replace(".", "").replace("-", "_")
-                    instructor = section_info.get("Instructor", "Unknown").lower().replace(" ", "_").replace(".", "").replace("-", "_")
+                    days = (
+                        section_info.get("Days", "TBA")
+                        .strip()
+                        .lower()
+                        .replace(" ", "_")
+                        .replace("-", "_")
+                    )
+                    location = (
+                        section_info.get("Location", "Unknown")
+                        .lower()
+                        .replace(" ", "_")
+                        .replace(".", "")
+                        .replace("-", "_")
+                    )
+                    instructor = (
+                        section_info.get("Instructor", "Unknown")
+                        .lower()
+                        .replace(" ", "_")
+                        .replace(".", "")
+                        .replace("-", "_")
+                    )
 
-                    if location in {"totally_online", "to_be_announced"} or start == "tba":
+                    if (
+                        location in {"totally_online", "to_be_announced"}
+                        or start == "tba"
+                    ):
+                        totally_online_count += 1
                         continue
 
-                    facts.append(
-                        f"section({course_id}, {section_num}, {class_number}, {start}, {end}, {days}, {location}, {instructor})."
-                    )
-                    rooms.add(location)
-                    professors.add(instructor)
-                    if start != "tba" and end != "tba" and days != "tba":
-                        times.add(f"time_slot({start}, {end}, {days}).")
+                    # if we are a class that we can modify
+                    if subject in subjects_of_interest:
+                        facts.append(
+                            f"section({course_id}, {section_num}, {class_number}, {start}, {end}, {days}, {location}, {instructor})."
+                        )
+                        rooms.add(location)
+                        professors.add(instructor)
+                        if start != "tba" and end != "tba" and days != "tba":
+                            times.add(f"time_slot({start}, {end}, {days}).")
+                    # else we are a class like english or math and we cannot modify the time
+                    else:
+                        facts.append(
+                            f"non_cs_section({course_id}, {section_num}, {class_number}, {start}, {end}, {days}, {location}, {instructor})."
+                        )
+
+                # ignore courses that are entirely comprised of totally online sections
+                if totally_online_count == section_count:
+                    continue
+
+                # if we are a class that we can modify
+                if subject in subjects_of_interest:
+                    facts.append(f'course({course_id}, "{title}", "{prereq}").')
+                    classes.add(course_id)
+                # else we are a class like english or math and we cannot modify the time
+                else:
+                    facts.append(f'non_cs_course({course_id}, "{title}", "{prereq}").')
+                    non_cs_classes.add(course_id)
 
     facts.append(f"class({'; '.join(classes)}).")
+    facts.append(f"non_cs_class({'; '.join(non_cs_classes)}).")
     facts.append(f"room({'; '.join(rooms)}).")
     facts.append(f"professor({'; '.join(professors)}).")
     facts.extend(times)
@@ -209,11 +293,14 @@ import clingo
 from .models import FilteredUpload
 from django.core.files.storage import default_storage
 
+
 def run_clingo_solver(request):
     try:
         asp_filename = request.session.get("asp_filename")
         if not default_storage.exists(asp_filename):
-            return JsonResponse({"error": f"ASP file '{asp_filename}' not found."}, status=404)
+            return JsonResponse(
+                {"error": f"ASP file '{asp_filename}' not found."}, status=404
+            )
 
         current_directory = os.path.dirname(os.path.realpath(__file__))
         path = current_directory.split(os.sep)
@@ -237,11 +324,13 @@ def run_clingo_solver(request):
 
         ctl.solve(on_model=on_model)
 
-        return JsonResponse({
-            "status": "success",
-            "message": f"Clingo solver executed on {asp_filename}.",
-            "models": result or ["No solution found."]
-        })
+        return JsonResponse(
+            {
+                "status": "success",
+                "message": f"Clingo solver executed on {asp_filename}.",
+                "models": result or ["No solution found."],
+            }
+        )
 
     except Exception as e:
         return JsonResponse({"status": "error", "message": str(e)}, status=500)
@@ -304,20 +393,34 @@ def optimize_schedule(request):
             fields = match.group(1).split(",")
             if len(fields) != 8:
                 return None
-            subject_course, section, class_number, start, end, days, location, instructor = fields
+            (
+                subject_course,
+                section,
+                class_number,
+                start,
+                end,
+                days,
+                location,
+                instructor,
+            ) = fields
             subject = subject_course[:4].upper()
             course_number = subject_course[4:]
             section = section[1:]
             class_number = class_number[1:]
             time_str = f"{convert_time(start)} - {convert_time(end)}"
-            return subject, course_number, section, {
-                "Class Number": class_number,
-                "Date": "Aug 26, 2024 - Dec 20, 2024",
-                "Time": time_str,
-                "Days": days.upper(),
-                "Location": location.replace("_", " ").title(),
-                "Instructor": instructor.replace("_", " ").title(),
-            }
+            return (
+                subject,
+                course_number,
+                section,
+                {
+                    "Class Number": class_number,
+                    "Date": "Aug 26, 2024 - Dec 20, 2024",
+                    "Time": time_str,
+                    "Days": days.upper(),
+                    "Location": location.replace("_", " ").title(),
+                    "Instructor": instructor.replace("_", " ").title(),
+                },
+            )
 
         def convert_to_json(symbols, output_file):
             data = {}
@@ -357,17 +460,20 @@ def optimize_schedule(request):
         try:
             latest_record = FilteredUpload.objects.latest("uploaded_at")
             latest_record.optimized_file.save(
-                os.path.basename(saved_path), ContentFile(json.dumps(optimized_data, indent=2))
+                os.path.basename(saved_path),
+                ContentFile(json.dumps(optimized_data, indent=2)),
             )
         except FilteredUpload.DoesNotExist:
             pass  # If no uploads yet, silently continue
 
-        return JsonResponse({
-            "status": "success",
-            "message": "Optimization complete.",
-            "optimized_file": saved_path,
-            "optimized_data": optimized_data
-        })
+        return JsonResponse(
+            {
+                "status": "success",
+                "message": "Optimization complete.",
+                "optimized_file": saved_path,
+                "optimized_data": optimized_data,
+            }
+        )
 
     except Exception as e:
         return JsonResponse({"status": "error", "message": str(e)}, status=500)
@@ -376,5 +482,7 @@ def optimize_schedule(request):
 def download_optimized_file(request, filename):
     file_path = os.path.join(settings.MEDIA_ROOT, "uploads", filename)
     if os.path.exists(file_path):
-        return FileResponse(open(file_path, "rb"), as_attachment=True, filename=filename)
+        return FileResponse(
+            open(file_path, "rb"), as_attachment=True, filename=filename
+        )
     return JsonResponse({"error": "File not found"}, status=404)
