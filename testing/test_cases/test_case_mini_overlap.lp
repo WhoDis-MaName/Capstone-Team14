@@ -6,7 +6,7 @@ section(cist1600, s001, c16496, 630, 705, mw,
         peter_kiewit_institute_361, derek_babb).
 section(csci1200, s002, c14597, 700, 775, mw, 
         peter_kiewit_institute_276, ash_p_ashokan).
-section(csci8456, s001, c18572, 810, 885, tr, 
+section(csci8456, s001, c18572, 700, 775, mw, 
         peter_kiewit_institute_153, jorge_fandinno_garcia).
 section(csci8456, s002, c18572, 810, 885, mw, 
         peter_kiewit_institute_153, jorge_fandinno_garcia).

@@ -14,6 +14,22 @@
 
 planned_course(C, 1, 0) :- class(C), not planned_classes(C).
 
+section_time(N, S, E, D) :- section(C, I, N, S, E, D, R, P).
+
+section_course(C, N) :- section(C, I, N, S, E, D, R, P).
+
+non_cs_section_time(N, S, E, D) :- non_cs_section(C, I, N, S, E, D, R, P).
+
+% #show non_cs_section_time/4.
+
+non_cs_section_course(C, N) :- non_cs_section(C, I, N, S, E, D, R, P).
+
+% #show non_cs_section_course/2.
+
+section_professor(P, N) :- section(C, I, N, S, E, D, R, P).
+
+section_room(R, N) :- section(C, I, N, S, E, D, R, P).
+
 % Example course from classes.lp:
 % course("CSCI4830", "INTRODUCTN SOFTWARE ENGINEERNG", "-").
 
@@ -25,33 +41,42 @@ planned_course(C, 1, 0) :- class(C), not planned_classes(C).
 
 % There is conflict if: 
 % - there does not exist at least one section from each module from a group that does not have conflict
-conflict(C1, C2, S1, E1, S2, E2, D1, D2) :- section(C1, S1, E1, D1), section(C2, S2, E2, D2), C1!=C2, overlapping_days(D1, D2), overlapping_times(S1, E1, S2, E2).
+% conflict(C1, C2, S1, E1, S2, E2, D1, D2) :- section(C1, S1, E1, D1), section(C2, S2, E2, D2), C1!=C2, overlapping_days(D1, D2), overlapping_times(S1, E1, S2, E2).
 
 % Additionally, there is conflict between CS sections and non-CS sections. 
-conflict(C1, C2, S1, E1, S2, E2, D1, D2) :- section(C1, S1, E1, D1), non_cs_section(C2, S2, E2, D2), C1!=C2, overlapping_days(D1, D2), overlapping_times(S1, E1, S2, E2).
+% conflict(C1, C2, S1, E1, S2, E2, D1, D2) :- section(C1, S1, E1, D1), non_cs_section(C2, S2, E2, D2), C1!=C2, overlapping_days(D1, D2), overlapping_times(S1, E1, S2, E2).
 
-conflict(C1, C2) :- conflict(C1, C2, _, _, _, _, _, _).
+% conflict(C1, C2) :- conflict(C1, C2, _, _, _, _, _, _).
+
+conflict(N1, N2) :- section_time(N1, S1, E1, D1), section_time(N2, S2, E2, D2), section_course(C1, N1), section_course(C2, N2), N1 != N2, C1!= C2, overlapping_days(D1, D2), overlapping_times(S1, E1, S2, E2).
+conflict(N1, N2) :- section_time(N1, S1, E1, D1), non_cs_section_time(N2, S2, E2, D2), section_course(C1, N1), non_cs_section_course(C2, N2), overlapping_days(D1, D2), overlapping_times(S1, E1, S2, E2).
+
+% #show non_cs_conflict/2.
 
 % There exists at least some path between C1 and C2.
 % non-conflicting classes
-path(C1, C2) :- section(C1, S1, E1, D1), section(C2, S2, E2, D2), not conflict(C1, C2, S1, E1, S2, E2, D1, D2), C1!=C2.
-
+path(C1, C2) :- section_course(C1, N1), section_course(C2, N2), not conflict(N1, N2), C1!=C2.
+path(C1, C2) :- section_course(C1, N1), non_cs_section_course(C2, N2), not conflict(N1, N2).
 % There is also a path between non_cs sections and cs_sections
-path(C1, C2) :- section(C1, S1, E1, D1), non_cs_section(C2, S2, E2, D2), not conflict(C1, C2, S1, E1, S2, E2, D1, D2), C1!=C2.
+% path(C1, C2) :- section(C1, S1, E1, D1), non_cs_section(C2, S2, E2, D2), not conflict(C1, C2, S1, E1, S2, E2, D1, D2), C1!=C2.
 
 % There are no paths between C1 and C2 -> total overlap.
 overlap(C1, C2) :- class(C1), class(C2), not path(C1, C2), C1!=C2.
-overlap(C1, C2) :- class(C1), non_cs_class(C2), not path(C1, C2), C1!=C2.
+overlap(C1, C2) :- class(C1), non_cs_class(C2), not path(C1, C2).
+% overlap(C1, C2) :- class(C1), non_cs_class(C2), not path(C2, C1).
 % Overlap between cs and non-cs classes are not bidirectional,
 % while overlap between two cs classes is bidirectional
 % enforcing bidirectionality keeps weights the same
 % TODO: look into whether or not it is better to enforce
 % non-directed overlap
-overlap(C1, C2) :- overlap(C2, C1).
+% overlap(C1, C2) :- overlap(C2, C1).
 
-weighted_overlap(C1, C2, W1 + W2) :- overlap(C1, C2), planned_course(C1, W1, Y1), planned_course(C2, W2, Y2).
+true_overlap(C1, C2) :- overlap(C1, C2), not true_overlap(C2, C1).
+
+weighted_overlap(C1, C2, W1 + W2) :- true_overlap(C1, C2), planned_course(C1, W1, Y1), planned_course(C2, W2, Y2).
 
 % same_year(C1, C2) :- planned_course(C1, W1, Y), planned_course(C2, W2, Y).
+
 
 original_weighted_overlap_sum(N) :- N = #sum{ W, C1, C2 : weighted_overlap(C1, C2, W) }.
 
@@ -70,7 +95,7 @@ original_weighted_overlap_sum(N) :- N = #sum{ W, C1, C2 : weighted_overlap(C1, C
 
 % #show overlap_count/1.
 % #show conflict_count/1.
-#show overlap/2.
+% #show true_overlap/2.
 % #show planned_course/3.
 % #show conflict/2.
 % #show path/2.
