@@ -1,19 +1,19 @@
 from datetime import datetime
 import os
 import subprocess
+import json
+
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, redirect
 from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
-import json
-from .models import FilteredUpload
-import json
-from django.http import JsonResponse
 from django.core.files.base import ContentFile  # <-- Add this line
-from .models import FilteredUpload
 from django.core.files.storage import default_storage
 from django.utils.timezone import now
 from django.core.files.base import ContentFile
+
+from .models import *
+from scheduleFunctions.data_processing.jsonconverter import convert
 
 
 def login(request):
@@ -43,11 +43,19 @@ def login(request):
 
 
 def dashboard_view(request):
+    if request.method == "POST":
+        request.session["day"] = request.POST.get("day")
     if "username" not in request.session:
         return redirect("home")  # Redirect to login if not authenticated
 
+    if "day" not in request.session:
+        request.session["day"] = "Mon"
     # Render the dashboard.html template
-    return render(request, "dashboard.html", {"username": request.session["username"]})
+    
+    day_object = Day.objects.get(day_of_week = request.session["day"])
+    session_list = Section.objects.filter(days__in = day_object)
+    
+    return render(request, "dashboard.html", {"username": request.session["username"], "day": request.session["day"], "sessions": session_list})
 
 
 def run_script(request):
@@ -121,75 +129,9 @@ def upload_json_file(request):
     )
 
     # === Convert filtered to ASP facts ===
-    def convert24(time):
-        t = datetime.strptime(time, "%I:%M%p")
-        return t.hour * 60 + t.minute
+    asp_filename = filtered_filename.replace(".json", ".lp")
+    facts = convert(filtered_filename)
 
-    facts = []
-    classes, rooms, professors, times = set(), set(), set(), set()
-
-    for term, subjects in filtered_courses.items():
-        for subject, courses in subjects.items():
-            for course_num, course_info in courses.items():
-                course_id = (
-                    f"{subject}{course_num}".lower()
-                    .replace(" ", "_")
-                    .replace(".", "")
-                    .replace("-", "_")
-                )
-                title = (
-                    course_info.get("title", "")
-                    .lower()
-                    .replace(" ", "_")
-                    .replace(".", "")
-                    .replace("-", "_")
-                )
-                prereq = (
-                    course_info.get("prereq", "none")
-                    .lower()
-                    .replace(" ", "_")
-                    .replace("-", "_")
-                    .replace(".", "")
-                )
-
-                facts.append(f'course({course_id}, "{title}", "{prereq}").')
-                classes.add(course_id)
-
-                for section_num, section_info in course_info.get("sections", {}).items():
-                    section_num = "s" + section_num.lower()
-                    class_number = (
-                        "c" + section_info.get("Class Number", "").split()[0].lower()
-                    )
-
-                    time = section_info.get("Time", "TBA")
-                    if time == "TBA":
-                        start, end = "tba", "tba"
-                    else:
-                        start, end = time.split(" - ")
-                        start = convert24(start)
-                        end = convert24(end)
-
-                    days = section_info.get("Days", "TBA").strip().lower().replace(" ", "_").replace("-", "_")
-                    location = section_info.get("Location", "Unknown").lower().replace(" ", "_").replace(".", "").replace("-", "_")
-                    instructor = section_info.get("Instructor", "Unknown").lower().replace(" ", "_").replace(".", "").replace("-", "_")
-
-                    if location in {"totally_online", "to_be_announced"} or start == "tba":
-                        continue
-
-                    facts.append(
-                        f"section({course_id}, {section_num}, {class_number}, {start}, {end}, {days}, {location}, {instructor})."
-                    )
-                    rooms.add(location)
-                    professors.add(instructor)
-                    if start != "tba" and end != "tba" and days != "tba":
-                        times.add(f"time_slot({start}, {end}, {days}).")
-
-    facts.append(f"class({'; '.join(classes)}).")
-    facts.append(f"room({'; '.join(rooms)}).")
-    facts.append(f"professor({'; '.join(professors)}).")
-    facts.extend(times)
-
-    asp_filename = raw_filename.replace(".json", ".lp")
     default_storage.save(asp_filename, ContentFile("\n".join(facts)))
     request.session["asp_filename"] = asp_filename
     return JsonResponse(

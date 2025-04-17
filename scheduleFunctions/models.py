@@ -44,17 +44,22 @@ class Day(models.Model):
         choices=DAY_OF_WEEK_CHOICES,
         default=MON,
     )
-    
+
+
 class Course(models.Model):
     subject = models.CharField(max_length=5)
-    classNumber = models.IntegerField()
+    class_number = models.IntegerField()
     prerequisites = models.ManyToManyField('self')
     equivalent_courses = models.ManyToManyField('self')
     same_semester_courses = models.ManyToManyField('self')
     credits = models.IntegerField()
     weight = models.IntegerField()
     
-   
+class Requirement(models.Model):
+    major_label = models.CharField(max_length=255)
+    requirement_label = models.CharField(max_length=255)
+    total_credits = models.IntegerField()
+    course_options = models.ManyToManyField(Course)
 class Schedule(models.Model):
     year = models.CharField(
         max_length=2,
