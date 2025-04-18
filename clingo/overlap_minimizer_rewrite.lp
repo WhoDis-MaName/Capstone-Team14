@@ -26,11 +26,11 @@ input_section(C, I, N, R, P) :- section(C, I, N, _, _, _, R, P).
 % scheduled_section(C, I, N, S, E, D, R, P) :- input_section(C, I, N, R, P), scheduled_section_time_slot(N, S, E, D).
 
 % scheduled_section_course(C, N) :- scheduled_section(C, I, N, S, E, D, R, P).
-scheduled_section_course(C, N) :- scheduled_section_time_slot(N, S, E, D).
+scheduled_section_course(C, N) :- input_section(C, I, N, R, P), scheduled_section_time_slot(N, S, E, D).
 
-scheduled_section_professor(P, N) :- scheduled_section(C, I, N, S, E, D, R, P).
+scheduled_section_professor(P, N) :- input_section(C, I, N, R, P).
 
-scheduled_section_room(R, N) :- scheduled_section(C, I, N, S, E, D, R, P).
+scheduled_section_room(R, N) :- input_section(C, I, N, R, P).
 
 % It cannot be that there are two classes in the same room at the same time
 % :- scheduled_section(C1, _, _, S1, E1, D1, R, P1), scheduled_section(C2, _, _, S2, E2, D2, R, P2), scheduled_conflict(C1, C2). %, C1!=C2.
