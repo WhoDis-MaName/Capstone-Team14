@@ -108,6 +108,23 @@ def convert(file):
                     continue
                 # Store course fact
                 facts.append(f'course({course_id}, "{title}", {prereq}).')
+                weight = 1
+                if str(course_num).startswith("1"):
+                    year = 1
+                elif str(course_num).startswith("2"):
+                    year = 2
+                elif str(course_num).startswith("3"):
+                    year = 3
+                elif str(course_num).startswith("4"):
+                    year = 4
+                elif str(course_num).startswith("8") or str(course_num).startswith("9"):
+                    year = 5
+                else:
+                    year = 0
+                    print(
+                        f"Error for course id: {course_id} with course number: {course_num}"
+                    )
+                facts.append(f'course_weight({course_id}, "{weight}", {year}).')
                 classes.add(course_id)
 
     # Convert sets to facts
@@ -124,4 +141,5 @@ def convert(file):
 
     # print(f"ASP facts written to {asp_filename}")
 
-convert(r"C:\Users\Josh\Documents\GitHub\Capstone-Team14\media\output.json")
+
+convert(r"C:\Users\cjgry\Documents\Capstone\Capstone-Team14\media\fa21-fa24.json")

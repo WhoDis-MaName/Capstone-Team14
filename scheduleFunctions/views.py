@@ -255,7 +255,9 @@ def upload_json_file(request):
                             f"non_cs_section({course_id}, {section_num}, {class_number}, {start}, {end}, {days}, {location}, {instructor})."
                         )
                         if start != "tba" and end != "tba" and days != "tba":
-                            non_cs_times.add(f"non_cs_time_slot({start}, {end}, {days}).")
+                            non_cs_times.add(
+                                f"non_cs_time_slot({start}, {end}, {days})."
+                            )
 
                 # ignore courses that are entirely comprised of totally online sections
                 if totally_online_count == section_count:
@@ -264,10 +266,48 @@ def upload_json_file(request):
                 # if we are a class that we can modify
                 if subject in subjects_of_interest:
                     facts.append(f'course({course_id}, "{title}", "{prereq}").')
+                    weight = 1
+                    if str(course_num).startswith("1"):
+                        year = 1
+                    elif str(course_num).startswith("2"):
+                        year = 2
+                    elif str(course_num).startswith("3"):
+                        year = 3
+                    elif str(course_num).startswith("4"):
+                        year = 4
+                    elif str(course_num).startswith("8") or str(course_num).startswith(
+                        "9"
+                    ):
+                        year = 5
+                    else:
+                        year = 0
+                        print(
+                            f"Error for course id: {course_id} with course number: {course_num}"
+                        )
+                    facts.append(f"course_weight({course_id}, {weight}, {year}).")
                     classes.add(course_id)
                 # else we are a class like english or math and we cannot modify the time
                 else:
                     facts.append(f'non_cs_course({course_id}, "{title}", "{prereq}").')
+                    weight = 1
+                    if str(course_num).startswith("1"):
+                        year = 1
+                    elif str(course_num).startswith("2"):
+                        year = 2
+                    elif str(course_num).startswith("3"):
+                        year = 3
+                    elif str(course_num).startswith("4"):
+                        year = 4
+                    elif str(course_num).startswith("8") or str(course_num).startswith(
+                        "9"
+                    ):
+                        year = 5
+                    else:
+                        year = 0
+                        print(
+                            f"Error for course id: {course_id} with course number: {course_num}"
+                        )
+                    facts.append(f"course_weight({course_id}, {weight}, {year}).")
                     non_cs_classes.add(course_id)
 
     facts.append(f"class({'; '.join(classes)}).")

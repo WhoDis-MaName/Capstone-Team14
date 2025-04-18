@@ -12,7 +12,9 @@
 #include "overlap.lp".
 % #include "groups.lp".
 
-planned_course(C, 1, 0) :- class(C), not planned_classes(C).
+% planned_course(C, 1, 0) :- class(C), not planned_classes(C).
+planned_course(C, W, Y) :- course_weight(C, W, Y), not planned_classes(C).
+% #show planned_course/3.
 
 section_time(N, S, E, D) :- section(C, I, N, S, E, D, R, P).
 
@@ -75,10 +77,20 @@ true_overlap(C1, C2) :- overlap(C1, C2), not true_overlap(C2, C1).
 
 weighted_overlap(C1, C2, W1 + W2) :- true_overlap(C1, C2), planned_course(C1, W1, Y1), planned_course(C2, W2, Y2).
 
-% same_year(C1, C2) :- planned_course(C1, W1, Y), planned_course(C2, W2, Y).
+same_year(C1, C2) :- planned_course(C1, W1, Y), planned_course(C2, W2, Y). %, C1 != C2.
 
+#show same_year/2.
+
+same_year_overlap(C1, C2, W) :- weighted_overlap(C1, C2, W), same_year(C1, C2).
+
+% if not same year, set weight to 1.
+new_weighted_overlap(C1, C2, 1) :- true_overlap(C1, C2), planned_course(C1, W1, Y1), planned_course(C2, W2, Y2), not same_year(C1, C2).
+
+% if same year, set weight to year
+new_weighted_overlap(C1, C2, Y) :- true_overlap(C1, C2), planned_course(C1, W1, Y), planned_course(C2, W2, Y).
 
 original_weighted_overlap_sum(N) :- N = #sum{ W, C1, C2 : weighted_overlap(C1, C2, W) }.
+original_weighted_overlap_by_year_sum(N) :- N = #sum{ W, C1, C2 : weighted_overlap(C1, C2, W), same_year(C1, C2) }.
 
 % Can we generalize year to be 3xxx course meaning year 3? and so on for 1xxx, 2xxx, 4xxx.
 % Currently all electives are in group 0, so this will mostly hit electives
@@ -86,7 +98,8 @@ original_weighted_overlap_sum(N) :- N = #sum{ W, C1, C2 : weighted_overlap(C1, C
 
 % #show overlap/2.
 #show original_weighted_overlap_sum/1.
-% #show original_weighted_overlap_sum_by_year/1.
+#show original_weighted_overlap_by_year_sum/1.
+#show same_year_overlap/3.
 
 % overlap_count(N) :- N = #count{ C1 : overlap(C1, C2) }.
 % conflict_count(N) :- N = #count{ C1 : conflict(C1, C2) }.
