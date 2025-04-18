@@ -26,8 +26,10 @@ input_section(C, I, N, R, P) :- section(C, I, N, _, _, _, R, P).
 % scheduled_section(C, I, N, S, E, D, R, P) :- input_section(C, I, N, R, P), scheduled_section_time_slot(N, S, E, D).
 
 % scheduled_section_course(C, N) :- scheduled_section(C, I, N, S, E, D, R, P).
+% 
 scheduled_section_course(C, N) :- input_section(C, I, N, R, P), scheduled_section_time_slot(N, S, E, D).
 
+% The profressor P for a schedule number N
 scheduled_section_professor(P, N) :- input_section(C, I, N, R, P).
 
 scheduled_section_room(R, N) :- input_section(C, I, N, R, P).
@@ -51,32 +53,32 @@ scheduled_conflict(N1, N2) :- scheduled_section_time_slot(N1, S1, E1, D1), non_c
 % Additionally, there is conflict between CS sections and non-CS sections. 
 % scheduled_conflict(C1, C2, S1, E1, S2, E2, D1, D2) :- scheduled_section(C1, _, _, S1, E1, D1, _, _), non_cs_section(C2, S2, E2, D2), C1!=C2, overlapping_days(D1, D2), overlapping_times(S1, E1, S2, E2). 
 
-% There exists at least some scheduled_path between C1 and C2.
+% There exists at least some non_ovlerapping_courses between C1 and C2.
 % Non-conflicting classes, C1 and C2
-scheduled_path(C1, C2) :- scheduled_section_course(C1, N1), scheduled_section_course(C2, N2), not scheduled_conflict(N1, N2), C1!=C2.
-scheduled_path(C1, C2) :- scheduled_section_course(C1, N1), non_cs_section_course(C2, N2), not scheduled_conflict(N1, N2), C1!=C2.
-% scheduled_path(C1, C2) :- scheduled_section(C1, _, _, S1, E1, D1, _, _), non_cs_section(C2, S2, E2, D2), not scheduled_conflict(C1, C2, S1, E1, S2, E2, D1, D2), C1!=C2.
+non_ovlerapping_courses(C1, C2) :- scheduled_section_course(C1, N1), scheduled_section_course(C2, N2), not scheduled_conflict(N1, N2), C1!=C2.
+non_ovlerapping_courses(C1, C2) :- scheduled_section_course(C1, N1), non_cs_section_course(C2, N2), not scheduled_conflict(N1, N2), C1!=C2.
+% non_ovlerapping_courses(C1, C2) :- scheduled_section(C1, _, _, S1, E1, D1, _, _), non_cs_section(C2, S2, E2, D2), not scheduled_conflict(C1, C2, S1, E1, S2, E2, D1, D2), C1!=C2.
 
-% There are no scheduled_paths between C1 and C2 -> total overlap.
+% There are no non_ovlerapping_coursess between C1 and C2 -> total overlap.
 % Overlap if all sections are in conflict
-scheduled_overlap(C1, C2) :- class(C1), class(C2), not scheduled_path(C1, C2), C1!=C2.
-scheduled_overlap(C1, C2) :- class(C1), non_cs_class(C2), not scheduled_path(C1, C2), C1!=C2.
-% scheduled_overlap(C1, C2) :- class(C1), non_cs_class(C2), not scheduled_path(C1, C2), C1!=C2.
+scheduled_overlapping_courses(C1, C2) :- class(C1), class(C2), not non_ovlerapping_courses(C1, C2), C1!=C2.
+scheduled_overlapping_courses(C1, C2) :- class(C1), non_cs_class(C2), not non_ovlerapping_courses(C1, C2), C1!=C2.
+% scheduled_overlapping_courses(C1, C2) :- class(C1), non_cs_class(C2), not non_ovlerapping_courses(C1, C2), C1!=C2.
 % Overlap between cs and non-cs classes are not bidirectional,
 % while overlap between two cs classes is bidirectional
 % enforcing bidirectionality keeps weights the same
 % TODO: look into whether or not it is better to enforce
 % non-directed overlap
-scheduled_overlap(C1, C2) :- scheduled_overlap(C2, C1).
+scheduled_overlapping_courses(C1, C2) :- scheduled_overlapping_courses(C2, C1).
 
-true_scheduled_overlap(C1, C2) :- scheduled_overlap(C1, C2), not true_scheduled_overlap(C2, C1).
+true_scheduled_overlapping_courses(C1, C2) :- scheduled_overlapping_courses(C1, C2), not true_scheduled_overlapping_courses(C2, C1).
 
 % calculate the weight for each overlap
-scheduled_weighted_overlap_sum(C1, C2, W1 + W2) :- true_scheduled_overlap(C1, C2), planned_course(C1, W1, Y1), planned_course(C2, W2, Y2).
+scheduled_weighted_overlap_sum(C1, C2, W1 + W2) :- true_scheduled_overlapping_courses(C1, C2), planned_course(C1, W1, Y1), planned_course(C2, W2, Y2).
 
 % scheduled_conflict(C1, C2) :- scheduled_conflict(C1, C2, _, _, _, _, _, _).
 % scheduled_weighted_conflict(C1, C2, W1 + W2) :- scheduled_conflict(C1, C2), planned_course(C1, W1, Y1), planned_course(C2, W2, Y2).
-% scheduled_overlap_count(N) :- N = #count{ C1, C2 : scheduled_overlap(C1, C2) }.
+% scheduled_overlapping_courses_count(N) :- N = #count{ C1, C2 : scheduled_overlapping_courses(C1, C2) }.
 % scheduled_conflict_count(N) :- N = #count{ C1, C2 : scheduled_conflict(C1, C2) }.
 
 % #show scheduled_section/8.

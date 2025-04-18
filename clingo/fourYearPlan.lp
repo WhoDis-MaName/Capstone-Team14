@@ -3,6 +3,18 @@
 #const w3 = 2.
 #const w4 = 2.
 
+% Have groups based on prereqs
+% ie, group all of the classes that have datastructures as a prereq
+% what do we do about courses that have multiple prereqs?
+
+% the output you give is for students who have completed data 
+% structures of the possible courses there, these are the possible courses they can take together
+% and these are the courses that they cannot take together
+
+% look at specific prereq in front end
+
+% define overlap such that courses are same time, same day, and at least one overlapping group
+
 year(1).
 planned_course(engl1150, w1, 1).
 planned_course(cmst1110, w1, 1).
