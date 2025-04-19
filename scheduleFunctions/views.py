@@ -11,9 +11,14 @@ from django.core.files.base import ContentFile  # <-- Add this line
 from django.core.files.storage import default_storage
 from django.utils.timezone import now
 from django.core.files.base import ContentFile
+from django.core.exceptions import ObjectDoesNotExist
 
 from .models import *
 from scheduleFunctions.data_processing.jsonconverter import convert
+from scheduleFunctions.data_processing.get_requirements import *
+from scheduleFunctions.to_database import store_requirements, store_plan, store_schedule
+from scheduleFunctions.data_processing.optimizer import *
+
 
 
 def login(request):
@@ -49,13 +54,20 @@ def dashboard_view(request):
         return redirect("home")  # Redirect to login if not authenticated
 
     if "day" not in request.session:
-        request.session["day"] = "Mon"
+        request.session["day"] = "Monday"
     # Render the dashboard.html template
+    try:
+        day_object = Day.objects.get(day_of_week = request.session["day"])
+    except ObjectDoesNotExist:
+        request.session["day"] = "Monday"
+        day_object = Day.objects.get(day_of_week = request.session["day"])
     
-    day_object = Day.objects.get(day_of_week = request.session["day"])
-    session_list = Section.objects.filter(days__in = day_object)
+    try:  
+        section_list = Section.objects.filter(days = day_object)
+    except ObjectDoesNotExist:
+        section_list = []
     
-    return render(request, "dashboard.html", {"username": request.session["username"], "day": request.session["day"], "sessions": session_list})
+    return render(request, "dashboard.html", {"username": request.session["username"], "day": request.session["day"], "sessions": section_list})
 
 
 def run_script(request):
@@ -119,7 +131,7 @@ def upload_json_file(request):
     default_storage.save(
         non_filtered_filename, ContentFile(json.dumps(non_filtered_courses, indent=2))
     )
-
+    
     # Save model
     record = FilteredUpload.objects.create(
         filename=f"raw_input{upload_number}.json",
@@ -127,10 +139,10 @@ def upload_json_file(request):
         non_filtered_data=non_filtered_courses,
         uploaded_file=uploaded_file,
     )
-
+    store_schedule(default_storage.path(filtered_filename))
     # === Convert filtered to ASP facts ===
     asp_filename = filtered_filename.replace(".json", ".lp")
-    facts = convert(filtered_filename)
+    facts = convert(default_storage.path(filtered_filename))
 
     default_storage.save(asp_filename, ContentFile("\n".join(facts)))
     request.session["asp_filename"] = asp_filename
@@ -187,3 +199,61 @@ def run_clingo_solver(request):
 
     except Exception as e:
         return JsonResponse({"status": "error", "message": str(e)}, status=500)
+
+def run_clingo_optimizer(request):
+    try:
+        asp_filename = request.session.get("asp_filename")
+        if not default_storage.exists(asp_filename):
+            return JsonResponse({"error": f"ASP file '{asp_filename}' not found."}, status=404)
+
+        current_directory = os.path.dirname(os.path.realpath(__file__))
+        path = current_directory.split(os.sep)
+        root_index = path.index("Capstone-Team14")
+        root_dir = os.sep.join(path[: root_index + 1])
+        asp_file_path = os.path.join(root_dir, "media", asp_filename)
+        clingo_dir = os.path.join(root_dir, "clingo")
+        overlap_path = os.path.join(clingo_dir, "overlap_minimizer.lp")
+
+        ctl = clingo.Control()
+        # ctl.load(asp_file_path)
+        ctl.load(overlap_path)
+        ctl.ground()
+
+        result = []
+
+        def on_model(model):
+            # Only collect shown atoms
+            symbols = [str(s) for s in list(model.symbols(shown=True))]
+            # print(symbols)
+
+            convert_to_json(symbols, "media\output.json")
+
+        ctl.solve(on_model=on_model)
+
+        return JsonResponse({
+            "status": "success",
+            "message": f"Clingo solver executed on {asp_filename}.",
+            "models": result or ["No solution found."]
+        })
+    except Exception as e:
+        return JsonResponse({"status": "error", "message": str(e)}, status=500)
+        
+        
+"""
+# Ideal method for converting to clingo
+
+def run_solver(request):
+    # ==== Convert DB to Rules ====
+    # ========  Get Objects
+    objects = Room.objects.all()
+    objects.extend(Day.objects.all())
+    objects.extend(Course.objects.all())
+    objects.extend(Requirement.objects.all())
+    objects.extend(Section.objects.all())
+    objects.extend(PlanSemester.objects.all())
+    with open(filename, w) as f:
+        for object in objects:
+            f.write(object.print_clingo())
+            f.write('\n')
+
+"""
