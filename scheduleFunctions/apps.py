@@ -1,16 +1,16 @@
 import os
 
 from django.apps import AppConfig
-from .data_processing.get_four_year import read_four_year
-from .data_processing.get_requirements import process_degree_requirements
-from .to_database import *
 
 
 class SchedulefunctionsConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'scheduleFunctions'
     
-    def ready(self):
+    """def ready(self):
+        from .data_processing.get_four_year import read_four_year
+        from .data_processing.get_requirements import process_degree_requirements
+        from .to_database import store_requirements, store_plan
         
         # Four Year Plan
         if os.name == 'nt':
@@ -47,3 +47,4 @@ class SchedulefunctionsConfig(AppConfig):
         store_plan(plan_file)
         
         ...
+        """

@@ -50,5 +50,5 @@ class ClingoApp(clingo.application.Application):
     #     board = Sudoku({}).from_model(model)
     #     print(board)
 
-
-clingo.application.clingo_main(ClingoApp())
+if __name__ == '__main__':
+    clingo.application.clingo_main(ClingoApp())

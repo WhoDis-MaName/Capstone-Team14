@@ -103,5 +103,5 @@ def convert_to_json(symbols, output_file):
     with open(output_file, "w") as f:
         json.dump(data, f, indent=2)
 
-
-clingo.application.clingo_main(ClingoApp())
+if __name__ == '__main__':
+    clingo.application.clingo_main(ClingoApp())
