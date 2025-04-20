@@ -18,10 +18,10 @@
         .catch(error => alert("Request failed"));
     }
 
-    //function filterByDay(day) {
-      //alert(`Filtering schedule by: ${day}`);
+    function filterByDay(day) {
+      alert(`Filtering schedule by: ${day}`);
       // Add filtering logic here
-    //}
+    }
 
     window.addEventListener('DOMContentLoaded', function () {
       const uploadForm = document.getElementById('uploadForm');
@@ -67,11 +67,11 @@
     <!-- Sidebar with Day Buttons -->
     <aside class="sidebar">
       <h3>Filter by Day</h3>
-      <button class="day-button" onclick="filterByDay('Monday')">Monday</button>
-      <button class="day-button" onclick="filterByDay('Tuesday')">Tuesday</button>
-      <button class="day-button" onclick="filterByDay('Wednesday')">Wednesday</button>
-      <button class="day-button" onclick="filterByDay('Thursday')">Thursday</button>
-      <button class="day-button" onclick="filterByDay('Friday')">Friday</button>
+      <a href="#" class="day-button" onclick="/dashboard/?day=Monday" >Monday</a>
+      <a href="#" class="day-button" onclick="/dashboard/?day=Tuesday" >Tuesday</a>
+      <a href="#" class="day-button" onclick="/dashboard/?day=Wednesday" >Wednesday</a>
+      <a href="#" class="day-button" onclick="/dashboard/?day=Thursday" >Thursday</a>
+      <a href="#" class="day-button" onclick="/dashboard/?day=Friday" >Friday</a>
     </aside>
 
     <!-- Main Content -->

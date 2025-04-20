@@ -48,26 +48,28 @@ def login(request):
 
 
 def dashboard_view(request):
-    if request.method == "POST":
-        request.session["day"] = request.POST.get("day")
+    request.session["day"] = request.GET.get("day")
     if "username" not in request.session:
         return redirect("home")  # Redirect to login if not authenticated
 
     if "day" not in request.session:
-        request.session["day"] = "Monday"
+        request.session["day"] = "m"
     # Render the dashboard.html template
     try:
+        print(request.session["day"])
+        # print(Day.objects.all())
         day_object = Day.objects.get(day_of_week = request.session["day"])
     except ObjectDoesNotExist:
         request.session["day"] = "Monday"
         day_object = Day.objects.get(day_of_week = request.session["day"])
+        print(Day.objects.all())
     
     try:  
         section_list = Section.objects.filter(days = day_object)
     except ObjectDoesNotExist:
         section_list = []
     
-    return render(request, "dashboard.html", {"username": request.session["username"], "day": request.session["day"], "sessions": section_list})
+    return render(request, "dashboard.html", {"username": request.session["username"], "day": request.session["day"], "section_list": section_list})
 
 
 def run_script(request):

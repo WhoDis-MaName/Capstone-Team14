@@ -3,35 +3,35 @@
         "model": "scheduleFunctions.Day",
         "pk": 1,
         "fields": {
-        "day_of_week": "Monday"
+        "day_of_week": "m"
         }
     },
     {
         "model": "scheduleFunctions.Day",
         "pk": 2,
         "fields": {
-        "day_of_week": "Tuesday"
+        "day_of_week": "t"
         }
     },
     {
         "model": "scheduleFunctions.Day",
         "pk": 3,
         "fields": {
-        "day_of_week": "Wednesday"
+        "day_of_week": "w"
         }
     },
     {
         "model": "scheduleFunctions.Day",
         "pk": 4,
         "fields": {
-        "day_of_week": "Thursday"
+        "day_of_week": "r"
         }
     },
     {
         "model": "scheduleFunctions.Day",
         "pk": 5,
         "fields": {
-        "day_of_week": "Friday"
+        "day_of_week": "f"
         }
     }
 ]
