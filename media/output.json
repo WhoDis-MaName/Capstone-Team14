@@ -1,94 +1,135 @@
 {
   "CIST": {
-    "9970": {
-      "title": "TBD",
-      "desc": "TBD",
-      "prereq": "-",
-      "sections": {
-        "002": {
-          "Class Number": "15084",
-          "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "1:30PM - 2:45PM",
-          "Days": "TR",
-          "Location": "To Be Announced",
-          "Instructor": "Ann L Fruhling"
-        },
-        "001": {
-          "Class Number": "15084",
-          "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "9:30AM - 10:20AM",
-          "Days": "T",
-          "Location": "To Be Announced",
-          "Instructor": "Ann L Fruhling"
-        }
-      }
-    },
     "1010": {
       "title": "TBD",
       "desc": "TBD",
       "prereq": "-",
       "sections": {
         "001": {
-          "Class Number": "16466",
+          "Class Number": "15257",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "1:30PM - 2:45PM",
+          "Time": "4:30PM - 5:45PM",
           "Days": "TR",
           "Location": "Peter Kiewit Institute 157",
-          "Instructor": "Judith Monarrez Diaz Kelsey"
+          "Instructor": "Farida Majid"
         },
         "002": {
-          "Class Number": "16466",
+          "Class Number": "15258",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "12:00PM - 1:15PM",
-          "Days": "F",
+          "Time": "4:30PM - 5:45PM",
+          "Days": "TR",
           "Location": "Peter Kiewit Institute 157",
-          "Instructor": "Judith Monarrez Diaz Kelsey"
+          "Instructor": "Emily C Wiemers"
+        },
+        "003": {
+          "Class Number": "15259",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "4:30PM - 5:45PM",
+          "Days": "TR",
+          "Location": "Peter Kiewit Institute 157",
+          "Instructor": "Anita L Lee"
+        },
+        "004": {
+          "Class Number": "15260",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "4:30PM - 5:45PM",
+          "Days": "TR",
+          "Location": "Peter Kiewit Institute 157",
+          "Instructor": "Anita L Lee"
+        },
+        "005": {
+          "Class Number": "15261",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "1:30PM - 2:20PM",
+          "Days": "T",
+          "Location": "Peter Kiewit Institute 157",
+          "Instructor": "Cathy Stout"
+        },
+        "006": {
+          "Class Number": "15381",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "4:30PM - 5:45PM",
+          "Days": "TR",
+          "Location": "Peter Kiewit Institute 157",
+          "Instructor": "Javier Torres"
+        },
+        "007": {
+          "Class Number": "15382",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "4:30PM - 5:45PM",
+          "Days": "TR",
+          "Location": "Peter Kiewit Institute 157",
+          "Instructor": "Anita L Lee"
+        },
+        "008": {
+          "Class Number": "16140",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "1:30PM - 2:20PM",
+          "Days": "T",
+          "Location": "Peter Kiewit Institute 161",
+          "Instructor": "Emily C Wiemers"
+        },
+        "009": {
+          "Class Number": "16223",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "1:30PM - 2:20PM",
+          "Days": "T",
+          "Location": "Peter Kiewit Institute 261",
+          "Instructor": "Alexis Sherman"
         }
       }
     },
-    "3110": {
+    "1300": {
       "title": "TBD",
       "desc": "TBD",
       "prereq": "-",
       "sections": {
         "001": {
-          "Class Number": "15462",
+          "Class Number": "14007",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "1:30PM - 2:45PM",
-          "Days": "TR",
-          "Location": "Peter Kiewit Institute 153",
-          "Instructor": "Hollie Rosser"
+          "Time": "9:00AM - 10:15AM",
+          "Days": "MW",
+          "Location": "Peter Kiewit Institute 361",
+          "Instructor": "Anshuman Das Mohapatra"
         },
         "002": {
-          "Class Number": "15462",
+          "Class Number": "14006",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "1:00PM - 2:15PM",
-          "Days": "MW",
-          "Location": "Peter Kiewit Institute 153",
-          "Instructor": "Hollie Rosser"
+          "Time": "6:00PM - 8:40PM",
+          "Days": "T",
+          "Location": "Peter Kiewit Institute 260",
+          "Instructor": "Steve Saunders"
         }
       }
     },
-    "4540": {
+    "1400": {
       "title": "TBD",
       "desc": "TBD",
       "prereq": "-",
       "sections": {
-        "851": {
-          "Class Number": "17270",
+        "001": {
+          "Class Number": "14742",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "9:30AM - 10:20AM",
-          "Days": "T",
-          "Location": "Totally Online",
-          "Instructor": "Karen Sue Allen"
+          "Time": "12:00PM - 1:15PM",
+          "Days": "TR",
+          "Location": "Mammel Hall 113",
+          "Instructor": "Kyle Reestman"
         },
-        "852": {
-          "Class Number": "17270",
+        "002": {
+          "Class Number": "14010",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "3:00PM - 4:15PM",
-          "Days": "MW",
-          "Location": "Totally Online",
-          "Instructor": "Karen Sue Allen"
+          "Time": "9:00AM - 10:15AM",
+          "Days": "TR",
+          "Location": "Mammel Hall 113",
+          "Instructor": "Robert Fulkerson"
+        },
+        "003": {
+          "Class Number": "14752",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "12:00PM - 1:15PM",
+          "Days": "TR",
+          "Location": "Peter Kiewit Institute 263",
+          "Instructor": "Kyle Reestman"
         }
       }
     },
@@ -98,83 +139,215 @@
       "prereq": "-",
       "sections": {
         "001": {
-          "Class Number": "16496",
+          "Class Number": "15277",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "9:30AM - 10:20AM",
+          "Time": "3:30PM - 4:20PM",
           "Days": "T",
           "Location": "Peter Kiewit Institute 361",
           "Instructor": "Derek Babb"
+        }
+      }
+    },
+    "2010": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "17564",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "3:30PM - 4:20PM",
+          "Days": "R",
+          "Location": "Peter Kiewit Institute 278",
+          "Instructor": "Martha A Garcia Murillo"
+        }
+      }
+    },
+    "2100": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "14683",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "6:00PM - 8:40PM",
+          "Days": "W",
+          "Location": "Peter Kiewit Institute 274",
+          "Instructor": "Hollie Rosser"
         },
         "002": {
-          "Class Number": "16496",
+          "Class Number": "15414",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "9:30AM - 10:20AM",
+          "Time": "3:00PM - 4:15PM",
+          "Days": "TR",
+          "Location": "Peter Kiewit Institute 155",
+          "Instructor": "Kerry Wayne Ward"
+        },
+        "003": {
+          "Class Number": "17790",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "3:00PM - 4:15PM",
+          "Days": "TR",
+          "Location": "Peter Kiewit Institute 256",
+          "Instructor": "Paul J Van Vliet"
+        },
+        "820": {
+          "Class Number": "14553",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "6:00PM - 8:40PM",
+          "Days": "W",
+          "Location": "Remote Learning",
+          "Instructor": "Karen Sue Allen"
+        }
+      }
+    },
+    "2500": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "14758",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "3:30PM - 4:20PM",
           "Days": "T",
-          "Location": "Peter Kiewit Institute 361",
-          "Instructor": "Derek Babb"
+          "Location": "Peter Kiewit Institute 153",
+          "Instructor": "Farhad Mohammad Afzali"
+        },
+        "002": {
+          "Class Number": "15413",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "3:30PM - 4:20PM",
+          "Days": "T",
+          "Location": "Peter Kiewit Institute 153",
+          "Instructor": "Christian Haas"
+        },
+        "003": {
+          "Class Number": "14014",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "12:00PM - 1:15PM",
+          "Days": "TR",
+          "Location": "Peter Kiewit Institute 153",
+          "Instructor": "Sasan Azizian"
+        }
+      }
+    },
+    "3000": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "14285",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "3:30PM - 4:20PM",
+          "Days": "T",
+          "Location": "Peter Kiewit Institute 157",
+          "Instructor": "Thom Davis"
+        },
+        "002": {
+          "Class Number": "14017",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "12:00PM - 1:15PM",
+          "Days": "MW",
+          "Location": "Peter Kiewit Institute 157",
+          "Instructor": "Thom Davis"
+        },
+        "003": {
+          "Class Number": "15846",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "12:00PM - 1:15PM",
+          "Days": "MW",
+          "Location": "Peter Kiewit Institute 157",
+          "Instructor": "Thom Davis"
+        }
+      }
+    },
+    "3110": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "14684",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "10:30AM - 11:45AM",
+          "Days": "TR",
+          "Location": "Peter Kiewit Institute 278",
+          "Instructor": "Hollie Rosser"
+        },
+        "002": {
+          "Class Number": "16142",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "12:00PM - 1:15PM",
+          "Days": "MF",
+          "Location": "Peter Kiewit Institute 274",
+          "Instructor": "Andrea K Grover"
+        },
+        "003": {
+          "Class Number": "14018",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "12:00PM - 1:15PM",
+          "Days": "MF",
+          "Location": "Peter Kiewit Institute 269",
+          "Instructor": "Grace Karen Tantillo"
+        },
+        "004": {
+          "Class Number": "17475",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "12:00PM - 1:15PM",
+          "Days": "MF",
+          "Location": "Peter Kiewit Institute 256",
+          "Instructor": "Andrea K Grover"
+        }
+      }
+    },
+    "9080": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "15200",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "10:30AM - 11:20AM",
+          "Days": "W",
+          "Location": "Peter Kiewit Institute 259",
+          "Instructor": "Ann L Fruhling"
         }
       }
     }
   },
   "CSCI": {
-    "8010": {
-      "title": "TBD",
-      "desc": "TBD",
-      "prereq": "-",
-      "sections": {
-        "850": {
-          "Class Number": "20542",
-          "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "1:30PM - 2:45PM",
-          "Days": "TR",
-          "Location": "Totally Online",
-          "Instructor": "Alfredo Perez"
-        },
-        "851": {
-          "Class Number": "20542",
-          "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "1:30PM - 2:45PM",
-          "Days": "TR",
-          "Location": "Totally Online",
-          "Instructor": "Alfredo Perez"
-        }
-      }
-    },
-    "8456": {
-      "title": "TBD",
-      "desc": "TBD",
-      "prereq": "-",
-      "sections": {
-        "002": {
-          "Class Number": "18572",
-          "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "9:30AM - 10:20AM",
-          "Days": "T",
-          "Location": "Peter Kiewit Institute 153",
-          "Instructor": "Jorge Fandinno Garcia"
-        },
-        "001": {
-          "Class Number": "18572",
-          "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "12:00PM - 1:15PM",
-          "Days": "F",
-          "Location": "Peter Kiewit Institute 153",
-          "Instructor": "Jorge Fandinno Garcia"
-        }
-      }
-    },
-    "1234": {
+    "1200": {
       "title": "TBD",
       "desc": "TBD",
       "prereq": "-",
       "sections": {
         "001": {
-          "Class Number": "18572",
+          "Class Number": "14024",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "10:30AM - 11:45AM",
+          "Time": "3:00PM - 4:15PM",
           "Days": "MW",
-          "Location": "Peter Kiewit Institute 153",
-          "Instructor": "Jorge Fandinno Garcia"
+          "Location": "Peter Kiewit Institute 276",
+          "Instructor": "Harvey Pe Siy"
+        },
+        "002": {
+          "Class Number": "16150",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "3:30PM - 4:20PM",
+          "Days": "T",
+          "Location": "Peter Kiewit Institute 276",
+          "Instructor": "Joel Elson"
+        },
+        "003": {
+          "Class Number": "16234",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "3:30PM - 4:20PM",
+          "Days": "T",
+          "Location": "Mammel Hall 319",
+          "Instructor": "Ash P Ashokan"
         }
       }
     },
@@ -183,74 +356,575 @@
       "desc": "TBD",
       "prereq": "-",
       "sections": {
-        "002": {
-          "Class Number": "14597",
-          "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "3:00PM - 4:15PM",
-          "Days": "MW",
-          "Location": "Peter Kiewit Institute 276",
-          "Instructor": "Ash P Ashokan"
-        },
         "001": {
-          "Class Number": "14597",
+          "Class Number": "14025",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "1:00PM - 2:15PM",
-          "Days": "MW",
+          "Time": "9:30AM - 10:20AM",
+          "Days": "T",
           "Location": "Peter Kiewit Institute 276",
           "Instructor": "Ash P Ashokan"
         }
       }
     },
-    "4000": {
+    "1620": {
       "title": "TBD",
       "desc": "TBD",
       "prereq": "-",
       "sections": {
-        "002": {
-          "Class Number": "16286",
-          "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "3:00PM - 4:15PM",
-          "Days": "MW",
-          "Location": "To Be Announced",
-          "Instructor": "Harvey Pe Siy"
-        },
         "001": {
-          "Class Number": "16286",
+          "Class Number": "14028",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "12:00PM - 2:45PM",
+          "Time": "12:00PM - 1:15PM",
+          "Days": "MF",
+          "Location": "Mammel Hall 113",
+          "Instructor": "Agatha Sheila Owora"
+        },
+        "002": {
+          "Class Number": "14030",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "1:30PM - 2:45PM",
+          "Days": "TR",
+          "Location": "Mammel Hall 113",
+          "Instructor": "Kyle Reestman"
+        },
+        "003": {
+          "Class Number": "17861",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "1:30PM - 2:45PM",
+          "Days": "TR",
+          "Location": "Mammel Hall 113",
+          "Instructor": "Ash P Ashokan"
+        }
+      }
+    },
+    "2030": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "14033",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "1:30PM - 2:45PM",
+          "Days": "MW",
+          "Location": "Peter Kiewit Institute 256",
+          "Instructor": "Praval Sharma"
+        },
+        "002": {
+          "Class Number": "14032",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "12:00PM - 1:15PM",
+          "Days": "MW",
+          "Location": "Peter Kiewit Institute 164",
+          "Instructor": "Mark E Mordeson"
+        },
+        "003": {
+          "Class Number": "16123",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "1:30PM - 2:20PM",
+          "Days": "W",
+          "Location": "Peter Kiewit Institute 274",
+          "Instructor": "Mark E Mordeson"
+        }
+      }
+    },
+    "2040": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "17587",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "8:30AM - 9:20AM",
+          "Days": "R",
+          "Location": "Peter Kiewit Institute 278",
+          "Instructor": "Mahadevan Subramaniam"
+        },
+        "002": {
+          "Class Number": "17588",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "9:30AM - 10:20AM",
+          "Days": "T",
+          "Location": "Peter Kiewit Institute 278",
+          "Instructor": "Mahadevan Subramaniam"
+        },
+        "003": {
+          "Class Number": "17589",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "8:30AM - 9:20AM",
+          "Days": "R",
+          "Location": "Peter Kiewit Institute 278",
+          "Instructor": "Mahadevan Subramaniam"
+        }
+      }
+    },
+    "2240": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "14034",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "6:00PM - 8:40PM",
           "Days": "M",
-          "Location": "To Be Announced",
-          "Instructor": "Harvey Pe Siy"
+          "Location": "Peter Kiewit Institute 153",
+          "Instructor": "Sean O'Malley"
         }
       }
     },
-    "5678": {
+    "2620": {
       "title": "TBD",
       "desc": "TBD",
       "prereq": "-",
       "sections": {
         "001": {
-          "Class Number": "18572",
+          "Class Number": "14808",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "3:00PM - 4:15PM",
+          "Time": "4:30PM - 5:45PM",
+          "Days": "TR",
+          "Location": "Peter Kiewit Institute 278",
+          "Instructor": "Brian C Ricks"
+        }
+      }
+    },
+    "3100": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "14260",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "4:30PM - 5:45PM",
           "Days": "MW",
-          "Location": "Peter Kiewit Institute 153",
+          "Location": "Durham Science Center 254",
+          "Instructor": "Dora Velcsov"
+        }
+      }
+    },
+    "3320": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "14040",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "6:00PM - 8:40PM",
+          "Days": "W",
+          "Location": "Peter Kiewit Institute 252",
+          "Instructor": "Jong Hoon Youn"
+        },
+        "002": {
+          "Class Number": "14038",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "10:30AM - 11:20AM",
+          "Days": "W",
+          "Location": "Peter Kiewit Institute 276",
+          "Instructor": "Brian C Ricks"
+        },
+        "003": {
+          "Class Number": "14753",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "4:30PM - 7:10PM",
+          "Days": "W",
+          "Location": "Peter Kiewit Institute 263",
+          "Instructor": "Kwangsung Oh"
+        }
+      }
+    },
+    "3550": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "17612",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "10:30AM - 11:45AM",
+          "Days": "MW",
+          "Location": "Peter Kiewit Institute 260",
+          "Instructor": "Jose M Santos"
+        }
+      }
+    },
+    "3660": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "14041",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "1:30PM - 2:45PM",
+          "Days": "TR",
+          "Location": "Peter Kiewit Institute 274",
+          "Instructor": "Jeff A Solheim"
+        }
+      }
+    },
+    "4100": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "17611",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "7:30PM - 8:45PM",
+          "Days": "TR",
+          "Location": "Peter Kiewit Institute 274",
+          "Instructor": "Xin Xing"
+        }
+      }
+    },
+    "4150": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "15236",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "9:30AM - 10:20AM",
+          "Days": "W",
+          "Location": "Peter Kiewit Institute 252",
+          "Instructor": "Hesham Hassan Ali"
+        }
+      }
+    },
+    "4220": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "14045",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "9:30AM - 10:20AM",
+          "Days": "T",
+          "Location": "Peter Kiewit Institute 160",
           "Instructor": "Jorge Fandinno Garcia"
         }
       }
     },
-    "3710": {
+    "4300": {
       "title": "TBD",
       "desc": "TBD",
       "prereq": "-",
       "sections": {
-        "850": {
-          "Class Number": "14619",
+        "001": {
+          "Class Number": "16070",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "1:00PM - 2:15PM",
+          "Time": "9:30AM - 10:20AM",
+          "Days": "T",
+          "Location": "Durham Science Center 104",
+          "Instructor": "Fabio Torres Vitor"
+        }
+      }
+    },
+    "4350": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "14047",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "12:00PM - 1:15PM",
+          "Days": "TR",
+          "Location": "Peter Kiewit Institute 155",
+          "Instructor": "Kwangsung Oh"
+        },
+        "002": {
+          "Class Number": "14754",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "6:00PM - 8:40PM",
+          "Days": "M",
+          "Location": "Peter Kiewit Institute 256",
+          "Instructor": "Jose M Santos"
+        },
+        "003": {
+          "Class Number": "20707",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "12:00PM - 1:15PM",
+          "Days": "TR",
+          "Location": "Peter Kiewit Institute 261",
+          "Instructor": "Mahadevan Subramaniam"
+        }
+      }
+    },
+    "4380": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "15498",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "3:30PM - 4:20PM",
+          "Days": "R",
+          "Location": "Peter Kiewit Institute 361",
+          "Instructor": "George Grispos"
+        }
+      }
+    },
+    "4450": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "14048",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "4:00PM - 5:15PM",
           "Days": "MW",
-          "Location": "Totally Online",
-          "Instructor": "Hassan Abd Al Rahmanan Farhat"
+          "Location": "Peter Kiewit Institute 153",
+          "Instructor": "Xin Zhong"
+        },
+        "002": {
+          "Class Number": "16001",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "9:30AM - 10:20AM",
+          "Days": "W",
+          "Location": "Peter Kiewit Institute 256",
+          "Instructor": "Pei Chi Huang"
+        }
+      }
+    },
+    "4500": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "14238",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "6:00PM - 7:15PM",
+          "Days": "TR",
+          "Location": "Peter Kiewit Institute 256",
+          "Instructor": "Jose M Santos"
+        },
+        "820": {
+          "Class Number": "14755",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "7:30PM - 8:45PM",
+          "Days": "TR",
+          "Location": "Remote Learning",
+          "Instructor": "Bill L Sousan"
+        }
+      }
+    },
+    "4830": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "14389",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "6:00PM - 8:40PM",
+          "Days": "M",
+          "Location": "Peter Kiewit Institute 263",
+          "Instructor": "Eric Lundy"
+        },
+        "820": {
+          "Class Number": "20688",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "12:00PM - 1:15PM",
+          "Days": "MF",
+          "Location": "Peter Kiewit Institute 263",
+          "Instructor": "Eric Lundy"
+        }
+      }
+    },
+    "4970": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "14063",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "3:00PM - 4:15PM",
+          "Days": "MW",
+          "Location": "Peter Kiewit Institute 252",
+          "Instructor": "Alfredo Perez"
+        }
+      }
+    },
+    "8000": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "14065",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "12:00PM - 1:15PM",
+          "Days": "TR",
+          "Location": "Peter Kiewit Institute 274",
+          "Instructor": "Jorge Fandinno Garcia"
+        }
+      }
+    },
+    "8105": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "14261",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "12:00PM - 1:15PM",
+          "Days": "F",
+          "Location": "Durham Science Center 254",
+          "Instructor": "Dora Velcsov"
+        }
+      }
+    },
+    "8110": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "14726",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "10:30AM - 11:45AM",
+          "Days": "TR",
+          "Location": "Peter Kiewit Institute 276",
+          "Instructor": "Xin Zhong"
+        }
+      }
+    },
+    "8156": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "15237",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "12:00PM - 1:15PM",
+          "Days": "MW",
+          "Location": "Peter Kiewit Institute 252",
+          "Instructor": "Hesham Hassan Ali"
+        }
+      }
+    },
+    "8306": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "16071",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "6:00PM - 8:40PM",
+          "Days": "W",
+          "Location": "Durham Science Center 104",
+          "Instructor": "Fabio Torres Vitor"
+        }
+      }
+    },
+    "8350": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "15131",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "6:00PM - 8:40PM",
+          "Days": "W",
+          "Location": "Peter Kiewit Institute 160",
+          "Instructor": "Prashanti Manda"
+        }
+      }
+    },
+    "8366": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "14066",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "6:00PM - 7:15PM",
+          "Days": "TR",
+          "Location": "Peter Kiewit Institute 276",
+          "Instructor": "Sayonnha Mandal"
+        }
+      }
+    },
+    "8456": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "16000",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "10:30AM - 11:45AM",
+          "Days": "MW",
+          "Location": "Peter Kiewit Institute 153",
+          "Instructor": "Xin Zhong"
+        },
+        "002": {
+          "Class Number": "16002",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "8:30AM - 9:20AM",
+          "Days": "R",
+          "Location": "Peter Kiewit Institute 256",
+          "Instructor": "Pei Chi Huang"
+        }
+      }
+    },
+    "8500": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "20110",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "6:00PM - 8:40PM",
+          "Days": "M",
+          "Location": "Durham Science Center 211A",
+          "Instructor": "Mahboub Baccouch"
+        }
+      }
+    },
+    "8620": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "17255",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "1:30PM - 2:20PM",
+          "Days": "W",
+          "Location": "Peter Kiewit Institute 261",
+          "Instructor": "Jong Hoon Youn"
+        }
+      }
+    },
+    "8700": {
+      "title": "TBD",
+      "desc": "TBD",
+      "prereq": "-",
+      "sections": {
+        "001": {
+          "Class Number": "15948",
+          "Date": "Aug 26, 2024 - Dec 20, 2024",
+          "Time": "8:30AM - 9:20AM",
+          "Days": "R",
+          "Location": "Peter Kiewit Institute 160",
+          "Instructor": "Harvey Pe Siy"
         }
       }
     }

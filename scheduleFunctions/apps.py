@@ -2,6 +2,8 @@ import os
 
 from django.apps import AppConfig
 from .data_processing.get_four_year import read_four_year
+from .data_processing.get_requirements import process_degree_requirements
+from .to_database import *
 
 
 class SchedulefunctionsConfig(AppConfig):
@@ -21,15 +23,27 @@ class SchedulefunctionsConfig(AppConfig):
 
         root_index = path.index('Capstone-Team14')
         root_dir = os.sep.join(path[:root_index+1])
-        data_dir = os.path.join(root_dir, 'data_files', 'four_year_plan')
+        data_dir = os.path.join(root_dir, 'data_files')
         
         try:
             os.makedirs(data_dir)
         except:
             pass
-        filename = os.path.join(data_dir,'fourYearPlan.json')
+        plan_file = os.path.join(data_dir,'four_year_plan','fourYearPlan.json')
         url = 'https://catalog.unomaha.edu/undergraduate/college-information-science-technology/computer-science/computer-science-bs/#fouryearplantext'
-        read_four_year(url, filename)
+        read_four_year(url, plan_file)
         
+        requirements_file = os.path.join(data_dir,'requirements','requirements.json')
+        urls = [
+            'https://catalog.unomaha.edu/undergraduate/college-information-science-technology/computer-science/computer-science-bs/artificialintelligence-concentraton/',
+            'https://catalog.unomaha.edu/undergraduate/college-information-science-technology/computer-science/computer-science-bs/game-programming-concentration/',
+            'https://catalog.unomaha.edu/undergraduate/college-information-science-technology/computer-science/computer-science-bs/internet-technologies-it-concentration-computer-science-majors/',
+            'https://catalog.unomaha.edu/undergraduate/college-information-science-technology/computer-science/computer-science-bs/information-assurance-concentration/',
+            'https://catalog.unomaha.edu/undergraduate/college-information-science-technology/computer-science/computer-science-bs/software-engineering-concentration/'
+        ]
+        process_degree_requirements(urls, requirements_file)
+        
+        store_requirements(requirements_file)
+        store_plan(plan_file)
         
         ...
