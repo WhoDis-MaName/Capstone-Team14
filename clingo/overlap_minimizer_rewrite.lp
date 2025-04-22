@@ -46,7 +46,14 @@ scheduled_section_room(R, N) :- input_section(C, I, N, R, P).
 % mtwr - have to stay mtwr
 % what about 1 credit hour labs?
 
-scheduled_conflict(N1, N2) :- scheduled_section_time_slot(N1, S1, E1, D1), scheduled_section_time_slot(N2, S2, E2, D2), scheduled_section_course(C1, N1), scheduled_section_course(C2, N2), N1 != N2, C1!= C2, overlapping_days(D1, D2), overlapping_times(S1, E1, S2, E2).
+scheduled_conflict(N1, N2) :- scheduled_section_time_slot(N1, S1, E1, D1), 
+                                scheduled_section_time_slot(N2, S2, E2, D2), 
+                                scheduled_section_course(C1, N1), 
+                                scheduled_section_course(C2, N2), 
+                                N1 != N2, C1!= C2, 
+                                overlapping_days(D1, D2), 
+                                overlapping_times(S1, E1, S2, E2).
+                                
 scheduled_conflict(N1, N2) :- scheduled_section_time_slot(N1, S1, E1, D1), non_cs_section_time(N2, S2, E2, D2), scheduled_section_course(C1, N1), non_cs_section_course(C2, N2), N1 != N2, C1!= C2, overlapping_days(D1, D2), overlapping_times(S1, E1, S2, E2).
 
 % scheduled_conflict(C1, C2, S1, E1, S2, E2, D1, D2) :- scheduled_section(C1, _, _, S1, E1, D1, _, _), scheduled_section(C2, _, _, S2, E2, D2, _, _), C1!=C2, overlapping_days(D1, D2), overlapping_times(S1, E1, S2, E2).
