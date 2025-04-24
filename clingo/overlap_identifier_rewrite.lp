@@ -97,7 +97,16 @@ original_weighted_overlap_sum(N) :- N = #sum{ W, C1, C2 : weighted_overlap(C1, C
 % Currently all electives are in group 0, so this will mostly hit electives
 % original_weighted_overlap_sum_by_year(N) :- N = #sum{ W, C1, C2 : weighted_overlap(C1, C2, W), same_year(C1, C2) }.
 
+% Check for overlap in rooms or in professor schedules
+overlapping_room(N1, N2, R):- section_time(N1, S1, E1, D1), section_time(N2, S2, E2, D2), section_room(R, N1), section_room(R, N2), conflict(N1, N2). 
+overlapping_prof(N1, N2, P):- section_time(N1, S1, E1, D1), section_time(N2, S2, E2, D2), section_professor(P, N1), section_professor(P, N2), conflict(N1, N2). 
+
+% cross_listed(C1, C2) :- 
+
+% #show overlapping_room/3.
+% #show overlapping_prof/3.
 #show overlap/2.
+% #show path/2.
 #show original_weighted_overlap_sum/1.
 % #show original_weighted_overlap_by_year_sum/1.
 % #show same_year_overlap/3.

@@ -198,6 +198,7 @@ section(csci8366, s001, c14066, 1080, 1240, t, peter_kiewit_institute_276, sayon
 course(csci8366, "secure_system_design", "_").
 course_weight(csci8366, 1, 5).
 section(csci8456, s001, c16000, 810, 885, tr, peter_kiewit_institute_153, xin_zhong).
+section(csci4450, s001, c14048, 810, 885, tr, peter_kiewit_institute_153, xin_zhong).
 section(csci8456, s002, c16002, 900, 975, mw, peter_kiewit_institute_256, pei_chi_huang).
 course(csci8456, "artificial_intelligence", "_").
 course_weight(csci8456, 1, 5).

@@ -28,6 +28,7 @@ day_slot(mr, r).
 day_slot(mr, tr).
 
 overlapping_days(DS1, DS2) :- day_slot(DS1, D), day_slot(DS2, D). % Overlapping days
+overlapping_days(D, D) :- day(D).
 
 % Direct overlaps
 % overlapping_days(mf, m).

@@ -1,13 +1,4 @@
-% #include "filtered.lp".
-% #include "..\\testing\\test_cases\\test_case_00.lp".
-% #include "fourYearPlanTest.lp".
-% #include "days.lp".
-% #include "overlap.lp".
-% #include "groups.lp".
-% #include "overlap_identifier.lp".
 #include "overlap_identifier_rewrite.lp".
-
-% planned_course(C, 1, 0) :- class(C), not planned_classes(C).
 
 % Example section from classes.lp:
 % section("CSCI8700", "001", "15948", 18:00, 20:40, "W", "Peter Kiewit Institute 160", "Harvey Pe Siy").
@@ -17,9 +8,6 @@ input_section(C, I, N, R, P) :- section(C, I, N, _, _, _, R, P).
 % For each section with a room and professor already assigned, choose one timeslot.
 % TODO: Add constraint so that only certain time slots are allowed based on number of credits. 
 % For example, a 5 credit class must have mtwr
-% TODO update choice rule for better performance
-% section_professor(S, P).
-% {scheduled_section(C, I, N, S, E, D, R, P) : time_slot(S, E, D) } = 1 :- input_section(C, I, N, R, P).
 {scheduled_section_time_slot(N, S, E, D) : time_slot(S, E, D) } = 1 :- input_section(C, I, N, R, P).
 
 % scheduled_section_time_slot(N, S, E, D) :- scheduled_section(C, I, N, S, E, D, R, P).
@@ -28,21 +16,21 @@ scheduled_section(C, I, N, S, E, D, R, P) :- input_section(C, I, N, R, P), sched
 % scheduled_section_course(C, N) :- scheduled_section(C, I, N, S, E, D, R, P).
 scheduled_section_course(C, N) :- input_section(C, I, N, R, P).
 
-% The profressor P for a schedule number N
+% The profressor P for a section number N
 scheduled_section_professor(P, N) :- input_section(C, I, N, R, P).
 
+% The room R for a section number N
 scheduled_section_room(R, N) :- input_section(C, I, N, R, P).
 
-% It cannot be that there are two classes in the same room at the same time
-% :- scheduled_section(C1, _, _, S1, E1, D1, R, P1), scheduled_section(C2, _, _, S2, E2, D2, R, P2), scheduled_conflict(C1, C2). %, C1!=C2.
-% :- scheduled_section_room(R, N1), 
-%    scheduled_section_room(R, N2), 
-%    scheduled_conflict(N1, N2). %, C1!=C2.
+% There is a time slot overlap if:
+%   - We have overlapping days: 
+        % -The day_slots (dayslot(MW, W) means wednesday is covered by mon/wed) share a day, ie: dayslot(MW, W), dayslot(MWF, W) show overlap. Additionally, we have overlap if DS1 = DS2.
 
 time_slot_overlap(S1, E1, DS1, S2, E2, DS2) :- 
     time_slot(S1, E1, DS1), 
     time_slot(S2, E2, DS2), 
-    day_slot(DS1, D), day_slot(DS2, D),
+    % day_slot(DS1, D), day_slot(DS2, D),
+    overlapping_days(DS1, DS2),
     S1 <= E2, S2 <= E1.
 
 :- #count{ N: 
@@ -51,6 +39,14 @@ time_slot_overlap(S1, E1, DS1, S2, E2, DS2) :-
         time_slot_overlap(S1, E1, D1, S2, E2, D2)
     } > 1, 
     room(R), 
+    time_slot(S2, E2, D2).
+
+:- #count{ N: 
+        scheduled_section_professor(P, N), 
+        scheduled_section_time_slot(N, S1, E1, D1),
+        time_slot_overlap(S1, E1, D1, S2, E2, D2)
+    } > 1, 
+    professor(P), 
     time_slot(S2, E2, D2).
 
 % It cannot be that there are two classes with the same professor at the same time
@@ -83,16 +79,26 @@ scheduled_section_time(N, S, E) :- scheduled_section_time_slot(N, S, E, _).
 %     overlapping_days(D1, D2), 
 %     overlapping_times(S1, E1, S2, E2).
 
-
 scheduled_conflict(N1, N2) :- 
-    scheduled_section_day(N1, D),
-    scheduled_section_day(N2, D),
+    scheduled_section_time_slot(N1, S1, E1, D1), 
+    scheduled_section_time_slot(N2, S2, E2, D2), 
     scheduled_section_course(C1, N1), 
     scheduled_section_course(C2, N2), 
-    C1!= C2, N1 != N2,
-    scheduled_section_time(N1, S1, E1),
-    scheduled_section_time(N2, S2, E2),
+    N1 != N2, 
+    C1!= C2, 
+    overlapping_days(D1, D2), 
     overlapping_times(S1, E1, S2, E2).
+
+% scheduled_conflict(N1, N2) :- 
+%     scheduled_section_day(N1, D1),
+%     scheduled_section_day(N2, D2),
+%     scheduled_section_course(C1, N1), 
+%     scheduled_section_course(C2, N2), 
+%     C1!= C2, N1 != N2,
+%     scheduled_section_time(N1, S1, E1),
+%     scheduled_section_time(N2, S2, E2),
+%     time_slot_overlap(S1, E1, D1, S2, E2, D2).
+    % overlapping_times(S1, E1, S2, E2).
 
 scheduled_conflict(N1, N2) :- 
     scheduled_section_time_slot(N1, S1, E1, D1), 
