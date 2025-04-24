@@ -184,4 +184,4 @@ Weighted overlap = W1 + W2, where W1 is the weight of class 1, W2 is the weight 
 
 Minimize based on weighted overlap. Additionally, minimize number of changes to the input schedule (lower priority).
 
-can use -t to specify number of threads for clingo. Ie: clingo overlap_minizer.lp -t=8.
+can use -t to specify number of threads for clingo. Ie: clingo overlap_minizer.lp -t 8.
