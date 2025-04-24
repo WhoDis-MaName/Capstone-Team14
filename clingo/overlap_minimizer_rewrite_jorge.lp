@@ -23,7 +23,7 @@ input_section(C, I, N, R, P) :- section(C, I, N, _, _, _, R, P).
 {scheduled_section_time_slot(N, S, E, D) : time_slot(S, E, D) } = 1 :- input_section(C, I, N, R, P).
 
 % scheduled_section_time_slot(N, S, E, D) :- scheduled_section(C, I, N, S, E, D, R, P).
-% scheduled_section(C, I, N, S, E, D, R, P) :- input_section(C, I, N, R, P), scheduled_section_time_slot(N, S, E, D).
+scheduled_section(C, I, N, S, E, D, R, P) :- input_section(C, I, N, R, P), scheduled_section_time_slot(N, S, E, D).
 
 % scheduled_section_course(C, N) :- scheduled_section(C, I, N, S, E, D, R, P).
 scheduled_section_course(C, N) :- input_section(C, I, N, R, P).
@@ -134,7 +134,8 @@ scheduled_weighted_overlap_sum(C1, C2, W1 + W2) :- true_scheduled_overlap(C1, C2
 % scheduled_overlap_count(N) :- N = #count{ C1, C2 : scheduled_overlap(C1, C2) }.
 % scheduled_conflict_count(N) :- N = #count{ C1, C2 : scheduled_conflict(C1, C2) }.
 
-#show scheduled_section_time_slot/4.
+% #show scheduled_section_time_slot/4.
+#show scheduled_section/8.
 
 % It cannot be that we generate a new schedule that has more overlap than the original schedule.
 % :- original_weighted_overlap_sum(N1), scheduled_weighted_overlap_sum(N2), N2>=N1.

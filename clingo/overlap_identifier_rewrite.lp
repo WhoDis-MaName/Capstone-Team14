@@ -1,4 +1,5 @@
-#include "total_filtered.lp".
+% #include "total_filtered.lp".
+#include "total_filtered_test_optimal.lp".
 % #include "filtered_test.lp".
 % #include "example_output.lp".
 % #include "..\\testing\\test_cases\\test_case_mini_overlap.lp".
@@ -96,8 +97,8 @@ original_weighted_overlap_sum(N) :- N = #sum{ W, C1, C2 : weighted_overlap(C1, C
 % Currently all electives are in group 0, so this will mostly hit electives
 % original_weighted_overlap_sum_by_year(N) :- N = #sum{ W, C1, C2 : weighted_overlap(C1, C2, W), same_year(C1, C2) }.
 
-% #show overlap/2.
-% #show original_weighted_overlap_sum/1.
+#show overlap/2.
+#show original_weighted_overlap_sum/1.
 % #show original_weighted_overlap_by_year_sum/1.
 % #show same_year_overlap/3.
 
