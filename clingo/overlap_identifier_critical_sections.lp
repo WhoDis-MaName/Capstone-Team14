@@ -1,5 +1,5 @@
-% #include "total_filtered.lp".
-#include "total_filtered_test_optimal.lp".
+#include "total_filtered.lp".
+% #include "total_filtered_test_optimal.lp".
 % #include "filtered_test.lp".
 % #include "example_output.lp".
 % #include "..\\testing\\test_cases\\test_case_mini_overlap.lp".
@@ -16,8 +16,6 @@
 {critical_section(C, N)} = 1 :- planned_classes(C), section(C, I, N, S, E, D, R, P).
 
 critical_conflict(C1, C2) :- critical_section(C1, N1), critical_section(C2, N2), conflict(N1, N2), C1!=C2, same_year(C1, C2).
-
-#show critical_conflict/2.
 
 planned_course(C, W, Y) :- course_weight(C, W, Y), not planned_classes(C).
 
@@ -44,10 +42,22 @@ section_room(R, N) :- section(C, I, N, S, E, D, R, P).
 
 % There is conflict if: 
 % - there does not exist at least one section from each module from a group that does not have conflict
-conflict(N1, N2) :- section_time(N1, S1, E1, D1), section_time(N2, S2, E2, D2), section_course(C1, N1), section_course(C2, N2), N1 != N2, C1!= C2, time_slot_overlap(S1, E1, D1, S2, E2, D2).
+conflict(N1, N2) :- 
+    section_time(N1, S1, E1, D1), 
+    section_time(N2, S2, E2, D2), 
+    section_course(C1, N1), 
+    section_course(C2, N2), 
+    N1 != N2, C1!= C2, 
+    time_slot_overlap(S1, E1, D1, S2, E2, D2),
+    not cross_listed(N1, N2).
 
 % Additionally, there is conflict between CS sections and non-CS sections. 
-conflict(N1, N2) :- section_time(N1, S1, E1, D1), non_cs_section_time(N2, S2, E2, D2), section_course(C1, N1), non_cs_section_course(C2, N2), time_slot_overlap(S1, E1, D1, S2, E2, D2).
+conflict(N1, N2) :- 
+    section_time(N1, S1, E1, D1), 
+    non_cs_section_time(N2, S2, E2, D2), 
+    section_course(C1, N1), 
+    non_cs_section_course(C2, N2), 
+    time_slot_overlap(S1, E1, D1, S2, E2, D2).
 
 % #show non_cs_conflict/2.
 
@@ -89,13 +99,15 @@ original_weighted_overlap_sum(N) :- N = #sum{ W, C1, C2 : weighted_overlap(C1, C
 overlapping_room(N1, N2, R):- section_time(N1, S1, E1, D1), section_time(N2, S2, E2, D2), section_room(R, N1), section_room(R, N2), conflict(N1, N2). 
 overlapping_prof(N1, N2, P):- section_time(N1, S1, E1, D1), section_time(N2, S2, E2, D2), section_professor(P, N1), section_professor(P, N2), conflict(N1, N2). 
 
-% cross_listed(C1, C2) :- 
+% We can infer that two classes are cross listed if they have the exact same start time, end time, day, room, and professor
+cross_listed(N1, N2) :- section(C1, I1, N1, S, E, D, R, P), section(C2, I2, N2, S, E, D, R, P), C1 != C2, N1 != N2.
+
 
 % #show overlapping_room/3.
 % #show overlapping_prof/3.
 % #show overlap/2.
 % #show path/2.
-#show original_weighted_overlap_sum/1.
+% #show original_weighted_overlap_sum/1.
 % #show original_weighted_overlap_by_year_sum/1.
 % #show same_year_overlap/3.
 
