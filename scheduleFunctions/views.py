@@ -48,28 +48,31 @@ def login(request):
 
 
 def dashboard_view(request):
-    request.session["day"] = request.GET.get("day")
+    
     if "username" not in request.session:
         return redirect("home")  # Redirect to login if not authenticated
 
-    if "day" not in request.session:
-        request.session["day"] = "m"
+    
     # Render the dashboard.html template
     try:
+        request.session["day"] = Day.DAY_OF_WEEK_CHOICES[request.GET.get("day")]
+        
+        if "day" not in request.session:
+            request.session["day"] = Day.DAY_OF_WEEK_CHOICES["m"]
         print(request.session["day"])
-        # print(Day.objects.all())
-        day_object = Day.objects.get(day_of_week = request.session["day"])
-    except ObjectDoesNotExist:
-        request.session["day"] = "Monday"
-        day_object = Day.objects.get(day_of_week = request.session["day"])
-        print(Day.objects.all())
-    
+    except:
+        request.session["day"] = Day.DAY_OF_WEEK_CHOICES["m"]        
+        
+    day_object = Day.objects.get(day_of_week = request.session["day"])
+
     try:  
-        section_list = Section.objects.filter(days = day_object)
-    except ObjectDoesNotExist:
+        section_list = Section.objects.filter(days = day_object).order_by('start_time')
+    except Section.DoesNotExist:
+        
+        
         section_list = []
     
-    return render(request, "dashboard.html", {"username": request.session["username"], "day": request.session["day"], "section_list": section_list})
+    return render(request, "dashboard.html", {"username": request.session["username"], "day": request.session["day"], "section_list": section_list, "day_options": Day.objects.all()})
 
 
 def run_script(request):

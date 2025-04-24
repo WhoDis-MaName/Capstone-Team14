@@ -33,6 +33,8 @@ class Day(models.Model):
         inverse_choices = {value:key for key, value in self.DAY_OF_WEEK_CHOICES}
         return inverse_choices[self.day_of_week]
         ...
+    def __str__(self):
+        return self.day_of_week
 
 
 class Course(models.Model):
@@ -66,7 +68,7 @@ class Section(models.Model):
     room = models.ForeignKey(Room, on_delete=models.SET_NULL, null=True, blank=True)
     
     def print_dashboard(self) -> str:
-        text = f'{self.course.subject} {self.course.class_number} - {self.course.name} ({"/".join(self.days)} {self.start_time.strftime("%I:%M%p")} - {self.end_time.strftime("%I:%M%p")})'
+        text = f'{self.course.subject} {self.course.class_number} - {self.course.name} ({"/".join([str(day) for day in self.days.all()])} {self.start_time.strftime("%I:%M%p")} - {self.end_time.strftime("%I:%M%p")})'
         return text
     
     def print_clingo(self) -> str:

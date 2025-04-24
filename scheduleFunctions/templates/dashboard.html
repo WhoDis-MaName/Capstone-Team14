@@ -67,11 +67,11 @@
     <!-- Sidebar with Day Buttons -->
     <aside class="sidebar">
       <h3>Filter by Day</h3>
-      <a href="#" class="day-button" onclick="/dashboard/?day=Monday" >Monday</a>
-      <a href="#" class="day-button" onclick="/dashboard/?day=Tuesday" >Tuesday</a>
-      <a href="#" class="day-button" onclick="/dashboard/?day=Wednesday" >Wednesday</a>
-      <a href="#" class="day-button" onclick="/dashboard/?day=Thursday" >Thursday</a>
-      <a href="#" class="day-button" onclick="/dashboard/?day=Friday" >Friday</a>
+      <a href="/dashboard/?day=m" class="day-button" onclick="" >Monday</a>
+      <a href="/dashboard/?day=t" class="day-button" onclick="" >Tuesday</a>
+      <a href="/dashboard/?day=w" class="day-button" onclick="" >Wednesday</a>
+      <a href="/dashboard/?day=r" class="day-button" onclick="" >Thursday</a>
+      <a href="/dashboard/?day=f" class="day-button" onclick="" >Friday</a>
     </aside>
 
     <!-- Main Content -->
@@ -80,12 +80,12 @@
         <h2>Current Schedule</h2>
         <ul>
           {% for section in section_list %}
-          <li>{section.print_dashboard()}</li>
+          <li>{{section.course.subject}} {{section.course.class_number}} - {{section.course.name}} ({{ section.days.all |join:"/" }} {{section.start_time|date:"g:ia"}} - {{section.end_time|date:"g:ia"}})</li>
           {% endfor %}
-          <li>CSCI 1620 - Introduction to CS (Mon/Wed 10:00AM - 11:30AM)</li>
+          <!-- <li>CSCI 1620 - Introduction to CS (Mon/Wed 10:00AM - 11:30AM)</li>
           <li>MATH 1950 - Calculus I (Tue/Thu 1:00PM - 2:30PM)</li>
           <li>MATH 2040 - Discrete Math (Mon/Wed 3:00PM - 4:15PM)</li>
-          <li>GEOG 1010 - Geology (Mon/Wed 3:00PM - 4:15PM)</li>
+          <li>GEOG 1010 - Geology (Mon/Wed 3:00PM - 4:15PM)</li> -->
         </ul>
       </div>
 

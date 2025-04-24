@@ -173,10 +173,10 @@ def store_schedule(json_file: str) -> None:
             selected_course.save()
             
             for section, section_details in details['sections'].items():
-                print(section_details['Location'])
                 if section_details['Location'] in ['Totally Online', 'To Be Announced']:
-                    print("Skipping")
+                    print(f"{section_details['Location']} - Skipping")
                     continue
+
                 selected_section = Section.objects.filter(course=selected_course, section_number=int(section))
                 if not selected_section.exists():
                     selected_section = Section(
@@ -188,8 +188,8 @@ def store_schedule(json_file: str) -> None:
                 selected_section.section_id = int(section_details['Class Number'].split(" ")[0])
                 selected_section.professor = section_details['Instructor']
                 room_dict = re.search('(?P<building>.+)\s?(?P<room_number>[0-9]*)', section_details['Location'])
-                print(room_dict.group('building'))
-                print(room_dict.group('room_number'))
+                # print(room_dict.group('building'))
+                # print(room_dict.group('room_number'))
                 if room_dict.group('room_number') == '':
                     room_number = 0
                 else:
@@ -208,7 +208,7 @@ def store_schedule(json_file: str) -> None:
                 selected_room.capacity = max(selected_room.capacity, int(section_details['Class Max']))
                 selected_room.save()
                 selected_section.room = selected_room
-                print(section_details['Time'])
+                # print(section_details['Time'])
                 start_time, end_time = section_details['Time'].split(' - ')
                 
                 start_time = date.strptime(start_time, "%I:%M%p")
@@ -217,6 +217,8 @@ def store_schedule(json_file: str) -> None:
                 selected_section.start_time = start_time
                 selected_section.end_time = end_time
                 
-                days_list = Day.objects.filter(day_of_week__in=[Day.DAY_OF_WEEK_CHOICES[day] for day in section_details['Days'].lower()])
-                selected_section.days.add(*days_list)
                 selected_section.save()
+                for day in section_details['Days'].lower():
+                    selected_day = Day.objects.get(day_of_week = Day.DAY_OF_WEEK_CHOICES[day])
+                    selected_section.days.add(selected_day)
+                

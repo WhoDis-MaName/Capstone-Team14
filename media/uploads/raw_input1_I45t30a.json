@@ -1,0 +1,486 @@
+{
+    "1241": {
+        "CIST": {
+            "2100": {
+                "title": "ORGANIZATIONS, APPL & TECHNLGY",
+                "desc": "Prereq: Sophomore standing, or permission of the instructor.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "13730 ?",
+                        "Type": "LEC",
+                        "Enrolled": "25",
+                        "Class Max": "25",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Social Science General Education course",
+                        "Note": "Thompson Scholars only.  Dusten Crichton (dcrichton@unomaha.edu) is the contact person.",
+                        "Date": "Jan 22, 2024 - May 17, 2024",
+                        "Time": "1:30PM - 2:45PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 269",
+                        "Instructor": "Hollie Rosser"
+                    },
+                    "002": {
+                        "Class Number": "14476 ?",
+                        "Type": "LEC",
+                        "Enrolled": "25",
+                        "Class Max": "25",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Social Science General Education course",
+                        "Date": "Jan 22, 2024 - May 17, 2024",
+                        "Time": "6:00PM - 8:40PM",
+                        "Days": "W",
+                        "Location": "Peter Kiewit Institute 160",
+                        "Instructor": "Hollie Rosser"
+                    },
+                    "003": {
+                        "Class Number": "13731 ?",
+                        "Type": "LEC",
+                        "Enrolled": "28",
+                        "Class Max": "30",
+                        "Seats Available": "2",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Social Science General Education course",
+                        "Date": "Jan 22, 2024 - May 17, 2024",
+                        "Time": "4:30PM - 5:45PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 160",
+                        "Instructor": "Karen L Altig"
+                    },
+                    "820": {
+                        "Class Number": "13729 ?",
+                        "Type": "LEC",
+                        "Enrolled": "23",
+                        "Class Max": "30",
+                        "Seats Available": "7",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Social Science General Education course",
+                        "Note": "This class will be taught remotely via synchronous teaching. Students will need to log in at the specified time but will not physically attend class.",
+                        "Date": "Jan 22, 2024 - May 17, 2024",
+                        "Time": "6:00PM - 8:40PM",
+                        "Days": "M",
+                        "Location": "Remote Learning",
+                        "Instructor": "Karen Sue Allen"
+                    },
+                    "850": {
+                        "Class Number": "16616 ?",
+                        "Type": "LEC",
+                        "Enrolled": "30",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Social Science General Education course",
+                        "Date": "Jan 02, 2024 - Jan 19, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Karen Sue Allen"
+                    },
+                    "851": {
+                        "Class Number": "13733 ?",
+                        "Type": "LEC",
+                        "Enrolled": "35",
+                        "Class Max": "35",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Social Science General Education course",
+                        "Note": "Students are required to have access to a webcam for this class. Please email the instructor if you have questions. A webcam is required for several class activities, including quizzes and exams.",
+                        "Date": "Jan 22, 2024 - May 17, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Hollie Rosser"
+                    },
+                    "854": {
+                        "Class Number": "13732 ?",
+                        "Type": "LEC",
+                        "Enrolled": "30",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Social Science General Education course",
+                        "Note": "Students are required to have access to a webcam for this class.  Please email the instructor if you have questions.  A webcam is required for several class activities, including quizzes and exams.",
+                        "Date": "Jan 22, 2024 - May 17, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Susan K Waters"
+                    }
+                }
+            },
+            "1300": {
+                "title": "INTRO TO WEB DEVELOPMENT",
+                "desc": "Prereq: High school algebra or equivalent",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "14610 ?",
+                        "Type": "LEC",
+                        "Enrolled": "29",
+                        "Class Max": "30",
+                        "Seats Available": "1",
+                        "Credit Hours": "3",
+                        "Date": "Jan 22, 2024 - May 17, 2024",
+                        "Time": "4:30PM - 5:45PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 260",
+                        "Instructor": "Haritha Prasad Rayakota"
+                    },
+                    "850": {
+                        "Class Number": "13725 ?",
+                        "Type": "LEC",
+                        "Enrolled": "66",
+                        "Class Max": "65",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Jan 22, 2024 - May 17, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Robert Fulkerson"
+                    }
+                }
+            },
+            "3110": {
+                "title": "IT ETHICS",
+                "desc": "Prereq: ENGL 1150 or placement in a second or third-year writing class, and sophomore standing",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "13860 ?",
+                        "Type": "LEC",
+                        "Enrolled": "30",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Humanities and Fine Arts General Education course",
+                        "Date": "Jan 22, 2024 - May 17, 2024",
+                        "Time": "6:00PM - 8:40PM",
+                        "Days": "M",
+                        "Location": "Peter Kiewit Institute 269",
+                        "Instructor": "Grace Karen Tantillo"
+                    },
+                    "002": {
+                        "Class Number": "13783 ?",
+                        "Type": "LEC",
+                        "Enrolled": "29",
+                        "Class Max": "30",
+                        "Seats Available": "1",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Humanities and Fine Arts General Education course",
+                        "Date": "Jan 22, 2024 - May 17, 2024",
+                        "Time": "12:00PM - 1:15PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 155",
+                        "Instructor": "Andrea K Grover"
+                    },
+                    "820": {
+                        "Class Number": "15814 ?",
+                        "Type": "LEC",
+                        "Enrolled": "29",
+                        "Class Max": "30",
+                        "Seats Available": "1",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Humanities and Fine Arts General Education course",
+                        "Date": "Jan 22, 2024 - May 17, 2024",
+                        "Time": "12:00PM - 1:15PM",
+                        "Days": "TR",
+                        "Location": "Remote Learning",
+                        "Instructor": "Sajda Qureshi"
+                    },
+                    "821": {
+                        "Class Number": "15002 ?",
+                        "Type": "LEC",
+                        "Enrolled": "17",
+                        "Class Max": "30",
+                        "Seats Available": "13",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Humanities and Fine Arts General Education course",
+                        "Date": "Jan 22, 2024 - May 17, 2024",
+                        "Time": "4:30PM - 5:45PM",
+                        "Days": "TR",
+                        "Location": "Remote Learning",
+                        "Instructor": "Sajda Qureshi"
+                    },
+                    "850": {
+                        "Class Number": "13740 ?",
+                        "Type": "LEC",
+                        "Enrolled": "40",
+                        "Class Max": "40",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Humanities and Fine Arts General Education course",
+                        "Date": "Jan 22, 2024 - May 17, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Cale L. Corbett"
+                    },
+                    "851": {
+                        "Class Number": "13741 ?",
+                        "Type": "LEC",
+                        "Enrolled": "30",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Humanities and Fine Arts General Education course",
+                        "Date": "Jan 22, 2024 - May 17, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Gina Iorga"
+                    }
+                }
+            },
+            "9050": {
+                "title": "COLLOQUIUM ON IT TEACHING",
+                "desc": "Prereq: Doctoral students in Information Technology and Biomedical informatics. Students from doctoral programs across the University of Nebraska are welcome to register with permission of instructor. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "14253 ?",
+                        "Type": "SEM",
+                        "Enrolled": "9",
+                        "Class Max": "15",
+                        "Seats Available": "6",
+                        "Credit Hours": "1",
+                        "Note": "February 28 - April 10",
+                        "Date": "Feb 28, 2024 - Apr 10, 2024",
+                        "Time": "4:30PM - 5:45PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 157",
+                        "Instructor": "Deepak Khazanchi"
+                    }
+                }
+            },
+            "1600": {
+                "title": "PRACTICAL SCRIPTING",
+                "desc": "Prereq: Not intended for students who have completed CIST 1400 and CSCI 1620",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "14819 ?",
+                        "Type": "LLB",
+                        "Enrolled": "35",
+                        "Class Max": "35",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Open Nebraska (No Cost Materials)",
+                        "Date": "Jan 22, 2024 - May 17, 2024",
+                        "Time": "9:00AM - 10:15AM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 361",
+                        "Instructor": "Derek Babb"
+                    },
+                    "850": {
+                        "Class Number": "14664 ?",
+                        "Type": "LLB",
+                        "Enrolled": "35",
+                        "Class Max": "35",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Jan 22, 2024 - May 17, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Derek Babb"
+                    }
+                }
+            }
+        },
+        "CSCI": {
+            "4350": {
+                "title": "COMPUTER ARCHITECTURE",
+                "desc": "Prereq: CSCI 3710, CSCI 3320 or CSCI 8325 with C- or better.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "13711 ?",
+                        "Type": "LEC",
+                        "Enrolled": "30",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Jan 22, 2024 - May 17, 2024",
+                        "Time": "4:30PM - 5:45PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 153",
+                        "Instructor": "Kwangsung Oh"
+                    },
+                    "002": {
+                        "Class Number": "14174 ?",
+                        "Type": "LEC",
+                        "Enrolled": "31",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Jan 22, 2024 - May 17, 2024",
+                        "Time": "10:30AM - 11:45AM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 153",
+                        "Instructor": "Kwangsung Oh"
+                    },
+                    "850": {
+                        "Class Number": "13710 ?",
+                        "Type": "LEC",
+                        "Enrolled": "30",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Jan 22, 2024 - May 17, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Azad H Azadmanesh"
+                    }
+                }
+            },
+            "8080": {
+                "title": "DSGN & ANALYSIS OF ALGORITHMS",
+                "desc": "Prereq: CSCI 3320 or CSCI 8325 or equivalent. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "13716 ?",
+                        "Type": "LEC",
+                        "Enrolled": "31",
+                        "Class Max": "35",
+                        "Seats Available": "4",
+                        "Credit Hours": "3",
+                        "Date": "Jan 22, 2024 - May 17, 2024",
+                        "Time": "4:30PM - 5:45PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 256",
+                        "Instructor": "Hesham Hassan Ali"
+                    }
+                }
+            },
+            "8326": {
+                "title": "COMPUTATIONAL OR",
+                "desc": "Prereq: MATH 3200 or CSCI 1620, and MATH 4300 each with a grade of C- or better or permission of instructor.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "19416 ?",
+                        "Type": "LEC",
+                        "Enrolled": "0",
+                        "Class Max": "5",
+                        "Seats Available": "5",
+                        "Credit Hours": "3",
+                        "Date": "Jan 22, 2024 - May 17, 2024",
+                        "Time": "4:00PM - 5:15PM",
+                        "Days": "MW",
+                        "Location": "Durham Science Center 110",
+                        "Instructor": "Betty N. Love"
+                    }
+                }
+            },
+            "3710": {
+                "title": "INTRO TO DIGITAL DESIGN",
+                "desc": "Prereq: CSCI 3320 (could be taken concurrently)",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "18846 ?",
+                        "Type": "LEC",
+                        "Enrolled": "30",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Jan 22, 2024 - May 17, 2024",
+                        "Time": "3:00PM - 4:15PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 274",
+                        "Instructor": "Jose M. Santos"
+                    },
+                    "850": {
+                        "Class Number": "13913 ?",
+                        "Type": "LEC",
+                        "Enrolled": "34",
+                        "Class Max": "35",
+                        "Seats Available": "1",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Note": "Exam days and times are on Wednesdays at 3:00 PM, duration 90 minutes.  Dates will be announced on Canvas.",
+                        "Date": "Jan 22, 2024 - May 17, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Hassan Abd Al-Rahmanan Farhat"
+                    },
+                    "851": {
+                        "Class Number": "15599 ?",
+                        "Type": "LEC",
+                        "Enrolled": "31",
+                        "Class Max": "35",
+                        "Seats Available": "4",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Note": "Exam days and times are on Wednesdays at 3:00 PM, duration 90 minutes.  Dates will be announced on Canvas.",
+                        "Date": "Jan 22, 2024 - May 17, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Hassan Abd Al-Rahmanan Farhat"
+                    },
+                    "852": {
+                        "Class Number": "14555 ?",
+                        "Type": "LEC",
+                        "Enrolled": "24",
+                        "Class Max": "35",
+                        "Seats Available": "11",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Note": "Exam days and times are on Wednesdays at 3:00 PM, duration 90 minutes.  Dates will be announced on Canvas.",
+                        "Date": "Jan 22, 2024 - May 17, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Hassan Abd Al-Rahmanan Farhat"
+                    }
+                }
+            },
+            "4990": {
+                "title": "INDEPENDENT STUDIES",
+                "desc": "Prereq: Written permission required. Independent study proposals must be approved by the Undergraduate Program Committee.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "13715 ?",
+                        "Type": "IND",
+                        "Enrolled": "2",
+                        "Class Max": "25",
+                        "Seats Available": "23",
+                        "Credit Hours": "1-3",
+                        "Note": "Permission needed",
+                        "Date": "Jan 22, 2024 - May 17, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "To Be Announced",
+                        "Instructor": "Harvey Pe Siy"
+                    }
+                }
+            }
+        }
+    }
+}
