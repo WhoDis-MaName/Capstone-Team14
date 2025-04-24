@@ -15,3 +15,9 @@
 overlapping_times(S1, E1, S2, E2) :- time_slot(S1, E1, _), time_slot(S2, E2, _), S1 <= E2, S2 <= E1.
 % We have to make this a seperate case as non-cs classes have different timeslots
 overlapping_times(S1, E1, S2, E2) :- time_slot(S1, E1, _), non_cs_time_slot(S2, E2, _), S1 <= E2, S2 <= E1.
+
+time_slot_overlap(S1, E1, DS1, S2, E2, DS2) :- 
+    time_slot(S1, E1, DS1), 
+    time_slot(S2, E2, DS2), 
+    overlapping_times(S1, E1, S2, E2),
+    overlapping_days(DS1, DS2).
