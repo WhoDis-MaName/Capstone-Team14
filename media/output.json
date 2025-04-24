@@ -16,23 +16,23 @@
         "002": {
           "Class Number": "15258",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "3:30PM - 4:20PM",
-          "Days": "T",
+          "Time": "1:30PM - 2:20PM",
+          "Days": "W",
           "Location": "Peter Kiewit Institute 157",
           "Instructor": "Emily C Wiemers"
         },
         "003": {
           "Class Number": "15259",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "8:30AM - 9:20AM",
-          "Days": "R",
+          "Time": "4:30PM - 5:20PM",
+          "Days": "T",
           "Location": "Peter Kiewit Institute 157",
           "Instructor": "Anita L Lee"
         },
         "004": {
           "Class Number": "15260",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "9:30AM - 10:20AM",
+          "Time": "1:30PM - 2:20PM",
           "Days": "W",
           "Location": "Peter Kiewit Institute 157",
           "Instructor": "Anita L Lee"
@@ -40,40 +40,40 @@
         "005": {
           "Class Number": "15261",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "3:30PM - 4:20PM",
-          "Days": "R",
+          "Time": "1:30PM - 2:20PM",
+          "Days": "W",
           "Location": "Peter Kiewit Institute 157",
           "Instructor": "Cathy Stout"
         },
         "006": {
           "Class Number": "15381",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "8:30AM - 9:20AM",
-          "Days": "R",
+          "Time": "6:00PM - 8:40PM",
+          "Days": "W",
           "Location": "Peter Kiewit Institute 157",
           "Instructor": "Javier Torres"
         },
         "007": {
           "Class Number": "15382",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "3:30PM - 4:20PM",
-          "Days": "R",
+          "Time": "1:30PM - 2:20PM",
+          "Days": "W",
           "Location": "Peter Kiewit Institute 157",
           "Instructor": "Anita L Lee"
         },
         "008": {
           "Class Number": "16140",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "8:30AM - 9:20AM",
-          "Days": "R",
+          "Time": "4:30PM - 5:20PM",
+          "Days": "T",
           "Location": "Peter Kiewit Institute 161",
           "Instructor": "Emily C Wiemers"
         },
         "009": {
           "Class Number": "16223",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "9:30AM - 10:20AM",
-          "Days": "T",
+          "Time": "6:00PM - 8:40PM",
+          "Days": "W",
           "Location": "Peter Kiewit Institute 261",
           "Instructor": "Alexis Sherman"
         }
@@ -87,8 +87,8 @@
         "001": {
           "Class Number": "14007",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "8:30AM - 9:20AM",
-          "Days": "R",
+          "Time": "1:30PM - 2:45PM",
+          "Days": "TR",
           "Location": "Peter Kiewit Institute 361",
           "Instructor": "Anshuman Das Mohapatra"
         },
@@ -118,7 +118,7 @@
         "002": {
           "Class Number": "14010",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "4:30PM - 5:45PM",
+          "Time": "9:00AM - 10:15AM",
           "Days": "MW",
           "Location": "Mammel Hall 113",
           "Instructor": "Robert Fulkerson"
@@ -126,8 +126,8 @@
         "003": {
           "Class Number": "14752",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "4:30PM - 5:45PM",
-          "Days": "MW",
+          "Time": "6:00PM - 7:15PM",
+          "Days": "TR",
           "Location": "Peter Kiewit Institute 263",
           "Instructor": "Kyle Reestman"
         }
@@ -141,8 +141,8 @@
         "001": {
           "Class Number": "15277",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "4:30PM - 6:10PM",
-          "Days": "T",
+          "Time": "3:00PM - 4:15PM",
+          "Days": "TR",
           "Location": "Peter Kiewit Institute 361",
           "Instructor": "Derek Babb"
         }
@@ -156,8 +156,8 @@
         "001": {
           "Class Number": "17564",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "1:30PM - 2:20PM",
-          "Days": "W",
+          "Time": "4:30PM - 5:20PM",
+          "Days": "T",
           "Location": "Peter Kiewit Institute 278",
           "Instructor": "Martha A Garcia Murillo"
         }
@@ -179,24 +179,24 @@
         "002": {
           "Class Number": "15414",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "6:00PM - 8:40PM",
-          "Days": "M",
+          "Time": "1:30PM - 2:45PM",
+          "Days": "MW",
           "Location": "Peter Kiewit Institute 155",
           "Instructor": "Kerry Wayne Ward"
         },
         "003": {
           "Class Number": "17790",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "6:00PM - 8:40PM",
-          "Days": "M",
+          "Time": "12:00PM - 1:15PM",
+          "Days": "MW",
           "Location": "Peter Kiewit Institute 256",
           "Instructor": "Paul J Van Vliet"
         },
         "820": {
           "Class Number": "14553",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "6:00PM - 8:40PM",
-          "Days": "M",
+          "Time": "8:30AM - 9:20AM",
+          "Days": "R",
           "Location": "Remote Learning",
           "Instructor": "Karen Sue Allen"
         }
@@ -210,8 +210,8 @@
         "001": {
           "Class Number": "14758",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "1:30PM - 2:45PM",
-          "Days": "MW",
+          "Time": "6:00PM - 8:40PM",
+          "Days": "M",
           "Location": "Peter Kiewit Institute 153",
           "Instructor": "Farhad Mohammad Afzali"
         },
@@ -226,8 +226,8 @@
         "003": {
           "Class Number": "14014",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "3:00PM - 4:15PM",
-          "Days": "TR",
+          "Time": "4:30PM - 5:45PM",
+          "Days": "MW",
           "Location": "Peter Kiewit Institute 153",
           "Instructor": "Sasan Azizian"
         }
@@ -257,8 +257,8 @@
         "003": {
           "Class Number": "15846",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "6:00PM - 8:40PM",
-          "Days": "T",
+          "Time": "9:00AM - 10:15AM",
+          "Days": "MW",
           "Location": "Peter Kiewit Institute 157",
           "Instructor": "Thom Davis"
         }
@@ -272,31 +272,31 @@
         "001": {
           "Class Number": "14684",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "3:00PM - 4:15PM",
-          "Days": "MW",
+          "Time": "9:30AM - 10:20AM",
+          "Days": "W",
           "Location": "Peter Kiewit Institute 278",
           "Instructor": "Hollie Rosser"
         },
         "002": {
           "Class Number": "16142",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "12:00PM - 1:15PM",
-          "Days": "MF",
+          "Time": "10:30AM - 11:20AM",
+          "Days": "W",
           "Location": "Peter Kiewit Institute 274",
           "Instructor": "Andrea K Grover"
         },
         "003": {
           "Class Number": "14018",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "9:30AM - 10:20AM",
-          "Days": "T",
+          "Time": "10:30AM - 11:20AM",
+          "Days": "W",
           "Location": "Peter Kiewit Institute 269",
           "Instructor": "Grace Karen Tantillo"
         },
         "004": {
           "Class Number": "17475",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "6:00PM - 8:40PM",
+          "Time": "10:30AM - 11:20AM",
           "Days": "W",
           "Location": "Peter Kiewit Institute 256",
           "Instructor": "Andrea K Grover"
@@ -311,8 +311,8 @@
         "001": {
           "Class Number": "15200",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "10:30AM - 11:20AM",
-          "Days": "W",
+          "Time": "4:30PM - 5:45PM",
+          "Days": "MW",
           "Location": "Peter Kiewit Institute 259",
           "Instructor": "Ann L Fruhling"
         }
@@ -336,15 +336,15 @@
         "002": {
           "Class Number": "16150",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "4:30PM - 5:45PM",
-          "Days": "MW",
+          "Time": "9:00AM - 10:15AM",
+          "Days": "TR",
           "Location": "Peter Kiewit Institute 276",
           "Instructor": "Joel Elson"
         },
         "003": {
           "Class Number": "16234",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "10:30AM - 11:45AM",
+          "Time": "6:00PM - 7:15PM",
           "Days": "TR",
           "Location": "Mammel Hall 319",
           "Instructor": "Ash P Ashokan"
@@ -359,8 +359,8 @@
         "001": {
           "Class Number": "14025",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "7:30PM - 8:45PM",
-          "Days": "TR",
+          "Time": "3:30PM - 4:20PM",
+          "Days": "R",
           "Location": "Peter Kiewit Institute 276",
           "Instructor": "Ash P Ashokan"
         }
@@ -382,8 +382,8 @@
         "002": {
           "Class Number": "14030",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "1:30PM - 2:45PM",
-          "Days": "MW",
+          "Time": "12:00PM - 1:15PM",
+          "Days": "F",
           "Location": "Mammel Hall 113",
           "Instructor": "Kyle Reestman"
         },
@@ -405,24 +405,24 @@
         "001": {
           "Class Number": "14033",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "10:30AM - 11:20AM",
-          "Days": "W",
+          "Time": "4:30PM - 5:45PM",
+          "Days": "MW",
           "Location": "Peter Kiewit Institute 256",
           "Instructor": "Praval Sharma"
         },
         "002": {
           "Class Number": "14032",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "10:30AM - 11:20AM",
-          "Days": "W",
+          "Time": "7:30PM - 8:45PM",
+          "Days": "TR",
           "Location": "Peter Kiewit Institute 164",
           "Instructor": "Mark E Mordeson"
         },
         "003": {
           "Class Number": "16123",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "10:30AM - 11:20AM",
-          "Days": "W",
+          "Time": "4:30PM - 5:45PM",
+          "Days": "MW",
           "Location": "Peter Kiewit Institute 274",
           "Instructor": "Mark E Mordeson"
         }
@@ -436,7 +436,7 @@
         "001": {
           "Class Number": "17587",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "12:00PM - 1:15PM",
+          "Time": "3:00PM - 4:15PM",
           "Days": "TR",
           "Location": "Peter Kiewit Institute 278",
           "Instructor": "Mahadevan Subramaniam"
@@ -444,7 +444,7 @@
         "002": {
           "Class Number": "17588",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "3:00PM - 4:15PM",
+          "Time": "5:30PM - 6:45PM",
           "Days": "TR",
           "Location": "Peter Kiewit Institute 278",
           "Instructor": "Mahadevan Subramaniam"
@@ -452,7 +452,7 @@
         "003": {
           "Class Number": "17589",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "3:00PM - 4:15PM",
+          "Time": "5:30PM - 6:45PM",
           "Days": "TR",
           "Location": "Peter Kiewit Institute 278",
           "Instructor": "Mahadevan Subramaniam"
@@ -467,7 +467,7 @@
         "001": {
           "Class Number": "14034",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "3:00PM - 4:15PM",
+          "Time": "12:00PM - 1:15PM",
           "Days": "MW",
           "Location": "Peter Kiewit Institute 153",
           "Instructor": "Sean O'Malley"
@@ -482,8 +482,8 @@
         "001": {
           "Class Number": "14808",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "6:00PM - 7:15PM",
-          "Days": "TR",
+          "Time": "6:00PM - 8:40PM",
+          "Days": "W",
           "Location": "Peter Kiewit Institute 278",
           "Instructor": "Brian C Ricks"
         }
@@ -497,8 +497,8 @@
         "001": {
           "Class Number": "14260",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "9:00AM - 10:15AM",
-          "Days": "MW",
+          "Time": "5:30PM - 6:45PM",
+          "Days": "TR",
           "Location": "Durham Science Center 254",
           "Instructor": "Dora Velcsov"
         }
@@ -512,7 +512,7 @@
         "001": {
           "Class Number": "14040",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "1:30PM - 2:45PM",
+          "Time": "10:30AM - 11:45AM",
           "Days": "MW",
           "Location": "Peter Kiewit Institute 252",
           "Instructor": "Jong Hoon Youn"
@@ -520,15 +520,15 @@
         "002": {
           "Class Number": "14038",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "8:30AM - 9:20AM",
-          "Days": "R",
+          "Time": "4:30PM - 5:45PM",
+          "Days": "TR",
           "Location": "Peter Kiewit Institute 276",
           "Instructor": "Brian C Ricks"
         },
         "003": {
           "Class Number": "14753",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "12:00PM - 1:15PM",
+          "Time": "4:30PM - 5:45PM",
           "Days": "TR",
           "Location": "Peter Kiewit Institute 263",
           "Instructor": "Kwangsung Oh"
@@ -543,8 +543,8 @@
         "001": {
           "Class Number": "17612",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "4:30PM - 5:45PM",
-          "Days": "TR",
+          "Time": "3:00PM - 4:15PM",
+          "Days": "MW",
           "Location": "Peter Kiewit Institute 260",
           "Instructor": "Jose M Santos"
         }
@@ -558,8 +558,8 @@
         "001": {
           "Class Number": "14041",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "8:30AM - 9:20AM",
-          "Days": "R",
+          "Time": "6:00PM - 8:40PM",
+          "Days": "M",
           "Location": "Peter Kiewit Institute 274",
           "Instructor": "Jeff A Solheim"
         }
@@ -573,7 +573,7 @@
         "001": {
           "Class Number": "17611",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "4:30PM - 5:45PM",
+          "Time": "5:30PM - 6:45PM",
           "Days": "TR",
           "Location": "Peter Kiewit Institute 274",
           "Instructor": "Xin Xing"
@@ -588,8 +588,8 @@
         "001": {
           "Class Number": "15236",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "4:30PM - 5:45PM",
-          "Days": "MW",
+          "Time": "9:30AM - 10:20AM",
+          "Days": "T",
           "Location": "Peter Kiewit Institute 252",
           "Instructor": "Hesham Hassan Ali"
         }
@@ -603,8 +603,8 @@
         "001": {
           "Class Number": "14045",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "9:00AM - 10:15AM",
-          "Days": "MW",
+          "Time": "5:30PM - 6:45PM",
+          "Days": "TR",
           "Location": "Peter Kiewit Institute 160",
           "Instructor": "Jorge Fandinno Garcia"
         }
@@ -618,8 +618,8 @@
         "001": {
           "Class Number": "16070",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "3:30PM - 4:20PM",
-          "Days": "R",
+          "Time": "12:00PM - 1:15PM",
+          "Days": "TR",
           "Location": "Durham Science Center 104",
           "Instructor": "Fabio Torres Vitor"
         }
@@ -633,7 +633,7 @@
         "001": {
           "Class Number": "14047",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "7:30PM - 8:45PM",
+          "Time": "12:00PM - 1:15PM",
           "Days": "TR",
           "Location": "Peter Kiewit Institute 155",
           "Instructor": "Kwangsung Oh"
@@ -641,16 +641,16 @@
         "002": {
           "Class Number": "14754",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "7:30PM - 8:45PM",
-          "Days": "TR",
+          "Time": "6:00PM - 8:40PM",
+          "Days": "M",
           "Location": "Peter Kiewit Institute 256",
           "Instructor": "Jose M Santos"
         },
         "003": {
           "Class Number": "20707",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "10:30AM - 11:45AM",
-          "Days": "TR",
+          "Time": "6:00PM - 8:40PM",
+          "Days": "M",
           "Location": "Peter Kiewit Institute 261",
           "Instructor": "Mahadevan Subramaniam"
         }
@@ -664,8 +664,8 @@
         "001": {
           "Class Number": "15498",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "3:30PM - 4:20PM",
-          "Days": "T",
+          "Time": "3:00PM - 4:15PM",
+          "Days": "MW",
           "Location": "Peter Kiewit Institute 361",
           "Instructor": "George Grispos"
         }
@@ -687,8 +687,8 @@
         "002": {
           "Class Number": "16001",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "5:30PM - 6:45PM",
-          "Days": "TR",
+          "Time": "12:00PM - 1:15PM",
+          "Days": "F",
           "Location": "Peter Kiewit Institute 256",
           "Instructor": "Pei Chi Huang"
         }
@@ -702,16 +702,16 @@
         "001": {
           "Class Number": "14238",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "4:30PM - 5:45PM",
-          "Days": "MW",
+          "Time": "3:30PM - 4:20PM",
+          "Days": "R",
           "Location": "Peter Kiewit Institute 256",
           "Instructor": "Jose M Santos"
         },
         "820": {
           "Class Number": "14755",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "4:30PM - 5:45PM",
-          "Days": "MW",
+          "Time": "5:30PM - 6:45PM",
+          "Days": "TR",
           "Location": "Remote Learning",
           "Instructor": "Bill L Sousan"
         }
@@ -733,8 +733,8 @@
         "820": {
           "Class Number": "20688",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "9:30AM - 10:20AM",
-          "Days": "W",
+          "Time": "12:00PM - 1:15PM",
+          "Days": "MW",
           "Location": "Peter Kiewit Institute 263",
           "Instructor": "Eric Lundy"
         }
@@ -778,8 +778,8 @@
         "001": {
           "Class Number": "14261",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "9:30AM - 10:20AM",
-          "Days": "T",
+          "Time": "1:30PM - 2:20PM",
+          "Days": "W",
           "Location": "Durham Science Center 254",
           "Instructor": "Dora Velcsov"
         }
@@ -793,8 +793,8 @@
         "001": {
           "Class Number": "14726",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "6:00PM - 8:40PM",
-          "Days": "M",
+          "Time": "9:30AM - 10:20AM",
+          "Days": "W",
           "Location": "Peter Kiewit Institute 276",
           "Instructor": "Xin Zhong"
         }
@@ -808,8 +808,8 @@
         "001": {
           "Class Number": "15237",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "10:30AM - 11:20AM",
-          "Days": "W",
+          "Time": "7:30PM - 8:45PM",
+          "Days": "TR",
           "Location": "Peter Kiewit Institute 252",
           "Instructor": "Hesham Hassan Ali"
         }
@@ -823,8 +823,8 @@
         "001": {
           "Class Number": "16071",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "6:00PM - 8:40PM",
-          "Days": "W",
+          "Time": "8:30AM - 9:20AM",
+          "Days": "R",
           "Location": "Durham Science Center 104",
           "Instructor": "Fabio Torres Vitor"
         }
@@ -838,8 +838,8 @@
         "001": {
           "Class Number": "15131",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "12:00PM - 1:15PM",
-          "Days": "MW",
+          "Time": "10:30AM - 11:20AM",
+          "Days": "W",
           "Location": "Peter Kiewit Institute 160",
           "Instructor": "Prashanti Manda"
         }
@@ -853,8 +853,8 @@
         "001": {
           "Class Number": "14066",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "6:00PM - 8:40PM",
-          "Days": "W",
+          "Time": "12:00PM - 1:15PM",
+          "Days": "MF",
           "Location": "Peter Kiewit Institute 276",
           "Instructor": "Sayonnha Mandal"
         }
@@ -868,7 +868,7 @@
         "001": {
           "Class Number": "16000",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "4:30PM - 5:20PM",
+          "Time": "9:30AM - 10:20AM",
           "Days": "T",
           "Location": "Peter Kiewit Institute 153",
           "Instructor": "Xin Zhong"
@@ -876,7 +876,7 @@
         "002": {
           "Class Number": "16002",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "9:00AM - 10:15AM",
+          "Time": "3:00PM - 4:15PM",
           "Days": "MW",
           "Location": "Peter Kiewit Institute 256",
           "Instructor": "Pei Chi Huang"
@@ -891,8 +891,8 @@
         "001": {
           "Class Number": "20110",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "12:00PM - 1:15PM",
-          "Days": "F",
+          "Time": "4:30PM - 5:45PM",
+          "Days": "MW",
           "Location": "Durham Science Center 211A",
           "Instructor": "Mahboub Baccouch"
         }
@@ -906,7 +906,7 @@
         "001": {
           "Class Number": "17255",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "4:30PM - 5:20PM",
+          "Time": "3:30PM - 4:20PM",
           "Days": "T",
           "Location": "Peter Kiewit Institute 261",
           "Instructor": "Jong Hoon Youn"
@@ -921,8 +921,8 @@
         "001": {
           "Class Number": "15948",
           "Date": "Aug 26, 2024 - Dec 20, 2024",
-          "Time": "12:00PM - 1:15PM",
-          "Days": "TR",
+          "Time": "4:30PM - 5:20PM",
+          "Days": "T",
           "Location": "Peter Kiewit Institute 160",
           "Instructor": "Harvey Pe Siy"
         }
