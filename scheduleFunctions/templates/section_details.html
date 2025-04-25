@@ -4,111 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Course Scheduler</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #000;
-            color: white;
-            padding: 15px;
-            font-size: 24px;
-            text-align: center;
-            border-bottom: 3px solid #d00000;
-        }
-        .container {
-            width: 80%;
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-        }
-        .section {
-            margin-bottom: 20px;
-            padding: 15px;
-            background: #fff;
-            border-left: 5px solid #d00000;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-        }
-        .section h2 {
-            margin: 0;
-            font-size: 20px;
-            color: #000;
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 15px;
-            background-color: #d00000;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-            font-size: 16px;
-        }
-        .btn:hover {
-            background-color: #a00000;
-        }
-
-        .course_btn {
-            background-color: #eeeeee;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-            font-size: 16px;
-        }
-        .course_btn:hover {
-            background-color: #afafaf;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        ul li {
-            background: #eee;
-            padding: 10px;
-            margin: 5px 0;
-            border-radius: 3px;
-        }
-    </style>
-    <script>
-        function runScript(scriptName) {
-            fetch(`/run-script/?script=${scriptName}`)
-                .then(response => response.json())
-                .then(data => alert(`Output: ${data.output || "No output"}\nError: ${data.error || "No errors"}`))
-                .catch(error => alert("Request failed"));
-        }
-    </script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'styles/section_page.css' %}" />
 </head>
 <body>
+    <header>
+        <img src="{% static 'assets/images/uno-icon-color.png' %}" alt="University Logo" class="header-logo" />
+        University Course Scheduler - Section Details
+    </header>
+    <div class="dashboard-layout">
 
-    <header>University Course Scheduler - Course Details</header>
+        <!-- Sidebar with Day Buttons -->
+        <aside class="sidebar">
+            <h1>Section Information</h3>
+            <h2>{{section.course.subject}} {{section.course.class_number}} - {{section.section_id}}</h2>
+            <h3>{{section.course.name}}</h3>
+
+            <p>
+                Professor: {{section.professor}} </br>
+                </br>
+                Start time: {{section.start_time|date:"g:i a"}}</br>
+                End time: {{section.end_time|date:"g:i a"}}</br>
+                Days: {{ section.days.all |join:" / " }}</br>
+                Location: {{section.room.building}} {{section.room.room_number}}</br>
+                </br>
+                Class Capacity: {{section.room.capacity}}</br>
+
+            </p>
+            
+        </aside>
     
-    <div class="container">
-        <div class="current-schedule section">
-            <h2>Current Schedule</h2>
-            <ul>
-                
-            </ul>
-        </div>
+        <!-- Main Content -->
+        <div class="container">
+            <div class="same-time section">
+                <h2>Courses at the same time</h2>
+                <ul>
+                    {% for other_section in other_section_list %}
+                    <li>
+                        <a href="/section/?subject={{section.course.subject}}&course_number={{section.course.class_number}}&section={{section.section_id}}" onclick="" >
+                        {{section.course.subject}} {{section.course.class_number}} - {{section.course.name}} ({{ section.days.all |join:"/" }} {{section.start_time|date:"g:ia"}} - {{section.end_time|date:"g:ia"}})
+                        </a>
+                    </li>              
+                    {% endfor %}  
+                </ul>
+            </div>
 
-        <div class="notifications section">
-            <h2>Notifications</h2>
-            <ul>
-                
-                <li>Deadline: Course registration closes on September 10th.</li>
-            </ul>
-        </div>
+            <div class="same-semester section">
+                <h2>Courses to take during the same semester</h2>
+                <ul>
+                    {% for course in same_semester %}
+                    <li>
+                        {{course.subject}} {{course.class_number}} - {{course.name}}
+                    </li>              
+                    {% endfor %} 
+                </ul>
+            </div>
 
-        <div class="quick-actions section">
-            <h2>Quick Actions</h2>
-            <a href="#" class="btn" onclick="runScript('converter')" >Check Conflicts</a>
-            <a href="#" class="btn" onclick="runScript('identifier')">Optimize Schedule</a>
+            <div class="quick-actions section">
+                <a href="/dashboard/" class="btn">Return to Schedule</a>
+            </div>
         </div>
     </div>
 

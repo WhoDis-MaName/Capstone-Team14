@@ -1,16 +1,23 @@
 import os
 
 from django.apps import AppConfig
+from django.conf import settings
 
 
 class SchedulefunctionsConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'scheduleFunctions'
     
-    """def ready(self):
+    def ready(self):
+        if not settings.STARTUP_DONE:
+            # Code to run once on startup
+            print("Startup code executed")
+            settings.STARTUP_DONE = True
         from .data_processing.get_four_year import read_four_year
         from .data_processing.get_requirements import process_degree_requirements
+        from .data_processing.process_four_year import create_constraints
         from .to_database import store_requirements, store_plan
+        import json
         
         # Four Year Plan
         if os.name == 'nt':
@@ -29,9 +36,12 @@ class SchedulefunctionsConfig(AppConfig):
             os.makedirs(data_dir)
         except:
             pass
-        plan_file = os.path.join(data_dir,'four_year_plan','fourYearPlan.json')
+        plan_file = os.path.join(data_dir,'four_year_plan','four_year_plan.json')
         url = 'https://catalog.unomaha.edu/undergraduate/college-information-science-technology/computer-science/computer-science-bs/#fouryearplantext'
         read_four_year(url, plan_file)
+        constraints = create_constraints(plan_file)
+        with open(plan_file, 'w') as f:
+            json.dump(constraints,f, indent=4)
         
         requirements_file = os.path.join(data_dir,'requirements','requirements.json')
         urls = [
@@ -47,4 +57,4 @@ class SchedulefunctionsConfig(AppConfig):
         store_plan(plan_file)
         
         ...
-        """
+

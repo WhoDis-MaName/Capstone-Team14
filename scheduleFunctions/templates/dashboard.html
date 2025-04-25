@@ -80,7 +80,11 @@
         <h2>Current Schedule</h2>
         <ul>
           {% for section in section_list %}
-          <li>{{section.course.subject}} {{section.course.class_number}} - {{section.course.name}} ({{ section.days.all |join:"/" }} {{section.start_time|date:"g:ia"}} - {{section.end_time|date:"g:ia"}})</li>
+          <li>
+            <a href="/section/?subject={{section.course.subject}}&course_number={{section.course.class_number}}&section={{section.section_id}}" onclick="" >
+              {{section.course.subject}} {{section.course.class_number}} - {{section.course.name}} ({{ section.days.all |join:"/" }} {{section.start_time|date:"g:ia"}} - {{section.end_time|date:"g:ia"}})
+            </a>
+          </li>
           {% endfor %}
           <!-- <li>CSCI 1620 - Introduction to CS (Mon/Wed 10:00AM - 11:30AM)</li>
           <li>MATH 1950 - Calculus I (Tue/Thu 1:00PM - 2:30PM)</li>

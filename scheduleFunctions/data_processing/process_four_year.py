@@ -83,7 +83,13 @@ def get_semester(plan: list[dict], year: str|int, semester: str ) -> list:
     semester_content = []
     
     for sub_plan in plan:
-        semester_content.extend(sub_plan[year][semester])
+        try:
+            semester_content.extend(sub_plan[year][semester])
+        except KeyError:
+            print(f"{year}-{semester} not in plan")
+        except Exception as e:
+            print(e, '-', f"Type: {type(sub_plan)}  ---> {year}-{semester}")
+            
         
         
     return semester_content

@@ -47,10 +47,11 @@ def store_requirements(json_file):
                 requirement = Requirement(
                     major_label = major_label,
                     requirement_label = requirement_label,
-                    credits = data[major_label][requirement_label]['credits']
+                    total_credits = data[major_label][requirement_label]['credits']
                 )
-                requirement.course_options.add(*course_list)
                 requirement.save()
+                requirement.course_options.add(*course_list)
+                
                 
 def store_plan(json_file) -> None:
     with open(json_file, "r") as file:
@@ -66,6 +67,7 @@ def store_plan(json_file) -> None:
         )
     
     for course, course_details in data.items():
+        print(course)
         subject = course[:-4]
         course_number = int(course[-4:])
         selected_course = Course.objects.filter(subject=subject, class_number=course_number)
@@ -111,10 +113,11 @@ def store_plan(json_file) -> None:
             else:
                 same_semester.extend(list(selected_other_course))
         
+        selected_course.save()
         selected_course.equivalent_courses.add(*equivalent_courses)
         selected_course.same_semester_courses.add(*same_semester)
         
-        selected_course.save()
+        
         
         semester_keys = PlanSemester.SEMESTER_CHOICES.keys()
         year_keys = PlanSemester.YEAR_IN_SCHOOL_CHOICES.keys()
@@ -131,9 +134,10 @@ def store_plan(json_file) -> None:
             )
         else:
             selected_semester = list(selected_semester)[0]
-            
+        
+        selected_semester.save()    
         selected_semester.courses.add(selected_course)
-        selected_semester.save()
+        
         ...
     ...
                 

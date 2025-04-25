@@ -12,11 +12,12 @@ from django.core.files.storage import default_storage
 from django.utils.timezone import now
 from django.core.files.base import ContentFile
 from django.core.exceptions import ObjectDoesNotExist
+from django.db.models import Q
 
 from .models import *
 from scheduleFunctions.data_processing.jsonconverter import convert
 from scheduleFunctions.data_processing.get_requirements import *
-from scheduleFunctions.to_database import store_requirements, store_plan, store_schedule
+from scheduleFunctions.to_database import store_schedule
 from scheduleFunctions.data_processing.optimizer import *
 
 
@@ -68,11 +69,38 @@ def dashboard_view(request):
     try:  
         section_list = Section.objects.filter(days = day_object).order_by('start_time')
     except Section.DoesNotExist:
-        
-        
         section_list = []
     
-    return render(request, "dashboard.html", {"username": request.session["username"], "day": request.session["day"], "section_list": section_list, "day_options": Day.objects.all()})
+    return render(request, "dashboard.html", {
+        "username": request.session["username"], 
+        "day": request.session["day"], 
+        "section_list": section_list
+        })
+
+
+def section_view(request):
+    
+    if "username" not in request.session:
+        return redirect("home")  # Redirect to login if not authenticated
+
+    for variable in ["subject", "course_number", "section"]:
+        if variable not in request.session:
+            return redirect("dashboard")  # Redirect to dashboard if query incomplete
+    
+    selected_course = Course.objects.get(subject = request.session["subject"], class_number = request.session["course_number"])
+    selected_section = Section.objects.get(course = selected_course, section_number = request.session["section"])        
+    other_sections = Section.objects.filter(
+        Q(start_time__range=(selected_course.start_time, selected_course.end_time)) |
+        Q(end_time__range=(selected_course.start_time, selected_course.end_time))
+    ).order_by('start_time')
+    
+    return render(request, "section_details.html", {
+        "username": request.session["username"], 
+        "day": request.session["day"],
+        "section": selected_section,
+        "other_section_list": other_sections,
+        "same_semester": selected_course.same_semester_courses.all()
+        })
 
 
 def run_script(request):

@@ -4,7 +4,7 @@ from django.db import models
 class Room(models.Model):
     building = models.CharField(max_length=255)
     room_number = models.IntegerField()
-    capacity = models.IntegerField()
+    capacity = models.IntegerField(default=30)
     
     def print_clingo(self) -> str:
         # peter_kiewit_institute_157
@@ -44,7 +44,7 @@ class Course(models.Model):
     prerequisites = models.ManyToManyField('self')
     equivalent_courses = models.ManyToManyField('self')
     same_semester_courses = models.ManyToManyField('self')
-    credits = models.IntegerField()
+    credits = models.IntegerField(null=True)
     weight = models.IntegerField()
     def print_clingo(self) -> str:
         ...
