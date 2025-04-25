@@ -378,3 +378,28 @@ def download_optimized_file(request, filename):
     if os.path.exists(file_path):
         return FileResponse(open(file_path, "rb"), as_attachment=True, filename=filename)
     return JsonResponse({"error": "File not found"}, status=404)
+
+
+from django.http import JsonResponse
+import os
+import json
+
+def get_optimized_schedule(request):
+    try:
+        # Dynamically find the latest optimized file
+        uploads_dir = os.path.join(settings.MEDIA_ROOT, "uploads")
+        files = [f for f in os.listdir(uploads_dir) if f.startswith("optimized_output") and f.endswith(".json")]
+        if not files:
+            return JsonResponse({"error": "Optimized schedule file not found."}, status=404)
+
+        # Get the most recently saved file
+        latest_file = max(files, key=lambda f: os.path.getctime(os.path.join(uploads_dir, f)))
+        file_path = os.path.join(uploads_dir, latest_file)
+
+        # Read the JSON file
+        with open(file_path, "r") as file:
+            data = json.load(file)
+
+        return JsonResponse({"status": "success", "schedule": data})
+    except Exception as e:
+        return JsonResponse({"error": str(e)}, status=500)

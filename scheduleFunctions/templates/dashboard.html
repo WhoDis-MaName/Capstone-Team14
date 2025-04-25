@@ -84,6 +84,37 @@
         });
     }
 
+    function loadOptimizedSchedule() {
+      fetch("/get-optimized-schedule/")
+        .then(response => response.json())
+        .then(data => {
+          if (data.status === "success") {
+            const schedule = data.schedule;
+            const scheduleList = document.querySelector(".current-schedule ul");
+            scheduleList.innerHTML = ""; // Clear existing schedule
+
+            // Populate the schedule
+            for (const [subject, courses] of Object.entries(schedule)) {
+              for (const [courseNumber, courseDetails] of Object.entries(courses)) {
+                for (const [section, sectionDetails] of Object.entries(courseDetails.sections)) {
+                  const listItem = document.createElement("li");
+                  listItem.textContent = `${subject} ${courseNumber} - ${courseDetails.title} (${sectionDetails.Days} ${sectionDetails.Time})`;
+                  scheduleList.appendChild(listItem);
+                }
+              }
+            }
+          } else {
+            alert("Failed to load schedule: " + (data.error || "Unknown error"));
+          }
+        })
+        .catch(error => {
+          console.error("Error loading schedule:", error);
+          alert("Failed to load optimized schedule.");
+        });
+    }
+
+    // Call this function when the page loads
+    window.addEventListener("DOMContentLoaded", loadOptimizedSchedule);
   </script>
 </head>
 
