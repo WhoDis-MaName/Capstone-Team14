@@ -81,14 +81,13 @@ def get_semester(plan: list[dict], year: str|int, semester: str ) -> list:
         raise ValueError("Provided semester not FALL or SPRING")
         
     semester_content = []
-    
     for sub_plan in plan:
         try:
             semester_content.extend(sub_plan[year][semester])
         except KeyError:
             print(f"{year}-{semester} not in plan")
         except Exception as e:
-            print(e, '-', f"Type: {type(sub_plan)}  ---> {year}-{semester}")
+            print(e, '-', f"{sub_plan} of type: {type(sub_plan)}  ---> {year}-{semester}")
             
         
         
@@ -121,9 +120,9 @@ def set_contsraints(semester_plan: list, semester_id: int) -> dict:
             raise SyntaxError("Read file is not in the expected format")          
             
         # Set constraint structure for each course
-        for course in course_group[0]:
-            
+        for i, course in enumerate(course_group[0]):
             semester_dict[course] = {
+                'name': course_group[1][i],
                 'equivalent_courses': set([x for x in course_group[0] if x != course]),
                 'same_semester': set([]),
                 'credits': course_group[2],
@@ -169,6 +168,12 @@ def combine_constraints(constraints: list[dict]) -> dict:
 def create_constraints(filename: str) -> dict:
     
     plan = get_plan(filename)
+    if not isinstance(plan, list):
+        if isinstance(plan, dict):
+            plan = [plan]
+        else:
+            raise TypeError(f"Plan read from {filename} of type {type(plan)} not list")
+    
     semesters = ['fall', 'spring']
     constraint_list = []
     for year in range(1,5):

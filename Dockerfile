@@ -21,6 +21,11 @@ COPY requirements.txt  /Capstone-Team14/
  
 # run this command to install all dependencies 
 RUN pip install --no-cache-dir -r requirements.txt
+
+# Build Database and load default days into it
+RUN python manage.py makemigrations
+RUN python manage.py migrate
+RUN python manage.py loaddata scheduleFunctions/fixtures/prepopulated.json
  
 # Copy the Django project to the container
 COPY . /Capstone-Team14/

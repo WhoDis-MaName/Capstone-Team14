@@ -26,6 +26,7 @@ def login(request):
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
+        
 
         # Get the absolute path to users.txt
         current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -56,7 +57,8 @@ def dashboard_view(request):
     
     # Render the dashboard.html template
     try:
-        request.session["day"] = Day.DAY_OF_WEEK_CHOICES[request.GET.get("day")]
+        if not request.GET.get("day") is None:
+            request.session["day"] = Day.DAY_OF_WEEK_CHOICES[request.GET.get("day")]
         
         if "day" not in request.session:
             request.session["day"] = Day.DAY_OF_WEEK_CHOICES["m"]
@@ -80,20 +82,32 @@ def dashboard_view(request):
 
 def section_view(request):
     
+    
     if "username" not in request.session:
         return redirect("home")  # Redirect to login if not authenticated
 
+    
     for variable in ["subject", "course_number", "section"]:
-        if variable not in request.session:
-            return redirect("dashboard")  # Redirect to dashboard if query incomplete
+        if request.GET.get(variable) is None:
+            print(f'{variable} is not set')
+            return redirect("dashboard")
+        else:
+            request.session[variable] = request.GET.get(variable)
     
     selected_course = Course.objects.get(subject = request.session["subject"], class_number = request.session["course_number"])
     selected_section = Section.objects.get(course = selected_course, section_number = request.session["section"])        
     other_sections = Section.objects.filter(
-        Q(start_time__range=(selected_course.start_time, selected_course.end_time)) |
-        Q(end_time__range=(selected_course.start_time, selected_course.end_time))
+        days__in=selected_section.days.all(),  # overlap in at least one day
+        start_time__lt=selected_section.end_time,
+        end_time__gt=selected_section.start_time,
+    ).exclude(
+        course=selected_section.course  # different course
+    ).exclude(
+        pk=selected_section.pk  # ignore the section itself
+    ).distinct(
     ).order_by('start_time')
     
+    print(selected_course.same_semester_courses.all())
     return render(request, "section_details.html", {
         "username": request.session["username"], 
         "day": request.session["day"],

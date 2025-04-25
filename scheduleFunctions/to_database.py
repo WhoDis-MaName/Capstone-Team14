@@ -1,7 +1,6 @@
 import os
 import json
 import re
-from pprint import pprint
 from datetime import datetime as date
 
 from .models import *
@@ -67,19 +66,25 @@ def store_plan(json_file) -> None:
         )
     
     for course, course_details in data.items():
-        print(course)
         subject = course[:-4]
+        name = course_details['name']
+        print(course, name)
         course_number = int(course[-4:])
-        selected_course = Course.objects.filter(subject=subject, class_number=course_number)
-        if not selected_course.exists():
+        
+        try:
+            selected_course = Course.objects.get(subject=subject, class_number=course_number) 
+            selected_course.name = name
+            selected_course = selected_course   
+             
+        except Course.DoesNotExist:
             selected_course = Course(
+                name = name,
                 subject = subject, 
                 class_number=course_number,
                 weight = course_number // 1000
             )
-        else:
-            selected_course = list(selected_course)[0]
-        selected_course.credits = int(course_details['credits'])
+        finally:            
+            selected_course.credits = int(course_details['credits'])
         
         equivalent_courses = []
         for other_course in course_details['equivalent_courses']:
@@ -119,8 +124,9 @@ def store_plan(json_file) -> None:
         
         
         
-        semester_keys = PlanSemester.SEMESTER_CHOICES.keys()
-        year_keys = PlanSemester.YEAR_IN_SCHOOL_CHOICES.keys()
+        semester_keys = ["F","S"]
+        year_keys = ["FR", "SO", "JR", "SR", "GR"]
+        
         
         for semester_number in course_details['semesters']:
             year = (int(semester_number) // 10) - 1

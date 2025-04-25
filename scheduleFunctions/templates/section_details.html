@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,8 +18,7 @@
 
         <!-- Sidebar with Day Buttons -->
         <aside class="sidebar">
-            <h1>Section Information</h3>
-            <h2>{{section.course.subject}} {{section.course.class_number}} - {{section.section_id}}</h2>
+            <h2>{{section.course.subject}} {{section.course.class_number}} - {{section.section_number}}</h2>
             <h3>{{section.course.name}}</h3>
 
             <p>
@@ -42,8 +42,8 @@
                 <ul>
                     {% for other_section in other_section_list %}
                     <li>
-                        <a href="/section/?subject={{section.course.subject}}&course_number={{section.course.class_number}}&section={{section.section_id}}" onclick="" >
-                        {{section.course.subject}} {{section.course.class_number}} - {{section.course.name}} ({{ section.days.all |join:"/" }} {{section.start_time|date:"g:ia"}} - {{section.end_time|date:"g:ia"}})
+                        <a href="/section/?subject={{other_section.course.subject}}&course_number={{other_section.course.class_number}}&section={{other_section.section_number}}" onclick="" >
+                        {{other_section.course.subject}} {{other_section.course.class_number}} - {{other_section.course.name}} ({{ other_section.days.all |join:"/" }} {{other_section.start_time|date:"g:ia"}} - {{other_section.end_time|date:"g:ia"}})
                         </a>
                     </li>              
                     {% endfor %}  

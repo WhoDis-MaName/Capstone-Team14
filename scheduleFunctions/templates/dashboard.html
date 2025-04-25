@@ -77,11 +77,11 @@
     <!-- Main Content -->
     <div class="container">
       <div class="current-schedule section">
-        <h2>Current Schedule</h2>
+        <h2>Current Schedule - {{day|upper}}</h2>
         <ul>
           {% for section in section_list %}
           <li>
-            <a href="/section/?subject={{section.course.subject}}&course_number={{section.course.class_number}}&section={{section.section_id}}" onclick="" >
+            <a href="/section/?subject={{section.course.subject}}&course_number={{section.course.class_number}}&section={{section.section_number}}" onclick="" >
               {{section.course.subject}} {{section.course.class_number}} - {{section.course.name}} ({{ section.days.all |join:"/" }} {{section.start_time|date:"g:ia"}} - {{section.end_time|date:"g:ia"}})
             </a>
           </li>
