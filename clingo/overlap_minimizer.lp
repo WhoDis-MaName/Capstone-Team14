@@ -137,3 +137,10 @@ scheduled_critical_conflict(C1, C2) :- critical_section(C1, N1), critical_sectio
 #minimize{1@1, C, I : schedule_change(C, I)}.
 
 #show scheduled_section/8.
+
+% Can do: opt = 3 for 3 possibilities
+% Add possibilies about when to have courses
+
+% TODO: add possibilites about when to have courses
+%       ie: flag to keep morning classes in the morning, schedule professors back to back, etc.
+% TODO: filter cross listed courses and add them back in at the end, check with user if correct, handle non-cs cross listed courses
