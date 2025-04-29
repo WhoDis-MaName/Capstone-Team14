@@ -232,6 +232,7 @@ def upload_json_file(request):
                         .replace(".", "")
                         .replace("-", "_")
                     )
+                    credits = section_info.get("Credit Hours")
 
                     if (
                         location in {"totally_online", "to_be_announced"}
@@ -248,7 +249,9 @@ def upload_json_file(request):
                         rooms.add(location)
                         professors.add(instructor)
                         if start != "tba" and end != "tba" and days != "tba":
-                            times.add(f"time_slot({start}, {end}, {days}).")
+                            times.add(
+                                f"time_slot_credits({start}, {end}, {days}, {credits})."
+                            )
                     # else we are a class like english or math and we cannot modify the time
                     else:
                         facts.append(

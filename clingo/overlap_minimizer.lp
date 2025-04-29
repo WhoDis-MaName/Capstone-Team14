@@ -1,30 +1,26 @@
-#include "overlap_identifier_critical_sections.lp".
+#include "overlap_identifier.lp".
 
 % Example section from classes.lp:
 % section("CSCI8700", "001", "15948", 18:00, 20:40, "W", "Peter Kiewit Institute 160", "Harvey Pe Siy").
 
 
-input_section(C, I, N, R, P) :- section(C, I, N, _, _, _, R, P). 
-
-% TODO: Add constraint so that only certain time slots are allowed based on number of credits. 
-% For example, a 5 credit class must have mtwr
+input_section(C, I, N, R, P, T) :- section(C, I, N, S, E, D, R, P), time_slot_credits(S, E, D, T). 
 
 % For each section with a room and professor already assigned, choose one timeslot.
 % make it so that we only have one of the cross listed sections and then assign the other one manually
-{scheduled_section_time_slot(N, S, E, D) : time_slot(S, E, D) } = 1 :- input_section(C, I, N, R, P), not true_cross_listed(_, N).
+% true_cross_listed is single-directional, ie cross_listed(C1, C2) means C1 is cross_listed with C2, but not vise versa -> cross_listed(C1, C2) IS bidirectional
+% Also only assign time slots that are for the same credit hours. 
+{scheduled_section_time_slot(N, S, E, D) : time_slot_credits(S, E, D, T) } = 1 :- input_section(C, I, N, R, P, T), not true_cross_listed(_, N).
 
 % Manually assign the same timeslot to cross listed classes
 % Maybe leave it for python?
 % scheduled_section_time_slot(N2, S, E, D) :- scheduled_section_time_slot(N, S, E, D), input_section(C2, I2, N2, R2, P2), true_cross_listed(N, N2).
 
 % Obtain 8 arity section for the sake of return value
-scheduled_section(C, I, N, S, E, D, R, P) :- input_section(C, I, N, R, P), scheduled_section_time_slot(N, S, E, D).
-
-% Manually assign the same timeslot to cross listed courses
-% scheduled_section(C, I, N2, S, E, D, R, P) :- true_cross_listed(N1, N2), input_section(C, I, N2, R, P), scheduled_section_time_slot(N1, S, E, D).
+scheduled_section(C, I, N, S, E, D, R, P) :- input_section(C, I, N, R, P, T), scheduled_section_time_slot(N, S, E, D).
 
 % The course C for a section number N
-scheduled_section_course(C, N) :- input_section(C, I, N, R, P), scheduled_section_time_slot(N, S, E, D).
+scheduled_section_course(C, N) :- input_section(C, I, N, R, P, T), scheduled_section_time_slot(N, S, E, D).
 
 
 % The unique number identifier for a section
@@ -133,11 +129,11 @@ schedule_change(C, I) :- scheduled_section_time_slot(N, S1, E1, D1), section(C, 
 % scheduled_critical_conflict(C1, C2) :- critical_section(C1, N1), critical_section(C2, N2), scheduled_conflict(N1, N2), C1!=C2, same_year(C1, C2), planned_classes(C1), planned_classes(C2).
 scheduled_critical_conflict(C1, C2) :- critical_section(C1, N1), critical_section(C2, N2), scheduled_conflict(N1, N2), C1!=C2, same_year(C1, C2).
 
+% Prioritized minimize functions, first ensure the critical sections are available
 #minimize{1@3, C1, C2 : scheduled_critical_conflict(C1, C2)}.
-% Prioritized minimize functions, try to minimize overlaps, then minimize individual conflicts. 
-#minimize{W@2, C1, C2 : scheduled_weighted_overlap_sum(C1, C2, W)}.
-% TODO: should we minimize this based on weight or count them all the same?
+% Then try to minimize overlaps - currently overlaps are only the same year
+#minimize{W@2, C1, C2 : scheduled_weighted_overlap_sum(C1, C2, W), same_year(C1, C2)}.
+% Then minimize individual conflicts
 #minimize{1@1, C, I : schedule_change(C, I)}.
 
 #show scheduled_section/8.
-% #show scheduled_conflict/2.
