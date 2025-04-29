@@ -232,6 +232,7 @@ def upload_json_file(request):
                         .replace(".", "")
                         .replace("-", "_")
                     )
+                    credits = section_info.get("Credit Hours")
 
                     if (
                         location in {"totally_online", "to_be_announced"}
@@ -248,7 +249,9 @@ def upload_json_file(request):
                         rooms.add(location)
                         professors.add(instructor)
                         if start != "tba" and end != "tba" and days != "tba":
-                            times.add(f"time_slot({start}, {end}, {days}).")
+                            times.add(
+                                f"time_slot_credits({start}, {end}, {days}, {credits})."
+                            )
                     # else we are a class like english or math and we cannot modify the time
                     else:
                         facts.append(
@@ -258,6 +261,9 @@ def upload_json_file(request):
                             non_cs_times.add(
                                 f"non_cs_time_slot({start}, {end}, {days})."
                             )
+                    # Add critical sections for both CS and non-CS courses
+                    if section_count == 1:
+                        facts.append(f"critical_section({course_id}, {class_number}).")
 
                 # ignore courses that are entirely comprised of totally online sections
                 if totally_online_count == section_count:
