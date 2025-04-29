@@ -1,7 +1,7 @@
 import json
 
 
-def json_to_clingo(json_file, output_file):
+def four_year_to_clingo(json_file, output_file):
     with open(json_file, "r") as file:
         data = json.load(file)
 
@@ -44,6 +44,7 @@ def json_to_clingo(json_file, output_file):
 
 
 # Example usage
-json_file = r"C:\Users\Josh\Documents\GitHub\Capstone-Team14\data_files\four_year_plan\fourYearPlan.json"  # Change this to your actual file path
-output_file = json_file.replace(".json", ".lp")  # Output file
-json_to_clingo(json_file, output_file)
+if __name__ == '__main__':
+    json_file = r"C:\Users\Josh\Documents\GitHub\Capstone-Team14\data_files\four_year_plan\fourYearPlan.json"  # Change this to your actual file path
+    output_file = json_file.replace(".json", ".lp")  # Output file
+    four_year_to_clingo(json_file, output_file)

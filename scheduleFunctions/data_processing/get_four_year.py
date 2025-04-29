@@ -132,7 +132,7 @@ def read_four_year(url, output_file):
                     row[1] = row[1].split('or ')
                     renamed_courses = []
                     for course in row[0]:
-                        renamed_courses.append(course.lower().replace(' ', ''))
+                        renamed_courses.append(course.upper().replace(' ', ''))
                         
                     row[0] = renamed_courses
                     classes_in_semeseter.append(row)

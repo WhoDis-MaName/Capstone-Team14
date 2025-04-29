@@ -98,18 +98,30 @@
     <!-- Sidebar with Day Buttons -->
     <aside class="sidebar">
       <h3>Filter by Day</h3>
-      <button class="day-button" onclick="filterByDay('Monday')">Monday</button>
-      <button class="day-button" onclick="filterByDay('Tuesday')">Tuesday</button>
-      <button class="day-button" onclick="filterByDay('Wednesday')">Wednesday</button>
-      <button class="day-button" onclick="filterByDay('Thursday')">Thursday</button>
-      <button class="day-button" onclick="filterByDay('Friday')">Friday</button>
+      <a href="/dashboard/?day=m" class="day-button" onclick="" >Monday</a>
+      <a href="/dashboard/?day=t" class="day-button" onclick="" >Tuesday</a>
+      <a href="/dashboard/?day=w" class="day-button" onclick="" >Wednesday</a>
+      <a href="/dashboard/?day=r" class="day-button" onclick="" >Thursday</a>
+      <a href="/dashboard/?day=f" class="day-button" onclick="" >Friday</a>
     </aside>
 
     <!-- Main Content -->
     <div class="container">
       <div class="current-schedule section">
-        <h2>Current Schedule</h2>
-
+        <h2>Current Schedule - {{day|upper}}</h2>
+        <ul>
+          {% for section in section_list %}
+          <li>
+            <a href="/section/?subject={{section.course.subject}}&course_number={{section.course.class_number}}&section={{section.section_number}}" onclick="" >
+              {{section.course.subject}} {{section.course.class_number}} - {{section.course.name}} ({{ section.days.all |join:"/" }} {{section.start_time|date:"g:ia"}} - {{section.end_time|date:"g:ia"}})
+            </a>
+          </li>
+          {% endfor %}
+          <!-- <li>CSCI 1620 - Introduction to CS (Mon/Wed 10:00AM - 11:30AM)</li>
+          <li>MATH 1950 - Calculus I (Tue/Thu 1:00PM - 2:30PM)</li>
+          <li>MATH 2040 - Discrete Math (Mon/Wed 3:00PM - 4:15PM)</li>
+          <li>GEOG 1010 - Geology (Mon/Wed 3:00PM - 4:15PM)</li> -->
+        </ul>
       </div>
 
       <div class="notifications section">
@@ -119,9 +131,8 @@
 
       <div class="quick-actions section">
         <h2>Quick Actions</h2>
-        <a href="#" class="btn"
-          onclick="fetch('/run-solver/').then(r => r.json()).then(data => alert(data.message));">Parse Upload</a>
-        <button class="btn" onclick="optimizeSchedule()">Optimize Schedule</button>
+        <a href="#" class="btn" onclick="fetch('/run-solver/').then(r => r.json()).then(data => alert(data.message));">Check Conflicts</a>
+        <a href="#" class="btn" onclick="fetch('/optimize/')">Optimize Schedule</a>
         <button class="btn">Manage Schedule</button>
 
         <!-- Upload Form -->

@@ -1,5 +1,5 @@
 import sys, clingo, math
-from data_processing.jsonconverter import convert
+from scheduleFunctions.data_processing.jsonconverter import convert
 import argparse
 import os
 
@@ -50,5 +50,5 @@ class ClingoApp(clingo.application.Application):
     #     board = Sudoku({}).from_model(model)
     #     print(board)
 
-
-clingo.application.clingo_main(ClingoApp())
+if __name__ == '__main__':
+    clingo.application.clingo_main(ClingoApp())

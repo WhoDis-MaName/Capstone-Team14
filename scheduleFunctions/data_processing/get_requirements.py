@@ -199,7 +199,7 @@ if __name__ == "__main__":
 
     root_index = path.index('Capstone-Team14')
     root_dir = os.sep.join(path[:root_index+1])
-    data_dir = os.path.join(root_dir, 'data_files', 'four_year_plan')
+    data_dir = os.path.join(root_dir, 'data_files', 'requirements')
     try:
         os.makedirs(data_dir)
     except:
