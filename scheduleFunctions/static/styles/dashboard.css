@@ -113,3 +113,14 @@ ul li {
   margin: 5px 0;
   border-radius: 3px;
 }
+
+ul li a {
+  background: #eee;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 3px;
+}
+
+ul li a:hover {
+  background: #eeeeee9c;
+}

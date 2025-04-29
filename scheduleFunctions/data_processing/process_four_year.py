@@ -1,4 +1,4 @@
-## @package process_constraints
+## @package four_year_to_clingo
 #  This module contains all of the functionality that is needed to convert the four year plan into usable clingo rules. 
 #
 #  For proof of concept running this package as a script utilizes the Computer Science four year plan.
@@ -17,10 +17,17 @@ from pprint import pprint
 # \endparblock 
 # @return The list of dictionaries that was read from the file.
 def get_plan(filename: str) -> list[dict]:
-    with open(filename, 'r') as file:
+    with open(filename, "r") as file:
         data = json.load(file)
-    if type(data) != list:
-        raise SyntaxError("Read file is not in the expected format")
+
+    # If the JSON root is a list, assume it contains a dictionary
+    if isinstance(data, list) and len(data) > 0:
+        data = data[0]  # Take the first element
+
+    if not isinstance(data, dict):
+        raise ValueError(
+            "Invalid JSON structure: Expected a dictionary at the top level."
+        )
     return data
     
 ## Get the list of classes for a particular semester from the four year plan, assuming that there may be multiple plans given
@@ -74,9 +81,14 @@ def get_semester(plan: list[dict], year: str|int, semester: str ) -> list:
         raise ValueError("Provided semester not FALL or SPRING")
         
     semester_content = []
-    
     for sub_plan in plan:
-        semester_content.extend(sub_plan[year][semester])
+        try:
+            semester_content.extend(sub_plan[year][semester])
+        except KeyError:
+            print(f"{year}-{semester} not in plan")
+        except Exception as e:
+            print(e, '-', f"{sub_plan} of type: {type(sub_plan)}  ---> {year}-{semester}")
+            
         
         
     return semester_content
@@ -108,9 +120,9 @@ def set_contsraints(semester_plan: list, semester_id: int) -> dict:
             raise SyntaxError("Read file is not in the expected format")          
             
         # Set constraint structure for each course
-        for course in course_group[0]:
-            
+        for i, course in enumerate(course_group[0]):
             semester_dict[course] = {
+                'name': course_group[1][i],
                 'equivalent_courses': set([x for x in course_group[0] if x != course]),
                 'same_semester': set([]),
                 'credits': course_group[2],
@@ -156,6 +168,12 @@ def combine_constraints(constraints: list[dict]) -> dict:
 def create_constraints(filename: str) -> dict:
     
     plan = get_plan(filename)
+    if not isinstance(plan, list):
+        if isinstance(plan, dict):
+            plan = [plan]
+        else:
+            raise TypeError(f"Plan read from {filename} of type {type(plan)} not list")
+    
     semesters = ['fall', 'spring']
     constraint_list = []
     for year in range(1,5):
@@ -220,7 +238,7 @@ if __name__ == "__main__":
     data_dir = os.path.join(root_dir, 'data_files', 'four_year_plan')
     filename = os.path.join(data_dir, 'fourYearPlan.json')
     constraints = create_constraints(filename)
-    json_file = os.path.join(data_dir, 'constraints.json')
+    json_file = os.path.join(data_dir, 'four_year_plan.json')
     asp_file = os.path.join(data_dir, 'four_year_plan_constraints.lp')
     
     with open(json_file, 'w') as f:

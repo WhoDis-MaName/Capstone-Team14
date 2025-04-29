@@ -1,0 +1,37 @@
+[
+    {
+        "model": "scheduleFunctions.Day",
+        "pk": 1,
+        "fields": {
+        "day_of_week": "Monday"
+        }
+    },
+    {
+        "model": "scheduleFunctions.Day",
+        "pk": 2,
+        "fields": {
+        "day_of_week": "Tuesday"
+        }
+    },
+    {
+        "model": "scheduleFunctions.Day",
+        "pk": 3,
+        "fields": {
+        "day_of_week": "Wednesday"
+        }
+    },
+    {
+        "model": "scheduleFunctions.Day",
+        "pk": 4,
+        "fields": {
+        "day_of_week": "Thursday"
+        }
+    },
+    {
+        "model": "scheduleFunctions.Day",
+        "pk": 5,
+        "fields": {
+        "day_of_week": "Friday"
+        }
+    }
+]

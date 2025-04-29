@@ -16,7 +16,7 @@ path = current_directory.split(os.sep)
 
 root_index = path.index("Capstone-Team14")
 root_dir = os.sep.join(path[: root_index + 1])
-read_dir = os.path.join(root_dir, "data_files", "uploaded_schedule")
+# read_dir = os.path.join(root_dir, "data_files", "uploaded_schedule")
 
 
 # TODO: add in doxygen comments for clingo application.
@@ -103,5 +103,5 @@ def convert_to_json(symbols, output_file):
     with open(output_file, "w") as f:
         json.dump(data, f, indent=2)
 
-
-clingo.application.clingo_main(ClingoApp())
+if __name__ == '__main__':
+    clingo.application.clingo_main(ClingoApp())
