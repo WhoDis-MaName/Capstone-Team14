@@ -1,5 +1,5 @@
 % #include "total_filtered.lp".
-% #include "total_filtered_credit_hours.lp".
+#include "total_filtered_credit_hours.lp".
 % #include "total_filtered_test_optimal.lp".
 % #include "filtered_test.lp".
 % #include "example_output.lp".
@@ -81,7 +81,7 @@ same_year(C1, C2) :- course_weight(C1, W1, Y), course_weight(C2, W2, Y). %, C1 !
 % ie, csci8156 graph theory is cross listed with csci4500 so count csci8156 as both year 4 and year 5 (grad class).
 same_year(C1, C2) :- cross_listed(N1, N2), section_course(C1, N1), section_course(C3, N2), same_year(C2, C3). %, C1 != C2.
 
-original_weighted_overlap_sum(N) :- N = #sum{ W, C1, C2 : weighted_overlap(C1, C2, W) }.
+original_weighted_overlap_sum(N) :- N = #sum{ W, C1, C2 : weighted_overlap(C1, C2, W), same_year(C1, C2) }.
 
 % Check for overlap in rooms or in professor schedules
 overlapping_room(N1, N2, R):- section_time(N1, S1, E1, D1), section_time(N2, S2, E2, D2), section_room(R, N1), section_room(R, N2), conflict(N1, N2). 
