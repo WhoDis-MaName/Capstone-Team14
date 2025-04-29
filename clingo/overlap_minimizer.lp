@@ -1,5 +1,5 @@
 % #include "overlap_identifier.lp".
-#include "total_filtered.lp".
+% #include "total_filtered.lp".
 #include "fourYearPlan.lp".
 #include "days.lp".
 #include "overlap.lp".
@@ -68,7 +68,7 @@ scheduled_section_room(R, N) :- section(C, I, N, S, E, D, R, P).
         not cross_listed(N, N2)
     } > 1, 
     professor(P), 
-    scheduled_section_time_slot(N2, S2, E2, D2)
+    scheduled_section_time_slot(N2, S2, E2, D2).
 
 % Same time slot, room, and professor
 % same_scheduled_slot(N1, N2) :- scheduled_section(C1, I1, N1, S, E, D, R, P), scheduled_section(C2, I2, N2, S, E, D, R, P), N1 != N2, C1 != C2.
