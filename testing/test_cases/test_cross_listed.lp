@@ -25,14 +25,13 @@ critical_section(cist2200, c20003).
 class(cist2100; cist2200).
 room(room1; room2; room3; room4).
 professor(prof1, prof2; hesham_hassan_ali; fabio_torres_vitor).
-time_slot(900, 975, mw).
-time_slot(900, 975, tr).
-time_slot(720, 795, f).
-time_slot(780, 855, mw).
-time_slot(570, 620, m).
-time_slot(900, 975, tr).
-time_slot(630, 705, mw).
-time_slot(810, 885, tr).
-time_slot(570, 620, t).
-time_slot(900, 975, mw).
-time_slot(960, 1035, mw).
+time_slot_credits(900, 975, mw, 3).
+time_slot_credits(900, 975, tr, 3).
+time_slot_credits(720, 795, f, 1).
+time_slot_credits(780, 855, mw, 5).
+time_slot_credits(570, 620, m, 4).
+time_slot_credits(900, 975, tr, 2).
+time_slot_credits(630, 705, mw, 7).
+time_slot_credits(810, 885, tr, 8).
+time_slot_credits(570, 620, t, 3).
+time_slot_credits(960, 1035, mw, 5).
