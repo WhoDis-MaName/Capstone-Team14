@@ -21,8 +21,11 @@ cross_listed(N1, N2) :- section(C1, I1, N1, S, E, D, R, P), section(C2, I2, N2, 
 % Example section from classes.lp:
 % section("CSCI8700", "001", "15948", 18:00, 20:40, "W", "Peter Kiewit Institute 160", "Harvey Pe Siy").
 
-
 input_section(C, I, N, R, P, T) :- section(C, I, N, S, E, D, R, P), time_slot_credits(S, E, D, T). 
+
+% Choose 1 section from each course to be "critical"
+{ critical_section(C, N) : section_course(C, N) } = 1 :- class(C). 
+{ critical_section(C, N) : non_cs_section_course(C, N)} = 1 :- non_cs_class(C). 
 
 % For each section with a room and professor already assigned, choose one timeslot.
 % make it so that we only have one of the cross listed sections and then assign the other one manually
@@ -104,7 +107,6 @@ scheduled_conflict(N1, N2) :-
 % There is a shedule change between two section IDs if they are at different times or different days.
 schedule_change(C, I) :- scheduled_section_time_slot(N, S1, E1, D1), section(C, I, N, S2, E2, D2, R, P), (S1, E1, D1) != (S2, E2, D2). 
 % There is a conflict between critical sections of planned courses in the 4 year plan
-% scheduled_critical_conflict(C1, C2) :- critical_section(C1, N1), critical_section(C2, N2), scheduled_conflict(N1, N2), C1!=C2, same_year(C1, C2), planned_classes(C1), planned_classes(C2).
 scheduled_critical_conflict(C1, C2) :- critical_section(C1, N1), critical_section(C2, N2), scheduled_conflict(N1, N2), C1!=C2.
 
 % Prioritized minimize functions, first ensure the critical sections are available
@@ -114,6 +116,7 @@ scheduled_critical_conflict(C1, C2) :- critical_section(C1, N1), critical_sectio
 
 % #show scheduled_section_time_slot/4.
 #show scheduled_section/8.
+#show critical_section/2.
 
 % Can do: opt = 3 for 3 possibilities
 % Add possibilies about when to have courses
