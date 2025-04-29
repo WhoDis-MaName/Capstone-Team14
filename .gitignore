@@ -3,3 +3,4 @@ samples/
 data_files/
 db.sqlite3
 run_once.lock
+media/uploads/

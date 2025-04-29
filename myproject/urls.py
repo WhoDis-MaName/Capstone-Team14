@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from scheduleFunctions.views import run_script  # Import the view for schedulerApp functions
-from scheduleFunctions.views import login, dashboard_view, upload_json_file, run_clingo_solver, run_clingo_optimizer, section_view
+from scheduleFunctions.views import login, dashboard_view, upload_json_file, run_clingo_solver, download_optimized_file, optimize_schedule, run_clingo_optimizer, section_view
 urlpatterns = [
     path('admin/doc/', include('django.contrib.admindocs.urls')),
     path('admin/', admin.site.urls),
@@ -27,5 +27,7 @@ urlpatterns = [
     path('', login, name='home'),  # Add homepage route
     path('upload/', upload_json_file, name='upload_json_file'),
     path("run-solver/", run_clingo_solver, name="run_clingo_solver"),
+    path("optimize-schedule/", optimize_schedule, name="optimize_schedule"),
+    path("download/<str:filename>/", download_optimized_file, name="download_file"),
     path("optimize/", run_clingo_optimizer, name="run_clingo_optimizer"),
 ]

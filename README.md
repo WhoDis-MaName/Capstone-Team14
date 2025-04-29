@@ -125,7 +125,7 @@ Run the container using:
 
 `docker run --name capstone-14 -p 8000:8000 capstone-14`
 
-*Note* the docker deployment will not perform any tests.
+_Note_ the docker deployment will not perform any tests.
 
 ## Branches for Version 1.3
 
@@ -156,30 +156,32 @@ To Launch the current iteration of project, use this command:
 
 ## Branches for Version 0.9
 
-- origin/josh/test:  mostly ASP/clingo related things I have been working on. Currently working on integrating some tests and bug fixes
+- origin/josh/test: mostly ASP/clingo related things I have been working on. Currently working on integrating some tests and bug fixes
 - orign/andra-test2: Generate samples for more specific testing for JSON files
-- origin/andra-testing(deleted):  create web scraping script
+- origin/andra-testing(deleted): create web scraping script
 - origin/frank_sand: Mainly JSON file development and DJango environment setup. Some ASP play files for figuring stuff out
 - oring/dev: When we are working together (in person) or want to make sure we don't break main
 - main: Main branch where working iteration is found and includes front-end development
 
-## Version 1.0 release notes: 
+## Version 1.0 release notes:
 
 ###Clingo changes:
 
-Updated the clingo files to identify and  optimize based on total overlap. 
+Updated the clingo files to identify and optimize based on total overlap.
 
 We have conflict if: s1, s2 have overlapping day, time, and are different classes
 We have overlap if every section in C1, C2 are in conflict -> no valid path
-Overlaps are then weighted by group. 
+Overlaps are then weighted by group.
 
-Current groups are based on the four year plan. 
+Current groups are based on the four year plan.
 
-Group 1 includes all the classes predicted to take in year 1, Group 2 year 2, ... 
-Group 0 includes all classes not in the four year plan. 
+Group 1 includes all the classes predicted to take in year 1, Group 2 year 2, ...
+Group 0 includes all classes not in the four year plan.
 
-Current weights are set to 2 if in Group 1-4, 1 if in group 0. Can be adjusted as inputs. 
+Current weights are set to 2 if in Group 1-4, 1 if in group 0. Can be adjusted as inputs.
 
-Weighted overlap = W1 + W2, where W1 is the weight of class 1, W2 is the weight of class 2. 
+Weighted overlap = W1 + W2, where W1 is the weight of class 1, W2 is the weight of class 2.
 
-Minimize based on weighted overlap. 
+Minimize based on weighted overlap. Additionally, minimize number of changes to the input schedule (lower priority).
+
+can use -t to specify number of threads for clingo. Ie: clingo overlap_minizer.lp -t 8.
