@@ -1,5 +1,4 @@
-% #include "total_filtered.lp".
-% #include "total_filtered_credit_hours.lp".
+#include "total_filtered.lp".
 % #include "total_filtered_test_optimal.lp".
 % #include "filtered_test.lp".
 % #include "example_output.lp".

@@ -14,7 +14,7 @@ input_section(C, I, N, R, P, T) :- section(C, I, N, S, E, D, R, P), time_slot_cr
 
 % Manually assign the same timeslot to cross listed classes
 % Maybe leave it for python?
-% scheduled_section_time_slot(N2, S, E, D) :- scheduled_section_time_slot(N, S, E, D), input_section(C2, I2, N2, R2, P2), true_cross_listed(N, N2).
+% scheduled_section_time_slot(N2, S, E, D) :- scheduled_section_time_slot(N, S, E, D), input_section(C2, I2, N2, R2, P2, _), true_cross_listed(N, N2).
 
 % Obtain 8 arity section for the sake of return value
 scheduled_section(C, I, N, S, E, D, R, P) :- input_section(C, I, N, R, P, T), scheduled_section_time_slot(N, S, E, D).
