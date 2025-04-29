@@ -3,6 +3,9 @@
 % #include "filtered_test.lp".
 % #include "example_output.lp".
 % #include "..\\testing\\test_cases\\test_case_mini_overlap.lp".
+% #include "..\\testing\\test_cases\\test_case_critical_section.lp".
+% #include "..\\testing\\test_cases\\test_minimize_distance.lp".
+% #include "..\\testing\\test_cases\\test_cross_listed.lp".
 % #include "..\\testing\\test_cases\\test_case_english.lp".
 % #include "..\\testing\\test_cases\\test_case_01.lp".
 % #include "..\\testing\\test_cases\\test_case_00.lp".
@@ -11,9 +14,6 @@
 #include "fourYearPlan.lp".
 #include "days.lp".
 #include "overlap.lp".
-
-% Set 1 critical section for each planned class in the 4 year plan.
-{critical_section(C, N)} = 1 :- planned_classes(C), section(C, I, N, S, E, D, R, P).
 
 critical_conflict(C1, C2) :- critical_section(C1, N1), critical_section(C2, N2), conflict(N1, N2), C1!=C2, same_year(C1, C2).
 
@@ -77,6 +77,9 @@ true_overlap(C1, C2) :- overlap(C1, C2), not true_overlap(C2, C1).
 weighted_overlap(C1, C2, W1 + W2) :- true_overlap(C1, C2), planned_course(C1, W1, Y1), planned_course(C2, W2, Y2).
 
 same_year(C1, C2) :- course_weight(C1, W1, Y), course_weight(C2, W2, Y). %, C1 != C2.
+% Count 4000/8000 cross listed courses as the same year
+% ie, csci8156 graph theory is cross listed with csci4500 so count csci8156 as both year 4 and year 5 (grad class).
+same_year(C1, C2) :- cross_listed(N1, N2), section_course(C1, N1), section_course(C3, N2), same_year(C2, C3). %, C1 != C2.
 
 % #show same_year/2.
 
@@ -101,11 +104,16 @@ overlapping_prof(N1, N2, P):- section_time(N1, S1, E1, D1), section_time(N2, S2,
 
 % We can infer that two classes are cross listed if they have the exact same start time, end time, day, room, and professor
 cross_listed(N1, N2) :- section(C1, I1, N1, S, E, D, R, P), section(C2, I2, N2, S, E, D, R, P), C1 != C2, N1 != N2.
+true_cross_listed(N1, N2) :- cross_listed(N1, N2) , not true_cross_listed(N2, N1).
 
+#show cross_listed/2.
+#show original_weighted_overlap_sum/1.
+#show critical_conflict/2.
+% #show same_year/2.
 
 % #show overlapping_room/3.
 % #show overlapping_prof/3.
-% #show overlap/2.
+#show overlap/2.
 % #show path/2.
 % #show original_weighted_overlap_sum/1.
 % #show original_weighted_overlap_by_year_sum/1.

@@ -1,82 +1,122 @@
 section(cist1010,s001,c15257,570,620,t,peter_kiewit_institute_157,farida_majid).
-section(cist1010,s002,c15258,630,680,w,peter_kiewit_institute_157,emily_c_wiemers).
+section(cist1010,s002,c15258,930,980,t,peter_kiewit_institute_157,emily_c_wiemers).
 section(cist1010,s003,c15259,990,1040,t,peter_kiewit_institute_157,anita_l_lee).
 section(cist1010,s004,c15260,570,620,w,peter_kiewit_institute_157,anita_l_lee).
-section(cist1010,s005,c15261,1080,1155,tr,peter_kiewit_institute_157,cathy_stout).
+section(cist1010,s005,c15261,810,860,w,peter_kiewit_institute_157,cathy_stout).
 section(cist1010,s006,c15381,510,560,r,peter_kiewit_institute_157,javier_torres).
 section(cist1010,s007,c15382,930,980,r,peter_kiewit_institute_157,anita_l_lee).
-section(cist1010,s008,c16140,630,705,tr,peter_kiewit_institute_161,emily_c_wiemers).
+section(cist1010,s008,c16140,810,860,t,peter_kiewit_institute_161,emily_c_wiemers).
 section(cist1010,s009,c16223,630,680,w,peter_kiewit_institute_261,alexis_sherman).
-section(cist1300,s001,c14007,570,620,w,peter_kiewit_institute_361,anshuman_das_mohapatra).
-section(cist1300,s002,c14006,630,680,w,peter_kiewit_institute_260,steve_saunders).
+section(cist1300,s001,c14007,810,885,tr,peter_kiewit_institute_361,anshuman_das_mohapatra).
+section(cist1300,s002,c14006,990,1065,mw,peter_kiewit_institute_260,steve_saunders).
 section(cist1400,s001,c14742,900,975,tr,mammel_hall_113,kyle_reestman).
-section(cist1400,s002,c14010,720,795,f,mammel_hall_113,robert_fulkerson).
+section(cist1400,s002,c14010,540,615,mw,mammel_hall_113,robert_fulkerson).
 section(cist1400,s003,c14752,1080,1155,tr,peter_kiewit_institute_263,kyle_reestman).
 section(cist1600,s001,c15277,630,705,mw,peter_kiewit_institute_361,derek_babb).
-section(cist2010,s001,c17564,570,620,w,peter_kiewit_institute_278,martha_a_garcia_murillo).
+section(cist2010,s001,c17564,990,1040,t,peter_kiewit_institute_278,martha_a_garcia_murillo).
 section(cist2100,s001,c14683,720,795,mw,peter_kiewit_institute_274,hollie_rosser).
 section(cist2100,s002,c15414,810,885,mw,peter_kiewit_institute_155,kerry_wayne_ward).
 section(cist2100,s003,c17790,540,615,tr,peter_kiewit_institute_256,paul_j_van_vliet).
-section(cist2100,s820,c14553,540,615,tr,remote_learning,karen_sue_allen).
-section(cist2500,s001,c14758,1080,1240,m,peter_kiewit_institute_153,farhad_mohammad_afzali).
-section(cist2500,s002,c15413,720,795,tr,peter_kiewit_institute_153,christian_haas).
+section(cist2100,s820,c14553,1080,1240,m,remote_learning,karen_sue_allen).
+section(cist2500,s001,c14758,630,680,w,peter_kiewit_institute_153,farhad_mohammad_afzali).
+section(cist2500,s002,c15413,900,975,tr,peter_kiewit_institute_153,christian_haas).
 section(cist2500,s003,c14014,990,1065,mw,peter_kiewit_institute_153,sasan_azizian).
 section(cist3000,s001,c14285,810,885,tr,peter_kiewit_institute_157,thom_davis).
-section(cist3000,s002,c14017,810,885,mw,peter_kiewit_institute_157,thom_davis).
+section(cist3000,s002,c14017,630,705,mw,peter_kiewit_institute_157,thom_davis).
 section(cist3000,s003,c15846,630,705,tr,peter_kiewit_institute_157,thom_davis).
-section(cist3110,s001,c14684,720,795,f,peter_kiewit_institute_278,hollie_rosser).
+section(cist3110,s001,c14684,900,975,mw,peter_kiewit_institute_278,hollie_rosser).
 section(cist3110,s002,c16142,720,795,tr,peter_kiewit_institute_274,andrea_k_grover).
 section(cist3110,s003,c14018,1080,1240,m,peter_kiewit_institute_269,grace_karen_tantillo).
 section(cist3110,s004,c17475,900,975,tr,peter_kiewit_institute_256,andrea_k_grover).
 section(cist9080,s001,c15200,990,1150,w,peter_kiewit_institute_259,ann_l_fruhling).
-section(csci1200,s001,c14024,810,885,tr,peter_kiewit_institute_276,harvey_pe_siy).
-section(csci1200,s002,c16150,630,705,tr,peter_kiewit_institute_276,joel_elson).
+section(csci1200,s001,c14024,900,975,mw,peter_kiewit_institute_276,harvey_pe_siy).
+section(csci1200,s002,c16150,540,615,tr,peter_kiewit_institute_276,joel_elson).
 section(csci1200,s003,c16234,630,705,tr,mammel_hall_319,ash_p_ashokan).
 section(csci1204,s001,c14025,720,795,f,peter_kiewit_institute_276,ash_p_ashokan).
 section(csci1620,s001,c14028,810,885,mw,mammel_hall_113,agatha_sheila_owora).
-section(csci1620,s002,c14030,540,615,tr,mammel_hall_113,kyle_reestman).
+section(csci1620,s002,c14030,900,975,mw,mammel_hall_113,kyle_reestman).
 section(csci1620,s003,c17861,720,795,tr,mammel_hall_113,ash_p_ashokan).
-section(csci2030,s001,c14033,630,680,w,peter_kiewit_institute_256,praval_sharma).
-section(csci2030,s002,c14032,630,680,w,peter_kiewit_institute_164,mark_e_mordeson).
-section(csci2030,s003,c16123,630,705,tr,peter_kiewit_institute_274,mark_e_mordeson).
-section(csci2040,s001,c17587,900,975,tr,peter_kiewit_institute_278,mahadevan_subramaniam).
-section(csci2040,s002,c17588,510,560,r,peter_kiewit_institute_278,mahadevan_subramaniam).
-section(csci2040,s003,c17589,930,980,r,peter_kiewit_institute_278,mahadevan_subramaniam).
-section(csci2240,s001,c14034,570,620,t,peter_kiewit_institute_153,sean_o'malley).
-section(csci2620,s001,c14808,720,795,mf,peter_kiewit_institute_278,brian_c_ricks).
-section(csci3100,s001,c14260,1170,1245,tr,durham_science_center_254,dora_velcsov).
+section(csci2030,s001,c14033,810,885,mw,peter_kiewit_institute_256,praval_sharma).
+section(csci2030,s002,c14032,1080,1155,tr,peter_kiewit_institute_164,mark_e_mordeson).
+section(csci2030,s003,c16123,990,1065,mw,peter_kiewit_institute_274,mark_e_mordeson).
+section(csci2040,s001,c17587,930,980,r,peter_kiewit_institute_278,mahadevan_subramaniam).
+section(csci2040,s002,c17588,900,975,tr,peter_kiewit_institute_278,mahadevan_subramaniam).
+section(csci2040,s003,c17589,810,885,mw,peter_kiewit_institute_278,mahadevan_subramaniam).
+section(csci2240,s001,c14034,720,795,tr,peter_kiewit_institute_153,sean_o'malley).
+section(csci2620,s001,c14808,570,620,w,peter_kiewit_institute_278,brian_c_ricks).
+section(csci3100,s001,c14260,810,860,t,durham_science_center_254,dora_velcsov).
 section(csci3320,s001,c14040,630,705,mw,peter_kiewit_institute_252,jong_hoon_youn).
-section(csci3320,s002,c14038,930,980,r,peter_kiewit_institute_276,brian_c_ricks).
+section(csci3320,s002,c14038,720,795,tr,peter_kiewit_institute_276,brian_c_ricks).
 section(csci3320,s003,c14753,990,1065,tr,peter_kiewit_institute_263,kwangsung_oh).
 section(csci3550,s001,c17612,510,560,r,peter_kiewit_institute_260,jose_m_santos).
-section(csci3660,s001,c14041,630,680,w,peter_kiewit_institute_274,jeff_a_solheim).
-section(csci4100,s001,c17611,540,615,tr,peter_kiewit_institute_274,xin_xing).
-section(csci4150,s001,c15236,810,860,t,peter_kiewit_institute_252,hesham_hassan_ali).
-section(csci4220,s001,c14045,720,795,tr,peter_kiewit_institute_160,jorge_fandinno_garcia).
-section(csci4300,s001,c16070,930,980,t,durham_science_center_104,fabio_torres_vitor).
+section(csci3660,s001,c14041,540,615,tr,peter_kiewit_institute_274,jeff_a_solheim).
+section(csci4100,s001,c17611,930,980,t,peter_kiewit_institute_274,xin_xing).
+section(csci4150,s001,c15236,1080,1240,m,peter_kiewit_institute_252,hesham_hassan_ali).
+section(csci4220,s001,c14045,570,620,t,peter_kiewit_institute_160,jorge_fandinno_garcia).
+section(csci4300,s001,c16070,810,885,mw,durham_science_center_104,fabio_torres_vitor).
 section(csci4350,s001,c14047,540,615,mw,peter_kiewit_institute_155,kwangsung_oh).
 section(csci4350,s002,c14754,990,1065,tr,peter_kiewit_institute_256,jose_m_santos).
-section(csci4350,s003,c20707,630,705,tr,peter_kiewit_institute_261,mahadevan_subramaniam).
+section(csci4350,s003,c20707,810,885,tr,peter_kiewit_institute_261,mahadevan_subramaniam).
 section(csci4380,s001,c15498,630,705,tr,peter_kiewit_institute_361,george_grispos).
-section(csci4450,s001,c14048,810,860,w,peter_kiewit_institute_153,xin_zhong).
+section(csci4450,s001,c14048,1080,1155,tr,peter_kiewit_institute_153,xin_zhong).
 section(csci4450,s002,c16001,900,975,mw,peter_kiewit_institute_256,pei_chi_huang).
-section(csci4500,s001,c14238,570,620,t,peter_kiewit_institute_256,jose_m_santos).
-section(csci4500,s820,c14755,1080,1240,m,remote_learning,bill_l_sousan).
-section(csci4830,s001,c14389,900,975,tr,peter_kiewit_institute_263,eric_lundy).
-section(csci4830,s820,c20688,510,560,r,peter_kiewit_institute_263,eric_lundy).
+section(csci4500,s001,c14238,720,795,mf,peter_kiewit_institute_256,jose_m_santos).
+section(csci4500,s820,c14755,720,795,f,remote_learning,bill_l_sousan).
+section(csci4830,s001,c14389,810,860,t,peter_kiewit_institute_263,eric_lundy).
+section(csci4830,s820,c20688,1170,1245,tr,peter_kiewit_institute_263,eric_lundy).
 section(csci4970,s001,c14063,810,885,tr,peter_kiewit_institute_252,alfredo_perez).
-section(csci8000,s001,c14065,810,885,mw,peter_kiewit_institute_274,jorge_fandinno_garcia).
-section(csci8105,s001,c14261,1170,1245,tr,durham_science_center_254,dora_velcsov).
+section(csci8000,s001,c14065,810,860,w,peter_kiewit_institute_274,jorge_fandinno_garcia).
 section(csci8110,s001,c14726,900,975,tr,peter_kiewit_institute_276,xin_zhong).
-section(csci8156,s001,c15237,810,860,t,peter_kiewit_institute_252,hesham_hassan_ali).
-section(csci8306,s001,c16071,930,980,t,durham_science_center_104,fabio_torres_vitor).
-section(csci8350,s001,c15131,930,980,r,peter_kiewit_institute_160,prashanti_manda).
+section(csci8350,s001,c15131,720,795,mw,peter_kiewit_institute_160,prashanti_manda).
 section(csci8366,s001,c14066,1080,1240,t,peter_kiewit_institute_276,sayonnha_mandal).
-section(csci8456,s001,c16000,810,860,w,peter_kiewit_institute_153,xin_zhong).
-section(csci8456,s002,c16002,900,975,mw,peter_kiewit_institute_256,pei_chi_huang).
-section(csci8500,s001,c20110,990,1065,mw,durham_science_center_211a,mahboub_baccouch).
-section(csci8620,s001,c17255,1080,1240,m,peter_kiewit_institute_261,jong_hoon_youn).
-section(csci8700,s001,c15948,540,615,mw,peter_kiewit_institute_160,harvey_pe_siy).
+section(csci8500,s001,c20110,960,1035,mw,durham_science_center_211a,mahboub_baccouch).
+section(csci8620,s001,c17255,990,1065,tr,peter_kiewit_institute_261,jong_hoon_youn).
+section(csci8700,s001,c15948,930,980,r,peter_kiewit_institute_160,harvey_pe_siy).
+
+class(C) :- section(C,_,_,_,_,_,_,_).
+
+critical_section(cist1010, c15257).
+critical_section(cist1300, c14007).
+critical_section(cist1400, c14742).
+critical_section(cist1600, c15277).
+critical_section(cist2010, c17564).
+critical_section(cist2100, c14683).
+critical_section(cist2500, c14758).
+critical_section(cist3000, c14285).
+critical_section(cist3110, c14684).
+critical_section(cist9080, c15200).
+critical_section(csci1200, c14024).
+critical_section(csci1204, c14025).
+critical_section(csci1620, c14028).
+critical_section(csci2030, c14033).
+critical_section(csci2040, c17587).
+critical_section(csci2240, c14034).
+critical_section(csci2620, c14808).
+critical_section(csci3100, c14260).
+critical_section(csci3320, c14040).
+critical_section(csci3550, c17612).
+critical_section(csci3660, c14041).
+critical_section(csci4100, c17611).
+critical_section(csci4150, c15236).
+critical_section(csci4220, c14045).
+critical_section(csci4300, c16070).
+critical_section(csci4350, c14047).
+critical_section(csci4380, c15498).
+critical_section(csci4450, c14048).
+critical_section(csci4500, c14238).
+critical_section(csci4830, c14389).
+critical_section(csci4970, c14063).
+critical_section(csci8000, c14065).
+critical_section(csci8105, c14261).
+critical_section(csci8110, c14726).
+critical_section(csci8156, c15237).
+critical_section(csci8306, c16071).
+critical_section(csci8350, c15131).
+critical_section(csci8366, c14066).
+critical_section(csci8456, c16000).
+critical_section(csci8500, c20110).
+critical_section(csci8620, c17255).
+critical_section(csci8700, c15948).
 
 course(cist1010, "college_and_career_success", "_").
 course_weight(cist1010, 1, 1).
@@ -361,7 +401,7 @@ non_cs_section(math2050, s002, c12690, 780, 855, mw, durham_science_center_165, 
 non_cs_section(math2050, s003, c12691, 960, 1035, tr, durham_science_center_110, nicholas_kass).
 non_cs_course(math2050, "applied_linear_algebra", "_").
 course_weight(math2050, 1, 2).
-class(csci2240; csci3660; csci4500; csci2620; cist2500; cist2100; csci8105; cist2010; csci4300; csci4350; cist9080; cist1300; cist1400; csci8366; csci2030; csci4100; csci4150; csci8700; csci4450; csci4380; csci2040; csci4830; csci8110; csci8156; cist3110; cist1600; csci3550; csci1620; cist3000; csci8306; csci1204; cist1010; csci4220; csci8456; csci8620; csci3100; csci4970; csci8350; csci8000; csci1200; csci8500; csci3320).
+% class(csci2240; csci3660; csci4500; csci2620; cist2500; cist2100; csci8105; cist2010; csci4300; csci4350; cist9080; cist1300; cist1400; csci8366; csci2030; csci4100; csci4150; csci8700; csci4450; csci4380; csci2040; csci4830; csci8110; csci8156; cist3110; cist1600; csci3550; csci1620; cist3000; csci8306; csci1204; cist1010; csci4220; csci8456; csci8620; csci3100; csci4970; csci8350; csci8000; csci1200; csci8500; csci3320).
 non_cs_class(cmst2120; engl1160; engl1150; cmst1110; math2050; math1950).
 room(mammel_hall_113; durham_science_center_104; durham_science_center_211a; peter_kiewit_institute_164; peter_kiewit_institute_276; remote_learning; peter_kiewit_institute_259; peter_kiewit_institute_155; peter_kiewit_institute_161; peter_kiewit_institute_256; peter_kiewit_institute_274; peter_kiewit_institute_278; peter_kiewit_institute_260; peter_kiewit_institute_261; peter_kiewit_institute_153; peter_kiewit_institute_157; peter_kiewit_institute_269; peter_kiewit_institute_263; peter_kiewit_institute_252; mammel_hall_319; durham_science_center_254; peter_kiewit_institute_361; peter_kiewit_institute_160).
 professor(cathy_stout; xin_zhong; alfredo_perez; ash_p_ashokan; kerry_wayne_ward; xin_xing; dora_velcsov; sean_o'malley; sayonnha_mandal; farhad_mohammad_afzali; robert_fulkerson; harvey_pe_siy; jeff_a_solheim; emily_c_wiemers; praval_sharma; jose_m_santos; sasan_azizian; karen_sue_allen; agatha_sheila_owora; joel_elson; fabio_torres_vitor; pei_chi_huang; anita_l_lee; christian_haas; mark_e_mordeson; javier_torres; alexis_sherman; kyle_reestman; steve_saunders; jorge_fandinno_garcia; derek_babb; hesham_hassan_ali; brian_c_ricks; prashanti_manda; martha_a_garcia_murillo; andrea_k_grover; kwangsung_oh; mahboub_baccouch; farida_majid; thom_davis; anshuman_das_mohapatra; paul_j_van_vliet; bill_l_sousan; grace_karen_tantillo; george_grispos; hollie_rosser; jong_hoon_youn; ann_l_fruhling; eric_lundy; mahadevan_subramaniam).

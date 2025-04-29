@@ -258,6 +258,9 @@ def upload_json_file(request):
                             non_cs_times.add(
                                 f"non_cs_time_slot({start}, {end}, {days})."
                             )
+                    # Add critical sections for both CS and non-CS courses
+                    if section_count == 1:
+                        facts.append(f"critical_section({course_id}, {class_number}).")
 
                 # ignore courses that are entirely comprised of totally online sections
                 if totally_online_count == section_count:
