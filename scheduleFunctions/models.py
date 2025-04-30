@@ -48,6 +48,23 @@ class Course(models.Model):
     credits = models.IntegerField(null=True)
     weight = models.IntegerField()
     def print_clingo(self) -> str:
+        self_text = ''
+        if self.subject in ['CSCI']:
+            self_text = 'course('
+            
+        else:
+            self_text = 'non_cs_course('
+        
+        self_text = self_text 
+        year = self.class_number // 1000
+        if year > 4:
+            year = 5
+        + f'{self.subject.lower()}{self.class_number}'
+        + f', "{self.name.replace(" ", "_").replace("-", "_").replace(".", "").lower()}", "_").'
+        weight_text = f'course_weight({self.subject.lower()}{self.class_number}'
+        + f',{self.weight},{year}).'
+        
+        return {'self': self_text, 'weight': weight_text}
         ...
         
     class Meta:
@@ -76,7 +93,7 @@ class TimeSlot(models.Model):
     def print_clingo(self) -> str:
         self_text = f'time_slot_credits({self.start_time.hour * 60 + self.start_time.minute}, {self.end_time.hour * 60 + self.end_time.minute}, {"".join([day.print_clingo() for day in self.days.all()])}, {self.credits}).'
         
-        return self_text
+        return {'self': self_text}
     
     
 class Section(models.Model):
@@ -89,20 +106,37 @@ class Section(models.Model):
     
     def print_clingo(self) -> str:
         # section(cist1010, s001, c15257, 570, 620, t, peter_kiewit_institute_157, farida_majid).
-        self_text = f'section('        
-        + f'{self.course.subject}{self.course.class_number}'
+        if self.subject in ['CSCI']:
+            self_text = 'section('
+            
+        else:
+            self_text = 'non_cs_section('   
+        self_text = self_text     
+        + f'{self.course.subject.lower()}{self.course.class_number}'
         + f', s{self.section_number}, c{self.section_id}'
-        + f', {self.time_slot.start_time.hour * 60 + self.time_slot.start_time.minute}, {self.time_slot.end_time.hour * 60 + self.time_slot.end_time.minute}'
+        + f', {self.time_slot.start_time.hour * 60 + self.time_slot.start_time.minute}'
+        + f', {self.time_slot.end_time.hour * 60 + self.time_slot.end_time.minute}'
         + f', {"".join([day.print_clingo() for day in self.time_slot.days.all()])}'       
         + f', {self.room.print_clingo()}'       
-        + f', {self.professor.replace(" ", "_")}'        
+        + f', {self.professor.name.replace(" ", "_").replace("-", "_").replace(".", "").lower()}'        
         + ').'
         section_count = Section.objects.filter(course=self.course).count()
         critical_text = ''
         if section_count == 1:
-            critical_text = f'critical_section({self.course.subject}{self.course.class_number}, c{self.section_id}).'
+            critical_text = f'critical_section({self.course.subject.lower()}{self.course.class_number}, c{self.section_id}).'
+        time_slot_text = ''
+        if self.subject in ['CSCI']:
+            time_slot_text = 'time_slot('
+        else:
+            time_slot_text = 'non_cs_time_slot('
+            
+        time_slot_text = time_slot_text
+        + f', {self.time_slot.start_time.hour * 60 + self.time_slot.start_time.minute}'
+        + f', {self.time_slot.end_time.hour * 60 + self.time_slot.end_time.minute}'
+        + f', {"".join([day.print_clingo() for day in self.time_slot.days.all()])}'
+        + ').'
         
-        return '\n'.join([self_text,critical_text])
+        return {'self': self_text,'critical': critical_text, 'time_slot': time_slot_text}
         ...
         
 
