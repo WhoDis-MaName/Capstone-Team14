@@ -10,6 +10,13 @@ class Room(models.Model):
         # peter_kiewit_institute_157
         return "_".join(self.building.lower().split(" ").append(self.room_number))
         ...
+    @classmethod
+    def print_all_clingo(cls):
+        room_list = []
+        for room in cls.objects.all():
+            room_list.append(room.print_clingo())
+        text = 'room(' + ';'.join(room_list) + ').'
+        return text
 
 class Day(models.Model):
     MON = "m"
@@ -72,6 +79,14 @@ class Course(models.Model):
             models.UniqueConstraint(fields=['subject', 'class_number'], name='unique_course_code')
         ]
     
+    @classmethod
+    def print_non_cs(cls):
+        course_list = []
+        for course in cls.objects.exclude(subject__in=['CSCI']):
+            course_list.append(f'{course.subject.lower()}{course.class_number}')
+        text = 'non_cs_class(' + ';'.join(course_list) + ').'
+        return text
+    
 class Requirement(models.Model):
     major_label = models.CharField(max_length=255)
     requirement_label = models.CharField(max_length=255)
@@ -84,6 +99,17 @@ class Requirement(models.Model):
  
 class Proffessor(models.Model):
     name = models.CharField(max_length=255)
+    
+    def print_clingo(self) -> str:
+        return self.name.replace(" ", "_").replace("-", "_").replace(".", "").lower()
+    
+    @classmethod
+    def print_all_clingo(cls):
+        prof_list = []
+        for prof in cls.objects.all():
+            prof_list.append(prof.print_clingo())
+        text = 'professor(' + ';'.join(prof_list) + ').'
+        return text
 class TimeSlot(models.Model):
     start_time = models.TimeField(auto_now=False)
     end_time = models.TimeField(auto_now=False)
@@ -118,7 +144,7 @@ class Section(models.Model):
         + f', {self.time_slot.end_time.hour * 60 + self.time_slot.end_time.minute}'
         + f', {"".join([day.print_clingo() for day in self.time_slot.days.all()])}'       
         + f', {self.room.print_clingo()}'       
-        + f', {self.professor.name.replace(" ", "_").replace("-", "_").replace(".", "").lower()}'        
+        + f', {self.professor.print_clingo()}'        
         + ').'
         section_count = Section.objects.filter(course=self.course).count()
         critical_text = ''
