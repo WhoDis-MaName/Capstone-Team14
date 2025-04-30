@@ -1,0 +1,348 @@
+{
+    "1231": {
+        "CSCI": {
+            "8950": {
+                "title": "GRADUATE INTERNSHIP COMP SCI",
+                "desc": "Prereq: Permission of the graduate program chairperson and a minimum grade point average of 3.0 (B), with at most one grade below B, but not lower than C+ for all CS graduate classes. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "2604 ?",
+                        "Type": "INT",
+                        "Enrolled": "2",
+                        "Class Max": "30",
+                        "Seats Available": "28",
+                        "Credit Hours": "1-3",
+                        "Course Attribute": "Includes Community Based Learning Component",
+                        "Date": "Jan 23, 2023 - May 19, 2023",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "To Be Announced",
+                        "Instructor": "Myoungkyu Song"
+                    }
+                }
+            },
+            "3550": {
+                "title": "COMMUNICATION NETWORKS",
+                "desc": "Prereq: CSCI 3320 or CSCI 8325 with C- or better. Data structures and algorithms. C or C++ programming.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "3875 ?",
+                        "Type": "LEC",
+                        "Enrolled": "34",
+                        "Class Max": "35",
+                        "Seats Available": "1",
+                        "Credit Hours": "3",
+                        "Date": "Jan 23, 2023 - May 12, 2023",
+                        "Time": "1:30PM - 2:45PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 153",
+                        "Instructor": "Jose M. Santos"
+                    },
+                    "850": {
+                        "Class Number": "2583 ?",
+                        "Type": "LEC",
+                        "Enrolled": "36",
+                        "Class Max": "35",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Jan 23, 2023 - May 19, 2023",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Jose M. Santos"
+                    }
+                }
+            },
+            "4200": {
+                "title": "NUMERICAL METHODS",
+                "desc": "Prereq: MATH 1970 and MATH 2050 and MATH 2350 with a C- or better or permission of instructor.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "19374 ?",
+                        "Type": "LEC",
+                        "Enrolled": "1",
+                        "Class Max": "10",
+                        "Seats Available": "9",
+                        "Credit Hours": "3",
+                        "Date": "Jan 23, 2023 - May 19, 2023",
+                        "Time": "4:00PM - 5:15PM",
+                        "Days": "TR",
+                        "Location": "Durham Science Center 110",
+                        "Instructor": "Mahboub Baccouch"
+                    }
+                }
+            },
+            "2240": {
+                "title": "INTRO TO C PROGRAMMING",
+                "desc": "Prereq: CSCI 1620 with grade of C or better",
+                "prereq": "-",
+                "sections": {
+                    "821": {
+                        "Class Number": "2576 ?",
+                        "Type": "LEC",
+                        "Enrolled": "25",
+                        "Class Max": "25",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Remote Learning",
+                        "Note": "This class will be taught remotely via synchronous teaching. Students will need to log in at the specified time but will not physically attend class.",
+                        "Date": "Jan 23, 2023 - May 19, 2023",
+                        "Time": "6:00PM - 7:15PM",
+                        "Days": "MW",
+                        "Location": "Remote Learning",
+                        "Instructor": "Wenning Qiu"
+                    },
+                    "850": {
+                        "Class Number": "2578 ?",
+                        "Type": "LEC",
+                        "Enrolled": "36",
+                        "Class Max": "35",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Jan 23, 2023 - May 19, 2023",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Mark E Mordeson"
+                    },
+                    "851": {
+                        "Class Number": "2577 ?",
+                        "Type": "LEC",
+                        "Enrolled": "35",
+                        "Class Max": "35",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Jan 23, 2023 - May 19, 2023",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Mark E Mordeson"
+                    }
+                }
+            },
+            "2830": {
+                "title": "OO SOFTWARE ENG FUNDAMENTALS",
+                "desc": "Prereq: CSCI 1620 (in Python)",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "16850 ?",
+                        "Type": "LLB",
+                        "Enrolled": "17",
+                        "Class Max": "30",
+                        "Seats Available": "13",
+                        "Credit Hours": "3",
+                        "Date": "Jan 23, 2023 - May 19, 2023",
+                        "Time": "12:00PM - 1:15PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 260",
+                        "Instructor": "Harvey Pe Siy"
+                    }
+                }
+            }
+        },
+        "CIST": {
+            "2500": {
+                "title": "INTRO TO APPLIED STATS FOR IST",
+                "desc": "Prereq: MATH 1220 or permission of an instructor",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "2622 ?",
+                        "Type": "LEC",
+                        "Enrolled": "25",
+                        "Class Max": "25",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Jan 23, 2023 - May 19, 2023",
+                        "Time": "1:30PM - 2:45PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 160",
+                        "Instructor": "Nicolas J LaLone"
+                    },
+                    "820": {
+                        "Class Number": "16859 ?",
+                        "Type": "LEC",
+                        "Enrolled": "30",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Remote Learning",
+                        "Date": "Jan 23, 2023 - May 19, 2023",
+                        "Time": "6:00PM - 8:40PM",
+                        "Days": "T",
+                        "Location": "Remote Learning",
+                        "Instructor": "Foluso Ayeni"
+                    },
+                    "850": {
+                        "Class Number": "2623 ?",
+                        "Type": "LEC",
+                        "Enrolled": "31",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Jan 23, 2023 - May 19, 2023",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Lucas Smith"
+                    }
+                }
+            },
+            "9970": {
+                "title": "RESEARCH OTHER THAN THESIS",
+                "desc": "Prereq: Requires instructor permission. Only open to doctoral students in the IT PhD program. Course cannot be taken for credit after candidacy nor count towards core/major field of study requirements in the IT PhD. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "3229 ?",
+                        "Type": "RSC",
+                        "Enrolled": "4",
+                        "Class Max": "15",
+                        "Seats Available": "11",
+                        "Credit Hours": "1-3",
+                        "Note": "Permission of GPC required prior to enrolling.",
+                        "Date": "Jan 23, 2023 - May 19, 2023",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "To Be Announced",
+                        "Instructor": "Ann L Fruhling"
+                    }
+                }
+            },
+            "1300": {
+                "title": "INTRO TO WEB DEVELOPMENT",
+                "desc": "Prereq: MATH 1120 or MATH 1130 or MATH 1220  (or equivalent) with C- or better, or permission of the instructor",
+                "prereq": "-",
+                "sections": {
+                    "850": {
+                        "Class Number": "2607 ?",
+                        "Type": "LEC",
+                        "Enrolled": "66",
+                        "Class Max": "65",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Jan 23, 2023 - May 19, 2023",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Robert Fulkerson"
+                    },
+                    "860": {
+                        "Class Number": "3861 ?",
+                        "Type": "LEC",
+                        "Enrolled": "25",
+                        "Class Max": "30",
+                        "Seats Available": "5",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Partially Online",
+                        "Date": "Jan 23, 2023 - May 19, 2023",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Partially Online",
+                        "Instructor": "Steve Saunders"
+                    }
+                }
+            },
+            "9050": {
+                "title": "COLLOQUIUM ON IT TEACHING",
+                "desc": "Prereq: Doctoral students in Information Technology and Biomedical informatics. Students from doctoral programs across the University of Nebraska are welcome to register with permission of instructor. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "3362 ?",
+                        "Type": "SEM",
+                        "Enrolled": "6",
+                        "Class Max": "15",
+                        "Seats Available": "9",
+                        "Credit Hours": "1",
+                        "Note": "March 1 - April 12",
+                        "Date": "Mar 01, 2023 - Apr 12, 2023",
+                        "Time": "4:30PM - 5:45PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 157",
+                        "Instructor": "Deepak Khazanchi"
+                    }
+                }
+            },
+            "1400": {
+                "title": "INTRO TO CS I",
+                "desc": "Prereq: MATH 1320, and either CSCI 1200 or CSCI 1280 or CIST 1300 with C- or better, or permission of the instructor",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "2608 ?",
+                        "Type": "LEC",
+                        "Enrolled": "49",
+                        "Class Max": "70",
+                        "Seats Available": "21",
+                        "Credit Hours": "3",
+                        "Date": "Jan 23, 2023 - May 19, 2023",
+                        "Time": "10:30AM - 11:45AM",
+                        "Days": "TR",
+                        "Location": "Scott Technology Center 102B",
+                        "Instructor": "Robert Fulkerson"
+                    },
+                    "002": {
+                        "Class Number": "2609 ?",
+                        "Type": "LEC",
+                        "Enrolled": "68",
+                        "Class Max": "70",
+                        "Seats Available": "2",
+                        "Credit Hours": "3",
+                        "Date": "Jan 23, 2023 - May 19, 2023",
+                        "Time": "3:00PM - 4:15PM",
+                        "Days": "MW",
+                        "Location": "Scott Technology Center 102B",
+                        "Instructor": "Kyle Reestman"
+                    },
+                    "850": {
+                        "Class Number": "2615 ?",
+                        "Type": "LEC",
+                        "Enrolled": "53",
+                        "Class Max": "50",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Jan 23, 2023 - May 19, 2023",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Robert Fulkerson"
+                    },
+                    "861": {
+                        "Class Number": "19158 ?",
+                        "Type": "LAB",
+                        "Enrolled": "170",
+                        "Class Max": "180",
+                        "Seats Available": "10",
+                        "Course Attribute": "Partially Online",
+                        "Note": "Lab times will be scheduled during the first week of the semester based on student availability. Labs will meet for 90 minutes each week either on campus or via Zoom.",
+                        "Date": "Jan 23, 2023 - May 19, 2023",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Partially Online",
+                        "Instructor": "Robert Fulkerson"
+                    }
+                }
+            }
+        }
+    }
+}

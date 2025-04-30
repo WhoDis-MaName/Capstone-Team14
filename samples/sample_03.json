@@ -1,0 +1,448 @@
+{
+    "1248": {
+        "CIST": {
+            "1600": {
+                "title": "PRACTICAL SCRIPTING",
+                "desc": "Prereq: Not intended for students who have completed CIST 1400 and CSCI 1620",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "15277 ?",
+                        "Type": "LLB",
+                        "Enrolled": "35",
+                        "Class Max": "35",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Open Nebraska (No Cost Materials)",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "10:30AM - 11:45AM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 361",
+                        "Instructor": "Derek Babb"
+                    },
+                    "850": {
+                        "Class Number": "14862 ?",
+                        "Type": "LLB",
+                        "Enrolled": "34",
+                        "Class Max": "35",
+                        "Seats Available": "1",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Derek Babb"
+                    }
+                }
+            },
+            "1300": {
+                "title": "INTRO TO WEB DEVELOPMENT",
+                "desc": "Prereq: High school algebra or equivalent",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "14007 ?",
+                        "Type": "LEC",
+                        "Enrolled": "35",
+                        "Class Max": "35",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "1:30PM - 2:45PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 361",
+                        "Instructor": "Anshuman Das Mohapatra"
+                    },
+                    "002": {
+                        "Class Number": "14006 ?",
+                        "Type": "LEC",
+                        "Enrolled": "19",
+                        "Class Max": "35",
+                        "Seats Available": "16",
+                        "Credit Hours": "3",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "4:30PM - 5:45PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 260",
+                        "Instructor": "Steve Saunders"
+                    },
+                    "850": {
+                        "Class Number": "14008 ?",
+                        "Type": "LEC",
+                        "Enrolled": "60",
+                        "Class Max": "60",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Robert Fulkerson"
+                    }
+                }
+            },
+            "9080": {
+                "title": "RESEARCH DIRECTIONS IN I.T.",
+                "desc": "Prereq: Doctoral standing in Information Technology or permission of course coordinators. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "15200 ?",
+                        "Type": "LEC",
+                        "Enrolled": "5",
+                        "Class Max": "15",
+                        "Seats Available": "10",
+                        "Credit Hours": "3",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "4:30PM - 7:10PM",
+                        "Days": "W",
+                        "Location": "Peter Kiewit Institute 259",
+                        "Instructor": "Ann L Fruhling"
+                    }
+                }
+            },
+            "1010": {
+                "title": "COLLEGE AND CAREER SUCCESS",
+                "desc": "Prereq: Students may count only one of CIST 1010, US 1010, or US 1020 toward undergraduate degree requirements. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "15257 ?",
+                        "Type": "SEM",
+                        "Enrolled": "20",
+                        "Class Max": "20",
+                        "Seats Available": "0",
+                        "Credit Hours": "1",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Open Nebraska (No Cost Materials)",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "9:30AM - 10:20AM",
+                        "Days": "T",
+                        "Location": "Peter Kiewit Institute 157",
+                        "Instructor": "Farida Majid"
+                    },
+                    "002": {
+                        "Class Number": "15258 ?",
+                        "Type": "SEM",
+                        "Enrolled": "14",
+                        "Class Max": "20",
+                        "Seats Available": "6",
+                        "Credit Hours": "1",
+                        "Course Attribute": "Open Nebraska (No Cost Materials)",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "3:30PM - 4:20PM",
+                        "Days": "T",
+                        "Location": "Peter Kiewit Institute 157",
+                        "Instructor": "Emily C Wiemers"
+                    },
+                    "003": {
+                        "Class Number": "15259 ?",
+                        "Type": "SEM",
+                        "Enrolled": "20",
+                        "Class Max": "20",
+                        "Seats Available": "0",
+                        "Credit Hours": "1",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Open Nebraska (No Cost Materials)",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "4:30PM - 5:20PM",
+                        "Days": "T",
+                        "Location": "Peter Kiewit Institute 157",
+                        "Instructor": "Anita L Lee"
+                    },
+                    "004": {
+                        "Class Number": "15260 ?",
+                        "Type": "SEM",
+                        "Enrolled": "16",
+                        "Class Max": "20",
+                        "Seats Available": "4",
+                        "Credit Hours": "1",
+                        "Course Attribute": "Open Nebraska (No Cost Materials)",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "9:30AM - 10:20AM",
+                        "Days": "W",
+                        "Location": "Peter Kiewit Institute 157",
+                        "Instructor": "Anita L Lee"
+                    },
+                    "005": {
+                        "Class Number": "15261 ?",
+                        "Type": "SEM",
+                        "Enrolled": "20",
+                        "Class Max": "20",
+                        "Seats Available": "0",
+                        "Credit Hours": "1",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Open Nebraska (No Cost Materials)",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "1:30PM - 2:20PM",
+                        "Days": "W",
+                        "Location": "Peter Kiewit Institute 157",
+                        "Instructor": "Cathy Stout"
+                    },
+                    "006": {
+                        "Class Number": "15381 ?",
+                        "Type": "SEM",
+                        "Enrolled": "13",
+                        "Class Max": "20",
+                        "Seats Available": "7",
+                        "Credit Hours": "1",
+                        "Course Attribute": "Open Nebraska (No Cost Materials)",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "8:30AM - 9:20AM",
+                        "Days": "R",
+                        "Location": "Peter Kiewit Institute 157",
+                        "Instructor": "Javier Torres"
+                    },
+                    "007": {
+                        "Class Number": "15382 ?",
+                        "Type": "SEM",
+                        "Enrolled": "11",
+                        "Class Max": "20",
+                        "Seats Available": "9",
+                        "Credit Hours": "1",
+                        "Course Attribute": "Open Nebraska (No Cost Materials)",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "3:30PM - 4:20PM",
+                        "Days": "R",
+                        "Location": "Peter Kiewit Institute 157",
+                        "Instructor": "Anita L Lee"
+                    },
+                    "008": {
+                        "Class Number": "16140 ?",
+                        "Type": "SEM",
+                        "Enrolled": "20",
+                        "Class Max": "20",
+                        "Seats Available": "0",
+                        "Credit Hours": "1",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Open Nebraska (No Cost Materials)",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "1:30PM - 2:20PM",
+                        "Days": "T",
+                        "Location": "Peter Kiewit Institute 161",
+                        "Instructor": "Emily C Wiemers"
+                    },
+                    "009": {
+                        "Class Number": "16223 ?",
+                        "Type": "SEM",
+                        "Enrolled": "20",
+                        "Class Max": "20",
+                        "Seats Available": "0",
+                        "Credit Hours": "1",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Open Nebraska (No Cost Materials)",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "10:30AM - 11:20AM",
+                        "Days": "W",
+                        "Location": "Peter Kiewit Institute 261",
+                        "Instructor": "Alexis Sherman"
+                    }
+                }
+            },
+            "1400": {
+                "title": "INTRO TO CS I",
+                "desc": "Prereq: MATH 1300, MATH 1320, or MATH 1370 (may be taken concurrently) and one of CIST 1300, CSCI 1200, or CSCI 1280 with a grade of C- or better.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "14742 ?",
+                        "Type": "LEC",
+                        "Enrolled": "72",
+                        "Class Max": "90",
+                        "Seats Available": "18",
+                        "Credit Hours": "3",
+                        "Topic": "Lecture",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "3:00PM - 4:15PM",
+                        "Days": "TR",
+                        "Location": "Mammel Hall 113",
+                        "Instructor": "Kyle Reestman"
+                    },
+                    "002": {
+                        "Class Number": "14010 ?",
+                        "Type": "LEC",
+                        "Enrolled": "84",
+                        "Class Max": "90",
+                        "Seats Available": "6",
+                        "Credit Hours": "3",
+                        "Topic": "Lecture",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "9:00AM - 10:15AM",
+                        "Days": "MW",
+                        "Location": "Mammel Hall 113",
+                        "Instructor": "Robert Fulkerson"
+                    },
+                    "003": {
+                        "Class Number": "14752 ?",
+                        "Type": "LEC",
+                        "Enrolled": "18",
+                        "Class Max": "35",
+                        "Seats Available": "17",
+                        "Credit Hours": "3",
+                        "Topic": "Lecture",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "6:00PM - 7:15PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 263",
+                        "Instructor": "Kyle Reestman"
+                    },
+                    "850": {
+                        "Class Number": "14011 ?",
+                        "Type": "LEC",
+                        "Enrolled": "46",
+                        "Class Max": "45",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Topic": "Lecture",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Robert Fulkerson"
+                    },
+                    "861": {
+                        "Class Number": "15219 ?",
+                        "Type": "LAB",
+                        "Enrolled": "220",
+                        "Class Max": "250",
+                        "Seats Available": "30",
+                        "Course Attribute": "Partially Online",
+                        "Note": "Lab times will be scheduled during the first week of the semester based on student availability. Labs will meet for 90 minutes each week either on campus or via Zoom.",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Partially Online",
+                        "Instructor": "Robert Fulkerson"
+                    }
+                }
+            }
+        },
+        "CSCI": {
+            "4990": {
+                "title": "INDEPENDENT STUDIES",
+                "desc": "Prereq: Written permission required. Independent study proposals must be approved by the Undergraduate Program Committee.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "14064 ?",
+                        "Type": "IND",
+                        "Enrolled": "0",
+                        "Class Max": "10",
+                        "Seats Available": "10",
+                        "Credit Hours": "1-3",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "To Be Announced",
+                        "Instructor": "Harvey Pe Siy"
+                    }
+                }
+            },
+            "8960": {
+                "title": "THESIS EQUIVALENT PROJECT CSCI",
+                "desc": "Prereq: Permission of Graduate Adviser. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "14070 ?",
+                        "Type": "MST",
+                        "Enrolled": "2",
+                        "Class Max": "30",
+                        "Seats Available": "28",
+                        "Credit Hours": "1-6",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "To Be Announced",
+                        "Instructor": "Jong-Hoon Youn"
+                    }
+                }
+            },
+            "4300": {
+                "title": "DETERMINISTIC OR RSRCH MODELS",
+                "desc": "Prereq: MATH 2050 with a C- or better or permission of instructor.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "16070 ?",
+                        "Type": "LEC",
+                        "Enrolled": "11",
+                        "Class Max": "16",
+                        "Seats Available": "5",
+                        "Credit Hours": "3",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "4:00PM - 5:15PM",
+                        "Days": "MW",
+                        "Location": "Durham Science Center 104",
+                        "Instructor": "Fabio Torres Vitor"
+                    }
+                }
+            },
+            "8306": {
+                "title": "DETERMINISTIC OR RSRCH MODELS",
+                "desc": "Prereq: MATH 2050 with a C- or better or permission of instructor.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "16071 ?",
+                        "Type": "LEC",
+                        "Enrolled": "0",
+                        "Class Max": "3",
+                        "Seats Available": "3",
+                        "Credit Hours": "3",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "4:00PM - 5:15PM",
+                        "Days": "MW",
+                        "Location": "Durham Science Center 104",
+                        "Instructor": "Fabio Torres Vitor"
+                    }
+                }
+            },
+            "8656": {
+                "title": "INTRO TO CLOUD COMPUTING",
+                "desc": "Prereq: Prior experience and background knowledge of networking and operating systems are preferred",
+                "prereq": "-",
+                "sections": {
+                    "850": {
+                        "Class Number": "15384 ?",
+                        "Type": "LLB",
+                        "Enrolled": "20",
+                        "Class Max": "20",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Tiffany Zhang"
+                    },
+                    "851": {
+                        "Class Number": "20700 ?",
+                        "Type": "LLB",
+                        "Enrolled": "10",
+                        "Class Max": "10",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Tiffany Zhang"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,290 @@
+{
+    "1225": {
+        "CSCI": {
+            "8856": {
+                "title": "DATABASE MANAGEMENT SYSTEMS",
+                "desc": "-",
+                "prereq": "-",
+                "sections": {
+                    "820": {
+                        "Class Number": "7015 ?",
+                        "Type": "LEC",
+                        "Enrolled": "12",
+                        "Class Max": "11",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Remote Learning",
+                        "Date": "Jul 05, 2022 - Aug 12, 2022",
+                        "Time": "5:00PM - 8:20PM",
+                        "Days": "MW",
+                        "Location": "Remote Learning",
+                        "Instructor": "Zhengxin Chen"
+                    }
+                }
+            },
+            "4430": {
+                "title": "QUANTUM COMPUTING AND CRYPTO",
+                "desc": "Prereq: Co-requisites: CYBR 3570 or CSCI 4560; or Instructor permission.",
+                "prereq": "-",
+                "sections": {
+                    "820": {
+                        "Class Number": "7602 ?",
+                        "Type": "LEC",
+                        "Enrolled": "5",
+                        "Class Max": "10",
+                        "Seats Available": "5",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Remote Learning",
+                        "Date": "May 23, 2022 - Jul 01, 2022",
+                        "Time": "5:00PM - 7:10PM",
+                        "Days": "TWR",
+                        "Location": "Remote Learning",
+                        "Instructor": "Abhishek Parakh"
+                    }
+                }
+            },
+            "8080": {
+                "title": "DSGN & ANALYSIS OF ALGORITHMS",
+                "desc": "Prereq: CSCI 3320 or CSCI 8325 or equivalent. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "850": {
+                        "Class Number": "7010 ?",
+                        "Type": "LEC",
+                        "Enrolled": "30",
+                        "Class Max": "34",
+                        "Seats Available": "4",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Jul 05, 2022 - Aug 12, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Hesham Hassan Ali"
+                    }
+                }
+            },
+            "2240": {
+                "title": "INTRO TO C PROGRAMMING",
+                "desc": "Prereq: CSCI 1620 with grade of C or better",
+                "prereq": "-",
+                "sections": {
+                    "850": {
+                        "Class Number": "7016 ?",
+                        "Type": "LEC",
+                        "Enrolled": "22",
+                        "Class Max": "30",
+                        "Seats Available": "8",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "May 23, 2022 - Aug 12, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Jeff A Solheim"
+                    }
+                }
+            },
+            "1200": {
+                "title": "CS PRINCIPLES",
+                "desc": "Prereq: MATH 1120 or MATH 1130 or MATH 1220 or equivalent with C- or better, or permission of the instructor",
+                "prereq": "-",
+                "sections": {
+                    "850": {
+                        "Class Number": "7023 ?",
+                        "Type": "LEC",
+                        "Enrolled": "25",
+                        "Class Max": "30",
+                        "Seats Available": "5",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Natural/Physical Sci General Education lecture",
+                        "Date": "Jul 05, 2022 - Aug 12, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Kyle Reestman"
+                    },
+                    "851": {
+                        "Class Number": "7219 ?",
+                        "Type": "LEC",
+                        "Enrolled": "22",
+                        "Class Max": "30",
+                        "Seats Available": "8",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Natural/Physical Sci General Education lecture",
+                        "Date": "May 23, 2022 - Jul 01, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Kyle Reestman"
+                    }
+                }
+            }
+        },
+        "CIST": {
+            "9980": {
+                "title": "IND STUDY IN IT",
+                "desc": "Prereq: Requires instructor permission. Only open to doctoral students in the IT PhD program. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "301": {
+                        "Class Number": "7002 ?",
+                        "Type": "IND",
+                        "Enrolled": "1",
+                        "Class Max": "5",
+                        "Seats Available": "4",
+                        "Credit Hours": "1-3",
+                        "Date": "May 23, 2022 - Aug 12, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "To Be Announced",
+                        "Instructor": "Spyridon Mastorakis"
+                    }
+                }
+            },
+            "2500": {
+                "title": "INTRO TO APPLIED STATS FOR IST",
+                "desc": "Prereq: MATH 1220 or permission of an instructor",
+                "prereq": "-",
+                "sections": {
+                    "850": {
+                        "Class Number": "6997 ?",
+                        "Type": "LEC",
+                        "Enrolled": "24",
+                        "Class Max": "30",
+                        "Seats Available": "6",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Note": "Session 3:  May 23 - August 12",
+                        "Date": "May 23, 2022 - Aug 12, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Lucas Smith"
+                    }
+                }
+            },
+            "1400": {
+                "title": "INTRO TO CS I",
+                "desc": "Prereq: MATH 1320, and either CSCI 1200 or CSCI 1280 or CIST 1300 with C- or better, or permission of the instructor",
+                "prereq": "-",
+                "sections": {
+                    "850": {
+                        "Class Number": "7006 ?",
+                        "Type": "LEC",
+                        "Enrolled": "33",
+                        "Class Max": "35",
+                        "Seats Available": "2",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "May 23, 2022 - Aug 12, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Robert Fulkerson"
+                    },
+                    "854": {
+                        "Class Number": "6999 ?",
+                        "Type": "LEC",
+                        "Enrolled": "28",
+                        "Class Max": "30",
+                        "Seats Available": "2",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "May 23, 2022 - Aug 12, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Robert Fulkerson"
+                    },
+                    "861": {
+                        "Class Number": "7007 ?",
+                        "Type": "LAB",
+                        "Enrolled": "33",
+                        "Class Max": "35",
+                        "Seats Available": "2",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Partially Online",
+                        "Note": "Students enrolled in CIST 1400 labs this semester will attend a 90-minute synchronous lab each week via Zoom. This lab will be scheduled during the first week of the semester.",
+                        "Topic": "Laboratory",
+                        "Date": "May 23, 2022 - Aug 12, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Partially Online"
+                    },
+                    "863": {
+                        "Class Number": "7001 ?",
+                        "Type": "LAB",
+                        "Enrolled": "28",
+                        "Class Max": "30",
+                        "Seats Available": "2",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Partially Online",
+                        "Note": "Students enrolled in CIST 1400 labs this semester will attend a 90-minute synchronous lab each week via Zoom. This lab will be scheduled during the first week of the semester.",
+                        "Topic": "Laboratory",
+                        "Date": "May 23, 2022 - Aug 12, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Partially Online"
+                    }
+                }
+            },
+            "3110": {
+                "title": "IT ETHICS",
+                "desc": "Prereq: ENGL 1150 or placement in a second or third-year writing class, and sophomore standing",
+                "prereq": "-",
+                "sections": {
+                    "850": {
+                        "Class Number": "7008 ?",
+                        "Type": "LEC",
+                        "Enrolled": "28",
+                        "Class Max": "30",
+                        "Seats Available": "2",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Humanities and Fine Arts General Education course",
+                        "Date": "May 23, 2022 - Jul 01, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Cale L. Corbett"
+                    },
+                    "851": {
+                        "Class Number": "6995 ?",
+                        "Type": "LEC",
+                        "Enrolled": "25",
+                        "Class Max": "30",
+                        "Seats Available": "5",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Humanities and Fine Arts General Education course",
+                        "Date": "Jul 05, 2022 - Aug 12, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Gina Iorga"
+                    }
+                }
+            },
+            "9990": {
+                "title": "DISSERTATION",
+                "desc": "Prereq: Admission to the Ph.D. program in Information Technology. Admission to candidacy for the Ph.D. degree. Prior to enrolling for dissertation hours, the students must have permission of the supervisory committee. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "301": {
+                        "Class Number": "7003 ?",
+                        "Type": "DSR",
+                        "Enrolled": "3",
+                        "Class Max": "10",
+                        "Seats Available": "7",
+                        "Credit Hours": "1-12",
+                        "Date": "May 23, 2022 - Aug 12, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "To Be Announced",
+                        "Instructor": "Spyridon Mastorakis"
+                    }
+                }
+            }
+        }
+    }
+}
