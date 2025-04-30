@@ -128,14 +128,14 @@ def store_plan(json_file) -> None:
             year = (int(semester_number) // 10) - 1
             semester = int(semester_number) % 10
             
-        selected_semester = PlanSemester.objects.get(year=year_keys[year], semester=semester_keys[semester])
-        if not selected_semester.exists():
+            
+        try:
+            selected_semester = PlanSemester.objects.get(year=year_keys[year], semester=semester_keys[semester])
+        except PlanSemester.DoesNotExist:
             selected_semester = PlanSemester(
                 year=year_keys[year], 
                 semester=semester_keys[semester]
             )
-        else:
-            selected_semester = list(selected_semester)[0]
         
         selected_semester.save()    
         selected_semester.courses.add(selected_course)

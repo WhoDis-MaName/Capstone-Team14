@@ -208,10 +208,10 @@ class PlanSemester(models.Model):
 #     new_room = models.ForeignKey(Room, on_delete=models.SET_NULL, null=True, blank=True)
 #     ...
     
-class Conflict(models.Model):
-    sectionA = models.ForeignKey(Section, on_delete=models.CASCADE, related_name='conflicts_as_A')
-    sectionB = models.ForeignKey(Section, on_delete=models.CASCADE, related_name='conflicts_as_B')
-    ...
+# class Conflict(models.Model):
+#     sectionA = models.ForeignKey(Section, on_delete=models.CASCADE, related_name='conflicts_as_A')
+#     sectionB = models.ForeignKey(Section, on_delete=models.CASCADE, related_name='conflicts_as_B')
+#     ...
     
 from django.db import models
 
