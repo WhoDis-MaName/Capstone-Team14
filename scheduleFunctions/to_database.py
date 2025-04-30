@@ -2,6 +2,7 @@ import os
 import json
 import re
 from datetime import datetime as date
+from django.db.models import Count
 
 from .models import *
 
@@ -20,36 +21,32 @@ def store_requirements(json_file):
         
     for major_label in data.keys():
         for requirement_label in data[major_label].keys():
-            requirement_query = Requirement.objects.filter(major_label=major_label, requirement_label=requirement_label)
-            
-            if not requirement_query.exists():
-                courses = data[major_label][requirement_label]['classes']
-                course_list = []
-                for course in courses:
-                    subject = course[:-4]
-                    course_number = int(course[-4:])
-                    selected_course = Course.objects.filter(subject = subject, class_number=course_number)
-                    if  not selected_course.exists():
-                        selected_course = Course(
-                            subject = subject, 
-                            class_number=course_number,
-                            weight = course_number // 1000
-                        )
-                        selected_course.save()
-                        course_list.append(selected_course)
-                    else:
-                        course_list.extend(list(selected_course))
-                    
-                    
-                 
-                
+            try:
+                requirement = Requirement.objects.get(major_label=major_label, requirement_label=requirement_label)
+            except Requirement.DoesNotExist:
                 requirement = Requirement(
                     major_label = major_label,
                     requirement_label = requirement_label,
                     total_credits = data[major_label][requirement_label]['credits']
                 )
                 requirement.save()
-                requirement.course_options.add(*course_list)
+                
+            courses = data[major_label][requirement_label]['classes']
+            course_list = []
+            for course in courses:
+                subject = course[:-4]
+                course_number = int(course[-4:])
+                try:
+                    selected_course = Course.objects.get(subject = subject, class_number=course_number)
+                except Course.DoesNotExist:
+                    selected_course = Course(
+                        subject = subject, 
+                        class_number=course_number,
+                        weight = course_number // 1000
+                    )
+                    selected_course.save()
+                course_list.append(selected_course)                  
+            requirement.course_options.add(*course_list)
                 
                 
 def store_plan(json_file) -> None:
@@ -88,35 +85,34 @@ def store_plan(json_file) -> None:
         
         equivalent_courses = []
         for other_course in course_details['equivalent_courses']:
-            selected_other_course = Course.objects.filter(
-                subject=other_course[:-4], 
-                class_number=int(other_course[-4:]))
-            if not selected_other_course.exists():
+            try:
+                selected_other_course = Course.objects.get(
+                    subject=other_course[:-4], 
+                    class_number=int(other_course[-4:]))
+            except Course.DoesNotExist:
                 selected_other_course = Course(
                     subject=other_course[:-4], 
                     class_number=int(other_course[-4:]),
                     weight = int(other_course[-4:]) // 1000
                 )
                 selected_other_course.save()
-                same_semester.append(selected_other_course)
-            else:
-                same_semester.extend(list(selected_other_course))
+                
+            equivalent_courses.append(selected_other_course)
         
         same_semester = []
         for other_course in course_details['same_semester']:
-            selected_other_course = Course.objects.filter(
-                subject=other_course[:-4], 
-                class_number=int(other_course[-4:]))
-            if not selected_other_course.exists():
+            try:
+                selected_other_course = Course.objects.get(
+                    subject=other_course[:-4], 
+                    class_number=int(other_course[-4:]))
+            except Course.DoesNotExist:
                 selected_other_course = Course(
                     subject=other_course[:-4], 
                     class_number=int(other_course[-4:]),
                     weight = int(other_course[-4:]) // 1000
                 )
                 selected_other_course.save()
-                same_semester.append(selected_other_course)
-            else:
-                same_semester.extend(list(selected_other_course))
+            same_semester.append(selected_other_course)
         
         selected_course.save()
         selected_course.equivalent_courses.add(*equivalent_courses)
@@ -132,7 +128,7 @@ def store_plan(json_file) -> None:
             year = (int(semester_number) // 10) - 1
             semester = int(semester_number) % 10
             
-        selected_semester = PlanSemester.objects.filter(year=year_keys[year], semester=semester_keys[semester])
+        selected_semester = PlanSemester.objects.get(year=year_keys[year], semester=semester_keys[semester])
         if not selected_semester.exists():
             selected_semester = PlanSemester(
                 year=year_keys[year], 
@@ -163,15 +159,14 @@ def store_schedule(json_file: str) -> None:
     schedule = data[max(data.keys())]
     for subject, courses in schedule.items():
         for course, details in courses.items():
-            selected_course = Course.objects.filter(subject=subject, class_number=int(course))
-            if not selected_course.exists():
+            try:
+                selected_course = Course.objects.get(subject=subject, class_number=int(course))
+            except Course.DoesNotExist:
                 selected_course = Course(
                     subject = subject, 
                     class_number=int(course),
                     weight = int(course) // 1000
                 )
-            else:
-                selected_course = list(selected_course)[0]
                 
             selected_course.name = details["title"]
             credit_hours = details['sections'][next(iter(details['sections']))]["Credit Hours"]
@@ -183,20 +178,29 @@ def store_schedule(json_file: str) -> None:
             selected_course.save()
             
             for section, section_details in details['sections'].items():
-                if section_details['Location'] in ['Totally Online', 'To Be Announced']:
+                if section_details['Location'] in ['Totally Online', 'To Be Announced', 'Partially Online'] or section_details['Time'] == 'TBA':
                     print(f"{section_details['Location']} - Skipping")
                     continue
 
-                selected_section = Section.objects.filter(course=selected_course, section_number=int(section))
-                if not selected_section.exists():
+                try:
+                    selected_section = Section.objects.get(course=selected_course, section_number=int(section))
+                except Section.DoesNotExist:
                     selected_section = Section(
                         course=selected_course, 
                         section_number=int(section)
                     ) 
-                else:
-                    selected_section = list(selected_section)[0]
+                
                 selected_section.section_id = int(section_details['Class Number'].split(" ")[0])
-                selected_section.professor = section_details['Instructor']
+                
+                try:
+                    selected_professor = Proffessor.objects.get(name = section_details['Instructor'])
+                except Proffessor.DoesNotExist:
+                    selected_professor = Proffessor(
+                        name = section_details['Instructor']
+                        ) 
+                    selected_professor.save()
+                
+                selected_section.professor = selected_professor
                 room_dict = re.search('(?P<building>.+)\s?(?P<room_number>[0-9]*)', section_details['Location'])
                 # print(room_dict.group('building'))
                 # print(room_dict.group('room_number'))
@@ -204,31 +208,66 @@ def store_schedule(json_file: str) -> None:
                     room_number = 0
                 else:
                     room_number = int(room_dict.group('room_number'))
-        
-                selected_room = Room.objects.filter(building = room_dict.group('building'), room_number = room_number)
-                if not selected_room.exists():
+                    
+                    
+                try:
+                    selected_room = Room.objects.get(building = room_dict.group('building'), room_number = room_number)
+                except Room.DoesNotExist:
                     selected_room = Room(
                         building = room_dict.group('building'), 
                         room_number = room_number,
                         capacity = int(section_details['Class Max'])
                     )
-                else:
-                    selected_room = list(selected_room)[0]
+                    selected_room.save()
                 
                 selected_room.capacity = max(selected_room.capacity, int(section_details['Class Max']))
                 selected_room.save()
                 selected_section.room = selected_room
-                # print(section_details['Time'])
-                start_time, end_time = section_details['Time'].split(' - ')
+                
+                try:
+                    start_time, end_time = section_details['Time'].split(' - ')
+                    
+                except ValueError as e:
+                    print(section_details['Time'], '-', subject, course, section)
+                    raise e
+                    start_time, end_time = (None, None)
                 
                 start_time = date.strptime(start_time, "%I:%M%p")
                 end_time = date.strptime(end_time, "%I:%M%p")
                 
+                
                 selected_section.start_time = start_time
                 selected_section.end_time = end_time
                 
+                selected_days = Day.objects.filter(day_of_week__in = [Day.DAY_OF_WEEK_CHOICES[day] for day in section_details['Days'].lower()])
+
+                try:
+                    selected_time = TimeSlot.objects.annotate(
+                        num_days=Count('days')
+                    ).filter(
+                        days__in = selected_days
+                    ).filter(
+                        num_days=len(selected_days)
+                    ).distinct().get()
+                except TimeSlot.DoesNotExist:
+                    selected_time = TimeSlot(
+                        start_time = start_time, 
+                        end_time = end_time,
+                        credits = credit_hours
+                    )
+                    selected_time.save()
+                    for day in selected_days:
+                        selected_time.days.add(day)
+                except TimeSlot.MultipleObjectsReturned:
+                    timeslots = TimeSlot.objects.annotate(
+                        num_days=Count('days')
+                    ).filter(
+                        days__in = selected_days
+                    ).filter(
+                        num_days=len(selected_days)
+                    ).distinct()
+                    for time in timeslots:
+                        print(time.print_clingo())
+                selected_section.time_slot = selected_time
                 selected_section.save()
-                for day in section_details['Days'].lower():
-                    selected_day = Day.objects.get(day_of_week = Day.DAY_OF_WEEK_CHOICES[day])
-                    selected_section.days.add(selected_day)
                 

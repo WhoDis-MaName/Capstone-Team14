@@ -1,0 +1,364 @@
+{
+    "1221": {
+        "CSCI": {
+            "3550": {
+                "title": "COMMUNICATION NETWORKS",
+                "desc": "Prereq: CSCI 3320 or CSCI 8325 with C- or better. Data structures and algorithms. C or C++ programming.",
+                "prereq": "-",
+                "sections": {
+                    "820": {
+                        "Class Number": "16869 ?",
+                        "Type": "LEC",
+                        "Enrolled": "15",
+                        "Class Max": "30",
+                        "Seats Available": "15",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Remote Learning",
+                        "Date": "Jan 24, 2022 - May 13, 2022",
+                        "Time": "1:30PM - 2:45PM",
+                        "Days": "MW",
+                        "Location": "Remote Learning",
+                        "Instructor": "Jong-Hoon Youn"
+                    },
+                    "850": {
+                        "Class Number": "14626 ?",
+                        "Type": "LEC",
+                        "Enrolled": "29",
+                        "Class Max": "30",
+                        "Seats Available": "1",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Jan 24, 2022 - May 13, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Spyridon Mastorakis"
+                    },
+                    "851": {
+                        "Class Number": "14627 ?",
+                        "Type": "LEC",
+                        "Enrolled": "20",
+                        "Class Max": "30",
+                        "Seats Available": "10",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Jan 24, 2022 - May 13, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Azad H Azadmanesh"
+                    }
+                }
+            },
+            "8456": {
+                "title": "INTRODUCTION ARTIFICIAL INTELL",
+                "desc": "-",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "19870 ?",
+                        "Type": "LEC",
+                        "Enrolled": "13",
+                        "Class Max": "15",
+                        "Seats Available": "2",
+                        "Credit Hours": "3",
+                        "Date": "Jan 24, 2022 - May 13, 2022",
+                        "Time": "4:30PM - 5:45PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 252",
+                        "Instructor": "Jorge Fandinno Garcia"
+                    }
+                }
+            },
+            "1200": {
+                "title": "CS PRINCIPLES",
+                "desc": "Prereq: MATH 1120 or MATH 1130 or MATH 1220 or equivalent with C- or better, or permission of the instructor",
+                "prereq": "-",
+                "sections": {
+                    "852": {
+                        "Class Number": "14603 ?",
+                        "Type": "LEC",
+                        "Enrolled": "33",
+                        "Class Max": "33",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Natural/Physical Sci General Education lecture",
+                        "Note": "Permission Required.  Not intended for students who have completed CIST 1400 and CSCI 1620.",
+                        "Date": "Jan 24, 2022 - May 13, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Ash P Ashokan"
+                    },
+                    "853": {
+                        "Class Number": "16259 ?",
+                        "Type": "LEC",
+                        "Enrolled": "30",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Natural/Physical Sci General Education lecture",
+                        "Note": "Permission Required. Not intended for students who have completed CIST 1400 and CSCI 1620.",
+                        "Date": "Jan 24, 2022 - May 13, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Ash P Ashokan"
+                    }
+                }
+            },
+            "4260": {
+                "title": "UX DESIGN",
+                "desc": "Prereq: Required: C- or better in CIST 2500 and junior standing, or by permission of instructor. Recommended: C- or better in CSCI 4250 or ITIN 3330.",
+                "prereq": "-",
+                "sections": {
+                    "850": {
+                        "Class Number": "14909 ?",
+                        "Type": "LEC",
+                        "Enrolled": "14",
+                        "Class Max": "15",
+                        "Seats Available": "1",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Jan 24, 2022 - May 13, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Christine A Toh"
+                    },
+                    "851": {
+                        "Class Number": "21471 ?",
+                        "Type": "LEC",
+                        "Enrolled": "11",
+                        "Class Max": "15",
+                        "Seats Available": "4",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Jan 24, 2022 - May 13, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Katelynn A Kapalo"
+                    }
+                }
+            },
+            "4220": {
+                "title": "PRINC OF PROGRAMMING LANGUAGES",
+                "desc": "Prereq: CSCI 3320 and CSCI 3660 with C- or better.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "19868 ?",
+                        "Type": "LEC",
+                        "Enrolled": "32",
+                        "Class Max": "33",
+                        "Seats Available": "1",
+                        "Credit Hours": "3",
+                        "Date": "Jan 24, 2022 - May 13, 2022",
+                        "Time": "3:00PM - 4:15PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 252",
+                        "Instructor": "Jorge Fandinno Garcia"
+                    },
+                    "850": {
+                        "Class Number": "14634 ?",
+                        "Type": "LEC",
+                        "Enrolled": "25",
+                        "Class Max": "25",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Jan 24, 2022 - May 13, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Victor L Winter"
+                    }
+                }
+            }
+        },
+        "CIST": {
+            "9050": {
+                "title": "COLLOQUIUM ON IT TEACHING",
+                "desc": "Prereq: Doctoral students in Information Technology and Biomedical informatics. Students from doctoral programs across the University of Nebraska are welcome to register with permission of instructor. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "820": {
+                        "Class Number": "15584 ?",
+                        "Type": "SEM",
+                        "Enrolled": "10",
+                        "Class Max": "15",
+                        "Seats Available": "5",
+                        "Credit Hours": "1",
+                        "Course Attribute": "Remote Learning",
+                        "Date": "Mar 07, 2022 - Apr 04, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Remote Learning",
+                        "Instructor": "Deepak Khazanchi"
+                    }
+                }
+            },
+            "2500": {
+                "title": "INTRO TO APPLIED STATS FOR IST",
+                "desc": "Prereq: MATH 1220 or permission of an instructor",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "14674 ?",
+                        "Type": "LEC",
+                        "Enrolled": "27",
+                        "Class Max": "30",
+                        "Seats Available": "3",
+                        "Credit Hours": "3",
+                        "Date": "Jan 24, 2022 - May 13, 2022",
+                        "Time": "1:30PM - 2:45PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 276",
+                        "Instructor": "Zahra Hatami"
+                    },
+                    "820": {
+                        "Class Number": "15438 ?",
+                        "Type": "LEC",
+                        "Enrolled": "30",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Remote Learning",
+                        "Note": "This class will be taught remotely via synchronous teaching. Students will need to log in at the specified time but will not physically attend class.",
+                        "Date": "Jan 24, 2022 - May 13, 2022",
+                        "Time": "4:30PM - 5:45PM",
+                        "Days": "TR",
+                        "Location": "Remote Learning",
+                        "Instructor": "Foluso Ayeni"
+                    },
+                    "850": {
+                        "Class Number": "14676 ?",
+                        "Type": "LEC",
+                        "Enrolled": "30",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Jan 24, 2022 - May 13, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Lucas Smith"
+                    },
+                    "853": {
+                        "Class Number": "16055 ?",
+                        "Type": "LEC",
+                        "Enrolled": "30",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Jan 24, 2022 - May 13, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Lucas Smith"
+                    }
+                }
+            },
+            "1300": {
+                "title": "INTRO TO WEB DEVELOPMENT",
+                "desc": "Prereq: MATH 1120 or MATH 1130 or MATH 1220  (or equivalent) with C- or better, or permission of the instructor",
+                "prereq": "-",
+                "sections": {
+                    "003": {
+                        "Class Number": "14656 ?",
+                        "Type": "LEC",
+                        "Enrolled": "29",
+                        "Class Max": "30",
+                        "Seats Available": "1",
+                        "Credit Hours": "3",
+                        "Note": "Students will attend once a week in-person and the other day(s) will participate remotely synchronously. Your instructor will provide more details.",
+                        "Date": "Jan 24, 2022 - May 13, 2022",
+                        "Time": "1:30PM - 2:45PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 278",
+                        "Instructor": "Jeff Blackmore"
+                    },
+                    "821": {
+                        "Class Number": "16834 ?",
+                        "Type": "LEC",
+                        "Enrolled": "30",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Remote Learning",
+                        "Date": "Jan 24, 2022 - May 13, 2022",
+                        "Time": "10:30AM - 11:45AM",
+                        "Days": "TR",
+                        "Location": "Remote Learning",
+                        "Instructor": "Dilanga Lakshitha Bandara Abeyrathna Galapita Mudi"
+                    },
+                    "850": {
+                        "Class Number": "14657 ?",
+                        "Type": "LEC",
+                        "Enrolled": "38",
+                        "Class Max": "35",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Jan 24, 2022 - May 13, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Robert Fulkerson"
+                    }
+                }
+            },
+            "9060": {
+                "title": "COLLOQUIUM ON IT PROFESSION",
+                "desc": "Prereq: Any IS&T PhD student is eligible to attend; other Doctoral students can attend with permission of instructor. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "820": {
+                        "Class Number": "15585 ?",
+                        "Type": "SEM",
+                        "Enrolled": "8",
+                        "Class Max": "15",
+                        "Seats Available": "7",
+                        "Credit Hours": "1",
+                        "Course Attribute": "Remote Learning",
+                        "Date": "Apr 11, 2022 - May 09, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Remote Learning",
+                        "Instructor": "Deepak Khazanchi"
+                    }
+                }
+            },
+            "9040": {
+                "title": "COLLOQUIUM ON IT RESEARCH",
+                "desc": "Prereq: Admission to PhD program in Information Technology or permission of instructor.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "15583 ?",
+                        "Type": "SEM",
+                        "Enrolled": "9",
+                        "Class Max": "15",
+                        "Seats Available": "6",
+                        "Credit Hours": "1",
+                        "Date": "Jan 24, 2022 - Feb 28, 2022",
+                        "Time": "8:00AM - 9:15AM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 150",
+                        "Instructor": "Deepak Khazanchi"
+                    }
+                }
+            }
+        }
+    }
+}

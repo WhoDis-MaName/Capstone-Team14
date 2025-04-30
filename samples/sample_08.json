@@ -1,0 +1,490 @@
+{
+    "1218": {
+        "CIST": {
+            "1400": {
+                "title": "INTRO TO CS I",
+                "desc": "Prereq: MATH 1320, and either CSCI 1200 or CSCI 1280 or CIST 1300 with C- or better, or permission of the instructor",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "17961 ?",
+                        "Type": "LEC",
+                        "Enrolled": "44",
+                        "Class Max": "60",
+                        "Seats Available": "16",
+                        "Credit Hours": "3",
+                        "Topic": "Lecture",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "3:00PM - 4:15PM",
+                        "Days": "TR",
+                        "Location": "MBSC Nebraska Room 201",
+                        "Instructor": "Kyle Reestman"
+                    },
+                    "002": {
+                        "Class Number": "15312 ?",
+                        "Type": "LEC",
+                        "Enrolled": "36",
+                        "Class Max": "40",
+                        "Seats Available": "4",
+                        "Credit Hours": "3",
+                        "Topic": "Lecture",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "9:00AM - 10:15AM",
+                        "Days": "TR",
+                        "Location": "Scott Technology Center 102B",
+                        "Instructor": "Robert Fulkerson"
+                    },
+                    "004": {
+                        "Class Number": "18051 ?",
+                        "Type": "LEC",
+                        "Enrolled": "16",
+                        "Class Max": "32",
+                        "Seats Available": "16",
+                        "Credit Hours": "3",
+                        "Topic": "Lecture",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "6:00PM - 7:15PM",
+                        "Days": "TR",
+                        "Location": "MBSC Nebraska Room 201",
+                        "Instructor": "Kyle Reestman"
+                    },
+                    "850": {
+                        "Class Number": "15320 ?",
+                        "Type": "LEC",
+                        "Enrolled": "79",
+                        "Class Max": "80",
+                        "Seats Available": "1",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Topic": "Lecture",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Robert Fulkerson"
+                    },
+                    "8501": {
+                        "Class Number": "15321 ?",
+                        "Type": "LAB",
+                        "Enrolled": "24",
+                        "Class Max": "23",
+                        "Seats Available": "0",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Note": "Students enrolled in CIST 1400 labs this semester will attend a 90-minute synchronous lab each week via Zoom. This lab will be scheduled during the first week of the semester.",
+                        "Topic": "Laboratory",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online"
+                    },
+                    "8502": {
+                        "Class Number": "15313 ?",
+                        "Type": "LAB",
+                        "Enrolled": "23",
+                        "Class Max": "23",
+                        "Seats Available": "0",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Note": "Students enrolled in CIST 1400 labs this semester will attend a 90-minute synchronous lab each week via Zoom. This lab will be scheduled during the first week of the semester.",
+                        "Topic": "Laboratory",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online"
+                    },
+                    "8503": {
+                        "Class Number": "15314 ?",
+                        "Type": "LAB",
+                        "Enrolled": "23",
+                        "Class Max": "23",
+                        "Seats Available": "0",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Note": "Students enrolled in CIST 1400 labs this semester will attend a 90-minute synchronous lab each week via Zoom. This lab will be scheduled during the first week of the semester.",
+                        "Topic": "Laboratory",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online"
+                    },
+                    "8504": {
+                        "Class Number": "15318 ?",
+                        "Type": "LAB",
+                        "Enrolled": "18",
+                        "Class Max": "19",
+                        "Seats Available": "1",
+                        "Course Attribute": "Totally Online",
+                        "Note": "Students enrolled in CIST 1400 labs this semester will attend a 90-minute synchronous lab each week via Zoom. This lab will be scheduled during the first week of the semester.",
+                        "Topic": "Laboratory",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online"
+                    },
+                    "8505": {
+                        "Class Number": "15319 ?",
+                        "Type": "LAB",
+                        "Enrolled": "18",
+                        "Class Max": "19",
+                        "Seats Available": "1",
+                        "Course Attribute": "Totally Online",
+                        "Note": "Students enrolled in CIST 1400 labs this semester will attend a 90-minute synchronous lab each week via Zoom. This lab will be scheduled during the first week of the semester.",
+                        "Topic": "Laboratory",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online"
+                    },
+                    "8506": {
+                        "Class Number": "17962 ?",
+                        "Type": "LAB",
+                        "Enrolled": "18",
+                        "Class Max": "19",
+                        "Seats Available": "1",
+                        "Course Attribute": "Totally Online",
+                        "Note": "Students enrolled in CIST 1400 labs this semester will attend a 90-minute synchronous lab each week via Zoom. This lab will be scheduled during the first week of the semester.",
+                        "Topic": "Laboratory",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online"
+                    },
+                    "8507": {
+                        "Class Number": "17963 ?",
+                        "Type": "LAB",
+                        "Enrolled": "17",
+                        "Class Max": "19",
+                        "Seats Available": "2",
+                        "Course Attribute": "Totally Online",
+                        "Note": "Students enrolled in CIST 1400 labs this semester will attend a 90-minute synchronous lab each week via Zoom. This lab will be scheduled during the first week of the semester.",
+                        "Topic": "Laboratory",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online"
+                    },
+                    "8508": {
+                        "Class Number": "17964 ?",
+                        "Type": "LAB",
+                        "Enrolled": "16",
+                        "Class Max": "19",
+                        "Seats Available": "3",
+                        "Course Attribute": "Totally Online",
+                        "Note": "Students enrolled in CIST 1400 labs this semester will attend a 90-minute synchronous lab each week via Zoom. This lab will be scheduled during the first week of the semester.",
+                        "Topic": "Laboratory",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online"
+                    },
+                    "8509": {
+                        "Class Number": "17965 ?",
+                        "Type": "LAB",
+                        "Enrolled": "11",
+                        "Class Max": "16",
+                        "Seats Available": "5",
+                        "Course Attribute": "Totally Online",
+                        "Note": "Students enrolled in CIST 1400 labs this semester will attend a 90-minute synchronous lab each week via Zoom. This lab will be scheduled during the first week of the semester.",
+                        "Topic": "Laboratory",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online"
+                    },
+                    "8510": {
+                        "Class Number": "15315 ?",
+                        "Type": "LAB",
+                        "Enrolled": "5",
+                        "Class Max": "16",
+                        "Seats Available": "11",
+                        "Course Attribute": "Totally Online",
+                        "Note": "Students enrolled in CIST 1400 labs this semester will attend a 90-minute synchronous lab each week via Zoom. This lab will be scheduled during the first week of the semester.",
+                        "Topic": "Laboratory",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online"
+                    },
+                    "8511": {
+                        "Class Number": "15316 ?",
+                        "Type": "LAB",
+                        "Enrolled": "2",
+                        "Class Max": "16",
+                        "Seats Available": "14",
+                        "Course Attribute": "Totally Online",
+                        "Note": "Students enrolled in CIST 1400 labs this semester will attend a 90-minute synchronous lab each week via Zoom. This lab will be scheduled during the first week of the semester.",
+                        "Topic": "Laboratory",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online"
+                    }
+                }
+            },
+            "9990": {
+                "title": "DISSERTATION",
+                "desc": "Prereq: Admission to the Ph.D. program in Information Technology. Admission to candidacy for the Ph.D. degree. Prior to enrolling for dissertation hours, the students must have permission of the supervisory committee. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "15345 ?",
+                        "Type": "DSR",
+                        "Enrolled": "13",
+                        "Class Max": "10",
+                        "Seats Available": "0",
+                        "Credit Hours": "1-12",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "To Be Announced",
+                        "Instructor": "Brian J Dorn"
+                    }
+                }
+            },
+            "4540": {
+                "title": "COMPUTER SECURITY MANAGEMENT",
+                "desc": "Prereq: IASC 4360 or permission of the instructor.",
+                "prereq": "-",
+                "sections": {
+                    "850": {
+                        "Class Number": "16536 ?",
+                        "Type": "LEC",
+                        "Enrolled": "3",
+                        "Class Max": "5",
+                        "Seats Available": "2",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Deanna M House"
+                    }
+                }
+            },
+            "1300": {
+                "title": "INTRO TO WEB DEVELOPMENT",
+                "desc": "Prereq: MATH 1120 or MATH 1130 or MATH 1220  (or equivalent) with C- or better, or permission of the instructor",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "15307 ?",
+                        "Type": "LEC",
+                        "Enrolled": "29",
+                        "Class Max": "30",
+                        "Seats Available": "1",
+                        "Credit Hours": "3",
+                        "Note": "Students will attend once a week in-person and the other day(s) will participate remotely synchronously. Your instructor will provide more details.",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "1:30PM - 2:45PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 276",
+                        "Instructor": "Jeff Blackmore"
+                    },
+                    "002": {
+                        "Class Number": "15306 ?",
+                        "Type": "LEC",
+                        "Enrolled": "31",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Note": "Students will attend once a week in-person and the other day(s) will participate remotely synchronously. Your instructor will provide more details.",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "4:30PM - 5:45PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 276",
+                        "Instructor": "Jeff Blackmore"
+                    },
+                    "820": {
+                        "Class Number": "15308 ?",
+                        "Type": "LEC",
+                        "Enrolled": "32",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Remote Learning",
+                        "Note": "This class will be taught remotely via synchronous teaching. Students will need to log in at the specified time but will not physically attend class.",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "12:00PM - 1:15PM",
+                        "Days": "TR",
+                        "Location": "Remote Learning",
+                        "Instructor": "Pradhip Swaminathan"
+                    },
+                    "850": {
+                        "Class Number": "15309 ?",
+                        "Type": "LEC",
+                        "Enrolled": "35",
+                        "Class Max": "35",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Robert Fulkerson"
+                    }
+                }
+            },
+            "9970": {
+                "title": "RESEARCH OTHER THAN THESIS",
+                "desc": "Prereq: Requires instructor permission. Only open to doctoral students in the IT PhD program. Course cannot be taken for credit after candidacy nor count towards core/major field of study requirements in the IT PhD. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "16244 ?",
+                        "Type": "RSC",
+                        "Enrolled": "4",
+                        "Class Max": "0",
+                        "Seats Available": "0",
+                        "Credit Hours": "1-3",
+                        "Note": "Permission to enroll requires an approved CIST9970 proposal.",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "To Be Announced",
+                        "Instructor": "Brian J Dorn"
+                    }
+                }
+            }
+        },
+        "CSCI": {
+            "4450": {
+                "title": "INTRODUCTION ARTIFICIAL INTELL",
+                "desc": "Prereq: CSCI 3320 with C- or better.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "15385 ?",
+                        "Type": "LEC",
+                        "Enrolled": "27",
+                        "Class Max": "30",
+                        "Seats Available": "3",
+                        "Credit Hours": "3",
+                        "Note": "Students will attend once a week in-person and the other day(s) will participate remotely synchronously. Your instructor will provide more details.",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "3:00PM - 4:15PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 252",
+                        "Instructor": "Yuliya Lierler"
+                    }
+                }
+            },
+            "4970": {
+                "title": "CAPSTONE PROJECT",
+                "desc": "Prereq: CSCI 4830 with C- or better; Senior standing in Computer Science. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "15403 ?",
+                        "Type": "PRA",
+                        "Enrolled": "39",
+                        "Class Max": "45",
+                        "Seats Available": "6",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Includes Service Learning Component",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "1:30PM - 2:45PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 252",
+                        "Instructor": "Harvey Pe Siy"
+                    }
+                }
+            },
+            "4220": {
+                "title": "PRINC OF PROGRAMMING LANGUAGES",
+                "desc": "Prereq: CSCI 3320 and CSCI 3660 with C- or better.",
+                "prereq": "-",
+                "sections": {
+                    "850": {
+                        "Class Number": "15381 ?",
+                        "Type": "LEC",
+                        "Enrolled": "22",
+                        "Class Max": "30",
+                        "Seats Available": "8",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Victor L Winter"
+                    },
+                    "851": {
+                        "Class Number": "22463 ?",
+                        "Type": "LEC",
+                        "Enrolled": "29",
+                        "Class Max": "30",
+                        "Seats Available": "1",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Victor L Winter"
+                    }
+                }
+            },
+            "4950": {
+                "title": "INTERNSHIP IN COMPUTER SCIENCE",
+                "desc": "Prereq: Permission of the computer science program chair.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "15390 ?",
+                        "Type": "INT",
+                        "Enrolled": "1",
+                        "Class Max": "30",
+                        "Seats Available": "29",
+                        "Credit Hours": "1-3",
+                        "Course Attribute": "Includes Community Based Learning Component",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "To Be Announced",
+                        "Instructor": "Harvey Pe Siy"
+                    },
+                    "850": {
+                        "Class Number": "17899 ?",
+                        "Type": "INT",
+                        "Enrolled": "0",
+                        "Class Max": "30",
+                        "Seats Available": "30",
+                        "Credit Hours": "1-3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Harvey Pe Siy"
+                    }
+                }
+            },
+            "8000": {
+                "title": "ADV CONCEPTS PROGRAMMING LANG",
+                "desc": "Prereq: CSCI 3320; CSCI 3660; CSCI 4220.  Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "15405 ?",
+                        "Type": "LEC",
+                        "Enrolled": "9",
+                        "Class Max": "24",
+                        "Seats Available": "15",
+                        "Credit Hours": "3",
+                        "Date": "Aug 23, 2021 - Dec 17, 2021",
+                        "Time": "7:30PM - 8:45PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 269",
+                        "Instructor": "Jorge Fandinno Garcia"
+                    }
+                }
+            }
+        }
+    }
+}

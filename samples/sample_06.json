@@ -1,0 +1,289 @@
+{
+    "1225": {
+        "CSCI": {
+            "4850": {
+                "title": "DATABASE MANAGEMENT SYSTEMS",
+                "desc": "Prereq: CSCI 3320 or equivalent with C- or better.",
+                "prereq": "-",
+                "sections": {
+                    "820": {
+                        "Class Number": "7014 ?",
+                        "Type": "LEC",
+                        "Enrolled": "14",
+                        "Class Max": "25",
+                        "Seats Available": "11",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Remote Learning",
+                        "Date": "Jul 05, 2022 - Aug 12, 2022",
+                        "Time": "5:00PM - 8:20PM",
+                        "Days": "MW",
+                        "Location": "Remote Learning",
+                        "Instructor": "Zhengxin Chen"
+                    }
+                }
+            },
+            "4830": {
+                "title": "INTRODUCTN SOFTWARE ENGINEERNG",
+                "desc": "Prereq: CSCI 3320 with C- or better.",
+                "prereq": "-",
+                "sections": {
+                    "850": {
+                        "Class Number": "7011 ?",
+                        "Type": "LEC",
+                        "Enrolled": "16",
+                        "Class Max": "30",
+                        "Seats Available": "14",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Note": "This class will be taught via a mix of asynchronous and synchronous activities. Students will be required to log in every Thursday from 6-8:40pm CDT.",
+                        "Date": "May 23, 2022 - Aug 12, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Harvey Pe Siy"
+                    }
+                }
+            },
+            "8856": {
+                "title": "DATABASE MANAGEMENT SYSTEMS",
+                "desc": "-",
+                "prereq": "-",
+                "sections": {
+                    "820": {
+                        "Class Number": "7015 ?",
+                        "Type": "LEC",
+                        "Enrolled": "12",
+                        "Class Max": "11",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Remote Learning",
+                        "Date": "Jul 05, 2022 - Aug 12, 2022",
+                        "Time": "5:00PM - 8:20PM",
+                        "Days": "MW",
+                        "Location": "Remote Learning",
+                        "Instructor": "Zhengxin Chen"
+                    }
+                }
+            },
+            "2240": {
+                "title": "INTRO TO C PROGRAMMING",
+                "desc": "Prereq: CSCI 1620 with grade of C or better",
+                "prereq": "-",
+                "sections": {
+                    "850": {
+                        "Class Number": "7016 ?",
+                        "Type": "LEC",
+                        "Enrolled": "22",
+                        "Class Max": "30",
+                        "Seats Available": "8",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "May 23, 2022 - Aug 12, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Jeff A Solheim"
+                    }
+                }
+            },
+            "8960": {
+                "title": "THESIS EQUIVALENT PROJECT CSCI",
+                "desc": "Prereq: Permission of Graduate Adviser. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "301": {
+                        "Class Number": "7021 ?",
+                        "Type": "MST",
+                        "Enrolled": "4",
+                        "Class Max": "30",
+                        "Seats Available": "26",
+                        "Credit Hours": "1-6",
+                        "Date": "May 23, 2022 - Aug 12, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "To Be Announced",
+                        "Instructor": "Jong-Hoon Youn"
+                    }
+                }
+            }
+        },
+        "CIST": {
+            "9980": {
+                "title": "IND STUDY IN IT",
+                "desc": "Prereq: Requires instructor permission. Only open to doctoral students in the IT PhD program. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "301": {
+                        "Class Number": "7002 ?",
+                        "Type": "IND",
+                        "Enrolled": "1",
+                        "Class Max": "5",
+                        "Seats Available": "4",
+                        "Credit Hours": "1-3",
+                        "Date": "May 23, 2022 - Aug 12, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "To Be Announced",
+                        "Instructor": "Spyridon Mastorakis"
+                    }
+                }
+            },
+            "9970": {
+                "title": "RESEARCH OTHER THAN THESIS",
+                "desc": "Prereq: Requires instructor permission. Only open to doctoral students in the IT PhD program. Course cannot be taken for credit after candidacy nor count towards core/major field of study requirements in the IT PhD. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "301": {
+                        "Class Number": "7371 ?",
+                        "Type": "RSC",
+                        "Enrolled": "0",
+                        "Class Max": "5",
+                        "Seats Available": "5",
+                        "Credit Hours": "1-3",
+                        "Date": "May 23, 2022 - Aug 12, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "To Be Announced",
+                        "Instructor": "Spyridon Mastorakis"
+                    }
+                }
+            },
+            "1300": {
+                "title": "INTRO TO WEB DEVELOPMENT",
+                "desc": "Prereq: MATH 1120 or MATH 1130 or MATH 1220  (or equivalent) with C- or better, or permission of the instructor",
+                "prereq": "-",
+                "sections": {
+                    "301": {
+                        "Class Number": "6998 ?",
+                        "Type": "LEC",
+                        "Enrolled": "11",
+                        "Class Max": "30",
+                        "Seats Available": "19",
+                        "Credit Hours": "3",
+                        "Date": "May 23, 2022 - Aug 12, 2022",
+                        "Time": "6:00PM - 7:30PM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 260",
+                        "Instructor": "Jeff Blackmore"
+                    }
+                }
+            },
+            "3000": {
+                "title": "ADVANCED COMPOSITION FOR IS&T",
+                "desc": "Prereq: ENGL 1160 (or placement in a 3rd year writing course) and junior standing, or permission of the instructor. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "850": {
+                        "Class Number": "7005 ?",
+                        "Type": "LEC",
+                        "Enrolled": "18",
+                        "Class Max": "20",
+                        "Seats Available": "2",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "May 23, 2022 - Aug 12, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Sheri Lou Hronek"
+                    },
+                    "852": {
+                        "Class Number": "7191 ?",
+                        "Type": "LEC",
+                        "Enrolled": "19",
+                        "Class Max": "20",
+                        "Seats Available": "1",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Jul 05, 2022 - Aug 12, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Thom Davis"
+                    },
+                    "853": {
+                        "Class Number": "7000 ?",
+                        "Type": "LEC",
+                        "Enrolled": "20",
+                        "Class Max": "20",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "May 23, 2022 - Jul 01, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Amanda Lynn Gutierrez"
+                    }
+                }
+            },
+            "1400": {
+                "title": "INTRO TO CS I",
+                "desc": "Prereq: MATH 1320, and either CSCI 1200 or CSCI 1280 or CIST 1300 with C- or better, or permission of the instructor",
+                "prereq": "-",
+                "sections": {
+                    "850": {
+                        "Class Number": "7006 ?",
+                        "Type": "LEC",
+                        "Enrolled": "33",
+                        "Class Max": "35",
+                        "Seats Available": "2",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "May 23, 2022 - Aug 12, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Robert Fulkerson"
+                    },
+                    "854": {
+                        "Class Number": "6999 ?",
+                        "Type": "LEC",
+                        "Enrolled": "28",
+                        "Class Max": "30",
+                        "Seats Available": "2",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "May 23, 2022 - Aug 12, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Robert Fulkerson"
+                    },
+                    "861": {
+                        "Class Number": "7007 ?",
+                        "Type": "LAB",
+                        "Enrolled": "33",
+                        "Class Max": "35",
+                        "Seats Available": "2",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Partially Online",
+                        "Note": "Students enrolled in CIST 1400 labs this semester will attend a 90-minute synchronous lab each week via Zoom. This lab will be scheduled during the first week of the semester.",
+                        "Topic": "Laboratory",
+                        "Date": "May 23, 2022 - Aug 12, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Partially Online"
+                    },
+                    "863": {
+                        "Class Number": "7001 ?",
+                        "Type": "LAB",
+                        "Enrolled": "28",
+                        "Class Max": "30",
+                        "Seats Available": "2",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Partially Online",
+                        "Note": "Students enrolled in CIST 1400 labs this semester will attend a 90-minute synchronous lab each week via Zoom. This lab will be scheduled during the first week of the semester.",
+                        "Topic": "Laboratory",
+                        "Date": "May 23, 2022 - Aug 12, 2022",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Partially Online"
+                    }
+                }
+            }
+        }
+    }
+}

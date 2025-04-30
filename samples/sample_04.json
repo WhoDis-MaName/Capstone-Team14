@@ -1,0 +1,276 @@
+{
+    "1235": {
+        "CSCI": {
+            "4850": {
+                "title": "DATABASE MANAGEMENT SYSTEMS",
+                "desc": "Prereq: CSCI 3320 or equivalent with C- or better.",
+                "prereq": "-",
+                "sections": {
+                    "850": {
+                        "Class Number": "6631 ?",
+                        "Type": "LEC",
+                        "Enrolled": "11",
+                        "Class Max": "15",
+                        "Seats Available": "4",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Jul 03, 2023 - Aug 11, 2023",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Zhengxin Chen"
+                    }
+                }
+            },
+            "4350": {
+                "title": "COMPUTER ARCHITECTURE",
+                "desc": "Prereq: CSCI 3710, CSCI 3320 or CSCI 8325 with C- or better.",
+                "prereq": "-",
+                "sections": {
+                    "850": {
+                        "Class Number": "6787 ?",
+                        "Type": "LEC",
+                        "Enrolled": "22",
+                        "Class Max": "30",
+                        "Seats Available": "8",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "May 22, 2023 - Jun 30, 2023",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Azad H Azadmanesh"
+                    }
+                }
+            },
+            "2240": {
+                "title": "INTRO TO C PROGRAMMING",
+                "desc": "Prereq: CSCI 1620 with grade of C or better",
+                "prereq": "-",
+                "sections": {
+                    "850": {
+                        "Class Number": "6633 ?",
+                        "Type": "LEC",
+                        "Enrolled": "23",
+                        "Class Max": "30",
+                        "Seats Available": "7",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "May 22, 2023 - Aug 11, 2023",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Jeff A Solheim"
+                    }
+                }
+            },
+            "8555": {
+                "title": "COMMUNICATION NETWORKS",
+                "desc": "Prereq: (CSCI 3320 or CSCI 8325 with grade of C- or better) AND (CSCI 2240 or CYBR 2250 with grade of C- or better)",
+                "prereq": "-",
+                "sections": {
+                    "850": {
+                        "Class Number": "6768 ?",
+                        "Type": "LLB",
+                        "Enrolled": "0",
+                        "Class Max": "30",
+                        "Seats Available": "30",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Jul 03, 2023 - Aug 11, 2023",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Jose M. Santos"
+                    }
+                }
+            },
+            "4990": {
+                "title": "INDEPENDENT STUDIES",
+                "desc": "Prereq: Written permission required. Independent study proposals must be approved by the Undergraduate Program Committee.",
+                "prereq": "-",
+                "sections": {
+                    "301": {
+                        "Class Number": "6636 ?",
+                        "Type": "IND",
+                        "Enrolled": "1",
+                        "Class Max": "25",
+                        "Seats Available": "24",
+                        "Credit Hours": "1-3",
+                        "Date": "May 22, 2023 - Aug 11, 2023",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "To Be Announced",
+                        "Instructor": "Harvey Pe Siy"
+                    }
+                }
+            }
+        },
+        "CIST": {
+            "1400": {
+                "title": "INTRO TO CS I",
+                "desc": "Prereq: MATH 1300, MATH 1320, or MATH 1370 (may be taken concurrently) and one of CIST 1300, CSCI 1200, or CSCI 1280 with a grade of C- or better.",
+                "prereq": "-",
+                "sections": {
+                    "850": {
+                        "Class Number": "6624 ?",
+                        "Type": "LEC",
+                        "Enrolled": "54",
+                        "Class Max": "60",
+                        "Seats Available": "6",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "May 22, 2023 - Aug 11, 2023",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Robert Fulkerson"
+                    },
+                    "861": {
+                        "Class Number": "6625 ?",
+                        "Type": "LAB",
+                        "Enrolled": "54",
+                        "Class Max": "60",
+                        "Seats Available": "6",
+                        "Course Attribute": "Partially Online",
+                        "Note": "Students enrolled in CIST 1400 labs this semester will attend a 90-minute synchronous lab each week via Zoom. This lab will be scheduled during the first week of the semester.",
+                        "Topic": "Laboratory",
+                        "Date": "May 22, 2023 - Aug 11, 2023",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Partially Online",
+                        "Instructor": "Robert Fulkerson"
+                    }
+                }
+            },
+            "3110": {
+                "title": "IT ETHICS",
+                "desc": "Prereq: ENGL 1150 or placement in a second or third-year writing class, and sophomore standing",
+                "prereq": "-",
+                "sections": {
+                    "850": {
+                        "Class Number": "6626 ?",
+                        "Type": "LEC",
+                        "Enrolled": "30",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Humanities and Fine Arts General Education course",
+                        "Date": "May 22, 2023 - Jun 30, 2023",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Cale L. Corbett"
+                    },
+                    "851": {
+                        "Class Number": "6613 ?",
+                        "Type": "LEC",
+                        "Enrolled": "24",
+                        "Class Max": "30",
+                        "Seats Available": "6",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Humanities and Fine Arts General Education course",
+                        "Date": "Jul 03, 2023 - Aug 11, 2023",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Gina Iorga"
+                    }
+                }
+            },
+            "1300": {
+                "title": "INTRO TO WEB DEVELOPMENT",
+                "desc": "Prereq: High school algebra or equivalent",
+                "prereq": "-",
+                "sections": {
+                    "850": {
+                        "Class Number": "6616 ?",
+                        "Type": "LEC",
+                        "Enrolled": "30",
+                        "Class Max": "30",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "May 22, 2023 - Aug 11, 2023",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Robert Fulkerson"
+                    }
+                }
+            },
+            "3000": {
+                "title": "ADVANCED COMPOSITION FOR IS&T",
+                "desc": "Prereq: ENGL 1160 (or placement in a 3rd year writing course) and junior standing, or permission of the instructor. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "850": {
+                        "Class Number": "6623 ?",
+                        "Type": "LEC",
+                        "Enrolled": "19",
+                        "Class Max": "20",
+                        "Seats Available": "1",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "May 22, 2023 - Jun 30, 2023",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Michelle L Porter"
+                    },
+                    "851": {
+                        "Class Number": "6759 ?",
+                        "Type": "LEC",
+                        "Enrolled": "20",
+                        "Class Max": "20",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Jul 03, 2023 - Aug 11, 2023",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Thom Davis"
+                    },
+                    "852": {
+                        "Class Number": "6618 ?",
+                        "Type": "LEC",
+                        "Enrolled": "19",
+                        "Class Max": "20",
+                        "Seats Available": "1",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "May 22, 2023 - Jun 30, 2023",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Amanda Lynn Gutierrez"
+                    }
+                }
+            },
+            "9970": {
+                "title": "RESEARCH OTHER THAN THESIS",
+                "desc": "Prereq: Requires instructor permission. Only open to doctoral students in the IT PhD program. Course cannot be taken for credit after candidacy nor count towards core/major field of study requirements in the IT PhD. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "301": {
+                        "Class Number": "6923 ?",
+                        "Type": "RSC",
+                        "Enrolled": "0",
+                        "Class Max": "5",
+                        "Seats Available": "5",
+                        "Credit Hours": "1-3",
+                        "Date": "May 22, 2023 - Aug 11, 2023",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "To Be Announced",
+                        "Instructor": "Ann L Fruhling"
+                    }
+                }
+            }
+        }
+    }
+}
