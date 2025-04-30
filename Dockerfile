@@ -21,17 +21,17 @@ COPY requirements.txt  /Capstone-Team14/
  
 # run this command to install all dependencies 
 RUN pip install --no-cache-dir -r requirements.txt
-
-# Build Database and load default days into it
-RUN python manage.py makemigrations
-RUN python manage.py migrate
-RUN python manage.py loaddata scheduleFunctions/fixtures/prepopulated.json
  
 # Copy the Django project to the container
 COPY . /Capstone-Team14/
  
 # Expose the Django port
 EXPOSE 8000
+
+# Build Database and load default days into it
+RUN python manage.py makemigrations
+RUN python manage.py migrate
+RUN python manage.py loaddata scheduleFunctions/fixtures/prepopulated.json
  
 # Run Django’s development server
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
