@@ -8,7 +8,7 @@ class Room(models.Model):
     
     def print_clingo(self) -> str:
         # peter_kiewit_institute_157
-        return "_".join(self.building.split(" ").append(self.room_number))
+        return "_".join(self.building.lower().split(" ").append(self.room_number))
         ...
 
 class Day(models.Model):
@@ -30,7 +30,7 @@ class Day(models.Model):
         default=MON,
     )
     def print_clingo(self) -> str:
-        inverse_choices = {value:key for key, value in self.DAY_OF_WEEK_CHOICES}
+        inverse_choices = {value:key for key, value in self.DAY_OF_WEEK_CHOICES.items()}
         return inverse_choices[self.day_of_week]
         ...
     def __str__(self):
@@ -38,52 +38,71 @@ class Day(models.Model):
 
 
 class Course(models.Model):
+    # course(csci2240, "intro_to_c_programming", "_").
     subject = models.CharField(max_length=5)
     class_number = models.IntegerField()
     name = models.CharField(max_length=255)
-    prerequisites = models.ManyToManyField('self')
-    equivalent_courses = models.ManyToManyField('self')
-    same_semester_courses = models.ManyToManyField('self')
+    prerequisites = models.ManyToManyField('self', symmetrical=False, related_name='required_for')
+    equivalent_courses = models.ManyToManyField('self', symmetrical=True)
+    same_semester_courses = models.ManyToManyField('self', symmetrical=True)
     credits = models.IntegerField(null=True)
     weight = models.IntegerField()
     def print_clingo(self) -> str:
         ...
+        
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=['subject', 'class_number'], name='unique_course_code')
+        ]
     
 class Requirement(models.Model):
     major_label = models.CharField(max_length=255)
     requirement_label = models.CharField(max_length=255)
     total_credits = models.IntegerField()
     course_options = models.ManyToManyField(Course)
+    
     def print_clingo(self) -> str:
+        
         ...
  
+class Proffessor(models.Model):
+    name = models.CharField(max_length=255)
+class TimeSlot(models.Model):
+    start_time = models.TimeField(auto_now=False)
+    end_time = models.TimeField(auto_now=False)
+    days = models.ManyToManyField(Day)
+    credits = models.IntegerField()
+    
+    def print_clingo(self) -> str:
+        self_text = f'time_slot_credits({self.start_time.hour * 60 + self.start_time.minute}, {self.end_time.hour * 60 + self.end_time.minute}, {"".join([day.print_clingo() for day in self.days.all()])}, {self.credits}).'
+        
+        return self_text
+    
+    
 class Section(models.Model):
     course = models.ForeignKey(Course, on_delete = models.CASCADE)
     section_number = models.IntegerField()
     section_id = models.IntegerField(primary_key=True)
-    professor = models.CharField(max_length=255)
-    start_time = models.TimeField(auto_now=False)
-    end_time = models.TimeField(auto_now=False)
-    days = models.ManyToManyField(Day)
-    room = models.ForeignKey(Room, on_delete=models.SET_NULL, null=True, blank=True)
-    
-    def print_dashboard(self) -> str:
-        text = f'{self.course.subject} {self.course.class_number} - {self.course.name} ({"/".join([str(day) for day in self.days.all()])} {self.start_time.strftime("%I:%M%p")} - {self.end_time.strftime("%I:%M%p")})'
-        return text
+    professor = models.ForeignKey(Proffessor, on_delete = models.CASCADE)
+    time_slot = models.ForeignKey(TimeSlot, on_delete = models.CASCADE)
+    room = models.ForeignKey(Room, on_delete=models.SET_NULL, null=True, blank=True)    
     
     def print_clingo(self) -> str:
         # section(cist1010, s001, c15257, 570, 620, t, peter_kiewit_institute_157, farida_majid).
         self_text = f'section('        
         + f'{self.course.subject}{self.course.class_number}'
-        + f', s{self.section_id}, c{self.course.course_id}'
-        + f', {self.start_time.hour * 60 + self.start_time.minute}, {self.end_time.hour * 60 + self.end_time.minute}'
-        + f', {"".join([day.print_clingo() for day in self.days])}'       
+        + f', s{self.section_number}, c{self.section_id}'
+        + f', {self.time_slot.start_time.hour * 60 + self.time_slot.start_time.minute}, {self.time_slot.end_time.hour * 60 + self.time_slot.end_time.minute}'
+        + f', {"".join([day.print_clingo() for day in self.time_slot.days.all()])}'       
         + f', {self.room.print_clingo()}'       
         + f', {self.professor.replace(" ", "_")}'        
         + ').'
-                
+        section_count = Section.objects.filter(course=self.course).count()
+        critical_text = ''
+        if section_count == 1:
+            critical_text = f'critical_section({self.course.subject}{self.course.class_number}, c{self.section_id}).'
         
-        return '\n'.join([self_text])
+        return '\n'.join([self_text,critical_text])
         ...
         
 
@@ -121,13 +140,13 @@ class PlanSemester(models.Model):
     courses = models.ManyToManyField(Course)
     ...
     
-class Change(models.Model):
-    section = models.ForeignKey(Course, on_delete = models.CASCADE)
-    new_start_time = models.IntegerField()
-    new_end_time = models.IntegerField()
-    new_days = models.ManyToManyField(Day)
-    new_room = models.ForeignKey(Room, on_delete=models.SET_NULL, null=True, blank=True)
-    ...
+# class Change(models.Model):
+#     section = models.ForeignKey(Course, on_delete = models.CASCADE)
+#     old_time = models.ForeignKey(TimeSlot, on_delete=models.SET_NULL, null=True, blank=True)
+#     new_time = models.ForeignKey(TimeSlot, on_delete=models.SET_NULL, null=True, blank=True)
+#     old_room = models.ForeignKey(Room, on_delete=models.SET_NULL, null=True, blank=True)
+#     new_room = models.ForeignKey(Room, on_delete=models.SET_NULL, null=True, blank=True)
+#     ...
     
 class Conflict(models.Model):
     sectionA = models.ForeignKey(Section, on_delete=models.CASCADE, related_name='conflicts_as_A')

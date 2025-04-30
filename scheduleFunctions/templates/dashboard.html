@@ -113,7 +113,7 @@
           {% for section in section_list %}
           <li>
             <a href="/section/?subject={{section.course.subject}}&course_number={{section.course.class_number}}&section={{section.section_number}}" onclick="" >
-              {{section.course.subject}} {{section.course.class_number}} - {{section.course.name}} ({{ section.days.all |join:"/" }} {{section.start_time|date:"g:ia"}} - {{section.end_time|date:"g:ia"}})
+              {{section.course.subject}} {{section.course.class_number}} - {{section.course.name}} ({{ section.time_slot.days.all |join:"/" }} {{section.time_slot.start_time|date:"g:ia"}} - {{section.time_slot.end_time|date:"g:ia"}})
             </a>
           </li>
           {% endfor %}

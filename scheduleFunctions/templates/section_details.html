@@ -22,11 +22,11 @@
             <h3>{{section.course.name}}</h3>
 
             <p>
-                Professor: {{section.professor}} </br>
+                Professor: {{section.professor.name}} </br>
                 </br>
-                Start time: {{section.start_time|date:"g:i a"}}</br>
-                End time: {{section.end_time|date:"g:i a"}}</br>
-                Days: {{ section.days.all |join:" / " }}</br>
+                Start time: {{section.time_slot.start_time|date:"g:i a"}}</br>
+                End time: {{section.time_slot.end_time|date:"g:i a"}}</br>
+                Days: {{ section.time_slot.days.all |join:" / " }}</br>
                 Location: {{section.room.building}} {{section.room.room_number}}</br>
                 </br>
                 Class Capacity: {{section.room.capacity}}</br>
@@ -43,7 +43,7 @@
                     {% for other_section in other_section_list %}
                     <li>
                         <a href="/section/?subject={{other_section.course.subject}}&course_number={{other_section.course.class_number}}&section={{other_section.section_number}}" onclick="" >
-                        {{other_section.course.subject}} {{other_section.course.class_number}} - {{other_section.course.name}} ({{ other_section.days.all |join:"/" }} {{other_section.start_time|date:"g:ia"}} - {{other_section.end_time|date:"g:ia"}})
+                        {{other_section.course.subject}} {{other_section.course.class_number}} - {{other_section.course.name}} ({{ other_section.time_slot.days.all |join:"/" }} {{other_section.time_slot.start_time|date:"g:ia"}} - {{other_section.time_slot.end_time|date:"g:ia"}})
                         </a>
                     </li>              
                     {% endfor %}  

@@ -1,4 +1,3 @@
-samples/
 **/__pycache__/
 data_files/
 db.sqlite3

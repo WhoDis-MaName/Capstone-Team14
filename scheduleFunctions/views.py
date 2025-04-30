@@ -66,10 +66,8 @@ def dashboard_view(request):
     except:
         request.session["day"] = Day.DAY_OF_WEEK_CHOICES["m"]        
         
-    day_object = Day.objects.get(day_of_week = request.session["day"])
-
     try:  
-        section_list = Section.objects.filter(days = day_object).order_by('start_time')
+        section_list = Section.objects.filter(time_slot__days__day_of_week = request.session["day"]).order_by('time_slot__start_time')
     except Section.DoesNotExist:
         section_list = []
     
@@ -97,17 +95,16 @@ def section_view(request):
     selected_course = Course.objects.get(subject = request.session["subject"], class_number = request.session["course_number"])
     selected_section = Section.objects.get(course = selected_course, section_number = request.session["section"])        
     other_sections = Section.objects.filter(
-        days__in=selected_section.days.all(),  # overlap in at least one day
-        start_time__lt=selected_section.end_time,
-        end_time__gt=selected_section.start_time,
+        time_slot__days__in=selected_section.time_slot.days.all(),  # overlap in at least one day
+        time_slot__start_time__lt=selected_section.time_slot.end_time,
+        time_slot__end_time__gt=selected_section.time_slot.start_time,
     ).exclude(
         course=selected_section.course  # different course
     ).exclude(
         pk=selected_section.pk  # ignore the section itself
     ).distinct(
-    ).order_by('start_time')
+    ).order_by('time_slot__start_time')
     
-    print(selected_course.same_semester_courses.all())
     return render(request, "section_details.html", {
         "username": request.session["username"], 
         "day": request.session["day"],
@@ -391,6 +388,9 @@ def upload_json_file(request):
     facts.extend(non_cs_times)
 
     asp_filename = raw_filename.replace(".json", ".lp")
+    asp_filename = filtered_filename.replace(".json", ".lp")
+    facts = convert(default_storage.path(filtered_filename))
+
     default_storage.save(asp_filename, ContentFile("\n".join(facts)))
     request.session["asp_filename"] = asp_filename
     return JsonResponse(
