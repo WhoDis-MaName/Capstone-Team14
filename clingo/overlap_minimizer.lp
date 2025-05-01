@@ -111,17 +111,22 @@ scheduled_critical_conflict(C1, C2) :- critical_section(C1, N1), critical_sectio
 
 % Prioritized minimize functions, first ensure the critical sections are available
 #minimize{1@3, C1, C2 : scheduled_critical_conflict(C1, C2)}.
-% Then minimize changes from original schedule
-#minimize{1@2, C, I : schedule_change(C, I)}.
 
 % For professors that prefer morning classes, attempt to make it impossible to schedule them after 12
 invalid_preference(P, N) :- morning_preference(P), scheduled_section_time_slot(N, S, E, D), scheduled_section_professor(P, N), S > 720.
 % For professors that prefer afternoon classes, attempt to make it impossible to schedule them before 12
 invalid_preference(P, N) :- afternoon_preference(P), scheduled_section_time_slot(N, S, E, D), scheduled_section_professor(P, N), S < 720.
-% For professors that prefer their classes back to back, attempt to make it impossible to schedule their classes more than 15 min apart.
-invalid_preference(P, N) :- back_to_back_preference(P), scheduled_section_time_slot(N1, S1, E1, D1), scheduled_section_time_slot(N2, S2, E2, D2), N1 != N2, scheduled_section_professor(P, N), S1 < S2, S2 - S1 > 15.
+% For professors that prefer their classes back to back, attempt to make it impossible to schedule their classes more than 15 min apart. Also ensure they have overlapping days.
+invalid_preference(P, N) :- back_to_back_preference(P), scheduled_section_time_slot(N1, S1, E1, D1), scheduled_section_time_slot(N2, S2, E2, D2), N1 != N2, overlapping_days(D1, D2), scheduled_section_professor(P, N), S1 < S2, S2 - S1 > 15.
+% For professors that prefer classes on mw
+invalid_preference(P, N) :- mw_preference(P), scheduled_section_time_slot(N, S, E, D), scheduled_section_professor(P, N), D != mw.
+% For professors that prefer classes on tr
+invalid_preference(P, N) :- tr_preference(P), scheduled_section_time_slot(N, S, E, D), scheduled_section_professor(P, N), D != tr.
 
-#minimize{1@1, P, N : invalid_preference(P, N)}.  
+#minimize{1@2, P, N : invalid_preference(P, N)}.  
+
+% Then minimize changes from original schedule
+#minimize{1@1, C, I : schedule_change(C, I)}.
 
 % #show scheduled_section_time_slot/4.
 #show scheduled_section/8.
