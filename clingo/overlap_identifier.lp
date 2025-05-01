@@ -32,6 +32,9 @@ section_professor(P, N) :- section(C, I, N, S, E, D, R, P).
 
 section_room(R, N) :- section(C, I, N, S, E, D, R, P).
 
+{ critical_section(C, N) : section_course(C, N) } = 1 :- class(C). 
+{ critical_section(C, N) : non_cs_section_course(C, N)} = 1 :- non_cs_class(C). 
+
 % Example course from classes.lp:
 % course("CSCI4830", "INTRODUCTN SOFTWARE ENGINEERNG", "-").
 
@@ -62,26 +65,10 @@ conflict(N1, N2) :-
 
 critical_conflict(C1, C2) :- critical_section(C1, N1), critical_section(C2, N2), conflict(N1, N2), C1!=C2, same_year(C1, C2).
 
-% There exists at least some path between C1 and C2.
-% non-conflicting classes
-path(C1, C2) :- section_course(C1, N1), section_course(C2, N2), not conflict(N1, N2), C1!=C2.
-% There is also a path between non_cs sections and cs_sections
-path(C1, C2) :- section_course(C1, N1), non_cs_section_course(C2, N2), not conflict(N1, N2).
-
-% There are no paths between C1 and C2 -> total overlap.
-overlap(C1, C2) :- class(C1), class(C2), not path(C1, C2), C1!=C2.
-overlap(C1, C2) :- class(C1), non_cs_class(C2), not path(C1, C2).
-
-true_overlap(C1, C2) :- overlap(C1, C2), not true_overlap(C2, C1).
-
-weighted_overlap(C1, C2, W1 + W2) :- true_overlap(C1, C2), planned_course(C1, W1, Y1), planned_course(C2, W2, Y2).
-
 same_year(C1, C2) :- course_weight(C1, W1, Y), course_weight(C2, W2, Y). %, C1 != C2.
 % Count 4000/8000 cross listed courses as the same year
 % ie, csci8156 graph theory is cross listed with csci4500 so count csci8156 as both year 4 and year 5 (grad class).
 same_year(C1, C2) :- cross_listed(N1, N2), section_course(C1, N1), section_course(C3, N2), same_year(C2, C3). %, C1 != C2.
-
-original_weighted_overlap_sum(N) :- N = #sum{ W, C1, C2 : weighted_overlap(C1, C2, W), same_year(C1, C2) }.
 
 % Check for overlap in rooms or in professor schedules
 % overlapping_room(N1, N2, R):- section_time(N1, S1, E1, D1), section_time(N2, S2, E2, D2), section_room(R, N1), section_room(R, N2), conflict(N1, N2). 
@@ -91,6 +78,7 @@ original_weighted_overlap_sum(N) :- N = #sum{ W, C1, C2 : weighted_overlap(C1, C
 cross_listed(N1, N2) :- section(C1, I1, N1, S, E, D, R, P), section(C2, I2, N2, S, E, D, R, P), C1 < C2, N1 != N2.
 % true_cross_listed(N1, N2) :- cross_listed(N1, N2) , not true_cross_listed(N2, N1).
 
-#show original_weighted_overlap_sum/1.
+#minimize{1, C1, C2 : critical_conflict(C1, C2)}.
+
 #show critical_conflict/2.
 % #show path/2.
