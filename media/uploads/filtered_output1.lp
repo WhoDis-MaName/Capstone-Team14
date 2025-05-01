@@ -20,11 +20,11 @@ course_weight(cist2500, "1", 2).
 section(cist9050, s001, c3362, 990, 1065, mw, peter_kiewit_institute_157, deepak_khazanchi).
 course(cist9050, "colloquium_on_it_teaching", none).
 course_weight(cist9050, "1", 5).
-class(csci8325; csci8920; csci4380; csci8105; csci8050; cist2500; cist9050).
-room(peter_kiewit_institute_153; durham_science_center_115; remote_learning; peter_kiewit_institute_160; peter_kiewit_institute_361; peter_kiewit_institute_157).
-professor(hesham_hassan_ali; nicolas_j_lalone; george_grispos; slava_v_rykov; pei_chi_huang; foluso_ayeni; jong_hoon_youn; deepak_khazanchi).
+class(csci8920; csci8105; cist9050; csci8325; csci8050; cist2500; csci4380).
+room(peter_kiewit_institute_153; remote_learning; peter_kiewit_institute_157; peter_kiewit_institute_361; durham_science_center_115; peter_kiewit_institute_160).
+professor(deepak_khazanchi; foluso_ayeni; george_grispos; hesham_hassan_ali; jong_hoon_youn; slava_v_rykov; nicolas_j_lalone; pei_chi_huang).
 time_slot(960, 1035, tr).
-time_slot(1080, 1240, t).
-time_slot(1080, 1240, m).
 time_slot(810, 885, mw).
+time_slot(1080, 1240, m).
+time_slot(1080, 1240, t).
 time_slot(990, 1065, mw).
