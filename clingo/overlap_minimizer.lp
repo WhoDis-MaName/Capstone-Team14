@@ -112,12 +112,15 @@ scheduled_critical_conflict(C1, C2) :- critical_section(C1, N1), critical_sectio
 % Prioritized minimize functions, first ensure the critical sections are available
 #minimize{1@3, C1, C2 : scheduled_critical_conflict(C1, C2)}.
 
+% Two sections are considered back to back if they happen on overlapping days and the start of the second section is within 60 minutes of the end of the first section. 
+back_to_back_sections(N1, N2) :- N1 != N2, scheduled_section_time_slot(N1, S1, E1, D1), scheduled_section_time_slot(N2, S2, E2, D2), overlapping_days(D1, D2), E1 < S2, S2 - E1 < 60.
+
 % For professors that prefer morning classes, attempt to make it impossible to schedule them after 12
 invalid_preference(P, N) :- morning_preference(P), scheduled_section_time_slot(N, S, E, D), scheduled_section_professor(P, N), S > 720.
 % For professors that prefer afternoon classes, attempt to make it impossible to schedule them before 12
 invalid_preference(P, N) :- afternoon_preference(P), scheduled_section_time_slot(N, S, E, D), scheduled_section_professor(P, N), S < 720.
 % For professors that prefer their classes back to back, attempt to make it impossible to schedule their classes more than 15 min apart. Also ensure they have overlapping days.
-invalid_preference(P, N) :- back_to_back_preference(P), scheduled_section_time_slot(N1, S1, E1, D1), scheduled_section_time_slot(N2, S2, E2, D2), N1 != N2, overlapping_days(D1, D2), scheduled_section_professor(P, N), S1 < S2, S2 - S1 > 15.
+invalid_preference(P, N) :- back_to_back_preference(P), scheduled_section_time_slot(N1, S1, E1, D1), scheduled_section_time_slot(N2, S2, E2, D2), scheduled_section_professor(P, N), not back_to_back_sections(N1, N2).
 % For professors that prefer classes on mw
 invalid_preference(P, N) :- mw_preference(P), scheduled_section_time_slot(N, S, E, D), scheduled_section_professor(P, N), D != mw.
 % For professors that prefer classes on tr
