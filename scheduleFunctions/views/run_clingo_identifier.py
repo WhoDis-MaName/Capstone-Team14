@@ -3,7 +3,7 @@ import os
 import clingo
 from ..models import FilteredUpload
 from django.core.files.storage import default_storage
-from .clingo_helpers import *
+from .clingo_helpers import run_clingo_optimization
 
 
 def run_clingo_identifier(request):
