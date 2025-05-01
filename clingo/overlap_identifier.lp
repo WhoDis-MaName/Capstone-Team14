@@ -70,15 +70,9 @@ same_year(C1, C2) :- course_weight(C1, W1, Y), course_weight(C2, W2, Y). %, C1 !
 % ie, csci8156 graph theory is cross listed with csci4500 so count csci8156 as both year 4 and year 5 (grad class).
 same_year(C1, C2) :- cross_listed(N1, N2), section_course(C1, N1), section_course(C3, N2), same_year(C2, C3). %, C1 != C2.
 
-% Check for overlap in rooms or in professor schedules
-% overlapping_room(N1, N2, R):- section_time(N1, S1, E1, D1), section_time(N2, S2, E2, D2), section_room(R, N1), section_room(R, N2), conflict(N1, N2). 
-% overlapping_prof(N1, N2, P):- section_time(N1, S1, E1, D1), section_time(N2, S2, E2, D2), section_professor(P, N1), section_professor(P, N2), conflict(N1, N2). 
-
 % We can infer that two classes are cross listed if they have the exact same start time, end time, day, room, and professor
 cross_listed(N1, N2) :- section(C1, I1, N1, S, E, D, R, P), section(C2, I2, N2, S, E, D, R, P), C1 < C2, N1 != N2.
-% true_cross_listed(N1, N2) :- cross_listed(N1, N2) , not true_cross_listed(N2, N1).
 
 #minimize{1, C1, C2 : critical_conflict(C1, C2)}.
 
 #show critical_conflict/2.
-% #show path/2.

@@ -17,17 +17,11 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from scheduleFunctions.views import (
-    run_script,
-)  # Import the view for schedulerApp functions
-from scheduleFunctions.views import (
-    login,
-    dashboard_view,
-    upload_json_file,
-    run_clingo_solver,
-    download_optimized_file,
-    optimize_schedule,
-)
+
+# from scheduleFunctions.views.views import (
+# run_script,
+# )  # Import the view for schedulerApp functions
+from scheduleFunctions.views import *
 
 urlpatterns = [
     path("admin/doc/", include("django.contrib.admindocs.urls")),
@@ -36,7 +30,7 @@ urlpatterns = [
     path("dashboard/", dashboard_view, name="dashboard"),
     path("", login, name="home"),  # Add homepage route
     path("upload/", upload_json_file, name="upload_json_file"),
-    path("run-solver/", run_clingo_solver, name="run_clingo_solver"),
+    path("run-identifier/", run_clingo_identifier, name="run_clingo_identifier"),
     path("optimize-schedule/", optimize_schedule, name="optimize_schedule"),
     path("download/<str:filename>/", download_optimized_file, name="download_file"),
 ]
