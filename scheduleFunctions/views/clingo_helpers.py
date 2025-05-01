@@ -1,5 +1,6 @@
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
+import multiprocessing
 import clingo
 import re
 import json
@@ -91,7 +92,11 @@ def run_clingo_optimization(asp_filename, asp_solver):
     asp_path = os.path.join(root_dir, "media", asp_filename)
     minimizer_path = os.path.join(root_dir, "clingo", asp_solver)
 
-    ctl = clingo.Control(["-t", "2"])
+    available_threads = multiprocessing.cpu_count()
+
+    print(f"Available threads on machine: {available_threads}")
+
+    ctl = clingo.Control(["-t", str(available_threads)])
     ctl.load(asp_path)
     ctl.load(minimizer_path)
     ctl.ground()
