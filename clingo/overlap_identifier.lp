@@ -75,4 +75,7 @@ cross_listed(N1, N2) :- section(C1, I1, N1, S, E, D, R, P), section(C2, I2, N2, 
 
 #minimize{1, C1, C2 : critical_conflict(C1, C2)}.
 
-#show critical_conflict/2.
+original_critical_conflict_count(N) :- N = #count{1, C1, C2 : critical_conflict(C1, C2)}.
+
+#show original_critical_conflict_count/1.
+% #show critical_conflict/2.
