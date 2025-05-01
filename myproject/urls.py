@@ -28,6 +28,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("run-script/", run_script, name="run_script"),
     path("dashboard/", dashboard_view, name="dashboard"),
+    path("section/", section_view, name="section"),
     path("", login, name="home"),  # Add homepage route
     path("upload/", upload_json_file, name="upload_json_file"),
     path("run-identifier/", run_clingo_identifier, name="run_clingo_identifier"),
