@@ -3,7 +3,7 @@ import os
 from django.conf import settings
 import subprocess
 
-
+# TODO: What does this do? Is this used for anything? 
 def run_script(request):
     script_name = request.GET.get("script")
     script_path = os.path.join(

@@ -1,7 +1,18 @@
 from django.shortcuts import render, redirect
 from scheduleFunctions.models import Course, Section
 
-
+##
+# @brief Displays details of a specific course section.
+#
+# This view retrieves the session data for the authenticated user and validates that the required parameters 
+# ("subject", "course_number", and "section") are provided in the GET request. If any parameter is missing, 
+# it redirects the user back to the dashboard. It fetches the selected course and section from the database 
+# and also retrieves any other sections that overlap in time with the selected section. The view then renders 
+# the 'section_details.html' template with the details of the selected section and a list of overlapping sections.
+#
+# @param request The HTTP request object containing the session data and GET parameters for subject, course number, and section.
+# @return A rendered HTML response with the 'section_details.html' template, including the selected section details, 
+#         a list of overlapping sections, and courses from the same semester, or a redirect to the dashboard or login page if data is missing.
 def section_view(request):
 
     if "username" not in request.session:

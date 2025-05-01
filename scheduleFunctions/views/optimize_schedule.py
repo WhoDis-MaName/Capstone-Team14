@@ -14,6 +14,31 @@ from .clingo_helpers import (
 )
 
 
+##
+# Run the clingo program for proposing an optimal schedule. 
+#
+# Like with the conflict identifier, we randomly choose one section from each course to be called "critical".
+#
+# For each course in the input file, we suggest a new timeslot. A timeslot if an object encoding the 
+# start time, end time, and day of a particular section. These timeslots are restricted to credit hours. 
+# For example, some timeslots are only for 1 credit hour courses, while others are for 3 credit hour courses. 
+#
+# We then ensure that no two sections are in the same room at the same time, 
+# and no professors are scheduled for two or more sections at the same time. 
+#
+# We then define conflict such that two sections have overlapping times, overlapping days, and are not sections of the same class. 
+# 
+# We then define a critical conflict to be if two critical sections of the same year (ie, two 3000 level courses) are in conflict. 
+# 
+# We then minimize the count of critical conflicts. 
+# As a secondary objective, we additionally minimize the number of changes from the original schedule.
+# 
+# In progress: Working on implementing professor preferences as tertiary objectives such as:
+# - Morning times
+# - Afternoon times
+# - Back to back times
+# - Monday/Wednesday Dayslots
+# - Tuesday/Thursday Dayslots
 @csrf_exempt
 def optimize_schedule(request):
     try:

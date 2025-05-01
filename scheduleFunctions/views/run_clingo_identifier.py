@@ -5,7 +5,14 @@ from ..models import FilteredUpload
 from django.core.files.storage import default_storage
 from .clingo_helpers import run_clingo_optimization
 
-
+##
+# Run the clingo program for identifying conflict. 
+#
+# The conflict identifier randomly chooses one section from each course to be called "critical".
+# We then define conflict such that two sections have overlapping times, overlapping days, and are not sections of the same class. 
+# 
+# We then define a critical conflict to be if two critical sections of the same year (ie, two 3000 level courses) are in conflict. 
+# Since critical sections are chosen randomly, we then minimize the count of critical sections, finding the best selection.
 def run_clingo_identifier(request):
     try:
         asp_filename = request.session.get("asp_filename")

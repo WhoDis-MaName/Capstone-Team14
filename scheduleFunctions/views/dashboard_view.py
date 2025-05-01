@@ -1,7 +1,18 @@
 from django.shortcuts import render, redirect
 from scheduleFunctions.models import Section, Day
 
-
+##
+# @brief Displays the dashboard page for the authenticated user.
+#
+# This view retrieves the session data for the authenticated user, validates and sets the current day based on the 
+# GET request, or defaults to Monday if no valid day is provided. It then attempts to fetch a list of sections 
+# for the selected day from the database and orders them by start time. If no sections are found for the selected day, 
+# it returns an empty list. The view then renders the 'dashboard.html' template with the username, selected day, 
+# and the list of sections for that day.
+#
+# @param request The HTTP request object containing the session data and GET parameters for the day.
+# @return A rendered HTML response with the 'dashboard.html' template, including the username, selected day, 
+#         and the list of sections for the selected day, or a redirect to the login page if the user is not authenticated.
 def dashboard_view(request):
 
     if "username" not in request.session:

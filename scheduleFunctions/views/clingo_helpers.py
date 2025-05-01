@@ -7,18 +7,31 @@ import json
 import os
 
 
+# === Utility Functions ===
+
+##
+# @brief Returns the root path of the project by finding the 'Capstone-Team14' directory in the path.
+# @return The absolute path to the root project directory.
 def get_root_path():
     path = os.path.dirname(os.path.realpath(__file__)).split(os.sep)
     root_index = path.index("Capstone-Team14")
     return os.sep.join(path[: root_index + 1])
 
-
+##
+# @brief Loads and parses a JSON file from the specified path.
+# @param path The path to the JSON file.
+# @return The deserialized Python object (dict or list).
 def load_optimized_json(path):
     with open(path, "r") as f:
         return json.load(f)
 
 
-# == Supporting JSON Conversion Functions ==
+# === JSON Conversion Functions ===
+
+##
+# @brief Converts a time in minutes to a human-readable 12-hour clock format with AM/PM.
+# @param t The time in minutes.
+# @return A string representation of the time (e.g., "9:30AM").
 def convert_time(t):
     t = int(t)
     hours = t // 60
@@ -27,7 +40,10 @@ def convert_time(t):
     hours = hours if hours <= 12 else hours - 12
     return f"{hours}:{minutes:02d}{suffix}"
 
-
+##
+# @brief Parses a single line of ASP output representing a scheduled section.
+# @param line A string line containing an ASP predicate like `scheduled_section(...)`.
+# @return A tuple with subject, course number, section, and a dictionary of schedule data, or None if parsing fails.
 def parse_line(line):
     match = re.match(r"scheduled_section\((.*?)\)", line.strip())
     if not match:
@@ -64,7 +80,10 @@ def parse_line(line):
         },
     )
 
-
+##
+# @brief Converts a list of ASP symbols to a structured JSON file.
+# @param symbols A list of ASP symbol strings (e.g., from Clingo models).
+# @param output_file The path where the JSON output should be saved.
 def convert_to_json(symbols, output_file):
     data = {}
     for line in symbols:
@@ -86,7 +105,11 @@ def convert_to_json(symbols, output_file):
     with open(output_file, "w") as f:
         json.dump(data, f, indent=2)
 
-
+##
+# @brief Runs Clingo on the given ASP program and minimizer, using all available threads.
+# @param asp_filename The filename of the main ASP input file (in /media).
+# @param asp_solver The filename of the minimizer or secondary ASP file (in /clingo).
+# @return A list of shown symbols from the last (optimal) model found by Clingo.
 def run_clingo_optimization(asp_filename, asp_solver):
     root_dir = get_root_path()
     asp_path = os.path.join(root_dir, "media", asp_filename)
@@ -116,6 +139,10 @@ def run_clingo_optimization(asp_filename, asp_solver):
 
     return last_model_symbols
 
-
+##
+# @brief Saves a Python dictionary as a formatted JSON file using Django's storage system.
+# @param data The data to be saved.
+# @param filename The filename to save to (relative to Django's media path).
+# @return The final path where the file was saved.
 def save_optimized_file(data, filename):
     return default_storage.save(filename, ContentFile(json.dumps(data, indent=2)))
