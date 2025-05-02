@@ -19,6 +19,8 @@ def dashboard_view(request):
         return redirect("home")  # Redirect to login if not authenticated
 
     # Render the dashboard.html template
+    
+        
     try:
         if not request.GET.get("day") is None:
             request.session["day"] = Day.DAY_OF_WEEK_CHOICES[request.GET.get("day")]
@@ -28,11 +30,28 @@ def dashboard_view(request):
         print(request.session["day"])
     except:
         request.session["day"] = Day.DAY_OF_WEEK_CHOICES["m"]
+        
+    try:
+        if not request.GET.get("changed") is None:
+            request.session["changed"] = request.GET.get("changed")
+            request.session["day"] = "Changed Sessions"
+        else:
+            request.session["changed"] = False
+            if request.session["day"] == "Changed Sessions":
+                request.session["day"] = Day.DAY_OF_WEEK_CHOICES["m"]
+    except:
+        request.session["changed"] = False
 
     try:
-        section_list = Section.objects.filter(
-            time_slot__days__day_of_week=request.session["day"]
-        ).order_by("time_slot__start_time")
+        if request.session["changed"]:
+            section_list = Section.objects.filter(
+                # time_slot__days__day_of_week=request.session["day"],
+                changed = True
+            ).order_by("time_slot__start_time")
+        else:
+            section_list = Section.objects.filter(
+                time_slot__days__day_of_week=request.session["day"]
+            ).order_by("time_slot__start_time")
     except Section.DoesNotExist:
         section_list = []
 
