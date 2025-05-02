@@ -291,12 +291,5 @@ def store_schedule_changes(section_id: int, time_start: date, time_end: date, da
         selected_section.time_slot = updated_time
         selected_section.save()
     except TimeSlot.DoesNotExist:
-                selected_time = TimeSlot(
-                start_time = time_start, 
-                end_time = time_end,
-                credits = selected_section.course.credits
-                )
-                selected_time.save()
-                for day in days:
-                    selected_time.days.add(day)
+        print(f"Something went wrong, timeslot doesn't exist: {(time_start, time_end, days)}")
    
