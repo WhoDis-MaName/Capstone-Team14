@@ -270,4 +270,33 @@ def store_schedule(json_file: str) -> None:
                         print(time.print_clingo())
                 selected_section.time_slot = selected_time
                 selected_section.save()
-                
+
+def store_schedule_changes(section_id: int, time_start: date, time_end: date, days: str) -> None:
+    try:
+        selected_section = Section.objects.get(section_id=section_id)
+    except Section.DoesNotExist:
+        print(f"Something went wrong, section does not exist: {section_id}")
+
+    try:
+        updated_time = TimeSlot.objects.annotate(
+                        num_days=Count('days')
+                    ).filter(
+                        days__in = days
+                    ).filter(
+                        num_days=len(days)
+                    ).filter(
+                        start_time = time_start,
+                        end_time = time_end
+                    ).distinct().get()
+        selected_section.time_slot = updated_time
+        selected_section.save()
+    except TimeSlot.DoesNotExist:
+                selected_time = TimeSlot(
+                start_time = time_start, 
+                end_time = time_end,
+                credits = selected_section.course.credits
+                )
+                selected_time.save()
+                for day in days:
+                    selected_time.days.add(day)
+   
