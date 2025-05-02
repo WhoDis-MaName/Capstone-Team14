@@ -235,10 +235,6 @@ def store_schedule(json_file: str) -> None:
                 start_time = date.strptime(start_time, "%I:%M%p")
                 end_time = date.strptime(end_time, "%I:%M%p")
                 
-                
-                selected_section.start_time = start_time
-                selected_section.end_time = end_time
-                
                 selected_days = Day.objects.filter(day_of_week__in = [Day.DAY_OF_WEEK_CHOICES[day] for day in section_details['Days'].lower()])
 
                 try:
@@ -248,6 +244,9 @@ def store_schedule(json_file: str) -> None:
                         days__in = selected_days
                     ).filter(
                         num_days=len(selected_days)
+                    ).filter(
+                        start_time = start_time,
+                        end_time = end_time
                     ).distinct().get()
                 except TimeSlot.DoesNotExist:
                     selected_time = TimeSlot(
@@ -271,25 +270,28 @@ def store_schedule(json_file: str) -> None:
                 selected_section.time_slot = selected_time
                 selected_section.save()
 
-def store_schedule_changes(section_id: int, time_start: date, time_end: date, days: str) -> None:
+def store_schedule_changes(section_id: int, start_time: date, end_time: date, days: str) -> None:
+    print(section_id, start_time, end_time, days)
     try:
         selected_section = Section.objects.get(section_id=section_id)
     except Section.DoesNotExist:
         print(f"Something went wrong, section does not exist: {section_id}")
 
     try:
+        selected_days = Day.objects.filter(day_of_week__in = [Day.DAY_OF_WEEK_CHOICES[day] for day in days])
         updated_time = TimeSlot.objects.annotate(
                         num_days=Count('days')
                     ).filter(
-                        days__in = days
+                        days__in = selected_days
                     ).filter(
                         num_days=len(days)
                     ).filter(
-                        start_time = time_start,
-                        end_time = time_end
+                        start_time = start_time,
+                        end_time = end_time
                     ).distinct().get()
         selected_section.time_slot = updated_time
+        selected_section.changed = True
         selected_section.save()
     except TimeSlot.DoesNotExist:
-        print(f"Something went wrong, timeslot doesn't exist: {(time_start, time_end, days)}")
+        print(f"Something went wrong, timeslot doesn't exist: {(start_time, end_time, days)}")
    

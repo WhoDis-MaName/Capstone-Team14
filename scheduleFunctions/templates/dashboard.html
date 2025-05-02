@@ -134,9 +134,8 @@
                 {{section.course.name}} ({{ section.time_slot.days.all |join:"/"}} 
                 {{section.time_slot.start_time|date:"g:ia"}} -
                 {{section.time_slot.end_time|date:"g:ia"}}) 
-                </br>- {{section.professor.name}}
-
               </a>
+              - {{section.professor.name}}
             </li>
             {% endfor %}
             <!-- <li>CSCI 1620 - Introduction to CS (Mon/Wed 10:00AM - 11:30AM)</li>

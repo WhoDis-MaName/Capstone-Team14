@@ -128,7 +128,8 @@ class Section(models.Model):
     section_id = models.IntegerField(primary_key=True)
     professor = models.ForeignKey(Proffessor, on_delete = models.CASCADE)
     time_slot = models.ForeignKey(TimeSlot, on_delete = models.CASCADE)
-    room = models.ForeignKey(Room, on_delete=models.SET_NULL, null=True, blank=True)    
+    room = models.ForeignKey(Room, on_delete=models.SET_NULL, null=True, blank=True)
+    changed = models.BooleanField(default=False)    
     
     def print_clingo(self) -> str:
         # section(cist1010, s001, c15257, 570, 620, t, peter_kiewit_institute_157, farida_majid).
