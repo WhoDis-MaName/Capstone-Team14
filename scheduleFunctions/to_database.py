@@ -65,7 +65,7 @@ def store_plan(json_file) -> None:
     for course, course_details in data.items():
         subject = course[:-4]
         name = course_details['name']
-        print(course, name)
+        # print(course, name)
         course_number = int(course[-4:])
         
         try:
@@ -179,7 +179,7 @@ def store_schedule(json_file: str) -> None:
             
             for section, section_details in details['sections'].items():
                 if section_details['Location'] in ['Totally Online', 'To Be Announced', 'Partially Online'] or section_details['Time'] == 'TBA':
-                    print(f"{section_details['Location']} - Skipping")
+                    # print(f"{section_details['Location']} - Skipping")
                     continue
 
                 try:
@@ -266,8 +266,8 @@ def store_schedule(json_file: str) -> None:
                     ).filter(
                         num_days=len(selected_days)
                     ).distinct()
-                    for time in timeslots:
-                        print(time.print_clingo())
+                    # for time in timeslots:
+                        # print(time.print_clingo())
                 selected_section.time_slot = selected_time
                 selected_section.save()
 
