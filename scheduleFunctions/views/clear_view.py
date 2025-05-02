@@ -7,4 +7,4 @@ def clear_view(request):
         return redirect("home")  # Redirect to login if not authenticated
     
     clear_schedule()
-    redirect("dashboard")
+    return redirect("dashboard")
