@@ -132,10 +132,20 @@ def convert(file: str):
     facts.append(f"room({'; '.join(rooms)}).")
     facts.append(f"professor({'; '.join(professors)}).")
     facts.extend(times)  # Since times are already formatted as facts
+    # Write ASP facts to a file
+    asp_filename = file.replace(".json", ".lp")
+    # asp_filename = "classes.lp"
+    with open(asp_filename, "w") as f:
+        f.write("\n".join(facts))
 
-<<<<<<<< HEAD:scheduleFunctions/data_processing/jsonconverter.py
+    # print(f"ASP facts written to {asp_filename}")
     return facts
-========
+
+
+if __name__ == "__main__":
+    file = r"C:\Users\cjgry\Documents\Capstone\Capstone-Team14\media\fa21-fa24.json"
+    facts = convert(file)
+    
     # Write ASP facts to a file
     asp_filename = file.replace(".json", ".lp")
     # asp_filename = "classes.lp"
@@ -144,6 +154,4 @@ def convert(file: str):
 
     # print(f"ASP facts written to {asp_filename}")
 
-
-convert(r"C:\Users\cjgry\Documents\Capstone\Capstone-Team14\media\fa21-fa24.json")
->>>>>>>> main:clingo/old_clingo/jsonconverter.py
+    

@@ -1,0 +1,376 @@
+{
+    "1248": {
+        "CSCI": {
+            "3320": {
+                "title": "DATA STRUCTURES",
+                "desc": "Prereq: CSCI 1620 and CSCI 2030 or MATH 2030. Programming Languages: Java or C++ Topics: Arrays, Pointers, Introductory Lists, Storage Allocation (with C- or better).",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "14040 ?",
+                        "Type": "LEC",
+                        "Enrolled": "34",
+                        "Class Max": "35",
+                        "Seats Available": "1",
+                        "Credit Hours": "3",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "10:30AM - 11:45AM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 252",
+                        "Instructor": "Jong-Hoon Youn"
+                    },
+                    "002": {
+                        "Class Number": "14038 ?",
+                        "Type": "LEC",
+                        "Enrolled": "36",
+                        "Class Max": "35",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "12:00PM - 1:15PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 276",
+                        "Instructor": "Brian C Ricks"
+                    },
+                    "003": {
+                        "Class Number": "14753 ?",
+                        "Type": "LEC",
+                        "Enrolled": "35",
+                        "Class Max": "35",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "4:30PM - 5:45PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 263",
+                        "Instructor": "Kwangsung Oh"
+                    },
+                    "850": {
+                        "Class Number": "14039 ?",
+                        "Type": "LEC",
+                        "Enrolled": "40",
+                        "Class Max": "35",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Hesham Hassan Ali"
+                    }
+                }
+            },
+            "3830": {
+                "title": "ADVANCED JAVA PROGRAMMING",
+                "desc": "Prereq: ((CSCI 2830 with C- or better) OR Java programming proficiency) AND (CSCI 3320 with C- or better (can be taken as a co-requisite)) AND (basic knowledge of HTML and SQL)",
+                "prereq": "-",
+                "sections": {
+                    "850": {
+                        "Class Number": "14044 ?",
+                        "Type": "LEC",
+                        "Enrolled": "25",
+                        "Class Max": "30",
+                        "Seats Available": "5",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Wendy Tang"
+                    }
+                }
+            },
+            "8970": {
+                "title": "INDEPENDENT STUDY",
+                "desc": "Prereq: Permission of the Graduate Program Committee. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "14718 ?",
+                        "Type": "IND",
+                        "Enrolled": "1",
+                        "Class Max": "15",
+                        "Seats Available": "14",
+                        "Credit Hours": "1-3",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "To Be Announced",
+                        "Instructor": "Jong-Hoon Youn"
+                    }
+                }
+            },
+            "3550": {
+                "title": "COMMUNICATION NETWORKS",
+                "desc": "Prereq: (CSCI 3320 or CSCI 8325 with grade of C- or better) AND (CSCI 2240 or CYBR 2250 with grade of C- or better)",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "17612 ?",
+                        "Type": "LLB",
+                        "Enrolled": "35",
+                        "Class Max": "35",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "10:30AM - 11:45AM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 260",
+                        "Instructor": "Jose M. Santos"
+                    },
+                    "850": {
+                        "Class Number": "17613 ?",
+                        "Type": "LLB",
+                        "Enrolled": "35",
+                        "Class Max": "35",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Jose M. Santos"
+                    },
+                    "851": {
+                        "Class Number": "20686 ?",
+                        "Type": "LLB",
+                        "Enrolled": "35",
+                        "Class Max": "35",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Divija Swetha Gadiraju"
+                    }
+                }
+            },
+            "8306": {
+                "title": "DETERMINISTIC OR RSRCH MODELS",
+                "desc": "Prereq: MATH 2050 with a C- or better or permission of instructor.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "16071 ?",
+                        "Type": "LEC",
+                        "Enrolled": "0",
+                        "Class Max": "3",
+                        "Seats Available": "3",
+                        "Credit Hours": "3",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "4:00PM - 5:15PM",
+                        "Days": "MW",
+                        "Location": "Durham Science Center 104",
+                        "Instructor": "Fabio Torres Vitor"
+                    }
+                }
+            }
+        },
+        "CIST": {
+            "9080": {
+                "title": "RESEARCH DIRECTIONS IN I.T.",
+                "desc": "Prereq: Doctoral standing in Information Technology or permission of course coordinators. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "15200 ?",
+                        "Type": "LEC",
+                        "Enrolled": "5",
+                        "Class Max": "15",
+                        "Seats Available": "10",
+                        "Credit Hours": "3",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "4:30PM - 7:10PM",
+                        "Days": "W",
+                        "Location": "Peter Kiewit Institute 259",
+                        "Instructor": "Ann L Fruhling"
+                    }
+                }
+            },
+            "3000": {
+                "title": "ADVANCED COMPOSITION FOR IS&T",
+                "desc": "Prereq: ENGL 1160 (or placement in a 3rd year writing course) and junior standing, or permission of the instructor. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "14285 ?",
+                        "Type": "LEC",
+                        "Enrolled": "21",
+                        "Class Max": "20",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Open Nebraska (No Cost Materials)",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "1:30PM - 2:45PM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 157",
+                        "Instructor": "Thom Davis"
+                    },
+                    "002": {
+                        "Class Number": "14017 ?",
+                        "Type": "LEC",
+                        "Enrolled": "21",
+                        "Class Max": "20",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Open Nebraska (No Cost Materials)",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "10:30AM - 11:45AM",
+                        "Days": "MW",
+                        "Location": "Peter Kiewit Institute 157",
+                        "Instructor": "Thom Davis"
+                    },
+                    "003": {
+                        "Class Number": "15846 ?",
+                        "Type": "LEC",
+                        "Enrolled": "22",
+                        "Class Max": "20",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Open Nebraska (No Cost Materials)",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "10:30AM - 11:45AM",
+                        "Days": "TR",
+                        "Location": "Peter Kiewit Institute 157",
+                        "Instructor": "Thom Davis"
+                    },
+                    "850": {
+                        "Class Number": "14556 ?",
+                        "Type": "LEC",
+                        "Enrolled": "20",
+                        "Class Max": "20",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Amanda Lynn Gutierrez"
+                    },
+                    "851": {
+                        "Class Number": "14557 ?",
+                        "Type": "LEC",
+                        "Enrolled": "19",
+                        "Class Max": "20",
+                        "Seats Available": "1",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Amanda Lynn Gutierrez"
+                    },
+                    "852": {
+                        "Class Number": "14016 ?",
+                        "Type": "LEC",
+                        "Enrolled": "20",
+                        "Class Max": "20",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Thom Davis"
+                    },
+                    "853": {
+                        "Class Number": "15172 ?",
+                        "Type": "LEC",
+                        "Enrolled": "20",
+                        "Class Max": "20",
+                        "Seats Available": "0",
+                        "Credit Hours": "3",
+                        "Students on Waitlist": "0",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Michelle L Porter"
+                    }
+                }
+            },
+            "9990": {
+                "title": "DISSERTATION",
+                "desc": "Prereq: Admission to the Ph.D. program in Information Technology. Admission to candidacy for the Ph.D. degree. Prior to enrolling for dissertation hours, the students must have permission of the supervisory committee. Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "14021 ?",
+                        "Type": "DSR",
+                        "Enrolled": "9",
+                        "Class Max": "20",
+                        "Seats Available": "11",
+                        "Credit Hours": "1-12",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "To Be Announced",
+                        "Instructor": "Ann L Fruhling"
+                    }
+                }
+            },
+            "4540": {
+                "title": "COMPUTER SECURITY MANAGEMENT",
+                "desc": "Prereq: CYBR 4360 or permission of the instructor.",
+                "prereq": "-",
+                "sections": {
+                    "851": {
+                        "Class Number": "15622 ?",
+                        "Type": "LEC",
+                        "Enrolled": "0",
+                        "Class Max": "5",
+                        "Seats Available": "5",
+                        "Credit Hours": "3",
+                        "Course Attribute": "Totally Online",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "TBA",
+                        "Days": "TBA ",
+                        "Location": "Totally Online",
+                        "Instructor": "Karen Sue Allen"
+                    }
+                }
+            },
+            "2010": {
+                "title": "IS&T PROFESSIONAL DEVELOPMENT",
+                "desc": "Prereq: Not open to non-degree graduate students.",
+                "prereq": "-",
+                "sections": {
+                    "001": {
+                        "Class Number": "17564 ?",
+                        "Type": "SEM",
+                        "Enrolled": "21",
+                        "Class Max": "60",
+                        "Seats Available": "39",
+                        "Credit Hours": "2",
+                        "Note": "Students will have synchronous group meetings with project mentors outside of scheduled class time.",
+                        "Date": "Aug 26, 2024 - Dec 20, 2024",
+                        "Time": "4:30PM - 6:10PM",
+                        "Days": "T",
+                        "Location": "Peter Kiewit Institute 278",
+                        "Instructor": "Martha A Garcia-Murillo"
+                    }
+                }
+            }
+        }
+    }
+}

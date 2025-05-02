@@ -46,6 +46,10 @@ class SchedulefunctionsConfig(AppConfig):
                 json.dump(constraints,f, indent=4)
             
             requirements_file = os.path.join(data_dir,'requirements','requirements.json')
+            try:
+                os.makedirs(os.path.join(data_dir,'requirements'))
+            except:
+                pass
             urls = [
                 'https://catalog.unomaha.edu/undergraduate/college-information-science-technology/computer-science/computer-science-bs/artificialintelligence-concentraton/',
                 'https://catalog.unomaha.edu/undergraduate/college-information-science-technology/computer-science/computer-science-bs/game-programming-concentration/',
