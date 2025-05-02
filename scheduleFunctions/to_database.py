@@ -307,3 +307,9 @@ def store_schedule_changes(section_id: int, start_time: date, end_time: date, da
     selected_section.changed = True
     selected_section.save()
    
+def clear_schedule():
+    Section.objects.all().delete()
+    Room.objects.all().delete()
+    Proffessor.objects.all().delete()
+    TimeSlot.objects.all().delete()
+    

@@ -3,7 +3,7 @@ from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 import json
 from ..models import FilteredUpload
-from ..to_database import store_schedule
+from ..to_database import store_schedule, clear_schedule
 from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
 from datetime import datetime
@@ -262,6 +262,7 @@ def upload_json_file(request):
     default_storage.save(
         non_filtered_filename, ContentFile(json.dumps(non_filtered_courses, indent=2))
     )
+    clear_schedule()
     store_schedule(os.path.join(settings.BASE_DIR,'media', filtered_filename))
     # Save model
     record = FilteredUpload.objects.create(
