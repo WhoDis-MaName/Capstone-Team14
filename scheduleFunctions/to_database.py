@@ -179,11 +179,12 @@ def store_schedule(json_file: str) -> None:
             
             for section, section_details in details['sections'].items():
                 if section_details['Location'] in ['Totally Online', 'To Be Announced', 'Partially Online'] or section_details['Time'] == 'TBA':
-                    # print(f"{section_details['Location']} - Skipping")
+                    print(f"{section_details['Location']} - Skipping")
                     continue
 
                 try:
                     selected_section = Section.objects.get(course=selected_course, section_number=int(section))
+                    print(f"{selected_section} Entering database")
                 except Section.DoesNotExist:
                     selected_section = Section(
                         course=selected_course, 
@@ -307,3 +308,9 @@ def store_schedule_changes(section_id: int, start_time: date, end_time: date, da
     selected_section.changed = True
     selected_section.save()
    
+def clear_schedule():
+    Section.objects.all().delete()
+    Room.objects.all().delete()
+    Proffessor.objects.all().delete()
+    TimeSlot.objects.all().delete()
+    

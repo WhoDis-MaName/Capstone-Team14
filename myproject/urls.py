@@ -27,6 +27,7 @@ urlpatterns = [
     path("admin/doc/", include("django.contrib.admindocs.urls")),
     path("admin/", admin.site.urls),
     path("dashboard/", dashboard_view, name="dashboard"),
+    path("clear/", clear_view, name="clear"),
     path("section/", section_view, name="section"),
     path("", login, name="home"),  # Add homepage route
     path("upload/", upload_json_file, name="upload_json_file"),
