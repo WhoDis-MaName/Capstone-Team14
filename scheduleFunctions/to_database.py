@@ -257,6 +257,7 @@ def store_schedule(json_file: str) -> None:
                     selected_time.save()
                     for day in selected_days:
                         selected_time.days.add(day)
+                    selected_time.save()
                 except TimeSlot.MultipleObjectsReturned:
                     timeslots = TimeSlot.objects.annotate(
                         num_days=Count('days')
@@ -289,9 +290,20 @@ def store_schedule_changes(section_id: int, start_time: date, end_time: date, da
                         start_time = start_time,
                         end_time = end_time
                     ).distinct().get()
-        selected_section.time_slot = updated_time
-        selected_section.changed = True
-        selected_section.save()
+        
     except TimeSlot.DoesNotExist:
+        updated_time = TimeSlot(
+            start_time = start_time, 
+            end_time = end_time,
+            credits = selected_section.course.credits
+        )
+        updated_time.save()
+        for day in selected_days:
+            updated_time.days.add(day)
+        updated_time.save()
         print(f"Something went wrong, timeslot doesn't exist: {(start_time, end_time, days)}")
+        
+    selected_section.time_slot = updated_time
+    selected_section.changed = True
+    selected_section.save()
    
