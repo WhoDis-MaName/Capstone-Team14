@@ -3,7 +3,6 @@ from .download_optimized_file import *
 from .login import *
 from .optimize_schedule import *
 from .run_clingo_identifier import *
-from .run_script import *
 from .upload_json_file import *
 from .section_view import *
 from .clear_view import *
@@ -14,7 +13,6 @@ __all__ = [
     "login",
     "optimize_schedule",
     "run_clingo_identifier",
-    "run_script",
     "upload_json_file",
     "section_view",
     "clear_view",

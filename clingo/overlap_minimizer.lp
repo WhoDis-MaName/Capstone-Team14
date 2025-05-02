@@ -128,10 +128,11 @@ invalid_preference(P, N) :- mw_preference(P), scheduled_section_time_slot(N, S, 
 % For professors that prefer classes on tr
 invalid_preference(P, N) :- tr_preference(P), scheduled_section_time_slot(N, S, E, D), scheduled_section_professor(P, N), D != tr.
 
-#minimize{1@2, P, N : invalid_preference(P, N)}.  
-
 % Then minimize changes from original schedule
-#minimize{1@1, N : changed_section(N)}.
+#minimize{1@2, N : changed_section(N)}.
+
+% Then break ties based off preferences
+#minimize{1@1, P, N : invalid_preference(P, N)}.  
 
 % #show scheduled_section_time_slot/4.
 
