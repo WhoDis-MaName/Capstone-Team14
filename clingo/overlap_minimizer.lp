@@ -105,7 +105,9 @@ scheduled_conflict(N1, N2) :-
     same_year(C1, C2).
 
 % There is a shedule change between two section IDs if they are at different times or different days.
-schedule_change(C, I) :- scheduled_section_time_slot(N, S1, E1, D1), section(C, I, N, S2, E2, D2, R, P), (S1, E1, D1) != (S2, E2, D2). 
+schedule_change(N, S1, E1, D1) :- scheduled_section_time_slot(N, S1, E1, D1), section(C, I, N, S2, E2, D2, R, P), (S1, E1, D1) != (S2, E2, D2). 
+changed_section(N) :- schedule_change(N, S1, E1, D1).
+
 % There is a conflict between critical sections of planned courses in the 4 year plan
 scheduled_critical_conflict(C1, C2) :- critical_section(C1, N1), critical_section(C2, N2), scheduled_conflict(N1, N2), C1!=C2.
 
@@ -129,10 +131,13 @@ invalid_preference(P, N) :- tr_preference(P), scheduled_section_time_slot(N, S, 
 #minimize{1@2, P, N : invalid_preference(P, N)}.  
 
 % Then minimize changes from original schedule
-#minimize{1@1, C, I : schedule_change(C, I)}.
+#minimize{1@1, N : changed_section(N)}.
 
 % #show scheduled_section_time_slot/4.
+
 #show scheduled_section/8.
+#show schedule_change/4.
+
 % #show critical_section/2.
 
 % Can do: opt = 3 for 3 possibilities

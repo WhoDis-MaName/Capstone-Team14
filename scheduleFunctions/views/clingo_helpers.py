@@ -1,5 +1,7 @@
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
+from datetime import datetime
+from ..to_database import store_schedule_changes
 import multiprocessing
 import clingo
 import re
@@ -45,40 +47,58 @@ def convert_time(t):
 # @param line A string line containing an ASP predicate like `scheduled_section(...)`.
 # @return A tuple with subject, course number, section, and a dictionary of schedule data, or None if parsing fails.
 def parse_line(line):
-    match = re.match(r"scheduled_section\((.*?)\)", line.strip())
-    if not match:
-        return None
-    fields = match.group(1).split(",")
-    if len(fields) != 8:
-        return None
-    (
-        subject_course,
-        section,
-        class_number,
-        start,
-        end,
-        days,
-        location,
-        instructor,
-    ) = fields
-    subject = subject_course[:4].upper()
-    course_number = subject_course[4:]
-    section = section[1:]
-    class_number = class_number[1:]
-    time_str = f"{convert_time(start)} - {convert_time(end)}"
-    return (
-        subject,
-        course_number,
-        section,
-        {
-            "Class Number": class_number,
-            "Date": "Aug 26, 2024 - Dec 20, 2024",
-            "Time": time_str,
-            "Days": days.upper(),
-            "Location": location.replace("_", " ").title(),
-            "Instructor": instructor.replace("_", " ").title(),
-        },
-    )
+    # Get the scheduled_section/8 predicate - list of all sections and their timeslots
+    scheduled_section_match = re.match(r"scheduled_section\((.*?)\)", line.strip())
+
+    # Get the schedule_change/4 predicate - list of only the changed sections and their new timeslots
+    schedule_change_match = re.match(r"schedule_change\((.*?)\)", line.strip())
+
+    if scheduled_section_match:
+        fields = scheduled_section_match.group(1).split(",")
+        if len(fields) != 8:
+            return
+        (
+            subject_course,
+            section,
+            section_id,
+            start,
+            end,
+            days,
+            location,
+            instructor,
+        ) = fields
+        subject = subject_course[:4].upper()
+        course_number = subject_course[4:]
+        section = section[1:]
+        section_id = section_id[1:]
+        time_str = f"{convert_time(start)} - {convert_time(end)}"
+        return (
+            subject,
+            course_number,
+            section,
+            {
+                "Class Number": section_id,
+                "Date": "Aug 26, 2024 - Dec 20, 2024",
+                "Time": time_str,
+                "Days": days.upper(),
+                "Location": location.replace("_", " ").title(),
+                "Instructor": instructor.replace("_", " ").title(),
+            },
+        )
+    if schedule_change_match:
+        fields = schedule_change_match.group(1).split(",")
+        if len(fields) != 4:
+            return
+        (
+            section_id,
+            start,
+            end,
+            days,
+        ) = fields
+        section_id = int(section_id[1:])
+        time_start = datetime.strptime(convert_time(start), "%I:%M%p")
+        time_end = datetime.strptime(convert_time(end), "%I:%M%p")
+        return store_schedule_changes(section_id, time_start, time_end, days)
 
 ##
 # @brief Converts a list of ASP symbols to a structured JSON file.
