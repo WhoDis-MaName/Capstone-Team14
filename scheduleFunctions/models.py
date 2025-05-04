@@ -129,7 +129,7 @@ class TimeSlot(models.Model):
 class Section(models.Model):
     course = models.ForeignKey(Course, on_delete = models.CASCADE)
     section_number = models.IntegerField()
-    section_id = models.IntegerField(primary_key=True)
+    section_id = models.IntegerField()
     professor = models.ForeignKey(Proffessor, on_delete = models.CASCADE)
     time_slot = models.ForeignKey(TimeSlot, on_delete = models.CASCADE)
     room = models.ForeignKey(Room, on_delete=models.SET_NULL, null=True, blank=True)
