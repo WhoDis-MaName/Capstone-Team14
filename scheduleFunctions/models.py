@@ -8,7 +8,10 @@ class Room(models.Model):
     
     def print_clingo(self) -> str:
         # peter_kiewit_institute_157
-        return "_".join(self.building.lower().split(" ").append(self.room_number))
+        try:
+            return "_".join(self.building.lower().split(" ").append(self.room_number))
+        except TypeError:
+            return "_".join([self.building.lower(),str(self.room_number)])
         ...
     @classmethod
     def print_all_clingo(cls):
@@ -62,14 +65,15 @@ class Course(models.Model):
         else:
             self_text = 'non_cs_course('
         
-        self_text = self_text 
         year = self.class_number // 1000
         if year > 4:
             year = 5
-        + f'{self.subject.lower()}{self.class_number}'
-        + f', "{self.name.replace(" ", "_").replace("-", "_").replace(".", "").lower()}", "_").'
-        weight_text = f'course_weight({self.subject.lower()}{self.class_number}'
-        + f',{self.weight},{year}).'
+            
+        self_text = ''.join([self_text,
+            f'{self.subject.lower()}{self.class_number}',
+            f', "{self.name.replace(" ", "_").replace("-", "_").replace(".", "").lower()}", "_").'])
+        weight_text = ''.join([f'course_weight({self.subject.lower()}{self.class_number}',
+            f',{self.weight},{year}).'])
         
         return {'self': self_text, 'weight': weight_text}
         ...
@@ -133,35 +137,35 @@ class Section(models.Model):
     
     def print_clingo(self) -> str:
         # section(cist1010, s001, c15257, 570, 620, t, peter_kiewit_institute_157, farida_majid).
-        if self.subject in ['CSCI']:
+        if self.course.subject in ['CSCI']:
             self_text = 'section('
             
         else:
             self_text = 'non_cs_section('   
-        self_text = self_text     
-        + f'{self.course.subject.lower()}{self.course.class_number}'
-        + f', s{self.section_number}, c{self.section_id}'
-        + f', {self.time_slot.start_time.hour * 60 + self.time_slot.start_time.minute}'
-        + f', {self.time_slot.end_time.hour * 60 + self.time_slot.end_time.minute}'
-        + f', {"".join([day.print_clingo() for day in self.time_slot.days.all()])}'       
-        + f', {self.room.print_clingo()}'       
-        + f', {self.professor.print_clingo()}'        
-        + ').'
+        self_text = ''.join([self_text,     
+            f'{self.course.subject.lower()}{self.course.class_number}',
+            f', s{self.section_number}, c{self.section_id}',
+            f', {self.time_slot.start_time.hour * 60 + self.time_slot.start_time.minute}',
+            f', {self.time_slot.end_time.hour * 60 + self.time_slot.end_time.minute}',
+            f', {"".join([day.print_clingo() for day in self.time_slot.days.all()])}',       
+            f', {self.room.print_clingo()}',
+            f', {self.professor.print_clingo()}',        
+            ').'])
         section_count = Section.objects.filter(course=self.course).count()
         critical_text = ''
         if section_count == 1:
             critical_text = f'critical_section({self.course.subject.lower()}{self.course.class_number}, c{self.section_id}).'
         time_slot_text = ''
-        if self.subject in ['CSCI']:
+        if self.course.subject in ['CSCI']:
             time_slot_text = 'time_slot('
         else:
             time_slot_text = 'non_cs_time_slot('
             
-        time_slot_text = time_slot_text
-        + f', {self.time_slot.start_time.hour * 60 + self.time_slot.start_time.minute}'
-        + f', {self.time_slot.end_time.hour * 60 + self.time_slot.end_time.minute}'
-        + f', {"".join([day.print_clingo() for day in self.time_slot.days.all()])}'
-        + ').'
+        time_slot_text = ''.join([time_slot_text,
+            f', {self.time_slot.start_time.hour * 60 + self.time_slot.start_time.minute}',
+            f', {self.time_slot.end_time.hour * 60 + self.time_slot.end_time.minute}',
+            f', {"".join([day.print_clingo() for day in self.time_slot.days.all()])}',
+            ').'])
         
         return {'self': self_text,'critical': critical_text, 'time_slot': time_slot_text}
         ...
