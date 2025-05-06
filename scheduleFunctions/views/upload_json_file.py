@@ -155,7 +155,7 @@ def convert_json_to_lp(schedule_list):
                 # if we are a class that we can modify
                 if subject in SUBJECTS_OF_INTEREST:
                     facts.append(f'course({course_id}, "{title}", "{prereq}").')
-                    weight = 1
+                    # weight = 1
                     if str(course_num).startswith("1"):
                         year = 1
                     elif str(course_num).startswith("2"):
@@ -173,12 +173,12 @@ def convert_json_to_lp(schedule_list):
                         print(
                             f"Error for course id: {course_id} with course number: {course_num}"
                         )
-                    facts.append(f"course_weight({course_id}, {weight}, {year}).")
+                    facts.append(f"course_year({course_id}, {year}).")
                     classes.add(course_id)
                 # else we are a class like english or math and we cannot modify the time
                 else:
                     facts.append(f'non_cs_course({course_id}, "{title}", "{prereq}").')
-                    weight = 1
+                    # weight = 1
                     if str(course_num).startswith("1"):
                         year = 1
                     elif str(course_num).startswith("2"):
@@ -196,7 +196,7 @@ def convert_json_to_lp(schedule_list):
                         print(
                             f"Error for course id: {course_id} with course number: {course_num}"
                         )
-                    facts.append(f"course_weight({course_id}, {weight}, {year}).")
+                    facts.append(f"course_year({course_id}, {year}).")
                     non_cs_classes.add(course_id)
 
     facts.append(f"class({'; '.join(classes)}).")

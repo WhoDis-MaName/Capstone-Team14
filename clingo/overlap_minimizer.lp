@@ -1,6 +1,6 @@
 % #include "overlap_identifier.lp".
 % #include "total_filtered.lp".
-#include "fourYearPlan.lp".
+% #include "fourYearPlan.lp".
 #include "days.lp".
 #include "overlap.lp".
 
@@ -13,7 +13,7 @@ non_cs_section_time(N, S, E, D) :- non_cs_section(C, I, N, S, E, D, R, P).
 
 non_cs_section_course(C, N) :- non_cs_section(C, I, N, S, E, D, R, P).
 
-same_year(C1, C2) :- course_weight(C1, W1, Y), course_weight(C2, W2, Y), C1 != C2. 
+same_year(C1, C2) :- course_year(C1, Y), course_year(C2, Y), C1 != C2. 
 same_year(C1, C2) :- cross_listed(N1, N2), section_course(C1, N1), section_course(C3, N2), same_year(C2, C3), C1 != C2.
 
 cross_listed(N1, N2) :- section(C1, I1, N1, S, E, D, R, P), section(C2, I2, N2, S, E, D, R, P), C1 < C2, N1 != N2.

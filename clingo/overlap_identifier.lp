@@ -18,7 +18,7 @@
 
 time_slot(S, E, D) :- time_slot_credits(S, E, D, T).
 
-planned_course(C, W, Y) :- course_weight(C, W, Y), not planned_classes(C).
+% planned_course(C, W, Y) :- course_year(C, Y), not planned_classes(C).
 
 section_time(N, S, E, D) :- section(C, I, N, S, E, D, R, P).
 
@@ -65,7 +65,7 @@ conflict(N1, N2) :-
 
 critical_conflict(C1, C2) :- critical_section(C1, N1), critical_section(C2, N2), conflict(N1, N2), C1!=C2, same_year(C1, C2).
 
-same_year(C1, C2) :- course_weight(C1, W1, Y), course_weight(C2, W2, Y). %, C1 != C2.
+same_year(C1, C2) :- course_year(C1, Y), course_year(C2, Y). %, C1 != C2.
 % Count 4000/8000 cross listed courses as the same year
 % ie, csci8156 graph theory is cross listed with csci4500 so count csci8156 as both year 4 and year 5 (grad class).
 same_year(C1, C2) :- cross_listed(N1, N2), section_course(C1, N1), section_course(C3, N2), same_year(C2, C3). %, C1 != C2.
