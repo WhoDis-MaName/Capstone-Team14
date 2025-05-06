@@ -68,13 +68,13 @@ def convert_json_to_lp(schedule_list):
                     .replace(".", "")
                     .replace("-", "_")
                 )
-                prereq = (
-                    course_info.get("prereq", "none")
-                    .lower()
-                    .replace(" ", "_")
-                    .replace("-", "_")
-                    .replace(".", "")
-                )
+                # prereq = (
+                #     course_info.get("prereq", "none")
+                #     .lower()
+                #     .replace(" ", "_")
+                #     .replace("-", "_")
+                #     .replace(".", "")
+                # )
 
                 # keep track of  how many sections are totally online
                 # if they are all totally online, skip the course
@@ -154,7 +154,7 @@ def convert_json_to_lp(schedule_list):
 
                 # if we are a class that we can modify
                 if subject in SUBJECTS_OF_INTEREST:
-                    facts.append(f'course({course_id}, "{title}", "{prereq}").')
+                    # facts.append(f'course({course_id}, "{title}").')
                     # weight = 1
                     if str(course_num).startswith("1"):
                         year = 1
@@ -177,7 +177,7 @@ def convert_json_to_lp(schedule_list):
                     classes.add(course_id)
                 # else we are a class like english or math and we cannot modify the time
                 else:
-                    facts.append(f'non_cs_course({course_id}, "{title}", "{prereq}").')
+                    # facts.append(f'non_cs_course({course_id}, "{title}").')
                     # weight = 1
                     if str(course_num).startswith("1"):
                         year = 1
@@ -201,8 +201,9 @@ def convert_json_to_lp(schedule_list):
 
     facts.append(f"class({'; '.join(classes)}).")
     facts.append(f"non_cs_class({'; '.join(non_cs_classes)}).")
-    facts.append(f"room({'; '.join(rooms)}).")
-    facts.append(f"professor({'; '.join(professors)}).")
+    # Might not really need the two facts below
+    # facts.append(f"room({'; '.join(rooms)}).")
+    # facts.append(f"professor({'; '.join(professors)}).")
     facts.extend(times)
     facts.extend(non_cs_times)
     

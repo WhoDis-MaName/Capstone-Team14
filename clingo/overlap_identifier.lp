@@ -12,6 +12,7 @@
 % #include "..\\testing\\test_cases\\test_case_00.lp".
 % #include "output.lp".
 % #include "fourYearPlanTest.lp".
+#include "small_filtered.lp".
 #include "fourYearPlan.lp".
 #include "days.lp".
 #include "overlap.lp".
@@ -69,6 +70,10 @@ same_year(C1, C2) :- course_year(C1, Y), course_year(C2, Y). %, C1 != C2.
 % Count 4000/8000 cross listed courses as the same year
 % ie, csci8156 graph theory is cross listed with csci4500 so count csci8156 as both year 4 and year 5 (grad class).
 same_year(C1, C2) :- cross_listed(N1, N2), section_course(C1, N1), section_course(C3, N2), same_year(C2, C3). %, C1 != C2.
+same_year(C1, C2) :- cross_listed(N2, N1), section_course(C1, N1), section_course(C3, N2), same_year(C2, C3). %, C1 != C2.
+
+% C1 is an undergrad course, c2 is a grad course, c3 is an undergrad course
+same_year(C2, C3) :- cross_listed(N1, N2), section_course(C1, N1), section_course(C2, N2), same_year(C1, C3).
 
 % We can infer that two classes are cross listed if they have the exact same start time, end time, day, room, and professor
 cross_listed(N1, N2) :- section(C1, I1, N1, S, E, D, R, P), section(C2, I2, N2, S, E, D, R, P), C1 < C2, N1 != N2.
@@ -78,4 +83,6 @@ cross_listed(N1, N2) :- section(C1, I1, N1, S, E, D, R, P), section(C2, I2, N2, 
 original_critical_conflict_count(N) :- N = #count{1, C1, C2 : critical_conflict(C1, C2)}.
 
 #show original_critical_conflict_count/1.
-% #show critical_conflict/2.
+#show critical_conflict/2.
+#show cross_listed/2.
+#show same_year/2.

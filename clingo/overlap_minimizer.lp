@@ -1,6 +1,8 @@
 % #include "overlap_identifier.lp".
 % #include "total_filtered.lp".
 % #include "fourYearPlan.lp".
+#include "even_smaller_filtered.lp".
+% #include "small_filtered.lp".
 #include "days.lp".
 #include "overlap.lp".
 
@@ -13,24 +15,15 @@ non_cs_section_time(N, S, E, D) :- non_cs_section(C, I, N, S, E, D, R, P).
 
 non_cs_section_course(C, N) :- non_cs_section(C, I, N, S, E, D, R, P).
 
-same_year(C1, C2) :- course_year(C1, Y), course_year(C2, Y), C1 != C2. 
-same_year(C1, C2) :- cross_listed(N1, N2), section_course(C1, N1), section_course(C3, N2), same_year(C2, C3), C1 != C2.
-
 cross_listed(N1, N2) :- section(C1, I1, N1, S, E, D, R, P), section(C2, I2, N2, S, E, D, R, P), C1 < C2, N1 != N2.
 
-% Example section from classes.lp:
-% section("CSCI8700", "001", "15948", 18:00, 20:40, "W", "Peter Kiewit Institute 160", "Harvey Pe Siy").
+same_year(C1, C2) :- course_year(C1, Y), course_year(C2, Y), C1 != C2. 
+same_year(C1, C2) :- cross_listed(N1, N2), section_course(C1, N1), section_course(C3, N2), same_year(C2, C3). %, C1 != C2.
+same_year(C1, C2) :- cross_listed(N2, N1), section_course(C1, N1), section_course(C3, N2), same_year(C2, C3). %, C1 != C2.
+% same_year(C1, C2) :- cross_listed(N1, N2), section_course(C1, N1), section_course(C3, N2), same_year(C2, C3), C1 != C2.
+% same_year(C2, C3) :- cross_listed(N1, N2), section_course(C1, N1), section_course(C3, N2), same_year(C1, C2), C1 != C2.
+% same_year(C2, C3) :- cross_listed(N1, N2), section_course(C1, N1), section_course(C2, N2), same_year(C1, C3).
 
-input_section(C, I, N, R, P, T) :- section(C, I, N, S, E, D, R, P), time_slot_credits(S, E, D, T). 
-
-% Choose 1 section from each course to be "critical"
-{ critical_section(C, N) : section_course(C, N) } = 1 :- class(C). 
-{ critical_section(C, N) : non_cs_section_course(C, N)} = 1 :- non_cs_class(C). 
-
-% For each section with a room and professor already assigned, choose one timeslot.
-% make it so that we only have one of the cross listed sections and then assign the other one manually
-% Also only assign time slots that are for the same credit hours. 
-{scheduled_section_time_slot(N, S, E, D) : time_slot_credits(S, E, D, T) } = 1 :- input_section(C, I, N, R, P, T), not cross_listed(_, N).
 
 % Manually assign the same timeslot to cross listed classes
 % Maybe leave it for python?
@@ -50,6 +43,20 @@ scheduled_section_professor(P, N) :- section(C, I, N, S, E, D, R, P).
 
 % The room R for a section number N
 scheduled_section_room(R, N) :- section(C, I, N, S, E, D, R, P).
+
+% Example section from classes.lp:
+% section(cist1010, s001, c15257, 570, 620, t, peter_kiewit_institute_157, farida_majid).
+
+input_section(C, I, N, R, P, T) :- section(C, I, N, S, E, D, R, P), time_slot_credits(S, E, D, T). 
+
+% Choose 1 section from each course to be "critical"
+{ critical_section(C, N) : section_course(C, N) } = 1 :- class(C). 
+{ critical_section(C, N) : non_cs_section_course(C, N)} = 1 :- non_cs_class(C). 
+
+% For each section with a room and professor already assigned, choose one timeslot.
+% make it so that we only have one of the cross listed sections and then assign the other one manually
+% Also only assign time slots that are for the same credit hours. 
+{scheduled_section_time_slot(N, S, E, D) : time_slot_credits(S, E, D, T) } = 1 :- input_section(C, I, N, R, P, T), not cross_listed(_, N).
 
 % It cannot be that there are two classes in the same room at the same time unless they are cross listed
 % Greater than 1 because it sees itself
@@ -72,13 +79,6 @@ scheduled_section_room(R, N) :- section(C, I, N, S, E, D, R, P).
     } > 1, 
     professor(P), 
     scheduled_section_time_slot(N2, S2, E2, D2).
-
-% Same time slot, room, and professor
-% same_scheduled_slot(N1, N2) :- scheduled_section(C1, I1, N1, S, E, D, R, P), scheduled_section(C2, I2, N2, S, E, D, R, P), N1 != N2, C1 != C2.
-
-% TODO: Ensure that new timeslots align with credit hours
-% mtwr - have to stay mtwr
-% what about 1 credit hour labs?
 
 % Conflict between 2 cs section
 % There is conflict if:
@@ -129,15 +129,19 @@ invalid_preference(P, N) :- mw_preference(P), scheduled_section_time_slot(N, S, 
 invalid_preference(P, N) :- tr_preference(P), scheduled_section_time_slot(N, S, E, D), scheduled_section_professor(P, N), D != tr.
 
 % Then minimize changes from original schedule
-#minimize{1@2, N : changed_section(N)}.
+#minimize{1@1, N : changed_section(N)}.
 
 % Then break ties based off preferences
-#minimize{1@1, P, N : invalid_preference(P, N)}.  
+#minimize{1@2, P, N : invalid_preference(P, N)}.  
 
 % #show scheduled_section_time_slot/4.
 
 #show scheduled_section/8.
 #show schedule_change/4.
+% #show cross_listed/2.
+% #show critical_conflict/2.
+% #show same_year/2.
+% #show invalid_preference/2.
 
 % #show critical_section/2.
 
