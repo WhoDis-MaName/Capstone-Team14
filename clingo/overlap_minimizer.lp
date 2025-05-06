@@ -100,7 +100,7 @@ scheduled_conflict(N1, N2) :-
 schedule_change(N, S1, E1, D1) :- scheduled_section_time_slot(N, S1, E1, D1), section(C, I, N, S2, E2, D2, R, P), (S1, E1, D1) != (S2, E2, D2). 
 changed_section(N) :- schedule_change(N, S1, E1, D1).
 
-% There is a conflict between critical sections of planned courses in the 4 year plan
+% There is a conflict between critical sections
 scheduled_critical_conflict(C1, C2) :- critical_section(C1, N1), critical_section(C2, N2), scheduled_conflict(N1, N2), C1!=C2.
 
 % Prioritized minimize functions, first ensure the critical sections are available
@@ -120,15 +120,16 @@ invalid_preference(P, N) :- mw_preference(P), scheduled_section_time_slot(N, S, 
 % For professors that prefer classes on tr
 invalid_preference(P, N) :- tr_preference(P), scheduled_section_time_slot(N, S, E, D), scheduled_section_professor(P, N), D != tr.
 
-% Then minimize changes from original schedule
-#minimize{1@1, N : changed_section(N)}.
-
 % Then break ties based off preferences
 #minimize{1@2, P, N : invalid_preference(P, N)}.  
+
+% Then minimize changes from original schedule
+#minimize{1@1, N : changed_section(N)}.
 
 #show scheduled_section/8.
 #show schedule_change/4.
 
 % Can do: opt = 3 for 3 possibilities
+% Can do: -t = 2 for using 2 cpu threads
     
 % TODO: filter cross listed courses and add them back in at the end, check with user if correct, handle non-cs cross listed courses

@@ -8,4 +8,3 @@
 % back_to_back_preference(jorge_fandinno_garcia).
 % mw_preference(harvey_pe_siy).
 % tr_preference(george_grispos).
-mw_preference(prof3).
