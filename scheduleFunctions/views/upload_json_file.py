@@ -23,14 +23,16 @@ NON_CS_COURSES_OF_INTEREST = {
 
 # === Convert filtered to ASP facts ===
 
+
 ##
 # @brief Converts a 12-hour formatted time string to minutes past midnight.
-# 
+#
 # @param time A string in the format "%I:%M%p" (e.g., "03:45PM").
 # @return Integer number of minutes since midnight.
 def convert24(time):
     t = datetime.strptime(time, "%I:%M%p")
     return t.hour * 60 + t.minute
+
 
 ##
 # @brief Converts a nested JSON schedule dictionary into ASP logic program facts.
@@ -68,13 +70,13 @@ def convert_json_to_lp(schedule_list):
                     .replace(".", "")
                     .replace("-", "_")
                 )
-                prereq = (
-                    course_info.get("prereq", "none")
-                    .lower()
-                    .replace(" ", "_")
-                    .replace("-", "_")
-                    .replace(".", "")
-                )
+                # prereq = (
+                #     course_info.get("prereq", "none")
+                #     .lower()
+                #     .replace(" ", "_")
+                #     .replace("-", "_")
+                #     .replace(".", "")
+                # )
 
                 # keep track of  how many sections are totally online
                 # if they are all totally online, skip the course
@@ -154,8 +156,8 @@ def convert_json_to_lp(schedule_list):
 
                 # if we are a class that we can modify
                 if subject in SUBJECTS_OF_INTEREST:
-                    facts.append(f'course({course_id}, "{title}", "{prereq}").')
-                    weight = 1
+                    # facts.append(f'course({course_id}, "{title}").')
+                    # weight = 1
                     if str(course_num).startswith("1"):
                         year = 1
                     elif str(course_num).startswith("2"):
@@ -173,12 +175,12 @@ def convert_json_to_lp(schedule_list):
                         print(
                             f"Error for course id: {course_id} with course number: {course_num}"
                         )
-                    facts.append(f"course_weight({course_id}, {weight}, {year}).")
+                    facts.append(f"course_year({course_id}, {year}).")
                     classes.add(course_id)
                 # else we are a class like english or math and we cannot modify the time
                 else:
-                    facts.append(f'non_cs_course({course_id}, "{title}", "{prereq}").')
-                    weight = 1
+                    # facts.append(f'non_cs_course({course_id}, "{title}").')
+                    # weight = 1
                     if str(course_num).startswith("1"):
                         year = 1
                     elif str(course_num).startswith("2"):
@@ -196,7 +198,7 @@ def convert_json_to_lp(schedule_list):
                         print(
                             f"Error for course id: {course_id} with course number: {course_num}"
                         )
-                    facts.append(f"course_weight({course_id}, {weight}, {year}).")
+                    facts.append(f"course_year({course_id}, {year}).")
                     non_cs_classes.add(course_id)
 
     facts.append(f"class({'; '.join(classes)}).")
@@ -205,8 +207,9 @@ def convert_json_to_lp(schedule_list):
     facts.append(f"professor({'; '.join(professors)}).")
     facts.extend(times)
     facts.extend(non_cs_times)
-    
+
     return facts
+
 
 ##
 # @brief Handles uploading of a JSON file and its conversion to ASP logic facts.
@@ -263,7 +266,7 @@ def upload_json_file(request):
         non_filtered_filename, ContentFile(json.dumps(non_filtered_courses, indent=2))
     )
     clear_schedule()
-    store_schedule(os.path.join(settings.BASE_DIR,'media', filtered_filename))
+    store_schedule(os.path.join(settings.BASE_DIR, "media", filtered_filename))
     # Save model
     record = FilteredUpload.objects.create(
         filename=f"raw_input{upload_number}.json",
@@ -271,7 +274,7 @@ def upload_json_file(request):
         non_filtered_data=non_filtered_courses,
         uploaded_file=uploaded_file,
     )
-    
+
     facts = convert_json_to_lp(filtered_courses)
 
     asp_filename = raw_filename.replace(".json", ".lp")
