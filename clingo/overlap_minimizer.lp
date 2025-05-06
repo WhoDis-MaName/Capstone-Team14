@@ -1,7 +1,8 @@
 #include "days.lp".
 #include "overlap.lp".
 
-% SECTION PARSE INPUT 
+% =========================== SECTION PARSE INPUT ===========================
+
 time_slot(S, E, D) :- time_slot_credits(S, E, D, T).
 
 section_course(C, N) :- section(C, I, N, S, E, D, R, P).
@@ -17,10 +18,6 @@ same_year(C1, C2) :- course_year(C1, Y), course_year(C2, Y), C1 != C2.
 % ie, csci8156 graph theory is cross listed with csci4500 so count csci8156 as both year 4 and year 5 (grad class).
 same_year(C1, C2) :- cross_listed(N1, N2), section_course(C1, N1), section_course(C3, N2), same_year(C2, C3). %, C1 != C2.
 same_year(C1, C2) :- cross_listed(N2, N1), section_course(C1, N1), section_course(C3, N2), same_year(C2, C3). %, C1 != C2.
-
-% Manually assign the same timeslot to cross listed classes
-% Maybe leave it for python?
-% scheduled_section_time_slot(N2, S, E, D) :- scheduled_section_time_slot(N, S, E, D), input_section(C2, I2, N2, R2, P2, _), true_cross_listed(N, N2).
 
 % Obtain 8 arity section for the sake of return value
 scheduled_section(C, I, N, S, E, D, R, P) :- input_section(C, I, N, R, P, T), scheduled_section_time_slot(N, S, E, D).
@@ -41,6 +38,8 @@ scheduled_section_room(R, N) :- section(C, I, N, S, E, D, R, P).
 % section(cist1010, s001, c15257, 570, 620, t, peter_kiewit_institute_157, farida_majid).
 input_section(C, I, N, R, P, T) :- section(C, I, N, S, E, D, R, P), time_slot_credits(S, E, D, T). 
 
+% ====================== SECTION MAKE ASSIGNMENTS ======================
+
 % Choose 1 section from each course to be "critical"
 { critical_section(C, N) : section_course(C, N) } = 1 :- class(C). 
 { critical_section(C, N) : non_cs_section_course(C, N)} = 1 :- non_cs_class(C). 
@@ -49,6 +48,8 @@ input_section(C, I, N, R, P, T) :- section(C, I, N, S, E, D, R, P), time_slot_cr
 % make it so that we only have one of the cross listed sections and then assign the other one manually
 % Also only assign time slots that are for the same credit hours. 
 {scheduled_section_time_slot(N, S, E, D) : time_slot_credits(S, E, D, T) } = 1 :- input_section(C, I, N, R, P, T), not cross_listed(_, N).
+
+% =========================== SECTION INTEGRETIY CONSTRAINTS ===========================
 
 % It cannot be that there are two classes in the same room at the same time unless they are cross listed
 % Greater than 1 because it sees itself
@@ -71,6 +72,8 @@ input_section(C, I, N, R, P, T) :- section(C, I, N, S, E, D, R, P), time_slot_cr
     } > 1, 
     professor(P), 
     scheduled_section_time_slot(N2, S2, E2, D2).
+
+% =========================== SECTION DEFINING CONFLICT ===========================
 
 % Conflict between 2 cs section
 % There is conflict if:
@@ -103,8 +106,7 @@ changed_section(N) :- schedule_change(N, S1, E1, D1).
 % There is a conflict between critical sections
 scheduled_critical_conflict(C1, C2) :- critical_section(C1, N1), critical_section(C2, N2), scheduled_conflict(N1, N2), C1!=C2.
 
-% Prioritized minimize functions, first ensure the critical sections are available
-#minimize{1@3, C1, C2 : scheduled_critical_conflict(C1, C2)}.
+% =========================== SECTION HANDLE PROFESSOR PREFERENCES ===========================
 
 % Two sections are considered back to back if they happen on overlapping days and the start of the second section is within 60 minutes of the end of the first section. 
 back_to_back_sections(N1, N2) :- N1 != N2, scheduled_section_time_slot(N1, S1, E1, D1), scheduled_section_time_slot(N2, S2, E2, D2), overlapping_days(D1, D2), E1 < S2, S2 - E1 < 60.
@@ -119,6 +121,11 @@ invalid_preference(P, N) :- back_to_back_preference(P), scheduled_section_time_s
 invalid_preference(P, N) :- mw_preference(P), scheduled_section_time_slot(N, S, E, D), scheduled_section_professor(P, N), D != mw.
 % For professors that prefer classes on tr
 invalid_preference(P, N) :- tr_preference(P), scheduled_section_time_slot(N, S, E, D), scheduled_section_professor(P, N), D != tr.
+
+% =========================== SECTION OPTIMIZATION AND OUTPUT ===========================
+
+% Prioritized minimize functions, first ensure the critical sections are available
+#minimize{1@3, C1, C2 : scheduled_critical_conflict(C1, C2)}.
 
 % Then break ties based off preferences
 #minimize{1@2, P, N : invalid_preference(P, N)}.  
