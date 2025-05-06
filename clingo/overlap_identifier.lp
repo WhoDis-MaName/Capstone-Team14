@@ -1,25 +1,8 @@
-% #include "total_filtered.lp".
-% #include "total_filtered_test_optimal.lp".
-% #include "filtered_test.lp".
-% #include "example_output.lp".
-% #include "..\\testing\\test_cases\\total_filtered_test_optimal.lp".
-% #include "..\\testing\\test_cases\\test_case_mini_overlap.lp".
-% #include "..\\testing\\test_cases\\test_case_critical_section.lp".
-% #include "..\\testing\\test_cases\\test_minimize_distance.lp".
-% #include "..\\testing\\test_cases\\test_cross_listed.lp".
-% #include "..\\testing\\test_cases\\test_case_english.lp".
-% #include "..\\testing\\test_cases\\test_case_01.lp".
-% #include "..\\testing\\test_cases\\test_case_00.lp".
-% #include "output.lp".
-% #include "fourYearPlanTest.lp".
-% #include "small_filtered.lp".
 #include "fourYearPlan.lp".
 #include "days.lp".
 #include "overlap.lp".
 
 time_slot(S, E, D) :- time_slot_credits(S, E, D, T).
-
-% planned_course(C, W, Y) :- course_year(C, Y), not planned_classes(C).
 
 section_time(N, S, E, D) :- section(C, I, N, S, E, D, R, P).
 
@@ -33,6 +16,7 @@ section_professor(P, N) :- section(C, I, N, S, E, D, R, P).
 
 section_room(R, N) :- section(C, I, N, S, E, D, R, P).
 
+% Choose 1 critical section for each computer science class and non cs class
 { critical_section(C, N) : section_course(C, N) } = 1 :- class(C). 
 { critical_section(C, N) : non_cs_section_course(C, N)} = 1 :- non_cs_class(C). 
 
@@ -78,11 +62,9 @@ same_year(C2, C3) :- cross_listed(N1, N2), section_course(C1, N1), section_cours
 % We can infer that two classes are cross listed if they have the exact same start time, end time, day, room, and professor
 cross_listed(N1, N2) :- section(C1, I1, N1, S, E, D, R, P), section(C2, I2, N2, S, E, D, R, P), C1 < C2, N1 != N2.
 
-#minimize{1, C1, C2 : critical_conflict(C1, C2)}.
-
 original_critical_conflict_count(N) :- N = #count{1, C1, C2 : critical_conflict(C1, C2)}.
 
+% Find the optimal assignment of critical sections for an accurate critical conflict count.
+#minimize{1, C1, C2 : critical_conflict(C1, C2)}.
+
 #show original_critical_conflict_count/1.
-% #show critical_conflict/2.
-% #show cross_listed/2.
-% #show same_year/2.

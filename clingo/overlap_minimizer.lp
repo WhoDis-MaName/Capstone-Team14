@@ -1,8 +1,3 @@
-% #include "overlap_identifier.lp".
-% #include "total_filtered.lp".
-% #include "fourYearPlan.lp".
-% #include "even_smaller_filtered.lp".
-% #include "small_filtered.lp".
 #include "days.lp".
 #include "overlap.lp".
 
@@ -18,12 +13,10 @@ non_cs_section_course(C, N) :- non_cs_section(C, I, N, S, E, D, R, P).
 cross_listed(N1, N2) :- section(C1, I1, N1, S, E, D, R, P), section(C2, I2, N2, S, E, D, R, P), C1 < C2, N1 != N2.
 
 same_year(C1, C2) :- course_year(C1, Y), course_year(C2, Y), C1 != C2. 
+% Count 4000/8000 cross listed courses as the same year
+% ie, csci8156 graph theory is cross listed with csci4500 so count csci8156 as both year 4 and year 5 (grad class).
 same_year(C1, C2) :- cross_listed(N1, N2), section_course(C1, N1), section_course(C3, N2), same_year(C2, C3). %, C1 != C2.
 same_year(C1, C2) :- cross_listed(N2, N1), section_course(C1, N1), section_course(C3, N2), same_year(C2, C3). %, C1 != C2.
-% same_year(C1, C2) :- cross_listed(N1, N2), section_course(C1, N1), section_course(C3, N2), same_year(C2, C3), C1 != C2.
-% same_year(C2, C3) :- cross_listed(N1, N2), section_course(C1, N1), section_course(C3, N2), same_year(C1, C2), C1 != C2.
-% same_year(C2, C3) :- cross_listed(N1, N2), section_course(C1, N1), section_course(C2, N2), same_year(C1, C3).
-
 
 % Manually assign the same timeslot to cross listed classes
 % Maybe leave it for python?
@@ -46,7 +39,6 @@ scheduled_section_room(R, N) :- section(C, I, N, S, E, D, R, P).
 
 % Example section from classes.lp:
 % section(cist1010, s001, c15257, 570, 620, t, peter_kiewit_institute_157, farida_majid).
-
 input_section(C, I, N, R, P, T) :- section(C, I, N, S, E, D, R, P), time_slot_credits(S, E, D, T). 
 
 % Choose 1 section from each course to be "critical"
@@ -134,23 +126,9 @@ invalid_preference(P, N) :- tr_preference(P), scheduled_section_time_slot(N, S, 
 % Then break ties based off preferences
 #minimize{1@2, P, N : invalid_preference(P, N)}.  
 
-% #show scheduled_section_time_slot/4.
-
 #show scheduled_section/8.
 #show schedule_change/4.
-% #show cross_listed/2.
-% #show critical_conflict/2.
-% #show same_year/2.
-% #show invalid_preference/2.
-
-% #show critical_section/2.
 
 % Can do: opt = 3 for 3 possibilities
-% Add possibilies about when to have courses
-
-% TODO: add possibilites about when to have courses
-%       ie: flag to keep morning classes in the morning, mw only, tr only, maybe schedule professors back to back
-%           
+    
 % TODO: filter cross listed courses and add them back in at the end, check with user if correct, handle non-cs cross listed courses
-
-% put constraints in natural language in requirements document -> paper by vlad about programming with achievements
