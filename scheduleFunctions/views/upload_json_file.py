@@ -23,14 +23,16 @@ NON_CS_COURSES_OF_INTEREST = {
 
 # === Convert filtered to ASP facts ===
 
+
 ##
 # @brief Converts a 12-hour formatted time string to minutes past midnight.
-# 
+#
 # @param time A string in the format "%I:%M%p" (e.g., "03:45PM").
 # @return Integer number of minutes since midnight.
 def convert24(time):
     t = datetime.strptime(time, "%I:%M%p")
     return t.hour * 60 + t.minute
+
 
 ##
 # @brief Converts a nested JSON schedule dictionary into ASP logic program facts.
@@ -201,13 +203,13 @@ def convert_json_to_lp(schedule_list):
 
     facts.append(f"class({'; '.join(classes)}).")
     facts.append(f"non_cs_class({'; '.join(non_cs_classes)}).")
-    # Might not really need the two facts below
-    # facts.append(f"room({'; '.join(rooms)}).")
-    # facts.append(f"professor({'; '.join(professors)}).")
+    facts.append(f"room({'; '.join(rooms)}).")
+    facts.append(f"professor({'; '.join(professors)}).")
     facts.extend(times)
     facts.extend(non_cs_times)
-    
+
     return facts
+
 
 ##
 # @brief Handles uploading of a JSON file and its conversion to ASP logic facts.
@@ -264,7 +266,7 @@ def upload_json_file(request):
         non_filtered_filename, ContentFile(json.dumps(non_filtered_courses, indent=2))
     )
     clear_schedule()
-    store_schedule(os.path.join(settings.BASE_DIR,'media', filtered_filename))
+    store_schedule(os.path.join(settings.BASE_DIR, "media", filtered_filename))
     # Save model
     record = FilteredUpload.objects.create(
         filename=f"raw_input{upload_number}.json",
@@ -272,7 +274,7 @@ def upload_json_file(request):
         non_filtered_data=non_filtered_courses,
         uploaded_file=uploaded_file,
     )
-    
+
     facts = convert_json_to_lp(filtered_courses)
 
     asp_filename = raw_filename.replace(".json", ".lp")
