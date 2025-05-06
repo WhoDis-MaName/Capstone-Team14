@@ -12,7 +12,7 @@
 % #include "..\\testing\\test_cases\\test_case_00.lp".
 % #include "output.lp".
 % #include "fourYearPlanTest.lp".
-#include "small_filtered.lp".
+% #include "small_filtered.lp".
 #include "fourYearPlan.lp".
 #include "days.lp".
 #include "overlap.lp".
@@ -83,6 +83,6 @@ cross_listed(N1, N2) :- section(C1, I1, N1, S, E, D, R, P), section(C2, I2, N2, 
 original_critical_conflict_count(N) :- N = #count{1, C1, C2 : critical_conflict(C1, C2)}.
 
 #show original_critical_conflict_count/1.
-#show critical_conflict/2.
-#show cross_listed/2.
-#show same_year/2.
+% #show critical_conflict/2.
+% #show cross_listed/2.
+% #show same_year/2.
