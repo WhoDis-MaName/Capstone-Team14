@@ -56,7 +56,7 @@
                     {% endfor %}  
                 </ul>
             </div>
-
+            {% if same_semester %}
             <div class="same-semester section">
                 <h2>Courses to take during the same semester</h2>
                 <ul>
@@ -67,6 +67,7 @@
                     {% endfor %} 
                 </ul>
             </div>
+            {% endif %}
 
             <div class="quick-actions section">
                 <a href="/dashboard/" class="btn">Return to Schedule</a>
