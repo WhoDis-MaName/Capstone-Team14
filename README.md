@@ -82,11 +82,11 @@ We also integrated pytest to test the clingo code. To use pytest, navigate to `\
 
 To build the docker containter image, move to the root directory for the repository and run:
 
-`docker build capstone-14:latest`
+`sudo docker build -t capstone-14:latest .`
 
 Run the container using:
 
-`docker run --name capstone-14 -p 8000:8000 capstone-14`
+`sudo docker run --name capstone-14 -p 8000:8000 capstone-14`
 
 _Note_ the docker deployment will not perform any tests.
 
