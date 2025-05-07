@@ -254,9 +254,9 @@ def upload_json_file(request):
 
     # === Save all three JSON versions ===
     upload_number = FilteredUpload.objects.count() + 1
-    raw_filename = f"uploads/raw_input{upload_number}.json"
-    filtered_filename = f"uploads/filtered_output{upload_number}.json"
-    non_filtered_filename = f"uploads/remaining_output{upload_number}.json"
+    raw_filename = os.path.join(f"uploads",f"raw_input{upload_number}.json")
+    filtered_filename = os.path.join(f"uploads",f"filtered_output{upload_number}.json")
+    non_filtered_filename = os.path.join(f"uploads",f"remaining_output{upload_number}.json")
 
     default_storage.save(raw_filename, ContentFile(file_contents))
     default_storage.save(
