@@ -65,10 +65,3 @@ def dashboard_view(request):
             "section_list": section_list,
         },
     )
-    
-def clear(request):
-    if "username" not in request.session:
-        return redirect("home")  # Redirect to login if not authenticated
-    
-    clear_schedule()
-    redirect("dashboard")

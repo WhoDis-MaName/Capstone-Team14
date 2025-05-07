@@ -39,10 +39,12 @@ def section_view(request):
             time_slot__end_time__gt=selected_section.time_slot.start_time,
         )
         .exclude(course=selected_section.course)  # different course
-        .exclude(pk=selected_section.pk)  # ignore the section itself
         .distinct()
+        #.exclude(section_id=selected_section.section_id)  # ignore the section itself
         .order_by("time_slot__start_time")
     )
+    for section in other_sections:
+        print(section.print_clingo())
 
     return render(
         request,

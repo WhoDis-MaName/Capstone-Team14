@@ -239,16 +239,23 @@ def store_schedule(json_file: str) -> None:
                 selected_days = Day.objects.filter(day_of_week__in = [Day.DAY_OF_WEEK_CHOICES[day] for day in section_details['Days'].lower()])
 
                 try:
-                    selected_time = TimeSlot.objects.annotate(
+                    print("Finding:", start_time, end_time, selected_days)
+                    same_times = TimeSlot.objects.filter(
+                            start_time = start_time,
+                            end_time = end_time
+                        ).filter(
+                            days__in = selected_days
+                        ).distinct()
+                    print("Found:")
+                    same_times = same_times.annotate(
                         num_days=Count('days')
-                    ).filter(
-                        days__in = selected_days
-                    ).filter(
-                        num_days=len(selected_days)
-                    ).filter(
-                        start_time = start_time,
-                        end_time = end_time
-                    ).distinct().get()
+                    )
+                    same_times = same_times.filter(num_days = len(selected_days)).distinct()
+                    for time in same_times:
+                        print(time.num_days)
+                        print(time.start_time, time.end_time, time.days.all())
+                    
+                    selected_time = same_times.distinct().get()
                 except TimeSlot.DoesNotExist:
                     selected_time = TimeSlot(
                         start_time = start_time, 
@@ -281,17 +288,23 @@ def store_schedule_changes(section_id: int, start_time: date, end_time: date, da
 
     try:
         selected_days = Day.objects.filter(day_of_week__in = [Day.DAY_OF_WEEK_CHOICES[day] for day in days])
-        updated_time = TimeSlot.objects.annotate(
-                        num_days=Count('days')
-                    ).filter(
-                        days__in = selected_days
-                    ).filter(
-                        num_days=len(days)
-                    ).filter(
-                        start_time = start_time,
-                        end_time = end_time
-                    ).distinct().get()
+        print("Finding:", start_time, end_time, selected_days)
+        same_times = TimeSlot.objects.filter(
+                start_time = start_time,
+                end_time = end_time
+            ).filter(
+                days__in = selected_days
+            ).distinct()
+        print("Found:")
+        same_times = same_times.annotate(
+            num_days=Count('days')
+        )
+        same_times = same_times.filter(num_days = len(selected_days)).distinct()
+        for time in same_times:
+            print(time.num_days)
+            print(time.start_time, time.end_time, time.days.all())
         
+        updated_time = same_times.distinct().get()        
     except TimeSlot.DoesNotExist:
         updated_time = TimeSlot(
             start_time = start_time, 

@@ -43,20 +43,20 @@
                     {% for other_section in other_section_list %}
                     <li>
                         <a
-                          href="/section/?subject={{section.course.subject}}&course_number={{section.course.class_number}}&section={{section.section_number}}"
+                          href="/section/?subject={{other_section.course.subject}}&course_number={{other_section.course.class_number}}&section={{other_section.section_number}}"
                           onclick=""
                         >
-                          {{section.course.subject}}{{section.course.class_number}}-{{section.section_number}}: 
-                          {{section.course.name}} ({{ section.time_slot.days.all |join:"/"}} 
-                          {{section.time_slot.start_time|date:"g:ia"}} -
-                          {{section.time_slot.end_time|date:"g:ia"}}) 
+                          {{other_section.course.subject}}{{other_section.course.class_number}}-{{other_section.section_number}}: 
+                          {{other_section.course.name}} ({{ other_section.time_slot.days.all |join:"/"}} 
+                          {{other_section.time_slot.start_time|date:"g:ia"}} -
+                          {{other_section.time_slot.end_time|date:"g:ia"}}) 
                         </a>
-                        - {{section.professor.name}}
+                        - {{other_section.professor.name}}
                     </li>             
                     {% endfor %}  
                 </ul>
             </div>
-
+            {% if same_semester %}
             <div class="same-semester section">
                 <h2>Courses to take during the same semester</h2>
                 <ul>
@@ -67,6 +67,7 @@
                     {% endfor %} 
                 </ul>
             </div>
+            {% endif %}
 
             <div class="quick-actions section">
                 <a href="/dashboard/" class="btn">Return to Schedule</a>
