@@ -20,7 +20,7 @@ def login(request):
 
         # Get the absolute path to users.txt
         current_dir = os.path.dirname(os.path.abspath(__file__))
-        users_file_path = os.path.join(current_dir, "..\\users.txt")
+        users_file_path = os.path.join(current_dir, "..","users.txt")
 
         try:
             # Read users.txt
