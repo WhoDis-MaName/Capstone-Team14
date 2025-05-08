@@ -10,7 +10,7 @@ class SchedulefunctionsConfig(AppConfig):
     name = 'scheduleFunctions'
     
     def ready(self):
-        if not os.path.exists(os.path.join(settings.BASE_DIR, "run_once.lock"))  and not any(flag in sys.argv for flag in ['makemigrations', 'migrate']):
+        if not os.path.exists(os.path.join(settings.BASE_DIR, "run_once.lock")) and not any(flag in sys.argv for flag in ['makemigrations', 'migrate', 'loaddata']):
             # Code to run once on startup
             print("Startup code executed")
             
@@ -27,8 +27,13 @@ class SchedulefunctionsConfig(AppConfig):
                 os.makedirs(data_dir)
             except:
                 pass
+            
             plan_file = os.path.join(data_dir,'four_year_plan','four_year_plan.json')
             url = 'https://catalog.unomaha.edu/undergraduate/college-information-science-technology/computer-science/computer-science-bs/#fouryearplantext'
+            try:
+                os.makedirs(os.path.join(data_dir,'four_year_plan'))
+            except:
+                pass
             read_four_year(url, plan_file)
             constraints = create_constraints(plan_file)
             plan_file = os.path.join(data_dir,'four_year_plan','fouryearplan_processed.json')
