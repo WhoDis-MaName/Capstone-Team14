@@ -21,17 +21,7 @@ class SchedulefunctionsConfig(AppConfig):
             import json
             
             # Four Year Plan
-            if os.name == 'nt':
-                current_directory = os.path.dirname(os.path.realpath(__file__)) # Get current directory
-            else:
-                current_directory = os.path.dirname(os.path.realpath(__name__)) # Get current directory
-                
-
-            path = current_directory.split(os.sep)
-
-            root_index = path.index('Capstone-Team14')
-            root_dir = os.sep.join(path[:root_index+1])
-            data_dir = os.path.join(root_dir, 'data_files')
+            data_dir = os.path.join(settings.BASE_DIR, 'data_files')
             
             try:
                 os.makedirs(data_dir)
