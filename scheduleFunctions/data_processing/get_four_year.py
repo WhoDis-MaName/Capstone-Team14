@@ -6,7 +6,7 @@
 import os
 import json
 from pprint import pprint
-import django.conf import settings
+from django.conf import settings
 
 import requests
 from bs4 import BeautifulSoup as bs
