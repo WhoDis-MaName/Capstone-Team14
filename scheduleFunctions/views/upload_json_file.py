@@ -256,9 +256,9 @@ def upload_json_file(request):
     upload_number = FilteredUpload.objects.count() + 1
     print('Root:',settings.BASE_DIR)
     print('Media',settings.MEDIA_ROOT)
-    raw_filename = os.path.join(settings.MEDIA_ROOT, f"uploads",f"raw_input{upload_number}.json")
-    filtered_filename = os.path.join(settings.MEDIA_ROOT, f"uploads",f"filtered_output{upload_number}.json")
-    non_filtered_filename = os.path.join(settings.MEDIA_ROOT, f"uploads",f"remaining_output{upload_number}.json")
+    raw_filename = os.path.join(f"uploads",f"raw_input{upload_number}.json")
+    filtered_filename = os.path.join(f"uploads",f"filtered_output{upload_number}.json")
+    non_filtered_filename = os.path.join(f"uploads",f"remaining_output{upload_number}.json")
 
     print(raw_filename)
     default_storage.save(raw_filename, ContentFile(file_contents))
