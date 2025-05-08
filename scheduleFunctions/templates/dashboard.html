@@ -19,14 +19,14 @@
         uploadForm.addEventListener('submit', function (e) {
           e.preventDefault();
 
+          document.getElementById('loadingOverlay').style.display = 'flex';
+
           const formData = new FormData(uploadForm);
 
           fetch('/upload/', {
             method: 'POST',
             headers: {
-              'X-CSRFToken': document.querySelector(
-                '[name=csrfmiddlewaretoken]'
-              ).value,
+              'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
             },
             body: formData,
           })
@@ -40,14 +40,16 @@
               }
             })
             .catch(() => {
-              document.getElementById(
-                'uploadStatus'
-              ).innerHTML = `<span style="color: red;">Something went wrong.</span>`;
+              document.getElementById('uploadStatus').innerHTML = `<span style="color: red;">Something went wrong.</span>`;
+            })
+            .finally(() => {
+              document.getElementById('loadingOverlay').style.display = 'none';
             });
         });
       }
     });
     function optimizeSchedule() {
+      document.getElementById('loadingOverlay').style.display = 'flex';
       fetch('/optimize-schedule/')
         .then((response) => response.json())
         .then((data) => {
@@ -76,6 +78,9 @@
         .catch((error) => {
           console.error('Error during optimization:', error);
           alert('❌ Failed to reach optimizer.');
+        })
+        .finally(() => {
+          document.getElementById('loadingOverlay').style.display = 'none';
         });
     }
   </script>
@@ -83,6 +88,14 @@
 
 <body>
   <header>
+
+    <div id="loadingOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+     background-color: rgba(0, 0, 0, 0.5); z-index: 1000; align-items: center; justify-content: center;">
+      <img src="{% static 'assets/images/loading.gif' %}" alt="Loading..." style="width: 100px;" />
+    </div>
+
+
+
     <img src="{% static 'assets/images/uno-icon-color.png' %}" alt="University Logo" class="header-logo" />
     University Course Scheduler - Dashboard
   </header>
