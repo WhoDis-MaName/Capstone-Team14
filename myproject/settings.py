@@ -16,6 +16,9 @@ import os
 if os.name == 'nt':
     BASE_DIR = Path(__file__).resolve().parent.parent
 else:
+    print(Path(__name__).resolve())
+    print(Path(__name__).resolve().parent)
+    print(Path(__name__).resolve().parent.parent)
     BASE_DIR = Path(__name__).resolve().parent.parent
 
 
