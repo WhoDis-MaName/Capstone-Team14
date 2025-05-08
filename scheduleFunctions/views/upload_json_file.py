@@ -254,9 +254,9 @@ def upload_json_file(request):
 
     # === Save all three JSON versions ===
     upload_number = FilteredUpload.objects.count() + 1
-    raw_filename = os.path.join(f"uploads",f"raw_input{upload_number}.json")
-    filtered_filename = os.path.join(f"uploads",f"filtered_output{upload_number}.json")
-    non_filtered_filename = os.path.join(f"uploads",f"remaining_output{upload_number}.json")
+    raw_filename = os.path.join(settings.MEDIA_ROOT, f"uploads",f"raw_input{upload_number}.json")
+    filtered_filename = os.path.join(settings.MEDIA_ROOT, f"uploads",f"filtered_output{upload_number}.json")
+    non_filtered_filename = os.path.join(settings.MEDIA_ROOT, f"uploads",f"remaining_output{upload_number}.json")
 
     default_storage.save(raw_filename, ContentFile(file_contents))
     default_storage.save(
@@ -266,7 +266,7 @@ def upload_json_file(request):
         non_filtered_filename, ContentFile(json.dumps(non_filtered_courses, indent=2))
     )
     clear_schedule()
-    store_schedule(os.path.join(settings.BASE_DIR, "media", filtered_filename))
+    store_schedule(filtered_filename)
     # Save model
     record = FilteredUpload.objects.create(
         filename=f"raw_input{upload_number}.json",
