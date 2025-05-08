@@ -6,6 +6,7 @@
 import os
 import json
 from pprint import pprint
+import django.conf import settings
 
 import requests
 from bs4 import BeautifulSoup as bs
@@ -150,12 +151,7 @@ if __name__ == "__main__":
     else:
         current_directory = os.path.dirname(os.path.realpath(__name__)) # Get current directory
         
-
-    path = current_directory.split(os.sep)
-
-    root_index = path.index('Capstone-Team14')
-    root_dir = os.sep.join(path[:root_index+1])
-    data_dir = os.path.join(root_dir, 'data_files', 'four_year_plan')
+    data_dir = os.path.join(settings.BASE_DIR, 'data_files', 'four_year_plan')
     
     try:
         os.makedirs(data_dir)
