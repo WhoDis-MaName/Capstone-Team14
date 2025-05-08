@@ -258,10 +258,13 @@ def upload_json_file(request):
     filtered_filename = os.path.join(settings.MEDIA_ROOT, f"uploads",f"filtered_output{upload_number}.json")
     non_filtered_filename = os.path.join(settings.MEDIA_ROOT, f"uploads",f"remaining_output{upload_number}.json")
 
+    print(raw_filename)
     default_storage.save(raw_filename, ContentFile(file_contents))
+    print(filtered_filename)
     default_storage.save(
         filtered_filename, ContentFile(json.dumps(filtered_courses, indent=2))
     )
+    print(non_filtered_filename)
     default_storage.save(
         non_filtered_filename, ContentFile(json.dumps(non_filtered_courses, indent=2))
     )
