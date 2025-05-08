@@ -271,7 +271,7 @@ def upload_json_file(request):
         non_filtered_filename, ContentFile(json.dumps(non_filtered_courses, indent=2))
     )
     clear_schedule()
-    store_schedule(filtered_filename)
+    store_schedule(os.path.join(settings.MEDIA_DIR,filtered_filename))
     # Save model
     record = FilteredUpload.objects.create(
         filename=f"raw_input{upload_number}.json",
