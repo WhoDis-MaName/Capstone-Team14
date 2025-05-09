@@ -1,0 +1,144 @@
+.TH "scheduleFunctions.models.PlanSemester" 3 "Version 0.5" "Capstone Team 14" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scheduleFunctions.models.PlanSemester
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits models\&.Model\&.
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBFALL\fP = 'F'"
+.br
+.ti -1c
+.RI "str \fBSPRING\fP = 'S'"
+.br
+.ti -1c
+.RI "dict \fBSEMESTER_CHOICES\fP"
+.br
+.ti -1c
+.RI "str \fBFRESHMAN\fP = 'FR'"
+.br
+.ti -1c
+.RI "str \fBSOPHOMORE\fP = 'SO'"
+.br
+.ti -1c
+.RI "str \fBJUNIOR\fP = 'JR'"
+.br
+.ti -1c
+.RI "str \fBSENIOR\fP = 'SR'"
+.br
+.ti -1c
+.RI "str \fBGRADUATE\fP = 'GR'"
+.br
+.ti -1c
+.RI "dict \fBYEAR_IN_SCHOOL_CHOICES\fP"
+.br
+.ti -1c
+.RI "\fByear\fP"
+.br
+.ti -1c
+.RI "\fBsemester\fP"
+.br
+.ti -1c
+.RI "\fBcourses\fP = models\&.ManyToManyField(\fBCourse\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB175\fP of file \fBmodels\&.py\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "scheduleFunctions\&.models\&.PlanSemester\&.courses = models\&.ManyToManyField(\fBCourse\fP)\fR [static]\fP"
+
+.PP
+Definition at line \fB205\fP of file \fBmodels\&.py\fP\&.
+.SS "str scheduleFunctions\&.models\&.PlanSemester\&.FALL = 'F'\fR [static]\fP"
+
+.PP
+Definition at line \fB176\fP of file \fBmodels\&.py\fP\&.
+.SS "str scheduleFunctions\&.models\&.PlanSemester\&.FRESHMAN = 'FR'\fR [static]\fP"
+
+.PP
+Definition at line \fB183\fP of file \fBmodels\&.py\fP\&.
+.SS "str scheduleFunctions\&.models\&.PlanSemester\&.GRADUATE = 'GR'\fR [static]\fP"
+
+.PP
+Definition at line \fB187\fP of file \fBmodels\&.py\fP\&.
+.SS "str scheduleFunctions\&.models\&.PlanSemester\&.JUNIOR = 'JR'\fR [static]\fP"
+
+.PP
+Definition at line \fB185\fP of file \fBmodels\&.py\fP\&.
+.SS "scheduleFunctions\&.models\&.PlanSemester\&.semester\fR [static]\fP"
+\fBInitial value:\fP
+.nf
+=  models\&.CharField(
+        max_length=1,
+        choices=SEMESTER_CHOICES,
+        default=FALL,
+    )
+.PP
+.fi
+
+.PP
+Definition at line \fB200\fP of file \fBmodels\&.py\fP\&.
+.SS "dict scheduleFunctions\&.models\&.PlanSemester\&.SEMESTER_CHOICES\fR [static]\fP"
+\fBInitial value:\fP
+.nf
+=  {
+        FALL: "Fall",
+        SPRING: "Spring"
+    }
+.PP
+.fi
+
+.PP
+Definition at line \fB178\fP of file \fBmodels\&.py\fP\&.
+.SS "str scheduleFunctions\&.models\&.PlanSemester\&.SENIOR = 'SR'\fR [static]\fP"
+
+.PP
+Definition at line \fB186\fP of file \fBmodels\&.py\fP\&.
+.SS "str scheduleFunctions\&.models\&.PlanSemester\&.SOPHOMORE = 'SO'\fR [static]\fP"
+
+.PP
+Definition at line \fB184\fP of file \fBmodels\&.py\fP\&.
+.SS "str scheduleFunctions\&.models\&.PlanSemester\&.SPRING = 'S'\fR [static]\fP"
+
+.PP
+Definition at line \fB177\fP of file \fBmodels\&.py\fP\&.
+.SS "scheduleFunctions\&.models\&.PlanSemester\&.year\fR [static]\fP"
+\fBInitial value:\fP
+.nf
+=  models\&.CharField(
+        max_length=2,
+        choices=YEAR_IN_SCHOOL_CHOICES,
+        default=FRESHMAN,
+    )
+.PP
+.fi
+
+.PP
+Definition at line \fB195\fP of file \fBmodels\&.py\fP\&.
+.SS "dict scheduleFunctions\&.models\&.PlanSemester\&.YEAR_IN_SCHOOL_CHOICES\fR [static]\fP"
+\fBInitial value:\fP
+.nf
+=  {
+        FRESHMAN: "Freshman",
+        SOPHOMORE: "Sophomore",
+        JUNIOR: "Junior",
+        SENIOR: "Senior",
+        GRADUATE: "Graduate",
+    }
+.PP
+.fi
+
+.PP
+Definition at line \fB188\fP of file \fBmodels\&.py\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Capstone Team 14 from the source code\&.

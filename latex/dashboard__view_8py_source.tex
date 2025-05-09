@@ -1,0 +1,62 @@
+\doxysection{dashboard\+\_\+view.\+py}
+\hypertarget{dashboard__view_8py_source}{}\label{dashboard__view_8py_source}\index{scheduleFunctions/views/dashboard\_view.py@{scheduleFunctions/views/dashboard\_view.py}}
+\mbox{\hyperlink{dashboard__view_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00001}\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1dashboard__view}{00001}}\ \textcolor{keyword}{from}\ django.shortcuts\ \textcolor{keyword}{import}\ render,\ redirect}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00002}00002\ \textcolor{keyword}{from}\ \mbox{\hyperlink{namespaceschedule_functions_1_1models}{scheduleFunctions.models}}\ \textcolor{keyword}{import}\ Section,\ Day}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00003}00003\ \textcolor{keyword}{from}\ \mbox{\hyperlink{namespaceschedule_functions_1_1to__database}{scheduleFunctions.to\_database}}\ \textcolor{keyword}{import}\ clear\_schedule}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00017}\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1dashboard__view_a5ae97dfa7a063e00cfdbb22763612957}{00017}}\ \textcolor{keyword}{def\ }dashboard\_view(request):}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{stringliteral}{"{}username"{}}\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ request.session:}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ redirect(\textcolor{stringliteral}{"{}home"{}})\ \ \textcolor{comment}{\#\ Redirect\ to\ login\ if\ not\ authenticated}}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00022}00022\ \ \ \ \ \textcolor{comment}{\#\ Render\ the\ dashboard.html\ template}}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00023}00023\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00024}00024\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ request.GET.get(\textcolor{stringliteral}{"{}day"{}})\ \textcolor{keywordflow}{is}\ \textcolor{keywordtype}{None}:}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ request.session[\textcolor{stringliteral}{"{}day"{}}]\ =\ Day.DAY\_OF\_WEEK\_CHOICES[request.GET.get(\textcolor{stringliteral}{"{}day"{}})]}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{stringliteral}{"{}day"{}}\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ request.session:}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ request.session[\textcolor{stringliteral}{"{}day"{}}]\ =\ Day.DAY\_OF\_WEEK\_CHOICES[\textcolor{stringliteral}{"{}m"{}}]}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00031}00031\ \ \ \ \ \ \ \ \ print(request.session[\textcolor{stringliteral}{"{}day"{}}])}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{except}:}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00033}00033\ \ \ \ \ \ \ \ \ request.session[\textcolor{stringliteral}{"{}day"{}}]\ =\ Day.DAY\_OF\_WEEK\_CHOICES[\textcolor{stringliteral}{"{}m"{}}]}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00034}00034\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ request.GET.get(\textcolor{stringliteral}{"{}changed"{}})\ \textcolor{keywordflow}{is}\ \textcolor{keywordtype}{None}:}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ request.session[\textcolor{stringliteral}{"{}changed"{}}]\ =\ request.GET.get(\textcolor{stringliteral}{"{}changed"{}})}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ request.session[\textcolor{stringliteral}{"{}day"{}}]\ =\ \textcolor{stringliteral}{"{}Changed\ Sessions"{}}}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ request.session[\textcolor{stringliteral}{"{}changed"{}}]\ =\ \textcolor{keyword}{False}}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ request.session[\textcolor{stringliteral}{"{}day"{}}]\ ==\ \textcolor{stringliteral}{"{}Changed\ Sessions"{}}:}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ request.session[\textcolor{stringliteral}{"{}day"{}}]\ =\ Day.DAY\_OF\_WEEK\_CHOICES[\textcolor{stringliteral}{"{}m"{}}]}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{except}:}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00044}00044\ \ \ \ \ \ \ \ \ request.session[\textcolor{stringliteral}{"{}changed"{}}]\ =\ \textcolor{keyword}{False}}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ request.session[\textcolor{stringliteral}{"{}changed"{}}]:}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ section\_list\ =\ Section.objects.filter(}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ time\_slot\_\_days\_\_day\_of\_week=request.session["{}day"{}],}}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ changed\ =\ \textcolor{keyword}{True}}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ ).order\_by(\textcolor{stringliteral}{"{}time\_slot\_\_start\_time"{}})}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ section\_list\ =\ Section.objects.filter(}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ time\_slot\_\_days\_\_day\_of\_week=request.session[\textcolor{stringliteral}{"{}day"{}}]}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ ).order\_by(\textcolor{stringliteral}{"{}time\_slot\_\_start\_time"{}})}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{except}\ Section.DoesNotExist:}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00057}00057\ \ \ \ \ \ \ \ \ section\_list\ =\ []}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00059}00059\ \ \ \ \ \textcolor{keywordflow}{return}\ render(}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00060}00060\ \ \ \ \ \ \ \ \ request,}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}dashboard.html"{}},}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00062}00062\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}username"{}}:\ request.session[\textcolor{stringliteral}{"{}username"{}}],}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}day"{}}:\ request.session[\textcolor{stringliteral}{"{}day"{}}],}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}section\_list"{}}:\ section\_list,}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00066}00066\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{dashboard__view_8py_source_l00067}00067\ \ \ \ \ )}
+
+\end{DoxyCode}

@@ -1,0 +1,107 @@
+.TH "scheduleFunctions.data_processing.get_sample" 3 "Version 0.5" "Capstone Team 14" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scheduleFunctions.data_processing.get_sample
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "dict \fBget_classes\fP (str filename)"
+.br
+.ti -1c
+.RI "dict \fBcreate_sample\fP (dict \fBclasses\fP, int num_semesters, int num_departments, int num_classes)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBcurrent_directory\fP = os\&.path\&.dirname(os\&.path\&.realpath(__file__))"
+.br
+.ti -1c
+.RI "\fBpath\fP = current_directory\&.split(os\&.sep)"
+.br
+.ti -1c
+.RI "\fBroot_index\fP = path\&.index('Capstone\-Team14')"
+.br
+.ti -1c
+.RI "\fBroot_dir\fP = os\&.sep\&.join(\fBpath\fP[:\fBroot_index\fP+1])"
+.br
+.ti -1c
+.RI "\fBread_dir\fP = os\&.path\&.join(\fBroot_dir\fP, 'data_files', 'uploaded_schedule')"
+.br
+.ti -1c
+.RI "\fBsample_dir\fP = os\&.path\&.join(\fBroot_dir\fP, 'data_files', 'samples')"
+.br
+.ti -1c
+.RI "dict \fBclasses\fP = \fBget_classes\fP(os\&.path\&.join(\fBread_dir\fP,'filtered\&.json'))"
+.br
+.ti -1c
+.RI "dict \fBsample_data\fP = \fBcreate_sample\fP(\fBclasses\fP, 1, 2, 5)"
+.br
+.ti -1c
+.RI "\fBf\fP"
+.br
+.ti -1c
+.RI "\fBindent\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " dict scheduleFunctions\&.data_processing\&.get_sample\&.create_sample (dict classes, int num_semesters, int num_departments, int num_classes)"
+
+.PP
+Definition at line \fB13\fP of file \fBget_sample\&.py\fP\&.
+.SS " dict scheduleFunctions\&.data_processing\&.get_sample\&.get_classes (str filename)"
+
+.PP
+Definition at line \fB5\fP of file \fBget_sample\&.py\fP\&.
+.SH "Variable Documentation"
+.PP 
+.SS "dict scheduleFunctions\&.data_processing\&.get_sample\&.classes = \fBget_classes\fP(os\&.path\&.join(\fBread_dir\fP,'filtered\&.json'))"
+
+.PP
+Definition at line \fB54\fP of file \fBget_sample\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.get_sample\&.current_directory = os\&.path\&.dirname(os\&.path\&.realpath(__file__))"
+
+.PP
+Definition at line \fB33\fP of file \fBget_sample\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.get_sample\&.f"
+
+.PP
+Definition at line \fB61\fP of file \fBget_sample\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.get_sample\&.indent"
+
+.PP
+Definition at line \fB61\fP of file \fBget_sample\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.get_sample\&.path = current_directory\&.split(os\&.sep)"
+
+.PP
+Definition at line \fB38\fP of file \fBget_sample\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.get_sample\&.read_dir = os\&.path\&.join(\fBroot_dir\fP, 'data_files', 'uploaded_schedule')"
+
+.PP
+Definition at line \fB42\fP of file \fBget_sample\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.get_sample\&.root_dir = os\&.sep\&.join(\fBpath\fP[:\fBroot_index\fP+1])"
+
+.PP
+Definition at line \fB41\fP of file \fBget_sample\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.get_sample\&.root_index = path\&.index('Capstone\-Team14')"
+
+.PP
+Definition at line \fB40\fP of file \fBget_sample\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.get_sample\&.sample_data = \fBcreate_sample\fP(\fBclasses\fP, 1, 2, 5)"
+
+.PP
+Definition at line \fB57\fP of file \fBget_sample\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.get_sample\&.sample_dir = os\&.path\&.join(\fBroot_dir\fP, 'data_files', 'samples')"
+
+.PP
+Definition at line \fB43\fP of file \fBget_sample\&.py\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Capstone Team 14 from the source code\&.

@@ -1,0 +1,146 @@
+\doxysection{settings.\+py}
+\hypertarget{settings_8py_source}{}\label{settings_8py_source}\index{myproject/settings.py@{myproject/settings.py}}
+\mbox{\hyperlink{settings_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00001}\mbox{\hyperlink{namespacemyproject_1_1settings}{00001}}\ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00002}00002\ \textcolor{stringliteral}{Django\ settings\ for\ myproject\ project.}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00003}00003\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00004}00004\ \textcolor{stringliteral}{Generated\ by\ 'django-\/admin\ startproject'\ using\ Django\ 5.1.6.}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00005}00005\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00006}00006\ \textcolor{stringliteral}{For\ more\ information\ on\ this\ file,\ see}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00007}00007\ \textcolor{stringliteral}{https://docs.djangoproject.com/en/5.1/topics/settings/}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00008}00008\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00009}00009\ \textcolor{stringliteral}{For\ the\ full\ list\ of\ settings\ and\ their\ values,\ see}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00010}00010\ \textcolor{stringliteral}{https://docs.djangoproject.com/en/5.1/ref/settings/}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00011}00011\ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00013}00013\ \textcolor{keyword}{from}\ pathlib\ \textcolor{keyword}{import}\ Path}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00014}00014\ \textcolor{keyword}{import}\ os}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00015}00015\ \textcolor{comment}{\#\ Build\ paths\ inside\ the\ project\ like\ this:\ BASE\_DIR\ /\ 'subdir'.}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00016}00016\ \textcolor{keywordflow}{if}\ os.name\ ==\ \textcolor{stringliteral}{'nt'}:}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00017}\mbox{\hyperlink{namespacemyproject_1_1settings_a98cf8cddb7e0d03baf99966eeffd4b3b}{00017}}\ \ \ \ \ BASE\_DIR\ =\ Path(\_\_file\_\_).resolve().parent.parent}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00018}00018\ \textcolor{keywordflow}{elif}\ \_\_name\_\_\ ==\ \textcolor{stringliteral}{"{}\_\_main\_\_"{}}:}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00019}00019\ \ \ \ \ BASE\_DIR\ =\ Path(\_\_name\_\_).resolve().parent.parent}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00020}00020\ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00021}00021\ \ \ \ \ BASE\_DIR\ =\ Path(\_\_name\_\_).resolve().parent}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00024}00024\ \textcolor{comment}{\#\ Quick-\/start\ development\ settings\ -\/\ unsuitable\ for\ production}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00025}00025\ \textcolor{comment}{\#\ See\ https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00027}00027\ \textcolor{comment}{\#\ SECURITY\ WARNING:\ keep\ the\ secret\ key\ used\ in\ production\ secret!}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00028}\mbox{\hyperlink{namespacemyproject_1_1settings_af732ab0cc904af920f2452dd799e89bc}{00028}}\ SECRET\_KEY\ =\ \textcolor{stringliteral}{'django-\/insecure-\/ge\_nw\#14sw5!gaz+x-\/ydw2n0*qf(6t(m3!\_linr*45iyv\_dqim'}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00030}00030\ \textcolor{comment}{\#\ SECURITY\ WARNING:\ don't\ run\ with\ debug\ turned\ on\ in\ production!}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00031}\mbox{\hyperlink{namespacemyproject_1_1settings_a87b6ba4f03c767af9e6204682cb446c4}{00031}}\ DEBUG\ =\ \textcolor{keyword}{True}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00033}\mbox{\hyperlink{namespacemyproject_1_1settings_ae5f765bb0daa893453dd0cfdf2e8ec6c}{00033}}\ ALLOWED\_HOSTS\ =\ [\textcolor{stringliteral}{"{}*"{}}]}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00036}00036\ \textcolor{comment}{\#\ Application\ definition}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00038}\mbox{\hyperlink{namespacemyproject_1_1settings_add0e337dcc9a0bc19b1a0a020b307d93}{00038}}\ INSTALLED\_APPS\ =\ [}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00039}00039\ \ \ \ \ \textcolor{stringliteral}{'django.contrib.admin'},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00040}00040\ \ \ \ \ \textcolor{stringliteral}{'django.contrib.auth'},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00041}00041\ \ \ \ \ \textcolor{stringliteral}{'django.contrib.contenttypes'},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00042}00042\ \ \ \ \ \textcolor{stringliteral}{'django.contrib.sessions'},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00043}00043\ \ \ \ \ \textcolor{stringliteral}{'django.contrib.messages'},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00044}00044\ \ \ \ \ \textcolor{stringliteral}{'django.contrib.staticfiles'},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00045}00045\ \ \ \ \ \textcolor{stringliteral}{'django.contrib.admindocs'},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00046}00046\ \ \ \ \ \textcolor{stringliteral}{'scheduleFunctions'},\ \textcolor{comment}{\#\ App\ for\ scheduler\ functions}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00047}00047\ ]}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00049}\mbox{\hyperlink{namespacemyproject_1_1settings_aee848af6e4010d9f5a3cf150d8e6db68}{00049}}\ MIDDLEWARE\ =\ [}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00050}00050\ \ \ \ \ \textcolor{stringliteral}{'django.middleware.security.SecurityMiddleware'},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00051}00051\ \ \ \ \ \textcolor{stringliteral}{'django.contrib.sessions.middleware.SessionMiddleware'},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00052}00052\ \ \ \ \ \textcolor{stringliteral}{'django.middleware.common.CommonMiddleware'},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00053}00053\ \ \ \ \ \textcolor{stringliteral}{'django.middleware.csrf.CsrfViewMiddleware'},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00054}00054\ \ \ \ \ \textcolor{stringliteral}{'django.contrib.auth.middleware.AuthenticationMiddleware'},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00055}00055\ \ \ \ \ \textcolor{stringliteral}{'django.contrib.messages.middleware.MessageMiddleware'},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00056}00056\ \ \ \ \ \textcolor{stringliteral}{'django.middleware.clickjacking.XFrameOptionsMiddleware'},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00057}00057\ ]}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00059}\mbox{\hyperlink{namespacemyproject_1_1settings_a5ccf5864d0c3a71c255dd71b6bba6cb6}{00059}}\ ROOT\_URLCONF\ =\ \textcolor{stringliteral}{'myproject.urls'}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00061}\mbox{\hyperlink{namespacemyproject_1_1settings_a14390b701aa787e8a63e619741d3abf8}{00061}}\ TEMPLATES\ =\ [}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00062}00062\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'BACKEND'}:\ \textcolor{stringliteral}{'django.template.backends.django.DjangoTemplates'},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'DIRS'}:\ [],}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'APP\_DIRS'}:\ \textcolor{keyword}{True},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'OPTIONS'}:\ \{}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'context\_processors'}:\ [}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'django.template.context\_processors.debug'},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'django.template.context\_processors.request'},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'django.contrib.auth.context\_processors.auth'},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'django.contrib.messages.context\_processors.messages'},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00073}00073\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00074}00074\ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00075}00075\ ]}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00077}\mbox{\hyperlink{namespacemyproject_1_1settings_acc45ca4696cae35f9925b54a211927bf}{00077}}\ WSGI\_APPLICATION\ =\ \textcolor{stringliteral}{'myproject.wsgi.application'}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00080}00080\ \textcolor{comment}{\#\ Database}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00081}00081\ \textcolor{comment}{\#\ https://docs.djangoproject.com/en/5.1/ref/settings/\#databases}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00083}\mbox{\hyperlink{namespacemyproject_1_1settings_ae680d48d393a190a4fa09a9ba2815bd5}{00083}}\ DATABASES\ =\ \{}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00084}00084\ \ \ \ \ \textcolor{stringliteral}{'default'}:\ \{}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'ENGINE'}:\ \textcolor{stringliteral}{'django.db.backends.sqlite3'},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'NAME'}:\ BASE\_DIR\ /\ \textcolor{stringliteral}{'db.sqlite3'},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00088}00088\ \}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00091}00091\ \textcolor{comment}{\#\ Password\ validation}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00092}00092\ \textcolor{comment}{\#\ https://docs.djangoproject.com/en/5.1/ref/settings/\#auth-\/password-\/validators}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00094}\mbox{\hyperlink{namespacemyproject_1_1settings_a6aad92ced9a0f9a2f595d183747b354a}{00094}}\ AUTH\_PASSWORD\_VALIDATORS\ =\ [}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00095}00095\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'NAME'}:\ \textcolor{stringliteral}{'django.contrib.auth.password\_validation.UserAttributeSimilarityValidator'},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00097}00097\ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00098}00098\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'NAME'}:\ \textcolor{stringliteral}{'django.contrib.auth.password\_validation.MinimumLengthValidator'},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00100}00100\ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00101}00101\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'NAME'}:\ \textcolor{stringliteral}{'django.contrib.auth.password\_validation.CommonPasswordValidator'},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00103}00103\ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00104}00104\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'NAME'}:\ \textcolor{stringliteral}{'django.contrib.auth.password\_validation.NumericPasswordValidator'},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00106}00106\ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00107}00107\ ]}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00110}00110\ \textcolor{comment}{\#\ Internationalization}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00111}00111\ \textcolor{comment}{\#\ https://docs.djangoproject.com/en/5.1/topics/i18n/}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00113}\mbox{\hyperlink{namespacemyproject_1_1settings_ae2296ffc28f9f374b2dbf6ff7c08f834}{00113}}\ LANGUAGE\_CODE\ =\ \textcolor{stringliteral}{'en-\/us'}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00115}\mbox{\hyperlink{namespacemyproject_1_1settings_a3865e7184483bb267004da9027f0217a}{00115}}\ TIME\_ZONE\ =\ \textcolor{stringliteral}{'UTC'}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00117}\mbox{\hyperlink{namespacemyproject_1_1settings_a9a95aa7087b629744c6d44fc1a1cd874}{00117}}\ USE\_I18N\ =\ \textcolor{keyword}{True}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00119}\mbox{\hyperlink{namespacemyproject_1_1settings_a62e7ac39f89ea78416cb290897ace723}{00119}}\ USE\_TZ\ =\ \textcolor{keyword}{True}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00122}00122\ \textcolor{comment}{\#\ Static\ files\ (CSS,\ JavaScript,\ Images)}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00123}00123\ \textcolor{comment}{\#\ https://docs.djangoproject.com/en/5.1/howto/static-\/files/}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00125}\mbox{\hyperlink{namespacemyproject_1_1settings_ad2929115012347914930556aa836e81d}{00125}}\ STATIC\_URL\ =\ \textcolor{stringliteral}{'static/'}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00127}00127\ \textcolor{comment}{\#\ Default\ primary\ key\ field\ type}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00128}00128\ \textcolor{comment}{\#\ https://docs.djangoproject.com/en/5.1/ref/settings/\#default-\/auto-\/field}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00130}\mbox{\hyperlink{namespacemyproject_1_1settings_a17084926a4c2f62c0e8dea7d61639bd7}{00130}}\ DEFAULT\_AUTO\_FIELD\ =\ \textcolor{stringliteral}{'django.db.models.BigAutoField'}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00132}\mbox{\hyperlink{namespacemyproject_1_1settings_aa2792fed98c5fa914248d7d45c9a26fa}{00132}}\ MEDIA\_URL\ =\ \textcolor{stringliteral}{'/media/'}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00133}\mbox{\hyperlink{namespacemyproject_1_1settings_a4233bcaec6c79925f1494f93a62ecffa}{00133}}\ MEDIA\_ROOT\ =\ os.path.join(BASE\_DIR,\ \textcolor{stringliteral}{'media'})}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00135}00135\ STATIC\_URL\ =\ \textcolor{stringliteral}{'/static/'}}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00136}\mbox{\hyperlink{namespacemyproject_1_1settings_ae96b2b8ba2122232b9b69251dd8d8599}{00136}}\ STATICFILES\_DIRS\ =\ [}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00137}00137\ \ \ \ \ os.path.join(BASE\_DIR,\ \textcolor{stringliteral}{"{}static"{}}),}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00138}00138\ ]}
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{settings_8py_source_l00140}\mbox{\hyperlink{namespacemyproject_1_1settings_ad58a3032bddcb85891191af59f9c8a96}{00140}}\ STARTUP\_DONE\ =\ \textcolor{keyword}{False}}
+
+\end{DoxyCode}

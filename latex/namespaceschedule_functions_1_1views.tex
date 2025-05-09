@@ -1,111 +1,23 @@
 \doxysection{schedule\+Functions.\+views Namespace Reference}
 \hypertarget{namespaceschedule_functions_1_1views}{}\label{namespaceschedule_functions_1_1views}\index{scheduleFunctions.views@{scheduleFunctions.views}}
-\doxysubsubsection*{Functions}
+\doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{namespaceschedule_functions_1_1views_aef22d9ac19337b024ff2028a3615fe4e}{login}} (request)
+namespace \mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clear__view}{clear\+\_\+view}}
 \item 
-\mbox{\hyperlink{namespaceschedule_functions_1_1views_adcfb91d67951bf02743f2639543f069d}{dashboard\+\_\+view}} (request)
+namespace \mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clingo__helpers}{clingo\+\_\+helpers}}
 \item 
-\mbox{\hyperlink{namespaceschedule_functions_1_1views_af0105af3b32ca53bb79e12afbcfc7474}{schedule\+\_\+view}} (request)
+namespace \mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1dashboard__view}{dashboard\+\_\+view}}
 \item 
-\mbox{\hyperlink{namespaceschedule_functions_1_1views_a6c9bae8f4dde6bf381411c24471f1145}{run\+\_\+script}} (request)
+namespace \mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1download__optimized__file}{download\+\_\+optimized\+\_\+file}}
 \item 
-dict \mbox{\hyperlink{namespaceschedule_functions_1_1views_ad7faf09810096992b817042c3d1fc657}{get\+\_\+section\+\_\+details}} (str course, int section)
+namespace \mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1login}{login}}
+\item 
+namespace \mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1optimize__schedule}{optimize\+\_\+schedule}}
+\item 
+namespace \mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1run__clingo__identifier}{run\+\_\+clingo\+\_\+identifier}}
+\item 
+namespace \mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1section__view}{section\+\_\+view}}
+\item 
+namespace \mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1upload__json__file}{upload\+\_\+json\+\_\+file}}
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-list \mbox{\hyperlink{namespaceschedule_functions_1_1views_af7edf771fc0ed92eb0233b2b0730cd44}{example\+\_\+course\+\_\+list}}
-\item 
-list \mbox{\hyperlink{namespaceschedule_functions_1_1views_ad8fa3e75e365246679d5ae96e1aa706e}{example\+\_\+conflict\+\_\+list}}
-\end{DoxyCompactItemize}
-
-
-\doxysubsection{Function Documentation}
-\Hypertarget{namespaceschedule_functions_1_1views_adcfb91d67951bf02743f2639543f069d}\index{scheduleFunctions.views@{scheduleFunctions.views}!dashboard\_view@{dashboard\_view}}
-\index{dashboard\_view@{dashboard\_view}!scheduleFunctions.views@{scheduleFunctions.views}}
-\doxysubsubsection{\texorpdfstring{dashboard\_view()}{dashboard\_view()}}
-{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_adcfb91d67951bf02743f2639543f069d} 
-schedule\+Functions.\+views.\+dashboard\+\_\+view (\begin{DoxyParamCaption}\item[{}]{request}{}\end{DoxyParamCaption})}
-
-\Hypertarget{namespaceschedule_functions_1_1views_ad7faf09810096992b817042c3d1fc657}\index{scheduleFunctions.views@{scheduleFunctions.views}!get\_section\_details@{get\_section\_details}}
-\index{get\_section\_details@{get\_section\_details}!scheduleFunctions.views@{scheduleFunctions.views}}
-\doxysubsubsection{\texorpdfstring{get\_section\_details()}{get\_section\_details()}}
-{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_ad7faf09810096992b817042c3d1fc657} 
- dict schedule\+Functions.\+views.\+get\+\_\+section\+\_\+details (\begin{DoxyParamCaption}\item[{str}]{course}{, }\item[{int}]{section}{}\end{DoxyParamCaption})}
-
-\begin{DoxyVerb}Returns a dictionary detailing all the relevant information for the section that is requested.
-
-Args:
-    course (str): identifier for the course that the section is part of. i.e. csci2500
-    section (int): number for the section
-
-Returns:
-    dict: All of the information relevant to the section.
-        'course': str
-        'section': int
-        'start': int
-        'end': int
-        'days': list[str]
-        'course_name': str
-        'desc': str
-        'professor': str
-        'location': str
-        'prerequisites': list[str]
-        'cocurrent_classes': list[dict]
-            'course': str
-            'section': str
-            'course_name': str
-            'start': int
-            'end': int
-            'days': list[str]
-\end{DoxyVerb}
- 
-
-Referenced by \mbox{\hyperlink{namespaceschedule_functions_1_1views_af0105af3b32ca53bb79e12afbcfc7474}{schedule\+\_\+view()}}.
-
-\Hypertarget{namespaceschedule_functions_1_1views_aef22d9ac19337b024ff2028a3615fe4e}\index{scheduleFunctions.views@{scheduleFunctions.views}!login@{login}}
-\index{login@{login}!scheduleFunctions.views@{scheduleFunctions.views}}
-\doxysubsubsection{\texorpdfstring{login()}{login()}}
-{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_aef22d9ac19337b024ff2028a3615fe4e} 
-schedule\+Functions.\+views.\+login (\begin{DoxyParamCaption}\item[{}]{request}{}\end{DoxyParamCaption})}
-
-\Hypertarget{namespaceschedule_functions_1_1views_a6c9bae8f4dde6bf381411c24471f1145}\index{scheduleFunctions.views@{scheduleFunctions.views}!run\_script@{run\_script}}
-\index{run\_script@{run\_script}!scheduleFunctions.views@{scheduleFunctions.views}}
-\doxysubsubsection{\texorpdfstring{run\_script()}{run\_script()}}
-{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_a6c9bae8f4dde6bf381411c24471f1145} 
-schedule\+Functions.\+views.\+run\+\_\+script (\begin{DoxyParamCaption}\item[{}]{request}{}\end{DoxyParamCaption})}
-
-\Hypertarget{namespaceschedule_functions_1_1views_af0105af3b32ca53bb79e12afbcfc7474}\index{scheduleFunctions.views@{scheduleFunctions.views}!schedule\_view@{schedule\_view}}
-\index{schedule\_view@{schedule\_view}!scheduleFunctions.views@{scheduleFunctions.views}}
-\doxysubsubsection{\texorpdfstring{schedule\_view()}{schedule\_view()}}
-{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_af0105af3b32ca53bb79e12afbcfc7474} 
-schedule\+Functions.\+views.\+schedule\+\_\+view (\begin{DoxyParamCaption}\item[{}]{request}{}\end{DoxyParamCaption})}
-
-
-
-References \mbox{\hyperlink{namespaceschedule_functions_1_1views_ad7faf09810096992b817042c3d1fc657}{get\+\_\+section\+\_\+details()}}.
-
-
-
-\doxysubsection{Variable Documentation}
-\Hypertarget{namespaceschedule_functions_1_1views_ad8fa3e75e365246679d5ae96e1aa706e}\index{scheduleFunctions.views@{scheduleFunctions.views}!example\_conflict\_list@{example\_conflict\_list}}
-\index{example\_conflict\_list@{example\_conflict\_list}!scheduleFunctions.views@{scheduleFunctions.views}}
-\doxysubsubsection{\texorpdfstring{example\_conflict\_list}{example\_conflict\_list}}
-{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_ad8fa3e75e365246679d5ae96e1aa706e} 
-list schedule\+Functions.\+views.\+example\+\_\+conflict\+\_\+list}
-
-{\bfseries Initial value\+:}
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ =\ \ [}
-\DoxyCodeLine{00002\ \ \ \ \ [\textcolor{stringliteral}{"{}MATH\ 2040"{}},\ \textcolor{stringliteral}{"{}GEOG\ 101"{}}],}
-\DoxyCodeLine{00003\ ]}
-
-\end{DoxyCode}
-\Hypertarget{namespaceschedule_functions_1_1views_af7edf771fc0ed92eb0233b2b0730cd44}\index{scheduleFunctions.views@{scheduleFunctions.views}!example\_course\_list@{example\_course\_list}}
-\index{example\_course\_list@{example\_course\_list}!scheduleFunctions.views@{scheduleFunctions.views}}
-\doxysubsubsection{\texorpdfstring{example\_course\_list}{example\_course\_list}}
-{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_af7edf771fc0ed92eb0233b2b0730cd44} 
-list schedule\+Functions.\+views.\+example\+\_\+course\+\_\+list}
-

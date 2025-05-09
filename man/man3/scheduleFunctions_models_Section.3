@@ -1,0 +1,85 @@
+.TH "scheduleFunctions.models.Section" 3 "Version 0.5" "Capstone Team 14" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scheduleFunctions.models.Section
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits models\&.Model\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fBprint_clingo\fP (self)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcourse\fP = models\&.ForeignKey(\fBCourse\fP, on_delete = models\&.CASCADE)"
+.br
+.ti -1c
+.RI "\fBsection_number\fP = models\&.IntegerField()"
+.br
+.ti -1c
+.RI "\fBsection_id\fP = models\&.IntegerField()"
+.br
+.ti -1c
+.RI "\fBprofessor\fP = models\&.ForeignKey(\fBProffessor\fP, on_delete = models\&.CASCADE)"
+.br
+.ti -1c
+.RI "\fBtime_slot\fP = models\&.ForeignKey(\fBTimeSlot\fP, on_delete = models\&.CASCADE)"
+.br
+.ti -1c
+.RI "\fBroom\fP = models\&.ForeignKey(\fBRoom\fP, on_delete=models\&.SET_NULL, null=True, blank=True)"
+.br
+.ti -1c
+.RI "\fBchanged\fP = models\&.BooleanField(default=False)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB129\fP of file \fBmodels\&.py\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS " str scheduleFunctions\&.models\&.Section\&.print_clingo ( self)"
+
+.PP
+Definition at line \fB138\fP of file \fBmodels\&.py\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "scheduleFunctions\&.models\&.Section\&.changed = models\&.BooleanField(default=False)\fR [static]\fP"
+
+.PP
+Definition at line \fB136\fP of file \fBmodels\&.py\fP\&.
+.SS "scheduleFunctions\&.models\&.Section\&.course = models\&.ForeignKey(\fBCourse\fP, on_delete = models\&.CASCADE)\fR [static]\fP"
+
+.PP
+Definition at line \fB130\fP of file \fBmodels\&.py\fP\&.
+.SS "scheduleFunctions\&.models\&.Section\&.professor = models\&.ForeignKey(\fBProffessor\fP, on_delete = models\&.CASCADE)\fR [static]\fP"
+
+.PP
+Definition at line \fB133\fP of file \fBmodels\&.py\fP\&.
+.SS "scheduleFunctions\&.models\&.Section\&.room = models\&.ForeignKey(\fBRoom\fP, on_delete=models\&.SET_NULL, null=True, blank=True)\fR [static]\fP"
+
+.PP
+Definition at line \fB135\fP of file \fBmodels\&.py\fP\&.
+.SS "scheduleFunctions\&.models\&.Section\&.section_id = models\&.IntegerField()\fR [static]\fP"
+
+.PP
+Definition at line \fB132\fP of file \fBmodels\&.py\fP\&.
+.SS "scheduleFunctions\&.models\&.Section\&.section_number = models\&.IntegerField()\fR [static]\fP"
+
+.PP
+Definition at line \fB131\fP of file \fBmodels\&.py\fP\&.
+.SS "scheduleFunctions\&.models\&.Section\&.time_slot = models\&.ForeignKey(\fBTimeSlot\fP, on_delete = models\&.CASCADE)\fR [static]\fP"
+
+.PP
+Definition at line \fB134\fP of file \fBmodels\&.py\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Capstone Team 14 from the source code\&.

@@ -1,0 +1,77 @@
+\doxysection{converter.\+py}
+\hypertarget{converter_8py_source}{}\label{converter_8py_source}\index{scheduleFunctions/data\_processing/converter.py@{scheduleFunctions/data\_processing/converter.py}}
+\mbox{\hyperlink{converter_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00001}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter}{00001}}\ \textcolor{keyword}{import}\ json}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00002}00002\ \textcolor{keyword}{import}\ re}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00003}00003\ \textcolor{keyword}{import}\ os}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00005}00005\ \textcolor{keywordflow}{if}\ os.name\ ==\ \textcolor{stringliteral}{'nt'}:}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00006}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a7aca7afb03dd1416d279c82accabd75f}{00006}}\ \ \ \ \ current\_directory\ =\ os.path.dirname(os.path.realpath(\_\_file\_\_))\ \textcolor{comment}{\#\ Get\ current\ directory}}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00007}00007\ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00008}00008\ \ \ \ \ current\_directory\ =\ os.path.dirname(os.path.realpath(\_\_name\_\_))\ \textcolor{comment}{\#\ Get\ current\ directory}}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00009}00009\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00011}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a26c822df6ebdbc191b1e46d1238af86c}{00011}}\ path\ =\ current\_directory.split(os.sep)}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00013}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a0a0af82911ca7ee7912567774433dc81}{00013}}\ root\_index\ =\ path.index(\textcolor{stringliteral}{'Capstone-\/Team14'})}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00014}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_ae3a670b844df220b3f32461fede47994}{00014}}\ root\_dir\ =\ os.sep.join(path[:root\_index+1])}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00015}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_ac7edfd0c41455c1cf824c24c15b09edf}{00015}}\ data\_dir\ =\ os.path.join(root\_dir,\ \textcolor{stringliteral}{'data\_files'},\ \textcolor{stringliteral}{'uploaded\_schedule'})}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00017}00017\ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00018}00018\ \ \ \ \ os.makedirs(data\_dir)}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00019}00019\ \textcolor{keywordflow}{except}:}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{pass}}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00021}00021\ \textcolor{comment}{\#\ Load\ the\ JSON\ file}}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00022}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a5e8e67eff3fabb777b95fc6211aea17e}{00022}}\ file\_path\ =\ os.path.join(data\_dir,\textcolor{stringliteral}{"{}filtered.json"{}})}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00023}00023\ \textcolor{keyword}{with}\ open(file\_path,\ \textcolor{stringliteral}{"{}r"{}})\ \textcolor{keyword}{as}\ file:}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00024}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_aebcd6c3534cd83c8a05998378d25ea59}{00024}}\ \ \ \ \ data\ =\ json.load(file)}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00026}00026\ \textcolor{comment}{\#\ Dictionary\ to\ store\ parsed\ prerequisites}}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00027}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a2e87d0204936eb3740bfa0a9e48df723}{00027}}\ course\_prereqs\ =\ \{\}}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00029}00029\ \textcolor{comment}{\#\ Regular\ expressions\ to\ identify\ prerequisites}}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00030}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a93e0fc54cfdef628075616858a1d9ba7}{00030}}\ strict\_prereq\_pattern\ =\ re.compile(\textcolor{stringliteral}{r"{}([\(\backslash\)w\(\backslash\)s]+)\ with\ C[-\/]?\ or\ better|([\(\backslash\)w\(\backslash\)s]+)\ AND|([\(\backslash\)w\(\backslash\)s]+)\ OR"{}})}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00032}00032\ \textcolor{comment}{\#\ Function\ to\ clean\ course\ names}}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00033}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a2c3c52956ba6ae44b144102739336341}{00033}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a2c3c52956ba6ae44b144102739336341}{clean\_course\_name}}(course):}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{return}\ course.strip().replace(\textcolor{stringliteral}{"{}\ "{}},\ \textcolor{stringliteral}{"{}\_"{}}).lower()}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00036}00036\ \textcolor{comment}{\#\ Traverse\ the\ data\ structure}}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00037}00037\ \textcolor{keywordflow}{for}\ term,\ subjects\ \textcolor{keywordflow}{in}\ data.items():}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{for}\ subject,\ courses\ \textcolor{keywordflow}{in}\ subjects.items():}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ course\_number,\ course\_info\ \textcolor{keywordflow}{in}\ courses.items():}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00040}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a6f3dcf05397acadf57a74015e2a53603}{00040}}\ \ \ \ \ \ \ \ \ \ \ \ \ title\ =\ course\_info.get(\textcolor{stringliteral}{"{}title"{}},\ \textcolor{stringliteral}{"{}Unknown\ Title"{}})}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00041}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a2f8f2a5ee5cd89cde5f345a396c36666}{00041}}\ \ \ \ \ \ \ \ \ \ \ \ \ prereq\_text\ =\ course\_info.get(\textcolor{stringliteral}{"{}desc"{}},\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Extract\ prerequisites\ from\ the\ description}}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{stringliteral}{"{}Prereq:"{}}\ \textcolor{keywordflow}{in}\ prereq\_text:}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00045}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_afc182802c6c5708acdc8e96bbe05e88c}{00045}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ prereq\_part\ =\ prereq\_text.split(\textcolor{stringliteral}{"{}Prereq:"{}})[1].strip()}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Find\ all\ course\ mentions}}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00048}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_ace16ef4291645443197b35ffbf6b86e9}{00048}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matches\ =\ strict\_prereq\_pattern.findall(prereq\_part)}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00049}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a30f5230cc5b80109a265dfc1af3b33ca}{00049}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ all\_prereqs\ =\ set()}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ match\_group\ \textcolor{keywordflow}{in}\ matches:}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ match\ \textcolor{keywordflow}{in}\ match\_group:}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ match:}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ all\_prereqs.add(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a2c3c52956ba6ae44b144102739336341}{clean\_course\_name}}(match))}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Handle\ "{}AND"{}\ vs\ "{}OR"{}\ conditions}}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{stringliteral}{"{}OR"{}}\ \textcolor{keywordflow}{in}\ prereq\_part:}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00057}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_ae9c596e839b085d3173b3832ffafa7c0}{00057}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ structured\_prereq\ =\ f\textcolor{stringliteral}{"{}choice([\{',\ '.join(all\_prereqs)\}])"{}}}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ structured\_prereq\ =\ \textcolor{stringliteral}{"{},\ "{}}.join(all\_prereqs)}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Store\ results}}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00062}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a96f24e84cf6f5244875fcd0aab44c0f6}{00062}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ course\_key\ =\ f\textcolor{stringliteral}{"{}\{clean\_course\_name(subject)\}\_\{course\_number\}"{}}}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ course\_prereqs[course\_key]\ =\ structured\_prereq}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00065}00065\ \textcolor{comment}{\#\ Generate\ ASP\ facts}}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00066}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a637656d6701be5a5fd2b53a184e380e3}{00066}}\ lp\_file\ =\ os.path.join(root\_dir,\textcolor{stringliteral}{"{}courses.lp"{}})}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00067}00067\ \textcolor{keyword}{with}\ open(lp\_file,\ \textcolor{stringliteral}{"{}w"{}})\ \textcolor{keyword}{as}\ f:}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{for}\ course,\ prereq\ \textcolor{keywordflow}{in}\ course\_prereqs.items():}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00069}00069\ \ \ \ \ \ \ \ \ f.write(f\textcolor{stringliteral}{"{}prereq(\{course\},\ \{prereq\}).\(\backslash\)n"{}})}
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{converter_8py_source_l00071}00071\ print(\textcolor{stringliteral}{"{}ASP\ rules\ saved\ to\ courses.lp"{}})}
+
+\end{DoxyCode}

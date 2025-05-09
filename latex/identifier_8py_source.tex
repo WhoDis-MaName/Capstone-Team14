@@ -1,0 +1,59 @@
+\doxysection{identifier.\+py}
+\hypertarget{identifier_8py_source}{}\label{identifier_8py_source}\mbox{\hyperlink{identifier_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00001}\mbox{\hyperlink{namespaceidentifier}{00001}}\ \textcolor{keyword}{import}\ sys,\ clingo,\ math}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00002}00002\ \textcolor{keyword}{from}\ \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1jsonconverter}{scheduleFunctions.data\_processing.jsonconverter}}\ \textcolor{keyword}{import}\ convert}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00003}00003\ \textcolor{keyword}{import}\ argparse}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00004}00004\ \textcolor{keyword}{import}\ os}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00006}00006\ \textcolor{keywordflow}{if}\ os.name\ ==\ \textcolor{stringliteral}{"{}nt"{}}:}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00007}\mbox{\hyperlink{namespaceidentifier_a42c3c8581a1d36faa9a43ef075339289}{00007}}\ \ \ \ \ current\_directory\ =\ os.path.dirname(}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00008}00008\ \ \ \ \ \ \ \ \ os.path.realpath(\_\_file\_\_)}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00009}00009\ \ \ \ \ )\ \ \textcolor{comment}{\#\ Get\ current\ directory}}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00010}00010\ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00011}00011\ \ \ \ \ current\_directory\ =\ os.path.dirname(}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00012}00012\ \ \ \ \ \ \ \ \ os.path.realpath(\_\_name\_\_)}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00013}00013\ \ \ \ \ )\ \ \textcolor{comment}{\#\ Get\ current\ directory}}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00014}\mbox{\hyperlink{namespaceidentifier_a446a7582ca279d7690d6f07663a9893d}{00014}}\ path\ =\ current\_directory.split(os.sep)}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00016}\mbox{\hyperlink{namespaceidentifier_a71a30334a39cf0e5aeaf400c2d0b9881}{00016}}\ root\_index\ =\ path.index(\textcolor{stringliteral}{"{}Capstone-\/Team14"{}})}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00017}\mbox{\hyperlink{namespaceidentifier_a063b54070e2182ca05dc9d979bd1d88e}{00017}}\ root\_dir\ =\ os.sep.join(path[:\ root\_index\ +\ 1])}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00018}\mbox{\hyperlink{namespaceidentifier_a6193d645bdf51d04b498eaadd7c987fa}{00018}}\ read\_dir\ =\ os.path.join(root\_dir,\ \textcolor{stringliteral}{"{}media"{}},\ \textcolor{stringliteral}{"{}uploads"{}})}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00019}\mbox{\hyperlink{namespaceidentifier_ab504c8e2b9ec9a766e8941c258ce8875}{00019}}\ clingo\_dir\ =\ os.path.join(root\_dir,\ \textcolor{stringliteral}{"{}clingo"{}})}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00021}\mbox{\hyperlink{namespaceidentifier_a337e1780e0ec9f118fa3420ae427a363}{00021}}\ parser\ =\ argparse.ArgumentParser(description=\textcolor{stringliteral}{"{}Input\ class\ json"{}})}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00023}00023\ \textcolor{comment}{\#\ Add\ arguments\ with\ default\ values}}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00024}00024\ parser.add\_argument(}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00025}00025\ \ \ \ \ \textcolor{stringliteral}{"{}-\/-\/file"{}},}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00026}\mbox{\hyperlink{namespaceidentifier_ad9db37e881aa38ba136f00728be4fba2}{00026}}\ \ \ \ \ type=str,}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00027}\mbox{\hyperlink{namespaceidentifier_a1f16555666294a888b6f9cb4e1392490}{00027}}\ \ \ \ \ default=os.path.join(read\_dir,\ \textcolor{stringliteral}{"{}filtered.json"{}}),}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00028}\mbox{\hyperlink{namespaceidentifier_a24a6b4ae58a4e82cbb7404fcf9407349}{00028}}\ \ \ \ \ help=\textcolor{stringliteral}{"{}File\ name\ to\ process"{}},}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00029}00029\ )}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00032}00032\ \textcolor{comment}{\#\ TODO:\ add\ in\ doxygen\ comments\ for\ clingo\ application.}}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00033}\mbox{\hyperlink{classidentifier_1_1_clingo_app}{00033}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classidentifier_1_1_clingo_app}{ClingoApp}}(clingo.application.Application):}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00034}\mbox{\hyperlink{classidentifier_1_1_clingo_app_a297bc53a59a555c428e4c4e3e1cdb474}{00034}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{classidentifier_1_1_clingo_app_a297bc53a59a555c428e4c4e3e1cdb474}{main}}(self,\ ctl,\ files):}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00036}00036\ \ \ \ \ \ \ \ \ args\ =\ parser.parse\_args()}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Access\ the\ arguments}}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00039}00039\ \ \ \ \ \ \ \ \ file\ =\ args.file}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00040}00040\ \ \ \ \ \ \ \ \ print(file)}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ TODO:\ Update\ to\ work\ with\ input\ file\ not\ just\ hard\ coded\ file}}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00042}00042\ \ \ \ \ \ \ \ \ convert(file)}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00043}00043\ \ \ \ \ \ \ \ \ ctl.load(read\_dir\ +\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)filtered.lp"{}})}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00044}00044\ \ \ \ \ \ \ \ \ ctl.load(clingo\_dir\ +\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)overlap\_identifier.lp"{}})}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00046}00046\ \ \ \ \ \ \ \ \ ctl.ground()}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00047}00047\ \ \ \ \ \ \ \ \ ctl.solve()}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00049}00049\ \ \ \ \ \textcolor{comment}{\#\ def\ print\_model(self,\ model,\ printer)\ -\/>\ None:}}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00050}00050\ \ \ \ \ \textcolor{comment}{\#\ \ \ \ \ board\ =\ Sudoku(\{\}).from\_model(model)}}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00051}00051\ \ \ \ \ \textcolor{comment}{\#\ \ \ \ \ print(board)}}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00053}00053\ \textcolor{keywordflow}{if}\ \_\_name\_\_\ ==\ \textcolor{stringliteral}{'\_\_main\_\_'}:}
+\DoxyCodeLine{\Hypertarget{identifier_8py_source_l00054}00054\ \ \ \ \ clingo.application.clingo\_main(\mbox{\hyperlink{classidentifier_1_1_clingo_app}{ClingoApp}}())}
+
+\end{DoxyCode}

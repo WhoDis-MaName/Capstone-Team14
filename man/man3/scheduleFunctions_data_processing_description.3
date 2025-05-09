@@ -1,0 +1,94 @@
+.TH "scheduleFunctions.data_processing.description" 3 "Version 0.5" "Capstone Team 14" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scheduleFunctions.data_processing.description
+.SH SYNOPSIS
+.br
+.PP
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBcurrent_directory\fP = os\&.path\&.dirname(os\&.path\&.realpath(__file__))"
+.br
+.ti -1c
+.RI "\fBpath\fP = current_directory\&.split(os\&.sep)"
+.br
+.ti -1c
+.RI "\fBroot_index\fP = path\&.index('Capstone\-Team14')"
+.br
+.ti -1c
+.RI "\fBroot_dir\fP = os\&.sep\&.join(\fBpath\fP[:\fBroot_index\fP+1])"
+.br
+.ti -1c
+.RI "\fBdata_dir\fP = os\&.path\&.join(\fBroot_dir\fP, 'data_files', 'uploaded_schedule')"
+.br
+.ti -1c
+.RI "\fBfile_path\fP = os\&.path\&.join(\fBdata_dir\fP, 'filtered\&.json')"
+.br
+.ti -1c
+.RI "\fBdata\fP = json\&.load(file)"
+.br
+.ti -1c
+.RI "dict \fBcourse_prerequisites\fP = {}"
+.br
+.ti -1c
+.RI "\fBtitle\fP = course_info\&.get('title', 'Unknown Title')"
+.br
+.ti -1c
+.RI "\fBprereq_text\fP = course_info\&.get('desc', '')"
+.br
+.ti -1c
+.RI "\fBprereq_part\fP = prereq_text\&.split('Prereq:')[1]\&.strip()"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "dict scheduleFunctions\&.data_processing\&.description\&.course_prerequisites = {}"
+
+.PP
+Definition at line \fB28\fP of file \fBdescription\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.description\&.current_directory = os\&.path\&.dirname(os\&.path\&.realpath(__file__))"
+
+.PP
+Definition at line \fB5\fP of file \fBdescription\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.description\&.data = json\&.load(file)"
+
+.PP
+Definition at line \fB25\fP of file \fBdescription\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.description\&.data_dir = os\&.path\&.join(\fBroot_dir\fP, 'data_files', 'uploaded_schedule')"
+
+.PP
+Definition at line \fB14\fP of file \fBdescription\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.description\&.file_path = os\&.path\&.join(\fBdata_dir\fP, 'filtered\&.json')"
+
+.PP
+Definition at line \fB23\fP of file \fBdescription\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.description\&.path = current_directory\&.split(os\&.sep)"
+
+.PP
+Definition at line \fB10\fP of file \fBdescription\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.description\&.prereq_part = prereq_text\&.split('Prereq:')[1]\&.strip()"
+
+.PP
+Definition at line \fB39\fP of file \fBdescription\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.description\&.prereq_text = course_info\&.get('desc', '')"
+
+.PP
+Definition at line \fB35\fP of file \fBdescription\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.description\&.root_dir = os\&.sep\&.join(\fBpath\fP[:\fBroot_index\fP+1])"
+
+.PP
+Definition at line \fB13\fP of file \fBdescription\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.description\&.root_index = path\&.index('Capstone\-Team14')"
+
+.PP
+Definition at line \fB12\fP of file \fBdescription\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.description\&.title = course_info\&.get('title', 'Unknown Title')"
+
+.PP
+Definition at line \fB34\fP of file \fBdescription\&.py\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Capstone Team 14 from the source code\&.

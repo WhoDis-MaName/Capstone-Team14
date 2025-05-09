@@ -1,0 +1,54 @@
+\doxysection{section\+\_\+view.\+py}
+\hypertarget{section__view_8py_source}{}\label{section__view_8py_source}\index{scheduleFunctions/views/section\_view.py@{scheduleFunctions/views/section\_view.py}}
+\mbox{\hyperlink{section__view_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00001}\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1section__view}{00001}}\ \textcolor{keyword}{from}\ django.shortcuts\ \textcolor{keyword}{import}\ render,\ redirect}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00002}00002\ \textcolor{keyword}{from}\ \mbox{\hyperlink{namespaceschedule_functions_1_1models}{scheduleFunctions.models}}\ \textcolor{keyword}{import}\ Course,\ Section}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00016}\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1section__view_aae24d67c1cc30b032ace002c0789eee4}{00016}}\ \textcolor{keyword}{def\ }section\_view(request):}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{stringliteral}{"{}username"{}}\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ request.session:}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ redirect(\textcolor{stringliteral}{"{}home"{}})\ \ \textcolor{comment}{\#\ Redirect\ to\ login\ if\ not\ authenticated}}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{for}\ variable\ \textcolor{keywordflow}{in}\ [\textcolor{stringliteral}{"{}subject"{}},\ \textcolor{stringliteral}{"{}course\_number"{}},\ \textcolor{stringliteral}{"{}section"{}}]:}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ request.GET.get(variable)\ \textcolor{keywordflow}{is}\ \textcolor{keywordtype}{None}:}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ print(f\textcolor{stringliteral}{"{}\{variable\}\ is\ not\ set"{}})}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ redirect(\textcolor{stringliteral}{"{}dashboard"{}})}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ request.session[variable]\ =\ request.GET.get(variable)}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00028}00028\ \ \ \ \ selected\_course\ =\ Course.objects.get(}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00029}00029\ \ \ \ \ \ \ \ \ subject=request.session[\textcolor{stringliteral}{"{}subject"{}}],}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00030}00030\ \ \ \ \ \ \ \ \ class\_number=request.session[\textcolor{stringliteral}{"{}course\_number"{}}],}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00031}00031\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00032}00032\ \ \ \ \ selected\_section\ =\ Section.objects.get(}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00033}00033\ \ \ \ \ \ \ \ \ course=selected\_course,\ section\_number=request.session[\textcolor{stringliteral}{"{}section"{}}]}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00034}00034\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00035}00035\ \ \ \ \ other\_sections\ =\ (}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00036}00036\ \ \ \ \ \ \ \ \ Section.objects.filter(}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ time\_slot\_\_days\_\_in=selected\_section.time\_slot.days.all(),\ \ \textcolor{comment}{\#\ overlap\ in\ at\ least\ one\ day}}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ time\_slot\_\_start\_time\_\_lt=selected\_section.time\_slot.end\_time,}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ time\_slot\_\_end\_time\_\_gt=selected\_section.time\_slot.start\_time,}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00040}00040\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00041}00041\ \ \ \ \ \ \ \ \ .exclude(course=selected\_section.course)\ \ \textcolor{comment}{\#\ different\ course}}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00042}00042\ \ \ \ \ \ \ \ \ .distinct()}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#.exclude(section\_id=selected\_section.section\_id)\ \ \#\ ignore\ the\ section\ itself}}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00044}00044\ \ \ \ \ \ \ \ \ .order\_by(\textcolor{stringliteral}{"{}time\_slot\_\_start\_time"{}})}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00045}00045\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{for}\ section\ \textcolor{keywordflow}{in}\ other\_sections:}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00047}00047\ \ \ \ \ \ \ \ \ print(section.print\_clingo())}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{return}\ render(}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00050}00050\ \ \ \ \ \ \ \ \ request,}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}section\_details.html"{}},}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00052}00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}username"{}}:\ request.session[\textcolor{stringliteral}{"{}username"{}}],}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}day"{}}:\ request.session[\textcolor{stringliteral}{"{}day"{}}],}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}section"{}}:\ selected\_section,}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}other\_section\_list"{}}:\ other\_sections,}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}same\_semester"{}}:\ selected\_course.same\_semester\_courses.all(),}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00058}00058\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{section__view_8py_source_l00059}00059\ \ \ \ \ )}
+
+\end{DoxyCode}

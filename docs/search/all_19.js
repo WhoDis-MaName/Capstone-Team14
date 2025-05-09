@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['venv_0',['venv',['../md__django__tutorial__instructions.html#autotoc_md2',1,'Create venv'],['../md__django__tutorial__instructions.html#autotoc_md3',1,'Start venv']]],
-  ['version_200_209_1',['Version 0 9',['../md__r_e_a_d_m_e.html#autotoc_md29',1,'Branches for Version 0.9'],['../md__r_e_a_d_m_e.html#autotoc_md28',1,'Release Notes Version 0.9']]],
-  ['version_201_203_2',['Version 1 3',['../md__r_e_a_d_m_e.html#autotoc_md27',1,'Branches for Version 1.3'],['../md__r_e_a_d_m_e.html#autotoc_md24',1,'Release Notes Version 1.3']]],
-  ['views_2epy_3',['views.py',['../views_8py.html',1,'']]]
+  ['year_0',['year',['../md__r_e_a_d_m_e.html#autotoc_md6',1,'A critical conflict count of zero means that it is possible to select at least one section from any course without conflicting times for courses of a particular year.'],['../classschedule_functions_1_1models_1_1_plan_semester.html#a95fd6a155e96c053348d56251af50344',1,'scheduleFunctions.models.PlanSemester.year']]],
+  ['year_5fin_5fschool_5fchoices_1',['YEAR_IN_SCHOOL_CHOICES',['../classschedule_functions_1_1models_1_1_plan_semester.html#a573926f8053f50f73b7ca5cdacca8018',1,'scheduleFunctions::models::PlanSemester']]]
 ];

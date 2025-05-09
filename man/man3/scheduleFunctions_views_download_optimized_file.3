@@ -1,0 +1,42 @@
+.TH "scheduleFunctions.views.download_optimized_file" 3 "Version 0.5" "Capstone Team 14" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scheduleFunctions.views.download_optimized_file
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBdownload_optimized_file\fP (request, filename)"
+.br
+.RI "Handles the download of an optimized file\&. "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "scheduleFunctions\&.views\&.download_optimized_file\&.download_optimized_file ( request,  filename)"
+
+.PP
+Handles the download of an optimized file\&. This view attempts to locate and return the requested file for download\&. If the file exists in the specified directory, it is served as an attachment\&. If the file does not exist, a 404 error response is returned\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIrequest\fP The HTTP request object, which includes the 'filename' parameter as part of the URL\&. 
+.br
+\fIfilename\fP The name of the file to be downloaded\&. This should correspond to a file located in the 'uploads' directory under MEDIA_ROOT\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A FileResponse to serve the file as an attachment if it exists, or a JsonResponse with an error message and a 404 status if the file is not found\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB17\fP of file \fBdownload_optimized_file\&.py\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Capstone Team 14 from the source code\&.

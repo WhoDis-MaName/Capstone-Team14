@@ -1,0 +1,264 @@
+.TH "md__r_e_a_d_m_e" 3 "Version 0.5" "Capstone Team 14" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__r_e_a_d_m_e \- Course Schedule Optimization 
+.PP
+
+.SH "Project Overview"
+.PP
+This project aims to identify conflicting courses that students are likely to take simultaneously and propose a new schedule without conflicts\&. The main objectives include:
+
+.PP
+.IP "1." 4
+\fBIdentifying Time Conflicts\fP between classes commonly taken in the same semester\&.
+.IP "2." 4
+\fBOptimizing the Schedule\fP to minimize conflicts with minimal changes to the original schedule\&.
+.IP "3." 4
+\fBHandle Professor Preferences\fP - Given a list of professor preferences, respect these preferences during the optimization step\&.
+.PP
+
+.PP
+.PP
+.SH "Identifying Conflicts"
+.PP
+Each course as a list of sections which encode the following information:
+
+.PP
+.IP "\(bu" 2
+Unique Section ID
+.IP "\(bu" 2
+Section number (ie: 001)
+.IP "\(bu" 2
+Section timeslot (Start time, End time, Days)
+.IP "\(bu" 2
+Room
+.IP "\(bu" 2
+Professor
+.PP
+
+.PP
+There is a \fBscheduling conflict\fP between two sections if they:
+
+.PP
+.IP "\(bu" 2
+Have the overlapping times \fBand\fP overlapping days
+.IP "\(bu" 2
+Are predicted to be taken during the same year
+.IP "\(bu" 2
+Are \fBnot\fP sections of the same course or cross listed together\&.
+.PP
+
+.PP
+We randomly assign one section to be labeled the \fBcritical section\fP for each course\&. There is a \fBcritical conflict\fP between two courses if their \fBcritical sections\fP are in conflict\&.
+
+.PP
+.PP
+.SH "Optimization Approach"
+.PP
+After identifying the critical conflicts, the next step is to suggest a reorganized schedule\&. The optimization criteria include:
+
+.PP
+.IP "\(bu" 2
+\fBMinimizing the number of critcal conflicts\&.\fP
+.IP "\(bu" 2
+\fBMinimize the number of preference violations\&.\fP
+.IP "\(bu" 2
+\fBMinimize the number of changes to the original schedule\&.\fP
+.PP
+.SH "A critical conflict count of zero means that it is possible to select at least one section from any course without conflicting times for courses of a particular year\&."
+.PP
+.SH "Future Improvements"
+.PP
+.IP "\(bu" 2
+Gather feedback from faculty to refine scheduling priorities\&.
+.IP "\(bu" 2
+Explore additional factors such as classroom constraints\&.
+.IP "\(bu" 2
+Add professor preferences to the UI
+.PP
+
+.PP
+.PP
+.SH "Release Notes Version 0\&.1"
+.PP
+.SS "Command Line Deployment"
+To run the project, simply launch your virtual environment using:
+
+.PP
+\fRsource myenv/bin/activate\fP
+
+.PP
+After entering virtual environment, download Django:
+
+.PP
+\fRpip install -r requirements\&.txt\fP
+
+.PP
+Also Following the steps to install Clingo:
+
+.PP
+https://github.com/potassco/clingo?tab=readme-ov-file
+
+.PP
+To Launch the current iteration of project, use these commands from inside the root directory for the project (Capstone-14):
+
+.PP
+.PP
+.nf
+python manage\&.py makemigrations
+python manage\&.py migrate
+python manage\&.py loaddata \&./scheduleFunctions/fixtures/prepopulated\&.json
+python manage\&.py runserver
+.fi
+.PP
+
+.PP
+.IP "\(bu" 2
+This release has mainly included a foundation for each section(front-end, back-end, and ASP)\&. We've created basic python scripts for parsing through the schedule JSON file and a simple pipeline to convert the filtered CSCI class into ASP formatted rules and constraints\&. From this, we're able to run a basic constraint identifier that returns which classes conflict with one another\&. Additionally, we were able to set up two basic buttons that execute this "Run Filterer" and "Run Processor"\&.
+.PP
+
+.PP
+To launch django tests, use this command:
+
+.PP
+\fRpython \fBmanage\&.py\fP test\fP
+
+.PP
+We also integrated pytest to test the clingo code\&. To use pytest, navigate to \fR\\testing\\clingo_tests\fP and use this command:
+
+.PP
+\fRpytest -v \&.\\\fBclingo_pytest\&.py\fP\fP
+.SS "Docker Deployment"
+To build the docker containter image, move to the root directory for the repository and run:
+
+.PP
+\fRsudo docker build -t capstone-14:latest \&.\fP
+
+.PP
+Run the container using:
+
+.PP
+\fRsudo docker run --name capstone-14 -p 8000:8000 capstone-14\fP
+
+.PP
+\fINote\fP the docker deployment will not perform any tests\&.
+.SS "Some helpful notes on running clingo"
+can use \fR-t\fP to specify number of threads for clingo\&. Ie: \fRclingo overlap_minizer\&.lp -t 8\fP\&.
+
+.PP
+The following code shows how to run Clingo with a few different options\&. We have \fR--opt-mode=optN\fP which shows multiple optimal models\&. \fR10\fP means only show \fR10\fP optimal models\&. \fR-t 2\fP means use 2 threads:
+
+.PP
+\fRclingo --opt-mode=optN \&.\&./media/uploads/raw_input5\&.lp \&.\\overlap_minimizer\&.lp 10 -t 2\fP
+
+.PP
+This can be called through python with the following:
+
+.PP
+\fRctl = clingo\&.Control(["10", "--opt-mode=optN", "-t", "2"])\fP
+.SH "Branches for Version 0\&.1"
+.PP
+.IP "\(bu" 2
+origin/josh/test: Josh and Andra worked on some pytest implementations
+.IP "\(bu" 2
+orign/andra-test2: Test the django testing suite\&. Also tested a template Dockerfile
+.IP "\(bu" 2
+orign/andra-test2: Test the django testing suite
+.IP "\(bu" 2
+orign/main: Vlad and Francisco worked to implement front-end styling on the main branch
+.PP
+.SH "Release Notes Version 0\&.2"
+.PP
+To run the project, simply launch your virtual environment using:
+
+.PP
+\fRsource myenv/bin/activate\fP
+
+.PP
+After entering virtual environment, download Django:
+
+.PP
+\fRpip install django\fP
+
+.PP
+Also Following the steps to install Clingo:
+
+.PP
+https://github.com/potassco/clingo?tab=readme-ov-file
+
+.PP
+To Launch the current iteration of project, use this command:
+
+.PP
+\fRpython \fBmanage\&.py\fP runserver\fP
+
+.PP
+.IP "\(bu" 2
+This release has mainly included a foundation for each section(front-end, back-end, and ASP)\&. We've created basic python scripts for parsing through the schedule JSON file and a simple pipeline to convert the filtered CSCI class into ASP formatted rules and constraints\&. From this, we're able to run a basic constraint identifier that returns which classes conflict with one another\&. Additionally, we were able to set up two basic buttons that execute this "Run Filterer" and "Run Processor"\&.
+.PP
+.SH "Branches for Version 0\&.2"
+.PP
+.IP "\(bu" 2
+origin/josh/test: mostly ASP/clingo related things I have been working on\&. Currently working on integrating some tests and bug fixes
+.IP "\(bu" 2
+orign/andra-test2: Generate samples for more specific testing for JSON files
+.IP "\(bu" 2
+origin/andra-testing(deleted): create web scraping script
+.IP "\(bu" 2
+origin/frank_sand: Mainly JSON file development and DJango environment setup\&. Some ASP play files for figuring stuff out
+.IP "\(bu" 2
+oring/dev: When we are working together (in person) or want to make sure we don't break main
+.IP "\(bu" 2
+main: Main branch where working iteration is found and includes front-end development
+.PP
+.SH "Version 1\&.0 release notes:"
+.PP
+\fBClingo changes\fP:
+
+.PP
+Updated the clingo files to identify and optimize based on total overlap\&.
+
+.PP
+We have conflict if: s1, s2 have overlapping day, time, and are different classes We have overlap if every section in C1, C2 are in conflict -> no valid path Overlaps are then weighted by group\&.
+
+.PP
+Current groups are based on the four year plan\&.
+
+.PP
+Group 1 includes all the classes predicted to take in year 1, Group 2 year 2, \&.\&.\&. Group 0 includes all classes not in the four year plan\&.
+
+.PP
+Current weights are set to 2 if in Group 1-4, 1 if in group 0\&. Can be adjusted as inputs\&.
+
+.PP
+Weighted overlap = W1 + W2, where W1 is the weight of class 1, W2 is the weight of class 2\&.
+
+.PP
+Minimize based on weighted overlap\&. Additionally, minimize number of changes to the input schedule (lower priority)\&.
+.SH "Version 2\&.0 release notes:"
+.PP
+\fBClingo changes\fP:
+
+.PP
+Updated the clingo files to identify and optimize based on critical sections\&.
+
+.PP
+Before with the notion of total overlap, we could only ever guarantee that any given 2 courses could be taken at the same time\&.
+
+.PP
+With the definition of critical sections, we can now guarantee that, for courses of the same year, you can at least take the critical sections at the same time for any number of classes\&.
+
+.PP
+.IP "\(bu" 2
+Removed weights based off classes in the four year plan
+.IP "\(bu" 2
+All classes now have the same weight
+.IP "\(bu" 2
+Only counting conflicts for classes of the same year
+.IP "\(bu" 2
+Refactored clingo code to compute optimal answer sets quickly (in a matter of seconds rather than minutes)
+.IP "\(bu" 2
+Added in logic to handle professor preferences 
+.PP
+

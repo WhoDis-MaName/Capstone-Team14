@@ -1,0 +1,35 @@
+\doxysection{login.\+py}
+\hypertarget{login_8py_source}{}\label{login_8py_source}\index{scheduleFunctions/views/login.py@{scheduleFunctions/views/login.py}}
+\mbox{\hyperlink{login_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00001}\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1login}{00001}}\ \textcolor{keyword}{from}\ django.shortcuts\ \textcolor{keyword}{import}\ render,\ redirect}
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00002}00002\ \textcolor{keyword}{import}\ os}
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00003}00003\ \textcolor{keyword}{from}\ django.http\ \textcolor{keyword}{import}\ HttpResponse}
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00016}\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1login_af9c05be0faab154b0cf7b0eab22afc93}{00016}}\ \textcolor{keyword}{def\ }login(request):}
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{if}\ request.method\ ==\ \textcolor{stringliteral}{"{}POST"{}}:}
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00018}00018\ \ \ \ \ \ \ \ \ username\ =\ request.POST.get(\textcolor{stringliteral}{"{}username"{}})}
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00019}00019\ \ \ \ \ \ \ \ \ password\ =\ request.POST.get(\textcolor{stringliteral}{"{}password"{}})}
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Get\ the\ absolute\ path\ to\ users.txt}}
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00022}00022\ \ \ \ \ \ \ \ \ current\_dir\ =\ os.path.dirname(os.path.abspath(\_\_file\_\_))}
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00023}00023\ \ \ \ \ \ \ \ \ users\_file\_path\ =\ os.path.join(current\_dir,\ \textcolor{stringliteral}{"{}.."{}},\textcolor{stringliteral}{"{}users.txt"{}})}
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Read\ users.txt}}
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{with}\ open(users\_file\_path,\ \textcolor{stringliteral}{"{}r"{}})\ \textcolor{keyword}{as}\ file:}
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ users\ =\ [line.strip().split(\textcolor{stringliteral}{"{},"{}})\ \textcolor{keywordflow}{for}\ line\ \textcolor{keywordflow}{in}\ file.readlines()]}
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Authenticate\ user}}
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ [username,\ password]\ \textcolor{keywordflow}{in}\ users:}
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ request.session[\textcolor{stringliteral}{"{}username"{}}]\ =\ username\ \ \textcolor{comment}{\#\ Store\ session}}
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ redirect(\textcolor{stringliteral}{"{}dashboard"{}})\ \ \textcolor{comment}{\#\ Redirect\ to\ dashboard}}
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ HttpResponse(\textcolor{stringliteral}{"{}Invalid\ credentials"{}},\ status=401)}
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{except}\ FileNotFoundError:}
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ HttpResponse(\textcolor{stringliteral}{"{}Error:\ users.txt\ file\ not\ found."{}},\ status=500)}
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{login_8py_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{return}\ render(request,\ \textcolor{stringliteral}{"{}login.html"{}})\ \ \textcolor{comment}{\#\ Render\ login\ form\ (login.html\ template)}}
+
+\end{DoxyCode}

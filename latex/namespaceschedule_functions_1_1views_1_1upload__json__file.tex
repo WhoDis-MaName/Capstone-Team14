@@ -1,0 +1,136 @@
+\doxysection{schedule\+Functions.\+views.\+upload\+\_\+json\+\_\+file Namespace Reference}
+\hypertarget{namespaceschedule_functions_1_1views_1_1upload__json__file}{}\label{namespaceschedule_functions_1_1views_1_1upload__json__file}\index{scheduleFunctions.views.upload\_json\_file@{scheduleFunctions.views.upload\_json\_file}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1upload__json__file_aac090a52fc4def28253778347ad1e6a6}{convert24}} (time)
+\begin{DoxyCompactList}\small\item\em Converts a 12-\/hour formatted time string to minutes past midnight. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1upload__json__file_a52ea246c3add5f2fdde9da73a6d2ddc4}{convert\+\_\+json\+\_\+to\+\_\+lp}} (schedule\+\_\+list)
+\begin{DoxyCompactList}\small\item\em Converts a nested JSON schedule dictionary into ASP logic program facts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1upload__json__file_a3496c76d0998b496dcff05ceb251319f}{upload\+\_\+json\+\_\+file}} (request)
+\begin{DoxyCompactList}\small\item\em Handles uploading of a JSON file and its conversion to ASP logic facts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+dict \mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1upload__json__file_a38726d702d44d974215e8b345e2e0d2d}{SUBJECTS\+\_\+\+OF\+\_\+\+INTEREST}} = \{"{}CIST"{}, "{}CSCI"{}\}
+\item 
+dict \mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1upload__json__file_ad4da1683b1f05ded90f517e6bc78c7c9}{NON\+\_\+\+CS\+\_\+\+SUBJECTS\+\_\+\+OF\+\_\+\+INTEREST}} = \{"{}ENGL"{}, "{}MATH"{}, "{}CMST"{}\}
+\item 
+dict \mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1upload__json__file_a4e98a5a7a3cac913a68f9b02e51eb722}{NON\+\_\+\+CS\+\_\+\+COURSES\+\_\+\+OF\+\_\+\+INTEREST}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceschedule_functions_1_1views_1_1upload__json__file_aac090a52fc4def28253778347ad1e6a6}\index{scheduleFunctions.views.upload\_json\_file@{scheduleFunctions.views.upload\_json\_file}!convert24@{convert24}}
+\index{convert24@{convert24}!scheduleFunctions.views.upload\_json\_file@{scheduleFunctions.views.upload\_json\_file}}
+\doxysubsubsection{\texorpdfstring{convert24()}{convert24()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_1_1upload__json__file_aac090a52fc4def28253778347ad1e6a6} 
+schedule\+Functions.\+views.\+upload\+\_\+json\+\_\+file.\+convert24 (\begin{DoxyParamCaption}\item[{}]{time}{}\end{DoxyParamCaption})}
+
+
+
+Converts a 12-\/hour formatted time string to minutes past midnight. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & A string in the format "{}\%\+I\+:\%\+M\%p"{} (e.\+g., "{}03\+:45\+PM"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Integer number of minutes since midnight. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{upload__json__file_8py_source_l00032}{32}} of file \mbox{\hyperlink{upload__json__file_8py_source}{upload\+\_\+json\+\_\+file.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1views_1_1upload__json__file_a52ea246c3add5f2fdde9da73a6d2ddc4}\index{scheduleFunctions.views.upload\_json\_file@{scheduleFunctions.views.upload\_json\_file}!convert\_json\_to\_lp@{convert\_json\_to\_lp}}
+\index{convert\_json\_to\_lp@{convert\_json\_to\_lp}!scheduleFunctions.views.upload\_json\_file@{scheduleFunctions.views.upload\_json\_file}}
+\doxysubsubsection{\texorpdfstring{convert\_json\_to\_lp()}{convert\_json\_to\_lp()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_1_1upload__json__file_a52ea246c3add5f2fdde9da73a6d2ddc4} 
+schedule\+Functions.\+views.\+upload\+\_\+json\+\_\+file.\+convert\+\_\+json\+\_\+to\+\_\+lp (\begin{DoxyParamCaption}\item[{}]{schedule\+\_\+list}{}\end{DoxyParamCaption})}
+
+
+
+Converts a nested JSON schedule dictionary into ASP logic program facts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em schedule\+\_\+list} & A dictionary representing course schedule data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of strings, each representing a logic fact for use in ASP (Answer Set Programming). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{upload__json__file_8py_source_l00042}{42}} of file \mbox{\hyperlink{upload__json__file_8py_source}{upload\+\_\+json\+\_\+file.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1views_1_1upload__json__file_a3496c76d0998b496dcff05ceb251319f}\index{scheduleFunctions.views.upload\_json\_file@{scheduleFunctions.views.upload\_json\_file}!upload\_json\_file@{upload\_json\_file}}
+\index{upload\_json\_file@{upload\_json\_file}!scheduleFunctions.views.upload\_json\_file@{scheduleFunctions.views.upload\_json\_file}}
+\doxysubsubsection{\texorpdfstring{upload\_json\_file()}{upload\_json\_file()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_1_1upload__json__file_a3496c76d0998b496dcff05ceb251319f} 
+schedule\+Functions.\+views.\+upload\+\_\+json\+\_\+file.\+upload\+\_\+json\+\_\+file (\begin{DoxyParamCaption}\item[{}]{request}{}\end{DoxyParamCaption})}
+
+
+
+Handles uploading of a JSON file and its conversion to ASP logic facts. 
+
+Accepts only POST requests. Saves raw, filtered, and non-\/filtered JSON data. Also converts filtered data into ASP facts and saves as {\ttfamily .lp} file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & Django HTTP request object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Json\+Response indicating success or error, with filenames of saved data. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{upload__json__file_8py_source_l00223}{223}} of file \mbox{\hyperlink{upload__json__file_8py_source}{upload\+\_\+json\+\_\+file.\+py}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceschedule_functions_1_1views_1_1upload__json__file_a4e98a5a7a3cac913a68f9b02e51eb722}\index{scheduleFunctions.views.upload\_json\_file@{scheduleFunctions.views.upload\_json\_file}!NON\_CS\_COURSES\_OF\_INTEREST@{NON\_CS\_COURSES\_OF\_INTEREST}}
+\index{NON\_CS\_COURSES\_OF\_INTEREST@{NON\_CS\_COURSES\_OF\_INTEREST}!scheduleFunctions.views.upload\_json\_file@{scheduleFunctions.views.upload\_json\_file}}
+\doxysubsubsection{\texorpdfstring{NON\_CS\_COURSES\_OF\_INTEREST}{NON\_CS\_COURSES\_OF\_INTEREST}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_1_1upload__json__file_a4e98a5a7a3cac913a68f9b02e51eb722} 
+dict schedule\+Functions.\+views.\+upload\+\_\+json\+\_\+file.\+NON\+\_\+\+CS\+\_\+\+COURSES\+\_\+\+OF\+\_\+\+INTEREST}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \{}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{"{}engl1150"{}},}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{"{}cmst1110"{}},}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{stringliteral}{"{}cmst2120"{}},}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{stringliteral}{"{}math1950"{}},}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{stringliteral}{"{}engl1160"{}},}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{stringliteral}{"{}math2050"{}},}
+\DoxyCodeLine{00008\ \}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{upload__json__file_8py_source_l00015}{15}} of file \mbox{\hyperlink{upload__json__file_8py_source}{upload\+\_\+json\+\_\+file.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1views_1_1upload__json__file_ad4da1683b1f05ded90f517e6bc78c7c9}\index{scheduleFunctions.views.upload\_json\_file@{scheduleFunctions.views.upload\_json\_file}!NON\_CS\_SUBJECTS\_OF\_INTEREST@{NON\_CS\_SUBJECTS\_OF\_INTEREST}}
+\index{NON\_CS\_SUBJECTS\_OF\_INTEREST@{NON\_CS\_SUBJECTS\_OF\_INTEREST}!scheduleFunctions.views.upload\_json\_file@{scheduleFunctions.views.upload\_json\_file}}
+\doxysubsubsection{\texorpdfstring{NON\_CS\_SUBJECTS\_OF\_INTEREST}{NON\_CS\_SUBJECTS\_OF\_INTEREST}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_1_1upload__json__file_ad4da1683b1f05ded90f517e6bc78c7c9} 
+dict schedule\+Functions.\+views.\+upload\+\_\+json\+\_\+file.\+NON\+\_\+\+CS\+\_\+\+SUBJECTS\+\_\+\+OF\+\_\+\+INTEREST = \{"{}ENGL"{}, "{}MATH"{}, "{}CMST"{}\}}
+
+
+
+Definition at line \mbox{\hyperlink{upload__json__file_8py_source_l00014}{14}} of file \mbox{\hyperlink{upload__json__file_8py_source}{upload\+\_\+json\+\_\+file.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1views_1_1upload__json__file_a38726d702d44d974215e8b345e2e0d2d}\index{scheduleFunctions.views.upload\_json\_file@{scheduleFunctions.views.upload\_json\_file}!SUBJECTS\_OF\_INTEREST@{SUBJECTS\_OF\_INTEREST}}
+\index{SUBJECTS\_OF\_INTEREST@{SUBJECTS\_OF\_INTEREST}!scheduleFunctions.views.upload\_json\_file@{scheduleFunctions.views.upload\_json\_file}}
+\doxysubsubsection{\texorpdfstring{SUBJECTS\_OF\_INTEREST}{SUBJECTS\_OF\_INTEREST}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_1_1upload__json__file_a38726d702d44d974215e8b345e2e0d2d} 
+dict schedule\+Functions.\+views.\+upload\+\_\+json\+\_\+file.\+SUBJECTS\+\_\+\+OF\+\_\+\+INTEREST = \{"{}CIST"{}, "{}CSCI"{}\}}
+
+
+
+Definition at line \mbox{\hyperlink{upload__json__file_8py_source_l00013}{13}} of file \mbox{\hyperlink{upload__json__file_8py_source}{upload\+\_\+json\+\_\+file.\+py}}.
+

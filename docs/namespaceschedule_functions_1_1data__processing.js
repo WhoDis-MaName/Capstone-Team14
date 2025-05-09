@@ -1,0 +1,107 @@
+var namespaceschedule_functions_1_1data__processing =
+[
+    [ "convert_four_year", "namespaceschedule_functions_1_1data__processing_1_1convert__four__year.html", [
+      [ "four_year_to_clingo", "namespaceschedule_functions_1_1data__processing_1_1convert__four__year.html#a5a9493f9cafb1713b9624c925fefbb5e", null ],
+      [ "json_file", "namespaceschedule_functions_1_1data__processing_1_1convert__four__year.html#a9f9d52795965ab12c35fb3d04832e3d8", null ],
+      [ "output_file", "namespaceschedule_functions_1_1data__processing_1_1convert__four__year.html#a222c57534bba1beeeb321642fde496d5", null ]
+    ] ],
+    [ "converter", "namespaceschedule_functions_1_1data__processing_1_1converter.html", [
+      [ "clean_course_name", "namespaceschedule_functions_1_1data__processing_1_1converter.html#a2c3c52956ba6ae44b144102739336341", null ],
+      [ "all_prereqs", "namespaceschedule_functions_1_1data__processing_1_1converter.html#a30f5230cc5b80109a265dfc1af3b33ca", null ],
+      [ "course_key", "namespaceschedule_functions_1_1data__processing_1_1converter.html#a96f24e84cf6f5244875fcd0aab44c0f6", null ],
+      [ "course_prereqs", "namespaceschedule_functions_1_1data__processing_1_1converter.html#a2e87d0204936eb3740bfa0a9e48df723", null ],
+      [ "current_directory", "namespaceschedule_functions_1_1data__processing_1_1converter.html#a7aca7afb03dd1416d279c82accabd75f", null ],
+      [ "data", "namespaceschedule_functions_1_1data__processing_1_1converter.html#aebcd6c3534cd83c8a05998378d25ea59", null ],
+      [ "data_dir", "namespaceschedule_functions_1_1data__processing_1_1converter.html#ac7edfd0c41455c1cf824c24c15b09edf", null ],
+      [ "file_path", "namespaceschedule_functions_1_1data__processing_1_1converter.html#a5e8e67eff3fabb777b95fc6211aea17e", null ],
+      [ "lp_file", "namespaceschedule_functions_1_1data__processing_1_1converter.html#a637656d6701be5a5fd2b53a184e380e3", null ],
+      [ "matches", "namespaceschedule_functions_1_1data__processing_1_1converter.html#ace16ef4291645443197b35ffbf6b86e9", null ],
+      [ "path", "namespaceschedule_functions_1_1data__processing_1_1converter.html#a26c822df6ebdbc191b1e46d1238af86c", null ],
+      [ "prereq_part", "namespaceschedule_functions_1_1data__processing_1_1converter.html#afc182802c6c5708acdc8e96bbe05e88c", null ],
+      [ "prereq_text", "namespaceschedule_functions_1_1data__processing_1_1converter.html#a2f8f2a5ee5cd89cde5f345a396c36666", null ],
+      [ "root_dir", "namespaceschedule_functions_1_1data__processing_1_1converter.html#ae3a670b844df220b3f32461fede47994", null ],
+      [ "root_index", "namespaceschedule_functions_1_1data__processing_1_1converter.html#a0a0af82911ca7ee7912567774433dc81", null ],
+      [ "strict_prereq_pattern", "namespaceschedule_functions_1_1data__processing_1_1converter.html#a93e0fc54cfdef628075616858a1d9ba7", null ],
+      [ "structured_prereq", "namespaceschedule_functions_1_1data__processing_1_1converter.html#ae9c596e839b085d3173b3832ffafa7c0", null ],
+      [ "title", "namespaceschedule_functions_1_1data__processing_1_1converter.html#a6f3dcf05397acadf57a74015e2a53603", null ]
+    ] ],
+    [ "description", "namespaceschedule_functions_1_1data__processing_1_1description.html", [
+      [ "course_prerequisites", "namespaceschedule_functions_1_1data__processing_1_1description.html#ac182c9910682d51b0cb63349e061cb4a", null ],
+      [ "current_directory", "namespaceschedule_functions_1_1data__processing_1_1description.html#afd53326f274a15556791952dee10f571", null ],
+      [ "data", "namespaceschedule_functions_1_1data__processing_1_1description.html#a5194707fd2ca529e2d086d6b1f1a7c4f", null ],
+      [ "data_dir", "namespaceschedule_functions_1_1data__processing_1_1description.html#a3fb437445d49e092b766de03387e0041", null ],
+      [ "file_path", "namespaceschedule_functions_1_1data__processing_1_1description.html#aa53226aaa81e2b65547a302a1891dc9e", null ],
+      [ "path", "namespaceschedule_functions_1_1data__processing_1_1description.html#aa93a2f062897c0aeacf0156ef8762d9b", null ],
+      [ "prereq_part", "namespaceschedule_functions_1_1data__processing_1_1description.html#a42b76d4c2c9da047469064eb38e214b6", null ],
+      [ "prereq_text", "namespaceschedule_functions_1_1data__processing_1_1description.html#aea59182dcc971382787cce7ccf2de61c", null ],
+      [ "root_dir", "namespaceschedule_functions_1_1data__processing_1_1description.html#a48372b4778a91198e3bb74ee57450a50", null ],
+      [ "root_index", "namespaceschedule_functions_1_1data__processing_1_1description.html#a92aefc3d13a9d0bddfea47eb03de7569", null ],
+      [ "title", "namespaceschedule_functions_1_1data__processing_1_1description.html#a62e758b66d08af07ccffe09bc6379e28", null ]
+    ] ],
+    [ "get_four_year", "namespaceschedule_functions_1_1data__processing_1_1get__four__year.html", [
+      [ "get_all_tables", "namespaceschedule_functions_1_1data__processing_1_1get__four__year.html#a90c9ced87a6e9fdf3ebe12bbf4a7da5e", null ],
+      [ "get_table_rows", "namespaceschedule_functions_1_1data__processing_1_1get__four__year.html#aa8c52752f19fe9039d555815176edb44", null ],
+      [ "process_url", "namespaceschedule_functions_1_1data__processing_1_1get__four__year.html#a1703c8f63d31c951e4fa194cdbdc509c", null ],
+      [ "read_four_year", "namespaceschedule_functions_1_1data__processing_1_1get__four__year.html#a850855f32ee13da0e4f31565ebc5519d", null ],
+      [ "current_directory", "namespaceschedule_functions_1_1data__processing_1_1get__four__year.html#aa7325cffde6d86353679f1cff0d64224", null ],
+      [ "data_dir", "namespaceschedule_functions_1_1data__processing_1_1get__four__year.html#af7b7debdd6bc2ebbba051249684231c7", null ],
+      [ "filename", "namespaceschedule_functions_1_1data__processing_1_1get__four__year.html#ad013899e7ccdd5e593714d587981bbfe", null ],
+      [ "url", "namespaceschedule_functions_1_1data__processing_1_1get__four__year.html#ad59fe003b7f45c4374a1c56a650969d0", null ]
+    ] ],
+    [ "get_requirements", "namespaceschedule_functions_1_1data__processing_1_1get__requirements.html", [
+      [ "compile_requirements", "namespaceschedule_functions_1_1data__processing_1_1get__requirements.html#aacb4adc06e70f447b04c527b48586783", null ],
+      [ "get_all_tables", "namespaceschedule_functions_1_1data__processing_1_1get__requirements.html#abc87a0e43bc444f7e3e569ff488ca086", null ],
+      [ "get_table_rows", "namespaceschedule_functions_1_1data__processing_1_1get__requirements.html#a8ac79be851f4d07f537169135df8af10", null ],
+      [ "process_degree_requirements", "namespaceschedule_functions_1_1data__processing_1_1get__requirements.html#aef77cd4167c487b71bf4e1c3d1dc6d88", null ],
+      [ "process_url", "namespaceschedule_functions_1_1data__processing_1_1get__requirements.html#a248f57f35472b8ec8d203e25cf8da1ca", null ],
+      [ "read_requirements", "namespaceschedule_functions_1_1data__processing_1_1get__requirements.html#ab42a419166799f229d9eb1aa0ed1300b", null ],
+      [ "current_directory", "namespaceschedule_functions_1_1data__processing_1_1get__requirements.html#a483b8018156ba61decc0d23d54de785a", null ],
+      [ "data_dir", "namespaceschedule_functions_1_1data__processing_1_1get__requirements.html#af42f034cb20656c21c924a70bd779141", null ],
+      [ "json_file", "namespaceschedule_functions_1_1data__processing_1_1get__requirements.html#a812d8c136c3f91d08779bad86d3fd807", null ],
+      [ "path", "namespaceschedule_functions_1_1data__processing_1_1get__requirements.html#aeb507e28bd6f0560247686e543490141", null ],
+      [ "root_dir", "namespaceschedule_functions_1_1data__processing_1_1get__requirements.html#a9898428a108ed060fdc9c65a640bb87f", null ],
+      [ "root_index", "namespaceschedule_functions_1_1data__processing_1_1get__requirements.html#a822d2211f514a29f826249e5c35b6958", null ],
+      [ "urls", "namespaceschedule_functions_1_1data__processing_1_1get__requirements.html#a0eb5014f4857a6b6e50fb8a5b556c75e", null ]
+    ] ],
+    [ "get_sample", "namespaceschedule_functions_1_1data__processing_1_1get__sample.html", [
+      [ "create_sample", "namespaceschedule_functions_1_1data__processing_1_1get__sample.html#a754098e307906d3bcb52dd8810e85044", null ],
+      [ "get_classes", "namespaceschedule_functions_1_1data__processing_1_1get__sample.html#a6401717e02c772c4aac9ddfd1f1b679d", null ],
+      [ "classes", "namespaceschedule_functions_1_1data__processing_1_1get__sample.html#af216e02d83cae212b6b53fce6035b966", null ],
+      [ "current_directory", "namespaceschedule_functions_1_1data__processing_1_1get__sample.html#a2daea0b1c9b5564647fef428b38ea7d9", null ],
+      [ "f", "namespaceschedule_functions_1_1data__processing_1_1get__sample.html#a5c4e4bbb53020664bed21c74ce512e85", null ],
+      [ "indent", "namespaceschedule_functions_1_1data__processing_1_1get__sample.html#ad37b1caecd82ed39f465b078ba7c68ef", null ],
+      [ "path", "namespaceschedule_functions_1_1data__processing_1_1get__sample.html#a24a39fd2e482b20956e07824a393e431", null ],
+      [ "read_dir", "namespaceschedule_functions_1_1data__processing_1_1get__sample.html#a47adc6df0f0bd11efa86987521c271a2", null ],
+      [ "root_dir", "namespaceschedule_functions_1_1data__processing_1_1get__sample.html#a6dc95b02dfff752a27861706b6e40dc6", null ],
+      [ "root_index", "namespaceschedule_functions_1_1data__processing_1_1get__sample.html#a7d504fbc6c2627bc760035d870017c6b", null ],
+      [ "sample_data", "namespaceschedule_functions_1_1data__processing_1_1get__sample.html#a05c752023d7a8839eae2a7115b90136c", null ],
+      [ "sample_dir", "namespaceschedule_functions_1_1data__processing_1_1get__sample.html#aaa27975c2e6dca82ba93d31f682e8cf3", null ]
+    ] ],
+    [ "jsonconverter", "namespaceschedule_functions_1_1data__processing_1_1jsonconverter.html", [
+      [ "convert", "namespaceschedule_functions_1_1data__processing_1_1jsonconverter.html#a44805bead1924b355b52915722ea18c1", null ],
+      [ "convert24", "namespaceschedule_functions_1_1data__processing_1_1jsonconverter.html#a86b399f74bc7e83c72db3081964f2b76", null ],
+      [ "asp_filename", "namespaceschedule_functions_1_1data__processing_1_1jsonconverter.html#ae9d86decba6b277981b2338ea9f589a8", null ],
+      [ "facts", "namespaceschedule_functions_1_1data__processing_1_1jsonconverter.html#a77f8a0173f10bb07b581d31d4e0f8f4c", null ],
+      [ "file", "namespaceschedule_functions_1_1data__processing_1_1jsonconverter.html#a7297ef365e937090701af9f1dc108f12", null ]
+    ] ],
+    [ "optimizer", "namespaceschedule_functions_1_1data__processing_1_1optimizer.html", "namespaceschedule_functions_1_1data__processing_1_1optimizer" ],
+    [ "process_four_year", "namespaceschedule_functions_1_1data__processing_1_1process__four__year.html", [
+      [ "combine_constraints", "namespaceschedule_functions_1_1data__processing_1_1process__four__year.html#aebada2cbefbb37461a1cc563c25e8047", null ],
+      [ "convert_asp", "namespaceschedule_functions_1_1data__processing_1_1process__four__year.html#acd4225e3db35e46fa42191f44b598c5b", null ],
+      [ "create_constraints", "namespaceschedule_functions_1_1data__processing_1_1process__four__year.html#aa16c93667c5cbbd0102b8d620c9db8f6", null ],
+      [ "get_plan", "namespaceschedule_functions_1_1data__processing_1_1process__four__year.html#a763025404bc1e677724a1428f6c7b69c", null ],
+      [ "get_semester", "namespaceschedule_functions_1_1data__processing_1_1process__four__year.html#a8be5e9112a0dc495368e7f4ff583e981", null ],
+      [ "set_contsraints", "namespaceschedule_functions_1_1data__processing_1_1process__four__year.html#ad227505cb8fb4aee06b7071f8c2293b2", null ],
+      [ "asp_file", "namespaceschedule_functions_1_1data__processing_1_1process__four__year.html#a0158ffd83032ab00d2b2f004c7cd452d", null ],
+      [ "constraints", "namespaceschedule_functions_1_1data__processing_1_1process__four__year.html#af85c7333e12bd9ce37a70ccd2796a08a", null ],
+      [ "current_directory", "namespaceschedule_functions_1_1data__processing_1_1process__four__year.html#aabc9cb8c12e043972762e064b1dd00a9", null ],
+      [ "data_dir", "namespaceschedule_functions_1_1data__processing_1_1process__four__year.html#af4362738315f00ddc2155306105cb68c", null ],
+      [ "f", "namespaceschedule_functions_1_1data__processing_1_1process__four__year.html#a1c0b728cd04edccec8324b2262d25274", null ],
+      [ "filename", "namespaceschedule_functions_1_1data__processing_1_1process__four__year.html#a2f2668c43b01452aa69d495b00ac96ee", null ],
+      [ "indent", "namespaceschedule_functions_1_1data__processing_1_1process__four__year.html#a0421553fbbf635d707b890d87b588482", null ],
+      [ "json_file", "namespaceschedule_functions_1_1data__processing_1_1process__four__year.html#a364f1aeff327d25fea14df7d72b602b6", null ],
+      [ "path", "namespaceschedule_functions_1_1data__processing_1_1process__four__year.html#a5d57be1183317bb66335827da93c9034", null ],
+      [ "root_dir", "namespaceschedule_functions_1_1data__processing_1_1process__four__year.html#a7bb228d657fdb736e661b6c2f72decf1", null ],
+      [ "root_index", "namespaceschedule_functions_1_1data__processing_1_1process__four__year.html#ab2fbc89472a3ab522b9b9fde391b05be", null ]
+    ] ]
+];

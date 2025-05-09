@@ -1,0 +1,167 @@
+.TH "scheduleFunctions.views.clingo_helpers" 3 "Version 0.5" "Capstone Team 14" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scheduleFunctions.views.clingo_helpers
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBget_root_path\fP ()"
+.br
+.RI "Returns the root path of the project by finding the 'Capstone-Team14' directory in the path\&. "
+.ti -1c
+.RI "\fBload_optimized_json\fP (path)"
+.br
+.RI "Loads and parses a JSON file from the specified path\&. "
+.ti -1c
+.RI "\fBconvert_time\fP (t)"
+.br
+.RI "Converts a time in minutes to a human-readable 12-hour clock format with AM/PM\&. "
+.ti -1c
+.RI "\fBparse_line\fP (line)"
+.br
+.RI "Parses a single line of ASP output representing a scheduled section\&. "
+.ti -1c
+.RI "\fBconvert_to_json\fP (symbols, output_file)"
+.br
+.RI "Converts a list of ASP symbols to a structured JSON file\&. "
+.ti -1c
+.RI "\fBrun_clingo_optimization\fP (asp_filename, asp_solver)"
+.br
+.RI "Runs Clingo on the given ASP program and minimizer, using all available threads\&. "
+.ti -1c
+.RI "\fBsave_optimized_file\fP (data, filename)"
+.br
+.RI "Saves a Python dictionary as a formatted JSON file using Django's storage system\&. "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "scheduleFunctions\&.views\&.clingo_helpers\&.convert_time ( t)"
+
+.PP
+Converts a time in minutes to a human-readable 12-hour clock format with AM/PM\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIt\fP The time in minutes\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A string representation of the time (e\&.g\&., "9:30AM")\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB37\fP of file \fBclingo_helpers\&.py\fP\&.
+.SS "scheduleFunctions\&.views\&.clingo_helpers\&.convert_to_json ( symbols,  output_file)"
+
+.PP
+Converts a list of ASP symbols to a structured JSON file\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsymbols\fP A list of ASP symbol strings (e\&.g\&., from Clingo models)\&. 
+.br
+\fIoutput_file\fP The path where the JSON output should be saved\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB107\fP of file \fBclingo_helpers\&.py\fP\&.
+.SS "scheduleFunctions\&.views\&.clingo_helpers\&.get_root_path ()"
+
+.PP
+Returns the root path of the project by finding the 'Capstone-Team14' directory in the path\&. 
+.PP
+\fBReturns\fP
+.RS 4
+The absolute path to the root project directory\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB17\fP of file \fBclingo_helpers\&.py\fP\&.
+.SS "scheduleFunctions\&.views\&.clingo_helpers\&.load_optimized_json ( path)"
+
+.PP
+Loads and parses a JSON file from the specified path\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpath\fP The path to the JSON file\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The deserialized Python object (dict or list)\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB26\fP of file \fBclingo_helpers\&.py\fP\&.
+.SS "scheduleFunctions\&.views\&.clingo_helpers\&.parse_line ( line)"
+
+.PP
+Parses a single line of ASP output representing a scheduled section\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIline\fP A string line containing an ASP predicate like \fRscheduled_section(\&.\&.\&.)\fP\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A tuple with subject, course number, section, and a dictionary of schedule data, or None if parsing fails\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB49\fP of file \fBclingo_helpers\&.py\fP\&.
+.SS "scheduleFunctions\&.views\&.clingo_helpers\&.run_clingo_optimization ( asp_filename,  asp_solver)"
+
+.PP
+Runs Clingo on the given ASP program and minimizer, using all available threads\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIasp_filename\fP The filename of the main ASP input file (in /media)\&. 
+.br
+\fIasp_solver\fP The filename of the minimizer or secondary ASP file (in /clingo)\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A list of shown symbols from the last (optimal) model found by Clingo\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB133\fP of file \fBclingo_helpers\&.py\fP\&.
+.SS "scheduleFunctions\&.views\&.clingo_helpers\&.save_optimized_file ( data,  filename)"
+
+.PP
+Saves a Python dictionary as a formatted JSON file using Django's storage system\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdata\fP The data to be saved\&. 
+.br
+\fIfilename\fP The filename to save to (relative to Django's media path)\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The final path where the file was saved\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB167\fP of file \fBclingo_helpers\&.py\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Capstone Team 14 from the source code\&.

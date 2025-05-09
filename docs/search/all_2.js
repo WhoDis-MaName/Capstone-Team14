@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['3_0',['3',['../md__r_e_a_d_m_e.html#autotoc_md27',1,'Branches for Version 1.3'],['../md__r_e_a_d_m_e.html#autotoc_md24',1,'Release Notes Version 1.3']]]
+  ['2_0',['2',['../md__r_e_a_d_m_e.html#autotoc_md15',1,'Branches for Version 0.2'],['../md__r_e_a_d_m_e.html#autotoc_md14',1,'Release Notes Version 0.2']]],
+  ['2_200_20release_20notes_3a_1',['Version 2.0 release notes:',['../md__r_e_a_d_m_e.html#autotoc_md17',1,'']]]
 ];

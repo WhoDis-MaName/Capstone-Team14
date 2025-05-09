@@ -1,0 +1,18 @@
+\doxysection{download\+\_\+optimized\+\_\+file.\+py}
+\hypertarget{download__optimized__file_8py_source}{}\label{download__optimized__file_8py_source}\index{scheduleFunctions/views/download\_optimized\_file.py@{scheduleFunctions/views/download\_optimized\_file.py}}
+\mbox{\hyperlink{download__optimized__file_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{download__optimized__file_8py_source_l00001}\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1download__optimized__file}{00001}}\ \textcolor{keyword}{from}\ django.conf\ \textcolor{keyword}{import}\ settings}
+\DoxyCodeLine{\Hypertarget{download__optimized__file_8py_source_l00002}00002\ \textcolor{keyword}{import}\ os}
+\DoxyCodeLine{\Hypertarget{download__optimized__file_8py_source_l00003}00003\ \textcolor{keyword}{from}\ django.http\ \textcolor{keyword}{import}\ JsonResponse,\ FileResponse}
+\DoxyCodeLine{\Hypertarget{download__optimized__file_8py_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{download__optimized__file_8py_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{download__optimized__file_8py_source_l00017}\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1download__optimized__file_a21f3134f5d39100d7a6efc28812119b8}{00017}}\ \textcolor{keyword}{def\ }download\_optimized\_file(request,\ filename):}
+\DoxyCodeLine{\Hypertarget{download__optimized__file_8py_source_l00018}00018\ \ \ \ \ file\_path\ =\ os.path.join(settings.MEDIA\_ROOT,\ \textcolor{stringliteral}{"{}uploads"{}},\ filename)}
+\DoxyCodeLine{\Hypertarget{download__optimized__file_8py_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{if}\ os.path.exists(file\_path):}
+\DoxyCodeLine{\Hypertarget{download__optimized__file_8py_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ FileResponse(}
+\DoxyCodeLine{\Hypertarget{download__optimized__file_8py_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ open(file\_path,\ \textcolor{stringliteral}{"{}rb"{}}),\ as\_attachment=\textcolor{keyword}{True},\ filename=filename}
+\DoxyCodeLine{\Hypertarget{download__optimized__file_8py_source_l00022}00022\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{download__optimized__file_8py_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{return}\ JsonResponse(\{\textcolor{stringliteral}{"{}error"{}}:\ \textcolor{stringliteral}{"{}File\ not\ found"{}}\},\ status=404)}
+
+\end{DoxyCode}

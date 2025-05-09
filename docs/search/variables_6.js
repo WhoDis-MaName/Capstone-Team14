@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['graduate_0',['GRADUATE',['../namespaceschedule_functions_1_1models.html#a98e7fc4157b8d60f723b41e288becebf',1,'scheduleFunctions::models']]]
+  ['graduate_0',['GRADUATE',['../classschedule_functions_1_1models_1_1_plan_semester.html#a3d15ff8cf1a302472017cd1a6cac84e2',1,'scheduleFunctions::models::PlanSemester']]]
 ];

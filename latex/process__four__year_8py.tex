@@ -1,0 +1,53 @@
+\doxysection{schedule\+Functions/data\+\_\+processing/process\+\_\+four\+\_\+year.py File Reference}
+\hypertarget{process__four__year_8py}{}\label{process__four__year_8py}\index{scheduleFunctions/data\_processing/process\_four\_year.py@{scheduleFunctions/data\_processing/process\_four\_year.py}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceschedule_functions}{schedule\+Functions}}
+\item 
+namespace \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing}{schedule\+Functions.\+data\+\_\+processing}}
+\item 
+namespace \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year}{schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year}}
+\item 
+namespace \mbox{\hyperlink{namespacefour__year__to__clingo}{four\+\_\+year\+\_\+to\+\_\+clingo}}
+\begin{DoxyCompactList}\small\item\em This module contains all of the functionality that is needed to convert the four year plan into usable clingo rules. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+list\mbox{[}dict\mbox{]} \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a763025404bc1e677724a1428f6c7b69c}{schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+get\+\_\+plan}} (str \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a2f2668c43b01452aa69d495b00ac96ee}{filename}})
+\begin{DoxyCompactList}\small\item\em Read the four year plan from a file and confirm that it is a list. \end{DoxyCompactList}\item 
+list \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a8be5e9112a0dc495368e7f4ff583e981}{schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+get\+\_\+semester}} (list\mbox{[}dict\mbox{]} plan, str\texorpdfstring{$\vert$}{|}int year, str semester)
+\begin{DoxyCompactList}\small\item\em Get the list of classes for a particular semester from the four year plan, assuming that there may be multiple plans given. \end{DoxyCompactList}\item 
+dict \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_ad227505cb8fb4aee06b7071f8c2293b2}{schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+set\+\_\+contsraints}} (list semester\+\_\+plan, int semester\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Process the semester such that classes listed as fulfilling the same requirement are soft constraints and all other classes in the semester are hard constraints. \end{DoxyCompactList}\item 
+dict \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_aebada2cbefbb37461a1cc563c25e8047}{schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+combine\+\_\+constraints}} (list\mbox{[}dict\mbox{]} \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_af85c7333e12bd9ce37a70ccd2796a08a}{constraints}})
+\begin{DoxyCompactList}\small\item\em Combine the constraints so that the keys are based on the course and not based on the semester. \end{DoxyCompactList}\item 
+dict \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_aa16c93667c5cbbd0102b8d620c9db8f6}{schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+create\+\_\+constraints}} (str \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a2f2668c43b01452aa69d495b00ac96ee}{filename}})
+\begin{DoxyCompactList}\small\item\em Take a four year plan stored in a JSON file and process it so that it can be stored as JSON or as clingo in the desired format. \end{DoxyCompactList}\item 
+None \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_acd4225e3db35e46fa42191f44b598c5b}{schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+convert\+\_\+asp}} (dict \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_af85c7333e12bd9ce37a70ccd2796a08a}{constraints}}, str file)
+\begin{DoxyCompactList}\small\item\em Take formated constraints and convert it into asp rules In addition to the rules defined by the constraints parameter, the rules file is also appended with equivalence rules. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_aabc9cb8c12e043972762e064b1dd00a9}{schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+current\+\_\+directory}} = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a5d57be1183317bb66335827da93c9034}{schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+path}} = current\+\_\+directory.\+split(os.\+sep)
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_ab2fbc89472a3ab522b9b9fde391b05be}{schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+root\+\_\+index}} = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a7bb228d657fdb736e661b6c2f72decf1}{schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+root\+\_\+dir}} = os.\+sep.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a5d57be1183317bb66335827da93c9034}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_ab2fbc89472a3ab522b9b9fde391b05be}{root\+\_\+index}}+1\mbox{]})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_af4362738315f00ddc2155306105cb68c}{schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+data\+\_\+dir}} = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a7bb228d657fdb736e661b6c2f72decf1}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}four\+\_\+year\+\_\+plan\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a2f2668c43b01452aa69d495b00ac96ee}{schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+filename}} = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_af4362738315f00ddc2155306105cb68c}{data\+\_\+dir}}, \textquotesingle{}four\+Year\+Plan.\+json\textquotesingle{})
+\item 
+dict \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_af85c7333e12bd9ce37a70ccd2796a08a}{schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+constraints}} = \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_aa16c93667c5cbbd0102b8d620c9db8f6}{create\+\_\+constraints}}(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a2f2668c43b01452aa69d495b00ac96ee}{filename}})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a364f1aeff327d25fea14df7d72b602b6}{schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+json\+\_\+file}} = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_af4362738315f00ddc2155306105cb68c}{data\+\_\+dir}}, \textquotesingle{}four\+\_\+year\+\_\+plan.\+json\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a0158ffd83032ab00d2b2f004c7cd452d}{schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+asp\+\_\+file}} = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_af4362738315f00ddc2155306105cb68c}{data\+\_\+dir}}, \textquotesingle{}four\+\_\+year\+\_\+plan\+\_\+constraints.\+lp\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a1c0b728cd04edccec8324b2262d25274}{schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+f}}
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a0421553fbbf635d707b890d87b588482}{schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+indent}}
+\end{DoxyCompactItemize}

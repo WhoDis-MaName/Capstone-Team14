@@ -1,14 +1,14 @@
 var description_8py =
 [
-    [ "description.course_prerequisites", "namespacedescription.html#a98330234a2f317e284737f43ccfabc57", null ],
-    [ "description.current_directory", "namespacedescription.html#a1c2a08c492b1bb0fabe8a548df401d67", null ],
-    [ "description.data", "namespacedescription.html#a0260747a932650cdc1c4c60cdde7e4cd", null ],
-    [ "description.data_dir", "namespacedescription.html#adee66afc7b280c8b0611150e9eb58079", null ],
-    [ "description.file_path", "namespacedescription.html#abd9e42828d419f95d5e87be0fd6fa826", null ],
-    [ "description.path", "namespacedescription.html#a65fe575f2e28fc57859becd80fd7c2ff", null ],
-    [ "description.prereq_part", "namespacedescription.html#a244d7e2c561ac548f9c67f66306caaff", null ],
-    [ "description.prereq_text", "namespacedescription.html#aa9dc2f413a52c0c36409a68a0e88fe8f", null ],
-    [ "description.root_dir", "namespacedescription.html#a09fb5359143bbe7bf51da05dfa10491a", null ],
-    [ "description.root_index", "namespacedescription.html#ad123eeba2202dcfec4b31e03be84c84a", null ],
-    [ "description.title", "namespacedescription.html#aeba5c12e147b95cdbb657d138041c459", null ]
+    [ "scheduleFunctions.data_processing.description.course_prerequisites", "namespaceschedule_functions_1_1data__processing_1_1description.html#ac182c9910682d51b0cb63349e061cb4a", null ],
+    [ "scheduleFunctions.data_processing.description.current_directory", "namespaceschedule_functions_1_1data__processing_1_1description.html#afd53326f274a15556791952dee10f571", null ],
+    [ "scheduleFunctions.data_processing.description.data", "namespaceschedule_functions_1_1data__processing_1_1description.html#a5194707fd2ca529e2d086d6b1f1a7c4f", null ],
+    [ "scheduleFunctions.data_processing.description.data_dir", "namespaceschedule_functions_1_1data__processing_1_1description.html#a3fb437445d49e092b766de03387e0041", null ],
+    [ "scheduleFunctions.data_processing.description.file_path", "namespaceschedule_functions_1_1data__processing_1_1description.html#aa53226aaa81e2b65547a302a1891dc9e", null ],
+    [ "scheduleFunctions.data_processing.description.path", "namespaceschedule_functions_1_1data__processing_1_1description.html#aa93a2f062897c0aeacf0156ef8762d9b", null ],
+    [ "scheduleFunctions.data_processing.description.prereq_part", "namespaceschedule_functions_1_1data__processing_1_1description.html#a42b76d4c2c9da047469064eb38e214b6", null ],
+    [ "scheduleFunctions.data_processing.description.prereq_text", "namespaceschedule_functions_1_1data__processing_1_1description.html#aea59182dcc971382787cce7ccf2de61c", null ],
+    [ "scheduleFunctions.data_processing.description.root_dir", "namespaceschedule_functions_1_1data__processing_1_1description.html#a48372b4778a91198e3bb74ee57450a50", null ],
+    [ "scheduleFunctions.data_processing.description.root_index", "namespaceschedule_functions_1_1data__processing_1_1description.html#a92aefc3d13a9d0bddfea47eb03de7569", null ],
+    [ "scheduleFunctions.data_processing.description.title", "namespaceschedule_functions_1_1data__processing_1_1description.html#a62e758b66d08af07ccffe09bc6379e28", null ]
 ];

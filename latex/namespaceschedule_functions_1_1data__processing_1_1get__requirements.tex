@@ -1,0 +1,254 @@
+\doxysection{schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+requirements Namespace Reference}
+\hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__requirements}{}\label{namespaceschedule_functions_1_1data__processing_1_1get__requirements}\index{scheduleFunctions.data\_processing.get\_requirements@{scheduleFunctions.data\_processing.get\_requirements}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_abc87a0e43bc444f7e3e569ff488ca086}{get\+\_\+all\+\_\+tables}} (bs soup)
+\begin{DoxyCompactList}\small\item\em Finds all of the tables in the page gathered with BS4. \end{DoxyCompactList}\item 
+list \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a8ac79be851f4d07f537169135df8af10}{get\+\_\+table\+\_\+rows}} (table)
+\begin{DoxyCompactList}\small\item\em Given a table, returns all its rows. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a248f57f35472b8ec8d203e25cf8da1ca}{process\+\_\+url}} (str url)
+\begin{DoxyCompactList}\small\item\em Take a url and find all of the tables contained in the page and return a Result\+Set. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_ab42a419166799f229d9eb1aa0ed1300b}{read\+\_\+requirements}} (str url)
+\begin{DoxyCompactList}\small\item\em Read the requirements from a given url that contains degree requirements and process it into a dictionary. \end{DoxyCompactList}\item 
+dict \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_aacb4adc06e70f447b04c527b48586783}{compile\+\_\+requirements}} (list\mbox{[}dict\mbox{]} requirements)
+\begin{DoxyCompactList}\small\item\em Gather multiple requirements sets and complile them so that the group names are unique. \end{DoxyCompactList}\item 
+None \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_aef77cd4167c487b71bf4e1c3d1dc6d88}{process\+\_\+degree\+\_\+requirements}} (list\mbox{[}str\mbox{]} \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a0eb5014f4857a6b6e50fb8a5b556c75e}{urls}}, str \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a812d8c136c3f91d08779bad86d3fd807}{json\+\_\+file}})
+\begin{DoxyCompactList}\small\item\em Handle the processing of multiple degree requirements and sending it to a json file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a483b8018156ba61decc0d23d54de785a}{current\+\_\+directory}} = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_aeb507e28bd6f0560247686e543490141}{path}} = current\+\_\+directory.\+split(os.\+sep)
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a822d2211f514a29f826249e5c35b6958}{root\+\_\+index}} = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a9898428a108ed060fdc9c65a640bb87f}{root\+\_\+dir}} = os.\+sep.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_aeb507e28bd6f0560247686e543490141}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a822d2211f514a29f826249e5c35b6958}{root\+\_\+index}}+1\mbox{]})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_af42f034cb20656c21c924a70bd779141}{data\+\_\+dir}} = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a9898428a108ed060fdc9c65a640bb87f}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}requirements\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a812d8c136c3f91d08779bad86d3fd807}{json\+\_\+file}} = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_af42f034cb20656c21c924a70bd779141}{data\+\_\+dir}},\textquotesingle{}requirements.\+json\textquotesingle{})
+\item 
+list \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a0eb5014f4857a6b6e50fb8a5b556c75e}{urls}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__requirements_aacb4adc06e70f447b04c527b48586783}\index{scheduleFunctions.data\_processing.get\_requirements@{scheduleFunctions.data\_processing.get\_requirements}!compile\_requirements@{compile\_requirements}}
+\index{compile\_requirements@{compile\_requirements}!scheduleFunctions.data\_processing.get\_requirements@{scheduleFunctions.data\_processing.get\_requirements}}
+\doxysubsubsection{\texorpdfstring{compile\_requirements()}{compile\_requirements()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__requirements_aacb4adc06e70f447b04c527b48586783} 
+ dict schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+requirements.\+compile\+\_\+requirements (\begin{DoxyParamCaption}\item[{list\mbox{[}dict\mbox{]}}]{requirements}{}\end{DoxyParamCaption})}
+
+
+
+Gather multiple requirements sets and complile them so that the group names are unique. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em requirements} & A list containing dictionaries that are structured with classes in groups and sub-\/groups \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A single dictionary that combines all of the requirements into one while handling duplicate group labels by combining the class lists. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{get__requirements_8py_source_l00143}{143}} of file \mbox{\hyperlink{get__requirements_8py_source}{get\+\_\+requirements.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__requirements_abc87a0e43bc444f7e3e569ff488ca086}\index{scheduleFunctions.data\_processing.get\_requirements@{scheduleFunctions.data\_processing.get\_requirements}!get\_all\_tables@{get\_all\_tables}}
+\index{get\_all\_tables@{get\_all\_tables}!scheduleFunctions.data\_processing.get\_requirements@{scheduleFunctions.data\_processing.get\_requirements}}
+\doxysubsubsection{\texorpdfstring{get\_all\_tables()}{get\_all\_tables()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__requirements_abc87a0e43bc444f7e3e569ff488ca086} 
+schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+requirements.\+get\+\_\+all\+\_\+tables (\begin{DoxyParamCaption}\item[{bs}]{soup}{}\end{DoxyParamCaption})}
+
+
+
+Finds all of the tables in the page gathered with BS4. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em soup} & The Beautiful\+Soup4 representation of the web page \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A set containing all of the instances of {\ttfamily \texorpdfstring{$<$}{<}table\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}/table\texorpdfstring{$>$}{>}} along with all of its contents 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{get__requirements_8py_source_l00017}{17}} of file \mbox{\hyperlink{get__requirements_8py_source}{get\+\_\+requirements.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a8ac79be851f4d07f537169135df8af10}\index{scheduleFunctions.data\_processing.get\_requirements@{scheduleFunctions.data\_processing.get\_requirements}!get\_table\_rows@{get\_table\_rows}}
+\index{get\_table\_rows@{get\_table\_rows}!scheduleFunctions.data\_processing.get\_requirements@{scheduleFunctions.data\_processing.get\_requirements}}
+\doxysubsubsection{\texorpdfstring{get\_table\_rows()}{get\_table\_rows()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a8ac79be851f4d07f537169135df8af10} 
+ list schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+requirements.\+get\+\_\+table\+\_\+rows (\begin{DoxyParamCaption}\item[{}]{table}{}\end{DoxyParamCaption})}
+
+
+
+Given a table, returns all its rows. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em table} & A table from web page grabbed using BS4 soup object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A 2d list that represents all of the rows from the table 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{get__requirements_8py_source_l00024}{24}} of file \mbox{\hyperlink{get__requirements_8py_source}{get\+\_\+requirements.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__requirements_aef77cd4167c487b71bf4e1c3d1dc6d88}\index{scheduleFunctions.data\_processing.get\_requirements@{scheduleFunctions.data\_processing.get\_requirements}!process\_degree\_requirements@{process\_degree\_requirements}}
+\index{process\_degree\_requirements@{process\_degree\_requirements}!scheduleFunctions.data\_processing.get\_requirements@{scheduleFunctions.data\_processing.get\_requirements}}
+\doxysubsubsection{\texorpdfstring{process\_degree\_requirements()}{process\_degree\_requirements()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__requirements_aef77cd4167c487b71bf4e1c3d1dc6d88} 
+ None schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+requirements.\+process\+\_\+degree\+\_\+requirements (\begin{DoxyParamCaption}\item[{list\mbox{[}str\mbox{]}}]{urls}{, }\item[{str}]{json\+\_\+file}{}\end{DoxyParamCaption})}
+
+
+
+Handle the processing of multiple degree requirements and sending it to a json file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em urls} & A list of url strings. Each url must direct to a page that contains requirements for some sort of degree \\
+\hline
+{\em json\+\_\+file} & A string that contains the file path and filename that the JSON will be written to.
+
+{\itshape NOTE} to maintain the script\textquotesingle{}s OS agnostic nature, it is suggested to utilize os.\+path.\+join() to join strings or os.\+sep.\+join() to join elements of a list \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{get__requirements_8py_source_l00180}{180}} of file \mbox{\hyperlink{get__requirements_8py_source}{get\+\_\+requirements.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a248f57f35472b8ec8d203e25cf8da1ca}\index{scheduleFunctions.data\_processing.get\_requirements@{scheduleFunctions.data\_processing.get\_requirements}!process\_url@{process\_url}}
+\index{process\_url@{process\_url}!scheduleFunctions.data\_processing.get\_requirements@{scheduleFunctions.data\_processing.get\_requirements}}
+\doxysubsubsection{\texorpdfstring{process\_url()}{process\_url()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a248f57f35472b8ec8d203e25cf8da1ca} 
+schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+requirements.\+process\+\_\+url (\begin{DoxyParamCaption}\item[{str}]{url}{}\end{DoxyParamCaption})}
+
+
+
+Take a url and find all of the tables contained in the page and return a Result\+Set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & URL of the page to be searched. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List containing all of the tables in the page. Each of table is a 2d array (list) 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{get__requirements_8py_source_l00049}{49}} of file \mbox{\hyperlink{get__requirements_8py_source}{get\+\_\+requirements.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__requirements_ab42a419166799f229d9eb1aa0ed1300b}\index{scheduleFunctions.data\_processing.get\_requirements@{scheduleFunctions.data\_processing.get\_requirements}!read\_requirements@{read\_requirements}}
+\index{read\_requirements@{read\_requirements}!scheduleFunctions.data\_processing.get\_requirements@{scheduleFunctions.data\_processing.get\_requirements}}
+\doxysubsubsection{\texorpdfstring{read\_requirements()}{read\_requirements()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__requirements_ab42a419166799f229d9eb1aa0ed1300b} 
+schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+requirements.\+read\+\_\+requirements (\begin{DoxyParamCaption}\item[{str}]{url}{}\end{DoxyParamCaption})}
+
+
+
+Read the requirements from a given url that contains degree requirements and process it into a dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & A string that contains the url that is to be read to find the degree requirements \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a dictionary that is structured to associate courses with the major and sub groups of requirements that are fulfilled 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{get__requirements_8py_source_l00077}{77}} of file \mbox{\hyperlink{get__requirements_8py_source}{get\+\_\+requirements.\+py}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a483b8018156ba61decc0d23d54de785a}\index{scheduleFunctions.data\_processing.get\_requirements@{scheduleFunctions.data\_processing.get\_requirements}!current\_directory@{current\_directory}}
+\index{current\_directory@{current\_directory}!scheduleFunctions.data\_processing.get\_requirements@{scheduleFunctions.data\_processing.get\_requirements}}
+\doxysubsubsection{\texorpdfstring{current\_directory}{current\_directory}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a483b8018156ba61decc0d23d54de785a} 
+schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+requirements.\+current\+\_\+directory = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))}
+
+
+
+Definition at line \mbox{\hyperlink{get__requirements_8py_source_l00193}{193}} of file \mbox{\hyperlink{get__requirements_8py_source}{get\+\_\+requirements.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__requirements_af42f034cb20656c21c924a70bd779141}\index{scheduleFunctions.data\_processing.get\_requirements@{scheduleFunctions.data\_processing.get\_requirements}!data\_dir@{data\_dir}}
+\index{data\_dir@{data\_dir}!scheduleFunctions.data\_processing.get\_requirements@{scheduleFunctions.data\_processing.get\_requirements}}
+\doxysubsubsection{\texorpdfstring{data\_dir}{data\_dir}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__requirements_af42f034cb20656c21c924a70bd779141} 
+schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+requirements.\+data\+\_\+dir = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a9898428a108ed060fdc9c65a640bb87f}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}requirements\textquotesingle{})}
+
+
+
+Definition at line \mbox{\hyperlink{get__requirements_8py_source_l00202}{202}} of file \mbox{\hyperlink{get__requirements_8py_source}{get\+\_\+requirements.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a812d8c136c3f91d08779bad86d3fd807}\index{scheduleFunctions.data\_processing.get\_requirements@{scheduleFunctions.data\_processing.get\_requirements}!json\_file@{json\_file}}
+\index{json\_file@{json\_file}!scheduleFunctions.data\_processing.get\_requirements@{scheduleFunctions.data\_processing.get\_requirements}}
+\doxysubsubsection{\texorpdfstring{json\_file}{json\_file}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a812d8c136c3f91d08779bad86d3fd807} 
+schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+requirements.\+json\+\_\+file = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_af42f034cb20656c21c924a70bd779141}{data\+\_\+dir}},\textquotesingle{}requirements.\+json\textquotesingle{})}
+
+
+
+Definition at line \mbox{\hyperlink{get__requirements_8py_source_l00207}{207}} of file \mbox{\hyperlink{get__requirements_8py_source}{get\+\_\+requirements.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__requirements_aeb507e28bd6f0560247686e543490141}\index{scheduleFunctions.data\_processing.get\_requirements@{scheduleFunctions.data\_processing.get\_requirements}!path@{path}}
+\index{path@{path}!scheduleFunctions.data\_processing.get\_requirements@{scheduleFunctions.data\_processing.get\_requirements}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__requirements_aeb507e28bd6f0560247686e543490141} 
+schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+requirements.\+path = current\+\_\+directory.\+split(os.\+sep)}
+
+
+
+Definition at line \mbox{\hyperlink{get__requirements_8py_source_l00198}{198}} of file \mbox{\hyperlink{get__requirements_8py_source}{get\+\_\+requirements.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a9898428a108ed060fdc9c65a640bb87f}\index{scheduleFunctions.data\_processing.get\_requirements@{scheduleFunctions.data\_processing.get\_requirements}!root\_dir@{root\_dir}}
+\index{root\_dir@{root\_dir}!scheduleFunctions.data\_processing.get\_requirements@{scheduleFunctions.data\_processing.get\_requirements}}
+\doxysubsubsection{\texorpdfstring{root\_dir}{root\_dir}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a9898428a108ed060fdc9c65a640bb87f} 
+schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+requirements.\+root\+\_\+dir = os.\+sep.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_aeb507e28bd6f0560247686e543490141}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a822d2211f514a29f826249e5c35b6958}{root\+\_\+index}}+1\mbox{]})}
+
+
+
+Definition at line \mbox{\hyperlink{get__requirements_8py_source_l00201}{201}} of file \mbox{\hyperlink{get__requirements_8py_source}{get\+\_\+requirements.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a822d2211f514a29f826249e5c35b6958}\index{scheduleFunctions.data\_processing.get\_requirements@{scheduleFunctions.data\_processing.get\_requirements}!root\_index@{root\_index}}
+\index{root\_index@{root\_index}!scheduleFunctions.data\_processing.get\_requirements@{scheduleFunctions.data\_processing.get\_requirements}}
+\doxysubsubsection{\texorpdfstring{root\_index}{root\_index}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a822d2211f514a29f826249e5c35b6958} 
+schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+requirements.\+root\+\_\+index = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})}
+
+
+
+Definition at line \mbox{\hyperlink{get__requirements_8py_source_l00200}{200}} of file \mbox{\hyperlink{get__requirements_8py_source}{get\+\_\+requirements.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a0eb5014f4857a6b6e50fb8a5b556c75e}\index{scheduleFunctions.data\_processing.get\_requirements@{scheduleFunctions.data\_processing.get\_requirements}!urls@{urls}}
+\index{urls@{urls}!scheduleFunctions.data\_processing.get\_requirements@{scheduleFunctions.data\_processing.get\_requirements}}
+\doxysubsubsection{\texorpdfstring{urls}{urls}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a0eb5014f4857a6b6e50fb8a5b556c75e} 
+list schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+requirements.\+urls}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ [}
+\DoxyCodeLine{00002\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'https://catalog.unomaha.edu/undergraduate/college-\/information-\/science-\/technology/computer-\/science/computer-\/science-\/bs/artificialintelligence-\/concentraton/'},}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'https://catalog.unomaha.edu/undergraduate/college-\/information-\/science-\/technology/computer-\/science/computer-\/science-\/bs/game-\/programming-\/concentration/'},}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'https://catalog.unomaha.edu/undergraduate/college-\/information-\/science-\/technology/computer-\/science/computer-\/science-\/bs/internet-\/technologies-\/it-\/concentration-\/computer-\/science-\/majors/'},}
+\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'https://catalog.unomaha.edu/undergraduate/college-\/information-\/science-\/technology/computer-\/science/computer-\/science-\/bs/information-\/assurance-\/concentration/'},}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'https://catalog.unomaha.edu/undergraduate/college-\/information-\/science-\/technology/computer-\/science/computer-\/science-\/bs/software-\/engineering-\/concentration/'}}
+\DoxyCodeLine{00007\ \ \ \ \ ]}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{get__requirements_8py_source_l00208}{208}} of file \mbox{\hyperlink{get__requirements_8py_source}{get\+\_\+requirements.\+py}}.
+

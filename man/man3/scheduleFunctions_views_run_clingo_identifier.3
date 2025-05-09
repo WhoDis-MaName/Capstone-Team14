@@ -1,0 +1,30 @@
+.TH "scheduleFunctions.views.run_clingo_identifier" 3 "Version 0.5" "Capstone Team 14" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scheduleFunctions.views.run_clingo_identifier
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBrun_clingo_identifier\fP (request)"
+.br
+.RI "Run the clingo program for identifying conflict\&. "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "scheduleFunctions\&.views\&.run_clingo_identifier\&.run_clingo_identifier ( request)"
+
+.PP
+Run the clingo program for identifying conflict\&. The conflict identifier randomly chooses one section from each course to be called "critical"\&. We then define conflict such that two sections have overlapping times, overlapping days, and are not sections of the same class\&.
+
+.PP
+We then define a critical conflict to be if two critical sections of the same year (ie, two 3000 level courses) are in conflict\&. Since critical sections are chosen randomly, we then minimize the count of critical sections, finding the best selection\&. 
+.PP
+Definition at line \fB16\fP of file \fBrun_clingo_identifier\&.py\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Capstone Team 14 from the source code\&.

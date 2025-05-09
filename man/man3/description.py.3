@@ -1,0 +1,61 @@
+.TH "scheduleFunctions/data_processing/description.py" 3 "Version 0.5" "Capstone Team 14" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scheduleFunctions/data_processing/description.py
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBscheduleFunctions\fP"
+.br
+.ti -1c
+.RI "namespace \fBscheduleFunctions\&.data_processing\fP"
+.br
+.ti -1c
+.RI "namespace \fBscheduleFunctions\&.data_processing\&.description\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.description\&.current_directory\fP = os\&.path\&.dirname(os\&.path\&.realpath(__file__))"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.description\&.path\fP = current_directory\&.split(os\&.sep)"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.description\&.root_index\fP = path\&.index('Capstone\-Team14')"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.description\&.root_dir\fP = os\&.sep\&.join(\fBpath\fP[:\fBroot_index\fP+1])"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.description\&.data_dir\fP = os\&.path\&.join(\fBroot_dir\fP, 'data_files', 'uploaded_schedule')"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.description\&.file_path\fP = os\&.path\&.join(\fBdata_dir\fP, 'filtered\&.json')"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.description\&.data\fP = json\&.load(file)"
+.br
+.ti -1c
+.RI "dict \fBscheduleFunctions\&.data_processing\&.description\&.course_prerequisites\fP = {}"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.description\&.title\fP = course_info\&.get('title', 'Unknown Title')"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.description\&.prereq_text\fP = course_info\&.get('desc', '')"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.description\&.prereq_part\fP = prereq_text\&.split('Prereq:')[1]\&.strip()"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Capstone Team 14 from the source code\&.

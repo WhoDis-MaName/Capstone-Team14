@@ -1,0 +1,174 @@
+\doxysection{schedule\+Functions.\+views.\+clingo\+\_\+helpers Namespace Reference}
+\hypertarget{namespaceschedule_functions_1_1views_1_1clingo__helpers}{}\label{namespaceschedule_functions_1_1views_1_1clingo__helpers}\index{scheduleFunctions.views.clingo\_helpers@{scheduleFunctions.views.clingo\_helpers}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clingo__helpers_ac88f6287f2dee6d523277416175af38c}{get\+\_\+root\+\_\+path}} ()
+\begin{DoxyCompactList}\small\item\em Returns the root path of the project by finding the \textquotesingle{}Capstone-\/\+Team14\textquotesingle{} directory in the path. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clingo__helpers_afb5330a0d1126a4137286577ed2e3406}{load\+\_\+optimized\+\_\+json}} (path)
+\begin{DoxyCompactList}\small\item\em Loads and parses a JSON file from the specified path. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clingo__helpers_ac40484b14bc79789b7f4f36a85b3e9e8}{convert\+\_\+time}} (t)
+\begin{DoxyCompactList}\small\item\em Converts a time in minutes to a human-\/readable 12-\/hour clock format with AM/\+PM. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clingo__helpers_a1ddbe33eb21812bdc970a765406e67e9}{parse\+\_\+line}} (line)
+\begin{DoxyCompactList}\small\item\em Parses a single line of ASP output representing a scheduled section. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clingo__helpers_a3de6fff5db7dbb7c9a3db28d848e7357}{convert\+\_\+to\+\_\+json}} (symbols, output\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Converts a list of ASP symbols to a structured JSON file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clingo__helpers_a0be4d3f127672c31d8b35fecbae7ca74}{run\+\_\+clingo\+\_\+optimization}} (asp\+\_\+filename, asp\+\_\+solver)
+\begin{DoxyCompactList}\small\item\em Runs Clingo on the given ASP program and minimizer, using all available threads. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clingo__helpers_a0a7ebc9cb7b5fa2e25c70850a190d61c}{save\+\_\+optimized\+\_\+file}} (data, filename)
+\begin{DoxyCompactList}\small\item\em Saves a Python dictionary as a formatted JSON file using Django\textquotesingle{}s storage system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceschedule_functions_1_1views_1_1clingo__helpers_ac40484b14bc79789b7f4f36a85b3e9e8}\index{scheduleFunctions.views.clingo\_helpers@{scheduleFunctions.views.clingo\_helpers}!convert\_time@{convert\_time}}
+\index{convert\_time@{convert\_time}!scheduleFunctions.views.clingo\_helpers@{scheduleFunctions.views.clingo\_helpers}}
+\doxysubsubsection{\texorpdfstring{convert\_time()}{convert\_time()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_1_1clingo__helpers_ac40484b14bc79789b7f4f36a85b3e9e8} 
+schedule\+Functions.\+views.\+clingo\+\_\+helpers.\+convert\+\_\+time (\begin{DoxyParamCaption}\item[{}]{t}{}\end{DoxyParamCaption})}
+
+
+
+Converts a time in minutes to a human-\/readable 12-\/hour clock format with AM/\+PM. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The time in minutes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string representation of the time (e.\+g., "{}9\+:30\+AM"{}). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{clingo__helpers_8py_source_l00037}{37}} of file \mbox{\hyperlink{clingo__helpers_8py_source}{clingo\+\_\+helpers.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1views_1_1clingo__helpers_a3de6fff5db7dbb7c9a3db28d848e7357}\index{scheduleFunctions.views.clingo\_helpers@{scheduleFunctions.views.clingo\_helpers}!convert\_to\_json@{convert\_to\_json}}
+\index{convert\_to\_json@{convert\_to\_json}!scheduleFunctions.views.clingo\_helpers@{scheduleFunctions.views.clingo\_helpers}}
+\doxysubsubsection{\texorpdfstring{convert\_to\_json()}{convert\_to\_json()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_1_1clingo__helpers_a3de6fff5db7dbb7c9a3db28d848e7357} 
+schedule\+Functions.\+views.\+clingo\+\_\+helpers.\+convert\+\_\+to\+\_\+json (\begin{DoxyParamCaption}\item[{}]{symbols}{, }\item[{}]{output\+\_\+file}{}\end{DoxyParamCaption})}
+
+
+
+Converts a list of ASP symbols to a structured JSON file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbols} & A list of ASP symbol strings (e.\+g., from Clingo models). \\
+\hline
+{\em output\+\_\+file} & The path where the JSON output should be saved. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{clingo__helpers_8py_source_l00107}{107}} of file \mbox{\hyperlink{clingo__helpers_8py_source}{clingo\+\_\+helpers.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1views_1_1clingo__helpers_ac88f6287f2dee6d523277416175af38c}\index{scheduleFunctions.views.clingo\_helpers@{scheduleFunctions.views.clingo\_helpers}!get\_root\_path@{get\_root\_path}}
+\index{get\_root\_path@{get\_root\_path}!scheduleFunctions.views.clingo\_helpers@{scheduleFunctions.views.clingo\_helpers}}
+\doxysubsubsection{\texorpdfstring{get\_root\_path()}{get\_root\_path()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_1_1clingo__helpers_ac88f6287f2dee6d523277416175af38c} 
+schedule\+Functions.\+views.\+clingo\+\_\+helpers.\+get\+\_\+root\+\_\+path (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the root path of the project by finding the \textquotesingle{}Capstone-\/\+Team14\textquotesingle{} directory in the path. 
+
+\begin{DoxyReturn}{Returns}
+The absolute path to the root project directory. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{clingo__helpers_8py_source_l00017}{17}} of file \mbox{\hyperlink{clingo__helpers_8py_source}{clingo\+\_\+helpers.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1views_1_1clingo__helpers_afb5330a0d1126a4137286577ed2e3406}\index{scheduleFunctions.views.clingo\_helpers@{scheduleFunctions.views.clingo\_helpers}!load\_optimized\_json@{load\_optimized\_json}}
+\index{load\_optimized\_json@{load\_optimized\_json}!scheduleFunctions.views.clingo\_helpers@{scheduleFunctions.views.clingo\_helpers}}
+\doxysubsubsection{\texorpdfstring{load\_optimized\_json()}{load\_optimized\_json()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_1_1clingo__helpers_afb5330a0d1126a4137286577ed2e3406} 
+schedule\+Functions.\+views.\+clingo\+\_\+helpers.\+load\+\_\+optimized\+\_\+json (\begin{DoxyParamCaption}\item[{}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Loads and parses a JSON file from the specified path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path to the JSON file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The deserialized Python object (dict or list). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{clingo__helpers_8py_source_l00026}{26}} of file \mbox{\hyperlink{clingo__helpers_8py_source}{clingo\+\_\+helpers.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1views_1_1clingo__helpers_a1ddbe33eb21812bdc970a765406e67e9}\index{scheduleFunctions.views.clingo\_helpers@{scheduleFunctions.views.clingo\_helpers}!parse\_line@{parse\_line}}
+\index{parse\_line@{parse\_line}!scheduleFunctions.views.clingo\_helpers@{scheduleFunctions.views.clingo\_helpers}}
+\doxysubsubsection{\texorpdfstring{parse\_line()}{parse\_line()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_1_1clingo__helpers_a1ddbe33eb21812bdc970a765406e67e9} 
+schedule\+Functions.\+views.\+clingo\+\_\+helpers.\+parse\+\_\+line (\begin{DoxyParamCaption}\item[{}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Parses a single line of ASP output representing a scheduled section. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & A string line containing an ASP predicate like {\ttfamily scheduled\+\_\+section(...)}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A tuple with subject, course number, section, and a dictionary of schedule data, or None if parsing fails. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{clingo__helpers_8py_source_l00049}{49}} of file \mbox{\hyperlink{clingo__helpers_8py_source}{clingo\+\_\+helpers.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1views_1_1clingo__helpers_a0be4d3f127672c31d8b35fecbae7ca74}\index{scheduleFunctions.views.clingo\_helpers@{scheduleFunctions.views.clingo\_helpers}!run\_clingo\_optimization@{run\_clingo\_optimization}}
+\index{run\_clingo\_optimization@{run\_clingo\_optimization}!scheduleFunctions.views.clingo\_helpers@{scheduleFunctions.views.clingo\_helpers}}
+\doxysubsubsection{\texorpdfstring{run\_clingo\_optimization()}{run\_clingo\_optimization()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_1_1clingo__helpers_a0be4d3f127672c31d8b35fecbae7ca74} 
+schedule\+Functions.\+views.\+clingo\+\_\+helpers.\+run\+\_\+clingo\+\_\+optimization (\begin{DoxyParamCaption}\item[{}]{asp\+\_\+filename}{, }\item[{}]{asp\+\_\+solver}{}\end{DoxyParamCaption})}
+
+
+
+Runs Clingo on the given ASP program and minimizer, using all available threads. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em asp\+\_\+filename} & The filename of the main ASP input file (in /media). \\
+\hline
+{\em asp\+\_\+solver} & The filename of the minimizer or secondary ASP file (in /clingo). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of shown symbols from the last (optimal) model found by Clingo. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{clingo__helpers_8py_source_l00133}{133}} of file \mbox{\hyperlink{clingo__helpers_8py_source}{clingo\+\_\+helpers.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1views_1_1clingo__helpers_a0a7ebc9cb7b5fa2e25c70850a190d61c}\index{scheduleFunctions.views.clingo\_helpers@{scheduleFunctions.views.clingo\_helpers}!save\_optimized\_file@{save\_optimized\_file}}
+\index{save\_optimized\_file@{save\_optimized\_file}!scheduleFunctions.views.clingo\_helpers@{scheduleFunctions.views.clingo\_helpers}}
+\doxysubsubsection{\texorpdfstring{save\_optimized\_file()}{save\_optimized\_file()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_1_1clingo__helpers_a0a7ebc9cb7b5fa2e25c70850a190d61c} 
+schedule\+Functions.\+views.\+clingo\+\_\+helpers.\+save\+\_\+optimized\+\_\+file (\begin{DoxyParamCaption}\item[{}]{data}{, }\item[{}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Saves a Python dictionary as a formatted JSON file using Django\textquotesingle{}s storage system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data to be saved. \\
+\hline
+{\em filename} & The filename to save to (relative to Django\textquotesingle{}s media path). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The final path where the file was saved. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{clingo__helpers_8py_source_l00167}{167}} of file \mbox{\hyperlink{clingo__helpers_8py_source}{clingo\+\_\+helpers.\+py}}.
+

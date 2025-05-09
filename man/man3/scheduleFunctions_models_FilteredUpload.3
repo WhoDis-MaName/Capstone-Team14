@@ -1,0 +1,99 @@
+.TH "scheduleFunctions.models.FilteredUpload" 3 "Version 0.5" "Capstone Team 14" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scheduleFunctions.models.FilteredUpload
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits models\&.Model\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__str__\fP (self)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBuploaded_at\fP = models\&.DateTimeField(auto_now_add=True)"
+.br
+.ti -1c
+.RI "\fBfilename\fP = models\&.CharField(max_length=255)"
+.br
+.ti -1c
+.RI "\fBfiltered_data\fP = models\&.JSONField()"
+.br
+.ti -1c
+.RI "\fBnon_filtered_data\fP = models\&.JSONField()"
+.br
+.ti -1c
+.RI "\fBuploaded_file\fP = models\&.FileField(upload_to='uploads/')"
+.br
+.ti -1c
+.RI "\fBraw_file_path\fP = models\&.CharField(max_length=255, blank=True)"
+.br
+.ti -1c
+.RI "\fBfiltered_file_path\fP = models\&.CharField(max_length=255, blank=True)"
+.br
+.ti -1c
+.RI "\fBremaining_file_path\fP = models\&.CharField(max_length=255, blank=True)"
+.br
+.ti -1c
+.RI "\fBoptimized_file\fP = models\&.FileField(upload_to='uploads/', null=True, blank=True)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB223\fP of file \fBmodels\&.py\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "scheduleFunctions\&.models\&.FilteredUpload\&.__str__ ( self)"
+
+.PP
+Definition at line \fB238\fP of file \fBmodels\&.py\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "scheduleFunctions\&.models\&.FilteredUpload\&.filename = models\&.CharField(max_length=255)\fR [static]\fP"
+
+.PP
+Definition at line \fB225\fP of file \fBmodels\&.py\fP\&.
+.SS "scheduleFunctions\&.models\&.FilteredUpload\&.filtered_data = models\&.JSONField()\fR [static]\fP"
+
+.PP
+Definition at line \fB226\fP of file \fBmodels\&.py\fP\&.
+.SS "scheduleFunctions\&.models\&.FilteredUpload\&.filtered_file_path = models\&.CharField(max_length=255, blank=True)\fR [static]\fP"
+
+.PP
+Definition at line \fB232\fP of file \fBmodels\&.py\fP\&.
+.SS "scheduleFunctions\&.models\&.FilteredUpload\&.non_filtered_data = models\&.JSONField()\fR [static]\fP"
+
+.PP
+Definition at line \fB227\fP of file \fBmodels\&.py\fP\&.
+.SS "scheduleFunctions\&.models\&.FilteredUpload\&.optimized_file = models\&.FileField(upload_to='uploads/', null=True, blank=True)\fR [static]\fP"
+
+.PP
+Definition at line \fB236\fP of file \fBmodels\&.py\fP\&.
+.SS "scheduleFunctions\&.models\&.FilteredUpload\&.raw_file_path = models\&.CharField(max_length=255, blank=True)\fR [static]\fP"
+
+.PP
+Definition at line \fB231\fP of file \fBmodels\&.py\fP\&.
+.SS "scheduleFunctions\&.models\&.FilteredUpload\&.remaining_file_path = models\&.CharField(max_length=255, blank=True)\fR [static]\fP"
+
+.PP
+Definition at line \fB233\fP of file \fBmodels\&.py\fP\&.
+.SS "scheduleFunctions\&.models\&.FilteredUpload\&.uploaded_at = models\&.DateTimeField(auto_now_add=True)\fR [static]\fP"
+
+.PP
+Definition at line \fB224\fP of file \fBmodels\&.py\fP\&.
+.SS "scheduleFunctions\&.models\&.FilteredUpload\&.uploaded_file = models\&.FileField(upload_to='uploads/')\fR [static]\fP"
+
+.PP
+Definition at line \fB228\fP of file \fBmodels\&.py\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Capstone Team 14 from the source code\&.

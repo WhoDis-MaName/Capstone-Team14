@@ -1,0 +1,140 @@
+\doxysection{schedule\+Functions.\+data\+\_\+processing.\+description Namespace Reference}
+\hypertarget{namespaceschedule_functions_1_1data__processing_1_1description}{}\label{namespaceschedule_functions_1_1data__processing_1_1description}\index{scheduleFunctions.data\_processing.description@{scheduleFunctions.data\_processing.description}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1description_afd53326f274a15556791952dee10f571}{current\+\_\+directory}} = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1description_aa93a2f062897c0aeacf0156ef8762d9b}{path}} = current\+\_\+directory.\+split(os.\+sep)
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1description_a92aefc3d13a9d0bddfea47eb03de7569}{root\+\_\+index}} = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1description_a48372b4778a91198e3bb74ee57450a50}{root\+\_\+dir}} = os.\+sep.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1description_aa93a2f062897c0aeacf0156ef8762d9b}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1description_a92aefc3d13a9d0bddfea47eb03de7569}{root\+\_\+index}}+1\mbox{]})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1description_a3fb437445d49e092b766de03387e0041}{data\+\_\+dir}} = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1description_a48372b4778a91198e3bb74ee57450a50}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}uploaded\+\_\+schedule\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1description_aa53226aaa81e2b65547a302a1891dc9e}{file\+\_\+path}} = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1description_a3fb437445d49e092b766de03387e0041}{data\+\_\+dir}}, "{}filtered.\+json"{})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1description_a5194707fd2ca529e2d086d6b1f1a7c4f}{data}} = json.\+load(file)
+\item 
+dict \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1description_ac182c9910682d51b0cb63349e061cb4a}{course\+\_\+prerequisites}} = \{\}
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1description_a62e758b66d08af07ccffe09bc6379e28}{title}} = course\+\_\+info.\+get("{}title"{}, "{}Unknown Title"{})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1description_aea59182dcc971382787cce7ccf2de61c}{prereq\+\_\+text}} = course\+\_\+info.\+get("{}desc"{}, "{}"{})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1description_a42b76d4c2c9da047469064eb38e214b6}{prereq\+\_\+part}} = prereq\+\_\+text.\+split("{}Prereq\+:"{})\mbox{[}1\mbox{]}.strip()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1description_ac182c9910682d51b0cb63349e061cb4a}\index{scheduleFunctions.data\_processing.description@{scheduleFunctions.data\_processing.description}!course\_prerequisites@{course\_prerequisites}}
+\index{course\_prerequisites@{course\_prerequisites}!scheduleFunctions.data\_processing.description@{scheduleFunctions.data\_processing.description}}
+\doxysubsubsection{\texorpdfstring{course\_prerequisites}{course\_prerequisites}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1description_ac182c9910682d51b0cb63349e061cb4a} 
+dict schedule\+Functions.\+data\+\_\+processing.\+description.\+course\+\_\+prerequisites = \{\}}
+
+
+
+Definition at line \mbox{\hyperlink{description_8py_source_l00028}{28}} of file \mbox{\hyperlink{description_8py_source}{description.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1description_afd53326f274a15556791952dee10f571}\index{scheduleFunctions.data\_processing.description@{scheduleFunctions.data\_processing.description}!current\_directory@{current\_directory}}
+\index{current\_directory@{current\_directory}!scheduleFunctions.data\_processing.description@{scheduleFunctions.data\_processing.description}}
+\doxysubsubsection{\texorpdfstring{current\_directory}{current\_directory}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1description_afd53326f274a15556791952dee10f571} 
+schedule\+Functions.\+data\+\_\+processing.\+description.\+current\+\_\+directory = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))}
+
+
+
+Definition at line \mbox{\hyperlink{description_8py_source_l00005}{5}} of file \mbox{\hyperlink{description_8py_source}{description.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1description_a5194707fd2ca529e2d086d6b1f1a7c4f}\index{scheduleFunctions.data\_processing.description@{scheduleFunctions.data\_processing.description}!data@{data}}
+\index{data@{data}!scheduleFunctions.data\_processing.description@{scheduleFunctions.data\_processing.description}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1description_a5194707fd2ca529e2d086d6b1f1a7c4f} 
+schedule\+Functions.\+data\+\_\+processing.\+description.\+data = json.\+load(file)}
+
+
+
+Definition at line \mbox{\hyperlink{description_8py_source_l00025}{25}} of file \mbox{\hyperlink{description_8py_source}{description.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1description_a3fb437445d49e092b766de03387e0041}\index{scheduleFunctions.data\_processing.description@{scheduleFunctions.data\_processing.description}!data\_dir@{data\_dir}}
+\index{data\_dir@{data\_dir}!scheduleFunctions.data\_processing.description@{scheduleFunctions.data\_processing.description}}
+\doxysubsubsection{\texorpdfstring{data\_dir}{data\_dir}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1description_a3fb437445d49e092b766de03387e0041} 
+schedule\+Functions.\+data\+\_\+processing.\+description.\+data\+\_\+dir = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1description_a48372b4778a91198e3bb74ee57450a50}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}uploaded\+\_\+schedule\textquotesingle{})}
+
+
+
+Definition at line \mbox{\hyperlink{description_8py_source_l00014}{14}} of file \mbox{\hyperlink{description_8py_source}{description.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1description_aa53226aaa81e2b65547a302a1891dc9e}\index{scheduleFunctions.data\_processing.description@{scheduleFunctions.data\_processing.description}!file\_path@{file\_path}}
+\index{file\_path@{file\_path}!scheduleFunctions.data\_processing.description@{scheduleFunctions.data\_processing.description}}
+\doxysubsubsection{\texorpdfstring{file\_path}{file\_path}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1description_aa53226aaa81e2b65547a302a1891dc9e} 
+schedule\+Functions.\+data\+\_\+processing.\+description.\+file\+\_\+path = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1description_a3fb437445d49e092b766de03387e0041}{data\+\_\+dir}}, "{}filtered.\+json"{})}
+
+
+
+Definition at line \mbox{\hyperlink{description_8py_source_l00023}{23}} of file \mbox{\hyperlink{description_8py_source}{description.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1description_aa93a2f062897c0aeacf0156ef8762d9b}\index{scheduleFunctions.data\_processing.description@{scheduleFunctions.data\_processing.description}!path@{path}}
+\index{path@{path}!scheduleFunctions.data\_processing.description@{scheduleFunctions.data\_processing.description}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1description_aa93a2f062897c0aeacf0156ef8762d9b} 
+schedule\+Functions.\+data\+\_\+processing.\+description.\+path = current\+\_\+directory.\+split(os.\+sep)}
+
+
+
+Definition at line \mbox{\hyperlink{description_8py_source_l00010}{10}} of file \mbox{\hyperlink{description_8py_source}{description.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1description_a42b76d4c2c9da047469064eb38e214b6}\index{scheduleFunctions.data\_processing.description@{scheduleFunctions.data\_processing.description}!prereq\_part@{prereq\_part}}
+\index{prereq\_part@{prereq\_part}!scheduleFunctions.data\_processing.description@{scheduleFunctions.data\_processing.description}}
+\doxysubsubsection{\texorpdfstring{prereq\_part}{prereq\_part}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1description_a42b76d4c2c9da047469064eb38e214b6} 
+schedule\+Functions.\+data\+\_\+processing.\+description.\+prereq\+\_\+part = prereq\+\_\+text.\+split("{}Prereq\+:"{})\mbox{[}1\mbox{]}.strip()}
+
+
+
+Definition at line \mbox{\hyperlink{description_8py_source_l00039}{39}} of file \mbox{\hyperlink{description_8py_source}{description.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1description_aea59182dcc971382787cce7ccf2de61c}\index{scheduleFunctions.data\_processing.description@{scheduleFunctions.data\_processing.description}!prereq\_text@{prereq\_text}}
+\index{prereq\_text@{prereq\_text}!scheduleFunctions.data\_processing.description@{scheduleFunctions.data\_processing.description}}
+\doxysubsubsection{\texorpdfstring{prereq\_text}{prereq\_text}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1description_aea59182dcc971382787cce7ccf2de61c} 
+schedule\+Functions.\+data\+\_\+processing.\+description.\+prereq\+\_\+text = course\+\_\+info.\+get("{}desc"{}, "{}"{})}
+
+
+
+Definition at line \mbox{\hyperlink{description_8py_source_l00035}{35}} of file \mbox{\hyperlink{description_8py_source}{description.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1description_a48372b4778a91198e3bb74ee57450a50}\index{scheduleFunctions.data\_processing.description@{scheduleFunctions.data\_processing.description}!root\_dir@{root\_dir}}
+\index{root\_dir@{root\_dir}!scheduleFunctions.data\_processing.description@{scheduleFunctions.data\_processing.description}}
+\doxysubsubsection{\texorpdfstring{root\_dir}{root\_dir}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1description_a48372b4778a91198e3bb74ee57450a50} 
+schedule\+Functions.\+data\+\_\+processing.\+description.\+root\+\_\+dir = os.\+sep.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1description_aa93a2f062897c0aeacf0156ef8762d9b}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1description_a92aefc3d13a9d0bddfea47eb03de7569}{root\+\_\+index}}+1\mbox{]})}
+
+
+
+Definition at line \mbox{\hyperlink{description_8py_source_l00013}{13}} of file \mbox{\hyperlink{description_8py_source}{description.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1description_a92aefc3d13a9d0bddfea47eb03de7569}\index{scheduleFunctions.data\_processing.description@{scheduleFunctions.data\_processing.description}!root\_index@{root\_index}}
+\index{root\_index@{root\_index}!scheduleFunctions.data\_processing.description@{scheduleFunctions.data\_processing.description}}
+\doxysubsubsection{\texorpdfstring{root\_index}{root\_index}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1description_a92aefc3d13a9d0bddfea47eb03de7569} 
+schedule\+Functions.\+data\+\_\+processing.\+description.\+root\+\_\+index = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})}
+
+
+
+Definition at line \mbox{\hyperlink{description_8py_source_l00012}{12}} of file \mbox{\hyperlink{description_8py_source}{description.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1description_a62e758b66d08af07ccffe09bc6379e28}\index{scheduleFunctions.data\_processing.description@{scheduleFunctions.data\_processing.description}!title@{title}}
+\index{title@{title}!scheduleFunctions.data\_processing.description@{scheduleFunctions.data\_processing.description}}
+\doxysubsubsection{\texorpdfstring{title}{title}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1description_a62e758b66d08af07ccffe09bc6379e28} 
+schedule\+Functions.\+data\+\_\+processing.\+description.\+title = course\+\_\+info.\+get("{}title"{}, "{}Unknown Title"{})}
+
+
+
+Definition at line \mbox{\hyperlink{description_8py_source_l00034}{34}} of file \mbox{\hyperlink{description_8py_source}{description.\+py}}.
+

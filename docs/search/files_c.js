@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['urls_2epy_0',['urls.py',['../urls_8py.html',1,'']]]
+  ['readme_2emd_0',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['run_5fclingo_5fidentifier_2epy_1',['run_clingo_identifier.py',['../run__clingo__identifier_8py.html',1,'']]]
 ];

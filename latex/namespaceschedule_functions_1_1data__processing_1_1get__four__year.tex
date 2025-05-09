@@ -1,0 +1,154 @@
+\doxysection{schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+four\+\_\+year Namespace Reference}
+\hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__four__year}{}\label{namespaceschedule_functions_1_1data__processing_1_1get__four__year}\index{scheduleFunctions.data\_processing.get\_four\_year@{scheduleFunctions.data\_processing.get\_four\_year}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__four__year_a90c9ced87a6e9fdf3ebe12bbf4a7da5e}{get\+\_\+all\+\_\+tables}} (bs soup)
+\begin{DoxyCompactList}\small\item\em Finds all of the tables in the page gathered with BS4. \end{DoxyCompactList}\item 
+list \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__four__year_aa8c52752f19fe9039d555815176edb44}{get\+\_\+table\+\_\+rows}} (table)
+\begin{DoxyCompactList}\small\item\em Given a table, returns all its rows. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__four__year_a1703c8f63d31c951e4fa194cdbdc509c}{process\+\_\+url}} (str \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__four__year_ad59fe003b7f45c4374a1c56a650969d0}{url}})
+\begin{DoxyCompactList}\small\item\em Take a url and find all of the tables contained in the page and return a Result\+Set. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__four__year_a850855f32ee13da0e4f31565ebc5519d}{read\+\_\+four\+\_\+year}} (\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__four__year_ad59fe003b7f45c4374a1c56a650969d0}{url}}, output\+\_\+file)
+\begin{DoxyCompactList}\small\item\em From a url that contains a four year plan process it and produce a JSON file in a structure that we can utilize to then convert into a clingo file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__four__year_aa7325cffde6d86353679f1cff0d64224}{current\+\_\+directory}} = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__four__year_af7b7debdd6bc2ebbba051249684231c7}{data\+\_\+dir}} = os.\+path.\+join(settings.\+BASE\+\_\+\+DIR, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}four\+\_\+year\+\_\+plan\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__four__year_ad013899e7ccdd5e593714d587981bbfe}{filename}} = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__four__year_af7b7debdd6bc2ebbba051249684231c7}{data\+\_\+dir}},\textquotesingle{}four\+Year\+Plan.\+json\textquotesingle{})
+\item 
+str \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__four__year_ad59fe003b7f45c4374a1c56a650969d0}{url}} = \textquotesingle{}https\+://catalog.\+unomaha.\+edu/undergraduate/college-\/information-\/science-\/technology/computer-\/science/computer-\/science-\/bs/\#fouryearplantext\textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__four__year_a90c9ced87a6e9fdf3ebe12bbf4a7da5e}\index{scheduleFunctions.data\_processing.get\_four\_year@{scheduleFunctions.data\_processing.get\_four\_year}!get\_all\_tables@{get\_all\_tables}}
+\index{get\_all\_tables@{get\_all\_tables}!scheduleFunctions.data\_processing.get\_four\_year@{scheduleFunctions.data\_processing.get\_four\_year}}
+\doxysubsubsection{\texorpdfstring{get\_all\_tables()}{get\_all\_tables()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__four__year_a90c9ced87a6e9fdf3ebe12bbf4a7da5e} 
+schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+four\+\_\+year.\+get\+\_\+all\+\_\+tables (\begin{DoxyParamCaption}\item[{bs}]{soup}{}\end{DoxyParamCaption})}
+
+
+
+Finds all of the tables in the page gathered with BS4. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em soup} & The Beautiful\+Soup4 representation of the web page \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A set containing all of the instances of {\ttfamily \texorpdfstring{$<$}{<}table\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}/table\texorpdfstring{$>$}{>}} along with all of its contents 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{get__four__year_8py_source_l00019}{19}} of file \mbox{\hyperlink{get__four__year_8py_source}{get\+\_\+four\+\_\+year.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__four__year_aa8c52752f19fe9039d555815176edb44}\index{scheduleFunctions.data\_processing.get\_four\_year@{scheduleFunctions.data\_processing.get\_four\_year}!get\_table\_rows@{get\_table\_rows}}
+\index{get\_table\_rows@{get\_table\_rows}!scheduleFunctions.data\_processing.get\_four\_year@{scheduleFunctions.data\_processing.get\_four\_year}}
+\doxysubsubsection{\texorpdfstring{get\_table\_rows()}{get\_table\_rows()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__four__year_aa8c52752f19fe9039d555815176edb44} 
+ list schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+four\+\_\+year.\+get\+\_\+table\+\_\+rows (\begin{DoxyParamCaption}\item[{}]{table}{}\end{DoxyParamCaption})}
+
+
+
+Given a table, returns all its rows. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em table} & A table from web page grabbed using BS4 soup object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A 2d list that represents all of the rows from the table 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{get__four__year_8py_source_l00026}{26}} of file \mbox{\hyperlink{get__four__year_8py_source}{get\+\_\+four\+\_\+year.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__four__year_a1703c8f63d31c951e4fa194cdbdc509c}\index{scheduleFunctions.data\_processing.get\_four\_year@{scheduleFunctions.data\_processing.get\_four\_year}!process\_url@{process\_url}}
+\index{process\_url@{process\_url}!scheduleFunctions.data\_processing.get\_four\_year@{scheduleFunctions.data\_processing.get\_four\_year}}
+\doxysubsubsection{\texorpdfstring{process\_url()}{process\_url()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__four__year_a1703c8f63d31c951e4fa194cdbdc509c} 
+schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+four\+\_\+year.\+process\+\_\+url (\begin{DoxyParamCaption}\item[{str}]{url}{}\end{DoxyParamCaption})}
+
+
+
+Take a url and find all of the tables contained in the page and return a Result\+Set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & URL of the page to be searched. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List containing all of the tables in the page. Each of table is a 2d array (list) 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{get__four__year_8py_source_l00051}{51}} of file \mbox{\hyperlink{get__four__year_8py_source}{get\+\_\+four\+\_\+year.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__four__year_a850855f32ee13da0e4f31565ebc5519d}\index{scheduleFunctions.data\_processing.get\_four\_year@{scheduleFunctions.data\_processing.get\_four\_year}!read\_four\_year@{read\_four\_year}}
+\index{read\_four\_year@{read\_four\_year}!scheduleFunctions.data\_processing.get\_four\_year@{scheduleFunctions.data\_processing.get\_four\_year}}
+\doxysubsubsection{\texorpdfstring{read\_four\_year()}{read\_four\_year()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__four__year_a850855f32ee13da0e4f31565ebc5519d} 
+schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+four\+\_\+year.\+read\+\_\+four\+\_\+year (\begin{DoxyParamCaption}\item[{}]{url}{, }\item[{}]{output\+\_\+file}{}\end{DoxyParamCaption})}
+
+
+
+From a url that contains a four year plan process it and produce a JSON file in a structure that we can utilize to then convert into a clingo file. 
+
+For the page in the computer science four year plan, create a JSON file with the class content organized by year and semester. This data is then used to discover conflicts that are higher priority.
+
+@params url A string containing the url for the page with the four year plan @params output\+\_\+file A string that contains the file path and filename that the JSON will be written to.
+
+{\itshape NOTE} to maintain the script\textquotesingle{}s OS agnostic nature, it is suggested to utilize os.\+path.\+join() to join strings or os.\+sep.\+join() to join elements of a list 
+
+Definition at line \mbox{\hyperlink{get__four__year_8py_source_l00088}{88}} of file \mbox{\hyperlink{get__four__year_8py_source}{get\+\_\+four\+\_\+year.\+py}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__four__year_aa7325cffde6d86353679f1cff0d64224}\index{scheduleFunctions.data\_processing.get\_four\_year@{scheduleFunctions.data\_processing.get\_four\_year}!current\_directory@{current\_directory}}
+\index{current\_directory@{current\_directory}!scheduleFunctions.data\_processing.get\_four\_year@{scheduleFunctions.data\_processing.get\_four\_year}}
+\doxysubsubsection{\texorpdfstring{current\_directory}{current\_directory}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__four__year_aa7325cffde6d86353679f1cff0d64224} 
+schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+four\+\_\+year.\+current\+\_\+directory = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))}
+
+
+
+Definition at line \mbox{\hyperlink{get__four__year_8py_source_l00150}{150}} of file \mbox{\hyperlink{get__four__year_8py_source}{get\+\_\+four\+\_\+year.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__four__year_af7b7debdd6bc2ebbba051249684231c7}\index{scheduleFunctions.data\_processing.get\_four\_year@{scheduleFunctions.data\_processing.get\_four\_year}!data\_dir@{data\_dir}}
+\index{data\_dir@{data\_dir}!scheduleFunctions.data\_processing.get\_four\_year@{scheduleFunctions.data\_processing.get\_four\_year}}
+\doxysubsubsection{\texorpdfstring{data\_dir}{data\_dir}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__four__year_af7b7debdd6bc2ebbba051249684231c7} 
+schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+four\+\_\+year.\+data\+\_\+dir = os.\+path.\+join(settings.\+BASE\+\_\+\+DIR, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}four\+\_\+year\+\_\+plan\textquotesingle{})}
+
+
+
+Definition at line \mbox{\hyperlink{get__four__year_8py_source_l00154}{154}} of file \mbox{\hyperlink{get__four__year_8py_source}{get\+\_\+four\+\_\+year.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__four__year_ad013899e7ccdd5e593714d587981bbfe}\index{scheduleFunctions.data\_processing.get\_four\_year@{scheduleFunctions.data\_processing.get\_four\_year}!filename@{filename}}
+\index{filename@{filename}!scheduleFunctions.data\_processing.get\_four\_year@{scheduleFunctions.data\_processing.get\_four\_year}}
+\doxysubsubsection{\texorpdfstring{filename}{filename}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__four__year_ad013899e7ccdd5e593714d587981bbfe} 
+schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+four\+\_\+year.\+filename = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__four__year_af7b7debdd6bc2ebbba051249684231c7}{data\+\_\+dir}},\textquotesingle{}four\+Year\+Plan.\+json\textquotesingle{})}
+
+
+
+Definition at line \mbox{\hyperlink{get__four__year_8py_source_l00160}{160}} of file \mbox{\hyperlink{get__four__year_8py_source}{get\+\_\+four\+\_\+year.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__four__year_ad59fe003b7f45c4374a1c56a650969d0}\index{scheduleFunctions.data\_processing.get\_four\_year@{scheduleFunctions.data\_processing.get\_four\_year}!url@{url}}
+\index{url@{url}!scheduleFunctions.data\_processing.get\_four\_year@{scheduleFunctions.data\_processing.get\_four\_year}}
+\doxysubsubsection{\texorpdfstring{url}{url}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__four__year_ad59fe003b7f45c4374a1c56a650969d0} 
+str schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+four\+\_\+year.\+url = \textquotesingle{}https\+://catalog.\+unomaha.\+edu/undergraduate/college-\/information-\/science-\/technology/computer-\/science/computer-\/science-\/bs/\#fouryearplantext\textquotesingle{}}
+
+
+
+Definition at line \mbox{\hyperlink{get__four__year_8py_source_l00161}{161}} of file \mbox{\hyperlink{get__four__year_8py_source}{get\+\_\+four\+\_\+year.\+py}}.
+

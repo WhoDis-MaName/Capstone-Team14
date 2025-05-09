@@ -1,0 +1,152 @@
+\doxysection{clingo\+\_\+helpers.\+py}
+\hypertarget{clingo__helpers_8py_source}{}\label{clingo__helpers_8py_source}\index{scheduleFunctions/views/clingo\_helpers.py@{scheduleFunctions/views/clingo\_helpers.py}}
+\mbox{\hyperlink{clingo__helpers_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00001}\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clingo__helpers}{00001}}\ \textcolor{keyword}{from}\ django.core.files.base\ \textcolor{keyword}{import}\ ContentFile}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00002}00002\ \textcolor{keyword}{from}\ django.core.files.storage\ \textcolor{keyword}{import}\ default\_storage}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00003}00003\ \textcolor{keyword}{from}\ datetime\ \textcolor{keyword}{import}\ datetime}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00004}00004\ \textcolor{keyword}{from}\ ..to\_database\ \textcolor{keyword}{import}\ store\_schedule\_changes}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00005}00005\ \textcolor{keyword}{import}\ multiprocessing}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00006}00006\ \textcolor{keyword}{import}\ clingo}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00007}00007\ \textcolor{keyword}{import}\ re}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00008}00008\ \textcolor{keyword}{import}\ json}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00009}00009\ \textcolor{keyword}{import}\ os}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00012}00012\ \textcolor{comment}{\#\ ===\ Utility\ Functions\ ===}}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00017}\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clingo__helpers_ac88f6287f2dee6d523277416175af38c}{00017}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clingo__helpers_ac88f6287f2dee6d523277416175af38c}{get\_root\_path}}():}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00018}00018\ \ \ \ \ path\ =\ os.path.dirname(os.path.realpath(\_\_file\_\_)).split(os.sep)}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00019}00019\ \ \ \ \ root\_index\ =\ path.index(\textcolor{stringliteral}{"{}Capstone-\/Team14"{}})}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{return}\ os.sep.join(path[:\ root\_index\ +\ 1])}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00026}\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clingo__helpers_afb5330a0d1126a4137286577ed2e3406}{00026}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clingo__helpers_afb5330a0d1126a4137286577ed2e3406}{load\_optimized\_json}}(path):}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{with}\ open(path,\ \textcolor{stringliteral}{"{}r"{}})\ \textcolor{keyword}{as}\ f:}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ json.load(f)}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00031}00031\ \textcolor{comment}{\#\ ===\ JSON\ Conversion\ Functions\ ===}}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00037}\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clingo__helpers_ac40484b14bc79789b7f4f36a85b3e9e8}{00037}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clingo__helpers_ac40484b14bc79789b7f4f36a85b3e9e8}{convert\_time}}(t):}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00038}00038\ \ \ \ \ t\ =\ int(t)}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00039}00039\ \ \ \ \ hours\ =\ t\ //\ 60}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00040}00040\ \ \ \ \ minutes\ =\ t\ \%\ 60}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00041}00041\ \ \ \ \ suffix\ =\ \textcolor{stringliteral}{"{}AM"{}}\ \textcolor{keywordflow}{if}\ hours\ <\ 12\ \textcolor{keywordflow}{else}\ \textcolor{stringliteral}{"{}PM"{}}}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00042}00042\ \ \ \ \ hours\ =\ hours\ \textcolor{keywordflow}{if}\ hours\ <=\ 12\ \textcolor{keywordflow}{else}\ hours\ -\/\ 12}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{return}\ f\textcolor{stringliteral}{"{}\{hours\}:\{minutes:02d\}\{suffix\}"{}}}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00049}\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clingo__helpers_a1ddbe33eb21812bdc970a765406e67e9}{00049}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clingo__helpers_a1ddbe33eb21812bdc970a765406e67e9}{parse\_line}}(line):}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00050}00050\ \ \ \ \ \textcolor{comment}{\#\ Get\ the\ scheduled\_section/8\ predicate\ -\/\ list\ of\ all\ sections\ and\ their\ timeslots}}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00051}00051\ \ \ \ \ scheduled\_section\_match\ =\ re.match(\textcolor{stringliteral}{r"{}scheduled\_section\(\backslash\)((.*?)\(\backslash\))"{}},\ line.strip())}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00053}00053\ \ \ \ \ \textcolor{comment}{\#\ Get\ the\ schedule\_change/4\ predicate\ -\/\ list\ of\ only\ the\ changed\ sections\ and\ their\ new\ timeslots}}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00054}00054\ \ \ \ \ schedule\_change\_match\ =\ re.match(\textcolor{stringliteral}{r"{}schedule\_change\(\backslash\)((.*?)\(\backslash\))"{}},\ line.strip())}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{if}\ scheduled\_section\_match:}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00057}00057\ \ \ \ \ \ \ \ \ fields\ =\ scheduled\_section\_match.group(1).split(\textcolor{stringliteral}{"{},"{}})}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ len(fields)\ !=\ 8:}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00060}00060\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ subject\_course,}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ section,}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ section\_id,}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ start,}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ end,}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ days,}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ location,}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ instructor,}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00069}00069\ \ \ \ \ \ \ \ \ )\ =\ fields}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00070}00070\ \ \ \ \ \ \ \ \ subject\ =\ subject\_course[:4].upper()}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00071}00071\ \ \ \ \ \ \ \ \ course\_number\ =\ subject\_course[4:]}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00072}00072\ \ \ \ \ \ \ \ \ section\ =\ section[1:]}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00073}00073\ \ \ \ \ \ \ \ \ section\_id\ =\ section\_id[1:]}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00074}00074\ \ \ \ \ \ \ \ \ time\_str\ =\ f\textcolor{stringliteral}{"{}\{convert\_time(start)\}\ -\/\ \{convert\_time(end)\}"{}}}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ subject,}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ course\_number,}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ section,}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Class\ Number"{}}:\ section\_id,}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Date"{}}:\ \textcolor{stringliteral}{"{}Aug\ 26,\ 2024\ -\/\ Dec\ 20,\ 2024"{}},}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Time"{}}:\ time\_str,}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Days"{}}:\ days.upper(),}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Location"{}}:\ location.replace(\textcolor{stringliteral}{"{}\_"{}},\ \textcolor{stringliteral}{"{}\ "{}}).title(),}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Instructor"{}}:\ instructor.replace(\textcolor{stringliteral}{"{}\_"{}},\ \textcolor{stringliteral}{"{}\ "{}}).title(),}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00087}00087\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00088}00088\ \ \ \ \ \textcolor{keywordflow}{if}\ schedule\_change\_match:}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00089}00089\ \ \ \ \ \ \ \ \ fields\ =\ schedule\_change\_match.group(1).split(\textcolor{stringliteral}{"{},"{}})}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ len(fields)\ !=\ 4:}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00092}00092\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ section\_id,}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ start,}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ end,}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ days,}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00097}00097\ \ \ \ \ \ \ \ \ )\ =\ fields}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00098}00098\ \ \ \ \ \ \ \ \ section\_id\ =\ int(section\_id[1:])}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00099}00099\ \ \ \ \ \ \ \ \ time\_start\ =\ datetime.strptime(\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clingo__helpers_ac40484b14bc79789b7f4f36a85b3e9e8}{convert\_time}}(start),\ \textcolor{stringliteral}{"{}\%I:\%M\%p"{}})}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00100}00100\ \ \ \ \ \ \ \ \ time\_end\ =\ datetime.strptime(\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clingo__helpers_ac40484b14bc79789b7f4f36a85b3e9e8}{convert\_time}}(end),\ \textcolor{stringliteral}{"{}\%I:\%M\%p"{}})}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ store\_schedule\_changes(section\_id,\ time\_start,\ time\_end,\ days)}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00107}\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clingo__helpers_a3de6fff5db7dbb7c9a3db28d848e7357}{00107}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clingo__helpers_a3de6fff5db7dbb7c9a3db28d848e7357}{convert\_to\_json}}(symbols,\ output\_file):}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00108}00108\ \ \ \ \ data\ =\ \{\}}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00109}00109\ \ \ \ \ \textcolor{keywordflow}{for}\ line\ \textcolor{keywordflow}{in}\ symbols:}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00110}00110\ \ \ \ \ \ \ \ \ parsed\ =\ \mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clingo__helpers_a1ddbe33eb21812bdc970a765406e67e9}{parse\_line}}(line)}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ parsed:}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue}}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00113}00113\ \ \ \ \ \ \ \ \ subject,\ course\_number,\ section,\ section\_data\ =\ parsed}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ subject\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ data:}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ data[subject]\ =\ \{\}}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ course\_number\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ data[subject]:}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ data[subject][course\_number]\ =\ \{}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}title"{}}:\ \textcolor{stringliteral}{"{}TBD"{}},}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}desc"{}}:\ \textcolor{stringliteral}{"{}TBD"{}},}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}prereq"{}}:\ \textcolor{stringliteral}{"{}-\/"{}},}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}sections"{}}:\ \{\},}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00123}00123\ \ \ \ \ \ \ \ \ data[subject][course\_number][\textcolor{stringliteral}{"{}sections"{}}][section]\ =\ section\_data}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00125}00125\ \ \ \ \ \textcolor{keyword}{with}\ open(output\_file,\ \textcolor{stringliteral}{"{}w"{}})\ \textcolor{keyword}{as}\ f:}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00126}00126\ \ \ \ \ \ \ \ \ json.dump(data,\ f,\ indent=2)}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00133}\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clingo__helpers_a0be4d3f127672c31d8b35fecbae7ca74}{00133}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clingo__helpers_a0be4d3f127672c31d8b35fecbae7ca74}{run\_clingo\_optimization}}(asp\_filename,\ asp\_solver):}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00134}00134\ \ \ \ \ root\_dir\ =\ \mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clingo__helpers_ac88f6287f2dee6d523277416175af38c}{get\_root\_path}}()}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00135}00135\ \ \ \ \ asp\_path\ =\ os.path.join(root\_dir,\ \textcolor{stringliteral}{"{}media"{}},\ asp\_filename)}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00136}00136\ \ \ \ \ minimizer\_path\ =\ os.path.join(root\_dir,\ \textcolor{stringliteral}{"{}clingo"{}},\ asp\_solver)}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00138}00138\ \ \ \ \ available\_threads\ =\ multiprocessing.cpu\_count()}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00140}00140\ \ \ \ \ print(f\textcolor{stringliteral}{"{}Available\ threads\ on\ machine:\ \{available\_threads\}"{}})}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00142}00142\ \ \ \ \ ctl\ =\ clingo.Control([\textcolor{stringliteral}{"{}-\/t"{}},\ str(available\_threads)])}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00143}00143\ \ \ \ \ ctl.load(asp\_path)}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00144}00144\ \ \ \ \ ctl.load(minimizer\_path)}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00145}00145\ \ \ \ \ ctl.ground()}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00147}00147\ \ \ \ \ last\_model\_symbols\ =\ []}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00149}00149\ \ \ \ \ \textcolor{keyword}{def\ }on\_model(model):}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00150}00150\ \ \ \ \ \ \ \ \ shown\_symbols\ =\ model.symbols(shown=\textcolor{keyword}{True})}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00151}00151\ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}New\ model\ (potentially\ better):"{}})}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00152}00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ sym\ \textcolor{keywordflow}{in}\ shown\_symbols:}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ print(str(sym))}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00154}00154\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Overwrite\ with\ the\ current\ (better)\ model}}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00155}00155\ \ \ \ \ \ \ \ \ last\_model\_symbols.clear()}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00156}00156\ \ \ \ \ \ \ \ \ last\_model\_symbols.extend(str(sym)\ \textcolor{keywordflow}{for}\ sym\ \textcolor{keywordflow}{in}\ shown\_symbols)}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00158}00158\ \ \ \ \ ctl.solve(on\_model=on\_model)}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00160}00160\ \ \ \ \ \textcolor{keywordflow}{return}\ last\_model\_symbols}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00167}\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clingo__helpers_a0a7ebc9cb7b5fa2e25c70850a190d61c}{00167}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clingo__helpers_a0a7ebc9cb7b5fa2e25c70850a190d61c}{save\_optimized\_file}}(data,\ filename):}
+\DoxyCodeLine{\Hypertarget{clingo__helpers_8py_source_l00168}00168\ \ \ \ \ \textcolor{keywordflow}{return}\ default\_storage.save(filename,\ ContentFile(json.dumps(data,\ indent=2)))}
+
+\end{DoxyCode}

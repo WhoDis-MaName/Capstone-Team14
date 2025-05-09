@@ -6,23 +6,60 @@ Inheritance diagram for schedule\+Functions.\+models.\+Day\+:\begin{figure}[H]
 \includegraphics[height=2.000000cm]{classschedule_functions_1_1models_1_1_day}
 \end{center}
 \end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{classschedule_functions_1_1models_1_1_day_a8473e309ee1bc3de14876966cce82c0c}{print\+\_\+clingo}} (self)
+\item 
+\mbox{\hyperlink{classschedule_functions_1_1models_1_1_day_a7713c1fbb957e3b24f51ea5950a9ca6c}{\+\_\+\+\_\+str\+\_\+\+\_\+}} (self)
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-str \mbox{\hyperlink{classschedule_functions_1_1models_1_1_day_a4ca703600a56798e8378609b27b4f79a}{MON}} = "{}Mon"{}
+str \mbox{\hyperlink{classschedule_functions_1_1models_1_1_day_a4ca703600a56798e8378609b27b4f79a}{MON}} = "{}m"{}
 \item 
-str \mbox{\hyperlink{classschedule_functions_1_1models_1_1_day_ac9853412b98097ad50a973bb35b69c74}{TUE}} = "{}Tues"{}
+str \mbox{\hyperlink{classschedule_functions_1_1models_1_1_day_ac9853412b98097ad50a973bb35b69c74}{TUE}} = "{}t"{}
 \item 
-str \mbox{\hyperlink{classschedule_functions_1_1models_1_1_day_a7f7fef9915bab29e6e14ce29b0a9bc9f}{WED}} = "{}Wed"{}
+str \mbox{\hyperlink{classschedule_functions_1_1models_1_1_day_a7f7fef9915bab29e6e14ce29b0a9bc9f}{WED}} = "{}w"{}
 \item 
-str \mbox{\hyperlink{classschedule_functions_1_1models_1_1_day_ad91cf26a8d9a61cca001beb2aefeebdb}{THU}} = "{}Thu"{}
+str \mbox{\hyperlink{classschedule_functions_1_1models_1_1_day_ad91cf26a8d9a61cca001beb2aefeebdb}{THU}} = "{}r"{}
 \item 
-str \mbox{\hyperlink{classschedule_functions_1_1models_1_1_day_aa4f139282a4b33949f6344b8c05a8603}{FRI}} = "{}FRI"{}
+str \mbox{\hyperlink{classschedule_functions_1_1models_1_1_day_aa4f139282a4b33949f6344b8c05a8603}{FRI}} = "{}f"{}
 \item 
 dict \mbox{\hyperlink{classschedule_functions_1_1models_1_1_day_a2dba4affcda985acbf32566b07e9700b}{DAY\+\_\+\+OF\+\_\+\+WEEK\+\_\+\+CHOICES}}
 \item 
 \mbox{\hyperlink{classschedule_functions_1_1models_1_1_day_a0e13e5be1c42bd7b780814beaa19fe05}{day\+\_\+of\+\_\+week}}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00024}{24}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classschedule_functions_1_1models_1_1_day_a7713c1fbb957e3b24f51ea5950a9ca6c}\index{scheduleFunctions.models.Day@{scheduleFunctions.models.Day}!\_\_str\_\_@{\_\_str\_\_}}
+\index{\_\_str\_\_@{\_\_str\_\_}!scheduleFunctions.models.Day@{scheduleFunctions.models.Day}}
+\doxysubsubsection{\texorpdfstring{\_\_str\_\_()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_day_a7713c1fbb957e3b24f51ea5950a9ca6c} 
+schedule\+Functions.\+models.\+Day.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00046}{46}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
+
+\Hypertarget{classschedule_functions_1_1models_1_1_day_a8473e309ee1bc3de14876966cce82c0c}\index{scheduleFunctions.models.Day@{scheduleFunctions.models.Day}!print\_clingo@{print\_clingo}}
+\index{print\_clingo@{print\_clingo}!scheduleFunctions.models.Day@{scheduleFunctions.models.Day}}
+\doxysubsubsection{\texorpdfstring{print\_clingo()}{print\_clingo()}}
+{\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_day_a8473e309ee1bc3de14876966cce82c0c} 
+ str schedule\+Functions.\+models.\+Day.\+print\+\_\+clingo (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00042}{42}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
+
 
 
 \doxysubsection{Member Data Documentation}
@@ -35,12 +72,16 @@ schedule\+Functions.\+models.\+Day.\+day\+\_\+of\+\_\+week\hspace{0.3cm}{\ttfami
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{=\ \ models.CharField(}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ max\_length=3,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ max\_length=4,}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ choices=DAY\_OF\_WEEK\_CHOICES,}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ default=MON,}
 \DoxyCodeLine{\ \ \ \ )}
 
 \end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00037}{37}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
+
 \Hypertarget{classschedule_functions_1_1models_1_1_day_a2dba4affcda985acbf32566b07e9700b}\index{scheduleFunctions.models.Day@{scheduleFunctions.models.Day}!DAY\_OF\_WEEK\_CHOICES@{DAY\_OF\_WEEK\_CHOICES}}
 \index{DAY\_OF\_WEEK\_CHOICES@{DAY\_OF\_WEEK\_CHOICES}!scheduleFunctions.models.Day@{scheduleFunctions.models.Day}}
 \doxysubsubsection{\texorpdfstring{DAY\_OF\_WEEK\_CHOICES}{DAY\_OF\_WEEK\_CHOICES}}
@@ -58,35 +99,59 @@ dict schedule\+Functions.\+models.\+Day.\+DAY\+\_\+\+OF\+\_\+\+WEEK\+\_\+\+CHOIC
 \DoxyCodeLine{\ \ \ \ \}}
 
 \end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00030}{30}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
+
 \Hypertarget{classschedule_functions_1_1models_1_1_day_aa4f139282a4b33949f6344b8c05a8603}\index{scheduleFunctions.models.Day@{scheduleFunctions.models.Day}!FRI@{FRI}}
 \index{FRI@{FRI}!scheduleFunctions.models.Day@{scheduleFunctions.models.Day}}
 \doxysubsubsection{\texorpdfstring{FRI}{FRI}}
 {\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_day_aa4f139282a4b33949f6344b8c05a8603} 
-str schedule\+Functions.\+models.\+Day.\+FRI = "{}FRI"{}\hspace{0.3cm}{\ttfamily [static]}}
+str schedule\+Functions.\+models.\+Day.\+FRI = "{}f"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00029}{29}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
 
 \Hypertarget{classschedule_functions_1_1models_1_1_day_a4ca703600a56798e8378609b27b4f79a}\index{scheduleFunctions.models.Day@{scheduleFunctions.models.Day}!MON@{MON}}
 \index{MON@{MON}!scheduleFunctions.models.Day@{scheduleFunctions.models.Day}}
 \doxysubsubsection{\texorpdfstring{MON}{MON}}
 {\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_day_a4ca703600a56798e8378609b27b4f79a} 
-str schedule\+Functions.\+models.\+Day.\+MON = "{}Mon"{}\hspace{0.3cm}{\ttfamily [static]}}
+str schedule\+Functions.\+models.\+Day.\+MON = "{}m"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00025}{25}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
 
 \Hypertarget{classschedule_functions_1_1models_1_1_day_ad91cf26a8d9a61cca001beb2aefeebdb}\index{scheduleFunctions.models.Day@{scheduleFunctions.models.Day}!THU@{THU}}
 \index{THU@{THU}!scheduleFunctions.models.Day@{scheduleFunctions.models.Day}}
 \doxysubsubsection{\texorpdfstring{THU}{THU}}
 {\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_day_ad91cf26a8d9a61cca001beb2aefeebdb} 
-str schedule\+Functions.\+models.\+Day.\+THU = "{}Thu"{}\hspace{0.3cm}{\ttfamily [static]}}
+str schedule\+Functions.\+models.\+Day.\+THU = "{}r"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00028}{28}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
 
 \Hypertarget{classschedule_functions_1_1models_1_1_day_ac9853412b98097ad50a973bb35b69c74}\index{scheduleFunctions.models.Day@{scheduleFunctions.models.Day}!TUE@{TUE}}
 \index{TUE@{TUE}!scheduleFunctions.models.Day@{scheduleFunctions.models.Day}}
 \doxysubsubsection{\texorpdfstring{TUE}{TUE}}
 {\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_day_ac9853412b98097ad50a973bb35b69c74} 
-str schedule\+Functions.\+models.\+Day.\+TUE = "{}Tues"{}\hspace{0.3cm}{\ttfamily [static]}}
+str schedule\+Functions.\+models.\+Day.\+TUE = "{}t"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00026}{26}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
 
 \Hypertarget{classschedule_functions_1_1models_1_1_day_a7f7fef9915bab29e6e14ce29b0a9bc9f}\index{scheduleFunctions.models.Day@{scheduleFunctions.models.Day}!WED@{WED}}
 \index{WED@{WED}!scheduleFunctions.models.Day@{scheduleFunctions.models.Day}}
 \doxysubsubsection{\texorpdfstring{WED}{WED}}
 {\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_day_a7f7fef9915bab29e6e14ce29b0a9bc9f} 
-str schedule\+Functions.\+models.\+Day.\+WED = "{}Wed"{}\hspace{0.3cm}{\ttfamily [static]}}
+str schedule\+Functions.\+models.\+Day.\+WED = "{}w"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00027}{27}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
 
 
 

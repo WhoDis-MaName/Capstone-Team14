@@ -2,16 +2,16 @@ var namespaceschedule_functions =
 [
     [ "admin", "namespaceschedule_functions_1_1admin.html", null ],
     [ "apps", "namespaceschedule_functions_1_1apps.html", "namespaceschedule_functions_1_1apps" ],
-    [ "migrations", "namespaceschedule_functions_1_1migrations.html", null ],
+    [ "data_processing", "namespaceschedule_functions_1_1data__processing.html", "namespaceschedule_functions_1_1data__processing" ],
+    [ "migrations", "namespaceschedule_functions_1_1migrations.html", "namespaceschedule_functions_1_1migrations" ],
     [ "models", "namespaceschedule_functions_1_1models.html", "namespaceschedule_functions_1_1models" ],
     [ "tests", "namespaceschedule_functions_1_1tests.html", "namespaceschedule_functions_1_1tests" ],
-    [ "views", "namespaceschedule_functions_1_1views.html", [
-      [ "dashboard_view", "namespaceschedule_functions_1_1views.html#adcfb91d67951bf02743f2639543f069d", null ],
-      [ "get_section_details", "namespaceschedule_functions_1_1views.html#ad7faf09810096992b817042c3d1fc657", null ],
-      [ "login", "namespaceschedule_functions_1_1views.html#aef22d9ac19337b024ff2028a3615fe4e", null ],
-      [ "run_script", "namespaceschedule_functions_1_1views.html#a6c9bae8f4dde6bf381411c24471f1145", null ],
-      [ "schedule_view", "namespaceschedule_functions_1_1views.html#af0105af3b32ca53bb79e12afbcfc7474", null ],
-      [ "example_conflict_list", "namespaceschedule_functions_1_1views.html#ad8fa3e75e365246679d5ae96e1aa706e", null ],
-      [ "example_course_list", "namespaceschedule_functions_1_1views.html#af7edf771fc0ed92eb0233b2b0730cd44", null ]
-    ] ]
+    [ "to_database", "namespaceschedule_functions_1_1to__database.html", [
+      [ "clear_schedule", "namespaceschedule_functions_1_1to__database.html#a3f5c56a962730bbad86f49e9d77e3517", null ],
+      [ "store_plan", "namespaceschedule_functions_1_1to__database.html#aa0b0149ea4ba6f9a2c2452281af8a819", null ],
+      [ "store_requirements", "namespaceschedule_functions_1_1to__database.html#a55ac9e4ab4a5621c448ff2794cc04f5c", null ],
+      [ "store_schedule", "namespaceschedule_functions_1_1to__database.html#a590750cd3f9efbf84b8a977dc418f399", null ],
+      [ "store_schedule_changes", "namespaceschedule_functions_1_1to__database.html#a533b1ee0f04c32b8de606fcf0b5cc1b1", null ]
+    ] ],
+    [ "views", "namespaceschedule_functions_1_1views.html", "namespaceschedule_functions_1_1views" ]
 ];

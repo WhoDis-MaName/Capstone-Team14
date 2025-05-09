@@ -1,0 +1,36 @@
+\doxysection{run\+\_\+clingo\+\_\+identifier.\+py}
+\hypertarget{run__clingo__identifier_8py_source}{}\label{run__clingo__identifier_8py_source}\index{scheduleFunctions/views/run\_clingo\_identifier.py@{scheduleFunctions/views/run\_clingo\_identifier.py}}
+\mbox{\hyperlink{run__clingo__identifier_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00001}\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1run__clingo__identifier}{00001}}\ \textcolor{keyword}{from}\ django.http\ \textcolor{keyword}{import}\ JsonResponse}
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00002}00002\ \textcolor{keyword}{import}\ os}
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00003}00003\ \textcolor{keyword}{import}\ clingo}
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00004}00004\ \textcolor{keyword}{from}\ ..models\ \textcolor{keyword}{import}\ FilteredUpload}
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00005}00005\ \textcolor{keyword}{from}\ django.core.files.storage\ \textcolor{keyword}{import}\ default\_storage}
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00006}00006\ \textcolor{keyword}{from}\ .clingo\_helpers\ \textcolor{keyword}{import}\ run\_clingo\_optimization}
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00016}\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1run__clingo__identifier_ac9cfc8d4fcaa2e1671d63ec4c8339a71}{00016}}\ \textcolor{keyword}{def\ }run\_clingo\_identifier(request):}
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00018}00018\ \ \ \ \ \ \ \ \ asp\_filename\ =\ request.session.get(\textcolor{stringliteral}{"{}asp\_filename"{}})}
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ default\_storage.exists(asp\_filename):}
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ JsonResponse(}
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}error"{}}:\ f\textcolor{stringliteral}{"{}ASP\ file\ '\{asp\_filename\}'\ not\ found."{}}\},\ status=404}
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00024}00024\ \ \ \ \ \ \ \ \ last\_model\_symbols\ =\ run\_clingo\_optimization(}
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ asp\_filename,\ \textcolor{stringliteral}{"{}overlap\_identifier.lp"{}}}
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00026}00026\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ JsonResponse(}
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}status"{}}:\ \textcolor{stringliteral}{"{}success"{}},}
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}message"{}}:\ f\textcolor{stringliteral}{"{}Clingo\ solver\ executed\ on\ \{asp\_filename\}\ with\ result\ =\ \{last\_model\_symbols\}"{}},}
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}models"{}}:\ last\_model\_symbols,}
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00034}00034\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{except}\ Exception\ \textcolor{keyword}{as}\ e:}
+\DoxyCodeLine{\Hypertarget{run__clingo__identifier_8py_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ JsonResponse(\{\textcolor{stringliteral}{"{}status"{}}:\ \textcolor{stringliteral}{"{}error"{}},\ \textcolor{stringliteral}{"{}message"{}}:\ str(e)\},\ status=500)}
+
+\end{DoxyCode}

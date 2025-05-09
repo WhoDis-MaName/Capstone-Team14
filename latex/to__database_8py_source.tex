@@ -1,0 +1,333 @@
+\doxysection{to\+\_\+database.\+py}
+\hypertarget{to__database_8py_source}{}\label{to__database_8py_source}\index{scheduleFunctions/to\_database.py@{scheduleFunctions/to\_database.py}}
+\mbox{\hyperlink{to__database_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00001}\mbox{\hyperlink{namespaceschedule_functions_1_1to__database}{00001}}\ \textcolor{keyword}{import}\ os}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00002}00002\ \textcolor{keyword}{import}\ json}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00003}00003\ \textcolor{keyword}{import}\ re}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00004}00004\ \textcolor{keyword}{from}\ datetime\ \textcolor{keyword}{import}\ datetime\ \textcolor{keyword}{as}\ date}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00005}00005\ \textcolor{keyword}{from}\ django.db.models\ \textcolor{keyword}{import}\ Count}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00007}00007\ \textcolor{keyword}{from}\ .models\ \textcolor{keyword}{import}\ *}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00009}\mbox{\hyperlink{namespaceschedule_functions_1_1to__database_a55ac9e4ab4a5621c448ff2794cc04f5c}{00009}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceschedule_functions_1_1to__database_a55ac9e4ab4a5621c448ff2794cc04f5c}{store\_requirements}}(json\_file):}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{with}\ open(json\_file,\ \textcolor{stringliteral}{"{}r"{}})\ \textcolor{keyword}{as}\ file:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00011}00011\ \ \ \ \ \ \ \ \ data\ =\ json.load(file)}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00013}00013\ \ \ \ \ \textcolor{comment}{\#\ If\ the\ JSON\ root\ is\ a\ list,\ assume\ it\ contains\ a\ dictionary}}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00014}00014\ \ \ \ \ \textcolor{keywordflow}{if}\ isinstance(data,\ list)\ \textcolor{keywordflow}{and}\ len(data)\ >\ 0:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00015}00015\ \ \ \ \ \ \ \ \ data\ =\ data[0]\ \ \textcolor{comment}{\#\ Take\ the\ first\ element}}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ isinstance(data,\ dict):}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{raise}\ ValueError(}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Invalid\ JSON\ structure:\ Expected\ a\ dictionary\ at\ the\ top\ level."{}}}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00020}00020\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00021}00021\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{for}\ major\_label\ \textcolor{keywordflow}{in}\ data.keys():}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ requirement\_label\ \textcolor{keywordflow}{in}\ data[major\_label].keys():}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ requirement\ =\ Requirement.objects.get(major\_label=major\_label,\ requirement\_label=requirement\_label)}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{except}\ Requirement.DoesNotExist:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ requirement\ =\ \mbox{\hyperlink{classschedule_functions_1_1models_1_1_requirement}{Requirement}}(}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ major\_label\ =\ major\_label,}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ requirement\_label\ =\ requirement\_label,}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ total\_credits\ =\ data[major\_label][requirement\_label][\textcolor{stringliteral}{'credits'}]}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ requirement.save()}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ courses\ =\ data[major\_label][requirement\_label][\textcolor{stringliteral}{'classes'}]}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ course\_list\ =\ []}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ course\ \textcolor{keywordflow}{in}\ courses:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ subject\ =\ course[:-\/4]}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ course\_number\ =\ int(course[-\/4:])}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_course\ =\ Course.objects.get(subject\ =\ subject,\ class\_number=course\_number)}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{except}\ Course.DoesNotExist:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_course\ =\ \mbox{\hyperlink{classschedule_functions_1_1models_1_1_course}{Course}}(}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ subject\ =\ subject,\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ class\_number=course\_number,}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ weight\ =\ course\_number\ //\ 1000}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_course.save()}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ course\_list.append(selected\_course)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ requirement.course\_options.add(*course\_list)}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00052}\mbox{\hyperlink{namespaceschedule_functions_1_1to__database_aa0b0149ea4ba6f9a2c2452281af8a819}{00052}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceschedule_functions_1_1to__database_aa0b0149ea4ba6f9a2c2452281af8a819}{store\_plan}}(json\_file)\ -\/>\ None:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00053}00053\ \ \ \ \ \textcolor{keyword}{with}\ open(json\_file,\ \textcolor{stringliteral}{"{}r"{}})\ \textcolor{keyword}{as}\ file:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00054}00054\ \ \ \ \ \ \ \ \ data\ =\ json.load(file)}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00056}00056\ \ \ \ \ \textcolor{comment}{\#\ If\ the\ JSON\ root\ is\ a\ list,\ assume\ it\ contains\ a\ dictionary}}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{if}\ isinstance(data,\ list)\ \textcolor{keywordflow}{and}\ len(data)\ >\ 0:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00058}00058\ \ \ \ \ \ \ \ \ data\ =\ data[0]\ \ \textcolor{comment}{\#\ Take\ the\ first\ element}}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00060}00060\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ isinstance(data,\ dict):}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{raise}\ ValueError(}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Invalid\ JSON\ structure:\ Expected\ a\ dictionary\ at\ the\ top\ level."{}}}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00063}00063\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00064}00064\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00065}00065\ \ \ \ \ \textcolor{keywordflow}{for}\ course,\ course\_details\ \textcolor{keywordflow}{in}\ data.items():}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00066}00066\ \ \ \ \ \ \ \ \ subject\ =\ course[:-\/4]}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00067}00067\ \ \ \ \ \ \ \ \ name\ =\ course\_details[\textcolor{stringliteral}{'name'}]}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ print(course,\ name)}}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00069}00069\ \ \ \ \ \ \ \ \ course\_number\ =\ int(course[-\/4:])}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00070}00070\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ selected\_course\ =\ Course.objects.get(subject=subject,\ class\_number=course\_number)\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ selected\_course.name\ =\ name}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ selected\_course\ =\ selected\_course\ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{except}\ Course.DoesNotExist:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ selected\_course\ =\ \mbox{\hyperlink{classschedule_functions_1_1models_1_1_course}{Course}}(}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name\ =\ name,}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ subject\ =\ subject,\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ class\_number=course\_number,}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ weight\ =\ course\_number\ //\ 1000}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{finally}:\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ selected\_course.credits\ =\ int(course\_details[\textcolor{stringliteral}{'credits'}])}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00085}00085\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00086}00086\ \ \ \ \ \ \ \ \ equivalent\_courses\ =\ []}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ other\_course\ \textcolor{keywordflow}{in}\ course\_details[\textcolor{stringliteral}{'equivalent\_courses'}]:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_other\_course\ =\ Course.objects.get(}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ subject=other\_course[:-\/4],\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ class\_number=int(other\_course[-\/4:]))}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{except}\ Course.DoesNotExist:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_other\_course\ =\ \mbox{\hyperlink{classschedule_functions_1_1models_1_1_course}{Course}}(}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ subject=other\_course[:-\/4],\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ class\_number=int(other\_course[-\/4:]),}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ weight\ =\ int(other\_course[-\/4:])\ //\ 1000}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_other\_course.save()}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ equivalent\_courses.append(selected\_other\_course)}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00101}00101\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00102}00102\ \ \ \ \ \ \ \ \ same\_semester\ =\ []}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ other\_course\ \textcolor{keywordflow}{in}\ course\_details[\textcolor{stringliteral}{'same\_semester'}]:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_other\_course\ =\ Course.objects.get(}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ subject=other\_course[:-\/4],\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ class\_number=int(other\_course[-\/4:]))}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{except}\ Course.DoesNotExist:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_other\_course\ =\ \mbox{\hyperlink{classschedule_functions_1_1models_1_1_course}{Course}}(}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ subject=other\_course[:-\/4],\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ class\_number=int(other\_course[-\/4:]),}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ weight\ =\ int(other\_course[-\/4:])\ //\ 1000}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_other\_course.save()}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ same\_semester.append(selected\_other\_course)}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00116}00116\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00117}00117\ \ \ \ \ \ \ \ \ selected\_course.save()}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00118}00118\ \ \ \ \ \ \ \ \ selected\_course.equivalent\_courses.add(*equivalent\_courses)}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00119}00119\ \ \ \ \ \ \ \ \ selected\_course.same\_semester\_courses.add(*same\_semester)}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00120}00120\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00121}00121\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00122}00122\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00123}00123\ \ \ \ \ \ \ \ \ semester\_keys\ =\ [\textcolor{stringliteral}{"{}F"{}},\textcolor{stringliteral}{"{}S"{}}]}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00124}00124\ \ \ \ \ \ \ \ \ year\_keys\ =\ [\textcolor{stringliteral}{"{}FR"{}},\ \textcolor{stringliteral}{"{}SO"{}},\ \textcolor{stringliteral}{"{}JR"{}},\ \textcolor{stringliteral}{"{}SR"{}},\ \textcolor{stringliteral}{"{}GR"{}}]}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00125}00125\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00126}00126\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00127}00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ semester\_number\ \textcolor{keywordflow}{in}\ course\_details[\textcolor{stringliteral}{'semesters'}]:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ year\ =\ (int(semester\_number)\ //\ 10)\ -\/\ 1}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ semester\ =\ int(semester\_number)\ \%\ 10}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ selected\_semester\ =\ PlanSemester.objects.get(year=year\_keys[year],\ semester=semester\_keys[semester])}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00134}00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{except}\ PlanSemester.DoesNotExist:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ selected\_semester\ =\ \mbox{\hyperlink{classschedule_functions_1_1models_1_1_plan_semester}{PlanSemester}}(}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ year=year\_keys[year],\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ semester=semester\_keys[semester]}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00139}00139\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00140}00140\ \ \ \ \ \ \ \ \ selected\_semester.save()\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00141}00141\ \ \ \ \ \ \ \ \ selected\_semester.courses.add(selected\_course)}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00142}00142\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00143}00143\ \ \ \ \ \ \ \ \ ...}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00144}00144\ \ \ \ \ ...}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00146}\mbox{\hyperlink{namespaceschedule_functions_1_1to__database_a590750cd3f9efbf84b8a977dc418f399}{00146}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceschedule_functions_1_1to__database_a590750cd3f9efbf84b8a977dc418f399}{store\_schedule}}(json\_file:\ str)\ -\/>\ \textcolor{keywordtype}{None}:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00147}00147\ \ \ \ \ \textcolor{keyword}{with}\ open(json\_file,\ \textcolor{stringliteral}{"{}r"{}})\ \textcolor{keyword}{as}\ file:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00148}00148\ \ \ \ \ \ \ \ \ data\ =\ json.load(file)}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00150}00150\ \ \ \ \ \textcolor{comment}{\#\ If\ the\ JSON\ root\ is\ a\ list,\ assume\ it\ contains\ a\ dictionary}}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00151}00151\ \ \ \ \ \textcolor{keywordflow}{if}\ isinstance(data,\ list)\ \textcolor{keywordflow}{and}\ len(data)\ >\ 0:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00152}00152\ \ \ \ \ \ \ \ \ data\ =\ data[0]\ \ \textcolor{comment}{\#\ Take\ the\ first\ element}}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00154}00154\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ isinstance(data,\ dict):}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00155}00155\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{raise}\ ValueError(}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Invalid\ JSON\ structure:\ Expected\ a\ dictionary\ at\ the\ top\ level."{}}}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00157}00157\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00158}00158\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00159}00159\ \ \ \ \ schedule\ =\ data[max(data.keys())]}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00160}00160\ \ \ \ \ \textcolor{keywordflow}{for}\ subject,\ courses\ \textcolor{keywordflow}{in}\ schedule.items():}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00161}00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ course,\ details\ \textcolor{keywordflow}{in}\ courses.items():}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_course\ =\ Course.objects.get(subject=subject,\ class\_number=int(course))}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{except}\ Course.DoesNotExist:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_course\ =\ \mbox{\hyperlink{classschedule_functions_1_1models_1_1_course}{Course}}(}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ subject\ =\ subject,\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ class\_number=int(course),}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ weight\ =\ int(course)\ //\ 1000}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ selected\_course.name\ =\ details[\textcolor{stringliteral}{"{}title"{}}]}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ credit\_hours\ =\ details[\textcolor{stringliteral}{'sections'}][next(iter(details[\textcolor{stringliteral}{'sections'}]))][\textcolor{stringliteral}{"{}Credit\ Hours"{}}]}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ credit\_hours\ =\ int(credit\_hours)}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{except}:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ credit\_hours\ =\ 1}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ selected\_course.credits\ =\ credit\_hours}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ selected\_course.save()}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ section,\ section\_details\ \textcolor{keywordflow}{in}\ details[\textcolor{stringliteral}{'sections'}].items():}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ section\_details[\textcolor{stringliteral}{'Location'}]\ \textcolor{keywordflow}{in}\ [\textcolor{stringliteral}{'Totally\ Online'},\ \textcolor{stringliteral}{'To\ Be\ Announced'},\ \textcolor{stringliteral}{'Partially\ Online'}]\ \textcolor{keywordflow}{or}\ section\_details[\textcolor{stringliteral}{'Time'}]\ ==\ \textcolor{stringliteral}{'TBA'}:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ print(f\textcolor{stringliteral}{"{}\{section\_details['Location']\}\ -\/\ Skipping"{}})}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue}}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_section\ =\ Section.objects.get(course=selected\_course,\ section\_number=int(section))}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ print(f\textcolor{stringliteral}{"{}\{selected\_section\}\ Entering\ database"{}})}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{except}\ Section.DoesNotExist:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_section\ =\ \mbox{\hyperlink{classschedule_functions_1_1models_1_1_section}{Section}}(}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ course=selected\_course,\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ section\_number=int(section)}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_section.section\_id\ =\ int(section\_details[\textcolor{stringliteral}{'Class\ Number'}].split(\textcolor{stringliteral}{"{}\ "{}})[0])}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_professor\ =\ Proffessor.objects.get(name\ =\ section\_details[\textcolor{stringliteral}{'Instructor'}])}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{except}\ Proffessor.DoesNotExist:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_professor\ =\ \mbox{\hyperlink{classschedule_functions_1_1models_1_1_proffessor}{Proffessor}}(}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name\ =\ section\_details[\textcolor{stringliteral}{'Instructor'}]}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_professor.save()}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_section.professor\ =\ selected\_professor}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ room\_dict\ =\ re.search(\textcolor{stringliteral}{'(?P<building>.+)\(\backslash\)s?(?P<room\_number>[0-\/9]*)'},\ section\_details[\textcolor{stringliteral}{'Location'}])}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ print(room\_dict.group('building'))}}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ print(room\_dict.group('room\_number'))}}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ room\_dict.group(\textcolor{stringliteral}{'room\_number'})\ ==\ \textcolor{stringliteral}{''}:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ room\_number\ =\ 0}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ room\_number\ =\ int(room\_dict.group(\textcolor{stringliteral}{'room\_number'}))}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_room\ =\ Room.objects.get(building\ =\ room\_dict.group(\textcolor{stringliteral}{'building'}),\ room\_number\ =\ room\_number)}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{except}\ Room.DoesNotExist:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_room\ =\ \mbox{\hyperlink{classschedule_functions_1_1models_1_1_room}{Room}}(}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ building\ =\ room\_dict.group(\textcolor{stringliteral}{'building'}),\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ room\_number\ =\ room\_number,}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ capacity\ =\ int(section\_details[\textcolor{stringliteral}{'Class\ Max'}])}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_room.save()}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_room.capacity\ =\ max(selected\_room.capacity,\ int(section\_details[\textcolor{stringliteral}{'Class\ Max'}]))}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_room.save()}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_section.room\ =\ selected\_room}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ start\_time,\ end\_time\ =\ section\_details[\textcolor{stringliteral}{'Time'}].split(\textcolor{stringliteral}{'\ -\/\ '})}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{except}\ ValueError\ \textcolor{keyword}{as}\ e:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ print(section\_details[\textcolor{stringliteral}{'Time'}],\ \textcolor{stringliteral}{'-\/'},\ subject,\ course,\ section)}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{raise}\ e}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ start\_time,\ end\_time\ =\ (\textcolor{keywordtype}{None},\ \textcolor{keywordtype}{None})}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ start\_time\ =\ date.strptime(start\_time,\ \textcolor{stringliteral}{"{}\%I:\%M\%p"{}})}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ end\_time\ =\ date.strptime(end\_time,\ \textcolor{stringliteral}{"{}\%I:\%M\%p"{}})}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_days\ =\ Day.objects.filter(day\_of\_week\_\_in\ =\ [Day.DAY\_OF\_WEEK\_CHOICES[day]\ \textcolor{keywordflow}{for}\ day\ \textcolor{keywordflow}{in}\ section\_details[\textcolor{stringliteral}{'Days'}].lower()])}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00240}00240\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Finding:"{}},\ start\_time,\ end\_time,\ selected\_days)}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ same\_times\ =\ TimeSlot.objects.filter(}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ start\_time\ =\ start\_time,}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ end\_time\ =\ end\_time}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ).filter(}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ days\_\_in\ =\ selected\_days}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ).distinct()}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Found:"{}})}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ same\_times\ =\ same\_times.annotate(}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ num\_days=Count(\textcolor{stringliteral}{'days'})}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ same\_times\ =\ same\_times.filter(num\_days\ =\ len(selected\_days)).distinct()}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ time\ \textcolor{keywordflow}{in}\ same\_times:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ print(time.num\_days)}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ print(time.start\_time,\ time.end\_time,\ time.days.all())}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_time\ =\ same\_times.distinct().get()}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{except}\ TimeSlot.DoesNotExist:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_time\ =\ \mbox{\hyperlink{classschedule_functions_1_1models_1_1_time_slot}{TimeSlot}}(}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ start\_time\ =\ start\_time,\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ end\_time\ =\ end\_time,}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ credits\ =\ credit\_hours}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_time.save()}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ day\ \textcolor{keywordflow}{in}\ selected\_days:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_time.days.add(day)}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_time.save()}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{except}\ TimeSlot.MultipleObjectsReturned:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ timeslots\ =\ TimeSlot.objects.annotate(}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ num\_days=Count(\textcolor{stringliteral}{'days'})}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ).filter(}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ days\_\_in\ =\ selected\_days}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ).filter(}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ num\_days=len(selected\_days)}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ).distinct()}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ for\ time\ in\ timeslots:}}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ print(time.print\_clingo())}}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_section.time\_slot\ =\ selected\_time}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selected\_section.save()}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00281}00281\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00282}\mbox{\hyperlink{namespaceschedule_functions_1_1to__database_a533b1ee0f04c32b8de606fcf0b5cc1b1}{00282}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceschedule_functions_1_1to__database_a533b1ee0f04c32b8de606fcf0b5cc1b1}{store\_schedule\_changes}}(section\_id:\ int,\ start\_time:\ date,\ end\_time:\ date,\ days:\ str)\ -\/>\ \textcolor{keywordtype}{None}:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00283}00283\ \ \ \ \ print(section\_id,\ start\_time,\ end\_time,\ days)}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00284}00284\ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00285}00285\ \ \ \ \ \ \ \ \ selected\_section\ =\ Section.objects.get(section\_id=section\_id)}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00286}00286\ \ \ \ \ \textcolor{keywordflow}{except}\ Section.DoesNotExist:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00287}00287\ \ \ \ \ \ \ \ \ print(f\textcolor{stringliteral}{"{}Something\ went\ wrong,\ section\ does\ not\ exist:\ \{section\_id\}"{}})}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00288}00288\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00289}00289\ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00290}00290\ \ \ \ \ \ \ \ \ selected\_days\ =\ Day.objects.filter(day\_of\_week\_\_in\ =\ [Day.DAY\_OF\_WEEK\_CHOICES[day]\ \textcolor{keywordflow}{for}\ day\ \textcolor{keywordflow}{in}\ days])}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00291}00291\ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Finding:"{}},\ start\_time,\ end\_time,\ selected\_days)}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00292}00292\ \ \ \ \ \ \ \ \ candidate\_times\ =\ TimeSlot.objects.filter(}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ start\_time=start\_time,}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ end\_time=end\_time}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00295}00295\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00296}00296\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00297}00297\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Convert\ selected\_days\ to\ a\ set\ of\ IDs\ for\ exact\ match}}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00298}00298\ \ \ \ \ \ \ \ \ selected\_day\_ids\ =\ set(day.id\ \textcolor{keywordflow}{for}\ day\ \textcolor{keywordflow}{in}\ selected\_days)}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00299}00299\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00300}00300\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Find\ the\ matching\ TimeSlot\ manually}}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00301}00301\ \ \ \ \ \ \ \ \ updated\_time\ =\ \textcolor{keywordtype}{None}}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00302}00302\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ ts\ \textcolor{keywordflow}{in}\ candidate\_times:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ ts\_day\_ids\ =\ set(ts.days.values\_list(\textcolor{stringliteral}{'id'},\ flat=\textcolor{keyword}{True}))}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ts\_day\_ids\ ==\ selected\_day\_ids:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ updated\_time\ =\ ts}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break}}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00307}00307\ \ \ \ \ \ \ \ \ updated\_time.save()}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00308}00308\ \ \ \ \ \ \ \ \ updated\_time.days.set(selected\_days)}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00309}00309\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00310}00310\ \ \ \ \ \textcolor{keywordflow}{except}\ TimeSlot.DoesNotExist:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00311}00311\ \ \ \ \ \ \ \ \ updated\_time\ =\ \mbox{\hyperlink{classschedule_functions_1_1models_1_1_time_slot}{TimeSlot}}(}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ start\_time\ =\ start\_time,\ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ end\_time\ =\ end\_time,}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ credits\ =\ selected\_section.course.credits}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00315}00315\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00316}00316\ \ \ \ \ \ \ \ \ updated\_time.save()}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00317}00317\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ day\ \textcolor{keywordflow}{in}\ selected\_days:}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ updated\_time.days.add(day)}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00319}00319\ \ \ \ \ \ \ \ \ updated\_time.save()}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00320}00320\ \ \ \ \ \ \ \ \ print(f\textcolor{stringliteral}{"{}Something\ went\ wrong,\ timeslot\ doesn't\ exist:\ \{(start\_time,\ end\_time,\ days)\}"{}})}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00321}00321\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00322}\mbox{\hyperlink{namespaceschedule_functions_1_1to__database_a3f5c56a962730bbad86f49e9d77e3517}{00322}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceschedule_functions_1_1to__database_a3f5c56a962730bbad86f49e9d77e3517}{clear\_schedule}}():}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00323}00323\ \ \ \ \ Section.objects.all().delete()}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00324}00324\ \ \ \ \ Room.objects.all().delete()}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00325}00325\ \ \ \ \ Proffessor.objects.all().delete()}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00326}00326\ \ \ \ \ TimeSlot.objects.all().delete()}
+\DoxyCodeLine{\Hypertarget{to__database_8py_source_l00327}00327\ \ \ \ \ }
+
+\end{DoxyCode}

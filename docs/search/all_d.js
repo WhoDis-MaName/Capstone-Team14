@@ -1,11 +1,7 @@
 var searchData=
 [
-  ['identifier_0',['identifier',['../namespaceidentifier.html',1,'']]],
-  ['identifier_2epy_1',['identifier.py',['../identifier_8py.html',1,'']]],
-  ['identifying_20course_20overlaps_2',['Identifying Course Overlaps',['../md__r_e_a_d_m_e.html#autotoc_md11',1,'']]],
-  ['improvements_3',['Future Improvements',['../md__r_e_a_d_m_e.html#autotoc_md21',1,'']]],
-  ['indent_4',['indent',['../namespaceget__sample.html#a18d88d479a9b24b206d5171c9645a4bc',1,'get_sample.indent'],['../namespaceprocess__constraints.html#a5c8975a4e6a0ec6cbfade781d57bd20d',1,'process_constraints.indent'],['../namespaceprocessor.html#a255e69a1d89eef7e4059cd1311b02973',1,'processor.indent'],['../namespaceget__test__case.html#ac5588123f1ee463a7ac9b1840f4dcc69',1,'get_test_case.indent']]],
-  ['install_20django_5',['Install Django',['../md__django__tutorial__instructions.html#autotoc_md4',1,'']]],
-  ['installed_5fapps_6',['INSTALLED_APPS',['../namespacemyproject_1_1settings.html#add0e337dcc9a0bc19b1a0a020b307d93',1,'myproject::settings']]],
-  ['instructions_7',['Django Tutorial instructions',['../md__django__tutorial__instructions.html',1,'']]]
+  ['json_5ffile_0',['json_file',['../namespaceschedule_functions_1_1data__processing_1_1convert__four__year.html#a9f9d52795965ab12c35fb3d04832e3d8',1,'scheduleFunctions.data_processing.convert_four_year.json_file'],['../namespaceschedule_functions_1_1data__processing_1_1get__requirements.html#a812d8c136c3f91d08779bad86d3fd807',1,'scheduleFunctions.data_processing.get_requirements.json_file'],['../namespaceschedule_functions_1_1data__processing_1_1process__four__year.html#a364f1aeff327d25fea14df7d72b602b6',1,'scheduleFunctions.data_processing.process_four_year.json_file']]],
+  ['jsonconverter_1',['jsonconverter',['../namespacejsonconverter.html',1,'']]],
+  ['jsonconverter_2epy_2',['jsonconverter.py',['../clingo_2old__clingo_2jsonconverter_8py.html',1,'(Global Namespace)'],['../schedule_functions_2data__processing_2jsonconverter_8py.html',1,'(Global Namespace)']]],
+  ['junior_3',['JUNIOR',['../classschedule_functions_1_1models_1_1_plan_semester.html#a557631d73511146db63b5332111c5d70',1,'scheduleFunctions::models::PlanSemester']]]
 ];

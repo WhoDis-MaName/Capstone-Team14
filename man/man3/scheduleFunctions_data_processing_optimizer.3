@@ -1,0 +1,79 @@
+.TH "scheduleFunctions.data_processing.optimizer" 3 "Version 0.5" "Capstone Team 14" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scheduleFunctions.data_processing.optimizer
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBClingoApp\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBparse_line\fP (line)"
+.br
+.ti -1c
+.RI "\fBconvert_to_json\fP (symbols, output_file)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBcurrent_directory\fP"
+.br
+.ti -1c
+.RI "\fBpath\fP = current_directory\&.split(os\&.sep)"
+.br
+.ti -1c
+.RI "\fBroot_index\fP = path\&.index('Capstone\-Team14')"
+.br
+.ti -1c
+.RI "\fBroot_dir\fP = os\&.sep\&.join(\fBpath\fP[: \fBroot_index\fP + 1])"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "scheduleFunctions\&.data_processing\&.optimizer\&.convert_to_json ( symbols,  output_file)"
+
+.PP
+Definition at line \fB81\fP of file \fBoptimizer\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.optimizer\&.parse_line ( line)"
+
+.PP
+Definition at line \fB39\fP of file \fBoptimizer\&.py\fP\&.
+.SH "Variable Documentation"
+.PP 
+.SS "scheduleFunctions\&.data_processing\&.optimizer\&.current_directory"
+\fBInitial value:\fP
+.nf
+1 =  os\&.path\&.dirname(
+2         os\&.path\&.realpath(__file__)
+3     )
+.PP
+.fi
+
+.PP
+Definition at line \fB8\fP of file \fBoptimizer\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.optimizer\&.path = current_directory\&.split(os\&.sep)"
+
+.PP
+Definition at line \fB15\fP of file \fBoptimizer\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.optimizer\&.root_dir = os\&.sep\&.join(\fBpath\fP[: \fBroot_index\fP + 1])"
+
+.PP
+Definition at line \fB18\fP of file \fBoptimizer\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.optimizer\&.root_index = path\&.index('Capstone\-Team14')"
+
+.PP
+Definition at line \fB17\fP of file \fBoptimizer\&.py\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Capstone Team 14 from the source code\&.

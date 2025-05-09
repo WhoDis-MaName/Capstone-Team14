@@ -1,0 +1,34 @@
+\doxysection{schedule\+Functions.\+views.\+login Namespace Reference}
+\hypertarget{namespaceschedule_functions_1_1views_1_1login}{}\label{namespaceschedule_functions_1_1views_1_1login}\index{scheduleFunctions.views.login@{scheduleFunctions.views.login}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1login_af9c05be0faab154b0cf7b0eab22afc93}{login}} (request)
+\begin{DoxyCompactList}\small\item\em Displays the dashboard page for the authenticated user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceschedule_functions_1_1views_1_1login_af9c05be0faab154b0cf7b0eab22afc93}\index{scheduleFunctions.views.login@{scheduleFunctions.views.login}!login@{login}}
+\index{login@{login}!scheduleFunctions.views.login@{scheduleFunctions.views.login}}
+\doxysubsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_1_1login_af9c05be0faab154b0cf7b0eab22afc93} 
+schedule\+Functions.\+views.\+login.\+login (\begin{DoxyParamCaption}\item[{}]{request}{}\end{DoxyParamCaption})}
+
+
+
+Displays the dashboard page for the authenticated user. 
+
+This view retrieves the user\textquotesingle{}s session data and, if authenticated, renders the dashboard page. It handles the selection of a day of the week (from the "{}day"{} parameter in the GET request) and filters sections based on the selected day. If no valid day is provided, it defaults to Monday. It also handles errors gracefully if the section data cannot be retrieved.
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The HTTP request object containing the session data, including the \textquotesingle{}day\textquotesingle{} and \textquotesingle{}username\textquotesingle{}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A rendered HTML response with the \textquotesingle{}dashboard.\+html\textquotesingle{} template, including a list of sections for the selected day and the username, or a redirect to the login page if the user is not authenticated. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{login_8py_source_l00016}{16}} of file \mbox{\hyperlink{login_8py_source}{login.\+py}}.
+

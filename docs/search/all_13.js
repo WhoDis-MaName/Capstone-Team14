@@ -1,9 +1,27 @@
 var searchData=
 [
-  ['optimization_0',['Course Schedule Optimization',['../md__r_e_a_d_m_e.html',1,'']]],
-  ['optimization_20approach_1',['Optimization Approach',['../md__r_e_a_d_m_e.html#autotoc_md15',1,'']]],
-  ['optimization_20considerations_2',['Additional Optimization Considerations',['../md__r_e_a_d_m_e.html#autotoc_md19',1,'']]],
-  ['out_3',['out',['../namespaceprocessor.html#a6913d6fba54c50da16894c821a4c9f53',1,'processor']]],
-  ['overlaps_4',['Identifying Course Overlaps',['../md__r_e_a_d_m_e.html#autotoc_md11',1,'']]],
-  ['overview_5',['Project Overview',['../md__r_e_a_d_m_e.html#autotoc_md9',1,'']]]
+  ['raw_5ffile_5fpath_0',['raw_file_path',['../classschedule_functions_1_1models_1_1_filtered_upload.html#ae6b32650e933322bdb727a278481f186',1,'scheduleFunctions::models::FilteredUpload']]],
+  ['read_5fdir_1',['read_dir',['../namespaceidentifier.html#a6193d645bdf51d04b498eaadd7c987fa',1,'identifier.read_dir'],['../namespaceschedule_functions_1_1data__processing_1_1get__sample.html#a47adc6df0f0bd11efa86987521c271a2',1,'scheduleFunctions.data_processing.get_sample.read_dir']]],
+  ['read_5ffour_5fyear_2',['read_four_year',['../namespaceschedule_functions_1_1data__processing_1_1get__four__year.html#a850855f32ee13da0e4f31565ebc5519d',1,'scheduleFunctions::data_processing::get_four_year']]],
+  ['read_5frequirements_3',['read_requirements',['../namespaceschedule_functions_1_1data__processing_1_1get__requirements.html#ab42a419166799f229d9eb1aa0ed1300b',1,'scheduleFunctions::data_processing::get_requirements']]],
+  ['readme_2emd_4',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['ready_5',['ready',['../classschedule_functions_1_1apps_1_1_schedulefunctions_config.html#afe78cd8cb6900dffd37563a2dfee8916',1,'scheduleFunctions::apps::SchedulefunctionsConfig']]],
+  ['release_20notes_20version_200_201_6',['Release Notes Version 0.1',['../md__r_e_a_d_m_e.html#autotoc_md9',1,'']]],
+  ['release_20notes_20version_200_202_7',['Release Notes Version 0.2',['../md__r_e_a_d_m_e.html#autotoc_md14',1,'']]],
+  ['release_20notes_3a_8',['release notes:',['../md__r_e_a_d_m_e.html#autotoc_md16',1,'Version 1.0 release notes:'],['../md__r_e_a_d_m_e.html#autotoc_md17',1,'Version 2.0 release notes:']]],
+  ['remaining_5ffile_5fpath_9',['remaining_file_path',['../classschedule_functions_1_1models_1_1_filtered_upload.html#adfe64fe0323c091d5c47ef46df8541c1',1,'scheduleFunctions::models::FilteredUpload']]],
+  ['requirement_10',['Requirement',['../classschedule_functions_1_1models_1_1_requirement.html',1,'scheduleFunctions::models']]],
+  ['requirement_5flabel_11',['requirement_label',['../classschedule_functions_1_1models_1_1_requirement.html#a1ddf3d45c2448c230470b591cf8e5a74',1,'scheduleFunctions::models::Requirement']]],
+  ['room_12',['Room',['../classschedule_functions_1_1models_1_1_room.html',1,'scheduleFunctions::models']]],
+  ['room_13',['room',['../classschedule_functions_1_1models_1_1_section.html#ac461ffe542489a4d6e8d220dd534527e',1,'scheduleFunctions::models::Section']]],
+  ['room_5fnumber_14',['room_number',['../classschedule_functions_1_1models_1_1_room.html#abf7d578124750243d3516d608c93e7d8',1,'scheduleFunctions::models::Room']]],
+  ['root_5fdir_15',['root_dir',['../namespaceidentifier.html#a063b54070e2182ca05dc9d979bd1d88e',1,'identifier.root_dir'],['../namespaceschedule_functions_1_1data__processing_1_1converter.html#ae3a670b844df220b3f32461fede47994',1,'scheduleFunctions.data_processing.converter.root_dir'],['../namespaceschedule_functions_1_1data__processing_1_1description.html#a48372b4778a91198e3bb74ee57450a50',1,'scheduleFunctions.data_processing.description.root_dir'],['../namespaceschedule_functions_1_1data__processing_1_1get__requirements.html#a9898428a108ed060fdc9c65a640bb87f',1,'scheduleFunctions.data_processing.get_requirements.root_dir'],['../namespaceschedule_functions_1_1data__processing_1_1get__sample.html#a6dc95b02dfff752a27861706b6e40dc6',1,'scheduleFunctions.data_processing.get_sample.root_dir'],['../namespaceschedule_functions_1_1data__processing_1_1optimizer.html#ae9ceade0964c7c2a0745bb2bea86c626',1,'scheduleFunctions.data_processing.optimizer.root_dir'],['../namespaceschedule_functions_1_1data__processing_1_1process__four__year.html#a7bb228d657fdb736e661b6c2f72decf1',1,'scheduleFunctions.data_processing.process_four_year.root_dir']]],
+  ['root_5findex_16',['root_index',['../namespaceidentifier.html#a71a30334a39cf0e5aeaf400c2d0b9881',1,'identifier.root_index'],['../namespaceschedule_functions_1_1data__processing_1_1converter.html#a0a0af82911ca7ee7912567774433dc81',1,'scheduleFunctions.data_processing.converter.root_index'],['../namespaceschedule_functions_1_1data__processing_1_1description.html#a92aefc3d13a9d0bddfea47eb03de7569',1,'scheduleFunctions.data_processing.description.root_index'],['../namespaceschedule_functions_1_1data__processing_1_1get__requirements.html#a822d2211f514a29f826249e5c35b6958',1,'scheduleFunctions.data_processing.get_requirements.root_index'],['../namespaceschedule_functions_1_1data__processing_1_1get__sample.html#a7d504fbc6c2627bc760035d870017c6b',1,'scheduleFunctions.data_processing.get_sample.root_index'],['../namespaceschedule_functions_1_1data__processing_1_1optimizer.html#ae4b1c029b1cc1180b39dd5e51981a683',1,'scheduleFunctions.data_processing.optimizer.root_index'],['../namespaceschedule_functions_1_1data__processing_1_1process__four__year.html#ab2fbc89472a3ab522b9b9fde391b05be',1,'scheduleFunctions.data_processing.process_four_year.root_index']]],
+  ['root_5furlconf_17',['ROOT_URLCONF',['../namespacemyproject_1_1settings.html#a5ccf5864d0c3a71c255dd71b6bba6cb6',1,'myproject::settings']]],
+  ['run_5fclingo_18',['run_clingo',['../namespaceclingo__pytest.html#a26e226006bd78f2f3dc0b41115d3d992',1,'clingo_pytest']]],
+  ['run_5fclingo_5fidentifier_19',['run_clingo_identifier',['../namespaceschedule_functions_1_1views_1_1run__clingo__identifier.html#ac9cfc8d4fcaa2e1671d63ec4c8339a71',1,'scheduleFunctions::views::run_clingo_identifier']]],
+  ['run_5fclingo_5fidentifier_2epy_20',['run_clingo_identifier.py',['../run__clingo__identifier_8py.html',1,'']]],
+  ['run_5fclingo_5foptimization_21',['run_clingo_optimization',['../namespaceschedule_functions_1_1views_1_1clingo__helpers.html#a0be4d3f127672c31d8b35fecbae7ca74',1,'scheduleFunctions::views::clingo_helpers']]],
+  ['run_5fscript_5fname_22',['run_script_name',['../namespaceschedule_functions_1_1tests.html#a4ec86394dd8b2e5e0ab6bc370883e555',1,'scheduleFunctions::tests']]],
+  ['running_20clingo_23',['Some helpful notes on running clingo',['../md__r_e_a_d_m_e.html#autotoc_md12',1,'']]]
 ];

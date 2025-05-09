@@ -1,0 +1,64 @@
+.TH "myproject.urls" 3 "Version 0.5" "Capstone Team 14" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+myproject.urls
+.SH SYNOPSIS
+.br
+.PP
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "list \fBurlpatterns\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+URL configuration for myproject project\&.
+
+The `urlpatterns` list routes URLs to views\&. For more information please see:
+    https://docs\&.djangoproject\&.com/en/5\&.1/topics/http/urls/
+Examples:
+Function views
+    1\&. Add an import:  from my_app import views
+    2\&. Add a URL to urlpatterns:  path('', views\&.home, name='home')
+Class-based views
+    1\&. Add an import:  from other_app\&.views import Home
+    2\&. Add a URL to urlpatterns:  path('', Home\&.as_view(), name='home')
+Including another URLconf
+    1\&. Import the include() function: from django\&.urls import include, path
+    2\&. Add a URL to urlpatterns:  path('blog/', include('blog\&.urls'))
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "list myproject\&.urls\&.urlpatterns"
+\fBInitial value:\fP
+.nf
+1 =  [
+2     path("admin/doc/", include("django\&.contrib\&.admindocs\&.urls")),
+3     path("admin/", admin\&.site\&.urls),
+4     path("dashboard/", dashboard_view, name="dashboard"),
+5     path("clear/", clear_view, name="clear"),
+6     path("section/", section_view, name="section"),
+7     path("", login, name="home"),  # Add homepage route
+8     path("upload/", upload_json_file, name="upload_json_file"),
+9     path("run\-identifier/", run_clingo_identifier, name="run_clingo_identifier"),
+10     path("optimize\-schedule/", optimize_schedule, name="optimize_schedule"),
+11     path("download/<str:filename>/", download_optimized_file, name="download_file"),
+12     path('logo/', lambda request: render(request, 'logo\&.html')),
+13 ]
+.PP
+.fi
+
+.PP
+Definition at line \fB26\fP of file \fBurls\&.py\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Capstone Team 14 from the source code\&.

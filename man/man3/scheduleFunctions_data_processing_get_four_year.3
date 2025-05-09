@@ -1,0 +1,133 @@
+.TH "scheduleFunctions.data_processing.get_four_year" 3 "Version 0.5" "Capstone Team 14" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scheduleFunctions.data_processing.get_four_year
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBget_all_tables\fP (bs soup)"
+.br
+.RI "Finds all of the tables in the page gathered with BS4\&. "
+.ti -1c
+.RI "list \fBget_table_rows\fP (table)"
+.br
+.RI "Given a table, returns all its rows\&. "
+.ti -1c
+.RI "\fBprocess_url\fP (str \fBurl\fP)"
+.br
+.RI "Take a url and find all of the tables contained in the page and return a ResultSet\&. "
+.ti -1c
+.RI "\fBread_four_year\fP (\fBurl\fP, output_file)"
+.br
+.RI "From a url that contains a four year plan process it and produce a JSON file in a structure that we can utilize to then convert into a clingo file\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBcurrent_directory\fP = os\&.path\&.dirname(os\&.path\&.realpath(__file__))"
+.br
+.ti -1c
+.RI "\fBdata_dir\fP = os\&.path\&.join(settings\&.BASE_DIR, 'data_files', 'four_year_plan')"
+.br
+.ti -1c
+.RI "\fBfilename\fP = os\&.path\&.join(\fBdata_dir\fP,'fourYearPlan\&.json')"
+.br
+.ti -1c
+.RI "str \fBurl\fP = 'https://catalog\&.unomaha\&.edu/undergraduate/college\-information\-science\-technology/computer\-science/computer\-science\-bs/#fouryearplantext'"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "scheduleFunctions\&.data_processing\&.get_four_year\&.get_all_tables (bs soup)"
+
+.PP
+Finds all of the tables in the page gathered with BS4\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsoup\fP The BeautifulSoup4 representation of the web page 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A set containing all of the instances of \fR<table></table>\fP along with all of its contents 
+.RE
+.PP
+
+.PP
+Definition at line \fB19\fP of file \fBget_four_year\&.py\fP\&.
+.SS " list scheduleFunctions\&.data_processing\&.get_four_year\&.get_table_rows ( table)"
+
+.PP
+Given a table, returns all its rows\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItable\fP A table from web page grabbed using BS4 soup object 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A 2d list that represents all of the rows from the table 
+.RE
+.PP
+
+.PP
+Definition at line \fB26\fP of file \fBget_four_year\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.get_four_year\&.process_url (str url)"
+
+.PP
+Take a url and find all of the tables contained in the page and return a ResultSet\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIurl\fP URL of the page to be searched\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+List containing all of the tables in the page\&. Each of table is a 2d array (list) 
+.RE
+.PP
+
+.PP
+Definition at line \fB51\fP of file \fBget_four_year\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.get_four_year\&.read_four_year ( url,  output_file)"
+
+.PP
+From a url that contains a four year plan process it and produce a JSON file in a structure that we can utilize to then convert into a clingo file\&. For the page in the computer science four year plan, create a JSON file with the class content organized by year and semester\&. This data is then used to discover conflicts that are higher priority\&.
+
+.PP
+@params url A string containing the url for the page with the four year plan @params output_file A string that contains the file path and filename that the JSON will be written to\&.
+
+.PP
+\fINOTE\fP to maintain the script's OS agnostic nature, it is suggested to utilize os\&.path\&.join() to join strings or os\&.sep\&.join() to join elements of a list 
+.PP
+Definition at line \fB88\fP of file \fBget_four_year\&.py\fP\&.
+.SH "Variable Documentation"
+.PP 
+.SS "scheduleFunctions\&.data_processing\&.get_four_year\&.current_directory = os\&.path\&.dirname(os\&.path\&.realpath(__file__))"
+
+.PP
+Definition at line \fB150\fP of file \fBget_four_year\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.get_four_year\&.data_dir = os\&.path\&.join(settings\&.BASE_DIR, 'data_files', 'four_year_plan')"
+
+.PP
+Definition at line \fB154\fP of file \fBget_four_year\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.get_four_year\&.filename = os\&.path\&.join(\fBdata_dir\fP,'fourYearPlan\&.json')"
+
+.PP
+Definition at line \fB160\fP of file \fBget_four_year\&.py\fP\&.
+.SS "str scheduleFunctions\&.data_processing\&.get_four_year\&.url = 'https://catalog\&.unomaha\&.edu/undergraduate/college\-information\-science\-technology/computer\-science/computer\-science\-bs/#fouryearplantext'"
+
+.PP
+Definition at line \fB161\fP of file \fBget_four_year\&.py\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Capstone Team 14 from the source code\&.

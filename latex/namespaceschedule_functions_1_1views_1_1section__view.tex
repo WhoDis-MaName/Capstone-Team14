@@ -1,0 +1,34 @@
+\doxysection{schedule\+Functions.\+views.\+section\+\_\+view Namespace Reference}
+\hypertarget{namespaceschedule_functions_1_1views_1_1section__view}{}\label{namespaceschedule_functions_1_1views_1_1section__view}\index{scheduleFunctions.views.section\_view@{scheduleFunctions.views.section\_view}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1section__view_aae24d67c1cc30b032ace002c0789eee4}{section\+\_\+view}} (request)
+\begin{DoxyCompactList}\small\item\em Displays details of a specific course section. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceschedule_functions_1_1views_1_1section__view_aae24d67c1cc30b032ace002c0789eee4}\index{scheduleFunctions.views.section\_view@{scheduleFunctions.views.section\_view}!section\_view@{section\_view}}
+\index{section\_view@{section\_view}!scheduleFunctions.views.section\_view@{scheduleFunctions.views.section\_view}}
+\doxysubsubsection{\texorpdfstring{section\_view()}{section\_view()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_1_1section__view_aae24d67c1cc30b032ace002c0789eee4} 
+schedule\+Functions.\+views.\+section\+\_\+view.\+section\+\_\+view (\begin{DoxyParamCaption}\item[{}]{request}{}\end{DoxyParamCaption})}
+
+
+
+Displays details of a specific course section. 
+
+This view retrieves the session data for the authenticated user and validates that the required parameters ("{}subject"{}, "{}course\+\_\+number"{}, and "{}section"{}) are provided in the GET request. If any parameter is missing, it redirects the user back to the dashboard. It fetches the selected course and section from the database and also retrieves any other sections that overlap in time with the selected section. The view then renders the \textquotesingle{}section\+\_\+details.\+html\textquotesingle{} template with the details of the selected section and a list of overlapping sections.
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The HTTP request object containing the session data and GET parameters for subject, course number, and section. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A rendered HTML response with the \textquotesingle{}section\+\_\+details.\+html\textquotesingle{} template, including the selected section details, a list of overlapping sections, and courses from the same semester, or a redirect to the dashboard or login page if data is missing. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{section__view_8py_source_l00016}{16}} of file \mbox{\hyperlink{section__view_8py_source}{section\+\_\+view.\+py}}.
+

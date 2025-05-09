@@ -1,0 +1,40 @@
+.TH "scheduleFunctions.views.dashboard_view" 3 "Version 0.5" "Capstone Team 14" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scheduleFunctions.views.dashboard_view
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBdashboard_view\fP (request)"
+.br
+.RI "Displays the dashboard page for the authenticated user\&. "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "scheduleFunctions\&.views\&.dashboard_view\&.dashboard_view ( request)"
+
+.PP
+Displays the dashboard page for the authenticated user\&. This view retrieves the session data for the authenticated user, validates and sets the current day based on the GET request, or defaults to Monday if no valid day is provided\&. It then attempts to fetch a list of sections for the selected day from the database and orders them by start time\&. If no sections are found for the selected day, it returns an empty list\&. The view then renders the 'dashboard\&.html' template with the username, selected day, and the list of sections for that day\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIrequest\fP The HTTP request object containing the session data and GET parameters for the day\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A rendered HTML response with the 'dashboard\&.html' template, including the username, selected day, and the list of sections for the selected day, or a redirect to the login page if the user is not authenticated\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB17\fP of file \fBdashboard_view\&.py\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Capstone Team 14 from the source code\&.

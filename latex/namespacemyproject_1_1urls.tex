@@ -35,12 +35,21 @@ list myproject.\+urls.\+urlpatterns}
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ =\ \ [}
-\DoxyCodeLine{00002\ \ \ \ \ path(\textcolor{stringliteral}{'admin/doc/'},\ include(\textcolor{stringliteral}{'django.contrib.admindocs.urls'})),}
-\DoxyCodeLine{00003\ \ \ \ \ path(\textcolor{stringliteral}{'admin/'},\ admin.site.urls),}
-\DoxyCodeLine{00004\ \ \ \ \ path(\textcolor{stringliteral}{'run-\/script/'},\ run\_script,\ name=\textcolor{stringliteral}{'run\_script'}),}
-\DoxyCodeLine{00005\ \ \ \ \ path(\textcolor{stringliteral}{'dashboard/'},\ dashboard\_view,\ name=\textcolor{stringliteral}{'dashboard'}),}
-\DoxyCodeLine{00006\ \ \ \ \ path(\textcolor{stringliteral}{'schedule/'},\ schedule\_view,\ name=\textcolor{stringliteral}{'schedule'}),}
-\DoxyCodeLine{00007\ \ \ \ \ path(\textcolor{stringliteral}{''},\ login,\ name=\textcolor{stringliteral}{'home'}),\ \ \textcolor{comment}{\#\ Add\ homepage\ route}}
-\DoxyCodeLine{00008\ ]}
+\DoxyCodeLine{00002\ \ \ \ \ path(\textcolor{stringliteral}{"{}admin/doc/"{}},\ include(\textcolor{stringliteral}{"{}django.contrib.admindocs.urls"{}})),}
+\DoxyCodeLine{00003\ \ \ \ \ path(\textcolor{stringliteral}{"{}admin/"{}},\ admin.site.urls),}
+\DoxyCodeLine{00004\ \ \ \ \ path(\textcolor{stringliteral}{"{}dashboard/"{}},\ dashboard\_view,\ name=\textcolor{stringliteral}{"{}dashboard"{}}),}
+\DoxyCodeLine{00005\ \ \ \ \ path(\textcolor{stringliteral}{"{}clear/"{}},\ clear\_view,\ name=\textcolor{stringliteral}{"{}clear"{}}),}
+\DoxyCodeLine{00006\ \ \ \ \ path(\textcolor{stringliteral}{"{}section/"{}},\ section\_view,\ name=\textcolor{stringliteral}{"{}section"{}}),}
+\DoxyCodeLine{00007\ \ \ \ \ path(\textcolor{stringliteral}{"{}"{}},\ login,\ name=\textcolor{stringliteral}{"{}home"{}}),\ \ \textcolor{comment}{\#\ Add\ homepage\ route}}
+\DoxyCodeLine{00008\ \ \ \ \ path(\textcolor{stringliteral}{"{}upload/"{}},\ upload\_json\_file,\ name=\textcolor{stringliteral}{"{}upload\_json\_file"{}}),}
+\DoxyCodeLine{00009\ \ \ \ \ path(\textcolor{stringliteral}{"{}run-\/identifier/"{}},\ run\_clingo\_identifier,\ name=\textcolor{stringliteral}{"{}run\_clingo\_identifier"{}}),}
+\DoxyCodeLine{00010\ \ \ \ \ path(\textcolor{stringliteral}{"{}optimize-\/schedule/"{}},\ optimize\_schedule,\ name=\textcolor{stringliteral}{"{}optimize\_schedule"{}}),}
+\DoxyCodeLine{00011\ \ \ \ \ path(\textcolor{stringliteral}{"{}download/<str:filename>/"{}},\ download\_optimized\_file,\ name=\textcolor{stringliteral}{"{}download\_file"{}}),}
+\DoxyCodeLine{00012\ \ \ \ \ path(\textcolor{stringliteral}{'logo/'},\ \textcolor{keyword}{lambda}\ request:\ render(request,\ \textcolor{stringliteral}{'logo.html'})),}
+\DoxyCodeLine{00013\ ]}
 
 \end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{urls_8py_source_l00026}{26}} of file \mbox{\hyperlink{urls_8py_source}{urls.\+py}}.
+
