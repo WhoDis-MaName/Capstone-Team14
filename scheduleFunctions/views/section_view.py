@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from scheduleFunctions.models import Course, Section
+from django.http import JsonResponse
 
 ##
 # @brief Displays details of a specific course section.
@@ -14,6 +15,45 @@ from scheduleFunctions.models import Course, Section
 # @return A rendered HTML response with the 'section_details.html' template, including the selected section details, 
 #         a list of overlapping sections, and courses from the same semester, or a redirect to the dashboard or login page if data is missing.
 def section_view(request):
+    if "username" not in request.session:
+        return redirect("home")  # Redirect to login if not authenticated
+    
+    if request.method == "POST":
+        selected_course = Course.objects.get(
+            subject=request.session["subject"],
+            class_number=request.session["course_number"],
+        )
+        other_sections = (
+            Section.objects.filter(
+                time_slot__days__in=selected_section.time_slot.days.all(),  # overlap in at least one day
+                time_slot__start_time__lt=selected_section.time_slot.end_time,
+                time_slot__end_time__gt=selected_section.time_slot.start_time,
+            )
+            .exclude(course=selected_course)  # different course
+            .distinct()
+            #.exclude(section_id=selected_section.section_id)  # ignore the section itself
+            .order_by("time_slot__start_time")
+        )
+        try:
+            for other_section in other_sections:
+                variable = other_section.pk
+                if not request.POST.get(variable) is None:
+                    if request.POST.get(variable) == "True":
+                        selected_course.same_semester_courses.add(other_section.course)
+            return JsonResponse(
+                {
+                    "message": f"Modifications complete."
+                }
+            )
+        except Exception as e:
+            print(e)
+            return JsonResponse(
+                {
+                    "error": f"Something went wrong."
+                }
+            )
+                  
+            
 
     if "username" not in request.session:
         return redirect("home")  # Redirect to login if not authenticated
@@ -38,7 +78,7 @@ def section_view(request):
             time_slot__start_time__lt=selected_section.time_slot.end_time,
             time_slot__end_time__gt=selected_section.time_slot.start_time,
         )
-        .exclude(course=selected_section.course)  # different course
+        .exclude(course=selected_course)  # different course
         .distinct()
         #.exclude(section_id=selected_section.section_id)  # ignore the section itself
         .order_by("time_slot__start_time")

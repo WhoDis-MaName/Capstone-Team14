@@ -1,4 +1,5 @@
 from django.db import models
+from multiselectfield import MultiSelectField
 
 # Create your models here.
 class Room(models.Model):
@@ -103,6 +104,16 @@ class Requirement(models.Model):
  
 class Proffessor(models.Model):
     name = models.CharField(max_length=255)
+    
+    TIME_CHOICES = [
+    ('morning', 'Morning'),
+    ('midday', 'Mid-Day'),
+    ('evening', 'Evening'),
+    ('btb', 'Back-To-Back'),
+]
+    
+    day_preferences = models.ManyToManyField(Day, blank=True)
+    time_preferences = MultiSelectField(choices=TIME_CHOICES, blank=True)
     
     def print_clingo(self) -> str:
         return self.name.replace(" ", "_").replace("-", "_").replace(".", "").lower()

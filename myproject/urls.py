@@ -35,4 +35,5 @@ urlpatterns = [
     path("optimize-schedule/", optimize_schedule, name="optimize_schedule"),
     path("download/<str:filename>/", download_optimized_file, name="download_file"),
     path('logo/', lambda request: render(request, 'logo.html')),
+    path('preferences/', preferences_view, name="preferences"),
 ]
