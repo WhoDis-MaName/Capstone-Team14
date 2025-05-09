@@ -1,0 +1,86 @@
+.TH "scheduleFunctions/data_processing/converter.py" 3 "Version 0.5" "Capstone Team 14" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scheduleFunctions/data_processing/converter.py
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBscheduleFunctions\fP"
+.br
+.ti -1c
+.RI "namespace \fBscheduleFunctions\&.data_processing\fP"
+.br
+.ti -1c
+.RI "namespace \fBscheduleFunctions\&.data_processing\&.converter\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.converter\&.clean_course_name\fP (course)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.converter\&.current_directory\fP = os\&.path\&.dirname(os\&.path\&.realpath(__file__))"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.converter\&.path\fP = current_directory\&.split(os\&.sep)"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.converter\&.root_index\fP = path\&.index('Capstone\-Team14')"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.converter\&.root_dir\fP = os\&.sep\&.join(\fBpath\fP[:\fBroot_index\fP+1])"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.converter\&.data_dir\fP = os\&.path\&.join(\fBroot_dir\fP, 'data_files', 'uploaded_schedule')"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.converter\&.file_path\fP = os\&.path\&.join(\fBdata_dir\fP,'filtered\&.json')"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.converter\&.data\fP = json\&.load(file)"
+.br
+.ti -1c
+.RI "dict \fBscheduleFunctions\&.data_processing\&.converter\&.course_prereqs\fP = {}"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.converter\&.strict_prereq_pattern\fP = re\&.compile(r'([\\w\\s]+) with C[\-]? or better|([\\w\\s]+) AND|([\\w\\s]+) OR')"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.converter\&.title\fP = course_info\&.get('title', 'Unknown Title')"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.converter\&.prereq_text\fP = course_info\&.get('desc', '')"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.converter\&.prereq_part\fP = prereq_text\&.split('Prereq:')[1]\&.strip()"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.converter\&.matches\fP = strict_prereq_pattern\&.findall(\fBprereq_part\fP)"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.converter\&.all_prereqs\fP = set()"
+.br
+.ti -1c
+.RI "str \fBscheduleFunctions\&.data_processing\&.converter\&.structured_prereq\fP = f'choice([{', '\&.join(\fBall_prereqs\fP)}])'"
+.br
+.ti -1c
+.RI "str \fBscheduleFunctions\&.data_processing\&.converter\&.course_key\fP = f'{\fBclean_course_name\fP(subject)}_{course_number}'"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.converter\&.lp_file\fP = os\&.path\&.join(\fBroot_dir\fP,'courses\&.lp')"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Capstone Team 14 from the source code\&.

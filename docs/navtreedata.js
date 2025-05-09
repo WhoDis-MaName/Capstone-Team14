@@ -24,37 +24,27 @@
 */
 var NAVTREE =
 [
-  [ "ASP Schedule Optimizer", "index.html", [
-    [ "Django Tutorial instructions", "md__django__tutorial__instructions.html", [
-      [ "Setup Environment", "md__django__tutorial__instructions.html#autotoc_md1", [
-        [ "Create venv", "md__django__tutorial__instructions.html#autotoc_md2", null ],
-        [ "Start venv", "md__django__tutorial__instructions.html#autotoc_md3", null ],
-        [ "Install Django", "md__django__tutorial__instructions.html#autotoc_md4", null ],
-        [ "Start Django project", "md__django__tutorial__instructions.html#autotoc_md5", null ],
-        [ "Create Django app", "md__django__tutorial__instructions.html#autotoc_md6", null ],
-        [ "Run Django Project", "md__django__tutorial__instructions.html#autotoc_md7", null ]
-      ] ]
-    ] ],
+  [ "Capstone Team 14", "index.html", [
     [ "Course Schedule Optimization", "md__r_e_a_d_m_e.html", [
-      [ "Project Overview", "md__r_e_a_d_m_e.html#autotoc_md9", null ],
-      [ "Identifying Course Overlaps", "md__r_e_a_d_m_e.html#autotoc_md11", null ],
-      [ "Key Classes to Prioritize", "md__r_e_a_d_m_e.html#autotoc_md13", null ],
-      [ "Optimization Approach", "md__r_e_a_d_m_e.html#autotoc_md15", null ],
-      [ "Coordinating with Shuttle Schedule", "md__r_e_a_d_m_e.html#autotoc_md17", null ],
-      [ "Additional Optimization Considerations", "md__r_e_a_d_m_e.html#autotoc_md19", null ],
-      [ "Future Improvements", "md__r_e_a_d_m_e.html#autotoc_md21", null ],
-      [ "Conclusion", "md__r_e_a_d_m_e.html#autotoc_md23", null ],
-      [ "Release Notes Version 1.3", "md__r_e_a_d_m_e.html#autotoc_md24", [
-        [ "Command Line Deployment", "md__r_e_a_d_m_e.html#autotoc_md25", null ],
-        [ "Docker Deployment", "md__r_e_a_d_m_e.html#autotoc_md26", null ]
+      [ "Project Overview", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
+      [ "Identifying Conflicts", "md__r_e_a_d_m_e.html#autotoc_md3", null ],
+      [ "Optimization Approach", "md__r_e_a_d_m_e.html#autotoc_md5", null ],
+      [ "A critical conflict count of zero means that it is possible to select at least one section from any c...", "md__r_e_a_d_m_e.html#autotoc_md6", null ],
+      [ "Future Improvements", "md__r_e_a_d_m_e.html#autotoc_md7", null ],
+      [ "Release Notes Version 0.1", "md__r_e_a_d_m_e.html#autotoc_md9", [
+        [ "Command Line Deployment", "md__r_e_a_d_m_e.html#autotoc_md10", null ],
+        [ "Docker Deployment", "md__r_e_a_d_m_e.html#autotoc_md11", null ],
+        [ "Some helpful notes on running clingo", "md__r_e_a_d_m_e.html#autotoc_md12", null ]
       ] ],
-      [ "Branches for Version 1.3", "md__r_e_a_d_m_e.html#autotoc_md27", null ],
-      [ "Release Notes Version 0.9", "md__r_e_a_d_m_e.html#autotoc_md28", null ],
-      [ "Branches for Version 0.9", "md__r_e_a_d_m_e.html#autotoc_md29", null ]
+      [ "Branches for Version 0.1", "md__r_e_a_d_m_e.html#autotoc_md13", null ],
+      [ "Release Notes Version 0.2", "md__r_e_a_d_m_e.html#autotoc_md14", null ],
+      [ "Branches for Version 0.2", "md__r_e_a_d_m_e.html#autotoc_md15", null ],
+      [ "Version 1.0 release notes:", "md__r_e_a_d_m_e.html#autotoc_md16", null ],
+      [ "Version 2.0 release notes:", "md__r_e_a_d_m_e.html#autotoc_md17", null ]
     ] ],
-    [ "Packages", "namespaces.html", [
-      [ "Package List", "namespaces.html", "namespaces_dup" ],
-      [ "Package Members", "namespacemembers.html", [
+    [ "Namespaces", "namespaces.html", [
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
+      [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
         [ "Functions", "namespacemembers_func.html", null ],
         [ "Variables", "namespacemembers_vars.html", null ]
@@ -78,8 +68,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"admin_8py.html",
-"namespaceprocessor.html#ae17c03db2dd63a8c63c666505a69bde3"
+"0001__initial_8py.html",
+"namespaceschedule_functions_1_1data__processing_1_1description.html#a3fb437445d49e092b766de03387e0041"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

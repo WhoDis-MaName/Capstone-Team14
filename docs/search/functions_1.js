@@ -1,4 +1,17 @@
 var searchData=
 [
-  ['dashboard_5fview_0',['dashboard_view',['../namespaceschedule_functions_1_1views.html#adcfb91d67951bf02743f2639543f069d',1,'scheduleFunctions::views']]]
+  ['checkloginexists_0',['checkLoginExists',['../classschedule_functions_1_1tests_1_1_login_view_tests.html#a333001162e68b93ab718b2dd83dbc572',1,'scheduleFunctions::tests::LoginViewTests']]],
+  ['clean_5fcourse_5fname_1',['clean_course_name',['../namespaceschedule_functions_1_1data__processing_1_1converter.html#a2c3c52956ba6ae44b144102739336341',1,'scheduleFunctions::data_processing::converter']]],
+  ['clear_5fschedule_2',['clear_schedule',['../namespaceschedule_functions_1_1to__database.html#a3f5c56a962730bbad86f49e9d77e3517',1,'scheduleFunctions::to_database']]],
+  ['clear_5fview_3',['clear_view',['../namespaceschedule_functions_1_1views_1_1clear__view.html#ac05de5960703e52b47ad19dfab5bdb8f',1,'scheduleFunctions::views::clear_view']]],
+  ['combine_5fconstraints_4',['combine_constraints',['../namespaceschedule_functions_1_1data__processing_1_1process__four__year.html#aebada2cbefbb37461a1cc563c25e8047',1,'scheduleFunctions::data_processing::process_four_year']]],
+  ['compile_5frequirements_5',['compile_requirements',['../namespaceschedule_functions_1_1data__processing_1_1get__requirements.html#aacb4adc06e70f447b04c527b48586783',1,'scheduleFunctions::data_processing::get_requirements']]],
+  ['convert_6',['convert',['../namespacejsonconverter.html#afd495d200edc84576829056f9314e9f5',1,'jsonconverter.convert()'],['../namespaceschedule_functions_1_1data__processing_1_1jsonconverter.html#a44805bead1924b355b52915722ea18c1',1,'scheduleFunctions.data_processing.jsonconverter.convert()']]],
+  ['convert24_7',['convert24',['../namespacejsonconverter.html#aced567076b198d4dd780aaff8e73e0fa',1,'jsonconverter.convert24()'],['../namespaceschedule_functions_1_1data__processing_1_1jsonconverter.html#a86b399f74bc7e83c72db3081964f2b76',1,'scheduleFunctions.data_processing.jsonconverter.convert24()'],['../namespaceschedule_functions_1_1views_1_1upload__json__file.html#aac090a52fc4def28253778347ad1e6a6',1,'scheduleFunctions.views.upload_json_file.convert24()']]],
+  ['convert_5fasp_8',['convert_asp',['../namespaceschedule_functions_1_1data__processing_1_1process__four__year.html#acd4225e3db35e46fa42191f44b598c5b',1,'scheduleFunctions::data_processing::process_four_year']]],
+  ['convert_5fjson_5fto_5flp_9',['convert_json_to_lp',['../namespaceschedule_functions_1_1views_1_1upload__json__file.html#a52ea246c3add5f2fdde9da73a6d2ddc4',1,'scheduleFunctions::views::upload_json_file']]],
+  ['convert_5ftime_10',['convert_time',['../namespaceschedule_functions_1_1views_1_1clingo__helpers.html#ac40484b14bc79789b7f4f36a85b3e9e8',1,'scheduleFunctions::views::clingo_helpers']]],
+  ['convert_5fto_5fjson_11',['convert_to_json',['../namespaceschedule_functions_1_1data__processing_1_1optimizer.html#a3a5319202f503a8d2e9d7a482de2daa8',1,'scheduleFunctions.data_processing.optimizer.convert_to_json()'],['../namespaceschedule_functions_1_1views_1_1clingo__helpers.html#a3de6fff5db7dbb7c9a3db28d848e7357',1,'scheduleFunctions.views.clingo_helpers.convert_to_json()']]],
+  ['create_5fconstraints_12',['create_constraints',['../namespaceschedule_functions_1_1data__processing_1_1process__four__year.html#aa16c93667c5cbbd0102b8d620c9db8f6',1,'scheduleFunctions::data_processing::process_four_year']]],
+  ['create_5fsample_13',['create_sample',['../namespaceschedule_functions_1_1data__processing_1_1get__sample.html#a754098e307906d3bcb52dd8810e85044',1,'scheduleFunctions.data_processing.get_sample.create_sample()'],['../namespaceget__test__case.html#a1a1a4405381a58651499a351a4fb4dcb',1,'get_test_case.create_sample()']]]
 ];

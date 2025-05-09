@@ -1,27 +1,5 @@
 var searchData=
 [
-  ['dashboard_5fname_0',['dashboard_name',['../namespaceschedule_functions_1_1tests.html#a5a873be376a77306b83887b0108aef82',1,'scheduleFunctions::tests']]],
-  ['dashboard_5fview_1',['dashboard_view',['../namespaceschedule_functions_1_1views.html#adcfb91d67951bf02743f2639543f069d',1,'scheduleFunctions::views']]],
-  ['dashboardviewtests_2',['DashboardViewTests',['../classschedule_functions_1_1tests_1_1_dashboard_view_tests.html',1,'scheduleFunctions::tests']]],
-  ['data_3',['data',['../namespaceconverter.html#a1e1cb5282251941da3be7c61d30afc7c',1,'converter.data'],['../namespacedescription.html#a0260747a932650cdc1c4c60cdde7e4cd',1,'description.data']]],
-  ['data_5fdir_4',['data_dir',['../namespaceconverter.html#a1691122b017611f550b9ae5507d35c2b',1,'converter.data_dir'],['../namespacedescription.html#adee66afc7b280c8b0611150e9eb58079',1,'description.data_dir'],['../namespaceget__four__year.html#a18c6ce56f785c23a4819396e5bca9e00',1,'get_four_year.data_dir'],['../namespaceget__requirements.html#a638da6da80b7877d37f0de0659efa4ab',1,'get_requirements.data_dir'],['../namespaceprocess__constraints.html#a8fc7aab4b3b5aa8c30c61ff427c477d1',1,'process_constraints.data_dir'],['../namespaceprocessor.html#ad1f5881666625204d7d5892d8c169a4e',1,'processor.data_dir']]],
-  ['databases_5',['DATABASES',['../namespacemyproject_1_1settings.html#ae680d48d393a190a4fa09a9ba2815bd5',1,'myproject::settings']]],
-  ['day_6',['Day',['../classschedule_functions_1_1models_1_1_day.html',1,'scheduleFunctions::models']]],
-  ['day_5fof_5fweek_7',['day_of_week',['../classschedule_functions_1_1models_1_1_day.html#a0e13e5be1c42bd7b780814beaa19fe05',1,'scheduleFunctions::models::Day']]],
-  ['day_5fof_5fweek_5fchoices_8',['DAY_OF_WEEK_CHOICES',['../classschedule_functions_1_1models_1_1_day.html#a2dba4affcda985acbf32566b07e9700b',1,'scheduleFunctions::models::Day']]],
-  ['days_9',['days',['../classschedule_functions_1_1models_1_1_section.html#a09e0f096b507492c64b01dcb45a74f21',1,'scheduleFunctions::models::Section']]],
-  ['debug_10',['DEBUG',['../namespacemyproject_1_1settings.html#a87b6ba4f03c767af9e6204682cb446c4',1,'myproject::settings']]],
-  ['default_11',['default',['../namespaceidentifier.html#a1f16555666294a888b6f9cb4e1392490',1,'identifier']]],
-  ['default_5fauto_5ffield_12',['DEFAULT_AUTO_FIELD',['../namespacemyproject_1_1settings.html#a17084926a4c2f62c0e8dea7d61639bd7',1,'myproject::settings']]],
-  ['default_5fauto_5ffield_13',['default_auto_field',['../classschedule_functions_1_1apps_1_1_schedulefunctions_config.html#ac8e97262c2c13d0caed9e4ffacaaafa7',1,'scheduleFunctions::apps::SchedulefunctionsConfig']]],
-  ['deployment_14',['Deployment',['../md__r_e_a_d_m_e.html#autotoc_md25',1,'Command Line Deployment'],['../md__r_e_a_d_m_e.html#autotoc_md26',1,'Docker Deployment']]],
-  ['description_15',['description',['../namespacedescription.html',1,'']]],
-  ['description_2epy_16',['description.py',['../description_8py.html',1,'']]],
-  ['django_17',['Install Django',['../md__django__tutorial__instructions.html#autotoc_md4',1,'']]],
-  ['django_20app_18',['Create Django app',['../md__django__tutorial__instructions.html#autotoc_md6',1,'']]],
-  ['django_20project_19',['Run Django Project',['../md__django__tutorial__instructions.html#autotoc_md7',1,'']]],
-  ['django_20project_20',['Start Django project',['../md__django__tutorial__instructions.html#autotoc_md5',1,'']]],
-  ['django_20tutorial_20instructions_21',['Django Tutorial instructions',['../md__django__tutorial__instructions.html',1,'']]],
-  ['django_5ftutorial_5finstructions_2emd_22',['Django_tutorial_instructions.md',['../_django__tutorial__instructions_8md.html',1,'']]],
-  ['docker_20deployment_23',['Docker Deployment',['../md__r_e_a_d_m_e.html#autotoc_md26',1,'']]]
+  ['end_5ftime_0',['end_time',['../classschedule_functions_1_1models_1_1_time_slot.html#ac90360cf433111fcb095b0bcff759b43',1,'scheduleFunctions::models::TimeSlot']]],
+  ['equivalent_5fcourses_1',['equivalent_courses',['../classschedule_functions_1_1models_1_1_course.html#aa3dc4dbe7e485fbdd6ca97a860858427',1,'scheduleFunctions::models::Course']]]
 ];

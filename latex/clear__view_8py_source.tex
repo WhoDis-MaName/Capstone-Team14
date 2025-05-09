@@ -1,0 +1,17 @@
+\doxysection{clear\+\_\+view.\+py}
+\hypertarget{clear__view_8py_source}{}\label{clear__view_8py_source}\index{scheduleFunctions/views/clear\_view.py@{scheduleFunctions/views/clear\_view.py}}
+\mbox{\hyperlink{clear__view_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{clear__view_8py_source_l00001}\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clear__view}{00001}}\ \textcolor{keyword}{from}\ django.shortcuts\ \textcolor{keyword}{import}\ render,\ redirect}
+\DoxyCodeLine{\Hypertarget{clear__view_8py_source_l00002}00002\ \textcolor{keyword}{from}\ \mbox{\hyperlink{namespaceschedule_functions_1_1models}{scheduleFunctions.models}}\ \textcolor{keyword}{import}\ Section,\ Day}
+\DoxyCodeLine{\Hypertarget{clear__view_8py_source_l00003}00003\ \textcolor{keyword}{from}\ \mbox{\hyperlink{namespaceschedule_functions_1_1to__database}{scheduleFunctions.to\_database}}\ \textcolor{keyword}{import}\ clear\_schedule}
+\DoxyCodeLine{\Hypertarget{clear__view_8py_source_l00004}00004\ \textcolor{keyword}{from}\ \mbox{\hyperlink{namespaceschedule_functions_1_1views}{scheduleFunctions.views}}\ \textcolor{keyword}{import}\ dashboard\_view}
+\DoxyCodeLine{\Hypertarget{clear__view_8py_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{clear__view_8py_source_l00006}\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1clear__view_ac05de5960703e52b47ad19dfab5bdb8f}{00006}}\ \textcolor{keyword}{def\ }clear\_view(request):}
+\DoxyCodeLine{\Hypertarget{clear__view_8py_source_l00007}00007\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{stringliteral}{"{}username"{}}\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ request.session:}
+\DoxyCodeLine{\Hypertarget{clear__view_8py_source_l00008}00008\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ redirect(\textcolor{stringliteral}{"{}home"{}})\ \ \textcolor{comment}{\#\ Redirect\ to\ login\ if\ not\ authenticated}}
+\DoxyCodeLine{\Hypertarget{clear__view_8py_source_l00009}00009\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{clear__view_8py_source_l00010}00010\ \ \ \ \ clear\_schedule()}
+\DoxyCodeLine{\Hypertarget{clear__view_8py_source_l00011}00011\ \ \ \ \ \textcolor{keywordflow}{return}\ redirect(\textcolor{stringliteral}{"{}dashboard"{}})}
+
+\end{DoxyCode}

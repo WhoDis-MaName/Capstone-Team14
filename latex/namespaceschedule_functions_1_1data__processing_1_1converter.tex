@@ -1,0 +1,230 @@
+\doxysection{schedule\+Functions.\+data\+\_\+processing.\+converter Namespace Reference}
+\hypertarget{namespaceschedule_functions_1_1data__processing_1_1converter}{}\label{namespaceschedule_functions_1_1data__processing_1_1converter}\index{scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a2c3c52956ba6ae44b144102739336341}{clean\+\_\+course\+\_\+name}} (course)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a7aca7afb03dd1416d279c82accabd75f}{current\+\_\+directory}} = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a26c822df6ebdbc191b1e46d1238af86c}{path}} = current\+\_\+directory.\+split(os.\+sep)
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a0a0af82911ca7ee7912567774433dc81}{root\+\_\+index}} = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_ae3a670b844df220b3f32461fede47994}{root\+\_\+dir}} = os.\+sep.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a26c822df6ebdbc191b1e46d1238af86c}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a0a0af82911ca7ee7912567774433dc81}{root\+\_\+index}}+1\mbox{]})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_ac7edfd0c41455c1cf824c24c15b09edf}{data\+\_\+dir}} = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_ae3a670b844df220b3f32461fede47994}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}uploaded\+\_\+schedule\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a5e8e67eff3fabb777b95fc6211aea17e}{file\+\_\+path}} = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_ac7edfd0c41455c1cf824c24c15b09edf}{data\+\_\+dir}},"{}filtered.\+json"{})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_aebcd6c3534cd83c8a05998378d25ea59}{data}} = json.\+load(file)
+\item 
+dict \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a2e87d0204936eb3740bfa0a9e48df723}{course\+\_\+prereqs}} = \{\}
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a93e0fc54cfdef628075616858a1d9ba7}{strict\+\_\+prereq\+\_\+pattern}} = re.\+compile(r"{}(\mbox{[}\textbackslash{}w\textbackslash{}s\mbox{]}+) with C\mbox{[}-\/\mbox{]}? or better\texorpdfstring{$\vert$}{|}(\mbox{[}\textbackslash{}w\textbackslash{}s\mbox{]}+) AND\texorpdfstring{$\vert$}{|}(\mbox{[}\textbackslash{}w\textbackslash{}s\mbox{]}+) OR"{})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a6f3dcf05397acadf57a74015e2a53603}{title}} = course\+\_\+info.\+get("{}title"{}, "{}Unknown Title"{})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a2f8f2a5ee5cd89cde5f345a396c36666}{prereq\+\_\+text}} = course\+\_\+info.\+get("{}desc"{}, "{}"{})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_afc182802c6c5708acdc8e96bbe05e88c}{prereq\+\_\+part}} = prereq\+\_\+text.\+split("{}Prereq\+:"{})\mbox{[}1\mbox{]}.strip()
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_ace16ef4291645443197b35ffbf6b86e9}{matches}} = strict\+\_\+prereq\+\_\+pattern.\+findall(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_afc182802c6c5708acdc8e96bbe05e88c}{prereq\+\_\+part}})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a30f5230cc5b80109a265dfc1af3b33ca}{all\+\_\+prereqs}} = set()
+\item 
+str \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_ae9c596e839b085d3173b3832ffafa7c0}{structured\+\_\+prereq}} = f"{}choice(\mbox{[}\{\textquotesingle{}, \textquotesingle{}.join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a30f5230cc5b80109a265dfc1af3b33ca}{all\+\_\+prereqs}})\}\mbox{]})"{}
+\item 
+str \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a96f24e84cf6f5244875fcd0aab44c0f6}{course\+\_\+key}} = f"{}\{\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a2c3c52956ba6ae44b144102739336341}{clean\+\_\+course\+\_\+name}}(subject)\}\+\_\+\{course\+\_\+number\}"{}
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a637656d6701be5a5fd2b53a184e380e3}{lp\+\_\+file}} = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_ae3a670b844df220b3f32461fede47994}{root\+\_\+dir}},"{}courses.\+lp"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1converter_a2c3c52956ba6ae44b144102739336341}\index{scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}!clean\_course\_name@{clean\_course\_name}}
+\index{clean\_course\_name@{clean\_course\_name}!scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}}
+\doxysubsubsection{\texorpdfstring{clean\_course\_name()}{clean\_course\_name()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1converter_a2c3c52956ba6ae44b144102739336341} 
+schedule\+Functions.\+data\+\_\+processing.\+converter.\+clean\+\_\+course\+\_\+name (\begin{DoxyParamCaption}\item[{}]{course}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00033}{33}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1converter_a30f5230cc5b80109a265dfc1af3b33ca}\index{scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}!all\_prereqs@{all\_prereqs}}
+\index{all\_prereqs@{all\_prereqs}!scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}}
+\doxysubsubsection{\texorpdfstring{all\_prereqs}{all\_prereqs}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1converter_a30f5230cc5b80109a265dfc1af3b33ca} 
+schedule\+Functions.\+data\+\_\+processing.\+converter.\+all\+\_\+prereqs = set()}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00049}{49}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1converter_a96f24e84cf6f5244875fcd0aab44c0f6}\index{scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}!course\_key@{course\_key}}
+\index{course\_key@{course\_key}!scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}}
+\doxysubsubsection{\texorpdfstring{course\_key}{course\_key}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1converter_a96f24e84cf6f5244875fcd0aab44c0f6} 
+str schedule\+Functions.\+data\+\_\+processing.\+converter.\+course\+\_\+key = f"{}\{\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a2c3c52956ba6ae44b144102739336341}{clean\+\_\+course\+\_\+name}}(subject)\}\+\_\+\{course\+\_\+number\}"{}}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00062}{62}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1converter_a2e87d0204936eb3740bfa0a9e48df723}\index{scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}!course\_prereqs@{course\_prereqs}}
+\index{course\_prereqs@{course\_prereqs}!scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}}
+\doxysubsubsection{\texorpdfstring{course\_prereqs}{course\_prereqs}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1converter_a2e87d0204936eb3740bfa0a9e48df723} 
+dict schedule\+Functions.\+data\+\_\+processing.\+converter.\+course\+\_\+prereqs = \{\}}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00027}{27}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1converter_a7aca7afb03dd1416d279c82accabd75f}\index{scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}!current\_directory@{current\_directory}}
+\index{current\_directory@{current\_directory}!scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}}
+\doxysubsubsection{\texorpdfstring{current\_directory}{current\_directory}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1converter_a7aca7afb03dd1416d279c82accabd75f} 
+schedule\+Functions.\+data\+\_\+processing.\+converter.\+current\+\_\+directory = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00006}{6}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1converter_aebcd6c3534cd83c8a05998378d25ea59}\index{scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}!data@{data}}
+\index{data@{data}!scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1converter_aebcd6c3534cd83c8a05998378d25ea59} 
+schedule\+Functions.\+data\+\_\+processing.\+converter.\+data = json.\+load(file)}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00024}{24}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1converter_ac7edfd0c41455c1cf824c24c15b09edf}\index{scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}!data\_dir@{data\_dir}}
+\index{data\_dir@{data\_dir}!scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}}
+\doxysubsubsection{\texorpdfstring{data\_dir}{data\_dir}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1converter_ac7edfd0c41455c1cf824c24c15b09edf} 
+schedule\+Functions.\+data\+\_\+processing.\+converter.\+data\+\_\+dir = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_ae3a670b844df220b3f32461fede47994}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}uploaded\+\_\+schedule\textquotesingle{})}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00015}{15}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1converter_a5e8e67eff3fabb777b95fc6211aea17e}\index{scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}!file\_path@{file\_path}}
+\index{file\_path@{file\_path}!scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}}
+\doxysubsubsection{\texorpdfstring{file\_path}{file\_path}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1converter_a5e8e67eff3fabb777b95fc6211aea17e} 
+schedule\+Functions.\+data\+\_\+processing.\+converter.\+file\+\_\+path = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_ac7edfd0c41455c1cf824c24c15b09edf}{data\+\_\+dir}},"{}filtered.\+json"{})}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00022}{22}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1converter_a637656d6701be5a5fd2b53a184e380e3}\index{scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}!lp\_file@{lp\_file}}
+\index{lp\_file@{lp\_file}!scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}}
+\doxysubsubsection{\texorpdfstring{lp\_file}{lp\_file}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1converter_a637656d6701be5a5fd2b53a184e380e3} 
+schedule\+Functions.\+data\+\_\+processing.\+converter.\+lp\+\_\+file = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_ae3a670b844df220b3f32461fede47994}{root\+\_\+dir}},"{}courses.\+lp"{})}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00066}{66}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1converter_ace16ef4291645443197b35ffbf6b86e9}\index{scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}!matches@{matches}}
+\index{matches@{matches}!scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}}
+\doxysubsubsection{\texorpdfstring{matches}{matches}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1converter_ace16ef4291645443197b35ffbf6b86e9} 
+schedule\+Functions.\+data\+\_\+processing.\+converter.\+matches = strict\+\_\+prereq\+\_\+pattern.\+findall(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_afc182802c6c5708acdc8e96bbe05e88c}{prereq\+\_\+part}})}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00048}{48}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1converter_a26c822df6ebdbc191b1e46d1238af86c}\index{scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}!path@{path}}
+\index{path@{path}!scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1converter_a26c822df6ebdbc191b1e46d1238af86c} 
+schedule\+Functions.\+data\+\_\+processing.\+converter.\+path = current\+\_\+directory.\+split(os.\+sep)}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00011}{11}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1converter_afc182802c6c5708acdc8e96bbe05e88c}\index{scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}!prereq\_part@{prereq\_part}}
+\index{prereq\_part@{prereq\_part}!scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}}
+\doxysubsubsection{\texorpdfstring{prereq\_part}{prereq\_part}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1converter_afc182802c6c5708acdc8e96bbe05e88c} 
+schedule\+Functions.\+data\+\_\+processing.\+converter.\+prereq\+\_\+part = prereq\+\_\+text.\+split("{}Prereq\+:"{})\mbox{[}1\mbox{]}.strip()}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00045}{45}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1converter_a2f8f2a5ee5cd89cde5f345a396c36666}\index{scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}!prereq\_text@{prereq\_text}}
+\index{prereq\_text@{prereq\_text}!scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}}
+\doxysubsubsection{\texorpdfstring{prereq\_text}{prereq\_text}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1converter_a2f8f2a5ee5cd89cde5f345a396c36666} 
+schedule\+Functions.\+data\+\_\+processing.\+converter.\+prereq\+\_\+text = course\+\_\+info.\+get("{}desc"{}, "{}"{})}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00041}{41}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1converter_ae3a670b844df220b3f32461fede47994}\index{scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}!root\_dir@{root\_dir}}
+\index{root\_dir@{root\_dir}!scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}}
+\doxysubsubsection{\texorpdfstring{root\_dir}{root\_dir}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1converter_ae3a670b844df220b3f32461fede47994} 
+schedule\+Functions.\+data\+\_\+processing.\+converter.\+root\+\_\+dir = os.\+sep.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a26c822df6ebdbc191b1e46d1238af86c}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a0a0af82911ca7ee7912567774433dc81}{root\+\_\+index}}+1\mbox{]})}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00014}{14}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1converter_a0a0af82911ca7ee7912567774433dc81}\index{scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}!root\_index@{root\_index}}
+\index{root\_index@{root\_index}!scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}}
+\doxysubsubsection{\texorpdfstring{root\_index}{root\_index}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1converter_a0a0af82911ca7ee7912567774433dc81} 
+schedule\+Functions.\+data\+\_\+processing.\+converter.\+root\+\_\+index = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00013}{13}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1converter_a93e0fc54cfdef628075616858a1d9ba7}\index{scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}!strict\_prereq\_pattern@{strict\_prereq\_pattern}}
+\index{strict\_prereq\_pattern@{strict\_prereq\_pattern}!scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}}
+\doxysubsubsection{\texorpdfstring{strict\_prereq\_pattern}{strict\_prereq\_pattern}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1converter_a93e0fc54cfdef628075616858a1d9ba7} 
+schedule\+Functions.\+data\+\_\+processing.\+converter.\+strict\+\_\+prereq\+\_\+pattern = re.\+compile(r"{}(\mbox{[}\textbackslash{}w\textbackslash{}s\mbox{]}+) with C\mbox{[}-\/\mbox{]}? or better\texorpdfstring{$\vert$}{|}(\mbox{[}\textbackslash{}w\textbackslash{}s\mbox{]}+) AND\texorpdfstring{$\vert$}{|}(\mbox{[}\textbackslash{}w\textbackslash{}s\mbox{]}+) OR"{})}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00030}{30}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1converter_ae9c596e839b085d3173b3832ffafa7c0}\index{scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}!structured\_prereq@{structured\_prereq}}
+\index{structured\_prereq@{structured\_prereq}!scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}}
+\doxysubsubsection{\texorpdfstring{structured\_prereq}{structured\_prereq}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1converter_ae9c596e839b085d3173b3832ffafa7c0} 
+str schedule\+Functions.\+data\+\_\+processing.\+converter.\+structured\+\_\+prereq = f"{}choice(\mbox{[}\{\textquotesingle{}, \textquotesingle{}.join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1converter_a30f5230cc5b80109a265dfc1af3b33ca}{all\+\_\+prereqs}})\}\mbox{]})"{}}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00057}{57}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1converter_a6f3dcf05397acadf57a74015e2a53603}\index{scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}!title@{title}}
+\index{title@{title}!scheduleFunctions.data\_processing.converter@{scheduleFunctions.data\_processing.converter}}
+\doxysubsubsection{\texorpdfstring{title}{title}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1converter_a6f3dcf05397acadf57a74015e2a53603} 
+schedule\+Functions.\+data\+\_\+processing.\+converter.\+title = course\+\_\+info.\+get("{}title"{}, "{}Unknown Title"{})}
+
+
+
+Definition at line \mbox{\hyperlink{converter_8py_source_l00040}{40}} of file \mbox{\hyperlink{converter_8py_source}{converter.\+py}}.
+

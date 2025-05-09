@@ -1,0 +1,40 @@
+.TH "scheduleFunctions.views.section_view" 3 "Version 0.5" "Capstone Team 14" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scheduleFunctions.views.section_view
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBsection_view\fP (request)"
+.br
+.RI "Displays details of a specific course section\&. "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "scheduleFunctions\&.views\&.section_view\&.section_view ( request)"
+
+.PP
+Displays details of a specific course section\&. This view retrieves the session data for the authenticated user and validates that the required parameters ("subject", "course_number", and "section") are provided in the GET request\&. If any parameter is missing, it redirects the user back to the dashboard\&. It fetches the selected course and section from the database and also retrieves any other sections that overlap in time with the selected section\&. The view then renders the 'section_details\&.html' template with the details of the selected section and a list of overlapping sections\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIrequest\fP The HTTP request object containing the session data and GET parameters for subject, course number, and section\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A rendered HTML response with the 'section_details\&.html' template, including the selected section details, a list of overlapping sections, and courses from the same semester, or a redirect to the dashboard or login page if data is missing\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB16\fP of file \fBsection_view\&.py\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Capstone Team 14 from the source code\&.

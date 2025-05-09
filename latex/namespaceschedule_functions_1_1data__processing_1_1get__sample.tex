@@ -1,0 +1,158 @@
+\doxysection{schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+sample Namespace Reference}
+\hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__sample}{}\label{namespaceschedule_functions_1_1data__processing_1_1get__sample}\index{scheduleFunctions.data\_processing.get\_sample@{scheduleFunctions.data\_processing.get\_sample}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+dict \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a6401717e02c772c4aac9ddfd1f1b679d}{get\+\_\+classes}} (str filename)
+\item 
+dict \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a754098e307906d3bcb52dd8810e85044}{create\+\_\+sample}} (dict \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_af216e02d83cae212b6b53fce6035b966}{classes}}, int num\+\_\+semesters, int num\+\_\+departments, int num\+\_\+classes)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a2daea0b1c9b5564647fef428b38ea7d9}{current\+\_\+directory}} = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a24a39fd2e482b20956e07824a393e431}{path}} = current\+\_\+directory.\+split(os.\+sep)
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a7d504fbc6c2627bc760035d870017c6b}{root\+\_\+index}} = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a6dc95b02dfff752a27861706b6e40dc6}{root\+\_\+dir}} = os.\+sep.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a24a39fd2e482b20956e07824a393e431}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a7d504fbc6c2627bc760035d870017c6b}{root\+\_\+index}}+1\mbox{]})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a47adc6df0f0bd11efa86987521c271a2}{read\+\_\+dir}} = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a6dc95b02dfff752a27861706b6e40dc6}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}uploaded\+\_\+schedule\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_aaa27975c2e6dca82ba93d31f682e8cf3}{sample\+\_\+dir}} = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a6dc95b02dfff752a27861706b6e40dc6}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}samples\textquotesingle{})
+\item 
+dict \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_af216e02d83cae212b6b53fce6035b966}{classes}} = \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a6401717e02c772c4aac9ddfd1f1b679d}{get\+\_\+classes}}(os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a47adc6df0f0bd11efa86987521c271a2}{read\+\_\+dir}},\textquotesingle{}filtered.\+json\textquotesingle{}))
+\item 
+dict \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a05c752023d7a8839eae2a7115b90136c}{sample\+\_\+data}} = \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a754098e307906d3bcb52dd8810e85044}{create\+\_\+sample}}(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_af216e02d83cae212b6b53fce6035b966}{classes}}, 1, 2, 5)
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a5c4e4bbb53020664bed21c74ce512e85}{f}}
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_ad37b1caecd82ed39f465b078ba7c68ef}{indent}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__sample_a754098e307906d3bcb52dd8810e85044}\index{scheduleFunctions.data\_processing.get\_sample@{scheduleFunctions.data\_processing.get\_sample}!create\_sample@{create\_sample}}
+\index{create\_sample@{create\_sample}!scheduleFunctions.data\_processing.get\_sample@{scheduleFunctions.data\_processing.get\_sample}}
+\doxysubsubsection{\texorpdfstring{create\_sample()}{create\_sample()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__sample_a754098e307906d3bcb52dd8810e85044} 
+ dict schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+sample.\+create\+\_\+sample (\begin{DoxyParamCaption}\item[{dict}]{classes}{, }\item[{int}]{num\+\_\+semesters}{, }\item[{int}]{num\+\_\+departments}{, }\item[{int}]{num\+\_\+classes}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{get__sample_8py_source_l00013}{13}} of file \mbox{\hyperlink{get__sample_8py_source}{get\+\_\+sample.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__sample_a6401717e02c772c4aac9ddfd1f1b679d}\index{scheduleFunctions.data\_processing.get\_sample@{scheduleFunctions.data\_processing.get\_sample}!get\_classes@{get\_classes}}
+\index{get\_classes@{get\_classes}!scheduleFunctions.data\_processing.get\_sample@{scheduleFunctions.data\_processing.get\_sample}}
+\doxysubsubsection{\texorpdfstring{get\_classes()}{get\_classes()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__sample_a6401717e02c772c4aac9ddfd1f1b679d} 
+ dict schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+sample.\+get\+\_\+classes (\begin{DoxyParamCaption}\item[{str}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{get__sample_8py_source_l00005}{5}} of file \mbox{\hyperlink{get__sample_8py_source}{get\+\_\+sample.\+py}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__sample_af216e02d83cae212b6b53fce6035b966}\index{scheduleFunctions.data\_processing.get\_sample@{scheduleFunctions.data\_processing.get\_sample}!classes@{classes}}
+\index{classes@{classes}!scheduleFunctions.data\_processing.get\_sample@{scheduleFunctions.data\_processing.get\_sample}}
+\doxysubsubsection{\texorpdfstring{classes}{classes}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__sample_af216e02d83cae212b6b53fce6035b966} 
+dict schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+sample.\+classes = \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a6401717e02c772c4aac9ddfd1f1b679d}{get\+\_\+classes}}(os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a47adc6df0f0bd11efa86987521c271a2}{read\+\_\+dir}},\textquotesingle{}filtered.\+json\textquotesingle{}))}
+
+
+
+Definition at line \mbox{\hyperlink{get__sample_8py_source_l00054}{54}} of file \mbox{\hyperlink{get__sample_8py_source}{get\+\_\+sample.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__sample_a2daea0b1c9b5564647fef428b38ea7d9}\index{scheduleFunctions.data\_processing.get\_sample@{scheduleFunctions.data\_processing.get\_sample}!current\_directory@{current\_directory}}
+\index{current\_directory@{current\_directory}!scheduleFunctions.data\_processing.get\_sample@{scheduleFunctions.data\_processing.get\_sample}}
+\doxysubsubsection{\texorpdfstring{current\_directory}{current\_directory}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__sample_a2daea0b1c9b5564647fef428b38ea7d9} 
+schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+sample.\+current\+\_\+directory = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))}
+
+
+
+Definition at line \mbox{\hyperlink{get__sample_8py_source_l00033}{33}} of file \mbox{\hyperlink{get__sample_8py_source}{get\+\_\+sample.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__sample_a5c4e4bbb53020664bed21c74ce512e85}\index{scheduleFunctions.data\_processing.get\_sample@{scheduleFunctions.data\_processing.get\_sample}!f@{f}}
+\index{f@{f}!scheduleFunctions.data\_processing.get\_sample@{scheduleFunctions.data\_processing.get\_sample}}
+\doxysubsubsection{\texorpdfstring{f}{f}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__sample_a5c4e4bbb53020664bed21c74ce512e85} 
+schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+sample.\+f}
+
+
+
+Definition at line \mbox{\hyperlink{get__sample_8py_source_l00061}{61}} of file \mbox{\hyperlink{get__sample_8py_source}{get\+\_\+sample.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__sample_ad37b1caecd82ed39f465b078ba7c68ef}\index{scheduleFunctions.data\_processing.get\_sample@{scheduleFunctions.data\_processing.get\_sample}!indent@{indent}}
+\index{indent@{indent}!scheduleFunctions.data\_processing.get\_sample@{scheduleFunctions.data\_processing.get\_sample}}
+\doxysubsubsection{\texorpdfstring{indent}{indent}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__sample_ad37b1caecd82ed39f465b078ba7c68ef} 
+schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+sample.\+indent}
+
+
+
+Definition at line \mbox{\hyperlink{get__sample_8py_source_l00061}{61}} of file \mbox{\hyperlink{get__sample_8py_source}{get\+\_\+sample.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__sample_a24a39fd2e482b20956e07824a393e431}\index{scheduleFunctions.data\_processing.get\_sample@{scheduleFunctions.data\_processing.get\_sample}!path@{path}}
+\index{path@{path}!scheduleFunctions.data\_processing.get\_sample@{scheduleFunctions.data\_processing.get\_sample}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__sample_a24a39fd2e482b20956e07824a393e431} 
+schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+sample.\+path = current\+\_\+directory.\+split(os.\+sep)}
+
+
+
+Definition at line \mbox{\hyperlink{get__sample_8py_source_l00038}{38}} of file \mbox{\hyperlink{get__sample_8py_source}{get\+\_\+sample.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__sample_a47adc6df0f0bd11efa86987521c271a2}\index{scheduleFunctions.data\_processing.get\_sample@{scheduleFunctions.data\_processing.get\_sample}!read\_dir@{read\_dir}}
+\index{read\_dir@{read\_dir}!scheduleFunctions.data\_processing.get\_sample@{scheduleFunctions.data\_processing.get\_sample}}
+\doxysubsubsection{\texorpdfstring{read\_dir}{read\_dir}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__sample_a47adc6df0f0bd11efa86987521c271a2} 
+schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+sample.\+read\+\_\+dir = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a6dc95b02dfff752a27861706b6e40dc6}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}uploaded\+\_\+schedule\textquotesingle{})}
+
+
+
+Definition at line \mbox{\hyperlink{get__sample_8py_source_l00042}{42}} of file \mbox{\hyperlink{get__sample_8py_source}{get\+\_\+sample.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__sample_a6dc95b02dfff752a27861706b6e40dc6}\index{scheduleFunctions.data\_processing.get\_sample@{scheduleFunctions.data\_processing.get\_sample}!root\_dir@{root\_dir}}
+\index{root\_dir@{root\_dir}!scheduleFunctions.data\_processing.get\_sample@{scheduleFunctions.data\_processing.get\_sample}}
+\doxysubsubsection{\texorpdfstring{root\_dir}{root\_dir}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__sample_a6dc95b02dfff752a27861706b6e40dc6} 
+schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+sample.\+root\+\_\+dir = os.\+sep.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a24a39fd2e482b20956e07824a393e431}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a7d504fbc6c2627bc760035d870017c6b}{root\+\_\+index}}+1\mbox{]})}
+
+
+
+Definition at line \mbox{\hyperlink{get__sample_8py_source_l00041}{41}} of file \mbox{\hyperlink{get__sample_8py_source}{get\+\_\+sample.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__sample_a7d504fbc6c2627bc760035d870017c6b}\index{scheduleFunctions.data\_processing.get\_sample@{scheduleFunctions.data\_processing.get\_sample}!root\_index@{root\_index}}
+\index{root\_index@{root\_index}!scheduleFunctions.data\_processing.get\_sample@{scheduleFunctions.data\_processing.get\_sample}}
+\doxysubsubsection{\texorpdfstring{root\_index}{root\_index}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__sample_a7d504fbc6c2627bc760035d870017c6b} 
+schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+sample.\+root\+\_\+index = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})}
+
+
+
+Definition at line \mbox{\hyperlink{get__sample_8py_source_l00040}{40}} of file \mbox{\hyperlink{get__sample_8py_source}{get\+\_\+sample.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__sample_a05c752023d7a8839eae2a7115b90136c}\index{scheduleFunctions.data\_processing.get\_sample@{scheduleFunctions.data\_processing.get\_sample}!sample\_data@{sample\_data}}
+\index{sample\_data@{sample\_data}!scheduleFunctions.data\_processing.get\_sample@{scheduleFunctions.data\_processing.get\_sample}}
+\doxysubsubsection{\texorpdfstring{sample\_data}{sample\_data}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__sample_a05c752023d7a8839eae2a7115b90136c} 
+schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+sample.\+sample\+\_\+data = \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a754098e307906d3bcb52dd8810e85044}{create\+\_\+sample}}(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_af216e02d83cae212b6b53fce6035b966}{classes}}, 1, 2, 5)}
+
+
+
+Definition at line \mbox{\hyperlink{get__sample_8py_source_l00057}{57}} of file \mbox{\hyperlink{get__sample_8py_source}{get\+\_\+sample.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1get__sample_aaa27975c2e6dca82ba93d31f682e8cf3}\index{scheduleFunctions.data\_processing.get\_sample@{scheduleFunctions.data\_processing.get\_sample}!sample\_dir@{sample\_dir}}
+\index{sample\_dir@{sample\_dir}!scheduleFunctions.data\_processing.get\_sample@{scheduleFunctions.data\_processing.get\_sample}}
+\doxysubsubsection{\texorpdfstring{sample\_dir}{sample\_dir}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1get__sample_aaa27975c2e6dca82ba93d31f682e8cf3} 
+schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+sample.\+sample\+\_\+dir = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a6dc95b02dfff752a27861706b6e40dc6}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}samples\textquotesingle{})}
+
+
+
+Definition at line \mbox{\hyperlink{get__sample_8py_source_l00043}{43}} of file \mbox{\hyperlink{get__sample_8py_source}{get\+\_\+sample.\+py}}.
+

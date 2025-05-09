@@ -8,21 +8,21 @@ class \mbox{\hyperlink{classidentifier_1_1_clingo_app}{Clingo\+App}}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{namespaceidentifier_a42c3c8581a1d36faa9a43ef075339289}{current\+\_\+directory}} = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))
+\mbox{\hyperlink{namespaceidentifier_a42c3c8581a1d36faa9a43ef075339289}{current\+\_\+directory}}
 \item 
 \mbox{\hyperlink{namespaceidentifier_a446a7582ca279d7690d6f07663a9893d}{path}} = current\+\_\+directory.\+split(os.\+sep)
 \item 
-\mbox{\hyperlink{namespaceidentifier_a71a30334a39cf0e5aeaf400c2d0b9881}{root\+\_\+index}} = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})
+\mbox{\hyperlink{namespaceidentifier_a71a30334a39cf0e5aeaf400c2d0b9881}{root\+\_\+index}} = path.\+index("{}Capstone-\/Team14"{})
 \item 
-\mbox{\hyperlink{namespaceidentifier_a063b54070e2182ca05dc9d979bd1d88e}{root\+\_\+dir}} = os.\+sep.\+join(\mbox{\hyperlink{namespaceidentifier_a446a7582ca279d7690d6f07663a9893d}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceidentifier_a71a30334a39cf0e5aeaf400c2d0b9881}{root\+\_\+index}}+1\mbox{]})
+\mbox{\hyperlink{namespaceidentifier_a063b54070e2182ca05dc9d979bd1d88e}{root\+\_\+dir}} = os.\+sep.\+join(\mbox{\hyperlink{namespaceidentifier_a446a7582ca279d7690d6f07663a9893d}{path}}\mbox{[}\+: \mbox{\hyperlink{namespaceidentifier_a71a30334a39cf0e5aeaf400c2d0b9881}{root\+\_\+index}} + 1\mbox{]})
 \item 
-\mbox{\hyperlink{namespaceidentifier_a6193d645bdf51d04b498eaadd7c987fa}{read\+\_\+dir}} = os.\+path.\+join(\mbox{\hyperlink{namespaceidentifier_a063b54070e2182ca05dc9d979bd1d88e}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}uploaded\+\_\+schedule\textquotesingle{})
+\mbox{\hyperlink{namespaceidentifier_a6193d645bdf51d04b498eaadd7c987fa}{read\+\_\+dir}} = os.\+path.\+join(\mbox{\hyperlink{namespaceidentifier_a063b54070e2182ca05dc9d979bd1d88e}{root\+\_\+dir}}, "{}media"{}, "{}uploads"{})
+\item 
+\mbox{\hyperlink{namespaceidentifier_ab504c8e2b9ec9a766e8941c258ce8875}{clingo\+\_\+dir}} = os.\+path.\+join(\mbox{\hyperlink{namespaceidentifier_a063b54070e2182ca05dc9d979bd1d88e}{root\+\_\+dir}}, "{}clingo"{})
 \item 
 \mbox{\hyperlink{namespaceidentifier_a337e1780e0ec9f118fa3420ae427a363}{parser}} = argparse.\+Argument\+Parser(description="{}Input class json"{})
 \item 
 \mbox{\hyperlink{namespaceidentifier_ad9db37e881aa38ba136f00728be4fba2}{type}}
-\item 
-\mbox{\hyperlink{namespaceidentifier_a7dc7764f7990acec64f2465ad623c41e}{str}}
 \item 
 \mbox{\hyperlink{namespaceidentifier_a1f16555666294a888b6f9cb4e1392490}{default}}
 \item 
@@ -31,11 +31,32 @@ class \mbox{\hyperlink{classidentifier_1_1_clingo_app}{Clingo\+App}}
 
 
 \doxysubsection{Variable Documentation}
+\Hypertarget{namespaceidentifier_ab504c8e2b9ec9a766e8941c258ce8875}\index{identifier@{identifier}!clingo\_dir@{clingo\_dir}}
+\index{clingo\_dir@{clingo\_dir}!identifier@{identifier}}
+\doxysubsubsection{\texorpdfstring{clingo\_dir}{clingo\_dir}}
+{\footnotesize\ttfamily \label{namespaceidentifier_ab504c8e2b9ec9a766e8941c258ce8875} 
+identifier.\+clingo\+\_\+dir = os.\+path.\+join(\mbox{\hyperlink{namespaceidentifier_a063b54070e2182ca05dc9d979bd1d88e}{root\+\_\+dir}}, "{}clingo"{})}
+
+
+
+Definition at line \mbox{\hyperlink{identifier_8py_source_l00019}{19}} of file \mbox{\hyperlink{identifier_8py_source}{identifier.\+py}}.
+
 \Hypertarget{namespaceidentifier_a42c3c8581a1d36faa9a43ef075339289}\index{identifier@{identifier}!current\_directory@{current\_directory}}
 \index{current\_directory@{current\_directory}!identifier@{identifier}}
 \doxysubsubsection{\texorpdfstring{current\_directory}{current\_directory}}
 {\footnotesize\ttfamily \label{namespaceidentifier_a42c3c8581a1d36faa9a43ef075339289} 
-identifier.\+current\+\_\+directory = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))}
+identifier.\+current\+\_\+directory}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ os.path.dirname(}
+\DoxyCodeLine{00002\ \ \ \ \ \ \ \ \ os.path.realpath(\_\_file\_\_)}
+\DoxyCodeLine{00003\ \ \ \ \ )}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{identifier_8py_source_l00007}{7}} of file \mbox{\hyperlink{identifier_8py_source}{identifier.\+py}}.
 
 \Hypertarget{namespaceidentifier_a1f16555666294a888b6f9cb4e1392490}\index{identifier@{identifier}!default@{default}}
 \index{default@{default}!identifier@{identifier}}
@@ -43,11 +64,19 @@ identifier.\+current\+\_\+directory = os.\+path.\+dirname(os.\+path.\+realpath(\
 {\footnotesize\ttfamily \label{namespaceidentifier_a1f16555666294a888b6f9cb4e1392490} 
 identifier.\+default}
 
+
+
+Definition at line \mbox{\hyperlink{identifier_8py_source_l00027}{27}} of file \mbox{\hyperlink{identifier_8py_source}{identifier.\+py}}.
+
 \Hypertarget{namespaceidentifier_a24a6b4ae58a4e82cbb7404fcf9407349}\index{identifier@{identifier}!help@{help}}
 \index{help@{help}!identifier@{identifier}}
 \doxysubsubsection{\texorpdfstring{help}{help}}
 {\footnotesize\ttfamily \label{namespaceidentifier_a24a6b4ae58a4e82cbb7404fcf9407349} 
 identifier.\+help}
+
+
+
+Definition at line \mbox{\hyperlink{identifier_8py_source_l00028}{28}} of file \mbox{\hyperlink{identifier_8py_source}{identifier.\+py}}.
 
 \Hypertarget{namespaceidentifier_a337e1780e0ec9f118fa3420ae427a363}\index{identifier@{identifier}!parser@{parser}}
 \index{parser@{parser}!identifier@{identifier}}
@@ -55,39 +84,57 @@ identifier.\+help}
 {\footnotesize\ttfamily \label{namespaceidentifier_a337e1780e0ec9f118fa3420ae427a363} 
 identifier.\+parser = argparse.\+Argument\+Parser(description="{}Input class json"{})}
 
+
+
+Definition at line \mbox{\hyperlink{identifier_8py_source_l00021}{21}} of file \mbox{\hyperlink{identifier_8py_source}{identifier.\+py}}.
+
 \Hypertarget{namespaceidentifier_a446a7582ca279d7690d6f07663a9893d}\index{identifier@{identifier}!path@{path}}
 \index{path@{path}!identifier@{identifier}}
 \doxysubsubsection{\texorpdfstring{path}{path}}
 {\footnotesize\ttfamily \label{namespaceidentifier_a446a7582ca279d7690d6f07663a9893d} 
 identifier.\+path = current\+\_\+directory.\+split(os.\+sep)}
 
+
+
+Definition at line \mbox{\hyperlink{identifier_8py_source_l00014}{14}} of file \mbox{\hyperlink{identifier_8py_source}{identifier.\+py}}.
+
 \Hypertarget{namespaceidentifier_a6193d645bdf51d04b498eaadd7c987fa}\index{identifier@{identifier}!read\_dir@{read\_dir}}
 \index{read\_dir@{read\_dir}!identifier@{identifier}}
 \doxysubsubsection{\texorpdfstring{read\_dir}{read\_dir}}
 {\footnotesize\ttfamily \label{namespaceidentifier_a6193d645bdf51d04b498eaadd7c987fa} 
-identifier.\+read\+\_\+dir = os.\+path.\+join(\mbox{\hyperlink{namespaceidentifier_a063b54070e2182ca05dc9d979bd1d88e}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}uploaded\+\_\+schedule\textquotesingle{})}
+identifier.\+read\+\_\+dir = os.\+path.\+join(\mbox{\hyperlink{namespaceidentifier_a063b54070e2182ca05dc9d979bd1d88e}{root\+\_\+dir}}, "{}media"{}, "{}uploads"{})}
+
+
+
+Definition at line \mbox{\hyperlink{identifier_8py_source_l00018}{18}} of file \mbox{\hyperlink{identifier_8py_source}{identifier.\+py}}.
 
 \Hypertarget{namespaceidentifier_a063b54070e2182ca05dc9d979bd1d88e}\index{identifier@{identifier}!root\_dir@{root\_dir}}
 \index{root\_dir@{root\_dir}!identifier@{identifier}}
 \doxysubsubsection{\texorpdfstring{root\_dir}{root\_dir}}
 {\footnotesize\ttfamily \label{namespaceidentifier_a063b54070e2182ca05dc9d979bd1d88e} 
-identifier.\+root\+\_\+dir = os.\+sep.\+join(\mbox{\hyperlink{namespaceidentifier_a446a7582ca279d7690d6f07663a9893d}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceidentifier_a71a30334a39cf0e5aeaf400c2d0b9881}{root\+\_\+index}}+1\mbox{]})}
+identifier.\+root\+\_\+dir = os.\+sep.\+join(\mbox{\hyperlink{namespaceidentifier_a446a7582ca279d7690d6f07663a9893d}{path}}\mbox{[}\+: \mbox{\hyperlink{namespaceidentifier_a71a30334a39cf0e5aeaf400c2d0b9881}{root\+\_\+index}} + 1\mbox{]})}
+
+
+
+Definition at line \mbox{\hyperlink{identifier_8py_source_l00017}{17}} of file \mbox{\hyperlink{identifier_8py_source}{identifier.\+py}}.
 
 \Hypertarget{namespaceidentifier_a71a30334a39cf0e5aeaf400c2d0b9881}\index{identifier@{identifier}!root\_index@{root\_index}}
 \index{root\_index@{root\_index}!identifier@{identifier}}
 \doxysubsubsection{\texorpdfstring{root\_index}{root\_index}}
 {\footnotesize\ttfamily \label{namespaceidentifier_a71a30334a39cf0e5aeaf400c2d0b9881} 
-identifier.\+root\+\_\+index = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})}
+identifier.\+root\+\_\+index = path.\+index("{}Capstone-\/Team14"{})}
 
-\Hypertarget{namespaceidentifier_a7dc7764f7990acec64f2465ad623c41e}\index{identifier@{identifier}!str@{str}}
-\index{str@{str}!identifier@{identifier}}
-\doxysubsubsection{\texorpdfstring{str}{str}}
-{\footnotesize\ttfamily \label{namespaceidentifier_a7dc7764f7990acec64f2465ad623c41e} 
-identifier.\+str}
+
+
+Definition at line \mbox{\hyperlink{identifier_8py_source_l00016}{16}} of file \mbox{\hyperlink{identifier_8py_source}{identifier.\+py}}.
 
 \Hypertarget{namespaceidentifier_ad9db37e881aa38ba136f00728be4fba2}\index{identifier@{identifier}!type@{type}}
 \index{type@{type}!identifier@{identifier}}
 \doxysubsubsection{\texorpdfstring{type}{type}}
 {\footnotesize\ttfamily \label{namespaceidentifier_ad9db37e881aa38ba136f00728be4fba2} 
 identifier.\+type}
+
+
+
+Definition at line \mbox{\hyperlink{identifier_8py_source_l00026}{26}} of file \mbox{\hyperlink{identifier_8py_source}{identifier.\+py}}.
 

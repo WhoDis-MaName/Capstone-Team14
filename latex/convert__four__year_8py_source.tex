@@ -1,0 +1,56 @@
+\doxysection{convert\+\_\+four\+\_\+year.\+py}
+\hypertarget{convert__four__year_8py_source}{}\label{convert__four__year_8py_source}\index{scheduleFunctions/data\_processing/convert\_four\_year.py@{scheduleFunctions/data\_processing/convert\_four\_year.py}}
+\mbox{\hyperlink{convert__four__year_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00001}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1convert__four__year}{00001}}\ \textcolor{keyword}{import}\ json}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00004}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1convert__four__year_a5a9493f9cafb1713b9624c925fefbb5e}{00004}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespacefour__year__to__clingo}{four\_year\_to\_clingo}}(json\_file,\ output\_file):}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00005}00005\ \ \ \ \ \textcolor{keyword}{with}\ open(json\_file,\ \textcolor{stringliteral}{"{}r"{}})\ \textcolor{keyword}{as}\ file:}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00006}00006\ \ \ \ \ \ \ \ \ data\ =\ json.load(file)}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00008}00008\ \ \ \ \ \textcolor{comment}{\#\ If\ the\ JSON\ root\ is\ a\ list,\ assume\ it\ contains\ a\ dictionary}}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00009}00009\ \ \ \ \ \textcolor{keywordflow}{if}\ isinstance(data,\ list)\ \textcolor{keywordflow}{and}\ len(data)\ >\ 0:}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00010}00010\ \ \ \ \ \ \ \ \ data\ =\ data[0]\ \ \textcolor{comment}{\#\ Take\ the\ first\ element}}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00012}00012\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ isinstance(data,\ dict):}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{raise}\ ValueError(}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Invalid\ JSON\ structure:\ Expected\ a\ dictionary\ at\ the\ top\ level."{}}}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00015}00015\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00017}00017\ \ \ \ \ clingo\_facts\ =\ []}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00019}00019\ \ \ \ \ planned\_classes\ =\ []}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00021}00021\ \ \ \ \ year\_id\ =\ 1}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00022}00022\ \ \ \ \ module\_id\ =\ 0}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{for}\ year,\ semesters\ \textcolor{keywordflow}{in}\ data.items():}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00024}00024\ \ \ \ \ \ \ \ \ year\_fact\ =\ f\textcolor{stringliteral}{"{}year(\{year\_id\})."{}}}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00025}00025\ \ \ \ \ \ \ \ \ clingo\_facts.append(year\_fact)}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ semester,\ courses\ \textcolor{keywordflow}{in}\ semesters.items():}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ course\_group\ \textcolor{keywordflow}{in}\ courses:}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ course\_codes,\ course\_names,\ credits\ =\ course\_group}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ module\_fact\ =\ f\textcolor{stringliteral}{"{}module(m\{module\_id\},\ \{year\_id\})."{}}}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clingo\_facts.append(module\_fact)}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ course\ \textcolor{keywordflow}{in}\ course\_codes:}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ course\_fact\ =\ f\textcolor{stringliteral}{"{}planned\_course(\{course\},\ m\{module\_id\},\ \{credits\})."{}}}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clingo\_facts.append(course\_fact)}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ planned\_classes.append(course)}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ module\_id\ +=\ 1}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00040}00040\ \ \ \ \ \ \ \ \ year\_id\ +=\ 1}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00041}00041\ \ \ \ \ clingo\_facts.append(f\textcolor{stringliteral}{"{}planned\_classes(\{';\ '.join(planned\_classes)\})."{}})}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{with}\ open(output\_file,\ \textcolor{stringliteral}{"{}w"{}})\ \textcolor{keyword}{as}\ file:}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00043}00043\ \ \ \ \ \ \ \ \ file.write(\textcolor{stringliteral}{"{}\(\backslash\)n"{}}.join(clingo\_facts))}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00046}00046\ \textcolor{comment}{\#\ Example\ usage}}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00047}00047\ \textcolor{keywordflow}{if}\ \_\_name\_\_\ ==\ \textcolor{stringliteral}{'\_\_main\_\_'}:}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00048}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1convert__four__year_a9f9d52795965ab12c35fb3d04832e3d8}{00048}}\ \ \ \ \ json\_file\ =\ \textcolor{stringliteral}{r"{}C:\(\backslash\)Users\(\backslash\)Josh\(\backslash\)Documents\(\backslash\)GitHub\(\backslash\)Capstone-\/Team14\(\backslash\)data\_files\(\backslash\)four\_year\_plan\(\backslash\)fourYearPlan.json"{}}\ \ \textcolor{comment}{\#\ Change\ this\ to\ your\ actual\ file\ path}}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00049}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1convert__four__year_a222c57534bba1beeeb321642fde496d5}{00049}}\ \ \ \ \ output\_file\ =\ json\_file.replace(\textcolor{stringliteral}{"{}.json"{}},\ \textcolor{stringliteral}{"{}.lp"{}})\ \ \textcolor{comment}{\#\ Output\ file}}
+\DoxyCodeLine{\Hypertarget{convert__four__year_8py_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{namespacefour__year__to__clingo}{four\_year\_to\_clingo}}(json\_file,\ output\_file)}
+
+\end{DoxyCode}

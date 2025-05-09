@@ -1,0 +1,36 @@
+\doxysection{schedule\+Functions.\+views.\+download\+\_\+optimized\+\_\+file Namespace Reference}
+\hypertarget{namespaceschedule_functions_1_1views_1_1download__optimized__file}{}\label{namespaceschedule_functions_1_1views_1_1download__optimized__file}\index{scheduleFunctions.views.download\_optimized\_file@{scheduleFunctions.views.download\_optimized\_file}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1download__optimized__file_a21f3134f5d39100d7a6efc28812119b8}{download\+\_\+optimized\+\_\+file}} (request, filename)
+\begin{DoxyCompactList}\small\item\em Handles the download of an optimized file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceschedule_functions_1_1views_1_1download__optimized__file_a21f3134f5d39100d7a6efc28812119b8}\index{scheduleFunctions.views.download\_optimized\_file@{scheduleFunctions.views.download\_optimized\_file}!download\_optimized\_file@{download\_optimized\_file}}
+\index{download\_optimized\_file@{download\_optimized\_file}!scheduleFunctions.views.download\_optimized\_file@{scheduleFunctions.views.download\_optimized\_file}}
+\doxysubsubsection{\texorpdfstring{download\_optimized\_file()}{download\_optimized\_file()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_1_1download__optimized__file_a21f3134f5d39100d7a6efc28812119b8} 
+schedule\+Functions.\+views.\+download\+\_\+optimized\+\_\+file.\+download\+\_\+optimized\+\_\+file (\begin{DoxyParamCaption}\item[{}]{request}{, }\item[{}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Handles the download of an optimized file. 
+
+This view attempts to locate and return the requested file for download. If the file exists in the specified directory, it is served as an attachment. If the file does not exist, a 404 error response is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The HTTP request object, which includes the \textquotesingle{}filename\textquotesingle{} parameter as part of the URL. \\
+\hline
+{\em filename} & The name of the file to be downloaded. This should correspond to a file located in the \textquotesingle{}uploads\textquotesingle{} directory under MEDIA\+\_\+\+ROOT. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A File\+Response to serve the file as an attachment if it exists, or a Json\+Response with an error message and a 404 status if the file is not found. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{download__optimized__file_8py_source_l00017}{17}} of file \mbox{\hyperlink{download__optimized__file_8py_source}{download\+\_\+optimized\+\_\+file.\+py}}.
+

@@ -1,0 +1,69 @@
+\doxysection{apps.\+py}
+\hypertarget{apps_8py_source}{}\label{apps_8py_source}\index{scheduleFunctions/apps.py@{scheduleFunctions/apps.py}}
+\mbox{\hyperlink{apps_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00001}\mbox{\hyperlink{namespaceschedule_functions_1_1apps}{00001}}\ \textcolor{keyword}{import}\ os}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00002}00002\ \textcolor{keyword}{import}\ sys}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00004}00004\ \textcolor{keyword}{from}\ django.apps\ \textcolor{keyword}{import}\ AppConfig}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00005}00005\ \textcolor{keyword}{from}\ django.conf\ \textcolor{keyword}{import}\ settings}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00008}\mbox{\hyperlink{classschedule_functions_1_1apps_1_1_schedulefunctions_config}{00008}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classschedule_functions_1_1apps_1_1_schedulefunctions_config}{SchedulefunctionsConfig}}(AppConfig):}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00009}\mbox{\hyperlink{classschedule_functions_1_1apps_1_1_schedulefunctions_config_ac8e97262c2c13d0caed9e4ffacaaafa7}{00009}}\ \ \ \ \ default\_auto\_field\ =\ \textcolor{stringliteral}{'django.db.models.BigAutoField'}}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00010}\mbox{\hyperlink{classschedule_functions_1_1apps_1_1_schedulefunctions_config_a33dd09170840b867366047ab177e23ba}{00010}}\ \ \ \ \ name\ =\ \textcolor{stringliteral}{'scheduleFunctions'}}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00011}00011\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00012}\mbox{\hyperlink{classschedule_functions_1_1apps_1_1_schedulefunctions_config_afe78cd8cb6900dffd37563a2dfee8916}{00012}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{classschedule_functions_1_1apps_1_1_schedulefunctions_config_afe78cd8cb6900dffd37563a2dfee8916}{ready}}(self):}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ os.path.exists(os.path.join(settings.BASE\_DIR,\ \textcolor{stringliteral}{"{}run\_once.lock"{}}))\ \textcolor{keywordflow}{and}\ \textcolor{keywordflow}{not}\ any(flag\ \textcolor{keywordflow}{in}\ sys.argv\ \textcolor{keywordflow}{for}\ flag\ \textcolor{keywordflow}{in}\ [\textcolor{stringliteral}{'makemigrations'},\ \textcolor{stringliteral}{'migrate'},\ \textcolor{stringliteral}{'loaddata'}]):}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Code\ to\ run\ once\ on\ startup}}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Startup\ code\ executed"{}})}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{from}\ .data\_processing.get\_four\_year\ \textcolor{keyword}{import}\ read\_four\_year}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{from}\ .data\_processing.get\_requirements\ \textcolor{keyword}{import}\ process\_degree\_requirements}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{from}\ .data\_processing.process\_four\_year\ \textcolor{keyword}{import}\ create\_constraints}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{from}\ .to\_database\ \textcolor{keyword}{import}\ store\_requirements,\ store\_plan}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{import}\ json}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Four\ Year\ Plan}}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ data\_dir\ =\ os.path.join(settings.BASE\_DIR,\ \textcolor{stringliteral}{'data\_files'})}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os.makedirs(data\_dir)}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{except}:}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{pass}}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ plan\_file\ =\ os.path.join(data\_dir,\textcolor{stringliteral}{'four\_year\_plan'},\textcolor{stringliteral}{'four\_year\_plan.json'})}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ url\ =\ \textcolor{stringliteral}{'https://catalog.unomaha.edu/undergraduate/college-\/information-\/science-\/technology/computer-\/science/computer-\/science-\/bs/\#fouryearplantext'}}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os.makedirs(os.path.join(data\_dir,\textcolor{stringliteral}{'four\_year\_plan'}))}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{except}:}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{pass}}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ read\_four\_year(url,\ plan\_file)}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ constraints\ =\ create\_constraints(plan\_file)}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ plan\_file\ =\ os.path.join(data\_dir,\textcolor{stringliteral}{'four\_year\_plan'},\textcolor{stringliteral}{'fouryearplan\_processed.json'})}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{with}\ open(plan\_file,\ \textcolor{stringliteral}{'w'})\ \textcolor{keyword}{as}\ f:}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ json.dump(constraints,f,\ indent=4)}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ requirements\_file\ =\ os.path.join(data\_dir,\textcolor{stringliteral}{'requirements'},\textcolor{stringliteral}{'requirements.json'})}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os.makedirs(os.path.join(data\_dir,\textcolor{stringliteral}{'requirements'}))}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{except}:}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{pass}}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ urls\ =\ [}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'https://catalog.unomaha.edu/undergraduate/college-\/information-\/science-\/technology/computer-\/science/computer-\/science-\/bs/artificialintelligence-\/concentraton/'},}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'https://catalog.unomaha.edu/undergraduate/college-\/information-\/science-\/technology/computer-\/science/computer-\/science-\/bs/game-\/programming-\/concentration/'},}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'https://catalog.unomaha.edu/undergraduate/college-\/information-\/science-\/technology/computer-\/science/computer-\/science-\/bs/internet-\/technologies-\/it-\/concentration-\/computer-\/science-\/majors/'},}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'https://catalog.unomaha.edu/undergraduate/college-\/information-\/science-\/technology/computer-\/science/computer-\/science-\/bs/information-\/assurance-\/concentration/'},}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'https://catalog.unomaha.edu/undergraduate/college-\/information-\/science-\/technology/computer-\/science/computer-\/science-\/bs/software-\/engineering-\/concentration/'}}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ ]}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ process\_degree\_requirements(urls,\ requirements\_file)}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ store\_requirements(requirements\_file)}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ store\_plan(plan\_file)}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{with}\ open(\textcolor{stringliteral}{"{}run\_once.lock"{}},\ \textcolor{stringliteral}{"{}w"{}})\ \textcolor{keyword}{as}\ f:}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ f.write(\textcolor{stringliteral}{"{}Run\ once"{}})}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ settings.STARTUP\_DONE\ =\ \textcolor{keyword}{True}}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00062}00062\ \ \ \ \ \ \ \ \ ...}
+\DoxyCodeLine{\Hypertarget{apps_8py_source_l00063}00063\ }
+
+\end{DoxyCode}

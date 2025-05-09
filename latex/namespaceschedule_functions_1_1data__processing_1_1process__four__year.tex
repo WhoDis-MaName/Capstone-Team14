@@ -1,0 +1,321 @@
+\doxysection{schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year Namespace Reference}
+\hypertarget{namespaceschedule_functions_1_1data__processing_1_1process__four__year}{}\label{namespaceschedule_functions_1_1data__processing_1_1process__four__year}\index{scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+list\mbox{[}dict\mbox{]} \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a763025404bc1e677724a1428f6c7b69c}{get\+\_\+plan}} (str \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a2f2668c43b01452aa69d495b00ac96ee}{filename}})
+\begin{DoxyCompactList}\small\item\em Read the four year plan from a file and confirm that it is a list. \end{DoxyCompactList}\item 
+list \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a8be5e9112a0dc495368e7f4ff583e981}{get\+\_\+semester}} (list\mbox{[}dict\mbox{]} plan, str\texorpdfstring{$\vert$}{|}int year, str semester)
+\begin{DoxyCompactList}\small\item\em Get the list of classes for a particular semester from the four year plan, assuming that there may be multiple plans given. \end{DoxyCompactList}\item 
+dict \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_ad227505cb8fb4aee06b7071f8c2293b2}{set\+\_\+contsraints}} (list semester\+\_\+plan, int semester\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Process the semester such that classes listed as fulfilling the same requirement are soft constraints and all other classes in the semester are hard constraints. \end{DoxyCompactList}\item 
+dict \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_aebada2cbefbb37461a1cc563c25e8047}{combine\+\_\+constraints}} (list\mbox{[}dict\mbox{]} \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_af85c7333e12bd9ce37a70ccd2796a08a}{constraints}})
+\begin{DoxyCompactList}\small\item\em Combine the constraints so that the keys are based on the course and not based on the semester. \end{DoxyCompactList}\item 
+dict \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_aa16c93667c5cbbd0102b8d620c9db8f6}{create\+\_\+constraints}} (str \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a2f2668c43b01452aa69d495b00ac96ee}{filename}})
+\begin{DoxyCompactList}\small\item\em Take a four year plan stored in a JSON file and process it so that it can be stored as JSON or as clingo in the desired format. \end{DoxyCompactList}\item 
+None \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_acd4225e3db35e46fa42191f44b598c5b}{convert\+\_\+asp}} (dict \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_af85c7333e12bd9ce37a70ccd2796a08a}{constraints}}, str file)
+\begin{DoxyCompactList}\small\item\em Take formated constraints and convert it into asp rules In addition to the rules defined by the constraints parameter, the rules file is also appended with equivalence rules. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_aabc9cb8c12e043972762e064b1dd00a9}{current\+\_\+directory}} = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a5d57be1183317bb66335827da93c9034}{path}} = current\+\_\+directory.\+split(os.\+sep)
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_ab2fbc89472a3ab522b9b9fde391b05be}{root\+\_\+index}} = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a7bb228d657fdb736e661b6c2f72decf1}{root\+\_\+dir}} = os.\+sep.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a5d57be1183317bb66335827da93c9034}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_ab2fbc89472a3ab522b9b9fde391b05be}{root\+\_\+index}}+1\mbox{]})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_af4362738315f00ddc2155306105cb68c}{data\+\_\+dir}} = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a7bb228d657fdb736e661b6c2f72decf1}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}four\+\_\+year\+\_\+plan\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a2f2668c43b01452aa69d495b00ac96ee}{filename}} = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_af4362738315f00ddc2155306105cb68c}{data\+\_\+dir}}, \textquotesingle{}four\+Year\+Plan.\+json\textquotesingle{})
+\item 
+dict \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_af85c7333e12bd9ce37a70ccd2796a08a}{constraints}} = \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_aa16c93667c5cbbd0102b8d620c9db8f6}{create\+\_\+constraints}}(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a2f2668c43b01452aa69d495b00ac96ee}{filename}})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a364f1aeff327d25fea14df7d72b602b6}{json\+\_\+file}} = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_af4362738315f00ddc2155306105cb68c}{data\+\_\+dir}}, \textquotesingle{}four\+\_\+year\+\_\+plan.\+json\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a0158ffd83032ab00d2b2f004c7cd452d}{asp\+\_\+file}} = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_af4362738315f00ddc2155306105cb68c}{data\+\_\+dir}}, \textquotesingle{}four\+\_\+year\+\_\+plan\+\_\+constraints.\+lp\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a1c0b728cd04edccec8324b2262d25274}{f}}
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a0421553fbbf635d707b890d87b588482}{indent}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1process__four__year_aebada2cbefbb37461a1cc563c25e8047}\index{scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}!combine\_constraints@{combine\_constraints}}
+\index{combine\_constraints@{combine\_constraints}!scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}}
+\doxysubsubsection{\texorpdfstring{combine\_constraints()}{combine\_constraints()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1process__four__year_aebada2cbefbb37461a1cc563c25e8047} 
+ dict schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+combine\+\_\+constraints (\begin{DoxyParamCaption}\item[{list\mbox{[}dict\mbox{]}}]{constraints}{}\end{DoxyParamCaption})}
+
+
+
+Combine the constraints so that the keys are based on the course and not based on the semester. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em constraints} & A list where each item in the list represents the classes in a semester \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A dictionary whose keys are all of the classes described in the four year plan 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{process__four__year_8py_source_l00144}{144}} of file \mbox{\hyperlink{process__four__year_8py_source}{process\+\_\+four\+\_\+year.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1process__four__year_acd4225e3db35e46fa42191f44b598c5b}\index{scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}!convert\_asp@{convert\_asp}}
+\index{convert\_asp@{convert\_asp}!scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}}
+\doxysubsubsection{\texorpdfstring{convert\_asp()}{convert\_asp()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1process__four__year_acd4225e3db35e46fa42191f44b598c5b} 
+ None schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+convert\+\_\+asp (\begin{DoxyParamCaption}\item[{dict}]{constraints}{, }\item[{str}]{file}{}\end{DoxyParamCaption})}
+
+
+
+Take formated constraints and convert it into asp rules In addition to the rules defined by the constraints parameter, the rules file is also appended with equivalence rules. 
+
+$ a \equiv c \Leftarrow a \equiv b, b \equiv c $ $ b \in S \Leftarrow a \in S, a \equiv b $
+\begin{DoxyItemize}
+\item etc.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em constraints} & \\
+\hline
+{\em file} & A string that contains the file path and filename that the JSON will be written to.
+
+{\itshape NOTE} to maintain the script\textquotesingle{}s OS agnostic nature, it is suggested to utilize os.\+path.\+join() to join strings or os.\+sep.\+join() to join elements of a list \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{process__four__year_8py_source_l00207}{207}} of file \mbox{\hyperlink{process__four__year_8py_source}{process\+\_\+four\+\_\+year.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1process__four__year_aa16c93667c5cbbd0102b8d620c9db8f6}\index{scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}!create\_constraints@{create\_constraints}}
+\index{create\_constraints@{create\_constraints}!scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}}
+\doxysubsubsection{\texorpdfstring{create\_constraints()}{create\_constraints()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1process__four__year_aa16c93667c5cbbd0102b8d620c9db8f6} 
+ dict schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+create\+\_\+constraints (\begin{DoxyParamCaption}\item[{str}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Take a four year plan stored in a JSON file and process it so that it can be stored as JSON or as clingo in the desired format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & A string that contains the file path and filename that the JSON will be written to.
+
+{\itshape NOTE} to maintain the script\textquotesingle{}s OS agnostic nature, it is suggested to utilize os.\+path.\+join() to join strings or os.\+sep.\+join() to join elements of a list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A dictionary whose keys are all of the courses in the four year plan 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{process__four__year_8py_source_l00168}{168}} of file \mbox{\hyperlink{process__four__year_8py_source}{process\+\_\+four\+\_\+year.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a763025404bc1e677724a1428f6c7b69c}\index{scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}!get\_plan@{get\_plan}}
+\index{get\_plan@{get\_plan}!scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}}
+\doxysubsubsection{\texorpdfstring{get\_plan()}{get\_plan()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a763025404bc1e677724a1428f6c7b69c} 
+ list\mbox{[}dict\mbox{]} schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+get\+\_\+plan (\begin{DoxyParamCaption}\item[{str}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Read the four year plan from a file and confirm that it is a list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & A string that contains the file path and filename that the JSON will be written to.
+
+{\itshape NOTE} to maintain the script\textquotesingle{}s OS agnostic nature, it is suggested to utilize os.\+path.\+join() to join strings or os.\+sep.\+join() to join elements of a list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The list of dictionaries that was read from the file. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{process__four__year_8py_source_l00019}{19}} of file \mbox{\hyperlink{process__four__year_8py_source}{process\+\_\+four\+\_\+year.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a8be5e9112a0dc495368e7f4ff583e981}\index{scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}!get\_semester@{get\_semester}}
+\index{get\_semester@{get\_semester}!scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}}
+\doxysubsubsection{\texorpdfstring{get\_semester()}{get\_semester()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a8be5e9112a0dc495368e7f4ff583e981} 
+ list schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+get\+\_\+semester (\begin{DoxyParamCaption}\item[{list\mbox{[}dict\mbox{]}}]{plan}{, }\item[{str\texorpdfstring{$\vert$}{|}int}]{year}{, }\item[{str }]{semester}{}\end{DoxyParamCaption})}
+
+
+
+Get the list of classes for a particular semester from the four year plan, assuming that there may be multiple plans given. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plan} & A list of dictionaries. Each dictionary defines a four year plan such that it has this structure
+
+\{ \textquotesingle{}year\textquotesingle{}\+:\{ \textquotesingle{}semsester\textquotesingle{}\+:\mbox{[} \mbox{[} list of class numbers\mbox{]}, \mbox{[} list of class names\mbox{]}, number of credits filled by the class(es) in the list \mbox{]} ... \} ... ~\newline
+ \}
+
+\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em year} & A string or an integer to identify the year in the plan that is to be read from. Options\+: \mbox{[}\textquotesingle{}First Year\textquotesingle{}, \textquotesingle{}Second Year\textquotesingle{}, \textquotesingle{}Third Year\textquotesingle{}, \textquotesingle{}Fourth Year\textquotesingle{}\mbox{]} or \mbox{[}1, 2, 3, 4\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em semester} & A string that determines if fall semester or spring semester Options\+: \mbox{[}\textquotesingle{}FALL\textquotesingle{}, \textquotesingle{}SPRING\textquotesingle{}\mbox{]} or any variation in capitalization \\
+\hline
+\end{DoxyParams}
+
+
+\begin{DoxyReturn}{Returns}
+A list of classes in the same structure as origional semester list combined for all plans in the origional list. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{process__four__year_8py_source_l00066}{66}} of file \mbox{\hyperlink{process__four__year_8py_source}{process\+\_\+four\+\_\+year.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1process__four__year_ad227505cb8fb4aee06b7071f8c2293b2}\index{scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}!set\_contsraints@{set\_contsraints}}
+\index{set\_contsraints@{set\_contsraints}!scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}}
+\doxysubsubsection{\texorpdfstring{set\_contsraints()}{set\_contsraints()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1process__four__year_ad227505cb8fb4aee06b7071f8c2293b2} 
+ dict schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+set\+\_\+contsraints (\begin{DoxyParamCaption}\item[{list}]{semester\+\_\+plan}{, }\item[{int}]{semester\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Process the semester such that classes listed as fulfilling the same requirement are soft constraints and all other classes in the semester are hard constraints. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em semester\+\_\+plan} & list of classes in the same semester in the same structure as the origional four year plan\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Dictionary containing all of the classes in the semester Structure\+: $<$course number like csci2040$>$\+: \{ \textquotesingle{}equivalent\+\_\+courses\textquotesingle{}\+: set, \textquotesingle{}same\+\_\+semester\textquotesingle{}\+: set, \textquotesingle{}credits\textquotesingle{}\+: int, \textquotesingle{}semsesters\textquotesingle{}\+: set \} ... 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{process__four__year_8py_source_l00113}{113}} of file \mbox{\hyperlink{process__four__year_8py_source}{process\+\_\+four\+\_\+year.\+py}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a0158ffd83032ab00d2b2f004c7cd452d}\index{scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}!asp\_file@{asp\_file}}
+\index{asp\_file@{asp\_file}!scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}}
+\doxysubsubsection{\texorpdfstring{asp\_file}{asp\_file}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a0158ffd83032ab00d2b2f004c7cd452d} 
+schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+asp\+\_\+file = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_af4362738315f00ddc2155306105cb68c}{data\+\_\+dir}}, \textquotesingle{}four\+\_\+year\+\_\+plan\+\_\+constraints.\+lp\textquotesingle{})}
+
+
+
+Definition at line \mbox{\hyperlink{process__four__year_8py_source_l00242}{242}} of file \mbox{\hyperlink{process__four__year_8py_source}{process\+\_\+four\+\_\+year.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1process__four__year_af85c7333e12bd9ce37a70ccd2796a08a}\index{scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}!constraints@{constraints}}
+\index{constraints@{constraints}!scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}}
+\doxysubsubsection{\texorpdfstring{constraints}{constraints}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1process__four__year_af85c7333e12bd9ce37a70ccd2796a08a} 
+schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+constraints = \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_aa16c93667c5cbbd0102b8d620c9db8f6}{create\+\_\+constraints}}(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a2f2668c43b01452aa69d495b00ac96ee}{filename}})}
+
+
+
+Definition at line \mbox{\hyperlink{process__four__year_8py_source_l00240}{240}} of file \mbox{\hyperlink{process__four__year_8py_source}{process\+\_\+four\+\_\+year.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1process__four__year_aabc9cb8c12e043972762e064b1dd00a9}\index{scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}!current\_directory@{current\_directory}}
+\index{current\_directory@{current\_directory}!scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}}
+\doxysubsubsection{\texorpdfstring{current\_directory}{current\_directory}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1process__four__year_aabc9cb8c12e043972762e064b1dd00a9} 
+schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+current\+\_\+directory = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))}
+
+
+
+Definition at line \mbox{\hyperlink{process__four__year_8py_source_l00229}{229}} of file \mbox{\hyperlink{process__four__year_8py_source}{process\+\_\+four\+\_\+year.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1process__four__year_af4362738315f00ddc2155306105cb68c}\index{scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}!data\_dir@{data\_dir}}
+\index{data\_dir@{data\_dir}!scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}}
+\doxysubsubsection{\texorpdfstring{data\_dir}{data\_dir}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1process__four__year_af4362738315f00ddc2155306105cb68c} 
+schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+data\+\_\+dir = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a7bb228d657fdb736e661b6c2f72decf1}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}four\+\_\+year\+\_\+plan\textquotesingle{})}
+
+
+
+Definition at line \mbox{\hyperlink{process__four__year_8py_source_l00238}{238}} of file \mbox{\hyperlink{process__four__year_8py_source}{process\+\_\+four\+\_\+year.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a1c0b728cd04edccec8324b2262d25274}\index{scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}!f@{f}}
+\index{f@{f}!scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}}
+\doxysubsubsection{\texorpdfstring{f}{f}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a1c0b728cd04edccec8324b2262d25274} 
+schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+f}
+
+
+
+Definition at line \mbox{\hyperlink{process__four__year_8py_source_l00245}{245}} of file \mbox{\hyperlink{process__four__year_8py_source}{process\+\_\+four\+\_\+year.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a2f2668c43b01452aa69d495b00ac96ee}\index{scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}!filename@{filename}}
+\index{filename@{filename}!scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}}
+\doxysubsubsection{\texorpdfstring{filename}{filename}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a2f2668c43b01452aa69d495b00ac96ee} 
+schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+filename = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_af4362738315f00ddc2155306105cb68c}{data\+\_\+dir}}, \textquotesingle{}four\+Year\+Plan.\+json\textquotesingle{})}
+
+
+
+Definition at line \mbox{\hyperlink{process__four__year_8py_source_l00239}{239}} of file \mbox{\hyperlink{process__four__year_8py_source}{process\+\_\+four\+\_\+year.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a0421553fbbf635d707b890d87b588482}\index{scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}!indent@{indent}}
+\index{indent@{indent}!scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}}
+\doxysubsubsection{\texorpdfstring{indent}{indent}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a0421553fbbf635d707b890d87b588482} 
+schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+indent}
+
+
+
+Definition at line \mbox{\hyperlink{process__four__year_8py_source_l00245}{245}} of file \mbox{\hyperlink{process__four__year_8py_source}{process\+\_\+four\+\_\+year.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a364f1aeff327d25fea14df7d72b602b6}\index{scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}!json\_file@{json\_file}}
+\index{json\_file@{json\_file}!scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}}
+\doxysubsubsection{\texorpdfstring{json\_file}{json\_file}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a364f1aeff327d25fea14df7d72b602b6} 
+schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+json\+\_\+file = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_af4362738315f00ddc2155306105cb68c}{data\+\_\+dir}}, \textquotesingle{}four\+\_\+year\+\_\+plan.\+json\textquotesingle{})}
+
+
+
+Definition at line \mbox{\hyperlink{process__four__year_8py_source_l00241}{241}} of file \mbox{\hyperlink{process__four__year_8py_source}{process\+\_\+four\+\_\+year.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a5d57be1183317bb66335827da93c9034}\index{scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}!path@{path}}
+\index{path@{path}!scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a5d57be1183317bb66335827da93c9034} 
+schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+path = current\+\_\+directory.\+split(os.\+sep)}
+
+
+
+Definition at line \mbox{\hyperlink{process__four__year_8py_source_l00234}{234}} of file \mbox{\hyperlink{process__four__year_8py_source}{process\+\_\+four\+\_\+year.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a7bb228d657fdb736e661b6c2f72decf1}\index{scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}!root\_dir@{root\_dir}}
+\index{root\_dir@{root\_dir}!scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}}
+\doxysubsubsection{\texorpdfstring{root\_dir}{root\_dir}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a7bb228d657fdb736e661b6c2f72decf1} 
+schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+root\+\_\+dir = os.\+sep.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a5d57be1183317bb66335827da93c9034}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_ab2fbc89472a3ab522b9b9fde391b05be}{root\+\_\+index}}+1\mbox{]})}
+
+
+
+Definition at line \mbox{\hyperlink{process__four__year_8py_source_l00237}{237}} of file \mbox{\hyperlink{process__four__year_8py_source}{process\+\_\+four\+\_\+year.\+py}}.
+
+\Hypertarget{namespaceschedule_functions_1_1data__processing_1_1process__four__year_ab2fbc89472a3ab522b9b9fde391b05be}\index{scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}!root\_index@{root\_index}}
+\index{root\_index@{root\_index}!scheduleFunctions.data\_processing.process\_four\_year@{scheduleFunctions.data\_processing.process\_four\_year}}
+\doxysubsubsection{\texorpdfstring{root\_index}{root\_index}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1data__processing_1_1process__four__year_ab2fbc89472a3ab522b9b9fde391b05be} 
+schedule\+Functions.\+data\+\_\+processing.\+process\+\_\+four\+\_\+year.\+root\+\_\+index = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})}
+
+
+
+Definition at line \mbox{\hyperlink{process__four__year_8py_source_l00236}{236}} of file \mbox{\hyperlink{process__four__year_8py_source}{process\+\_\+four\+\_\+year.\+py}}.
+

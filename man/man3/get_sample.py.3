@@ -1,0 +1,68 @@
+.TH "scheduleFunctions/data_processing/get_sample.py" 3 "Version 0.5" "Capstone Team 14" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scheduleFunctions/data_processing/get_sample.py
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBscheduleFunctions\fP"
+.br
+.ti -1c
+.RI "namespace \fBscheduleFunctions\&.data_processing\fP"
+.br
+.ti -1c
+.RI "namespace \fBscheduleFunctions\&.data_processing\&.get_sample\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "dict \fBscheduleFunctions\&.data_processing\&.get_sample\&.get_classes\fP (str filename)"
+.br
+.ti -1c
+.RI "dict \fBscheduleFunctions\&.data_processing\&.get_sample\&.create_sample\fP (dict \fBclasses\fP, int num_semesters, int num_departments, int num_classes)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.get_sample\&.current_directory\fP = os\&.path\&.dirname(os\&.path\&.realpath(__file__))"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.get_sample\&.path\fP = current_directory\&.split(os\&.sep)"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.get_sample\&.root_index\fP = path\&.index('Capstone\-Team14')"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.get_sample\&.root_dir\fP = os\&.sep\&.join(\fBpath\fP[:\fBroot_index\fP+1])"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.get_sample\&.read_dir\fP = os\&.path\&.join(\fBroot_dir\fP, 'data_files', 'uploaded_schedule')"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.get_sample\&.sample_dir\fP = os\&.path\&.join(\fBroot_dir\fP, 'data_files', 'samples')"
+.br
+.ti -1c
+.RI "dict \fBscheduleFunctions\&.data_processing\&.get_sample\&.classes\fP = \fBget_classes\fP(os\&.path\&.join(\fBread_dir\fP,'filtered\&.json'))"
+.br
+.ti -1c
+.RI "dict \fBscheduleFunctions\&.data_processing\&.get_sample\&.sample_data\fP = \fBcreate_sample\fP(\fBclasses\fP, 1, 2, 5)"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.get_sample\&.f\fP"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.get_sample\&.indent\fP"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Capstone Team 14 from the source code\&.

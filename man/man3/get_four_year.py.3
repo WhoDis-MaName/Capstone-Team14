@@ -1,0 +1,64 @@
+.TH "scheduleFunctions/data_processing/get_four_year.py" 3 "Version 0.5" "Capstone Team 14" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scheduleFunctions/data_processing/get_four_year.py
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBscheduleFunctions\fP"
+.br
+.ti -1c
+.RI "namespace \fBscheduleFunctions\&.data_processing\fP"
+.br
+.ti -1c
+.RI "namespace \fBscheduleFunctions\&.data_processing\&.get_four_year\fP"
+.br
+.ti -1c
+.RI "namespace \fBget_four_year\fP"
+.br
+.RI "This module contains all of the functionality that is needed to process the four year plan that is given with some url\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.get_four_year\&.get_all_tables\fP (bs soup)"
+.br
+.RI "Finds all of the tables in the page gathered with BS4\&. "
+.ti -1c
+.RI "list \fBscheduleFunctions\&.data_processing\&.get_four_year\&.get_table_rows\fP (table)"
+.br
+.RI "Given a table, returns all its rows\&. "
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.get_four_year\&.process_url\fP (str \fBurl\fP)"
+.br
+.RI "Take a url and find all of the tables contained in the page and return a ResultSet\&. "
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.get_four_year\&.read_four_year\fP (\fBurl\fP, output_file)"
+.br
+.RI "From a url that contains a four year plan process it and produce a JSON file in a structure that we can utilize to then convert into a clingo file\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.get_four_year\&.current_directory\fP = os\&.path\&.dirname(os\&.path\&.realpath(__file__))"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.get_four_year\&.data_dir\fP = os\&.path\&.join(settings\&.BASE_DIR, 'data_files', 'four_year_plan')"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.get_four_year\&.filename\fP = os\&.path\&.join(\fBdata_dir\fP,'fourYearPlan\&.json')"
+.br
+.ti -1c
+.RI "str \fBscheduleFunctions\&.data_processing\&.get_four_year\&.url\fP = 'https://catalog\&.unomaha\&.edu/undergraduate/college\-information\-science\-technology/computer\-science/computer\-science\-bs/#fouryearplantext'"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Capstone Team 14 from the source code\&.

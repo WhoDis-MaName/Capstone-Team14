@@ -1,0 +1,106 @@
+.TH "scheduleFunctions.models.Course" 3 "Version 0.5" "Capstone Team 14" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scheduleFunctions.models.Course
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits models\&.Model\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBMeta\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fBprint_clingo\fP (self)"
+.br
+.ti -1c
+.RI "\fBprint_non_cs\fP (cls)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBsubject\fP = models\&.CharField(max_length=5)"
+.br
+.ti -1c
+.RI "\fBclass_number\fP = models\&.IntegerField()"
+.br
+.ti -1c
+.RI "\fBname\fP = models\&.CharField(max_length=255)"
+.br
+.ti -1c
+.RI "\fBprerequisites\fP = models\&.ManyToManyField('self', symmetrical=False, related_name='required_for')"
+.br
+.ti -1c
+.RI "\fBequivalent_courses\fP = models\&.ManyToManyField('self', symmetrical=True)"
+.br
+.ti -1c
+.RI "\fBsame_semester_courses\fP = models\&.ManyToManyField('self', symmetrical=True)"
+.br
+.ti -1c
+.RI "\fBcredits\fP = models\&.IntegerField(null=True)"
+.br
+.ti -1c
+.RI "\fBweight\fP = models\&.IntegerField()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB50\fP of file \fBmodels\&.py\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS " str scheduleFunctions\&.models\&.Course\&.print_clingo ( self)"
+
+.PP
+Definition at line \fB60\fP of file \fBmodels\&.py\fP\&.
+.SS "scheduleFunctions\&.models\&.Course\&.print_non_cs ( cls)"
+
+.PP
+Definition at line \fB87\fP of file \fBmodels\&.py\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "scheduleFunctions\&.models\&.Course\&.class_number = models\&.IntegerField()\fR [static]\fP"
+
+.PP
+Definition at line \fB53\fP of file \fBmodels\&.py\fP\&.
+.SS "scheduleFunctions\&.models\&.Course\&.credits = models\&.IntegerField(null=True)\fR [static]\fP"
+
+.PP
+Definition at line \fB58\fP of file \fBmodels\&.py\fP\&.
+.SS "scheduleFunctions\&.models\&.Course\&.equivalent_courses = models\&.ManyToManyField('self', symmetrical=True)\fR [static]\fP"
+
+.PP
+Definition at line \fB56\fP of file \fBmodels\&.py\fP\&.
+.SS "scheduleFunctions\&.models\&.Course\&.name = models\&.CharField(max_length=255)\fR [static]\fP"
+
+.PP
+Definition at line \fB54\fP of file \fBmodels\&.py\fP\&.
+.SS "scheduleFunctions\&.models\&.Course\&.prerequisites = models\&.ManyToManyField('self', symmetrical=False, related_name='required_for')\fR [static]\fP"
+
+.PP
+Definition at line \fB55\fP of file \fBmodels\&.py\fP\&.
+.SS "scheduleFunctions\&.models\&.Course\&.same_semester_courses = models\&.ManyToManyField('self', symmetrical=True)\fR [static]\fP"
+
+.PP
+Definition at line \fB57\fP of file \fBmodels\&.py\fP\&.
+.SS "scheduleFunctions\&.models\&.Course\&.subject = models\&.CharField(max_length=5)\fR [static]\fP"
+
+.PP
+Definition at line \fB52\fP of file \fBmodels\&.py\fP\&.
+.SS "scheduleFunctions\&.models\&.Course\&.weight = models\&.IntegerField()\fR [static]\fP"
+
+.PP
+Definition at line \fB59\fP of file \fBmodels\&.py\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Capstone Team 14 from the source code\&.

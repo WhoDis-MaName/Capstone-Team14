@@ -1,0 +1,67 @@
+\doxysection{get\+\_\+sample.\+py}
+\hypertarget{get__sample_8py_source}{}\label{get__sample_8py_source}\index{scheduleFunctions/data\_processing/get\_sample.py@{scheduleFunctions/data\_processing/get\_sample.py}}
+\mbox{\hyperlink{get__sample_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00001}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample}{00001}}\ \textcolor{keyword}{import}\ os}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00002}00002\ \textcolor{keyword}{import}\ json}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00003}00003\ \textcolor{keyword}{from}\ random\ \textcolor{keyword}{import}\ sample}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00005}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a6401717e02c772c4aac9ddfd1f1b679d}{00005}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a6401717e02c772c4aac9ddfd1f1b679d}{get\_classes}}(filename:\ str)\ -\/>\ dict:}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00006}00006\ \ \ \ \ classes\ =\ \{\}}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00008}00008\ \ \ \ \ \textcolor{keyword}{with}\ open(filename,\ \textcolor{stringliteral}{'r'})\ \textcolor{keyword}{as}\ f:}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00009}00009\ \ \ \ \ \ \ \ \ classes\ =\ json.load(f)}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00010}00010\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00011}00011\ \ \ \ \ \textcolor{keywordflow}{return}\ classes}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00013}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a754098e307906d3bcb52dd8810e85044}{00013}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a754098e307906d3bcb52dd8810e85044}{create\_sample}}(classes:dict,\ num\_semesters:int,\ num\_departments:int,\ num\_classes:int)\ -\/>\ dict:}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00014}00014\ \ \ \ \ sample\_data\ =\ \{\}}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00015}00015\ \ \ \ \ key\_list\ =\ list(classes.keys())}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00016}00016\ \ \ \ \ semester\_subset\ =\ sample(key\_list,min(num\_semesters,len(key\_list)))}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{for}\ semester\ \textcolor{keywordflow}{in}\ semester\_subset:}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00018}00018\ \ \ \ \ \ \ \ \ sample\_data[semester]\ =\ \{\}}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00019}00019\ \ \ \ \ \ \ \ \ key\_list\ =\ list(classes[semester].keys())}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00020}00020\ \ \ \ \ \ \ \ \ department\_subset\ =\ sample(key\_list,min(num\_departments,len(key\_list)))}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ department\ \textcolor{keywordflow}{in}\ department\_subset:}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ key\_list\ =\ list(classes[semester][department].keys())}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ class\_subset\ =\ sample(key\_list,min(num\_classes,len(key\_list)))}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ class\_list\ =\ \{class\_name:\ classes[semester][department][class\_name]\ \textcolor{keywordflow}{for}\ class\_name\ \textcolor{keywordflow}{in}\ class\_subset\}}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ print(class\_list)}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ sample\_data[semester][department]\ =\ class\_list}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00028}00028\ \ \ \ \ \textcolor{keywordflow}{return}\ sample\_data}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00030}00030\ \textcolor{keyword}{import}\ os}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00032}00032\ \textcolor{keywordflow}{if}\ os.name\ ==\ \textcolor{stringliteral}{'nt'}:}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00033}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a2daea0b1c9b5564647fef428b38ea7d9}{00033}}\ \ \ \ \ current\_directory\ =\ os.path.dirname(os.path.realpath(\_\_file\_\_))\ \textcolor{comment}{\#\ Get\ current\ directory}}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00034}00034\ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00035}00035\ \ \ \ \ current\_directory\ =\ os.path.dirname(os.path.realpath(\_\_name\_\_))\ \textcolor{comment}{\#\ Get\ current\ directory}}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00036}00036\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00038}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a24a39fd2e482b20956e07824a393e431}{00038}}\ path\ =\ current\_directory.split(os.sep)}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00040}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a7d504fbc6c2627bc760035d870017c6b}{00040}}\ root\_index\ =\ path.index(\textcolor{stringliteral}{'Capstone-\/Team14'})}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00041}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a6dc95b02dfff752a27861706b6e40dc6}{00041}}\ root\_dir\ =\ os.sep.join(path[:root\_index+1])}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00042}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a47adc6df0f0bd11efa86987521c271a2}{00042}}\ read\_dir\ =\ os.path.join(root\_dir,\ \textcolor{stringliteral}{'data\_files'},\ \textcolor{stringliteral}{'uploaded\_schedule'})}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00043}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_aaa27975c2e6dca82ba93d31f682e8cf3}{00043}}\ sample\_dir\ =\ os.path.join(root\_dir,\ \textcolor{stringliteral}{'data\_files'},\ \textcolor{stringliteral}{'samples'})}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00044}00044\ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00045}00045\ \ \ \ \ os.makedirs(read\_dir)}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00046}00046\ \textcolor{keywordflow}{except}:}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{pass}}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00049}00049\ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00050}00050\ \ \ \ \ os.makedirs(sample\_dir)}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00051}00051\ \textcolor{keywordflow}{except}:}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{pass}}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00054}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_af216e02d83cae212b6b53fce6035b966}{00054}}\ classes\ =\ \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a6401717e02c772c4aac9ddfd1f1b679d}{get\_classes}}(os.path.join(read\_dir,\textcolor{stringliteral}{'filtered.json'}))}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00056}00056\ \textcolor{keywordflow}{for}\ i\ \textcolor{keywordflow}{in}\ range(0,10):}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00057}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a05c752023d7a8839eae2a7115b90136c}{00057}}\ \ \ \ \ sample\_data\ =\ \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a754098e307906d3bcb52dd8810e85044}{create\_sample}}(classes,\ 1,\ 2,\ 5)}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00058}00058\ \ \ \ \ print(sample\_data)}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00060}00060\ \ \ \ \ \textcolor{keyword}{with}\ open(os.path.join(sample\_dir,f\textcolor{stringliteral}{'sample\_0\{i\}.json'}),\ \textcolor{stringliteral}{'w'})\ \textcolor{keyword}{as}\ f:}
+\DoxyCodeLine{\Hypertarget{get__sample_8py_source_l00061}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__sample_a5c4e4bbb53020664bed21c74ce512e85}{00061}}\ \ \ \ \ \ \ \ \ json.dump(sample\_data,f,\ indent=4)}
+
+\end{DoxyCode}

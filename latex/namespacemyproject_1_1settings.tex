@@ -9,7 +9,7 @@ str \mbox{\hyperlink{namespacemyproject_1_1settings_af732ab0cc904af920f2452dd799
 \item 
 bool \mbox{\hyperlink{namespacemyproject_1_1settings_a87b6ba4f03c767af9e6204682cb446c4}{DEBUG}} = True
 \item 
-list \mbox{\hyperlink{namespacemyproject_1_1settings_ae5f765bb0daa893453dd0cfdf2e8ec6c}{ALLOWED\+\_\+\+HOSTS}} = \mbox{[}$\,$\mbox{]}
+list \mbox{\hyperlink{namespacemyproject_1_1settings_ae5f765bb0daa893453dd0cfdf2e8ec6c}{ALLOWED\+\_\+\+HOSTS}} = \mbox{[}"{}\texorpdfstring{$\ast$}{*}"{}\mbox{]}
 \item 
 list \mbox{\hyperlink{namespacemyproject_1_1settings_add0e337dcc9a0bc19b1a0a020b307d93}{INSTALLED\+\_\+\+APPS}}
 \item 
@@ -33,9 +33,17 @@ bool \mbox{\hyperlink{namespacemyproject_1_1settings_a9a95aa7087b629744c6d44fc1a
 \item 
 bool \mbox{\hyperlink{namespacemyproject_1_1settings_a62e7ac39f89ea78416cb290897ace723}{USE\+\_\+\+TZ}} = True
 \item 
-str \mbox{\hyperlink{namespacemyproject_1_1settings_ab2a0701d08a16d56909bfdd6c909cdae}{STATIC\+\_\+\+URL}} = \textquotesingle{}static/\textquotesingle{}
+str \mbox{\hyperlink{namespacemyproject_1_1settings_ad2929115012347914930556aa836e81d}{STATIC\+\_\+\+URL}} = \textquotesingle{}static/\textquotesingle{}
 \item 
 str \mbox{\hyperlink{namespacemyproject_1_1settings_a17084926a4c2f62c0e8dea7d61639bd7}{DEFAULT\+\_\+\+AUTO\+\_\+\+FIELD}} = \textquotesingle{}django.\+db.\+models.\+Big\+Auto\+Field\textquotesingle{}
+\item 
+str \mbox{\hyperlink{namespacemyproject_1_1settings_aa2792fed98c5fa914248d7d45c9a26fa}{MEDIA\+\_\+\+URL}} = \textquotesingle{}/media/\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespacemyproject_1_1settings_a4233bcaec6c79925f1494f93a62ecffa}{MEDIA\+\_\+\+ROOT}} = os.\+path.\+join(\mbox{\hyperlink{namespacemyproject_1_1settings_a98cf8cddb7e0d03baf99966eeffd4b3b}{BASE\+\_\+\+DIR}}, \textquotesingle{}media\textquotesingle{})
+\item 
+list \mbox{\hyperlink{namespacemyproject_1_1settings_ae96b2b8ba2122232b9b69251dd8d8599}{STATICFILES\+\_\+\+DIRS}}
+\item 
+bool \mbox{\hyperlink{namespacemyproject_1_1settings_ad58a3032bddcb85891191af59f9c8a96}{STARTUP\+\_\+\+DONE}} = False
 \end{DoxyCompactItemize}
 
 
@@ -57,7 +65,11 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 \index{ALLOWED\_HOSTS@{ALLOWED\_HOSTS}!myproject.settings@{myproject.settings}}
 \doxysubsubsection{\texorpdfstring{ALLOWED\_HOSTS}{ALLOWED\_HOSTS}}
 {\footnotesize\ttfamily \label{namespacemyproject_1_1settings_ae5f765bb0daa893453dd0cfdf2e8ec6c} 
-list myproject.\+settings.\+ALLOWED\+\_\+\+HOSTS = \mbox{[}$\,$\mbox{]}}
+list myproject.\+settings.\+ALLOWED\+\_\+\+HOSTS = \mbox{[}"{}\texorpdfstring{$\ast$}{*}"{}\mbox{]}}
+
+
+
+Definition at line \mbox{\hyperlink{settings_8py_source_l00033}{33}} of file \mbox{\hyperlink{settings_8py_source}{settings.\+py}}.
 
 \Hypertarget{namespacemyproject_1_1settings_a6aad92ced9a0f9a2f595d183747b354a}\index{myproject.settings@{myproject.settings}!AUTH\_PASSWORD\_VALIDATORS@{AUTH\_PASSWORD\_VALIDATORS}}
 \index{AUTH\_PASSWORD\_VALIDATORS@{AUTH\_PASSWORD\_VALIDATORS}!myproject.settings@{myproject.settings}}
@@ -83,11 +95,19 @@ list myproject.\+settings.\+AUTH\+\_\+\+PASSWORD\+\_\+\+VALIDATORS}
 \DoxyCodeLine{00014\ ]}
 
 \end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{settings_8py_source_l00094}{94}} of file \mbox{\hyperlink{settings_8py_source}{settings.\+py}}.
+
 \Hypertarget{namespacemyproject_1_1settings_a98cf8cddb7e0d03baf99966eeffd4b3b}\index{myproject.settings@{myproject.settings}!BASE\_DIR@{BASE\_DIR}}
 \index{BASE\_DIR@{BASE\_DIR}!myproject.settings@{myproject.settings}}
 \doxysubsubsection{\texorpdfstring{BASE\_DIR}{BASE\_DIR}}
 {\footnotesize\ttfamily \label{namespacemyproject_1_1settings_a98cf8cddb7e0d03baf99966eeffd4b3b} 
 myproject.\+settings.\+BASE\+\_\+\+DIR = Path(\+\_\+\+\_\+file\+\_\+\+\_\+).resolve().parent.\+parent}
+
+
+
+Definition at line \mbox{\hyperlink{settings_8py_source_l00017}{17}} of file \mbox{\hyperlink{settings_8py_source}{settings.\+py}}.
 
 \Hypertarget{namespacemyproject_1_1settings_ae680d48d393a190a4fa09a9ba2815bd5}\index{myproject.settings@{myproject.settings}!DATABASES@{DATABASES}}
 \index{DATABASES@{DATABASES}!myproject.settings@{myproject.settings}}
@@ -105,17 +125,29 @@ dict myproject.\+settings.\+DATABASES}
 \DoxyCodeLine{00006\ \}}
 
 \end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{settings_8py_source_l00083}{83}} of file \mbox{\hyperlink{settings_8py_source}{settings.\+py}}.
+
 \Hypertarget{namespacemyproject_1_1settings_a87b6ba4f03c767af9e6204682cb446c4}\index{myproject.settings@{myproject.settings}!DEBUG@{DEBUG}}
 \index{DEBUG@{DEBUG}!myproject.settings@{myproject.settings}}
 \doxysubsubsection{\texorpdfstring{DEBUG}{DEBUG}}
 {\footnotesize\ttfamily \label{namespacemyproject_1_1settings_a87b6ba4f03c767af9e6204682cb446c4} 
 bool myproject.\+settings.\+DEBUG = True}
 
+
+
+Definition at line \mbox{\hyperlink{settings_8py_source_l00031}{31}} of file \mbox{\hyperlink{settings_8py_source}{settings.\+py}}.
+
 \Hypertarget{namespacemyproject_1_1settings_a17084926a4c2f62c0e8dea7d61639bd7}\index{myproject.settings@{myproject.settings}!DEFAULT\_AUTO\_FIELD@{DEFAULT\_AUTO\_FIELD}}
 \index{DEFAULT\_AUTO\_FIELD@{DEFAULT\_AUTO\_FIELD}!myproject.settings@{myproject.settings}}
 \doxysubsubsection{\texorpdfstring{DEFAULT\_AUTO\_FIELD}{DEFAULT\_AUTO\_FIELD}}
 {\footnotesize\ttfamily \label{namespacemyproject_1_1settings_a17084926a4c2f62c0e8dea7d61639bd7} 
 str myproject.\+settings.\+DEFAULT\+\_\+\+AUTO\+\_\+\+FIELD = \textquotesingle{}django.\+db.\+models.\+Big\+Auto\+Field\textquotesingle{}}
+
+
+
+Definition at line \mbox{\hyperlink{settings_8py_source_l00130}{130}} of file \mbox{\hyperlink{settings_8py_source}{settings.\+py}}.
 
 \Hypertarget{namespacemyproject_1_1settings_add0e337dcc9a0bc19b1a0a020b307d93}\index{myproject.settings@{myproject.settings}!INSTALLED\_APPS@{INSTALLED\_APPS}}
 \index{INSTALLED\_APPS@{INSTALLED\_APPS}!myproject.settings@{myproject.settings}}
@@ -137,11 +169,39 @@ list myproject.\+settings.\+INSTALLED\+\_\+\+APPS}
 \DoxyCodeLine{00010\ ]}
 
 \end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{settings_8py_source_l00038}{38}} of file \mbox{\hyperlink{settings_8py_source}{settings.\+py}}.
+
 \Hypertarget{namespacemyproject_1_1settings_ae2296ffc28f9f374b2dbf6ff7c08f834}\index{myproject.settings@{myproject.settings}!LANGUAGE\_CODE@{LANGUAGE\_CODE}}
 \index{LANGUAGE\_CODE@{LANGUAGE\_CODE}!myproject.settings@{myproject.settings}}
 \doxysubsubsection{\texorpdfstring{LANGUAGE\_CODE}{LANGUAGE\_CODE}}
 {\footnotesize\ttfamily \label{namespacemyproject_1_1settings_ae2296ffc28f9f374b2dbf6ff7c08f834} 
 str myproject.\+settings.\+LANGUAGE\+\_\+\+CODE = \textquotesingle{}en-\/us\textquotesingle{}}
+
+
+
+Definition at line \mbox{\hyperlink{settings_8py_source_l00113}{113}} of file \mbox{\hyperlink{settings_8py_source}{settings.\+py}}.
+
+\Hypertarget{namespacemyproject_1_1settings_a4233bcaec6c79925f1494f93a62ecffa}\index{myproject.settings@{myproject.settings}!MEDIA\_ROOT@{MEDIA\_ROOT}}
+\index{MEDIA\_ROOT@{MEDIA\_ROOT}!myproject.settings@{myproject.settings}}
+\doxysubsubsection{\texorpdfstring{MEDIA\_ROOT}{MEDIA\_ROOT}}
+{\footnotesize\ttfamily \label{namespacemyproject_1_1settings_a4233bcaec6c79925f1494f93a62ecffa} 
+myproject.\+settings.\+MEDIA\+\_\+\+ROOT = os.\+path.\+join(\mbox{\hyperlink{namespacemyproject_1_1settings_a98cf8cddb7e0d03baf99966eeffd4b3b}{BASE\+\_\+\+DIR}}, \textquotesingle{}media\textquotesingle{})}
+
+
+
+Definition at line \mbox{\hyperlink{settings_8py_source_l00133}{133}} of file \mbox{\hyperlink{settings_8py_source}{settings.\+py}}.
+
+\Hypertarget{namespacemyproject_1_1settings_aa2792fed98c5fa914248d7d45c9a26fa}\index{myproject.settings@{myproject.settings}!MEDIA\_URL@{MEDIA\_URL}}
+\index{MEDIA\_URL@{MEDIA\_URL}!myproject.settings@{myproject.settings}}
+\doxysubsubsection{\texorpdfstring{MEDIA\_URL}{MEDIA\_URL}}
+{\footnotesize\ttfamily \label{namespacemyproject_1_1settings_aa2792fed98c5fa914248d7d45c9a26fa} 
+str myproject.\+settings.\+MEDIA\+\_\+\+URL = \textquotesingle{}/media/\textquotesingle{}}
+
+
+
+Definition at line \mbox{\hyperlink{settings_8py_source_l00132}{132}} of file \mbox{\hyperlink{settings_8py_source}{settings.\+py}}.
 
 \Hypertarget{namespacemyproject_1_1settings_aee848af6e4010d9f5a3cf150d8e6db68}\index{myproject.settings@{myproject.settings}!MIDDLEWARE@{MIDDLEWARE}}
 \index{MIDDLEWARE@{MIDDLEWARE}!myproject.settings@{myproject.settings}}
@@ -162,11 +222,19 @@ list myproject.\+settings.\+MIDDLEWARE}
 \DoxyCodeLine{00009\ ]}
 
 \end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{settings_8py_source_l00049}{49}} of file \mbox{\hyperlink{settings_8py_source}{settings.\+py}}.
+
 \Hypertarget{namespacemyproject_1_1settings_a5ccf5864d0c3a71c255dd71b6bba6cb6}\index{myproject.settings@{myproject.settings}!ROOT\_URLCONF@{ROOT\_URLCONF}}
 \index{ROOT\_URLCONF@{ROOT\_URLCONF}!myproject.settings@{myproject.settings}}
 \doxysubsubsection{\texorpdfstring{ROOT\_URLCONF}{ROOT\_URLCONF}}
 {\footnotesize\ttfamily \label{namespacemyproject_1_1settings_a5ccf5864d0c3a71c255dd71b6bba6cb6} 
 str myproject.\+settings.\+ROOT\+\_\+\+URLCONF = \textquotesingle{}myproject.\+urls\textquotesingle{}}
+
+
+
+Definition at line \mbox{\hyperlink{settings_8py_source_l00059}{59}} of file \mbox{\hyperlink{settings_8py_source}{settings.\+py}}.
 
 \Hypertarget{namespacemyproject_1_1settings_af732ab0cc904af920f2452dd799e89bc}\index{myproject.settings@{myproject.settings}!SECRET\_KEY@{SECRET\_KEY}}
 \index{SECRET\_KEY@{SECRET\_KEY}!myproject.settings@{myproject.settings}}
@@ -174,11 +242,46 @@ str myproject.\+settings.\+ROOT\+\_\+\+URLCONF = \textquotesingle{}myproject.\+u
 {\footnotesize\ttfamily \label{namespacemyproject_1_1settings_af732ab0cc904af920f2452dd799e89bc} 
 str myproject.\+settings.\+SECRET\+\_\+\+KEY = \textquotesingle{}django-\/insecure-\/ge\+\_\+nw\#14sw5!gaz+x-\/ydw2n0\texorpdfstring{$\ast$}{*}qf(6t(m3!\+\_\+linr\texorpdfstring{$\ast$}{*}45iyv\+\_\+dqim\textquotesingle{}}
 
-\Hypertarget{namespacemyproject_1_1settings_ab2a0701d08a16d56909bfdd6c909cdae}\index{myproject.settings@{myproject.settings}!STATIC\_URL@{STATIC\_URL}}
+
+
+Definition at line \mbox{\hyperlink{settings_8py_source_l00028}{28}} of file \mbox{\hyperlink{settings_8py_source}{settings.\+py}}.
+
+\Hypertarget{namespacemyproject_1_1settings_ad58a3032bddcb85891191af59f9c8a96}\index{myproject.settings@{myproject.settings}!STARTUP\_DONE@{STARTUP\_DONE}}
+\index{STARTUP\_DONE@{STARTUP\_DONE}!myproject.settings@{myproject.settings}}
+\doxysubsubsection{\texorpdfstring{STARTUP\_DONE}{STARTUP\_DONE}}
+{\footnotesize\ttfamily \label{namespacemyproject_1_1settings_ad58a3032bddcb85891191af59f9c8a96} 
+bool myproject.\+settings.\+STARTUP\+\_\+\+DONE = False}
+
+
+
+Definition at line \mbox{\hyperlink{settings_8py_source_l00140}{140}} of file \mbox{\hyperlink{settings_8py_source}{settings.\+py}}.
+
+\Hypertarget{namespacemyproject_1_1settings_ad2929115012347914930556aa836e81d}\index{myproject.settings@{myproject.settings}!STATIC\_URL@{STATIC\_URL}}
 \index{STATIC\_URL@{STATIC\_URL}!myproject.settings@{myproject.settings}}
 \doxysubsubsection{\texorpdfstring{STATIC\_URL}{STATIC\_URL}}
-{\footnotesize\ttfamily \label{namespacemyproject_1_1settings_ab2a0701d08a16d56909bfdd6c909cdae} 
+{\footnotesize\ttfamily \label{namespacemyproject_1_1settings_ad2929115012347914930556aa836e81d} 
 str myproject.\+settings.\+STATIC\+\_\+\+URL = \textquotesingle{}static/\textquotesingle{}}
+
+
+
+Definition at line \mbox{\hyperlink{settings_8py_source_l00125}{125}} of file \mbox{\hyperlink{settings_8py_source}{settings.\+py}}.
+
+\Hypertarget{namespacemyproject_1_1settings_ae96b2b8ba2122232b9b69251dd8d8599}\index{myproject.settings@{myproject.settings}!STATICFILES\_DIRS@{STATICFILES\_DIRS}}
+\index{STATICFILES\_DIRS@{STATICFILES\_DIRS}!myproject.settings@{myproject.settings}}
+\doxysubsubsection{\texorpdfstring{STATICFILES\_DIRS}{STATICFILES\_DIRS}}
+{\footnotesize\ttfamily \label{namespacemyproject_1_1settings_ae96b2b8ba2122232b9b69251dd8d8599} 
+list myproject.\+settings.\+STATICFILES\+\_\+\+DIRS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ [}
+\DoxyCodeLine{00002\ \ \ \ \ os.path.join(BASE\_DIR,\ \textcolor{stringliteral}{"{}static"{}}),}
+\DoxyCodeLine{00003\ ]}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{settings_8py_source_l00136}{136}} of file \mbox{\hyperlink{settings_8py_source}{settings.\+py}}.
 
 \Hypertarget{namespacemyproject_1_1settings_a14390b701aa787e8a63e619741d3abf8}\index{myproject.settings@{myproject.settings}!TEMPLATES@{TEMPLATES}}
 \index{TEMPLATES@{TEMPLATES}!myproject.settings@{myproject.settings}}
@@ -205,11 +308,19 @@ list myproject.\+settings.\+TEMPLATES}
 \DoxyCodeLine{00015\ ]}
 
 \end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{settings_8py_source_l00061}{61}} of file \mbox{\hyperlink{settings_8py_source}{settings.\+py}}.
+
 \Hypertarget{namespacemyproject_1_1settings_a3865e7184483bb267004da9027f0217a}\index{myproject.settings@{myproject.settings}!TIME\_ZONE@{TIME\_ZONE}}
 \index{TIME\_ZONE@{TIME\_ZONE}!myproject.settings@{myproject.settings}}
 \doxysubsubsection{\texorpdfstring{TIME\_ZONE}{TIME\_ZONE}}
 {\footnotesize\ttfamily \label{namespacemyproject_1_1settings_a3865e7184483bb267004da9027f0217a} 
 str myproject.\+settings.\+TIME\+\_\+\+ZONE = \textquotesingle{}UTC\textquotesingle{}}
+
+
+
+Definition at line \mbox{\hyperlink{settings_8py_source_l00115}{115}} of file \mbox{\hyperlink{settings_8py_source}{settings.\+py}}.
 
 \Hypertarget{namespacemyproject_1_1settings_a9a95aa7087b629744c6d44fc1a1cd874}\index{myproject.settings@{myproject.settings}!USE\_I18N@{USE\_I18N}}
 \index{USE\_I18N@{USE\_I18N}!myproject.settings@{myproject.settings}}
@@ -217,15 +328,27 @@ str myproject.\+settings.\+TIME\+\_\+\+ZONE = \textquotesingle{}UTC\textquotesin
 {\footnotesize\ttfamily \label{namespacemyproject_1_1settings_a9a95aa7087b629744c6d44fc1a1cd874} 
 bool myproject.\+settings.\+USE\+\_\+\+I18N = True}
 
+
+
+Definition at line \mbox{\hyperlink{settings_8py_source_l00117}{117}} of file \mbox{\hyperlink{settings_8py_source}{settings.\+py}}.
+
 \Hypertarget{namespacemyproject_1_1settings_a62e7ac39f89ea78416cb290897ace723}\index{myproject.settings@{myproject.settings}!USE\_TZ@{USE\_TZ}}
 \index{USE\_TZ@{USE\_TZ}!myproject.settings@{myproject.settings}}
 \doxysubsubsection{\texorpdfstring{USE\_TZ}{USE\_TZ}}
 {\footnotesize\ttfamily \label{namespacemyproject_1_1settings_a62e7ac39f89ea78416cb290897ace723} 
 bool myproject.\+settings.\+USE\+\_\+\+TZ = True}
 
+
+
+Definition at line \mbox{\hyperlink{settings_8py_source_l00119}{119}} of file \mbox{\hyperlink{settings_8py_source}{settings.\+py}}.
+
 \Hypertarget{namespacemyproject_1_1settings_acc45ca4696cae35f9925b54a211927bf}\index{myproject.settings@{myproject.settings}!WSGI\_APPLICATION@{WSGI\_APPLICATION}}
 \index{WSGI\_APPLICATION@{WSGI\_APPLICATION}!myproject.settings@{myproject.settings}}
 \doxysubsubsection{\texorpdfstring{WSGI\_APPLICATION}{WSGI\_APPLICATION}}
 {\footnotesize\ttfamily \label{namespacemyproject_1_1settings_acc45ca4696cae35f9925b54a211927bf} 
 str myproject.\+settings.\+WSGI\+\_\+\+APPLICATION = \textquotesingle{}\mbox{\hyperlink{namespacemyproject_1_1wsgi_ae34176a001ea319a71699279bd6f8d10}{myproject.\+wsgi.\+application}}\textquotesingle{}}
+
+
+
+Definition at line \mbox{\hyperlink{settings_8py_source_l00077}{77}} of file \mbox{\hyperlink{settings_8py_source}{settings.\+py}}.
 

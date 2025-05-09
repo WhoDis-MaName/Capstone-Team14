@@ -1,0 +1,215 @@
+.TH "scheduleFunctions.data_processing.get_requirements" 3 "Version 0.5" "Capstone Team 14" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scheduleFunctions.data_processing.get_requirements
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBget_all_tables\fP (bs soup)"
+.br
+.RI "Finds all of the tables in the page gathered with BS4\&. "
+.ti -1c
+.RI "list \fBget_table_rows\fP (table)"
+.br
+.RI "Given a table, returns all its rows\&. "
+.ti -1c
+.RI "\fBprocess_url\fP (str url)"
+.br
+.RI "Take a url and find all of the tables contained in the page and return a ResultSet\&. "
+.ti -1c
+.RI "\fBread_requirements\fP (str url)"
+.br
+.RI "Read the requirements from a given url that contains degree requirements and process it into a dictionary\&. "
+.ti -1c
+.RI "dict \fBcompile_requirements\fP (list[dict] requirements)"
+.br
+.RI "Gather multiple requirements sets and complile them so that the group names are unique\&. "
+.ti -1c
+.RI "None \fBprocess_degree_requirements\fP (list[str] \fBurls\fP, str \fBjson_file\fP)"
+.br
+.RI "Handle the processing of multiple degree requirements and sending it to a json file\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBcurrent_directory\fP = os\&.path\&.dirname(os\&.path\&.realpath(__file__))"
+.br
+.ti -1c
+.RI "\fBpath\fP = current_directory\&.split(os\&.sep)"
+.br
+.ti -1c
+.RI "\fBroot_index\fP = path\&.index('Capstone\-Team14')"
+.br
+.ti -1c
+.RI "\fBroot_dir\fP = os\&.sep\&.join(\fBpath\fP[:\fBroot_index\fP+1])"
+.br
+.ti -1c
+.RI "\fBdata_dir\fP = os\&.path\&.join(\fBroot_dir\fP, 'data_files', 'requirements')"
+.br
+.ti -1c
+.RI "\fBjson_file\fP = os\&.path\&.join(\fBdata_dir\fP,'requirements\&.json')"
+.br
+.ti -1c
+.RI "list \fBurls\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " dict scheduleFunctions\&.data_processing\&.get_requirements\&.compile_requirements (list[dict] requirements)"
+
+.PP
+Gather multiple requirements sets and complile them so that the group names are unique\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIrequirements\fP A list containing dictionaries that are structured with classes in groups and sub-groups 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A single dictionary that combines all of the requirements into one while handling duplicate group labels by combining the class lists\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB143\fP of file \fBget_requirements\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.get_requirements\&.get_all_tables (bs soup)"
+
+.PP
+Finds all of the tables in the page gathered with BS4\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsoup\fP The BeautifulSoup4 representation of the web page 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A set containing all of the instances of \fR<table></table>\fP along with all of its contents 
+.RE
+.PP
+
+.PP
+Definition at line \fB17\fP of file \fBget_requirements\&.py\fP\&.
+.SS " list scheduleFunctions\&.data_processing\&.get_requirements\&.get_table_rows ( table)"
+
+.PP
+Given a table, returns all its rows\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItable\fP A table from web page grabbed using BS4 soup object 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A 2d list that represents all of the rows from the table 
+.RE
+.PP
+
+.PP
+Definition at line \fB24\fP of file \fBget_requirements\&.py\fP\&.
+.SS " None scheduleFunctions\&.data_processing\&.get_requirements\&.process_degree_requirements (list[str] urls, str json_file)"
+
+.PP
+Handle the processing of multiple degree requirements and sending it to a json file\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIurls\fP A list of url strings\&. Each url must direct to a page that contains requirements for some sort of degree 
+.br
+\fIjson_file\fP A string that contains the file path and filename that the JSON will be written to\&.
+
+.PP
+\fINOTE\fP to maintain the script's OS agnostic nature, it is suggested to utilize os\&.path\&.join() to join strings or os\&.sep\&.join() to join elements of a list 
+.RE
+.PP
+
+.PP
+Definition at line \fB180\fP of file \fBget_requirements\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.get_requirements\&.process_url (str url)"
+
+.PP
+Take a url and find all of the tables contained in the page and return a ResultSet\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIurl\fP URL of the page to be searched\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+List containing all of the tables in the page\&. Each of table is a 2d array (list) 
+.RE
+.PP
+
+.PP
+Definition at line \fB49\fP of file \fBget_requirements\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.get_requirements\&.read_requirements (str url)"
+
+.PP
+Read the requirements from a given url that contains degree requirements and process it into a dictionary\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIurl\fP A string that contains the url that is to be read to find the degree requirements 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a dictionary that is structured to associate courses with the major and sub groups of requirements that are fulfilled 
+.RE
+.PP
+
+.PP
+Definition at line \fB77\fP of file \fBget_requirements\&.py\fP\&.
+.SH "Variable Documentation"
+.PP 
+.SS "scheduleFunctions\&.data_processing\&.get_requirements\&.current_directory = os\&.path\&.dirname(os\&.path\&.realpath(__file__))"
+
+.PP
+Definition at line \fB193\fP of file \fBget_requirements\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.get_requirements\&.data_dir = os\&.path\&.join(\fBroot_dir\fP, 'data_files', 'requirements')"
+
+.PP
+Definition at line \fB202\fP of file \fBget_requirements\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.get_requirements\&.json_file = os\&.path\&.join(\fBdata_dir\fP,'requirements\&.json')"
+
+.PP
+Definition at line \fB207\fP of file \fBget_requirements\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.get_requirements\&.path = current_directory\&.split(os\&.sep)"
+
+.PP
+Definition at line \fB198\fP of file \fBget_requirements\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.get_requirements\&.root_dir = os\&.sep\&.join(\fBpath\fP[:\fBroot_index\fP+1])"
+
+.PP
+Definition at line \fB201\fP of file \fBget_requirements\&.py\fP\&.
+.SS "scheduleFunctions\&.data_processing\&.get_requirements\&.root_index = path\&.index('Capstone\-Team14')"
+
+.PP
+Definition at line \fB200\fP of file \fBget_requirements\&.py\fP\&.
+.SS "list scheduleFunctions\&.data_processing\&.get_requirements\&.urls"
+\fBInitial value:\fP
+.nf
+1 =  [
+2         'https://catalog\&.unomaha\&.edu/undergraduate/college\-information\-science\-technology/computer\-science/computer\-science\-bs/artificialintelligence\-concentraton/',
+3         'https://catalog\&.unomaha\&.edu/undergraduate/college\-information\-science\-technology/computer\-science/computer\-science\-bs/game\-programming\-concentration/',
+4         'https://catalog\&.unomaha\&.edu/undergraduate/college\-information\-science\-technology/computer\-science/computer\-science\-bs/internet\-technologies\-it\-concentration\-computer\-science\-majors/',
+5         'https://catalog\&.unomaha\&.edu/undergraduate/college\-information\-science\-technology/computer\-science/computer\-science\-bs/information\-assurance\-concentration/',
+6         'https://catalog\&.unomaha\&.edu/undergraduate/college\-information\-science\-technology/computer\-science/computer\-science\-bs/software\-engineering\-concentration/'
+7     ]
+.PP
+.fi
+
+.PP
+Definition at line \fB208\fP of file \fBget_requirements\&.py\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Capstone Team 14 from the source code\&.

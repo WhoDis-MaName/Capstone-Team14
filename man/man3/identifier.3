@@ -1,0 +1,101 @@
+.TH "identifier" 3 "Version 0.5" "Capstone Team 14" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+identifier
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBClingoApp\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBcurrent_directory\fP"
+.br
+.ti -1c
+.RI "\fBpath\fP = current_directory\&.split(os\&.sep)"
+.br
+.ti -1c
+.RI "\fBroot_index\fP = path\&.index('Capstone\-Team14')"
+.br
+.ti -1c
+.RI "\fBroot_dir\fP = os\&.sep\&.join(\fBpath\fP[: \fBroot_index\fP + 1])"
+.br
+.ti -1c
+.RI "\fBread_dir\fP = os\&.path\&.join(\fBroot_dir\fP, 'media', 'uploads')"
+.br
+.ti -1c
+.RI "\fBclingo_dir\fP = os\&.path\&.join(\fBroot_dir\fP, 'clingo')"
+.br
+.ti -1c
+.RI "\fBparser\fP = argparse\&.ArgumentParser(description='Input class json')"
+.br
+.ti -1c
+.RI "\fBtype\fP"
+.br
+.ti -1c
+.RI "\fBdefault\fP"
+.br
+.ti -1c
+.RI "\fBhelp\fP"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "identifier\&.clingo_dir = os\&.path\&.join(\fBroot_dir\fP, 'clingo')"
+
+.PP
+Definition at line \fB19\fP of file \fBidentifier\&.py\fP\&.
+.SS "identifier\&.current_directory"
+\fBInitial value:\fP
+.nf
+1 =  os\&.path\&.dirname(
+2         os\&.path\&.realpath(__file__)
+3     )
+.PP
+.fi
+
+.PP
+Definition at line \fB7\fP of file \fBidentifier\&.py\fP\&.
+.SS "identifier\&.default"
+
+.PP
+Definition at line \fB27\fP of file \fBidentifier\&.py\fP\&.
+.SS "identifier\&.help"
+
+.PP
+Definition at line \fB28\fP of file \fBidentifier\&.py\fP\&.
+.SS "identifier\&.parser = argparse\&.ArgumentParser(description='Input class json')"
+
+.PP
+Definition at line \fB21\fP of file \fBidentifier\&.py\fP\&.
+.SS "identifier\&.path = current_directory\&.split(os\&.sep)"
+
+.PP
+Definition at line \fB14\fP of file \fBidentifier\&.py\fP\&.
+.SS "identifier\&.read_dir = os\&.path\&.join(\fBroot_dir\fP, 'media', 'uploads')"
+
+.PP
+Definition at line \fB18\fP of file \fBidentifier\&.py\fP\&.
+.SS "identifier\&.root_dir = os\&.sep\&.join(\fBpath\fP[: \fBroot_index\fP + 1])"
+
+.PP
+Definition at line \fB17\fP of file \fBidentifier\&.py\fP\&.
+.SS "identifier\&.root_index = path\&.index('Capstone\-Team14')"
+
+.PP
+Definition at line \fB16\fP of file \fBidentifier\&.py\fP\&.
+.SS "identifier\&.type"
+
+.PP
+Definition at line \fB26\fP of file \fBidentifier\&.py\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Capstone Team 14 from the source code\&.

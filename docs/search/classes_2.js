@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loginviewtests_0',['LoginViewTests',['../classschedule_functions_1_1tests_1_1_login_view_tests.html',1,'scheduleFunctions::tests']]]
+  ['filteredupload_0',['FilteredUpload',['../classschedule_functions_1_1models_1_1_filtered_upload.html',1,'scheduleFunctions::models']]]
 ];

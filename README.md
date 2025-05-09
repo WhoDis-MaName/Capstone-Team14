@@ -2,90 +2,53 @@
 
 ## Project Overview
 
-This project aims to identify overlapping courses that students are likely to take simultaneously and propose a new schedule without conflicts. The main objectives include:
+This project aims to identify conflicting courses that students are likely to take simultaneously and propose a new schedule without conflicts. The main objectives include:
 
-1. **Identifying time conflicts** between classes commonly taken in the same semester.
-2. **Optimizing the schedule** to minimize conflicts and prioritize key courses.
-3. **Coordinating the schedule with shuttle timings** to reduce student wait times.
-
----
-
-## Identifying Course Overlaps
-
-A course overlap is defined as a scheduling conflict where two classes occur during the same time slot (same day and time, e.g., Tuesday/Thursday) under the following conditions:
-
-1. **Strict Overlap**
-
-   - The same time **and** the same day **and** either:
-     - The same professor, or
-     - The same room.
-   - At least one class should remain conflict-free if multiple sections exist.
-
-2. **Handling Multiple Sections**
-   - If multiple sections of a class are available (e.g., "AI" taught by different professors), should we ensure at least one section remains conflict-free, or that all sections avoid conflicts with other courses?
+1. **Identifying Time Conflicts** between classes commonly taken in the same semester.
+2. **Optimizing the Schedule** to minimize conflicts with minimal changes to the original schedule.
+3. **Handle Professor Preferences** - Given a list of professor preferences, respect these preferences during the optimization step.
 
 ---
 
-## Key Classes to Prioritize
+## Identifying Conflicts
 
-Certain courses should be given priority when resolving conflicts:
+Each course as a list of sections which encode the following information:
 
-1. **Core CS Courses**
+- Unique Section ID
+- Section number (ie: 001)
+- Section timeslot (Start time, End time, Days)
+- Room
+- Professor
 
-   - Examples: Calculus I, CS II, Intro to Proofs, Discrete Math, Theory of Computation, Computer Networks, Software Engineering.
-   - Classes with prerequisites can overlap with their prerequisite courses since students typically won't take both in the same semester.
+There is a **scheduling conflict** between two sections if they:
 
-2. **Core Concentration Classes**
+- Have the overlapping times **and** overlapping days
+- Are predicted to be taken during the same year
+- Are **not** sections of the same course or cross listed together.
 
-   - Examples: NLP, AI, Game Design.
-
-3. **4000-Level Courses** (Priority for seniors)
-   - Ensuring upper-level students can take required courses without conflicts.
-
-**Example Case:**
-A senior pursuing a Computer Science or AI degree may need both _Intro to AI_ and _Machine Learning & Data Mining_. These courses should not be scheduled at the same time.
+We randomly assign one section to be labeled the **critical section** for each course. There is a **critical conflict** between two courses if their **critical sections** are in conflict.
 
 ---
 
 ## Optimization Approach
 
-After identifying conflicts, the next step is to suggest a reorganized schedule with minimal conflicts. The optimization criteria include:
+After identifying the critical conflicts, the next step is to suggest a reorganized schedule. The optimization criteria include:
 
-- **Minimizing the number of overlapping classes.**
-- **Prioritizing senior-level courses** to ensure timely graduation.
-- **Considering different optimization strategies:**
-  - Reducing overall conflicts.
-  - Assigning weights to courses to prioritize essential ones.
+- **Minimizing the number of critcal conflicts.**
+- **Minimize the number of preference violations.**
+- **Minimize the number of changes to the original schedule.**
 
----
-
-## Coordinating with Shuttle Schedule
-
-The final step involves aligning the course schedule with the university’s shuttle service to minimize student wait times.
-
----
-
-## Additional Optimization Considerations
-
-- A secondary **Answer Set Programming (ASP) model** will take the optimized schedule and refine it further with minimal disruption.
-- Weak constraints can have different weights to reflect course importance.
-- **TODO:** Read more on soft constraints and optimization techniques.
-
----
+## A critical conflict count of zero means that it is possible to select at least one section from any course without conflicting times for courses of a particular year.
 
 ## Future Improvements
 
-- Fine-tune soft constraints and optimization approaches.
-- Gather feedback from students and faculty to refine scheduling priorities.
-- Explore additional factors such as professor availability and classroom constraints.
+- Gather feedback from faculty to refine scheduling priorities.
+- Explore additional factors such as classroom constraints.
+- Add professor preferences to the UI
 
 ---
 
-## Conclusion
-
-This project provides an optimized class schedule by reducing conflicts, prioritizing key courses, and considering shuttle coordination. The optimization process balances multiple factors to ensure students can take the courses they need without unnecessary scheduling conflicts.
-
-## Release Notes Version 1.3
+## Release Notes Version 0.1
 
 ### Command Line Deployment
 
@@ -101,9 +64,14 @@ Also Following the steps to install Clingo:
 
 <https://github.com/potassco/clingo?tab=readme-ov-file>
 
-To Launch the current iteration of project, use this command:
+To Launch the current iteration of project, use these commands from inside the root directory for the project (Capstone-14):
 
-`python manage.py runserver`
+```
+python manage.py makemigrations
+python manage.py migrate
+python manage.py loaddata ./scheduleFunctions/fixtures/prepopulated.json
+python manage.py runserver
+```
 
 - This release has mainly included a foundation for each section(front-end, back-end, and ASP). We've created basic python scripts for parsing through the schedule JSON file and a simple pipeline to convert the filtered CSCI class into ASP formatted rules and constraints. From this, we're able to run a basic constraint identifier that returns which classes conflict with one another. Additionally, we were able to set up two basic buttons that execute this "Run Filterer" and "Run Processor".
 
@@ -119,22 +87,34 @@ We also integrated pytest to test the clingo code. To use pytest, navigate to `\
 
 To build the docker containter image, move to the root directory for the repository and run:
 
-`docker build capstone-14:latest`
+`sudo docker build -t capstone-14:latest .`
 
 Run the container using:
 
-`docker run --name capstone-14 -p 8000:8000 capstone-14`
+`sudo docker run --name capstone-14 -p 8000:8000 capstone-14`
 
 _Note_ the docker deployment will not perform any tests.
 
-## Branches for Version 1.3
+### Some helpful notes on running clingo
+
+can use `-t` to specify number of threads for clingo. Ie: `clingo overlap_minizer.lp -t 8`.
+
+The following code shows how to run Clingo with a few different options. We have `--opt-mode=optN` which shows multiple optimal models. `10` means only show `10` optimal models. `-t 2` means use 2 threads:
+
+`clingo --opt-mode=optN ../media/uploads/raw_input5.lp .\overlap_minimizer.lp 10 -t 2`
+
+This can be called through python with the following:
+
+`ctl = clingo.Control(["10", "--opt-mode=optN", "-t", "2"])`
+
+## Branches for Version 0.1
 
 - origin/josh/test: Josh and Andra worked on some pytest implementations
 - orign/andra-test2: Test the django testing suite. Also tested a template Dockerfile
 - orign/andra-test2: Test the django testing suite
 - orign/main: Vlad and Francisco worked to implement front-end styling on the main branch
 
-## Release Notes Version 0.9
+## Release Notes Version 0.2
 
 To run the project, simply launch your virtual environment using:
 
@@ -154,7 +134,7 @@ To Launch the current iteration of project, use this command:
 
 - This release has mainly included a foundation for each section(front-end, back-end, and ASP). We've created basic python scripts for parsing through the schedule JSON file and a simple pipeline to convert the filtered CSCI class into ASP formatted rules and constraints. From this, we're able to run a basic constraint identifier that returns which classes conflict with one another. Additionally, we were able to set up two basic buttons that execute this "Run Filterer" and "Run Processor".
 
-## Branches for Version 0.9
+## Branches for Version 0.2
 
 - origin/josh/test: mostly ASP/clingo related things I have been working on. Currently working on integrating some tests and bug fixes
 - orign/andra-test2: Generate samples for more specific testing for JSON files
@@ -165,7 +145,7 @@ To Launch the current iteration of project, use this command:
 
 ## Version 1.0 release notes:
 
-###Clingo changes:
+**Clingo changes**:
 
 Updated the clingo files to identify and optimize based on total overlap.
 
@@ -184,4 +164,18 @@ Weighted overlap = W1 + W2, where W1 is the weight of class 1, W2 is the weight 
 
 Minimize based on weighted overlap. Additionally, minimize number of changes to the input schedule (lower priority).
 
-can use -t to specify number of threads for clingo. Ie: clingo overlap_minizer.lp -t 8.
+## Version 2.0 release notes:
+
+**Clingo changes**:
+
+Updated the clingo files to identify and optimize based on critical sections.
+
+Before with the notion of total overlap, we could only ever guarantee that any given 2 courses could be taken at the same time.
+
+With the definition of critical sections, we can now guarantee that, for courses of the same year, you can at least take the critical sections at the same time for any number of classes.
+
+- Removed weights based off classes in the four year plan
+- All classes now have the same weight
+- Only counting conflicts for classes of the same year
+- Refactored clingo code to compute optimal answer sets quickly (in a matter of seconds rather than minutes)
+- Added in logic to handle professor preferences

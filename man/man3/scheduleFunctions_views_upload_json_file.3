@@ -1,0 +1,123 @@
+.TH "scheduleFunctions.views.upload_json_file" 3 "Version 0.5" "Capstone Team 14" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scheduleFunctions.views.upload_json_file
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBconvert24\fP (time)"
+.br
+.RI "Converts a 12-hour formatted time string to minutes past midnight\&. "
+.ti -1c
+.RI "\fBconvert_json_to_lp\fP (schedule_list)"
+.br
+.RI "Converts a nested JSON schedule dictionary into ASP logic program facts\&. "
+.ti -1c
+.RI "\fBupload_json_file\fP (request)"
+.br
+.RI "Handles uploading of a JSON file and its conversion to ASP logic facts\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "dict \fBSUBJECTS_OF_INTEREST\fP = {'CIST', 'CSCI'}"
+.br
+.ti -1c
+.RI "dict \fBNON_CS_SUBJECTS_OF_INTEREST\fP = {'ENGL', 'MATH', 'CMST'}"
+.br
+.ti -1c
+.RI "dict \fBNON_CS_COURSES_OF_INTEREST\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "scheduleFunctions\&.views\&.upload_json_file\&.convert24 ( time)"
+
+.PP
+Converts a 12-hour formatted time string to minutes past midnight\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItime\fP A string in the format "%I:%M%p" (e\&.g\&., "03:45PM")\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Integer number of minutes since midnight\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB32\fP of file \fBupload_json_file\&.py\fP\&.
+.SS "scheduleFunctions\&.views\&.upload_json_file\&.convert_json_to_lp ( schedule_list)"
+
+.PP
+Converts a nested JSON schedule dictionary into ASP logic program facts\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIschedule_list\fP A dictionary representing course schedule data\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A list of strings, each representing a logic fact for use in ASP (Answer Set Programming)\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB42\fP of file \fBupload_json_file\&.py\fP\&.
+.SS "scheduleFunctions\&.views\&.upload_json_file\&.upload_json_file ( request)"
+
+.PP
+Handles uploading of a JSON file and its conversion to ASP logic facts\&. Accepts only POST requests\&. Saves raw, filtered, and non-filtered JSON data\&. Also converts filtered data into ASP facts and saves as \fR\&.lp\fP file\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIrequest\fP Django HTTP request object\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+JsonResponse indicating success or error, with filenames of saved data\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB223\fP of file \fBupload_json_file\&.py\fP\&.
+.SH "Variable Documentation"
+.PP 
+.SS "dict scheduleFunctions\&.views\&.upload_json_file\&.NON_CS_COURSES_OF_INTEREST"
+\fBInitial value:\fP
+.nf
+1 =  {
+2     "engl1150",
+3     "cmst1110",
+4     "cmst2120",
+5     "math1950",
+6     "engl1160",
+7     "math2050",
+8 }
+.PP
+.fi
+
+.PP
+Definition at line \fB15\fP of file \fBupload_json_file\&.py\fP\&.
+.SS "dict scheduleFunctions\&.views\&.upload_json_file\&.NON_CS_SUBJECTS_OF_INTEREST = {'ENGL', 'MATH', 'CMST'}"
+
+.PP
+Definition at line \fB14\fP of file \fBupload_json_file\&.py\fP\&.
+.SS "dict scheduleFunctions\&.views\&.upload_json_file\&.SUBJECTS_OF_INTEREST = {'CIST', 'CSCI'}"
+
+.PP
+Definition at line \fB13\fP of file \fBupload_json_file\&.py\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Capstone Team 14 from the source code\&.

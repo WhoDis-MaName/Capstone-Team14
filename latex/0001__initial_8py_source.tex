@@ -1,0 +1,119 @@
+\doxysection{0001\+\_\+initial.\+py}
+\hypertarget{0001__initial_8py_source}{}\label{0001__initial_8py_source}\index{scheduleFunctions/migrations/0001\_initial.py@{scheduleFunctions/migrations/0001\_initial.py}}
+\mbox{\hyperlink{0001__initial_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00001}\mbox{\hyperlink{namespaceschedule_functions_1_1migrations}{00001}}\ \textcolor{comment}{\#\ Generated\ by\ Django\ 5.2\ on\ 2025-\/05-\/08\ 23:48}}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00003}00003\ \textcolor{keyword}{import}\ django.db.models.deletion}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00004}00004\ \textcolor{keyword}{from}\ django.db\ \textcolor{keyword}{import}\ migrations,\ models}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00007}\mbox{\hyperlink{classschedule_functions_1_1migrations_1_10001__initial_1_1_migration}{00007}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classschedule_functions_1_1migrations_1_10001__initial_1_1_migration}{Migration}}(migrations.Migration):}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00009}\mbox{\hyperlink{classschedule_functions_1_1migrations_1_10001__initial_1_1_migration_aab18d540446674030e88ac1181e1952d}{00009}}\ \ \ \ \ initial\ =\ \textcolor{keyword}{True}}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00011}\mbox{\hyperlink{classschedule_functions_1_1migrations_1_10001__initial_1_1_migration_ad0e2134e5dfb9a4be52e14f5e1dd2a22}{00011}}\ \ \ \ \ dependencies\ =\ [}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00012}00012\ \ \ \ \ ]}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00014}\mbox{\hyperlink{classschedule_functions_1_1migrations_1_10001__initial_1_1_migration_a3f55d88212a510378d77d00f9c2e8d13}{00014}}\ \ \ \ \ operations\ =\ [}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00015}00015\ \ \ \ \ \ \ \ \ migrations.CreateModel(}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ name=\textcolor{stringliteral}{'Day'},}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ fields=[}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'id'},\ models.BigAutoField(auto\_created=\textcolor{keyword}{True},\ primary\_key=\textcolor{keyword}{True},\ serialize=\textcolor{keyword}{False},\ verbose\_name=\textcolor{stringliteral}{'ID'})),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'day\_of\_week'},\ models.CharField(choices=[(\textcolor{stringliteral}{'m'},\ \textcolor{stringliteral}{'Monday'}),\ (\textcolor{stringliteral}{'t'},\ \textcolor{stringliteral}{'Tuesday'}),\ (\textcolor{stringliteral}{'w'},\ \textcolor{stringliteral}{'Wednesday'}),\ (\textcolor{stringliteral}{'r'},\ \textcolor{stringliteral}{'Thursday'}),\ (\textcolor{stringliteral}{'f'},\ \textcolor{stringliteral}{'Friday'})],\ default=\textcolor{stringliteral}{'m'},\ max\_length=4)),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00021}00021\ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00022}00022\ \ \ \ \ \ \ \ \ migrations.CreateModel(}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ name=\textcolor{stringliteral}{'FilteredUpload'},}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ fields=[}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'id'},\ models.BigAutoField(auto\_created=\textcolor{keyword}{True},\ primary\_key=\textcolor{keyword}{True},\ serialize=\textcolor{keyword}{False},\ verbose\_name=\textcolor{stringliteral}{'ID'})),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'uploaded\_at'},\ models.DateTimeField(auto\_now\_add=\textcolor{keyword}{True})),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'filename'},\ models.CharField(max\_length=255)),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'filtered\_data'},\ models.JSONField()),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'non\_filtered\_data'},\ models.JSONField()),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'uploaded\_file'},\ models.FileField(upload\_to=\textcolor{stringliteral}{'uploads/'})),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'raw\_file\_path'},\ models.CharField(blank=\textcolor{keyword}{True},\ max\_length=255)),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'filtered\_file\_path'},\ models.CharField(blank=\textcolor{keyword}{True},\ max\_length=255)),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'remaining\_file\_path'},\ models.CharField(blank=\textcolor{keyword}{True},\ max\_length=255)),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'optimized\_file'},\ models.FileField(blank=\textcolor{keyword}{True},\ null=\textcolor{keyword}{True},\ upload\_to=\textcolor{stringliteral}{'uploads/'})),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00036}00036\ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00037}00037\ \ \ \ \ \ \ \ \ migrations.CreateModel(}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ name=\textcolor{stringliteral}{'Proffessor'},}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ fields=[}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'id'},\ models.BigAutoField(auto\_created=\textcolor{keyword}{True},\ primary\_key=\textcolor{keyword}{True},\ serialize=\textcolor{keyword}{False},\ verbose\_name=\textcolor{stringliteral}{'ID'})),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'name'},\ models.CharField(max\_length=255)),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00043}00043\ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00044}00044\ \ \ \ \ \ \ \ \ migrations.CreateModel(}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ name=\textcolor{stringliteral}{'Room'},}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ fields=[}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'id'},\ models.BigAutoField(auto\_created=\textcolor{keyword}{True},\ primary\_key=\textcolor{keyword}{True},\ serialize=\textcolor{keyword}{False},\ verbose\_name=\textcolor{stringliteral}{'ID'})),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'building'},\ models.CharField(max\_length=255)),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'room\_number'},\ models.IntegerField()),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'capacity'},\ models.IntegerField(default=30)),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00052}00052\ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00053}00053\ \ \ \ \ \ \ \ \ migrations.CreateModel(}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ name=\textcolor{stringliteral}{'Course'},}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ fields=[}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'id'},\ models.BigAutoField(auto\_created=\textcolor{keyword}{True},\ primary\_key=\textcolor{keyword}{True},\ serialize=\textcolor{keyword}{False},\ verbose\_name=\textcolor{stringliteral}{'ID'})),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'subject'},\ models.CharField(max\_length=5)),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'class\_number'},\ models.IntegerField()),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'name'},\ models.CharField(max\_length=255)),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'credits'},\ models.IntegerField(null=\textcolor{keyword}{True})),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'weight'},\ models.IntegerField()),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'equivalent\_courses'},\ models.ManyToManyField(to=\textcolor{stringliteral}{'scheduleFunctions.course'})),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'prerequisites'},\ models.ManyToManyField(related\_name=\textcolor{stringliteral}{'required\_for'},\ to=\textcolor{stringliteral}{'scheduleFunctions.course'})),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'same\_semester\_courses'},\ models.ManyToManyField(to=\textcolor{stringliteral}{'scheduleFunctions.course'})),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00066}00066\ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00067}00067\ \ \ \ \ \ \ \ \ migrations.CreateModel(}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ name=\textcolor{stringliteral}{'PlanSemester'},}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ fields=[}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'id'},\ models.BigAutoField(auto\_created=\textcolor{keyword}{True},\ primary\_key=\textcolor{keyword}{True},\ serialize=\textcolor{keyword}{False},\ verbose\_name=\textcolor{stringliteral}{'ID'})),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'year'},\ models.CharField(choices=[(\textcolor{stringliteral}{'FR'},\ \textcolor{stringliteral}{'Freshman'}),\ (\textcolor{stringliteral}{'SO'},\ \textcolor{stringliteral}{'Sophomore'}),\ (\textcolor{stringliteral}{'JR'},\ \textcolor{stringliteral}{'Junior'}),\ (\textcolor{stringliteral}{'SR'},\ \textcolor{stringliteral}{'Senior'}),\ (\textcolor{stringliteral}{'GR'},\ \textcolor{stringliteral}{'Graduate'})],\ default=\textcolor{stringliteral}{'FR'},\ max\_length=2)),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'semester'},\ models.CharField(choices=[(\textcolor{stringliteral}{'F'},\ \textcolor{stringliteral}{'Fall'}),\ (\textcolor{stringliteral}{'S'},\ \textcolor{stringliteral}{'Spring'})],\ default=\textcolor{stringliteral}{'F'},\ max\_length=1)),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'courses'},\ models.ManyToManyField(to=\textcolor{stringliteral}{'scheduleFunctions.course'})),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00075}00075\ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00076}00076\ \ \ \ \ \ \ \ \ migrations.CreateModel(}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ name=\textcolor{stringliteral}{'Requirement'},}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ fields=[}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'id'},\ models.BigAutoField(auto\_created=\textcolor{keyword}{True},\ primary\_key=\textcolor{keyword}{True},\ serialize=\textcolor{keyword}{False},\ verbose\_name=\textcolor{stringliteral}{'ID'})),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'major\_label'},\ models.CharField(max\_length=255)),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'requirement\_label'},\ models.CharField(max\_length=255)),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'total\_credits'},\ models.IntegerField()),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'course\_options'},\ models.ManyToManyField(to=\textcolor{stringliteral}{'scheduleFunctions.course'})),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00085}00085\ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00086}00086\ \ \ \ \ \ \ \ \ migrations.CreateModel(}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ name=\textcolor{stringliteral}{'TimeSlot'},}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ fields=[}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'id'},\ models.BigAutoField(auto\_created=\textcolor{keyword}{True},\ primary\_key=\textcolor{keyword}{True},\ serialize=\textcolor{keyword}{False},\ verbose\_name=\textcolor{stringliteral}{'ID'})),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'start\_time'},\ models.TimeField()),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'end\_time'},\ models.TimeField()),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'credits'},\ models.IntegerField()),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'days'},\ models.ManyToManyField(to=\textcolor{stringliteral}{'scheduleFunctions.day'})),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00095}00095\ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00096}00096\ \ \ \ \ \ \ \ \ migrations.CreateModel(}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ name=\textcolor{stringliteral}{'Section'},}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ fields=[}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'id'},\ models.BigAutoField(auto\_created=\textcolor{keyword}{True},\ primary\_key=\textcolor{keyword}{True},\ serialize=\textcolor{keyword}{False},\ verbose\_name=\textcolor{stringliteral}{'ID'})),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'section\_number'},\ models.IntegerField()),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'section\_id'},\ models.IntegerField()),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'changed'},\ models.BooleanField(default=\textcolor{keyword}{False})),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'course'},\ models.ForeignKey(on\_delete=django.db.models.deletion.CASCADE,\ to=\textcolor{stringliteral}{'scheduleFunctions.course'})),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'professor'},\ models.ForeignKey(on\_delete=django.db.models.deletion.CASCADE,\ to=\textcolor{stringliteral}{'scheduleFunctions.proffessor'})),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'room'},\ models.ForeignKey(blank=\textcolor{keyword}{True},\ null=\textcolor{keyword}{True},\ on\_delete=django.db.models.deletion.SET\_NULL,\ to=\textcolor{stringliteral}{'scheduleFunctions.room'})),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{'time\_slot'},\ models.ForeignKey(on\_delete=django.db.models.deletion.CASCADE,\ to=\textcolor{stringliteral}{'scheduleFunctions.timeslot'})),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00108}00108\ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00109}00109\ \ \ \ \ \ \ \ \ migrations.AddConstraint(}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ model\_name=\textcolor{stringliteral}{'course'},}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ constraint=models.UniqueConstraint(fields=(\textcolor{stringliteral}{'subject'},\ \textcolor{stringliteral}{'class\_number'}),\ name=\textcolor{stringliteral}{'unique\_course\_code'}),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00112}00112\ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\Hypertarget{0001__initial_8py_source_l00113}00113\ \ \ \ \ ]}
+
+\end{DoxyCode}

@@ -1,0 +1,40 @@
+.TH "scheduleFunctions.views.login" 3 "Version 0.5" "Capstone Team 14" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scheduleFunctions.views.login
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBlogin\fP (request)"
+.br
+.RI "Displays the dashboard page for the authenticated user\&. "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "scheduleFunctions\&.views\&.login\&.login ( request)"
+
+.PP
+Displays the dashboard page for the authenticated user\&. This view retrieves the user's session data and, if authenticated, renders the dashboard page\&. It handles the selection of a day of the week (from the "day" parameter in the GET request) and filters sections based on the selected day\&. If no valid day is provided, it defaults to Monday\&. It also handles errors gracefully if the section data cannot be retrieved\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIrequest\fP The HTTP request object containing the session data, including the 'day' and 'username'\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A rendered HTML response with the 'dashboard\&.html' template, including a list of sections for the selected day and the username, or a redirect to the login page if the user is not authenticated\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB16\fP of file \fBlogin\&.py\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Capstone Team 14 from the source code\&.

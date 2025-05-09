@@ -1,0 +1,43 @@
+\doxysection{schedule\+Functions.\+views.\+optimize\+\_\+schedule Namespace Reference}
+\hypertarget{namespaceschedule_functions_1_1views_1_1optimize__schedule}{}\label{namespaceschedule_functions_1_1views_1_1optimize__schedule}\index{scheduleFunctions.views.optimize\_schedule@{scheduleFunctions.views.optimize\_schedule}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1optimize__schedule_aad4a88252f0be6b5213a750ad50cb104}{optimize\+\_\+schedule}} (request)
+\begin{DoxyCompactList}\small\item\em Run the clingo program for proposing an optimal schedule. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceschedule_functions_1_1views_1_1optimize__schedule_aad4a88252f0be6b5213a750ad50cb104}\index{scheduleFunctions.views.optimize\_schedule@{scheduleFunctions.views.optimize\_schedule}!optimize\_schedule@{optimize\_schedule}}
+\index{optimize\_schedule@{optimize\_schedule}!scheduleFunctions.views.optimize\_schedule@{scheduleFunctions.views.optimize\_schedule}}
+\doxysubsubsection{\texorpdfstring{optimize\_schedule()}{optimize\_schedule()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_1_1optimize__schedule_aad4a88252f0be6b5213a750ad50cb104} 
+schedule\+Functions.\+views.\+optimize\+\_\+schedule.\+optimize\+\_\+schedule (\begin{DoxyParamCaption}\item[{}]{request}{}\end{DoxyParamCaption})}
+
+
+
+Run the clingo program for proposing an optimal schedule. 
+
+Like with the conflict identifier, we randomly choose one section from each course to be called "{}critical"{}.
+
+For each course in the input file, we suggest a new timeslot. A timeslot if an object encoding the start time, end time, and day of a particular section. These timeslots are restricted to credit hours. For example, some timeslots are only for 1 credit hour courses, while others are for 3 credit hour courses.
+
+We then ensure that no two sections are in the same room at the same time, and no professors are scheduled for two or more sections at the same time.
+
+We then define conflict such that two sections have overlapping times, overlapping days, and are not sections of the same class.
+
+We then define a critical conflict to be if two critical sections of the same year (ie, two 3000 level courses) are in conflict.
+
+We then minimize the count of critical conflicts. As a secondary objective, we additionally minimize the number of changes from the original schedule.
+
+In progress\+: Working on implementing professor preferences as tertiary objectives such as\+:
+\begin{DoxyItemize}
+\item Morning times
+\item Afternoon times
+\item Back to back times
+\item Monday/\+Wednesday Dayslots
+\item Tuesday/\+Thursday Dayslots 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{optimize__schedule_8py_source_l00043}{43}} of file \mbox{\hyperlink{optimize__schedule_8py_source}{optimize\+\_\+schedule.\+py}}.
+

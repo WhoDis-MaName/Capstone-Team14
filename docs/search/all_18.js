@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['url_0',['url',['../namespaceget__four__year.html#a0967f39c9f3c7d92c0df35c8b6a866fa',1,'get_four_year']]],
-  ['urlpatterns_1',['urlpatterns',['../namespacemyproject_1_1urls.html#ab40701a5db2a27c7e1f7e55d8375e7dd',1,'myproject::urls']]],
-  ['urls_2',['urls',['../namespaceget__requirements.html#a1e7b30d2116feb5322bcbdd55cc0fb2a',1,'get_requirements']]],
-  ['urls_2epy_3',['urls.py',['../urls_8py.html',1,'']]],
-  ['use_5fi18n_4',['USE_I18N',['../namespacemyproject_1_1settings.html#a9a95aa7087b629744c6d44fc1a1cd874',1,'myproject::settings']]],
-  ['use_5ftz_5',['USE_TZ',['../namespacemyproject_1_1settings.html#a62e7ac39f89ea78416cb290897ace723',1,'myproject::settings']]]
+  ['wed_0',['WED',['../classschedule_functions_1_1models_1_1_day.html#a7f7fef9915bab29e6e14ce29b0a9bc9f',1,'scheduleFunctions::models::Day']]],
+  ['weight_1',['weight',['../classschedule_functions_1_1models_1_1_course.html#a99826dabb84ed0f375557aa60c5b8204',1,'scheduleFunctions::models::Course']]],
+  ['without_20conflicting_20times_20for_20courses_20of_20a_20particular_20year_2',['A critical conflict count of zero means that it is possible to select at least one section from any course without conflicting times for courses of a particular year.',['../md__r_e_a_d_m_e.html#autotoc_md6',1,'']]],
+  ['wsgi_2epy_3',['wsgi.py',['../wsgi_8py.html',1,'']]],
+  ['wsgi_5fapplication_4',['WSGI_APPLICATION',['../namespacemyproject_1_1settings.html#acc45ca4696cae35f9925b54a211927bf',1,'myproject::settings']]]
 ];

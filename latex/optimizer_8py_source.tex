@@ -1,0 +1,113 @@
+\doxysection{optimizer.\+py}
+\hypertarget{optimizer_8py_source}{}\label{optimizer_8py_source}\index{scheduleFunctions/data\_processing/optimizer.py@{scheduleFunctions/data\_processing/optimizer.py}}
+\mbox{\hyperlink{optimizer_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00001}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1optimizer}{00001}}\ \textcolor{keyword}{import}\ sys,\ clingo,\ math}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00002}00002\ \textcolor{keyword}{import}\ argparse}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00003}00003\ \textcolor{keyword}{import}\ os}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00004}00004\ \textcolor{keyword}{import}\ json}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00005}00005\ \textcolor{keyword}{import}\ re}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00007}00007\ \textcolor{keywordflow}{if}\ os.name\ ==\ \textcolor{stringliteral}{"{}nt"{}}:}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00008}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1optimizer_a9afa2a88639bc35dd40bbd58ef97b5c8}{00008}}\ \ \ \ \ current\_directory\ =\ os.path.dirname(}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00009}00009\ \ \ \ \ \ \ \ \ os.path.realpath(\_\_file\_\_)}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00010}00010\ \ \ \ \ )\ \ \textcolor{comment}{\#\ Get\ current\ directory}}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00011}00011\ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00012}00012\ \ \ \ \ current\_directory\ =\ os.path.dirname(}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00013}00013\ \ \ \ \ \ \ \ \ os.path.realpath(\_\_name\_\_)}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00014}00014\ \ \ \ \ )\ \ \textcolor{comment}{\#\ Get\ current\ directory}}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00015}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1optimizer_ad7957f4485ca92a96563a04e89db4416}{00015}}\ path\ =\ current\_directory.split(os.sep)}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00017}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1optimizer_ae4b1c029b1cc1180b39dd5e51981a683}{00017}}\ root\_index\ =\ path.index(\textcolor{stringliteral}{"{}Capstone-\/Team14"{}})}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00018}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1optimizer_ae9ceade0964c7c2a0745bb2bea86c626}{00018}}\ root\_dir\ =\ os.sep.join(path[:\ root\_index\ +\ 1])}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00019}00019\ \textcolor{comment}{\#\ read\_dir\ =\ os.path.join(root\_dir,\ "{}data\_files"{},\ "{}uploaded\_schedule"{})}}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00022}00022\ \textcolor{comment}{\#\ TODO:\ add\ in\ doxygen\ comments\ for\ clingo\ application.}}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00023}00023\ \textcolor{comment}{\#\ better\ to\ directly\ use\ the\ model\ without\ clingo\ app}}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00024}\mbox{\hyperlink{classschedule_functions_1_1data__processing_1_1optimizer_1_1_clingo_app}{00024}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classschedule_functions_1_1data__processing_1_1optimizer_1_1_clingo_app}{ClingoApp}}(clingo.application.Application):}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00025}\mbox{\hyperlink{classschedule_functions_1_1data__processing_1_1optimizer_1_1_clingo_app_ab45d49482fe306fd432a3f95f3a78e63}{00025}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{classschedule_functions_1_1data__processing_1_1optimizer_1_1_clingo_app_ab45d49482fe306fd432a3f95f3a78e63}{main}}(self,\ ctl,\ files):}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00026}00026\ \ \ \ \ \ \ \ \ ctl.load(root\_dir\ +\ \textcolor{stringliteral}{"{}\(\backslash\)clingo\(\backslash\)overlap\_minimizer.lp"{}})}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00028}00028\ \ \ \ \ \ \ \ \ ctl.ground()}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00029}00029\ \ \ \ \ \ \ \ \ ctl.solve()}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00031}00031\ \ \ \ \ \textcolor{comment}{\#\ TODO:\ update\ print\ model\ to\ print\ out\ the\ scheduled\ sections\ and\ parse\ into\ a\ json\ like\ filtered.json\ and\ upload\ back\ to\ the\ website\ to\ be\ displayed}}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00032}\mbox{\hyperlink{classschedule_functions_1_1data__processing_1_1optimizer_1_1_clingo_app_aee420f431e3b132a10393b1a2dad487a}{00032}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{classschedule_functions_1_1data__processing_1_1optimizer_1_1_clingo_app_aee420f431e3b132a10393b1a2dad487a}{print\_model}}(self,\ model,\ printer)\ -\/>\ None:}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00033}00033\ \ \ \ \ \ \ \ \ symbols\ =\ [str(s)\ \textcolor{keywordflow}{for}\ s\ \textcolor{keywordflow}{in}\ list(model.symbols(shown=\textcolor{keyword}{True}))]}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00034}00034\ \ \ \ \ \ \ \ \ print(symbols)}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00036}00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1optimizer_a3a5319202f503a8d2e9d7a482de2daa8}{convert\_to\_json}}(symbols,\ \textcolor{stringliteral}{"{}media\(\backslash\)output.json"{}})}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00039}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1optimizer_a8ff3688448e92c659e3f9e993c7b37c9}{00039}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1optimizer_a8ff3688448e92c659e3f9e993c7b37c9}{parse\_line}}(line):}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00040}00040\ \ \ \ \ \textcolor{comment}{\#\ Extract\ the\ contents\ inside\ scheduled\_section(...)}}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00041}00041\ \ \ \ \ match\ =\ re.match(\textcolor{stringliteral}{r"{}scheduled\_section\(\backslash\)((.*?)\(\backslash\))"{}},\ line.strip())}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ match:}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keywordtype}{None}}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00045}00045\ \ \ \ \ fields\ =\ match.group(1).split(\textcolor{stringliteral}{"{},"{}})}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{if}\ len(fields)\ !=\ 8:}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keywordtype}{None}}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00049}00049\ \ \ \ \ subject\_course,\ section,\ class\_number,\ start,\ end,\ days,\ location,\ instructor\ =\ (}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00050}00050\ \ \ \ \ \ \ \ \ fields}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00051}00051\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00052}00052\ \ \ \ \ subject\ =\ subject\_course[:4].upper()}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00053}00053\ \ \ \ \ course\_number\ =\ subject\_course[4:]}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00055}00055\ \ \ \ \ section\ =\ section[1:]\ \ \textcolor{comment}{\#\ remove\ leading\ 's'\ from\ section\ number}}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00056}00056\ \ \ \ \ class\_number\ =\ class\_number[1:]\ \ \textcolor{comment}{\#\ remove\ leading\ 'c'}}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00058}00058\ \ \ \ \ \textcolor{comment}{\#\ Convert\ start\ and\ end\ time\ to\ a\ readable\ format}}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00059}00059\ \ \ \ \ \textcolor{keyword}{def\ }convert\_time(t):}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00060}00060\ \ \ \ \ \ \ \ \ t\ =\ int(t)}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00061}00061\ \ \ \ \ \ \ \ \ hours\ =\ t\ //\ 60}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00062}00062\ \ \ \ \ \ \ \ \ minutes\ =\ t\ \%\ 60}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00063}00063\ \ \ \ \ \ \ \ \ suffix\ =\ \textcolor{stringliteral}{"{}AM"{}}\ \textcolor{keywordflow}{if}\ hours\ <\ 12\ \textcolor{keywordflow}{else}\ \textcolor{stringliteral}{"{}PM"{}}}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00064}00064\ \ \ \ \ \ \ \ \ hours\ =\ hours\ \textcolor{keywordflow}{if}\ hours\ <=\ 12\ \textcolor{keywordflow}{else}\ hours\ -\/\ 12}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ f\textcolor{stringliteral}{"{}\{hours\}:\{minutes:02d\}\{suffix\}"{}}}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00067}00067\ \ \ \ \ time\_str\ =\ f\textcolor{stringliteral}{"{}\{convert\_time(start)\}\ -\/\ \{convert\_time(end)\}"{}}}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00069}00069\ \ \ \ \ section\_data\ =\ \{}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Class\ Number"{}}:\ class\_number,}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Date"{}}:\ \textcolor{stringliteral}{"{}Aug\ 26,\ 2024\ -\/\ Dec\ 20,\ 2024"{}},}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Time"{}}:\ time\_str,}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Days"{}}:\ days.upper(),}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Location"{}}:\ location.replace(\textcolor{stringliteral}{"{}\_"{}},\ \textcolor{stringliteral}{"{}\ "{}}).title(),}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Instructor"{}}:\ instructor.replace(\textcolor{stringliteral}{"{}\_"{}},\ \textcolor{stringliteral}{"{}\ "{}}).title(),}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00076}00076\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00078}00078\ \ \ \ \ \textcolor{keywordflow}{return}\ subject,\ course\_number,\ section,\ section\_data}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00081}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1optimizer_a3a5319202f503a8d2e9d7a482de2daa8}{00081}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1optimizer_a3a5319202f503a8d2e9d7a482de2daa8}{convert\_to\_json}}(symbols,\ output\_file):}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00082}00082\ \ \ \ \ data\ =\ \{\}}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00084}00084\ \ \ \ \ \textcolor{keywordflow}{for}\ line\ \textcolor{keywordflow}{in}\ symbols:}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00085}00085\ \ \ \ \ \ \ \ \ parsed\ =\ \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1optimizer_a8ff3688448e92c659e3f9e993c7b37c9}{parse\_line}}(line)}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ parsed:}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue}}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00088}00088\ \ \ \ \ \ \ \ \ subject,\ course\_number,\ section,\ section\_data\ =\ parsed}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ subject\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ data:}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ data[subject]\ =\ \{\}}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ course\_number\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ data[subject]:}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ data[subject][course\_number]\ =\ \{}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}title"{}}:\ \textcolor{stringliteral}{"{}TBD"{}},}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}desc"{}}:\ \textcolor{stringliteral}{"{}TBD"{}},}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}prereq"{}}:\ \textcolor{stringliteral}{"{}-\/"{}},}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}sections"{}}:\ \{\},}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00101}00101\ \ \ \ \ \ \ \ \ data[subject][course\_number][\textcolor{stringliteral}{"{}sections"{}}][section]\ =\ section\_data}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00103}00103\ \ \ \ \ \textcolor{keyword}{with}\ open(output\_file,\ \textcolor{stringliteral}{"{}w"{}})\ \textcolor{keyword}{as}\ f:}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00104}00104\ \ \ \ \ \ \ \ \ json.dump(data,\ f,\ indent=2)}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00106}00106\ \textcolor{keywordflow}{if}\ \_\_name\_\_\ ==\ \textcolor{stringliteral}{'\_\_main\_\_'}:}
+\DoxyCodeLine{\Hypertarget{optimizer_8py_source_l00107}00107\ \ \ \ \ clingo.application.clingo\_main(\mbox{\hyperlink{classschedule_functions_1_1data__processing_1_1optimizer_1_1_clingo_app}{ClingoApp}}())}
+
+\end{DoxyCode}

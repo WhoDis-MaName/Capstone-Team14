@@ -65,7 +65,7 @@ def store_plan(json_file) -> None:
     for course, course_details in data.items():
         subject = course[:-4]
         name = course_details['name']
-        print(course, name)
+        # print(course, name)
         course_number = int(course[-4:])
         
         try:
@@ -184,6 +184,7 @@ def store_schedule(json_file: str) -> None:
 
                 try:
                     selected_section = Section.objects.get(course=selected_course, section_number=int(section))
+                    print(f"{selected_section} Entering database")
                 except Section.DoesNotExist:
                     selected_section = Section(
                         course=selected_course, 
@@ -235,20 +236,26 @@ def store_schedule(json_file: str) -> None:
                 start_time = date.strptime(start_time, "%I:%M%p")
                 end_time = date.strptime(end_time, "%I:%M%p")
                 
-                
-                selected_section.start_time = start_time
-                selected_section.end_time = end_time
-                
                 selected_days = Day.objects.filter(day_of_week__in = [Day.DAY_OF_WEEK_CHOICES[day] for day in section_details['Days'].lower()])
 
                 try:
-                    selected_time = TimeSlot.objects.annotate(
+                    print("Finding:", start_time, end_time, selected_days)
+                    same_times = TimeSlot.objects.filter(
+                            start_time = start_time,
+                            end_time = end_time
+                        ).filter(
+                            days__in = selected_days
+                        ).distinct()
+                    print("Found:")
+                    same_times = same_times.annotate(
                         num_days=Count('days')
-                    ).filter(
-                        days__in = selected_days
-                    ).filter(
-                        num_days=len(selected_days)
-                    ).distinct().get()
+                    )
+                    same_times = same_times.filter(num_days = len(selected_days)).distinct()
+                    for time in same_times:
+                        print(time.num_days)
+                        print(time.start_time, time.end_time, time.days.all())
+                    
+                    selected_time = same_times.distinct().get()
                 except TimeSlot.DoesNotExist:
                     selected_time = TimeSlot(
                         start_time = start_time, 
@@ -258,6 +265,7 @@ def store_schedule(json_file: str) -> None:
                     selected_time.save()
                     for day in selected_days:
                         selected_time.days.add(day)
+                    selected_time.save()
                 except TimeSlot.MultipleObjectsReturned:
                     timeslots = TimeSlot.objects.annotate(
                         num_days=Count('days')
@@ -266,8 +274,54 @@ def store_schedule(json_file: str) -> None:
                     ).filter(
                         num_days=len(selected_days)
                     ).distinct()
-                    for time in timeslots:
-                        print(time.print_clingo())
+                    # for time in timeslots:
+                        # print(time.print_clingo())
                 selected_section.time_slot = selected_time
                 selected_section.save()
-                
+
+def store_schedule_changes(section_id: int, start_time: date, end_time: date, days: str) -> None:
+    print(section_id, start_time, end_time, days)
+    try:
+        selected_section = Section.objects.get(section_id=section_id)
+    except Section.DoesNotExist:
+        print(f"Something went wrong, section does not exist: {section_id}")
+
+    try:
+        selected_days = Day.objects.filter(day_of_week__in = [Day.DAY_OF_WEEK_CHOICES[day] for day in days])
+        print("Finding:", start_time, end_time, selected_days)
+        candidate_times = TimeSlot.objects.filter(
+            start_time=start_time,
+            end_time=end_time
+        )
+
+        # Convert selected_days to a set of IDs for exact match
+        selected_day_ids = set(day.id for day in selected_days)
+
+        # Find the matching TimeSlot manually
+        updated_time = None
+        for ts in candidate_times:
+            ts_day_ids = set(ts.days.values_list('id', flat=True))
+            if ts_day_ids == selected_day_ids:
+                updated_time = ts
+                break
+        updated_time.save()
+        updated_time.days.set(selected_days)
+
+    except TimeSlot.DoesNotExist:
+        updated_time = TimeSlot(
+            start_time = start_time, 
+            end_time = end_time,
+            credits = selected_section.course.credits
+        )
+        updated_time.save()
+        for day in selected_days:
+            updated_time.days.add(day)
+        updated_time.save()
+        print(f"Something went wrong, timeslot doesn't exist: {(start_time, end_time, days)}")
+   
+def clear_schedule():
+    Section.objects.all().delete()
+    Room.objects.all().delete()
+    Proffessor.objects.all().delete()
+    TimeSlot.objects.all().delete()
+    

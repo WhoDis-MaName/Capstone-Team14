@@ -1,39 +1,45 @@
-\doxysection{data\+\_\+processing/get\+\_\+requirements.py File Reference}
-\hypertarget{get__requirements_8py}{}\label{get__requirements_8py}\index{data\_processing/get\_requirements.py@{data\_processing/get\_requirements.py}}
+\doxysection{schedule\+Functions/data\+\_\+processing/get\+\_\+requirements.py File Reference}
+\hypertarget{get__requirements_8py}{}\label{get__requirements_8py}\index{scheduleFunctions/data\_processing/get\_requirements.py@{scheduleFunctions/data\_processing/get\_requirements.py}}
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceschedule_functions}{schedule\+Functions}}
+\item 
+namespace \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing}{schedule\+Functions.\+data\+\_\+processing}}
+\item 
+namespace \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements}{schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+requirements}}
 \item 
 namespace \mbox{\hyperlink{namespaceget__requirements}{get\+\_\+requirements}}
 \begin{DoxyCompactList}\small\item\em This module contains all of the functionality that is needed to process the degree requirements. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{namespaceget__requirements_ae979cbed5cffd733fe46ad137f471bf4}{get\+\_\+requirements.\+get\+\_\+all\+\_\+tables}} (bs soup)
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_abc87a0e43bc444f7e3e569ff488ca086}{schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+requirements.\+get\+\_\+all\+\_\+tables}} (bs soup)
 \begin{DoxyCompactList}\small\item\em Finds all of the tables in the page gathered with BS4. \end{DoxyCompactList}\item 
-list \mbox{\hyperlink{namespaceget__requirements_a6f343edc6f9fa1c88ee213d997ca57b7}{get\+\_\+requirements.\+get\+\_\+table\+\_\+rows}} (table)
+list \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a8ac79be851f4d07f537169135df8af10}{schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+requirements.\+get\+\_\+table\+\_\+rows}} (table)
 \begin{DoxyCompactList}\small\item\em Given a table, returns all its rows. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespaceget__requirements_af0ce58c352b1ae79624203e0b6d17bd7}{get\+\_\+requirements.\+process\+\_\+url}} (str url)
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a248f57f35472b8ec8d203e25cf8da1ca}{schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+requirements.\+process\+\_\+url}} (str url)
 \begin{DoxyCompactList}\small\item\em Take a url and find all of the tables contained in the page and return a Result\+Set. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespaceget__requirements_a1d98bb10ba818f32c79abedfa5822add}{get\+\_\+requirements.\+read\+\_\+requirements}} (str url)
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_ab42a419166799f229d9eb1aa0ed1300b}{schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+requirements.\+read\+\_\+requirements}} (str url)
 \begin{DoxyCompactList}\small\item\em Read the requirements from a given url that contains degree requirements and process it into a dictionary. \end{DoxyCompactList}\item 
-dict \mbox{\hyperlink{namespaceget__requirements_a9ede2264ace89cd7acd4e00374dc976f}{get\+\_\+requirements.\+compile\+\_\+requirements}} (list\mbox{[}dict\mbox{]} requirements)
+dict \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_aacb4adc06e70f447b04c527b48586783}{schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+requirements.\+compile\+\_\+requirements}} (list\mbox{[}dict\mbox{]} requirements)
 \begin{DoxyCompactList}\small\item\em Gather multiple requirements sets and complile them so that the group names are unique. \end{DoxyCompactList}\item 
-None \mbox{\hyperlink{namespaceget__requirements_a36fd0363f0100bda9882ac3a37d2f890}{get\+\_\+requirements.\+process\+\_\+degree\+\_\+requirements}} (list\mbox{[}str\mbox{]} \mbox{\hyperlink{namespaceget__requirements_a1e7b30d2116feb5322bcbdd55cc0fb2a}{urls}}, str \mbox{\hyperlink{namespaceget__requirements_a6465c50fadf808ead405ece15c380485}{json\+\_\+file}})
+None \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_aef77cd4167c487b71bf4e1c3d1dc6d88}{schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+requirements.\+process\+\_\+degree\+\_\+requirements}} (list\mbox{[}str\mbox{]} \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a0eb5014f4857a6b6e50fb8a5b556c75e}{urls}}, str \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a812d8c136c3f91d08779bad86d3fd807}{json\+\_\+file}})
 \begin{DoxyCompactList}\small\item\em Handle the processing of multiple degree requirements and sending it to a json file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{namespaceget__requirements_a90e8114b4957cf21514832a06905ebc6}{get\+\_\+requirements.\+current\+\_\+directory}} = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a483b8018156ba61decc0d23d54de785a}{schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+requirements.\+current\+\_\+directory}} = os.\+path.\+dirname(os.\+path.\+realpath(\+\_\+\+\_\+file\+\_\+\+\_\+))
 \item 
-\mbox{\hyperlink{namespaceget__requirements_a9efd72a4ce9b3bd6a240740a94b0a2cd}{get\+\_\+requirements.\+path}} = current\+\_\+directory.\+split(os.\+sep)
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_aeb507e28bd6f0560247686e543490141}{schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+requirements.\+path}} = current\+\_\+directory.\+split(os.\+sep)
 \item 
-\mbox{\hyperlink{namespaceget__requirements_aa8fe1bda770b33c433ad66ea3f14ffb4}{get\+\_\+requirements.\+root\+\_\+index}} = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a822d2211f514a29f826249e5c35b6958}{schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+requirements.\+root\+\_\+index}} = path.\+index(\textquotesingle{}Capstone-\/Team14\textquotesingle{})
 \item 
-\mbox{\hyperlink{namespaceget__requirements_a5e756d24d049ed272971b4b1784227f8}{get\+\_\+requirements.\+root\+\_\+dir}} = os.\+sep.\+join(\mbox{\hyperlink{namespaceget__requirements_a9efd72a4ce9b3bd6a240740a94b0a2cd}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceget__requirements_aa8fe1bda770b33c433ad66ea3f14ffb4}{root\+\_\+index}}+1\mbox{]})
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a9898428a108ed060fdc9c65a640bb87f}{schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+requirements.\+root\+\_\+dir}} = os.\+sep.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_aeb507e28bd6f0560247686e543490141}{path}}\mbox{[}\+:\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a822d2211f514a29f826249e5c35b6958}{root\+\_\+index}}+1\mbox{]})
 \item 
-\mbox{\hyperlink{namespaceget__requirements_a638da6da80b7877d37f0de0659efa4ab}{get\+\_\+requirements.\+data\+\_\+dir}} = os.\+path.\+join(\mbox{\hyperlink{namespaceget__requirements_a5e756d24d049ed272971b4b1784227f8}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}four\+\_\+year\+\_\+plan\textquotesingle{})
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_af42f034cb20656c21c924a70bd779141}{schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+requirements.\+data\+\_\+dir}} = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a9898428a108ed060fdc9c65a640bb87f}{root\+\_\+dir}}, \textquotesingle{}data\+\_\+files\textquotesingle{}, \textquotesingle{}requirements\textquotesingle{})
 \item 
-\mbox{\hyperlink{namespaceget__requirements_a6465c50fadf808ead405ece15c380485}{get\+\_\+requirements.\+json\+\_\+file}} = os.\+path.\+join(\mbox{\hyperlink{namespaceget__requirements_a638da6da80b7877d37f0de0659efa4ab}{data\+\_\+dir}},\textquotesingle{}requirements.\+json\textquotesingle{})
+\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a812d8c136c3f91d08779bad86d3fd807}{schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+requirements.\+json\+\_\+file}} = os.\+path.\+join(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_af42f034cb20656c21c924a70bd779141}{data\+\_\+dir}},\textquotesingle{}requirements.\+json\textquotesingle{})
 \item 
-list \mbox{\hyperlink{namespaceget__requirements_a1e7b30d2116feb5322bcbdd55cc0fb2a}{get\+\_\+requirements.\+urls}}
+list \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1get__requirements_a0eb5014f4857a6b6e50fb8a5b556c75e}{schedule\+Functions.\+data\+\_\+processing.\+get\+\_\+requirements.\+urls}}
 \end{DoxyCompactItemize}

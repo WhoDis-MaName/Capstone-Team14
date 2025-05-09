@@ -1,0 +1,57 @@
+.TH "scheduleFunctions.views.optimize_schedule" 3 "Version 0.5" "Capstone Team 14" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scheduleFunctions.views.optimize_schedule
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBoptimize_schedule\fP (request)"
+.br
+.RI "Run the clingo program for proposing an optimal schedule\&. "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "scheduleFunctions\&.views\&.optimize_schedule\&.optimize_schedule ( request)"
+
+.PP
+Run the clingo program for proposing an optimal schedule\&. Like with the conflict identifier, we randomly choose one section from each course to be called "critical"\&.
+
+.PP
+For each course in the input file, we suggest a new timeslot\&. A timeslot if an object encoding the start time, end time, and day of a particular section\&. These timeslots are restricted to credit hours\&. For example, some timeslots are only for 1 credit hour courses, while others are for 3 credit hour courses\&.
+
+.PP
+We then ensure that no two sections are in the same room at the same time, and no professors are scheduled for two or more sections at the same time\&.
+
+.PP
+We then define conflict such that two sections have overlapping times, overlapping days, and are not sections of the same class\&.
+
+.PP
+We then define a critical conflict to be if two critical sections of the same year (ie, two 3000 level courses) are in conflict\&.
+
+.PP
+We then minimize the count of critical conflicts\&. As a secondary objective, we additionally minimize the number of changes from the original schedule\&.
+
+.PP
+In progress: Working on implementing professor preferences as tertiary objectives such as:
+.IP "\(bu" 2
+Morning times
+.IP "\(bu" 2
+Afternoon times
+.IP "\(bu" 2
+Back to back times
+.IP "\(bu" 2
+Monday/Wednesday Dayslots
+.IP "\(bu" 2
+Tuesday/Thursday Dayslots 
+.PP
+
+.PP
+Definition at line \fB43\fP of file \fBoptimize_schedule\&.py\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Capstone Team 14 from the source code\&.

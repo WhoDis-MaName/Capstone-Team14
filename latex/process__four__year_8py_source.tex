@@ -1,0 +1,172 @@
+\doxysection{process\+\_\+four\+\_\+year.\+py}
+\hypertarget{process__four__year_8py_source}{}\label{process__four__year_8py_source}\index{scheduleFunctions/data\_processing/process\_four\_year.py@{scheduleFunctions/data\_processing/process\_four\_year.py}}
+\mbox{\hyperlink{process__four__year_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00001}\mbox{\hyperlink{namespacefour__year__to__clingo}{00001}}\ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00005}00005\ \textcolor{keyword}{import}\ os}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00006}00006\ \textcolor{keyword}{import}\ json}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00007}00007\ \textcolor{keyword}{from}\ pprint\ \textcolor{keyword}{import}\ pprint}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00019}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a763025404bc1e677724a1428f6c7b69c}{00019}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a763025404bc1e677724a1428f6c7b69c}{get\_plan}}(filename:\ str)\ -\/>\ list[dict]:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{with}\ open(filename,\ \textcolor{stringliteral}{"{}r"{}})\ \textcolor{keyword}{as}\ file:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00021}00021\ \ \ \ \ \ \ \ \ data\ =\ json.load(file)}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00023}00023\ \ \ \ \ \textcolor{comment}{\#\ If\ the\ JSON\ root\ is\ a\ list,\ assume\ it\ contains\ a\ dictionary}}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{if}\ isinstance(data,\ list)\ \textcolor{keywordflow}{and}\ len(data)\ >\ 0:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00025}00025\ \ \ \ \ \ \ \ \ data\ =\ data[0]\ \ \textcolor{comment}{\#\ Take\ the\ first\ element}}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ isinstance(data,\ dict):}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{raise}\ ValueError(}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Invalid\ JSON\ structure:\ Expected\ a\ dictionary\ at\ the\ top\ level."{}}}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00030}00030\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{return}\ data}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00032}00032\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00066}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a8be5e9112a0dc495368e7f4ff583e981}{00066}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a8be5e9112a0dc495368e7f4ff583e981}{get\_semester}}(plan:\ list[dict],\ year:\ str|int,\ semester:\ str\ )\ -\/>\ list:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00067}00067\ \ \ \ \ years\ =\ [\textcolor{stringliteral}{'First\ Year'},\ \textcolor{stringliteral}{'Second\ Year'},\ \textcolor{stringliteral}{'Third\ Year'},\ \textcolor{stringliteral}{'Fourth\ Year'}]}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{if}\ type(year)\ ==\ str:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00069}00069\ \ \ \ \ \ \ \ \ year\ =\ year.upper()}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ year\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ years:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{raise}\ ValueError(\textcolor{stringliteral}{"{}Provided\ year\ not\ 'First\ Year',\ 'Second\ Year',\ 'Third\ Year',\ or\ 'Fourth\ Year'"{}})}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00072}00072\ \ \ \ \ \textcolor{keywordflow}{elif}\ type(year)\ ==\ int:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ year\ >\ 4\ \textcolor{keywordflow}{or}\ year\ <\ 1:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{raise}\ ValueError(\textcolor{stringliteral}{"{}Provided\ year\ outside\ range\ of\ 1-\/4\ "{}})}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00075}00075\ \ \ \ \ \ \ \ \ year\ =\ years[year-\/1]}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00076}00076\ \ \ \ \ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{raise}\ TypeError(f\textcolor{stringliteral}{"{}Provided\ year\ of\ type\ \{type(year)\},\ not\ str\ or\ int"{}})}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00078}00078\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00079}00079\ \ \ \ \ semester\ =\ semester.upper()}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00080}00080\ \ \ \ \ \textcolor{keywordflow}{if}\ semester\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ [\textcolor{stringliteral}{'FALL'},\ \textcolor{stringliteral}{'SPRING'}]:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{raise}\ ValueError(\textcolor{stringliteral}{"{}Provided\ semester\ not\ FALL\ or\ SPRING"{}})}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00082}00082\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00083}00083\ \ \ \ \ semester\_content\ =\ []}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00084}00084\ \ \ \ \ \textcolor{keywordflow}{for}\ sub\_plan\ \textcolor{keywordflow}{in}\ plan:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ semester\_content.extend(sub\_plan[year][semester])}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{except}\ KeyError:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ print(f\textcolor{stringliteral}{"{}\{year\}-\/\{semester\}\ not\ in\ plan"{}})}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{except}\ Exception\ \textcolor{keyword}{as}\ e:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ print(e,\ \textcolor{stringliteral}{'-\/'},\ f\textcolor{stringliteral}{"{}\{sub\_plan\}\ of\ type:\ \{type(sub\_plan)\}\ \ -\/-\/-\/>\ \{year\}-\/\{semester\}"{}})}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00092}00092\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00093}00093\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00094}00094\ \ \ \ \ \textcolor{keywordflow}{return}\ semester\_content}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00095}00095\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00096}00096\ \ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00113}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_ad227505cb8fb4aee06b7071f8c2293b2}{00113}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_ad227505cb8fb4aee06b7071f8c2293b2}{set\_contsraints}}(semester\_plan:\ list,\ semester\_id:\ int)\ -\/>\ dict:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00114}00114\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00115}00115\ \ \ \ \ semester\_dict\ =\ \{\}}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00116}00116\ \ \ \ \ classes\_in\_semester\ =\ set([])}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00117}00117\ \ \ \ \ \textcolor{keywordflow}{for}\ course\_group\ \textcolor{keywordflow}{in}\ semester\_plan:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00118}00118\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Confirm\ structure\ of\ each\ course\ group}}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00119}00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ len(course\_group)\ !=\ 3:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{raise}\ SyntaxError(\textcolor{stringliteral}{"{}Read\ file\ is\ not\ in\ the\ expected\ format"{}})\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00122}00122\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Set\ constraint\ structure\ for\ each\ course}}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00123}00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ i,\ course\ \textcolor{keywordflow}{in}\ enumerate(course\_group[0]):}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ semester\_dict[course]\ =\ \{}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'name'}:\ course\_group[1][i],}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'equivalent\_courses'}:\ set([x\ \textcolor{keywordflow}{for}\ x\ \textcolor{keywordflow}{in}\ course\_group[0]\ \textcolor{keywordflow}{if}\ x\ !=\ course]),}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'same\_semester'}:\ set([]),}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'credits'}:\ course\_group[2],}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'semesters'}:\ \{semester\_id\}}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00131}00131\ \ \ \ \ \ \ \ \ classes\_in\_semester.update(course\_group[0])}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00133}00133\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00134}00134\ \ \ \ \ \textcolor{comment}{\#\ Set\ hard\ constraints\ as\ every\ class\ in\ semester\ not\ in\ soft\ constraints}}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00135}00135\ \ \ \ \ \textcolor{keywordflow}{for}\ course\ \textcolor{keywordflow}{in}\ semester\_dict.keys():}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00136}00136\ \ \ \ \ \ \ \ \ semester\_dict[course][\textcolor{stringliteral}{'same\_semester'}]\ =\ \{x\ \textcolor{keywordflow}{for}\ x\ \textcolor{keywordflow}{in}\ classes\_in\_semester\ \textcolor{keywordflow}{if}\ x\ !=\ course\ \textcolor{keywordflow}{and}\ x\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ semester\_dict[course][\textcolor{stringliteral}{'equivalent\_courses'}]\}}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00137}00137\ \ \ \ \ \textcolor{keywordflow}{return}\ semester\_dict}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00138}00138\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00144}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_aebada2cbefbb37461a1cc563c25e8047}{00144}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_aebada2cbefbb37461a1cc563c25e8047}{combine\_constraints}}(constraints:\ list[dict])\ -\/>\ dict:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00145}00145\ \ \ \ \ complete\_constraints\ =\ \{\}}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00146}00146\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00147}00147\ \ \ \ \ \textcolor{keywordflow}{for}\ semsester\ \textcolor{keywordflow}{in}\ constraints:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00148}00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ key,\ value\ \textcolor{keywordflow}{in}\ semsester.items():}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ key\ \textcolor{keywordflow}{in}\ complete\_constraints.keys():}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ complete\_constraints[key][\textcolor{stringliteral}{'same\_semester'}].update(value[\textcolor{stringliteral}{'same\_semester'}])}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ complete\_constraints[key][\textcolor{stringliteral}{'equivalent\_courses'}].update(value[\textcolor{stringliteral}{'equivalent\_courses'}])}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ complete\_constraints[key][\textcolor{stringliteral}{'semesters'}].update(value[\textcolor{stringliteral}{'semesters'}])}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ complete\_constraints[key]\ =\ value}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00156}00156\ \ \ \ \ \textcolor{keywordflow}{return}\ complete\_constraints}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00157}00157\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00168}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_aa16c93667c5cbbd0102b8d620c9db8f6}{00168}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_aa16c93667c5cbbd0102b8d620c9db8f6}{create\_constraints}}(filename:\ str)\ -\/>\ dict:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00169}00169\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00170}00170\ \ \ \ \ plan\ =\ \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a763025404bc1e677724a1428f6c7b69c}{get\_plan}}(filename)}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00171}00171\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ isinstance(plan,\ list):}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00172}00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ isinstance(plan,\ dict):}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ plan\ =\ [plan]}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00174}00174\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{raise}\ TypeError(f\textcolor{stringliteral}{"{}Plan\ read\ from\ \{filename\}\ of\ type\ \{type(plan)\}\ not\ list"{}})}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00176}00176\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00177}00177\ \ \ \ \ semesters\ =\ [\textcolor{stringliteral}{'fall'},\ \textcolor{stringliteral}{'spring'}]}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00178}00178\ \ \ \ \ constraint\_list\ =\ []}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00179}00179\ \ \ \ \ \textcolor{keywordflow}{for}\ year\ \textcolor{keywordflow}{in}\ range(1,5):}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00180}00180\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ i\ \textcolor{keywordflow}{in}\ range(0,2):}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ semester\_plan\ =\ \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a8be5e9112a0dc495368e7f4ff583e981}{get\_semester}}(plan,\ year,\ semesters[i])\ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ constraint\_list.append(\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_ad227505cb8fb4aee06b7071f8c2293b2}{set\_contsraints}}(semester\_plan,\ year*10\ +\ i))}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00183}00183\ \ \ \ \ \textcolor{comment}{\#\ pprint(constraint\_list)}}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00184}00184\ \ \ \ \ constraints\ =\ \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_aebada2cbefbb37461a1cc563c25e8047}{combine\_constraints}}(constraint\_list)}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00185}00185\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00186}00186\ \ \ \ \ \textcolor{keywordflow}{for}\ key\ \textcolor{keywordflow}{in}\ constraints.keys():}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00187}00187\ \ \ \ \ \ \ \ \ constraints[key][\textcolor{stringliteral}{'same\_semester'}]\ =\ list(constraints[key][\textcolor{stringliteral}{'same\_semester'}])}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00188}00188\ \ \ \ \ \ \ \ \ constraints[key][\textcolor{stringliteral}{'equivalent\_courses'}]\ =\ list(constraints[key][\textcolor{stringliteral}{'equivalent\_courses'}])}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00189}00189\ \ \ \ \ \ \ \ \ constraints[key][\textcolor{stringliteral}{'semesters'}]\ =\ list(constraints[key][\textcolor{stringliteral}{'semesters'}])}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00190}00190\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00191}00191\ \ \ \ \ \textcolor{keywordflow}{return}\ constraints}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00193}00193\ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00207}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_acd4225e3db35e46fa42191f44b598c5b}{00207}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_acd4225e3db35e46fa42191f44b598c5b}{convert\_asp}}(constraints:\ dict,\ file:\ str)\ -\/>\ \textcolor{keywordtype}{None}:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00208}00208\ \ \ \ \ \textcolor{keywordflow}{for}\ course\ \textcolor{keywordflow}{in}\ constraints.keys():}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00209}00209\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Equivalent\ classes}}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00210}00210\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ other\ \textcolor{keywordflow}{in}\ constraints[course][\textcolor{stringliteral}{'same\_semester'}]:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ file.write(f\textcolor{stringliteral}{'same\_semester(\{course\},\ \{other\}).\(\backslash\)n'})}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00212}00212\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00213}00213\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Same\ Semester\ classes}}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00214}00214\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ other\ \textcolor{keywordflow}{in}\ constraints[course][\textcolor{stringliteral}{'equivalent\_courses'}]:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ file.write(f\textcolor{stringliteral}{'equivalent\_courses(\{course\},\ \{other\}).\(\backslash\)n'})}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00216}00216\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00217}00217\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Class\ in\ Semester}}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00218}00218\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ semester\ \textcolor{keywordflow}{in}\ constraints[course][\textcolor{stringliteral}{'semesters'}]:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ file.write(f\textcolor{stringliteral}{'course\_in\_semester(\{semester\},\ \{course\}).\(\backslash\)n'})}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00221}00221\ \ \ \ \ \textcolor{comment}{\#\ Predetermined\ Rules}}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00222}00222\ \ \ \ \ file.write(\textcolor{stringliteral}{'equivalent\_courses(C1,\ C3)\ :-\/\ equivalent\_courses(C1,\ C2),\ equivalent\_courses(C2,\ C3).\(\backslash\)n'})}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00223}00223\ \ \ \ \ file.write(\textcolor{stringliteral}{'course\_in\_semester(S1,\ C2)\ :-\/\ equivalent\_courses(C1,\ C2),\ course\_in\_semester(S1,\ C1).\(\backslash\)n'})}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00224}00224\ \ \ \ \ file.write(\textcolor{stringliteral}{'same\_semester(C1,\ C3)\ :-\/\ same\_semester(C1,\ C2),\ same\_semester(C2,\ C3).\(\backslash\)n'})}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00225}00225\ \ \ \ \ file.write(\textcolor{stringliteral}{'same\_semester(C1,\ C3)\ :-\/\ equivalent\_courses(C1,\ C2),\ same\_semester(C2,\ C3).\(\backslash\)n'})}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00226}00226\ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00227}00227\ \textcolor{keywordflow}{if}\ \_\_name\_\_\ ==\ \textcolor{stringliteral}{"{}\_\_main\_\_"{}}:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00228}00228\ \ \ \ \ \textcolor{keywordflow}{if}\ os.name\ ==\ \textcolor{stringliteral}{'nt'}:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00229}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_aabc9cb8c12e043972762e064b1dd00a9}{00229}}\ \ \ \ \ \ \ \ \ current\_directory\ =\ os.path.dirname(os.path.realpath(\_\_file\_\_))\ \textcolor{comment}{\#\ Get\ current\ directory}}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00230}00230\ \ \ \ \ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00231}00231\ \ \ \ \ \ \ \ \ current\_directory\ =\ os.path.dirname(os.path.realpath(\_\_name\_\_))\ \textcolor{comment}{\#\ Get\ current\ directory}}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00232}00232\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00234}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a5d57be1183317bb66335827da93c9034}{00234}}\ \ \ \ \ path\ =\ current\_directory.split(os.sep)}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00235}00235\ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00236}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_ab2fbc89472a3ab522b9b9fde391b05be}{00236}}\ \ \ \ \ root\_index\ =\ path.index(\textcolor{stringliteral}{'Capstone-\/Team14'})}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00237}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a7bb228d657fdb736e661b6c2f72decf1}{00237}}\ \ \ \ \ root\_dir\ =\ os.sep.join(path[:root\_index+1])}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00238}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_af4362738315f00ddc2155306105cb68c}{00238}}\ \ \ \ \ data\_dir\ =\ os.path.join(root\_dir,\ \textcolor{stringliteral}{'data\_files'},\ \textcolor{stringliteral}{'four\_year\_plan'})}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00239}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a2f2668c43b01452aa69d495b00ac96ee}{00239}}\ \ \ \ \ filename\ =\ os.path.join(data\_dir,\ \textcolor{stringliteral}{'fourYearPlan.json'})}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00240}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_af85c7333e12bd9ce37a70ccd2796a08a}{00240}}\ \ \ \ \ constraints\ =\ \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_aa16c93667c5cbbd0102b8d620c9db8f6}{create\_constraints}}(filename)}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00241}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a364f1aeff327d25fea14df7d72b602b6}{00241}}\ \ \ \ \ json\_file\ =\ os.path.join(data\_dir,\ \textcolor{stringliteral}{'four\_year\_plan.json'})}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00242}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a0158ffd83032ab00d2b2f004c7cd452d}{00242}}\ \ \ \ \ asp\_file\ =\ os.path.join(data\_dir,\ \textcolor{stringliteral}{'four\_year\_plan\_constraints.lp'})}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00243}00243\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00244}00244\ \ \ \ \ \textcolor{keyword}{with}\ open(json\_file,\ \textcolor{stringliteral}{'w'})\ \textcolor{keyword}{as}\ f:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00245}\mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_a1c0b728cd04edccec8324b2262d25274}{00245}}\ \ \ \ \ \ \ \ \ json.dump(constraints,f,\ indent=4)}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00246}00246\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00247}00247\ \ \ \ \ \textcolor{keyword}{with}\ open(asp\_file,\ \textcolor{stringliteral}{'w'})\ \textcolor{keyword}{as}\ f:}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00248}00248\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceschedule_functions_1_1data__processing_1_1process__four__year_acd4225e3db35e46fa42191f44b598c5b}{convert\_asp}}(constraints,\ f)}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00249}00249\ \ \ \ \ \textcolor{comment}{\#\ pprint(constraints)}}
+\DoxyCodeLine{\Hypertarget{process__four__year_8py_source_l00250}00250\ \ \ \ \ }
+
+\end{DoxyCode}

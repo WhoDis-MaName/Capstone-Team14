@@ -1,0 +1,93 @@
+.TH "scheduleFunctions/data_processing/process_four_year.py" 3 "Version 0.5" "Capstone Team 14" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scheduleFunctions/data_processing/process_four_year.py
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBscheduleFunctions\fP"
+.br
+.ti -1c
+.RI "namespace \fBscheduleFunctions\&.data_processing\fP"
+.br
+.ti -1c
+.RI "namespace \fBscheduleFunctions\&.data_processing\&.process_four_year\fP"
+.br
+.ti -1c
+.RI "namespace \fBfour_year_to_clingo\fP"
+.br
+.RI "This module contains all of the functionality that is needed to convert the four year plan into usable clingo rules\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "list[dict] \fBscheduleFunctions\&.data_processing\&.process_four_year\&.get_plan\fP (str \fBfilename\fP)"
+.br
+.RI "Read the four year plan from a file and confirm that it is a list\&. "
+.ti -1c
+.RI "list \fBscheduleFunctions\&.data_processing\&.process_four_year\&.get_semester\fP (list[dict] plan, str|int year, str semester)"
+.br
+.RI "Get the list of classes for a particular semester from the four year plan, assuming that there may be multiple plans given\&. "
+.ti -1c
+.RI "dict \fBscheduleFunctions\&.data_processing\&.process_four_year\&.set_contsraints\fP (list semester_plan, int semester_id)"
+.br
+.RI "Process the semester such that classes listed as fulfilling the same requirement are soft constraints and all other classes in the semester are hard constraints\&. "
+.ti -1c
+.RI "dict \fBscheduleFunctions\&.data_processing\&.process_four_year\&.combine_constraints\fP (list[dict] \fBconstraints\fP)"
+.br
+.RI "Combine the constraints so that the keys are based on the course and not based on the semester\&. "
+.ti -1c
+.RI "dict \fBscheduleFunctions\&.data_processing\&.process_four_year\&.create_constraints\fP (str \fBfilename\fP)"
+.br
+.RI "Take a four year plan stored in a JSON file and process it so that it can be stored as JSON or as clingo in the desired format\&. "
+.ti -1c
+.RI "None \fBscheduleFunctions\&.data_processing\&.process_four_year\&.convert_asp\fP (dict \fBconstraints\fP, str file)"
+.br
+.RI "Take formated constraints and convert it into asp rules In addition to the rules defined by the constraints parameter, the rules file is also appended with equivalence rules\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.process_four_year\&.current_directory\fP = os\&.path\&.dirname(os\&.path\&.realpath(__file__))"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.process_four_year\&.path\fP = current_directory\&.split(os\&.sep)"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.process_four_year\&.root_index\fP = path\&.index('Capstone\-Team14')"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.process_four_year\&.root_dir\fP = os\&.sep\&.join(\fBpath\fP[:\fBroot_index\fP+1])"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.process_four_year\&.data_dir\fP = os\&.path\&.join(\fBroot_dir\fP, 'data_files', 'four_year_plan')"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.process_four_year\&.filename\fP = os\&.path\&.join(\fBdata_dir\fP, 'fourYearPlan\&.json')"
+.br
+.ti -1c
+.RI "dict \fBscheduleFunctions\&.data_processing\&.process_four_year\&.constraints\fP = \fBcreate_constraints\fP(\fBfilename\fP)"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.process_four_year\&.json_file\fP = os\&.path\&.join(\fBdata_dir\fP, 'four_year_plan\&.json')"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.process_four_year\&.asp_file\fP = os\&.path\&.join(\fBdata_dir\fP, 'four_year_plan_constraints\&.lp')"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.process_four_year\&.f\fP"
+.br
+.ti -1c
+.RI "\fBscheduleFunctions\&.data_processing\&.process_four_year\&.indent\fP"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Capstone Team 14 from the source code\&.

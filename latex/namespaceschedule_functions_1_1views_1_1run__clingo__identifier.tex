@@ -1,0 +1,26 @@
+\doxysection{schedule\+Functions.\+views.\+run\+\_\+clingo\+\_\+identifier Namespace Reference}
+\hypertarget{namespaceschedule_functions_1_1views_1_1run__clingo__identifier}{}\label{namespaceschedule_functions_1_1views_1_1run__clingo__identifier}\index{scheduleFunctions.views.run\_clingo\_identifier@{scheduleFunctions.views.run\_clingo\_identifier}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceschedule_functions_1_1views_1_1run__clingo__identifier_ac9cfc8d4fcaa2e1671d63ec4c8339a71}{run\+\_\+clingo\+\_\+identifier}} (request)
+\begin{DoxyCompactList}\small\item\em Run the clingo program for identifying conflict. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceschedule_functions_1_1views_1_1run__clingo__identifier_ac9cfc8d4fcaa2e1671d63ec4c8339a71}\index{scheduleFunctions.views.run\_clingo\_identifier@{scheduleFunctions.views.run\_clingo\_identifier}!run\_clingo\_identifier@{run\_clingo\_identifier}}
+\index{run\_clingo\_identifier@{run\_clingo\_identifier}!scheduleFunctions.views.run\_clingo\_identifier@{scheduleFunctions.views.run\_clingo\_identifier}}
+\doxysubsubsection{\texorpdfstring{run\_clingo\_identifier()}{run\_clingo\_identifier()}}
+{\footnotesize\ttfamily \label{namespaceschedule_functions_1_1views_1_1run__clingo__identifier_ac9cfc8d4fcaa2e1671d63ec4c8339a71} 
+schedule\+Functions.\+views.\+run\+\_\+clingo\+\_\+identifier.\+run\+\_\+clingo\+\_\+identifier (\begin{DoxyParamCaption}\item[{}]{request}{}\end{DoxyParamCaption})}
+
+
+
+Run the clingo program for identifying conflict. 
+
+The conflict identifier randomly chooses one section from each course to be called "{}critical"{}. We then define conflict such that two sections have overlapping times, overlapping days, and are not sections of the same class.
+
+We then define a critical conflict to be if two critical sections of the same year (ie, two 3000 level courses) are in conflict. Since critical sections are chosen randomly, we then minimize the count of critical sections, finding the best selection. 
+
+Definition at line \mbox{\hyperlink{run__clingo__identifier_8py_source_l00016}{16}} of file \mbox{\hyperlink{run__clingo__identifier_8py_source}{run\+\_\+clingo\+\_\+identifier.\+py}}.
+

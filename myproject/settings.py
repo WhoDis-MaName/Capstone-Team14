@@ -15,8 +15,10 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 if os.name == 'nt':
     BASE_DIR = Path(__file__).resolve().parent.parent
-else:
+elif __name__ == "__main__":
     BASE_DIR = Path(__name__).resolve().parent.parent
+else:
+    BASE_DIR = Path(__name__).resolve().parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -28,7 +30,7 @@ SECRET_KEY = 'django-insecure-ge_nw#14sw5!gaz+x-ydw2n0*qf(6t(m3!_linr*45iyv_dqim
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition

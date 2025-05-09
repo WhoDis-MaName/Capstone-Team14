@@ -6,55 +6,129 @@ Inheritance diagram for schedule\+Functions.\+models.\+Course\+:\begin{figure}[H
 \includegraphics[height=2.000000cm]{classschedule_functions_1_1models_1_1_course}
 \end{center}
 \end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classschedule_functions_1_1models_1_1_course_1_1_meta}{Meta}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{classschedule_functions_1_1models_1_1_course_a7793244f1db17c6a2b30727dd986149a}{print\+\_\+clingo}} (self)
+\item 
+\mbox{\hyperlink{classschedule_functions_1_1models_1_1_course_a59080b97b59e62f36e455fff8c1d0079}{print\+\_\+non\+\_\+cs}} (cls)
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classschedule_functions_1_1models_1_1_course_a10d4661ad46a0c0bc1c38fcf8930fb8e}{subject}} = models.\+Char\+Field(max\+\_\+length=5)
 \item 
-\mbox{\hyperlink{classschedule_functions_1_1models_1_1_course_a6d10ed67164bcaf35b497e509721c574}{class\+Number}} = models.\+Integer\+Field()
+\mbox{\hyperlink{classschedule_functions_1_1models_1_1_course_a0f00cc25afbf98b58dc7d57fa5107b26}{class\+\_\+number}} = models.\+Integer\+Field()
 \item 
-\mbox{\hyperlink{classschedule_functions_1_1models_1_1_course_acdddedeafd4f8e5d086bac73177e0860}{prerequisites}} = models.\+Many\+To\+Many\+Field(\textquotesingle{}self\textquotesingle{})
+\mbox{\hyperlink{classschedule_functions_1_1models_1_1_course_a65abc1a15ed5a1da191e2761ad876aa3}{name}} = models.\+Char\+Field(max\+\_\+length=255)
 \item 
-\mbox{\hyperlink{classschedule_functions_1_1models_1_1_course_aa3dc4dbe7e485fbdd6ca97a860858427}{equivalent\+\_\+courses}} = models.\+Many\+To\+Many\+Field(\textquotesingle{}self\textquotesingle{})
+\mbox{\hyperlink{classschedule_functions_1_1models_1_1_course_acdddedeafd4f8e5d086bac73177e0860}{prerequisites}} = models.\+Many\+To\+Many\+Field(\textquotesingle{}self\textquotesingle{}, symmetrical=False, related\+\_\+name=\textquotesingle{}required\+\_\+for\textquotesingle{})
 \item 
-\mbox{\hyperlink{classschedule_functions_1_1models_1_1_course_a9b0ea0432ee16a78c1d3fe065cd52cca}{same\+\_\+semester\+\_\+courses}} = models.\+Many\+To\+Many\+Field(\textquotesingle{}self\textquotesingle{})
+\mbox{\hyperlink{classschedule_functions_1_1models_1_1_course_aa3dc4dbe7e485fbdd6ca97a860858427}{equivalent\+\_\+courses}} = models.\+Many\+To\+Many\+Field(\textquotesingle{}self\textquotesingle{}, symmetrical=True)
 \item 
-\mbox{\hyperlink{classschedule_functions_1_1models_1_1_course_a613adba1f0aa67654ea0126ce9e4086f}{credits}} = models.\+Integer\+Field()
+\mbox{\hyperlink{classschedule_functions_1_1models_1_1_course_a9b0ea0432ee16a78c1d3fe065cd52cca}{same\+\_\+semester\+\_\+courses}} = models.\+Many\+To\+Many\+Field(\textquotesingle{}self\textquotesingle{}, symmetrical=True)
+\item 
+\mbox{\hyperlink{classschedule_functions_1_1models_1_1_course_a613adba1f0aa67654ea0126ce9e4086f}{credits}} = models.\+Integer\+Field(null=True)
 \item 
 \mbox{\hyperlink{classschedule_functions_1_1models_1_1_course_a99826dabb84ed0f375557aa60c5b8204}{weight}} = models.\+Integer\+Field()
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00050}{50}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classschedule_functions_1_1models_1_1_course_a7793244f1db17c6a2b30727dd986149a}\index{scheduleFunctions.models.Course@{scheduleFunctions.models.Course}!print\_clingo@{print\_clingo}}
+\index{print\_clingo@{print\_clingo}!scheduleFunctions.models.Course@{scheduleFunctions.models.Course}}
+\doxysubsubsection{\texorpdfstring{print\_clingo()}{print\_clingo()}}
+{\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_course_a7793244f1db17c6a2b30727dd986149a} 
+ str schedule\+Functions.\+models.\+Course.\+print\+\_\+clingo (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00060}{60}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
+
+\Hypertarget{classschedule_functions_1_1models_1_1_course_a59080b97b59e62f36e455fff8c1d0079}\index{scheduleFunctions.models.Course@{scheduleFunctions.models.Course}!print\_non\_cs@{print\_non\_cs}}
+\index{print\_non\_cs@{print\_non\_cs}!scheduleFunctions.models.Course@{scheduleFunctions.models.Course}}
+\doxysubsubsection{\texorpdfstring{print\_non\_cs()}{print\_non\_cs()}}
+{\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_course_a59080b97b59e62f36e455fff8c1d0079} 
+schedule\+Functions.\+models.\+Course.\+print\+\_\+non\+\_\+cs (\begin{DoxyParamCaption}\item[{}]{cls}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00087}{87}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
+
+
+
 \doxysubsection{Member Data Documentation}
-\Hypertarget{classschedule_functions_1_1models_1_1_course_a6d10ed67164bcaf35b497e509721c574}\index{scheduleFunctions.models.Course@{scheduleFunctions.models.Course}!classNumber@{classNumber}}
-\index{classNumber@{classNumber}!scheduleFunctions.models.Course@{scheduleFunctions.models.Course}}
-\doxysubsubsection{\texorpdfstring{classNumber}{classNumber}}
-{\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_course_a6d10ed67164bcaf35b497e509721c574} 
-schedule\+Functions.\+models.\+Course.\+class\+Number = models.\+Integer\+Field()\hspace{0.3cm}{\ttfamily [static]}}
+\Hypertarget{classschedule_functions_1_1models_1_1_course_a0f00cc25afbf98b58dc7d57fa5107b26}\index{scheduleFunctions.models.Course@{scheduleFunctions.models.Course}!class\_number@{class\_number}}
+\index{class\_number@{class\_number}!scheduleFunctions.models.Course@{scheduleFunctions.models.Course}}
+\doxysubsubsection{\texorpdfstring{class\_number}{class\_number}}
+{\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_course_a0f00cc25afbf98b58dc7d57fa5107b26} 
+schedule\+Functions.\+models.\+Course.\+class\+\_\+number = models.\+Integer\+Field()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00053}{53}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
 
 \Hypertarget{classschedule_functions_1_1models_1_1_course_a613adba1f0aa67654ea0126ce9e4086f}\index{scheduleFunctions.models.Course@{scheduleFunctions.models.Course}!credits@{credits}}
 \index{credits@{credits}!scheduleFunctions.models.Course@{scheduleFunctions.models.Course}}
 \doxysubsubsection{\texorpdfstring{credits}{credits}}
 {\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_course_a613adba1f0aa67654ea0126ce9e4086f} 
-schedule\+Functions.\+models.\+Course.\+credits = models.\+Integer\+Field()\hspace{0.3cm}{\ttfamily [static]}}
+schedule\+Functions.\+models.\+Course.\+credits = models.\+Integer\+Field(null=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00058}{58}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
 
 \Hypertarget{classschedule_functions_1_1models_1_1_course_aa3dc4dbe7e485fbdd6ca97a860858427}\index{scheduleFunctions.models.Course@{scheduleFunctions.models.Course}!equivalent\_courses@{equivalent\_courses}}
 \index{equivalent\_courses@{equivalent\_courses}!scheduleFunctions.models.Course@{scheduleFunctions.models.Course}}
 \doxysubsubsection{\texorpdfstring{equivalent\_courses}{equivalent\_courses}}
 {\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_course_aa3dc4dbe7e485fbdd6ca97a860858427} 
-schedule\+Functions.\+models.\+Course.\+equivalent\+\_\+courses = models.\+Many\+To\+Many\+Field(\textquotesingle{}self\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+schedule\+Functions.\+models.\+Course.\+equivalent\+\_\+courses = models.\+Many\+To\+Many\+Field(\textquotesingle{}self\textquotesingle{}, symmetrical=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00056}{56}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
+
+\Hypertarget{classschedule_functions_1_1models_1_1_course_a65abc1a15ed5a1da191e2761ad876aa3}\index{scheduleFunctions.models.Course@{scheduleFunctions.models.Course}!name@{name}}
+\index{name@{name}!scheduleFunctions.models.Course@{scheduleFunctions.models.Course}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_course_a65abc1a15ed5a1da191e2761ad876aa3} 
+schedule\+Functions.\+models.\+Course.\+name = models.\+Char\+Field(max\+\_\+length=255)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00054}{54}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
 
 \Hypertarget{classschedule_functions_1_1models_1_1_course_acdddedeafd4f8e5d086bac73177e0860}\index{scheduleFunctions.models.Course@{scheduleFunctions.models.Course}!prerequisites@{prerequisites}}
 \index{prerequisites@{prerequisites}!scheduleFunctions.models.Course@{scheduleFunctions.models.Course}}
 \doxysubsubsection{\texorpdfstring{prerequisites}{prerequisites}}
 {\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_course_acdddedeafd4f8e5d086bac73177e0860} 
-schedule\+Functions.\+models.\+Course.\+prerequisites = models.\+Many\+To\+Many\+Field(\textquotesingle{}self\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+schedule\+Functions.\+models.\+Course.\+prerequisites = models.\+Many\+To\+Many\+Field(\textquotesingle{}self\textquotesingle{}, symmetrical=False, related\+\_\+name=\textquotesingle{}required\+\_\+for\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00055}{55}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
 
 \Hypertarget{classschedule_functions_1_1models_1_1_course_a9b0ea0432ee16a78c1d3fe065cd52cca}\index{scheduleFunctions.models.Course@{scheduleFunctions.models.Course}!same\_semester\_courses@{same\_semester\_courses}}
 \index{same\_semester\_courses@{same\_semester\_courses}!scheduleFunctions.models.Course@{scheduleFunctions.models.Course}}
 \doxysubsubsection{\texorpdfstring{same\_semester\_courses}{same\_semester\_courses}}
 {\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_course_a9b0ea0432ee16a78c1d3fe065cd52cca} 
-schedule\+Functions.\+models.\+Course.\+same\+\_\+semester\+\_\+courses = models.\+Many\+To\+Many\+Field(\textquotesingle{}self\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+schedule\+Functions.\+models.\+Course.\+same\+\_\+semester\+\_\+courses = models.\+Many\+To\+Many\+Field(\textquotesingle{}self\textquotesingle{}, symmetrical=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00057}{57}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
 
 \Hypertarget{classschedule_functions_1_1models_1_1_course_a10d4661ad46a0c0bc1c38fcf8930fb8e}\index{scheduleFunctions.models.Course@{scheduleFunctions.models.Course}!subject@{subject}}
 \index{subject@{subject}!scheduleFunctions.models.Course@{scheduleFunctions.models.Course}}
@@ -62,11 +136,19 @@ schedule\+Functions.\+models.\+Course.\+same\+\_\+semester\+\_\+courses = models
 {\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_course_a10d4661ad46a0c0bc1c38fcf8930fb8e} 
 schedule\+Functions.\+models.\+Course.\+subject = models.\+Char\+Field(max\+\_\+length=5)\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00052}{52}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
+
 \Hypertarget{classschedule_functions_1_1models_1_1_course_a99826dabb84ed0f375557aa60c5b8204}\index{scheduleFunctions.models.Course@{scheduleFunctions.models.Course}!weight@{weight}}
 \index{weight@{weight}!scheduleFunctions.models.Course@{scheduleFunctions.models.Course}}
 \doxysubsubsection{\texorpdfstring{weight}{weight}}
 {\footnotesize\ttfamily \label{classschedule_functions_1_1models_1_1_course_a99826dabb84ed0f375557aa60c5b8204} 
 schedule\+Functions.\+models.\+Course.\+weight = models.\+Integer\+Field()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{models_8py_source_l00059}{59}} of file \mbox{\hyperlink{models_8py_source}{models.\+py}}.
 
 
 
