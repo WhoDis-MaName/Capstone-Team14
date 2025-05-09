@@ -289,22 +289,24 @@ def store_schedule_changes(section_id: int, start_time: date, end_time: date, da
     try:
         selected_days = Day.objects.filter(day_of_week__in = [Day.DAY_OF_WEEK_CHOICES[day] for day in days])
         print("Finding:", start_time, end_time, selected_days)
-        same_times = TimeSlot.objects.filter(
-                start_time = start_time,
-                end_time = end_time
-            ).filter(
-                days__in = selected_days
-            ).distinct()
-        print("Found:")
-        same_times = same_times.annotate(
-            num_days=Count('days')
+        candidate_times = TimeSlot.objects.filter(
+            start_time=start_time,
+            end_time=end_time
         )
-        same_times = same_times.filter(num_days = len(selected_days)).distinct()
-        for time in same_times:
-            print(time.num_days)
-            print(time.start_time, time.end_time, time.days.all())
-        
-        updated_time = same_times.distinct().get()        
+
+        # Convert selected_days to a set of IDs for exact match
+        selected_day_ids = set(day.id for day in selected_days)
+
+        # Find the matching TimeSlot manually
+        updated_time = None
+        for ts in candidate_times:
+            ts_day_ids = set(ts.days.values_list('id', flat=True))
+            if ts_day_ids == selected_day_ids:
+                updated_time = ts
+                break
+        updated_time.save()
+        updated_time.days.set(selected_days)
+
     except TimeSlot.DoesNotExist:
         updated_time = TimeSlot(
             start_time = start_time, 
@@ -316,10 +318,6 @@ def store_schedule_changes(section_id: int, start_time: date, end_time: date, da
             updated_time.days.add(day)
         updated_time.save()
         print(f"Something went wrong, timeslot doesn't exist: {(start_time, end_time, days)}")
-        
-    selected_section.time_slot = updated_time
-    selected_section.changed = True
-    selected_section.save()
    
 def clear_schedule():
     Section.objects.all().delete()
