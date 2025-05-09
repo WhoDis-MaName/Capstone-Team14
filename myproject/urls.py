@@ -17,7 +17,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-
+from django.shortcuts import render
 # from scheduleFunctions.views.views import (
 # run_script,
 # )  # Import the view for schedulerApp functions
@@ -34,4 +34,5 @@ urlpatterns = [
     path("run-identifier/", run_clingo_identifier, name="run_clingo_identifier"),
     path("optimize-schedule/", optimize_schedule, name="optimize_schedule"),
     path("download/<str:filename>/", download_optimized_file, name="download_file"),
+    path('logo/', lambda request: render(request, 'logo.html')),
 ]

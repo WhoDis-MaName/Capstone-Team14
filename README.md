@@ -64,9 +64,14 @@ Also Following the steps to install Clingo:
 
 <https://github.com/potassco/clingo?tab=readme-ov-file>
 
-To Launch the current iteration of project, use this command:
+To Launch the current iteration of project, use these commands from inside the root directory for the project (Capstone-14):
 
-`python manage.py runserver`
+```
+python manage.py makemigrations
+python manage.py migrate
+python manage.py loaddata ./scheduleFunctions/fixtures/prepopulated.json
+python manage.py runserver
+```
 
 - This release has mainly included a foundation for each section(front-end, back-end, and ASP). We've created basic python scripts for parsing through the schedule JSON file and a simple pipeline to convert the filtered CSCI class into ASP formatted rules and constraints. From this, we're able to run a basic constraint identifier that returns which classes conflict with one another. Additionally, we were able to set up two basic buttons that execute this "Run Filterer" and "Run Processor".
 
