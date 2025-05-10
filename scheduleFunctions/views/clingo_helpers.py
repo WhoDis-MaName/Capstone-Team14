@@ -1,7 +1,7 @@
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
 from datetime import datetime
-from ..to_database import store_schedule_changes
+from scheduleFunctions.to_database import store_schedule_changes
 import multiprocessing
 import clingo
 import re

@@ -49,7 +49,7 @@ def dashboard_view(request):
                 # time_slot__days__day_of_week=request.session["day"],
                 changed = True
             ).order_by("time_slot__start_time")
-            print(section_list)
+            # print(section_list)
         else:
             section_list = Section.objects.filter(
                 time_slot__days__day_of_week=request.session["day"]
