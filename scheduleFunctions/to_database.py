@@ -285,6 +285,7 @@ def store_schedule_changes(section_id: int, start_time: date, end_time: date, da
         selected_section = Section.objects.get(section_id=section_id)
     except Section.DoesNotExist:
         print(f"Something went wrong, section does not exist: {section_id}")
+        return
 
     try:
         selected_days = Day.objects.filter(day_of_week__in = [Day.DAY_OF_WEEK_CHOICES[day] for day in days])
@@ -304,8 +305,6 @@ def store_schedule_changes(section_id: int, start_time: date, end_time: date, da
             if ts_day_ids == selected_day_ids:
                 updated_time = ts
                 break
-        updated_time.save()
-        updated_time.days.set(selected_days)
 
     except TimeSlot.DoesNotExist:
         updated_time = TimeSlot(
@@ -314,10 +313,13 @@ def store_schedule_changes(section_id: int, start_time: date, end_time: date, da
             credits = selected_section.course.credits
         )
         updated_time.save()
-        for day in selected_days:
-            updated_time.days.add(day)
-        updated_time.save()
+        updated_time.days.set(selected_days)
+        
         print(f"Something went wrong, timeslot doesn't exist: {(start_time, end_time, days)}")
+    
+    selected_section.time_slot = updated_time
+    selected_section.changed = True
+    selected_section.save()
    
 def clear_schedule():
     Section.objects.all().delete()
