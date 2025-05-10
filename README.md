@@ -38,13 +38,23 @@ After identifying the critical conflicts, the next step is to suggest a reorgani
 - **Minimize the number of preference violations.**
 - **Minimize the number of changes to the original schedule.**
 
-## A critical conflict count of zero means that it is possible to select at least one section from any course without conflicting times for courses of a particular year.
+## A critical conflict count of zero means that it is possible to select at least one section from any course without conflicting times for courses of a particular year
 
 ## Future Improvements
 
 - Gather feedback from faculty to refine scheduling priorities.
 - Explore additional factors such as classroom constraints.
 - Add professor preferences to the UI
+- Transition to generating clingo facts from database instead of generating them on file upload
+- Maintain a record of the old TimeSlots when Sections are changed
+- Expand capabilites to other departments
+  - Allow users to provide links to 4-year plans
+  - Allow users to provide links to degree requirements
+- Have user assignments by department and user type
+- Differentiate experience between registrar user, advisor user, and professor user
+  - Registrar user can upload, view, optimize, and download the schedule (including differences)
+  - Advisor user can view uploaded schedule and provide feedback
+  - Professor user can view uploaded schedule and update preferences
 
 ---
 
@@ -66,14 +76,9 @@ Also Following the steps to install Clingo:
 
 To Launch the current iteration of project, use these commands from inside the root directory for the project (Capstone-14):
 
-```
-python manage.py makemigrations
-python manage.py migrate
-python manage.py loaddata ./scheduleFunctions/fixtures/prepopulated.json
-python manage.py runserver
-```
+`python manage.py runserver`
 
-- This release has mainly included a foundation for each section(front-end, back-end, and ASP). We've created basic python scripts for parsing through the schedule JSON file and a simple pipeline to convert the filtered CSCI class into ASP formatted rules and constraints. From this, we're able to run a basic constraint identifier that returns which classes conflict with one another. Additionally, we were able to set up two basic buttons that execute this "Run Filterer" and "Run Processor".
+- This release has mainly included a foundation for each section(front-end, back-end, and ASP). We've created basic python scripts for parsing through the schedule JSON file and a simple pipeline to convert the filtered CSCI class into ASP formatted rules and constraints. From this, we're able to run a basic constraint identifier that returns which classes conflict with one another. Additionally, we were able to set up two basic buttons that execute this "Check Conflicts" and "Optimize Schedule".
 
 To launch django tests, use this command:
 
@@ -143,9 +148,9 @@ To Launch the current iteration of project, use this command:
 - oring/dev: When we are working together (in person) or want to make sure we don't break main
 - main: Main branch where working iteration is found and includes front-end development
 
-## Version 1.0 release notes:
+## Version 1.0 release notes
 
-**Clingo changes**:
+### Clingo Changes
 
 Updated the clingo files to identify and optimize based on total overlap.
 
@@ -164,9 +169,9 @@ Weighted overlap = W1 + W2, where W1 is the weight of class 1, W2 is the weight 
 
 Minimize based on weighted overlap. Additionally, minimize number of changes to the input schedule (lower priority).
 
-## Version 2.0 release notes:
+## Version 2.0 release notes
 
-**Clingo changes**:
+### More Clingo Changes
 
 Updated the clingo files to identify and optimize based on critical sections.
 
@@ -179,3 +184,39 @@ With the definition of critical sections, we can now guarantee that, for courses
 - Only counting conflicts for classes of the same year
 - Refactored clingo code to compute optimal answer sets quickly (in a matter of seconds rather than minutes)
 - Added in logic to handle professor preferences
+
+### Application Changes
+
+All of the uploaded sections are stored in the database and are filtered to display on the dashboard. There are also generated pages to show details for all of the sections.
+
+### Command Line Deployment Changes
+
+To run the application from the command line after starting a virtual environment and installing the python packages
+
+```{bash}
+python manage.py makemigrations
+python manage.py migrate
+python manage.py loaddata ./scheduleFunctions/fixtures/prepopulated.json
+python manage.py runserver
+```
+
+### Docker Deployment Changes
+
+To build the docker containter image, move to the root directory for the repository and run:
+
+`sudo docker build -t capstone-14:latest .`
+
+Run the container using:
+
+`sudo docker run --name capstone-14 -p 80:8000 -d capstone-14`
+
+This container is presented on port 80 (http). This is an unsecure connection and will give a warning when connecting.
+This container is run in detached mode which will not provide any command line output.
+
+To view the logs of the running container use:
+
+`sudo docker logs capstone-14`
+
+or:
+
+`sudo docker logs capstone-14 | tail`
