@@ -4,7 +4,7 @@ from django.core.files.storage import default_storage
 from django.views.decorators.csrf import csrf_exempt
 import json
 import os
-from ..models import FilteredUpload
+from scheduleFunctions.models import FilteredUpload, Section
 from .clingo_helpers import (
     run_clingo_optimization,
     get_root_path,

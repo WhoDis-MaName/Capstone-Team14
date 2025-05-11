@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Course Scheduler</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{% static 'styles/dashboard.css' %}" />
+
+  <!-- JavaScript -->
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      const uploadForm = document.getElementById('uploadForm');
+
+      if (uploadForm) {
+        uploadForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          document.getElementById('loadingOverlay').style.display = 'flex';
+
+          const formData = new FormData(uploadForm);
+
+          fetch('/preferences/', {
+            method: 'POST',
+            headers: {
+              'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+            },
+            body: formData,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              const statusDiv = document.getElementById('uploadStatus');
+              if (data.error) {
+                statusDiv.innerHTML = `<span style="color: red;">${data.error}</span>`;
+              } else {
+                statusDiv.innerHTML = `<span style="color: green;">Update Complete!</span>`;
+              }
+            })
+            .finally(() => {
+              document.getElementById('loadingOverlay').style.display = 'none';
+            });
+        });
+      }
+    })
+  </script>
+</head>
+
+<body>
+  <header>
+
+    <div id="loadingOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+     background-color: rgba(0, 0, 0, 0.5); z-index: 1000; align-items: center; justify-content: center;">
+      {% comment %} <img src="{% static 'assets/images/loading.gif' %}" alt="Loading..." style="width: 100px;" /> {% endcomment %}
+      <object type="image/svg+xml" data="{% static 'assets/images/uno_diagonal_fill.svg' %}" alt="Loading..."></object>
+    </div>
+
+
+
+    <img src="{% static 'assets/images/uno-icon-color.png' %}" alt="University Logo" class="header-logo" />
+    University Course Scheduler - Dashboard
+  </header>
+
+  <div class="dashboard-layout">
+
+    <!-- Main Content -->
+    <div class="container">
+      <form>
+        <!-- Professor Preferences -->
+        {% for professor in professors %}
+        <div class="current-schedule section">
+          <h2>{{professor.name}}</h2>
+
+          <label for="time-preference">Select Professors Time Preferences:</label>
+
+          <select name="time-preference" id="{{professor.pk}}-time-preference" multiple>
+            <option value="back-to-back">Back to Back</option>
+            <option value="mornings">Mornings</option>
+            <option value="evening">Evenings</option>
+            <option value="mid-day">Mid-Day</option>
+          </select>
+
+          <label for="day-preference">Select Professors Day Preferences:</label>
+
+          <select name="day-preference" id="{{professor.pk}}-day-preference" multiple>
+            {% for day in days %}
+              <option value="{{ day.id }}">{{ day.day_of_week }}</option>
+            {% endfor %}
+          </select>
+          
+        </div>
+        {% endfor %}
+
+        <!-- Submit Form -->
+        <div class="submit section">
+          <button type="submit" class="btn">Update Preferences</button>
+          <div id="uploadStatus"></div>
+        </div>
+
+      </form>
+
+      
+      
+    </div>
+  </div>
+</body>
+
+</html>
