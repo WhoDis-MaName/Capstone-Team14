@@ -33,7 +33,7 @@ header .header-logo {
   height: 100vh;
   background-color: #fff;
   border-right: 2px solid #ddd;
-  padding: 20px;
+  padding: 20px 35px 20px 20px; /* Add padding to the right */
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
 }
 
