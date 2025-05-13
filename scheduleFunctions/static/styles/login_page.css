@@ -36,12 +36,12 @@ header.banner-content {
   border-bottom: 3px solid #d00000;
   padding: 10px;
   box-sizing: border-box;
-  text-align: center; /* Ensures text alignment */
+  text-align: center;
 }
 
 header.banner-content img.uno-image {
-  margin-right: 10px; /* Adds spacing between the image and the text */
-  width: 50px; /* Adjust the size of the image if needed */
+  margin-right: 10px;
+  width: 50px;
 }
 
 .banner-content .logo-container {
@@ -77,6 +77,13 @@ header.banner-content img.uno-image {
   text-align: center;
 }
 
+.login-container form {
+  width: 500px;
+  margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
 .login-container form input,
 .login-container form button {
   width: 100%;
@@ -85,6 +92,7 @@ header.banner-content img.uno-image {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
+  box-sizing: border-box;
 }
 
 .login-container form button {
@@ -106,6 +114,7 @@ header.banner-content img.uno-image {
   color: #d00000;
   text-decoration: none;
   font-size: 14px;
+  max-width: 100%;
 }
 
 .forgot-password:hover {
