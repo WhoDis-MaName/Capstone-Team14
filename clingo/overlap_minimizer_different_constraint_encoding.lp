@@ -53,23 +53,11 @@ input_section(C, I, N, R, P, T) :- section(C, I, N, S, E, D, R, P), time_slot_cr
 
 % It cannot be that there are two classes in the same room at the same time unless they are cross listed
 % Greater than 1 because it sees itself
-:- #count{ N: 
-        scheduled_section_room(R, N), 
-        scheduled_section_time_slot(N, S1, E1, D1),
-        time_slot_overlap(S1, E1, D1, S2, E2, D2)
-    } > 1, 
-    room(R), 
-    scheduled_section_time_slot(N2, S2, E2, D2).
+:- scheduled_section_room(R, N), scheduled_section_room(R, N2), scheduled_section_time_slot(N, S1, E1, D1), scheduled_section_time_slot(N2, S2, E2, D2), time_slot_overlap(S1, E1, D1, S2, E2, D2), N!=N2.
 
 % It cannot be that there are two classes with the same professor at the same time unless they are cross listed
 % Greater than 1 because it sees itself
-:- #count{ N: 
-        scheduled_section_professor(P, N), 
-        scheduled_section_time_slot(N, S1, E1, D1),
-        time_slot_overlap(S1, E1, D1, S2, E2, D2)
-    } > 1, 
-    professor(P), 
-    scheduled_section_time_slot(N2, S2, E2, D2).
+:- scheduled_section_professor(P, N), scheduled_section_professor(P, N2), scheduled_section_time_slot(N, S1, E1, D1), scheduled_section_time_slot(N2, S2, E2, D2), time_slot_overlap(S1, E1, D1, S2, E2, D2), N!=N2.
 
 % =========================== SECTION DEFINING CONFLICT ===========================
 
